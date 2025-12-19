@@ -37,6 +37,10 @@ namespace openphase
 class PhaseField;
 class SymmetryVariants;
 class Crystallography;
+class DoubleObstacle;
+class H5Interface;
+class RunTimeControl;
+class InterfaceProperties;
 
 class OP_EXPORTS MicrostructureAnalysis
 {
@@ -63,6 +67,7 @@ class OP_EXPORTS MicrostructureAnalysis
     static void WriteSymmetryVariantsStatistics(size_t pIndex, const PhaseField& Phase, const SymmetryVariants& SV, const int tStep);
     static double GrainBoundaryStatistics(PhaseField& Phase, std::vector<dVector3> Facets, double DegreeTolerance);
     static void WriteGrainsStatistics(const PhaseField& Phase, const int tStep, const std::string& h5FileName = "");
+    static void WriteGlobalFeatures(PhaseField& Phase, const DoubleObstacle& DO, H5Interface& H5, const RunTimeControl& RTC, const InterfaceProperties& IP);
 
     static void GrainSizeDistribution();
     static void GrainTopologyStatistics();

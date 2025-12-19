@@ -79,7 +79,50 @@ public:
         H5Easy::DataSet ds = H5Easy::dump(file, check2.str(), data, H5Easy::DumpMode::Overwrite);
 
         size_t el = ds.getElementCount();
-        std::cout << check2.str() << " written " << el << std::endl;
+        // NOTE: suppress verbose HDF5 write confirmations to avoid
+        // polluting application logs. If needed, enable via debug
+        // logging in future.
+        // Add human-readable description attributes for known GlobalFeatures
+        try {
+            std::string desc = "";
+            const std::string prefix = "GlobalFeatures/";
+            if (name.rfind(prefix, 0) == 0) {
+                std::string feat = name.substr(prefix.size());
+                if (feat == "tStep") desc = "Simulation timestep index (integer).";
+                else if (feat == "time") desc = "Simulation time (physical simulation time units).";
+                else if (feat == "AvgInterfaceEnergy") desc = "Average interface energy (system average of interface energy density).";
+                else if (feat == "TotalEnergy") desc = "Total system energy (sum of all energy contributions).";
+                else if (feat == "nGrains") desc = "Number of grains present in the simulation domain.";
+                else if (feat == "AvgCurvature") desc = "Average curvature of interfaces (mean curvature over interface points).";
+                else if (feat == "nInterfacePoints") desc = "Number of interface voxels / points detected in the microstructure.";
+                else if (feat == "ExternalField") desc = "External field magnitude (placeholder; set by input if used).";
+                else if (feat == "Temperature") desc = "Temperature (placeholder; set by input if used).";
+            }
+            if (!desc.empty()) {
+                // Avoid HDF5 diagnostic warnings by checking for the
+                // attribute existence and overwrite it instead of
+                // blindly trying to create it every time.
+                if (ds.hasAttribute("description")) {
+                    try {
+                        auto attr = ds.getAttribute("description");
+                        attr.write(desc);
+                    } catch(...) {
+                        // If updating fails, attempt to recreate the attribute
+                        try {
+                            ds.deleteAttribute("description");
+                            ds.createAttribute("description", desc);
+                        } catch(...) {
+                            throw;
+                        }
+                    }
+                } else {
+                    ds.createAttribute("description", desc);
+                }
+            }
+        } catch(...) {
+            // Don't fail simulation on attribute write errors; just warn
+            ConsoleOutput::WriteWarning("Could not write HDF5 attribute 'description'", thisclassname, "WriteCheckPoint()");
+        }
         // Error checking:
         if(el == 0) {
             ConsoleOutput::WriteWarning("Zero elements were written to the HDF5 file",thisclassname,"WriteCheckPoint()");

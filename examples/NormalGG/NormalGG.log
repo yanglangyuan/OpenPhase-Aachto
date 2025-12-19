@@ -1,0 +1,188 @@
+--- OpenPhase log started: 2025-12-19 20:55:20 ---
+--< Settings input >------------------------------------------------------------
+Source                                  :  ProjectInput.opi
+--------------------------------------------------------------------------------
+--< Grid Parameters >-----------------------------------------------------------
+$Nx	System Size in X Direction          :  101
+$Ny	System Size in Y Direction          :  101
+$Nz	System Size in Z Direction          :  101
+$dx	Grid Spacing                        :  1e-06
+$Bcells	(DEFAULT VALUE)                 :  1
+$IWidth	Interface Width (in grid points):  5
+$Resolution	(DEFAULT VALUE)             :  SINGLE
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+--< Settings >------------------------------------------------------------------
+--< Active phases >-------------------------------------------------------------
+$Phase_0	Name of Phase 0                           :  Phase1
+$State_0	(DEFAULT VALUE)                :  SOLID
+$MassDensity_0	(DEFAULT VALUE)          :  0
+$Nvariants_0	(DEFAULT VALUE)            :  1
+$VTKDir	(DEFAULT VALUE)                 :  VTK/
+$RAWDir	(DEFAULT VALUE)                 :  RawData/
+$InputRAWDir	(DEFAULT VALUE)            :  RawData/
+$DATADir	(DEFAULT VALUE)                :  TextData/
+$HDF5Freq	HDF5 write frequency (tSteps) :  5
+$WriteDrivingForceH5	Write DrivingForce fields to HDF5:  NO
+--------------------------------------------------------------------------------
+
+RunTimeControl                          :  Initialized
+--< RunTimeControl input >------------------------------------------------------
+Source                                  :  ProjectInput.opi
+$SimTtl	Simulation Title                          :  Normal grain growth
+Key SimTtl is deprecated. Please use SimulationTitle instead.
+$LUnits	Units of length                           :  m
+Key LUnits is deprecated. Please use UnitsOfLength instead.
+$MUnits	Units of mass                             :  kg
+Key MUnits is deprecated. Please use UnitsOfMass instead.
+$TUnits	Units of time                             :  s
+Key TUnits is deprecated. Please use UnitsOfTime instead.
+$EUnits	Energy units                              :  J
+Key EUnits is deprecated. Please use UnitsOfEnergy instead.
+$nOMP	Number of OpenMP Threads          :  1
+Key nOMP is deprecated. Please use OpenMPThreads instead.
+$nSteps	Number of Time Steps            :  10
+Key nSteps is deprecated. Please use MaxTimeStep instead.
+$dt	Initial Time Step                   :  1e-05
+$Restrt	Restart switch (Yes/No)         :  NO
+Key Restrt is deprecated. Please use RestartSwitch instead.
+$tRstrt	Restart output every (tSteps)   :  10000
+Key tRstrt is deprecated. Please use CheckpointInterval instead.
+$FTime	Output to disk every (tSteps)    :  10
+Key FTime is deprecated. Please use VTKOutputInterval instead.
+$STime	Output to screen every (tSteps)  :  5
+Key STime is deprecated. Please use ConsoleOutputInterval instead.
+$StopCheckInterval	(DEFAULT VALUE)      :  0
+$LogScreen	(DEFAULT VALUE)              :  NO
+$LogVTK	(DEFAULT VALUE)                 :  NO
+$LogScreenF	(DEFAULT VALUE)             :  1
+$LogVTKF	(DEFAULT VALUE)                :  1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+PhaseField                              :  Initialized
+--< PhaseField input >----------------------------------------------------------
+Source                                  :  ProjectInput.opi
+$ConsiderNucleusVolume	(DEFAULT VALUE)  :  YES
+$NucleusVolumeFactor	(DEFAULT VALUE)    :  1
+$CombinePhaseFields_0	(DEFAULT VALUE)   :  NO
+$InterfaceNormalModel	(DEFAULT VALUE)   :  AVERAGEGRADIENT
+$PhaseFieldLaplacianStencil	(DEFAULT VALUE):  ISOTROPIC
+$PhaseFieldGradientStencil	(DEFAULT VALUE):  ISOTROPIC
+--------------------------------------------------------------------------------
+
+DoubleObstacle                          :  Initialized
+
+InterfaceProperties                     :  Initialized
+--< InterfaceProperties input >-------------------------------------------------
+Source                                  :  ProjectInput.opi
+--------------------------------------------------------------------------------
+--< Interface Properties >------------------------------------------------------
+$EnergyModel_0_0	Interface energy model          :  ISO
+$Sigma_0_0	Interface energy             :  0.24
+$MobilityModel_0_0	Interface energy model          :  ISO
+$Mu_0_0	Interface mobility              :  1e-07
+$Q_0_0	(DEFAULT VALUE)                  :  0
+$RPB_0_0	(DEFAULT VALUE)                :  NO
+$NucleiMobilityFactor_0_0	(DEFAULT VALUE):  1
+$TripleJunctionModel	(DEFAULT VALUE)    :  MODEL
+$TripleJunctionFactor	(DEFAULT VALUE)   :  0
+$RegularizationFactor	(DEFAULT VALUE)   :  1
+$CurvatureFactor	(DEFAULT VALUE)        :  1
+$ExtrapolationMode	(DEFAULT VALUE)      :  NONE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning:  InterfaceProperties::ReadInput()
+          Extrapolation mode set to NONE. Curvature will be assumed zero at some points when it is actually not!!! 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$MaxExtrapolationInterations	(DEFAULT VALUE):  6
+--------------------------------------------------------------------------------
+
+BoundaryConditions                      :  Initialized
+--< BoundaryConditions input >--------------------------------------------------
+Source                                  :  ProjectInput.opi
+$BC0X	X axis beginning boundary condition         :  Periodic
+$BCNX	X axis far end boundary condition           :  Periodic
+$BC0Y	Y axis beginning boundary condition         :  Periodic
+$BCNY	Y axis far end boundary condition           :  Periodic
+$BC0Z	Z axis beginning boundary condition         :  Periodic
+$BCNZ	Z axis far end boundary condition           :  Periodic
+--------------------------------------------------------------------------------
+
+DrivingForce                            :  Initialized
+--< DrivingForce input >--------------------------------------------------------
+Source                                  :  ProjectInput.opi
+$Average                                :  YES
+$bUnify                                 :  NO
+$Range                                  :  3
+$Threshold                              :  0.2
+$Limiting                               :  YES
+$WeightsMode	(DEFAULT VALUE)            :  PHASEFIELDS
+$Limit_0_0                              :  0.95
+--------------------------------------------------------------------------------
+
+--< Voronoi creator >-----------------------------------------------------------
+Number of grains                        :  200
+Thermodynamic phase                     :  0
+Generating grain seeds... 
+Done!
+Creating coordination shells...
+Done!
+Creating Voronoi grain structure:
+0------------------25------------------50------------------75---------------100%
+################################################################################
+Done!
+Creating grain boundaries...
+Done!
+Generating random orientations...
+Done!
+===============================
+Time step                               : 0/10
+Simulation time                         : 0
+Wall clock time                         : 2025-12-19 20:55:32
+Interface energy density                :  38125.4
+===============================
+================================================================================
+Execution Time Statistics
+--------------------------------------------------------------------------------
+CalculatePhaseFieldIncrements           :  2.53e+00  71.08 %
+MergeIncrements                         :  8.82e-01  24.78 %
+NormalizeIncrements                     :  9.03e-02  2.54 %
+IP.Set()                                :  5.71e-02  1.60 %
+--------------------------------------------------------------------------------
+Total time per time step [s]            :  3.55888
+================================================================================
+===============================
+Time step                               : 5/10
+Simulation time                         : 5e-05
+Wall clock time                         : 2025-12-19 20:56:15
+Interface energy density                :  36005.9
+===============================
+================================================================================
+Execution Time Statistics
+--------------------------------------------------------------------------------
+CalculatePhaseFieldIncrements           :  6.82e+00  85.88 %
+MergeIncrements                         :  9.07e-01  11.43 %
+NormalizeIncrements                     :  1.47e-01  1.85 %
+IP.Set()                                :  6.66e-02  0.84 %
+--------------------------------------------------------------------------------
+Total time per time step [s]            :  7.93597
+================================================================================
+===============================
+Time step                               : 10/10
+Simulation time                         : 0.0001
+Wall clock time                         : 2025-12-19 20:57:01
+Interface energy density                :  35102.8
+===============================
+================================================================================
+Execution Time Statistics
+--------------------------------------------------------------------------------
+CalculatePhaseFieldIncrements           :  6.65e+00  86.11 %
+MergeIncrements                         :  8.70e-01  11.28 %
+NormalizeIncrements                     :  1.44e-01  1.86 %
+IP.Set()                                :  5.78e-02  0.75 %
+--------------------------------------------------------------------------------
+Total time per time step [s]            :  7.7185
+================================================================================
+--- OpenPhase log finished: 2025-12-19 20:57:02 ---

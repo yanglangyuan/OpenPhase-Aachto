@@ -34,6 +34,64 @@ namespace openphase
 
 using namespace std;
 
+void ConsoleOutput::InitLogFile(const std::string& filename, VerbosityLevels consoleVerbosity)
+{
+#ifdef MPI_PARALLEL
+    if (MPI_RANK != 0) return;
+#endif
+    if (filename.empty())
+    {
+        LogEnabled = false;
+        return;
+    }
+    LogFile.open(filename, std::ios::out | std::ios::trunc);
+    if (LogFile.is_open())
+    {
+        LogEnabled = true;
+        OutputVerbosity = consoleVerbosity;
+        // redirect std::cout to the log file so any direct cout goes into log
+        CoutBuf = std::cout.rdbuf();
+        std::cout.rdbuf(LogFile.rdbuf());
+        LogFile << "--- OpenPhase log started: " << get_time() << " ---" << std::endl;
+    }
+    else
+    {
+        LogEnabled = false;
+    }
+}
+
+void ConsoleOutput::CloseLogFile()
+{
+#ifdef MPI_PARALLEL
+    if (MPI_RANK != 0) return;
+#endif
+    if (LogEnabled)
+    {
+        LogFile << "--- OpenPhase log finished: " << get_time() << " ---" << std::endl;
+        // restore cout rdbuf
+        if (CoutBuf)
+        {
+            std::cout.rdbuf(CoutBuf);
+            CoutBuf = nullptr;
+        }
+        LogFile.close();
+        LogEnabled = false;
+    }
+}
+
+void ConsoleOutput::WriteToLog(const std::string& message)
+{
+#ifdef MPI_PARALLEL
+    if (MPI_RANK != 0) return;
+#endif
+    if (LogEnabled)
+    {
+        LogFile << message;
+        // Ensure flushed so logs are available during long runs
+        LogFile.flush();
+    }
+}
+
 std::string ConsoleOutput::get_time()
 {
     std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -49,21 +107,26 @@ void ConsoleOutput::WriteTimeStep(const RunTimeControl& RTC, const string Messag
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
-        WriteLine("=");
-        cout << setfill(' ') << setw(ColumnWidth)  << left <<
-                "Time step" << ": " << to_string(RTC.TimeStep) + "/" + to_string(RTC.MaxTimeStep) << "\n";
-        cout << setfill(' ') << setw(ColumnWidth)  << left <<
-                "Simulation time" << ": " << RTC.SimulationTime << "\n";
-        cout << setfill(' ') << setw(ColumnWidth)  << left <<
-                "Wall clock time" << ": " << get_time() << "\n";
+        std::ostringstream oss;
+        oss << setfill(' ') << setw(ColumnWidth)  << left << "Time step" << ": " << to_string(RTC.TimeStep) + "/" + to_string(RTC.MaxTimeStep) << "\n";
+        oss << setfill(' ') << setw(ColumnWidth)  << left << "Simulation time" << ": " << RTC.SimulationTime << "\n";
+        oss << setfill(' ') << setw(ColumnWidth)  << left << "Wall clock time" << ": " << get_time() << "\n";
         if (Message != "")
         {
-            WriteLine("-");
-            cout << Message;
+            oss << Message;
         }
-        WriteLine("=");
+        // Write to log regardless of console verbosity
+        WriteToLog(string("===============================\n") + oss.str() + string("===============================\n"));
+        // Print to console only if verbosity level permits
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            WriteLine("=");
+            cout << oss.str();
+            if (Message != "") { WriteLine("-"); cout << Message; }
+            WriteLine("=");
+        }
     }
 }
 
@@ -73,18 +136,22 @@ void ConsoleOutput::WriteTimeStep(const int tStep, const int nSteps, const strin
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
-        WriteLine("_");
-        cout << setfill(' ') << setw(ColumnWidth)  << left <<
-                "TimeStep" << " " << to_string(tStep) + "/" + to_string(nSteps) << "\n";
-        cout << setfill(' ') << setw(ColumnWidth)  << left <<
-                "Time" << " " << get_time() << "\n";
+        std::ostringstream oss;
+        oss << setfill(' ') << setw(ColumnWidth)  << left << "TimeStep" << " " << to_string(tStep) + "/" + to_string(nSteps) << "\n";
+        oss << setfill(' ') << setw(ColumnWidth)  << left << "Time" << " " << get_time() << "\n";
         if (Message != "")
         {
-            cout << Message << "\n";
+            oss << Message << "\n";
         }
-        WriteLine("_");
+        WriteToLog(string("-------------------------------\n") + oss.str() + string("-------------------------------\n"));
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            WriteLine("_");
+            cout << oss.str();
+            WriteLine("_");
+        }
     }
 }
 
@@ -94,12 +161,10 @@ void ConsoleOutput::WriteTimeStep(const int tScreenWrite, const int tStep,
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    // Always write time step to log (if enabled). Console output depends on verbosity
+    if (!(tStep%tScreenWrite))
     {
-        if (!(tStep%tScreenWrite))
-        {
-            WriteTimeStep(tStep, nSteps, Message, ColumnWidth);
-        }
+        WriteTimeStep(tStep, nSteps, Message, ColumnWidth);
     }
 }
 
@@ -108,9 +173,14 @@ void ConsoleOutput::WriteLine(const string LineType)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
     {
-        cout << setfill(LineType[0]) << setw(LineLength) << "" << "\n";
+        std::string line(LineLength, LineType[0]);
+        line += "\n";
+        WriteToLog(line);
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << line;
+        }
     }
 }
 
@@ -119,10 +189,14 @@ void ConsoleOutput::WriteLineInsert(const string Insert, const string LineType)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
     {
-        cout << LineType[0] << LineType[0] << "< " << Insert << " >" << setfill(LineType[0]) <<
-                setw(std::max<int>(0,LineLength-Insert.size()-6)) << "" << "\n";
+        std::ostringstream oss;
+        oss << LineType[0] << LineType[0] << "< " << Insert << " >" << setfill(LineType[0]) << setw(std::max<int>(0,LineLength-Insert.size()-6)) << "" << "\n";
+        WriteToLog(oss.str());
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << oss.str();
+        }
     }
 }
 
@@ -131,9 +205,12 @@ void ConsoleOutput::WriteBlankLine(void)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
     {
-        cout << "\n";
+        WriteToLog("\n");
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << "\n";
+        }
     }
 }
 
@@ -142,9 +219,13 @@ void ConsoleOutput::WriteSimple(const string Message)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
     {
-        cout << Message << "\n";
+        std::string out = Message + "\n";
+        WriteToLog(out);
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << out;
+        }
     }
 }
 
@@ -160,16 +241,20 @@ void ConsoleOutput::WriteWithinMethod(const string Message, const string Instanc
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
     {
+        std::ostringstream oss;
         string thisInstance = Instance;
         if (Method != "")
         {
             thisInstance += "::" + Method;
         }
-        cout << setfill(' ') << setw(10)  << left << thisInstance << "\n"
-                                                  << Message      << "\n";
-        WriteLine("-");
+        oss << setfill(' ') << setw(10)  << left << thisInstance << "\n" << Message << "\n";
+        oss << string(LineLength, '-') << "\n";
+        WriteToLog(oss.str());
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << oss.str();
+        }
     }
 }
 
@@ -182,14 +267,19 @@ void ConsoleOutput::WriteWarning(const string Message, const string Instance,
     if(OutputVerbosity >= VerbosityLevels::Warning)
     {
         string thisInstance = Instance;
-        cerr << setfill('~') << setw(LineLength) << "" << "\n";
         if (Method != "")
         {
             thisInstance += "::" + Method;
         }
-        cerr << setfill(' ') << setw(10)  << left << "Warning: "  << thisInstance << "\n"
-                                                  << "          " << Message      << "\n";
-        cerr << setfill('~') << setw(LineLength) << "" << "\n";
+        std::ostringstream oss;
+        oss << setfill('~') << setw(LineLength) << "" << "\n";
+        oss << setfill(' ') << setw(10)  << left << "Warning: "  << thisInstance << "\n"
+            << "          " << Message      << "\n";
+        oss << setfill('~') << setw(LineLength) << "" << "\n";
+        // write to log first
+        WriteToLog(oss.str());
+        // then to console (cerr)
+        cerr << oss.str();
     }
 }
 
@@ -200,18 +290,21 @@ void ConsoleOutput::WriteExit(const string Message, const string Instance, const
 #endif
     {
         string thisInstance = Instance;
-        cerr << "\n";
-        cerr << setfill('*') << setw(LineLength) << "" << "\n";
         if (Method != "")
         {
             thisInstance += "::" + Method;
         }
-        cerr << setfill(' ') << setw(10) << left << "Calculation terminated!" << "\n"
-                             << setw(10) << left << "Instance:" << thisInstance << "\n"
-                             << setw(10) << left << "Reason: " << Message << "\n"
-                             << setw(10) << left << "Time: " << get_time() << "\n";
-        cerr << setfill('*') << setw(LineLength) << "" << "\n";
-        cerr << "\n";
+        std::ostringstream oss;
+        oss << "\n";
+        oss << setfill('*') << setw(LineLength) << "" << "\n";
+        oss << setfill(' ') << setw(10) << left << "Calculation terminated!" << "\n"
+            << setw(10) << left << "Instance:" << thisInstance << "\n"
+            << setw(10) << left << "Reason: " << Message << "\n"
+            << setw(10) << left << "Time: " << get_time() << "\n";
+        oss << setfill('*') << setw(LineLength) << "" << "\n";
+        oss << "\n";
+        WriteToLog(oss.str());
+        cerr << oss.str();
     }
 }
 
@@ -220,19 +313,25 @@ void ConsoleOutput::WriteStartScreen(void)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
-        cout << "\n";
-        WriteLine(">");
-        cout << "  OpenPhase\n\n"
-             << "  Copyright (c) Ruhr-Universitaet Bochum, Universitaetsstrasse 150, 44801 Bochum, Germany\n"
-             << "            and OpenPhase Solutions GmbH, Universitaetsstrasse 136, 44799 Bochum, Germany.\n"
-             << "  All rights reserved.\n";
-        WriteLine("<");
-        cout << "\n";
-        cout << "Build time: " << BUILD_TIME << "\n";
-        cout << "Git commit SHA: " << GIT_COMMIT_SHA << "\n";
-        cout << endl;
+        std::ostringstream oss;
+        oss << "\n";
+        oss << string(LineLength, '>') << "\n";
+        oss << "  OpenPhase\n\n"
+            << "  Copyright (c) Ruhr-Universitaet Bochum, Universitaetsstrasse 150, 44801 Bochum, Germany\n"
+            << "            and OpenPhase Solutions GmbH, Universitaetsstrasse 136, 44799 Bochum, Germany.\n"
+            << "  All rights reserved.\n";
+        oss << string(LineLength, '<') << "\n";
+        oss << "\n";
+        oss << "Build time: " << BUILD_TIME << "\n";
+        oss << "Git commit SHA: " << GIT_COMMIT_SHA << "\n";
+        oss << std::endl;
+        WriteToLog(oss.str());
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << oss.str();
+        }
     }
 }
 
@@ -247,11 +346,16 @@ void ConsoleOutput::StartProgressIndicator(std::string IndicatorTitle)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
-        ConsoleOutput::WriteSimple(IndicatorTitle+":");
-        cout << "0------------------25------------------50------------------75---------------100%" << endl;
-      //cout << "0__________________25__________________50__________________75_______________100%" << endl;
+        std::ostringstream oss;
+        oss << IndicatorTitle << ":\n";
+        oss << "0------------------25------------------50------------------75---------------100%" << std::endl;
+        WriteToLog(oss.str());
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << oss.str();
+        }
     }
 }
 
@@ -260,15 +364,23 @@ void ConsoleOutput::AdvanceProgressIndicator(double start_value, double end_valu
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
         int current_value_normalized = 80.0*fabs((current_value - start_value)/(end_value - start_value));
+        std::string out;
         for(int n = pos; n < current_value_normalized; n++)
         {
             pos++;
-            cout << "#";
+            out.push_back('#');
         }
-        cout << flush;
+        if(!out.empty())
+        {
+            WriteToLog(out);
+        }
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << out << flush;
+        }
     }
 }
 
@@ -277,10 +389,14 @@ void ConsoleOutput::EndProgressIndicator(void)
 #ifdef MPI_PARALLEL
     if (MPI_RANK == 0)
 #endif
-    if(OutputVerbosity >= VerbosityLevels::Normal)
+    if(true)
     {
-        cout << endl;
-        ConsoleOutput::WriteSimple("Done!");
+        WriteToLog("\nDone!\n");
+        if(OutputVerbosity >= VerbosityLevels::Normal)
+        {
+            cout << endl;
+            ConsoleOutput::WriteSimple("Done!");
+        }
     }
 }
 

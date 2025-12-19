@@ -246,6 +246,10 @@ void Settings::ReadInput(std::stringstream& inp)
     RawDataDir = FileInterface::ReadParameterF(inp, moduleLocation,"RAWDir",false,RawDataDir);
     InputRawDataDir = FileInterface::ReadParameterF(inp, moduleLocation,"InputRAWDir",false,RawDataDir);
     TextDir    = FileInterface::ReadParameterF(inp, moduleLocation,"DATADir",false,TextDir);
+    // HDF5 output frequency (optional)
+    HDF5Freq   = FileInterface::ReadParameterI(inp, moduleLocation, "HDF5Freq", false, HDF5Freq);
+    // Control writing of DrivingForce HDF5 fields
+    WriteDrivingForceH5 = FileInterface::ReadParameterB(inp, moduleLocation, "WriteDrivingForceH5", false, WriteDrivingForceH5);
 
     string from = "\\";
     string to = "/";
@@ -383,6 +387,10 @@ void Settings::ReadJSON(const string InputFileName)
         RawDataDir = FileInterface::ReadParameter<std::string>(settings, {"RawDataDir"}, RawDataDir);
         InputRawDataDir = FileInterface::ReadParameter<std::string>(settings, {"InputRawDataDir"}, InputRawDataDir);
         TextDir    = FileInterface::ReadParameter<std::string>(settings, {"TextDir"}, TextDir);
+        // HDF5 output frequency (optional)
+        HDF5Freq   = FileInterface::ReadParameter<int>(settings, {"HDF5Freq"}, HDF5Freq);
+        // Control writing of DrivingForce HDF5 fields
+        WriteDrivingForceH5 = FileInterface::ReadParameter<bool>(settings, {"WriteDrivingForceH5"}, WriteDrivingForceH5);
 
         string from = "\\";
         string to = "/";

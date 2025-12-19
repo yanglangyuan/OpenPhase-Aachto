@@ -103,6 +103,8 @@ class OP_EXPORTS Settings                                                       
     std::string RawDataDir;                                                     ///< Directory name for the raw data files
     std::string InputRawDataDir;                                                ///< Directory name for the raw data files
     std::string TextDir;                                                        ///< Directory name for the text files
+    int HDF5Freq = 1;                                                            ///< Frequency (in time steps) for HDF5 writes
+    bool WriteDrivingForceH5 = true;                                             ///< If true, DrivingForce::WriteH5 will write driving force fields to HDF5
 
     Settings& operator= (const Settings& rhs);                                  ///< Assignment operator
 #ifndef WIN32

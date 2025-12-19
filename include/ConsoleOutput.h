@@ -66,6 +66,17 @@ class OP_EXPORTS ConsoleOutput                                                  
     static constexpr size_t LineLength          = 80;
 
     inline static VerbosityLevels OutputVerbosity = VerbosityLevels::Normal;    ///< Sets the level of console output verbosity
+    // Logging to file: when enabled, all outputs (including those suppressed
+    // on the console) will be written to this file. Console prints still
+    // follow OutputVerbosity.
+    inline static std::ofstream LogFile;                                        ///< Log file stream
+    inline static bool LogEnabled = false;                                      ///< Whether logging is enabled
+    inline static std::streambuf* CoutBuf = nullptr;                            ///< backup of cout rdbuf when redirecting
+
+    /// Initialize logging to file. If filename is empty, logging is disabled.
+    static void InitLogFile(const std::string& filename, VerbosityLevels consoleVerbosity = VerbosityLevels::Warning);
+    static void CloseLogFile();
+    static void WriteToLog(const std::string& message);
 
     /// Return white space for positive values to align positive and negative
     /// numbers vertically
@@ -296,9 +307,16 @@ class OP_EXPORTS ConsoleOutput                                                  
 #ifdef MPI_PARALLEL
         if (MPI_RANK == 0)
 #endif
-        if(OutputVerbosity >= VerbosityLevels::Normal)
         {
-            std::cout << GetStandard(Left,Right,precision,notation,ColumnWidth);
+            std::string out = GetStandard(Left,Right,precision,notation,ColumnWidth);
+            if(LogEnabled)
+            {
+                LogFile << out << std::flush;
+            }
+            if(OutputVerbosity >= VerbosityLevels::Normal)
+            {
+                std::cout << out;
+            }
         }
     }
 
@@ -311,9 +329,16 @@ class OP_EXPORTS ConsoleOutput                                                  
 #ifdef MPI_PARALLEL
         if (MPI_RANK == 0)
 #endif
-        if(OutputVerbosity >= VerbosityLevels::Normal)
         {
-            std::cout << GetStandard(Left,Right,precision,notation,StandardColumnWidth/2);
+            std::string out = GetStandard(Left,Right,precision,notation,StandardColumnWidth/2);
+            if(LogEnabled)
+            {
+                LogFile << out << std::flush;
+            }
+            if(OutputVerbosity >= VerbosityLevels::Normal)
+            {
+                std::cout << out;
+            }
         }
     }
 

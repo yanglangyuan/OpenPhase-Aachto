@@ -89,6 +89,7 @@ class OP_EXPORTS DrivingForce : public OPObject                                 
                   const PhaseField& Phi,
                   const int tStep,
                   const int precision = 16) const;                              ///< Writes the average driving force acting between all thermodynamic phases, not between individual grains
+      void WriteH5(class H5Interface& H5, const Settings& locSettings, const PhaseField& Phi, const int tStep) const;                              ///< Writes driving force fields to HDF5 (per-phase averages)
 
     NodeDF Force_at(const double x, const double y, const double z) const;      ///< Arbitrary point access operator for driving force. Uses tri-linear interpolation
 

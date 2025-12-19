@@ -958,6 +958,60 @@ void DrivingForce::WriteVTK(const Settings& locSettings,
     VTK::Write(Filename, locSettings, ListOfFields, precision);
 }
 
+void DrivingForce::WriteH5(H5Interface& H5, const Settings& locSettings, const PhaseField& Phase, const int tStep) const
+{
+    // Respect user setting: allow disabling driving force HDF5 export
+    if (!locSettings.WriteDrivingForceH5) return;
+    // Prepare HDF5 visualization fields for per-phase driving force averages
+    std::vector<H5Interface::Field_t> FieldsToWrite;
+
+    for(size_t alpha = 0; alpha < Phase.Nphases; ++alpha)
+    for(size_t beta = alpha; beta < Phase.Nphases; ++beta)
+    {
+        stringstream converter;
+        converter << alpha << "," << beta;
+        string phases = converter.str();
+
+        // average driving force between thermodynamic phases alpha and beta
+        FieldsToWrite.push_back(H5Interface::Field_t("dGraw(" + phases + ")",
+            [alpha,beta,this,&Phase](int i,int j,int k) -> std::any {
+                if (Force(i,j,k).size() == 0) return std::numeric_limits<double>::quiet_NaN();
+                double tempdG = 0.0;
+                int counter = 0;
+                for(auto it1  = Phase.Fields(i,j,k).cbegin(); it1 != Phase.Fields(i,j,k).cend(); ++it1)
+                for(auto it2  = Phase.Fields(i,j,k).cbegin(); it2 != Phase.Fields(i,j,k).cend(); ++it2)
+                if(Phase.FieldsProperties[it1->index].Phase == alpha &&
+                   Phase.FieldsProperties[it2->index].Phase == beta)
+                {
+                    tempdG += Force(i,j,k).get_raw(it1->index, it2->index);
+                    counter++;
+                }
+                if(counter > 1) tempdG /= counter;
+                return tempdG;
+            }));
+
+        FieldsToWrite.push_back(H5Interface::Field_t("dGavg(" + phases + ")",
+            [alpha,beta,this,&Phase](int i,int j,int k) -> std::any {
+                if (Force(i,j,k).size() == 0) return std::numeric_limits<double>::quiet_NaN();
+                double tempdG = 0.0;
+                int counter = 0;
+                for(auto it1  = Phase.Fields(i,j,k).cbegin(); it1 != Phase.Fields(i,j,k).cend(); ++it1)
+                for(auto it2  = Phase.Fields(i,j,k).cbegin(); it2 != Phase.Fields(i,j,k).cend(); ++it2)
+                if(Phase.FieldsProperties[it1->index].Phase == alpha &&
+                   Phase.FieldsProperties[it2->index].Phase == beta)
+                {
+                    tempdG += Force(i,j,k).get_average(it1->index, it2->index);
+                    counter++;
+                }
+                if(counter > 1) tempdG /= counter;
+                return tempdG;
+            }));
+    }
+
+    // Write using H5Interface convenience method
+    H5.WriteVisualization(tStep, locSettings, FieldsToWrite, 1);
+}
+
 void DrivingForce::Remesh(int newNx, int newNy, int newNz, const BoundaryConditions& BC)
 {
     Grid.SetDimensions(newNx, newNy, newNz);

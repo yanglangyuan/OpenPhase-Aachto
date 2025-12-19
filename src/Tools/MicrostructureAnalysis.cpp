@@ -28,6 +28,10 @@
 #include "PhaseField.h"
 #include "SymmetryVariants.h"
 #include "Tools.h"
+#include "DoubleObstacle.h"
+#include "H5Interface.h"
+#include "RunTimeControl.h"
+#include "InterfaceProperties.h"
 
 #ifdef H5OP
 #include "../HighFive/include/highfive/H5Easy.hpp"
@@ -334,6 +338,59 @@ void MicrostructureAnalysis::WriteEBSDDataQuaternions(const PhaseField& Phase, c
     ofstream ebsd_file(FileName.c_str());
     ebsd_file << outbuffer.rdbuf();
     ebsd_file.close();
+}
+
+void MicrostructureAnalysis::WriteGlobalFeatures(PhaseField& Phase, const DoubleObstacle& DO, H5Interface& H5, const RunTimeControl& RTC, const InterfaceProperties& IP)
+{
+    try {
+        double avgIEn = DO.AverageEnergyDensity(Phase, IP);
+        double totalEnergy = DO.Energy(Phase, IP);
+        size_t nGrains = 0;
+        for (size_t gi = 0; gi < Phase.FieldsProperties.size(); ++gi)
+        {
+            if (Phase.FieldsProperties[gi].Exist) ++nGrains;
+        }
+
+        double sumCurv = 0.0;
+        size_t nInterfaces = 0;
+        for (int i = 1; i < Phase.Grid.Nx+1; ++i)
+        for (int j = 1; j < Phase.Grid.Ny+1; ++j)
+        for (int k = 1; k < Phase.Grid.Nz+1; ++k)
+        {
+            if (Phase.Fields(i, j, k).interface())
+            {
+                sumCurv += fabs(Phase.CurvaturePhase(i,j,k,0));
+                ++nInterfaces;
+            }
+        }
+        double avgCurvature = (nInterfaces > 0) ? (sumCurv / double(nInterfaces)) : 0.0;
+
+        double externalField = 0.0;
+        double temperatureVal = 0.0;
+
+        std::vector<double> tmp(1);
+        tmp[0] = (double)RTC.tStep;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/tStep", tmp);
+        tmp[0] = RTC.tStep * RTC.dt;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/time", tmp);
+        tmp[0] = avgIEn;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/AvgInterfaceEnergy", tmp);
+        tmp[0] = totalEnergy;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/TotalEnergy", tmp);
+        tmp[0] = (double)nGrains;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/nGrains", tmp);
+        tmp[0] = avgCurvature;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/AvgCurvature", tmp);
+        tmp[0] = (double)nInterfaces;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/nInterfacePoints", tmp);
+        tmp[0] = externalField;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/ExternalField", tmp);
+        tmp[0] = temperatureVal;
+        H5.WriteCheckPoint(RTC.tStep, "GlobalFeatures/Temperature", tmp);
+    }
+    catch (...) {
+        ConsoleOutput::WriteWarning("Could not write GlobalFeatures to HDF5", "MicrostructureAnalysis", "WriteGlobalFeatures");
+    }
 }
 
 void MicrostructureAnalysis::WriteEBSDDataQuaternionsSlice(const PhaseField& Phase, const SymmetryVariants& SV, const int tStep,
@@ -810,7 +867,6 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
             }
             volPath << "/t_" << tStep;
             H5Easy::dump(file, volPath.str(), GrainVolumes, H5Easy::DumpMode::Overwrite);
-            std::cout << volPath.str() << " written " << GrainVolumes.size() << std::endl;
             
             // Write GrainNeighbors
             std::stringstream neighPath;
@@ -820,7 +876,6 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
             }
             neighPath << "/t" << tStep;
             H5Easy::dump(file, neighPath.str(), GrainNeighbors, H5Easy::DumpMode::Overwrite);
-            std::cout << neighPath.str() << " written " << GrainNeighbors.size() << std::endl;
             
             // Write GrainConnections
             std::stringstream connPath;
@@ -830,7 +885,6 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
             }
             connPath << "/t_" << tStep;
             H5Easy::dump(file, connPath.str(), GrainConnections, H5Easy::DumpMode::Overwrite);
-            std::cout << connPath.str() << " written " << GrainConnections.size() << std::endl;
             
             // Write EdgeIndex with proper structure: /CheckPoints/EdgeIndex/{timestep}/row and col
             std::stringstream edgeIndexGroup;
@@ -847,8 +901,6 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
             std::string colPath = edgeIndexGroup.str() + "/col";
             H5Easy::dump(file, rowPath, EdgeIndexRow, H5Easy::DumpMode::Overwrite);
             H5Easy::dump(file, colPath, EdgeIndexCol, H5Easy::DumpMode::Overwrite);
-            std::cout << rowPath << " written " << EdgeIndexRow.size() << std::endl;
-            std::cout << colPath << " written " << EdgeIndexCol.size() << std::endl;
             
         } catch (const std::exception& e) {
             ConsoleOutput::WriteWarning("Failed to write HDF5 grain statistics: " + std::string(e.what()),

@@ -5,22 +5,13 @@
  *                Universitaetsstrasse 150, D-44801 Bochum, Germany
  *            AND 2018-2025 OpenPhase Solutions GmbH,
  *                Universitaetsstrasse 136, D-44799 Bochum, Germany.
- *  
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *     
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *  
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
  *   File created :   2011
  *   Main contributors :  Reza Darvishi Kamachali; Oleg Shchyglo; Hesham Salama
+ * 
+ * 
+ * Modified by :  Yanglang Yuan 
+ * 2025-present
+ * IBF, RWTH Aachen University, Germany
  *
  */
 
@@ -35,6 +26,8 @@
 #include "Tools/TimeInfo.h"
 #include "Tools/MicrostructureAnalysis.h"
 #include "DrivingForce.h"
+#include <cstdlib>
+#include "ConsoleOutput.h"
 
 using namespace openphase;
 
@@ -58,6 +51,10 @@ int main(int argc, char *argv[])
         InputFile = "ProjectInput.opi";
     }
     Settings                    OPSettings;
+    // Initialize logging as early as possible so that messages from
+    // ReadInput and object constructors are captured in the log file.
+    ConsoleOutput::InitLogFile("NormalGG.log", VerbosityLevels::Warning);
+
     OPSettings.ReadInput(InputFile);
 
     RunTimeControl              RTC(OPSettings, InputFile);
@@ -72,13 +69,15 @@ int main(int argc, char *argv[])
     H5Interface                 H5;
     H5.OpenFile("", "NormalGG_output.h5");
     // WriteSimulationSettings may fail if existing HDF5 structure is incompatible
-    // with the current input (HighFive may throw). Guard to avoid aborting run.
     try {
         H5.WriteSimulationSettings(InputFile);
     }
     catch (...) {
         std::cerr << "Warning: could not write simulation settings to HDF5 (continuing)" << std::endl;
     }
+
+    // determine HDF5 write frequency from Settings (ProjectInput.opi) or default
+    int hdf5Freq = OPSettings.HDF5Freq;
 
     //generating initial grain structure using Voronoi algorithm
     int number_of_grains = 200;
@@ -87,7 +86,7 @@ int main(int argc, char *argv[])
 
     
 
-    std::cout << "Entering the Time Loop!!!" << std::endl;
+    std::cerr << "Starting..." << std::endl;
     for(RTC.tStep = RTC.tStart; RTC.tStep <= RTC.nSteps; RTC.IncrementTimeStep())
     {
         Timer.SetStart();
@@ -115,8 +114,31 @@ int main(int argc, char *argv[])
             Phi.WriteVTK(OPSettings, RTC.tStep);
             // write driving force fields (per-phase averages)
             dG.WriteVTK(OPSettings, Phi, RTC.tStep);
-            MicrostructureAnalysis::WriteGrainsStatistics(Phi, RTC.tStep, "NormalGG_output.h5");
             
+            // Note: Grain statistics and HDF5 visualization are written below
+            // under an independent HDF5 frequency (controlled by HDF5_FREQ env).
+        }
+
+        // HDF5 output: independent frequency controlled by HDF5_FREQ env var
+        if ((RTC.tStep % hdf5Freq) == 0)
+        {
+            // Write global features to HDF5 (moved to MicrostructureAnalysis for reuse)
+            try {
+                MicrostructureAnalysis::WriteGlobalFeatures(Phi, DO, H5, RTC, IP);
+            } catch (...) {
+                std::cerr << "Warning: could not write GlobalFeatures to HDF5 (continuing)" << std::endl;
+            }
+
+            // Write driving force fields to HDF5 (per-phase averages)
+            try {
+                dG.WriteH5(H5, OPSettings, Phi, RTC.tStep);
+            } catch (...) {
+                std::cerr << "Warning: could not write DrivingForce to HDF5 (continuing)" << std::endl;
+            }
+
+            // write grain statistics (HDF5)
+            MicrostructureAnalysis::WriteGrainsStatistics(Phi, RTC.tStep, "NormalGG_output.h5");
+
             // Write HDF5 visualization data (for post-processing)
             std::vector<H5Interface::Field_t> FieldsToWrite;
             FieldsToWrite.push_back(H5Interface::Field_t("PhaseField", 
@@ -127,23 +149,40 @@ int main(int argc, char *argv[])
                 [&Phi](int i, int j, int k) -> std::any {
                     return (double)Phi.Fields(i,j,k).get_max().index;
                 }));
+                        if (OPSettings.WriteDrivingForceH5)
+                        {
+                            for (size_t a=0; a < Phi.Nphases; ++a)
+                                for (size_t b=a; b < Phi.Nphases; ++b)
+                                {
+                                    std::string name = "dGavg_" + std::to_string(a) + "_" + std::to_string(b);
+                                    FieldsToWrite.push_back(H5Interface::Field_t(name,
+                                        [&dG,a,b](int i,int j,int k) -> std::any {
+                                            return dG.Force(i,j,k).get_average(a,b);
+                                        }));
+                                }
+                        }
             H5.WriteVisualization(RTC.tStep, OPSettings, FieldsToWrite, 1);
-            
-            // Note: Grain statistics (including HDF5 output) are now written in
-            // MicrostructureAnalysis::WriteGrainsStatistics() called above
         }
         /// Output raw data
         if (RTC.WriteRawData())
         {
             Phi.Write(OPSettings, RTC.tStep);
         }
-        /// Output to screen
+        /// Output to screen (console) and write diagnostics according to
+        /// the configured console output interval. If you want the log to
+        /// always contain per-step diagnostics, remove the surrounding
+        /// "if (RTC.WriteToScreen())" check.
         if (RTC.WriteToScreen())
         {
             double I_En = DO.AverageEnergyDensity(Phi, IP);
             std::string message = ConsoleOutput::GetStandard("Interface energy density", I_En);
+            // ConsoleOutput::WriteTimeStep will write to the log and to the
+            // console depending on verbosity. We call it only at allowed
+            // screen intervals so the log matches the screen interval.
             ConsoleOutput::WriteTimeStep(RTC, message);
-            // print driving force diagnostics and write global averages
+            // Driving force diagnostics, global averages and timer summaries use
+            // ConsoleOutput internally and therefore will be written to the log
+            // only when this block executes.
             dG.PrintDiagnostics();
             dG.AverageGlobal(Phi, RTC.tStep*RTC.dt);
             Timer.PrintWallClockSummary();
@@ -153,5 +192,7 @@ int main(int argc, char *argv[])
     }
     OP_MPI_Finalize ();
 #endif
+    std::cerr << "Finished" << std::endl;
+    ConsoleOutput::CloseLogFile();
     return EXIT_SUCCESS;
 }
