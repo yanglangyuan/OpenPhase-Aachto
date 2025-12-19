@@ -1,0 +1,73 @@
+\doxysection{Van\+Der\+Waals\+Gas.\+h}
+\hypertarget{VanDerWaalsGas_8h_source}{}\label{VanDerWaalsGas_8h_source}\index{VanDerWaalsGas.h@{VanDerWaalsGas.h}}
+\mbox{\hyperlink{VanDerWaalsGas_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2018}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ VanDerWaalsGas\_H}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ VanDerWaalsGas\_H}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas}{00042}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas}{VanDerWaalsGas}}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a45f34eb35b2caf8f326acab3453ac5df}{00044}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a45f34eb35b2caf8f326acab3453ac5df}{ReducedPressure}}(}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Density,}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}},}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CriticalDensity\ =\ 1.0,}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CriticalTemperature\ =\ 1.0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00050}00050\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((Density\ <\ DBL\_EPSILON)\ ||\ (Density\ >\ DBL\_MAX))}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ density"{}}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::to\_string(Density));}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00054}00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ density\ \ \ \ \ =\ Density/CriticalDensity;}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ temperature\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}/CriticalTemperature;}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pressure\ \ \ \ =\ 8.0*density*temperature/(3.0-\/density)\ -\/}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3.0*density*density;}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pressure;}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00061}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{00061}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{EquilibriumValues\_t}}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00063}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_a4b4d2e42dc5583c3179231987a326330}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_a4b4d2e42dc5583c3179231987a326330}{Temperature}};}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00064}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_ac4018f25d77ccca7de1a725738949815}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_ac4018f25d77ccca7de1a725738949815}{VaporDensity}};}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00065}\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_af9d79e68cb1fbb1aa26124484b7e5729}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_af9d79e68cb1fbb1aa26124484b7e5729}{LiquidDensity}};}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00066}00066\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{EquilibriumValues\_t}}\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}{EquilibriumValues}}(}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}},}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CriticalTemperature\ =\ 1.0,}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ LaplacePressure\ =\ 0.0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00071}00071\ \};}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00072}00072\ \}\ \textcolor{comment}{//namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{VanDerWaalsGas_8h_source_l00073}00073\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

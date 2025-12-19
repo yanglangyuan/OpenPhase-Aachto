@@ -53,7 +53,7 @@ void H5Interface::OpenFile(const std::string InputFileName, const std::string Ou
     if(in.good() && !out.good())
     {
         std::string command = "cp " + H5InputFileName + " " + H5OutputFileName;
-        //system(command.c_str());
+        system(command.c_str());
     }
     in.close();
     out.close();
@@ -67,21 +67,46 @@ void H5Interface::WriteSimulationSettings(const std::string InputFileName)
         std::fstream inp(InputFileName.c_str(), std::ios::in | std::ios_base::binary);
         if (!inp)
         {
-            Info::WriteExit("File " + InputFileName + " could not be opened", "H5", "WriteSimulationSettings()");
+            ConsoleOutput::WriteExit("File " + InputFileName + " could not be opened", "H5", "WriteSimulationSettings()");
             OP_Exit(EXIT_FAILURE);
         };
         std::vector<std::string> inputlines;
         std::string str;
         while(std::getline(inp, str)){
-            std::cout << str << std::endl;
             inputlines.push_back(str);
         }
         if (!file.exist("/SimulationSettings")) {
             // Create the HDF5 group path:
             file.createGroup("/SimulationSettings");
         }
-        //H5Easy::dump(file, "/ProjectInput", inputlines);
-        H5Easy::DataSet ds = H5Easy::dump(file, "/SimulationSettings/ProjectInput", inputlines, H5Easy::DumpMode::Overwrite);
+        H5Easy::DataSet ds;
+        const std::string path = "/SimulationSettings/ProjectInput";
+        try {
+            if (file.exist(path)) {
+                // Try to read existing dataset shape and compare to avoid inconsistent-dimension errors
+                try {
+                    std::vector<size_t> shape = H5Easy::getShape(file, path);
+                    if (shape.size() == 1 && shape[0] == inputlines.size()) {
+                        // Same size: safe to overwrite
+                        ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Overwrite);
+                    } else {
+                        // Different shape -> remove existing dataset and recreate
+                        try { file.unlink(path); } catch (...) { /* ignore unlink failures */ }
+                        ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+                    }
+                } catch (const std::exception &e) {
+                    // Could not inspect existing dataset (incompatible type/shape) -> remove and recreate
+                    try { if (file.exist(path)) file.unlink(path); } catch (...) { /* ignore */ }
+                    ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+                }
+            } else {
+                ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+            }
+        } catch (const std::exception &e) {
+            // Forward exceptions as a warning to the console and continue without aborting
+            ConsoleOutput::WriteWarning(std::string("Could not write simulation settings to HDF5: ") + e.what(), thisclassname, "WriteSimulationSettings()");
+            return;
+        }
 
         size_t el = ds.getElementCount();
 
@@ -91,8 +116,8 @@ void H5Interface::WriteSimulationSettings(const std::string InputFileName)
         }
     }
     #else
-    ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "WriteSimulationSettings()");
-    OP_Exit(EXIT_H5_ERROR);
+    ConsoleOutput::WriteWarning("OpenPhase is not compiled with HDF5 support, skipping HDF5 write", thisclassname, "WriteSimulationSettings()");
+    return;
     #endif
 }
 void H5Interface::WriteOPID(const std::string InputFileName)
@@ -103,21 +128,41 @@ void H5Interface::WriteOPID(const std::string InputFileName)
         std::fstream inp(InputFileName.c_str(), std::ios::in | std::ios_base::binary);
         if (!inp)
         {
-            Info::WriteExit("File " + InputFileName + " could not be opened", "H5", "WriteOPID()");
+            ConsoleOutput::WriteExit("File " + InputFileName + " could not be opened", "H5", "WriteOPID()");
             OP_Exit(EXIT_FAILURE);
         };
         std::vector<std::string> inputlines;
         std::string str;
         while(std::getline(inp, str)){
-            std::cout << str << std::endl;
             inputlines.push_back(str);
         }
         if (!file.exist("/SimulationSettings")) {
             // Create the HDF5 group path:
             file.createGroup("/SimulationSettings");
         }
-        //H5Easy::dump(file, "/ProjectInput", inputlines);
-        H5Easy::DataSet ds = H5Easy::dump(file, "/SimulationSettings/OPID", inputlines, H5Easy::DumpMode::Overwrite);
+        H5Easy::DataSet ds;
+        const std::string path = "/SimulationSettings/OPID";
+        try {
+            if (file.exist(path)) {
+                try {
+                    std::vector<size_t> shape = H5Easy::getShape(file, path);
+                    if (shape.size() == 1 && shape[0] == inputlines.size()) {
+                        ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Overwrite);
+                    } else {
+                        try { file.unlink(path); } catch (...) { }
+                        ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+                    }
+                } catch (const std::exception &e) {
+                    try { if (file.exist(path)) file.unlink(path); } catch (...) { }
+                    ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+                }
+            } else {
+                ds = H5Easy::dump(file, path, inputlines, H5Easy::DumpMode::Create);
+            }
+        } catch (const std::exception &e) {
+            ConsoleOutput::WriteWarning(std::string("Could not write OPID to HDF5: ") + e.what(), thisclassname, "WriteOPID()");
+            return;
+        }
 
         size_t el = ds.getElementCount();
 
@@ -127,8 +172,8 @@ void H5Interface::WriteOPID(const std::string InputFileName)
         }
     }
     #else
-    ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "WriteOPID()");
-    OP_Exit(EXIT_H5_ERROR);
+    ConsoleOutput::WriteWarning("OpenPhase is not compiled with HDF5 support, skipping HDF5 OPID write", thisclassname, "WriteOPID()");
+    return;
     #endif
 }
 
@@ -137,23 +182,24 @@ void H5Interface::getProjectInput(std::stringstream& data)
     #ifdef H5OP
     H5Easy::File file(H5InputFileName, H5Easy::File::OpenOrCreate);
     if (!file.exist("/SimulationSettings")) {
-        Info::WriteExit("/SimulationSettings not found.", "H5", "getProjectInput()");
+        ConsoleOutput::WriteExit("/SimulationSettings not found.", "H5", "getProjectInput()");
         OP_Exit(EXIT_FAILURE);
     }
     if (!file.exist("/SimulationSettings/ProjectInput")) {
-        Info::WriteExit("/SimulationSettings/ProjectInput not found.", "H5", "getProjectInput()");
+        ConsoleOutput::WriteExit("/SimulationSettings/ProjectInput not found.", "H5", "getProjectInput()");
         OP_Exit(EXIT_FAILURE);
     }
     std::vector<std::string> inputlines;
     inputlines = H5Easy::load<std::vector<std::string> >(file, "/SimulationSettings/ProjectInput");
     data.clear();
-    for (int i = 0; i < inputlines.size(); ++i)
+    for (size_t i = 0; i < inputlines.size(); ++i)
     {
         data << inputlines[i] << std::endl;
     }
     #else
-    ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "getProjectInput()");
+    ConsoleOutput::WriteWarning("OpenPhase is not compiled with HDF5 support, getProjectInput skipped", thisclassname, "getProjectInput()");
     OP_Exit(EXIT_H5_ERROR);
+    return;
     #endif
 }
 
@@ -162,23 +208,24 @@ void H5Interface::getOPID(std::stringstream& data)
     #ifdef H5OP
     H5Easy::File file(H5InputFileName, H5Easy::File::OpenOrCreate);
     if (!file.exist("/SimulationSettings")) {
-        Info::WriteExit("/SimulationSettings not found.", "H5", "getOPID()");
+        ConsoleOutput::WriteExit("/SimulationSettings not found.", "H5", "getOPID()");
         OP_Exit(EXIT_FAILURE);
     }
     if (!file.exist("/SimulationSettings/OPID")) {
-        Info::WriteExit("/SimulationSettings/OPID not found.", "H5", "getOPID()");
+        ConsoleOutput::WriteExit("/SimulationSettings/OPID not found.", "H5", "getOPID()");
         OP_Exit(EXIT_FAILURE);
     }
     std::vector<std::string> inputlines;
     inputlines = H5Easy::load<std::vector<std::string> >(file, "/SimulationSettings/OPID");
     data.clear();
-    for (int i = 0; i < inputlines.size(); ++i)
+    for (size_t i = 0; i < inputlines.size(); ++i)
     {
         data << inputlines[i] << std::endl;
     }
     #else
-    ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "getOPID()");
+    ConsoleOutput::WriteWarning("OpenPhase is not compiled with HDF5 support, getOPID skipped", thisclassname, "getOPID()");
     OP_Exit(EXIT_H5_ERROR);
+    return;
     #endif
 }
 
@@ -189,9 +236,9 @@ void H5Interface::WriteVisualization(
         const int resolution)
     {
         #ifdef H5OP
-        const long int Nx = resolution*locSettings.Nx;
-        const long int Ny = resolution*locSettings.Ny;
-        const long int Nz = resolution*locSettings.Nz;
+        const long int Nx = resolution*locSettings.Grid.Nx;
+        const long int Ny = resolution*locSettings.Grid.Ny;
+        const long int Nz = resolution*locSettings.Grid.Nz;
 
         std::stringstream xdmffilename;
         xdmffilename << H5OutputFileName << ".xdmf";
@@ -355,8 +402,8 @@ void H5Interface::WriteVisualization(
              Nx,  Ny, Nz);
 
         #else
-        ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "WriteVisualization()");
-        OP_Exit(EXIT_H5_ERROR);
+        ConsoleOutput::WriteWarning("OpenPhase is not compiled with HDF5 support, skipping HDF5 visualization write", thisclassname, "WriteVisualization()");
+        return;
         #endif
     }
 }

@@ -1,0 +1,722 @@
+\doxysection{openphase\+::Interface\+Mobility\+Model Class Reference}
+\hypertarget{classopenphase_1_1InterfaceMobilityModel}{}\label{classopenphase_1_1InterfaceMobilityModel}\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+
+
+\texorpdfstring{$<$}{<} Interface mobility models implementation class  
+
+
+
+
+{\ttfamily \#include "{}Interface\+Mobility\+Model.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a26333aa47ffbad0b12f16638f9ee0815}{Interface\+Mobility\+Model}} ()
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a908ca90f0735827f0ae00c9e2c3a1587}{Read\+Input\+Iso}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a48a11c410ef424e6fffc45e8fa8798b6}{Read\+Input\+Cubic}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a914e4eda19d1fb85e6c6a478ad5d3975}{Read\+Input\+Hex\+Boettger}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf805fc0cebd5806af1100ce9c1ecf0b}{Read\+Input\+Hex\+Sun}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_afb2f0a413900fcb2942a64c78dbd4fc4}{Read\+Input\+Hex\+Yang}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aed1ab878726977a647077f1dd11dcfc8}{Read\+JSONIso}} (\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&j, size\+\_\+t alpha, size\+\_\+t beta)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a08da5f599e8c1a137d8264d9996971c9}{Read\+JSONCubic}} (\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&j, size\+\_\+t alpha, size\+\_\+t beta)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a24887f9da0e54afb42f00704270f4074}{Read\+JSONHex\+Boettger}} (\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&j, size\+\_\+t alpha, size\+\_\+t beta)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a57ee5c8420f99eb102f8daae99cbdb73}{Read\+JSONHex\+Sun}} (\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&j, size\+\_\+t alpha, size\+\_\+t beta)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a483cc478748d41e930e53855797db0e4}{Read\+JSONHex\+Yang}} (\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&j, size\+\_\+t alpha, size\+\_\+t beta)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af92e8a01a37aa729aeb4bcf0f61ea4e3}{Read\+Input\+Faceted}} (std\+::stringstream \&inp, int module\+Location, std\+::string counter)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_abf7dcfe56218ceb0caa5ce0044e9b3ec}{Calculate}} (\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&loc\+Normal)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacb}{Interface\+Mobility\+Models}} \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}}
+\begin{DoxyCompactList}\small\item\em Number of facet types, e.\+g. \texorpdfstring{$<$}{<}100\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}111\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}110\texorpdfstring{$>$}{>}, etc... \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} $>$ $>$ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{Facet\+Vectors}}
+\begin{DoxyCompactList}\small\item\em Set of planes for different facet types. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{Facet\+Mobility}}
+\begin{DoxyCompactList}\small\item\em Interface mobility for a facet family. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8}{Facet\+Epsilon}}
+\begin{DoxyCompactList}\small\item\em Interface mobility anisotropy for a facet family. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}
+\begin{DoxyCompactList}\small\item\em Interface mobility. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{Max\+Mobility}}
+\begin{DoxyCompactList}\small\item\em Maximum interface mobility for a phase pair. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}
+\begin{DoxyCompactList}\small\item\em Interface mobility anisotropy parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}
+\begin{DoxyCompactList}\small\item\em Interface mobility anisotropy parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}
+\begin{DoxyCompactList}\small\item\em Interface mobility anisotropy parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}{Epsilon4}}
+\begin{DoxyCompactList}\small\item\em Interface mobility anisotropy parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{Activation\+Energy}}
+\begin{DoxyCompactList}\small\item\em Interface mobility activation energy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Interface mobility models implementation class 
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00046}{46}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a26333aa47ffbad0b12f16638f9ee0815}\label{classopenphase_1_1InterfaceMobilityModel_a26333aa47ffbad0b12f16638f9ee0815} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!InterfaceMobilityModel@{InterfaceMobilityModel}}
+\index{InterfaceMobilityModel@{InterfaceMobilityModel}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{InterfaceMobilityModel()}{InterfaceMobilityModel()}}
+{\footnotesize\ttfamily openphase\+::\+Interface\+Mobility\+Model\+::\+Interface\+Mobility\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00051}{51}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba3a631438d6f2eba0ef81c8cc070fe15f}{InterfaceMobilityModels::Iso}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ 0.0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ 0.0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ 0.0;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ 0.0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ =\ 0.0;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}\ =\ 0.0;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}{Epsilon4}}\ =\ 0.0;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}}\ \ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_abf7dcfe56218ceb0caa5ce0044e9b3ec}\label{classopenphase_1_1InterfaceMobilityModel_abf7dcfe56218ceb0caa5ce0044e9b3ec} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Calculate@{Calculate}}
+\index{Calculate@{Calculate}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Calculate()}{Calculate()}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Calculate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&}]{loc\+Normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc\+Normal} & Calculate anisotropic interface mobility for cubic symmetry grains \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00210}{210}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211\ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locMobility\ =\ 0.0;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}})}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba84ab79217fad62904ab3f60586129611}{InterfaceMobilityModels::Ext}}:}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba3a631438d6f2eba0ef81c8cc070fe15f}{InterfaceMobilityModels::Iso}}:}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbaec6b5414eb175379ff9efc9b3eef5814}{InterfaceMobilityModels::Cubic}}:}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}*(1.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ *\ (1.5\ -\/\ 2.5*(pow(locNormal[0],\ 4)\ +}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pow(locNormal[1],\ 4)\ +}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pow(locNormal[2],\ 4))));}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba646ca404177b9aed495afa6cd1f342ce}{InterfaceMobilityModels::HexBoettger}}:}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}*(1.0\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ *}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ \ \ \ \ \ std::pow(locNormal[0],\ 6)\ -\/}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::pow(locNormal[1],\ 6)\ -\/}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15.0\ *\ std::pow(locNormal[0],\ 4)\ *\ locNormal[1]*locNormal[1]\ +}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15.0\ *\ std::pow(locNormal[1],\ 4)\ *\ locNormal[0]*locNormal[0]\ +}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (5.0\ *\ std::pow(locNormal[2],\ 4)\ -\/}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5.0\ *\ std::pow(locNormal[2],\ 2)\ +}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::pow(locNormal[2],\ 6))));}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba371d8b91e59d2eedd8090d362a62458b}{InterfaceMobilityModels::HexSun}}:}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}*(1.0}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}*sqrt(5.0/16.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(3.0*locNormal[2]*locNormal[2]\ -\/\ 1.0)}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}*3.0/16.0/sqrt(\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(35.0*pow(locNormal[2],4)\ -\/}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 30.0*locNormal[2]*locNormal[2]\ +\ 3.0)}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}*sqrt(13.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})/32.0*(231.0*pow(locNormal[2],6)\ -\/}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 315.0*pow(locNormal[2],4)\ +}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 105.0*locNormal[2]*locNormal[2]\ -\/\ 5.0)}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}{Epsilon4}}*sqrt(6006.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})/64.0*(pow(locNormal[0],6)\ -\/}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15.0*pow(locNormal[0],4)*locNormal[1]*locNormal[1]\ +}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15.0*locNormal[0]*locNormal[0]*pow(locNormal[1],4)\ -\/}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pow(locNormal[1],6)));}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbade122e4d1f5d9cd9ccca990754faf5ce}{InterfaceMobilityModels::HexYang}}:}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}*(1.0}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ *\ pow((3.0*locNormal[2]*locNormal[2]\ -\/\ 1.0),\ 2)}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ *\ pow((locNormal[0]*locNormal[0]*locNormal[0]\ -\/\ 3.0*locNormal[0]*locNormal[1]*locNormal[1]),2)}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ pow((9.0*locNormal[2]*locNormal[2]\ -\/\ 1.0\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}),2));}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbae5ce007330016a93bd2b5355a03cf403}{InterfaceMobilityModels::Faceted}}:}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Inclination\ =\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}};}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MobilityA\ =\ 0.0;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ EpsilonMA\ =\ 0.0;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculating\ inclination\ angle\ between\ facet\ normal\ and\ interface\ normal}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}};\ n++)}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{FacetVectors}}[n].size();\ j++)}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dVector3\ locFacet\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{FacetVectors}}[n][j].normalized();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dotVec\ =\ acos(locNormal\ *\ locFacet);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(dotVec)\ <=\ fabs(Inclination))}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Inclination\ =\ dotVec;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MobilityA\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{FacetMobility}}[n];}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EpsilonMA\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8}{FacetEpsilon}}[n];}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMobility\ =\ MobilityA\ *\ (EpsilonMA\ +\ (1.0\ -\/\ EpsilonMA)\ *\ fabs(tan(Inclination))\ *\ tanh(pow(fabs(tan(Inclination)),-\/1)));}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ locMobility;}
+\DoxyCodeLine{00292\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a48a11c410ef424e6fffc45e8fa8798b6}\label{classopenphase_1_1InterfaceMobilityModel_a48a11c410ef424e6fffc45e8fa8798b6} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputCubic@{ReadInputCubic}}
+\index{ReadInputCubic@{ReadInputCubic}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputCubic()}{ReadInputCubic()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Cubic (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the cubic model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00071}{71}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu"{}})\ +\ counter);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM"{}})\ +\ counter);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Q"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};\textcolor{comment}{//*std::min(1.0,\ (1.0\ -\/\ Epsilon1));}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbaec6b5414eb175379ff9efc9b3eef5814}{InterfaceMobilityModels::Cubic}};}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_af92e8a01a37aa729aeb4bcf0f61ea4e3}\label{classopenphase_1_1InterfaceMobilityModel_af92e8a01a37aa729aeb4bcf0f61ea4e3} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputFaceted@{ReadInputFaceted}}
+\index{ReadInputFaceted@{ReadInputFaceted}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputFaceted()}{ReadInputFaceted()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Faceted (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the Faceted model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00165}{165}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ FacetFamilies\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}NfacetFamilies"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}}\ ==\ 0)}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Nfacets"{}})\ +\ counter);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ FacetFamilies\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{FacetVectors}}.resize(\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}});}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{FacetMobility}}.resize(\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}},0.0);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8}{FacetEpsilon}}.resize(\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}},0.0);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0\ ;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}};\ n++)}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ converter;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ converter\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ n;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ counter1\ =\ converter.str();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ iVector3\ locFacet\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a6174954039615d494da9158d39237c2f}{FileInterface::ReadParameterV3I}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Facet"{}})\ +\ counter\ +\ counter1,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FacetFamilies)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{FacetVectors}}[n]\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a4e705f80c82f77b5ebec80cdbd6d8dcb}{Tools::findIndexPermutations}}(locFacet);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}{FacetVectors}}[n].push\_back(locFacet);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{FacetMobility}}[n]\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}MuF"{}})\ +\ counter\ +\ counter1);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8}{FacetEpsilon}}[n]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonMF"{}})\ +\ counter\ +\ counter1);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}{Nfacets}};\ n++)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{FacetMobility}}[n]\ >\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}})}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}{FacetMobility}}[n];}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbae5ce007330016a93bd2b5355a03cf403}{InterfaceMobilityModels::Faceted}};}
+\DoxyCodeLine{00208\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a914e4eda19d1fb85e6c6a478ad5d3975}\label{classopenphase_1_1InterfaceMobilityModel_a914e4eda19d1fb85e6c6a478ad5d3975} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputHexBoettger@{ReadInputHexBoettger}}
+\index{ReadInputHexBoettger@{ReadInputHexBoettger}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputHexBoettger()}{ReadInputHexBoettger()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Hex\+Boettger (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the hexagonal model by Boettger et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00080}{80}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu"{}})\ +\ counter);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM"{}})\ +\ counter);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Q"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};\textcolor{comment}{//*std::min(1.0,\ (1.0\ -\/\ Epsilon1));}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba646ca404177b9aed495afa6cd1f342ce}{InterfaceMobilityModels::HexBoettger}};}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_acf805fc0cebd5806af1100ce9c1ecf0b}\label{classopenphase_1_1InterfaceMobilityModel_acf805fc0cebd5806af1100ce9c1ecf0b} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputHexSun@{ReadInputHexSun}}
+\index{ReadInputHexSun@{ReadInputHexSun}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputHexSun()}{ReadInputHexSun()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Hex\+Sun (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the hexagonal model by Sun et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00089}{89}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu"{}})\ +\ counter);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM20"{}})\ +\ counter,\ \textcolor{keyword}{false},\ -\/0.026);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM40"{}})\ +\ counter,\ \textcolor{keyword}{false},\ \ 0.0);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM60"{}})\ +\ counter,\ \textcolor{keyword}{false},\ \ 0.0);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}{Epsilon4}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM66"{}})\ +\ counter,\ \textcolor{keyword}{false},\ \ 0.003);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Q"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba371d8b91e59d2eedd8090d362a62458b}{InterfaceMobilityModels::HexSun}};}
+\DoxyCodeLine{00101\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_afb2f0a413900fcb2942a64c78dbd4fc4}\label{classopenphase_1_1InterfaceMobilityModel_afb2f0a413900fcb2942a64c78dbd4fc4} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputHexYang@{ReadInputHexYang}}
+\index{ReadInputHexYang@{ReadInputHexYang}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputHexYang()}{ReadInputHexYang()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Hex\+Yang (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the hexagonal model by Yang et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00102}{102}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu"{}})\ +\ counter);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Q"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM1"{}})\ +\ counter,\ \textcolor{keyword}{false},-\/0.02);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM2"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.15);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EpsilonM3"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.15);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbade122e4d1f5d9cd9ccca990754faf5ce}{InterfaceMobilityModels::HexYang}};}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a908ca90f0735827f0ae00c9e2c3a1587}\label{classopenphase_1_1InterfaceMobilityModel_a908ca90f0735827f0ae00c9e2c3a1587} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadInputIso@{ReadInputIso}}
+\index{ReadInputIso@{ReadInputIso}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadInputIso()}{ReadInputIso()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+Input\+Iso (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp,  }\item[{int}]{module\+Location,  }\item[{std\+::string}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & Read parameters of the isotropic model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00063}{63}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu"{}})\ +\ counter);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Q"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba3a631438d6f2eba0ef81c8cc070fe15f}{InterfaceMobilityModels::Iso}};}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a08da5f599e8c1a137d8264d9996971c9}\label{classopenphase_1_1InterfaceMobilityModel_a08da5f599e8c1a137d8264d9996971c9} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadJSONCubic@{ReadJSONCubic}}
+\index{ReadJSONCubic@{ReadJSONCubic}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadJSONCubic()}{ReadJSONCubic()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+JSONCubic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&}]{j,  }\item[{size\+\_\+t}]{alpha,  }\item[{size\+\_\+t}]{beta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & Read parameters of the cubic model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00122}{122}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Mu"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Q"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};\textcolor{comment}{//*std::min(1.0,\ (1.0\ -\/\ Epsilon1));}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbaec6b5414eb175379ff9efc9b3eef5814}{InterfaceMobilityModels::Cubic}};}
+\DoxyCodeLine{00130\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a24887f9da0e54afb42f00704270f4074}\label{classopenphase_1_1InterfaceMobilityModel_a24887f9da0e54afb42f00704270f4074} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadJSONHexBoettger@{ReadJSONHexBoettger}}
+\index{ReadJSONHexBoettger@{ReadJSONHexBoettger}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadJSONHexBoettger()}{ReadJSONHexBoettger()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+JSONHex\+Boettger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&}]{j,  }\item[{size\+\_\+t}]{alpha,  }\item[{size\+\_\+t}]{beta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & Read parameters of the hexagonal model by Boettger et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00131}{131}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Mu"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Q"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};\textcolor{comment}{//*std::min(1.0,\ (1.0\ -\/\ Epsilon1));}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba646ca404177b9aed495afa6cd1f342ce}{InterfaceMobilityModels::HexBoettger}};}
+\DoxyCodeLine{00139\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a57ee5c8420f99eb102f8daae99cbdb73}\label{classopenphase_1_1InterfaceMobilityModel_a57ee5c8420f99eb102f8daae99cbdb73} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadJSONHexSun@{ReadJSONHexSun}}
+\index{ReadJSONHexSun@{ReadJSONHexSun}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadJSONHexSun()}{ReadJSONHexSun()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+JSONHex\+Sun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&}]{j,  }\item[{size\+\_\+t}]{alpha,  }\item[{size\+\_\+t}]{beta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & Read parameters of the hexagonal model by Sun et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00140}{140}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Mu"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM20"{}},\ alpha,\ beta\},\ -\/0.026);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM40"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM60"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}{Epsilon4}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM66"{}},\ alpha,\ beta\},\ 0.003);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Q"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba371d8b91e59d2eedd8090d362a62458b}{InterfaceMobilityModels::HexSun}};}
+\DoxyCodeLine{00152\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a483cc478748d41e930e53855797db0e4}\label{classopenphase_1_1InterfaceMobilityModel_a483cc478748d41e930e53855797db0e4} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadJSONHexYang@{ReadJSONHexYang}}
+\index{ReadJSONHexYang@{ReadJSONHexYang}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadJSONHexYang()}{ReadJSONHexYang()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+JSONHex\+Yang (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&}]{j,  }\item[{size\+\_\+t}]{alpha,  }\item[{size\+\_\+t}]{beta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & Read parameters of the hexagonal model by Yang et al \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00153}{153}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Mu"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Q"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}{Epsilon1}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM1"{}},\ alpha,\ beta\},-\/0.02);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}{Epsilon2}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM2"{}},\ alpha,\ beta\},\ 0.15);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}{Epsilon3}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}EpsilonM3"{}},\ alpha,\ beta\},\ 0.15);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacbade122e4d1f5d9cd9ccca990754faf5ce}{InterfaceMobilityModels::HexYang}};}
+\DoxyCodeLine{00164\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_aed1ab878726977a647077f1dd11dcfc8}\label{classopenphase_1_1InterfaceMobilityModel_aed1ab878726977a647077f1dd11dcfc8} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ReadJSONIso@{ReadJSONIso}}
+\index{ReadJSONIso@{ReadJSONIso}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ReadJSONIso()}{ReadJSONIso()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Mobility\+Model\+::\+Read\+JSONIso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}} \&}]{j,  }\item[{size\+\_\+t}]{alpha,  }\item[{size\+\_\+t}]{beta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & Read parameters of the isotropic model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00114}{114}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Mu"{}},\ alpha,\ beta\});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}{ActivationEnergy}}\ =\ FileInterface::ReadParameter<double>(j,\ \{\textcolor{stringliteral}{"{}Q"{}},\ alpha,\ beta\},\ 0.0);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}{MaxMobility}}\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}{Mobility}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}{Model}}\ =\ \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacba3a631438d6f2eba0ef81c8cc070fe15f}{InterfaceMobilityModels::Iso}};}
+\DoxyCodeLine{00121\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075}\label{classopenphase_1_1InterfaceMobilityModel_aa7e59288c4dd09e95dfccb542e072075} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!ActivationEnergy@{ActivationEnergy}}
+\index{ActivationEnergy@{ActivationEnergy}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{ActivationEnergy}{ActivationEnergy}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Activation\+Energy}
+
+
+
+Interface mobility activation energy. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00305}{305}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1}\label{classopenphase_1_1InterfaceMobilityModel_a1c4c408b1118d871bc9d7f1f7a0749e1} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Epsilon1@{Epsilon1}}
+\index{Epsilon1@{Epsilon1}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Epsilon1}{Epsilon1}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Epsilon1}
+
+
+
+Interface mobility anisotropy parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00301}{301}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7}\label{classopenphase_1_1InterfaceMobilityModel_a17eca20f065e427994ccff98d2f1e4e7} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Epsilon2@{Epsilon2}}
+\index{Epsilon2@{Epsilon2}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Epsilon2}{Epsilon2}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Epsilon2}
+
+
+
+Interface mobility anisotropy parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00302}{302}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4}\label{classopenphase_1_1InterfaceMobilityModel_af403b865444e7a9cd0bc6fa65c8578a4} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Epsilon3@{Epsilon3}}
+\index{Epsilon3@{Epsilon3}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Epsilon3}{Epsilon3}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Epsilon3}
+
+
+
+Interface mobility anisotropy parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00303}{303}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e}\label{classopenphase_1_1InterfaceMobilityModel_ab98163cb95b9db6948ea9ddb3e06df1e} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Epsilon4@{Epsilon4}}
+\index{Epsilon4@{Epsilon4}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Epsilon4}{Epsilon4}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Epsilon4}
+
+
+
+Interface mobility anisotropy parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00304}{304}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8}\label{classopenphase_1_1InterfaceMobilityModel_a6b4112bc8870b78fa6c1fcffe23a85d8} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!FacetEpsilon@{FacetEpsilon}}
+\index{FacetEpsilon@{FacetEpsilon}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{FacetEpsilon}{FacetEpsilon}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Interface\+Mobility\+Model\+::\+Facet\+Epsilon}
+
+
+
+Interface mobility anisotropy for a facet family. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00297}{297}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f}\label{classopenphase_1_1InterfaceMobilityModel_acf6cddb33067d3a22c854212e17f956f} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!FacetMobility@{FacetMobility}}
+\index{FacetMobility@{FacetMobility}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{FacetMobility}{FacetMobility}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Interface\+Mobility\+Model\+::\+Facet\+Mobility}
+
+
+
+Interface mobility for a facet family. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00296}{296}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf}\label{classopenphase_1_1InterfaceMobilityModel_adf6d330ae272872b4890f8970049b4bf} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!FacetVectors@{FacetVectors}}
+\index{FacetVectors@{FacetVectors}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{FacetVectors}{FacetVectors}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}}$>$ $>$ openphase\+::\+Interface\+Mobility\+Model\+::\+Facet\+Vectors}
+
+
+
+Set of planes for different facet types. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00295}{295}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4}\label{classopenphase_1_1InterfaceMobilityModel_a3005ffa0a8df141b687e871938272fe4} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!MaxMobility@{MaxMobility}}
+\index{MaxMobility@{MaxMobility}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{MaxMobility}{MaxMobility}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Max\+Mobility}
+
+
+
+Maximum interface mobility for a phase pair. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00300}{300}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39}\label{classopenphase_1_1InterfaceMobilityModel_a31930d9a826b3101c3890f0515c66f39} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Mobility@{Mobility}}
+\index{Mobility@{Mobility}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Mobility}{Mobility}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Mobility\+Model\+::\+Mobility}
+
+
+
+Interface mobility. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00299}{299}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e}\label{classopenphase_1_1InterfaceMobilityModel_add013c393df8400f1146ec02d7c12e9e} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Model@{Model}}
+\index{Model@{Model}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Model}{Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_a126ea6dc108a6547898bdfe9497faacb}{Interface\+Mobility\+Models}} openphase\+::\+Interface\+Mobility\+Model\+::\+Model}
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00049}{49}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5}\label{classopenphase_1_1InterfaceMobilityModel_ad504da841749555fa9bb96654ff3d4c5} 
+\index{openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}!Nfacets@{Nfacets}}
+\index{Nfacets@{Nfacets}!openphase::InterfaceMobilityModel@{openphase::InterfaceMobilityModel}}
+\doxysubsubsection{\texorpdfstring{Nfacets}{Nfacets}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Interface\+Mobility\+Model\+::\+Nfacets}
+
+
+
+Number of facet types, e.\+g. \texorpdfstring{$<$}{<}100\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}111\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}110\texorpdfstring{$>$}{>}, etc... 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceMobilityModel_8h_source_l00294}{294}} of file \mbox{\hyperlink{InterfaceMobilityModel_8h_source}{Interface\+Mobility\+Model.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{InterfaceMobilityModel_8h}{Interface\+Mobility\+Model.\+h}}\end{DoxyCompactItemize}

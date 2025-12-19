@@ -1,0 +1,361 @@
+\doxysection{openphase\+::Temperature1\+Dextension Class Reference}
+\hypertarget{classopenphase_1_1Temperature1Dextension}{}\label{classopenphase_1_1Temperature1Dextension}\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+
+
+\texorpdfstring{$<$}{<} 1D temperature field extension storage  
+
+
+
+
+{\ttfamily \#include "{}Temperature.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_aee1eaa4d23bd4409fe7c85b4a1c42652}{Initialize}} (size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}, \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} direction)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \& \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_af4955b506cf2c5fa0f491b2c1f3aaeab}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \&RHS)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a778ad91fb4209ea77481d0c2c19c0d09}{set\+BC}} (\mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}} ext\+BC)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a9e7ad2fe9c38179fed34a54170bda906}{set\+Fixed\+BC}} (double value)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a90aa195bcf70bf52d2c7b837ee94d6fe}{move\+Frame}} (const int dx, const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}} ext\+BC)
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac53c83fca8b379830778260532662cb5}{is\+Active}} () const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Returns true if extension was activated, false otherwise \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}} () const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ab38d30d543b9532a216aa3f602670a94}{store\+\_\+temporary}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ab118ee1385ac35aca734528831bec299}{read}} (std\+::ifstream \&out)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_aa7c9d8074c9bb8c29c3f2a8cb92d7c1d}{write}} (std\+::ofstream \&out) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a7fffbe682cd1b25e1896c235766985e0}{Qdot}}
+\begin{DoxyCompactList}\small\item\em Heat source at the far end of the extension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}
+\begin{DoxyCompactList}\small\item\em Data storage array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b}{Data\+TMP}}
+\begin{DoxyCompactList}\small\item\em Temporary data storage for iterative heat diffusion solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a96bb0217ee626665b64f50a9c0888262}{Direction}}
+\begin{DoxyCompactList}\small\item\em Selects the extension\textquotesingle{}s direction\+: 0 -\/\texorpdfstring{$>$}{>} direction inactive, 1 -\/\texorpdfstring{$>$}{>} upper boundary extension, -\/1 -\/\texorpdfstring{$>$}{>} lower boundary extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} 1D temperature field extension storage 
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00069}{69}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_aee1eaa4d23bd4409fe7c85b4a1c42652}\label{classopenphase_1_1Temperature1Dextension_aee1eaa4d23bd4409fe7c85b4a1c42652} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::\+Initialize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00072}{72}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}\ <=\ 0)\ \textcolor{comment}{//\ Checks\ for\ sufficient\ extension\ size}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}1D\ temperature\ extension\ size\ =\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}\ <<\ \textcolor{stringliteral}{"{}\ is\ incorrect!\(\backslash\)n"{}}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}It\ should\ be\ in\ the\ range\ [1,\ inf)\ for\ correct\ operation\(\backslash\)n"{}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\ \textcolor{stringliteral}{"{}Temperature1Dextension"{}},\ \textcolor{stringliteral}{"{}Initialize()"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a4f23c3495787593a39a586da4a6bd697}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}},\ 1);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b}{DataTMP}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a4f23c3495787593a39a586da4a6bd697}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}},\ 1);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a96bb0217ee626665b64f50a9c0888262}{Direction}}\ =\ direction;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a7fffbe682cd1b25e1896c235766985e0}{Qdot}}\ =\ 0.0;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_ac53c83fca8b379830778260532662cb5}\label{classopenphase_1_1Temperature1Dextension_ac53c83fca8b379830778260532662cb5} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!isActive@{isActive}}
+\index{isActive@{isActive}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool openphase\+::\+Temperature1\+Dextension\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Returns true if extension was activated, false otherwise 
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00145}{145}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}()\ >\ 0;}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_a90aa195bcf70bf52d2c7b837ee94d6fe}\label{classopenphase_1_1Temperature1Dextension_a90aa195bcf70bf52d2c7b837ee94d6fe} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!moveFrame@{moveFrame}}
+\index{moveFrame@{moveFrame}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{moveFrame()}{moveFrame()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}}}]{ext\+BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ext\+BC} & Moves the data according to the moving frame motion \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00131}{131}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dx\ >\ 0)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ (\textcolor{keywordtype}{long}\ int)\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}();\ x++)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(x)\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(x+dx);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dx\ <\ 0)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ x\ =\ (\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int})\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}()\ -\/\ 1;\ x\ >=\ 0;\ x-\/-\/)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(x)\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(x+dx);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a778ad91fb4209ea77481d0c2c19c0d09}{setBC}}(extBC);}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_af4955b506cf2c5fa0f491b2c1f3aaeab}\label{classopenphase_1_1Temperature1Dextension_af4955b506cf2c5fa0f491b2c1f3aaeab} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \& openphase\+::\+Temperature1\+Dextension\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \&}]{RHS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00088}{88}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a7fffbe682cd1b25e1896c235766985e0}{Qdot}}\ \ \ \ \ \ =\ RHS.Qdot;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}\ \ \ \ \ \ =\ RHS.Data;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b}{DataTMP}}\ \ \ =\ RHS.DataTMP;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_a96bb0217ee626665b64f50a9c0888262}{Direction}}\ =\ RHS.Direction;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_ab118ee1385ac35aca734528831bec299}\label{classopenphase_1_1Temperature1Dextension_ab118ee1385ac35aca734528831bec299} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!read@{read}}
+\index{read@{read}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00157}{157}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ out.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a1f571ff78fe9f2d34948b4e6b3e9698b}{data}}()),\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a844e6591dcc678b2a3acafc9e659aff7}{total\_size}}()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_a778ad91fb4209ea77481d0c2c19c0d09}\label{classopenphase_1_1Temperature1Dextension_a778ad91fb4209ea77481d0c2c19c0d09} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!setBC@{setBC}}
+\index{setBC@{setBC}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{setBC()}{setBC()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::set\+BC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}}}]{ext\+BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ext\+BC} & Sets boundary condition at the far end of the extension \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00097}{97}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(extBC)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ message\ =\ std::string(\textcolor{stringliteral}{"{}If\ 1D\ temperature\ extension\ is\ active,\ periodic\ boundary\ conditions\(\backslash\)n"{}})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::string(\textcolor{stringliteral}{"{}along\ the\ extension\ dimension\ are\ not\ permitted.\(\backslash\)n"{}})}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::string(\textcolor{stringliteral}{"{}Permitted\ boundary\ conditions:\ NoFlux,\ Free\ and\ Fixed."{}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(message,\ \textcolor{stringliteral}{"{}Temperature1Dextension"{}},\ \textcolor{stringliteral}{"{}setBC()"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba2403def5083f02105e7802b3b315681e}{BoundaryConditionTypes::Mirror}}:}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}())\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}()-\/1);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bab24ce0cd392a5b0b8dedc66c25213594}{BoundaryConditionTypes::Free}}:}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}())\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}()-\/1)*2.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}()-\/2);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_a9e7ad2fe9c38179fed34a54170bda906}\label{classopenphase_1_1Temperature1Dextension_a9e7ad2fe9c38179fed34a54170bda906} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!setFixedBC@{setFixedBC}}
+\index{setFixedBC@{setFixedBC}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{setFixedBC()}{setFixedBC()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::set\+Fixed\+BC (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Sets fixed temperature at the far end of the extension to the specified value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00127}{127}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}{size}}())\ =\ value;}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154}\label{classopenphase_1_1Temperature1Dextension_acc8ed4146d0f86255cbdc100df6fb154} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!size@{size}}
+\index{size@{size}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Temperature1\+Dextension\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00149}{149}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_ab38d30d543b9532a216aa3f602670a94}\label{classopenphase_1_1Temperature1Dextension_ab38d30d543b9532a216aa3f602670a94} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!store\_temporary@{store\_temporary}}
+\index{store\_temporary@{store\_temporary}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{store\_temporary()}{store\_temporary()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::store\+\_\+temporary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00153}{153}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b}{DataTMP}}\ =\ \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}};}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_aa7c9d8074c9bb8c29c3f2a8cb92d7c1d}\label{classopenphase_1_1Temperature1Dextension_aa7c9d8074c9bb8c29c3f2a8cb92d7c1d} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!write@{write}}
+\index{write@{write}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void openphase\+::\+Temperature1\+Dextension\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00161}{161}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a1f571ff78fe9f2d34948b4e6b3e9698b}{data}}()),\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a844e6591dcc678b2a3acafc9e659aff7}{total\_size}}()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f}\label{classopenphase_1_1Temperature1Dextension_ac0cc29f1d4dd2c142688608c2e89014f} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!Data@{Data}}
+\index{Data@{Data}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$double,0$>$ openphase\+::\+Temperature1\+Dextension\+::\+Data}
+
+
+
+Data storage array. 
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00167}{167}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+\Hypertarget{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b}\label{classopenphase_1_1Temperature1Dextension_ac76fb39f2cfbb1e873242ec68a8f704b} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!DataTMP@{DataTMP}}
+\index{DataTMP@{DataTMP}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{DataTMP}{DataTMP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$double,0$>$ openphase\+::\+Temperature1\+Dextension\+::\+Data\+TMP}
+
+
+
+Temporary data storage for iterative heat diffusion solver. 
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00168}{168}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+\Hypertarget{classopenphase_1_1Temperature1Dextension_a96bb0217ee626665b64f50a9c0888262}\label{classopenphase_1_1Temperature1Dextension_a96bb0217ee626665b64f50a9c0888262} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!Direction@{Direction}}
+\index{Direction@{Direction}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} openphase\+::\+Temperature1\+Dextension\+::\+Direction}
+
+
+
+Selects the extension\textquotesingle{}s direction\+: 0 -\/\texorpdfstring{$>$}{>} direction inactive, 1 -\/\texorpdfstring{$>$}{>} upper boundary extension, -\/1 -\/\texorpdfstring{$>$}{>} lower boundary extension. 
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00169}{169}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+\Hypertarget{classopenphase_1_1Temperature1Dextension_a7fffbe682cd1b25e1896c235766985e0}\label{classopenphase_1_1Temperature1Dextension_a7fffbe682cd1b25e1896c235766985e0} 
+\index{openphase::Temperature1Dextension@{openphase::Temperature1Dextension}!Qdot@{Qdot}}
+\index{Qdot@{Qdot}!openphase::Temperature1Dextension@{openphase::Temperature1Dextension}}
+\doxysubsubsection{\texorpdfstring{Qdot}{Qdot}}
+{\footnotesize\ttfamily double openphase\+::\+Temperature1\+Dextension\+::\+Qdot}
+
+
+
+Heat source at the far end of the extension. 
+
+
+
+Definition at line \mbox{\hyperlink{Temperature_8h_source_l00166}{166}} of file \mbox{\hyperlink{Temperature_8h_source}{Temperature.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Temperature_8h}{Temperature.\+h}}\end{DoxyCompactItemize}

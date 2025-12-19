@@ -1,0 +1,939 @@
+\doxysection{Solid\+Body.\+cpp}
+\hypertarget{SolidBody_8cpp_source}{}\label{SolidBody_8cpp_source}\index{SolidBody.cpp@{SolidBody.cpp}}
+\mbox{\hyperlink{SolidBody_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2025}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Reza\ Namdar}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SolidBody_8h}{ReactiveFlows/SolidBody.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00038}00038\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00039}00039\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00041}\mbox{\hyperlink{classopenphase_1_1SolidBody_a15167a8039dbc5ccfe25100f558f13a3}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a15167a8039dbc5ccfe25100f558f13a3}{SolidBody::ReadInput}}(\textcolor{keywordtype}{string}\ InputFile)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}SolidBody"{}});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFile);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00046}00046\ \ \ \ \ std::fstream\ inp(InputFile,\ std::ios::in);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ InputFile\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00052}00052\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00053}00053\ \ \ \ \ std::stringstream\ inp\_data;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00054}00054\ \ \ \ \ inp\_data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00055}00055\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp\_data,\ \textcolor{stringliteral}{"{}SolidBody"{}});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nParticles"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_adc2baeb5255978935d380b3479b21b09}{nRows}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nRows"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a1c4b01cdf81c3cc5d30be8d1d9fb3ce5}{FirstRow}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}FirstRow"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_aa1c8c42d06ce72d0840d3bcd082c81a8}{nCols}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nCols"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2597824b49205d4ae526d609770218b5}{PartDiameter}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}PartDiameter"{}}),\ \textcolor{keyword}{false},\ 0.01);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a229c80fa232c58d606c5ad5e00c8f1b7}{Porosity}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Porosity"{}}),\ \textcolor{keyword}{false},\ 0.5);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a97aecf4141a31facb0d9417ea420ec59}{Clearance}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Clearance"{}}),\ \textcolor{keyword}{false},\ 5);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nDist"{}}),\ \textcolor{keyword}{false},\ 1);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a5850787701bdce9d711b627e614f1d6e}{Do\_randDist}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Random\_Dist"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_adea69eed27d98e198f82a4a009598890}{X0DistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}X0DistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a476b7c477ed11c11df31e8029551cd8c}{XNDistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}XNDistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae1120329c25a58122080c8e5f16bd801}{Y0DistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Y0DistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a65a2a20cbc5b51c2c7ffbe1bce0d8630}{YNDistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}YNDistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ac3c6d01314403e1b74e19ebde6d97575}{Z0DistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Z0DistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2ab80628df5ee3b53a9e15da936545f0}{ZNDistZone}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}ZNDistZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a69b3911d1ef8647c9e78e52e5d012c26}{MinRadious}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}MinRadious"{}}),\ \textcolor{keyword}{false},\ \ 10);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a66a1dcc2d8eb2e81f7d2d01ceadf3709}{MaxRadious}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}MaxRadious"{}}),\ \textcolor{keyword}{false},\ \ 20);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}.push\_back(\{0.0,\ 0.0,\ 0.0\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}.push\_back(\{0.0,\ 0.0,\ 0.0,\ 0.0\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00084}\mbox{\hyperlink{classopenphase_1_1SolidBody_a198ddbe6c804c55020f1e60de40ae28b}{00084}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a198ddbe6c804c55020f1e60de40ae28b}{SolidBody::BilinearInterPolation}}(\textcolor{keywordtype}{double}\ xp,\ \textcolor{keywordtype}{double}\ zp,\ \textcolor{keywordtype}{double}\ qx1z1,\ \textcolor{keywordtype}{double}\ qx1z2,\ \textcolor{keywordtype}{double}\ qx2z1,\ \textcolor{keywordtype}{double}\ qx2z2)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ x1\ =\ floor(xp);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{double}\ x2\ =\ x1\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{double}\ z1\ =\ floor(zp);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{double}\ z2\ =\ z1\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{double}\ qm\ =\ (x2\ -\/\ xp)\ /\ (x2\ -\/\ x1)\ *\ ((z2\ -\/\ zp)\ /\ (z2\ -\/\ z1)\ *\ qx1z1\ +\ (zp\ -\/\ z1)\ /\ (z2\ -\/\ z1)\ *\ qx1z2)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (xp\ -\/\ x1)\ /\ (x2\ -\/\ x1)\ *\ ((z2\ -\/\ zp)\ /\ (z2\ -\/\ z1)\ *\ qx2z1\ +\ (zp\ -\/\ z1)\ /\ (z2\ -\/\ z1)\ *\ qx2z2);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{return}\ qm;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00096}\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{00096}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{SolidBody::TrilinearInterPolation}}(\textcolor{keywordtype}{double}\ ic,\ \textcolor{keywordtype}{double}\ jc,\ \textcolor{keywordtype}{double}\ kc,\ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ q000,\ \textcolor{keywordtype}{double}\ q100,\ \textcolor{keywordtype}{double}\ q010,\ \textcolor{keywordtype}{double}\ q110,\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ q001,\ \textcolor{keywordtype}{double}\ q101,\ \textcolor{keywordtype}{double}\ q011,\ \textcolor{keywordtype}{double}\ q111)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{double}\ CX\ =\ (ic-\/i0)/(i1-\/i0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{double}\ CY\ =\ (jc-\/j0)/(j1-\/j0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{double}\ CZ\ =\ (kc-\/k0)/(k1-\/k0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{double}\ q\ \ =\ (1.0-\/CX)*(1.0-\/CY)*(1.0-\/CZ)\ *\ q000\ +\ CX*(1.0-\/CY)*(1.0-\/CZ)\ *\ q100\ +\ (1.0-\/CX)*CY*(1.0-\/CZ)\ *\ q010\ +\ CX*CY*(1.0-\/CZ)\ *\ q110}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +(1.0-\/CX)*(1.0-\/CY)*CZ\ \ \ \ \ \ \ *\ q001\ +\ CX*(1.0-\/CY)*CZ\ \ \ \ \ \ \ *\ q101\ +\ (1.0-\/CX)*CY*CZ\ \ \ \ \ \ \ *\ q011\ +\ CX*CY*CZ\ \ \ \ \ \ \ *\ q111;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ q;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00116}00116\ \textcolor{comment}{//\ Find\ 3\ nearest\ neighbors\ (indices)\ for\ point\ i}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00117}\mbox{\hyperlink{classopenphase_1_1SolidBody_a9ef60dece91966c6c56e72080f783b4d}{00117}}\ std::array<int,\ 3>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a9ef60dece91966c6c56e72080f783b4d}{SolidBody::find\_3\_nearest}}(\textcolor{keyword}{const}\ std::vector<dVector3>\&\ pts,\ \textcolor{keywordtype}{size\_t}\ idx,\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00119}00119\ \ \ \ \ std::array<double,\ 3>\ best\_dist\ =\ \{std::numeric\_limits<double>::max(),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::numeric\_limits<double>::max(),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::numeric\_limits<double>::max()\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00122}00122\ \ \ \ \ std::array<int,\ 3>\ best\_idx\ =\ \{-\/1,\ -\/1,\ -\/1\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ pts.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ ==\ idx)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ dist\ =\ Tools::Distance<dVector3>(pts[idx],\ pts[j],\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}},\ BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ dist.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ 3;\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ <\ best\_dist[k])\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ m\ =\ 2;\ m\ >\ k;\ -\/-\/m)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_dist[m]\ =\ best\_dist[m-\/1];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_idx[m]\ =\ best\_idx[m-\/1];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_dist[k]\ =\ d;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_idx[k]\ =\ j;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_idx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00142}00142\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00144}00144\ \textcolor{comment}{//\ Calculate\ area\ of\ quad\ as\ two\ triangles}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00145}\mbox{\hyperlink{classopenphase_1_1SolidBody_a26275a06e5576b2aed02935eb4e8d32a}{00145}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a26275a06e5576b2aed02935eb4e8d32a}{SolidBody::quad\_area}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ d)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00146}00146\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{comment}{//\ Area\ =\ 0.5\ *\ |(b-\/a)\ x\ (c-\/a)|\ +\ 0.5\ *\ |(c-\/a)\ x\ (d-\/a)|}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ ab\ =\ b\ -\/\ a,\ ac\ =\ c\ -\/\ a,\ ad\ =\ d\ -\/\ a;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ n1\ =\ ab.\mbox{\hyperlink{classopenphase_1_1dVector3_a7e673b126d43ba04caa548b3d364fe9a}{cross}}(ac);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ n2\ =\ ac.\mbox{\hyperlink{classopenphase_1_1dVector3_a7e673b126d43ba04caa548b3d364fe9a}{cross}}(ad);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ (n1.\mbox{\hyperlink{classopenphase_1_1dVector3_a86615197dd3640c551ec316065e22383}{length}}()\ *\ 0.5\ +\ n2.\mbox{\hyperlink{classopenphase_1_1dVector3_a86615197dd3640c551ec316065e22383}{length}}()*\ 0.5);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00154}00154\ \textcolor{comment}{//\ Centroid\ of\ 4\ points}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00155}\mbox{\hyperlink{classopenphase_1_1SolidBody_a5255c220969f3d7d218ec3d9534800bf}{00155}}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a5255c220969f3d7d218ec3d9534800bf}{SolidBody::quad\_centroid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ d)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00156}00156\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ (a\ +\ b\ +\ c\ +\ d)\ /\ 4.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00160}\mbox{\hyperlink{classopenphase_1_1SolidBody_a3f6d05fa825c91e46a84b78c9b564f3e}{00160}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a3f6d05fa825c91e46a84b78c9b564f3e}{SolidBody::is\_close}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ b,\ \textcolor{keywordtype}{double}\ tol)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00161}00161\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::fabs(a[i]\ -\/\ b[i])\ >\ tol)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00167}\mbox{\hyperlink{classopenphase_1_1SolidBody_abcce8b39eff41e3d25a04020956b7f18}{00167}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_abcce8b39eff41e3d25a04020956b7f18}{SolidBody::CalculateLocalNusseltNumber}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{EnergyTransport}}\&\ ET,\ \mbox{\hyperlink{classopenphase_1_1FlowMixture}{FlowMixture}}\&\ FM,\ \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,\ \textcolor{keywordtype}{double}\ Length,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tin,\ \textcolor{keywordtype}{double}\ dn,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}},\ \textcolor{keywordtype}{string}\ dir,\ \textcolor{keywordtype}{string}\ fname,\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00169}00169\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00175}00175\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00179}00179\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ fps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ bps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ std::vector<double>\ locNusselt;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ idx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ep\ =\ 1e-\/15;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tb\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{TempSolid}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ T0\ =\ (Tb+Tin)/2.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kb\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ K0\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ R\ \ =\ 8.314462618;\ \textcolor{comment}{//\ J/(mol*K)}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(Phase.Interfaces(i,j,k)>1)}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(FL.Obstacle(i,j,k))}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locSolididx=it-\/>index;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locSolididx==Solididx)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Norm=Normals.get\_sym(Solididx,\ Gasidx);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Tb\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[Solididx];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T0\ =\ (Tb+Tin)/2.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhob\ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a927e2377fcf0a373e3a9103bcc71eeb9}{CalculateIdealGasDensity}}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a39e6431910d6e1d9558b91d0a59f6828}{Pth0}},\ R/ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9}{Mw}},\ Tb);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nub\ \ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_ae7a5346f5dda53d27c358d9ad493ef1c}{CalculateSutherlandViscosity}}(Tb)/Rhob;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Kb\ =Rhob*nub*ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}{Cp}}/ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}{Pr}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rho0\ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a927e2377fcf0a373e3a9103bcc71eeb9}{CalculateIdealGasDensity}}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a39e6431910d6e1d9558b91d0a59f6828}{Pth0}},\ R/ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9}{Mw}},\ T0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nu0\ \ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_ae7a5346f5dda53d27c358d9ad493ef1c}{CalculateSutherlandViscosity}}(T0)/Rho0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ K0\ =Rho0*nu0*ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}{Cp}}/ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}{Pr}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ DX\ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ DX\ \ \ =\ fabs(Phase.iWidth/Pi\ *\ acos(2.0*Phif-\/1));}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ X\ \ =\ Norm*DX;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))\ X=X*-\/1;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xp\ =\ \{double(i+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}),\ double(j+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}),\ double(k+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}})\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xp\ -\/\ X;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xc\ =\ Xb\ +\ Norm*dn;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fps.push\_back(Xc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bps.push\_back(Xb);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ nfps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ nbps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ bps.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ p\ =\ bps[i];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ u\ :\ nbps)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SolidBody_a3f6d05fa825c91e46a84b78c9b564f3e}{is\_close}}(p,\ u))}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nbps.push\_back(p);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nfps.push\_back(fps[i]);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MeanNu=0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nlocNu=0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nfps.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ \ =\ nfps[i].\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ \ =\ nfps[i].getY()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ \ =\ nfps[i].getZ()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2c206e9c530d56b84de68724de4198e0}{CalculateInterpolatedTemperature}}(ET,ic,jc,kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dTdn\ \ =\ abs(Tf\ -\/\ Tb)/(dn*dx);\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locNu\ =\ Kb/K0\ *\ dTdn\ *\ Length\ /\ abs(Tin-\/Tb+ep);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ locNu\ =\ dTdn\ *\ Length\ /\ abs(Tin-\/Tb);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ locNusselt.push\_back(locNu);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ MeanNu\ +=\ locNu;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ nlocNu++;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MeanNu!=0.0)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rank=0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00280}00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rank=MPI\_RANK;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00282}00282\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ PFidx\ \ \ =\ std::to\_string(Solididx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Coreidx\ =\ std::to\_string(rank);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Write\ centers\ to\ file\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ flocout(dir+\textcolor{stringliteral}{"{}/PF\_"{}}+PFidx+\textcolor{stringliteral}{"{}\_R\_"{}}+Coreidx+\textcolor{stringliteral}{"{}\_loc"{}}+fname);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!flocout)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Could\ not\ open\ output\ file.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nbps.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flocout\ <<\ nbps[i].getX()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ nbps[i].getY()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ nbps[i].getZ()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ locNusselt[i]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ flocout.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ fMeanout(dir+\textcolor{stringliteral}{"{}/PF\_"{}}+PFidx+\textcolor{stringliteral}{"{}\_R\_"{}}+Coreidx+\textcolor{stringliteral}{"{}\_Mean"{}}+fname,\ std::ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fMeanout)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Could\ not\ open\ output\ file.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ fMeanout\ <<\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ MeanNu/nlocNu\ <<\ \textcolor{stringliteral}{"{}\ "{}}<<\ nlocNu<<\ endl;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ fMeanout.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}rank\ "{}<<rank<<"{},\ nbps.size():\ "{}<<nbps.size()<<endl;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}boundary\ points\ and\ nusselt\ values\ written\ to\ "{}}<<dir<<\textcolor{stringliteral}{"{}PF\_"{}}<<PFidx<<\textcolor{stringliteral}{"{}\_R\_"{}}<<Coreidx<<\textcolor{stringliteral}{"{}\_"{}}<<fname<<endl;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00310}00310\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00312}\mbox{\hyperlink{classopenphase_1_1SolidBody_ae6cd863864192f771b7446857690c07d}{00312}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae6cd863864192f771b7446857690c07d}{SolidBody::dist3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ b)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00313}00313\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00314}00314\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(pow(a[0]-\/b[0],2)\ +\ pow(a[1]-\/b[1],2)\ +\ pow(a[2]-\/b[2],2));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00315}00315\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00317}00317\ \textcolor{comment}{//\ Triangle\ area\ from\ 3\ points}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00318}\mbox{\hyperlink{classopenphase_1_1SolidBody_a31b90382de81d983367354eb7ef8fac6}{00318}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a31b90382de81d983367354eb7ef8fac6}{SolidBody::triangle\_area}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ c)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00319}00319\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{keywordtype}{double}\ ux\ =\ b[0]-\/a[0],\ uy\ =\ b[1]-\/a[1],\ uz\ =\ b[2]-\/a[2];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordtype}{double}\ vx\ =\ c[0]-\/a[0],\ vy\ =\ c[1]-\/a[1],\ vz\ =\ c[2]-\/a[2];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordtype}{double}\ cx\ =\ uy*vz\ -\/\ uz*vy;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordtype}{double}\ cy\ =\ uz*vx\ -\/\ ux*vz;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordtype}{double}\ cz\ =\ ux*vy\ -\/\ uy*vx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*sqrt(cx*cx\ +\ cy*cy\ +\ cz*cz);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00326}00326\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00328}00328\ \textcolor{comment}{//\ For\ each\ point,\ estimate\ its\ local\ surface\ area}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00329}\mbox{\hyperlink{classopenphase_1_1SolidBody_a97af8de56cec0cf14c55ecc267f63674}{00329}}\ std::vector<double>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a97af8de56cec0cf14c55ecc267f63674}{SolidBody::surface\_elements\_3d}}(\textcolor{keyword}{const}\ std::vector<dVector3>\&\ points,\ \textcolor{keywordtype}{size\_t}\ kneigh)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00330}00330\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\ =\ points.size();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00332}00332\ \ \ \ \ std::vector<double>\ elem(N,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00335}00335\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ points[i];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ k\ nearest\ neighbors}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ std::vector<std::pair<double,int>>\ dists;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ N;\ ++j)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ ==\ i)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae6cd863864192f771b7446857690c07d}{dist3}}(pi,\ points[j]);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ dists.push\_back(\{d,\ j\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ std::sort(dists.begin(),\ dists.end());}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ std::vector<int>\ knn;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ kneigh\ \&\&\ k\ <\ dists.size();\ ++k)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ knn.push\_back(dists[k].second);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ neighbor\ pair,\ form\ a\ triangle}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ area\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ knn.size();\ ++m)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ m+1;\ n\ <\ knn.size();\ ++n)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ triA\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a31b90382de81d983367354eb7ef8fac6}{triangle\_area}}(pi,\ points[knn[m]],\ points[knn[n]]);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ area\ +=\ triA\ /\ 3.0;\ \textcolor{comment}{//\ assign\ 1/3\ of\ triangle\ area\ to\ center\ point}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ elem[i]\ =\ area;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00362}00362\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00363}00363\ \ \ \ \ \textcolor{keywordflow}{return}\ elem;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00364}00364\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00366}\mbox{\hyperlink{classopenphase_1_1SolidBody_a326b76590e4bf1aa217c037f961c3e00}{00366}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a326b76590e4bf1aa217c037f961c3e00}{SolidBody::curve\_element\_2d}}(\textcolor{keyword}{const}\ vector<dVector3>\&\ points,\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00367}00367\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ points[i];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00369}00369\ \ \ \ \ \textcolor{keywordtype}{double}\ min\_dist1\ =\ 1e30;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00370}00370\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx1\ =\ 1e10;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00371}00371\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00372}00372\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j=0;\ j<points.size();\ ++j)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00373}00373\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(j==i)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ dist\ =\ Tools::Distance<dVector3>(pi,\ points[j],\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}},\ BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ dist.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(d\ <\ min\_dist1)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ min\_dist1\ =\ d;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ idx1=j;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00382}00382\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00384}00384\ \ \ \ \ \textcolor{keywordtype}{double}\ min\_dist2\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00385}00385\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx2\ =\ 1e10;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ k=0;\ k<points.size();\ ++k)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00388}00388\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k==i\ ||\ k==idx1)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ v1\ =\ Tools::Distance<dVector3>(points[k],\ points[idx1],\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}},\ BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ v2\ =\ Tools::Distance<dVector3>(pi,\ points[idx1],\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}},\ BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dot\ =\ v1[0]*v2[0]\ +\ v1[1]*v2[1]\ +\ v1[2]*v2[2];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm2\ =\ v1[0]*v1[0]\ +\ v1[1]*v1[1]\ +\ v1[2]*v1[2];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (norm2\ <\ 1e-\/15)\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ skip\ degenerate}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ dot\ /\ norm2;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ t\ should\ be\ between\ 0\ and\ 1\ (not\ exactly\ 0\ or\ 1)}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ >\ 0\ \&\&\ t\ <\ 1)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ dist\ =\ Tools::Distance<dVector3>(pi,\ points[k],\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}},\ BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ dist.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(d\ <\ min\_dist2)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\_dist2\ =\ d;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idx2\ =\ k;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00407}00407\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordtype}{double}\ ds=0.0;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{keywordflow}{if}\ (idx1\ <=points.size()\ \&\&\ idx2\ <=points.size())\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00411}00411\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ ds\ =\ 0.5\ *\ (min\_dist1\ +\ min\_dist2);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00413}00413\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx1\ <=points.size())\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00415}00415\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ ds\ =\ min\_dist1;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00417}00417\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00418}00418\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00419}00419\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ ds=0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00421}00421\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00422}00422\ \ \ \ \ \textcolor{keywordflow}{return}\ ds;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00423}00423\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00425}\mbox{\hyperlink{classopenphase_1_1SolidBody_a35b5e64234ecd01b94e23dad62ae96af}{00425}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a35b5e64234ecd01b94e23dad62ae96af}{SolidBody::CalculateDragCoeff}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,\ \mbox{\hyperlink{classopenphase_1_1FlowMixture}{FlowMixture}}\&\ FM,\ \textcolor{keywordtype}{double}\ A\_proj,\ \textcolor{keywordtype}{double}\ Rho0,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ U0,\ \textcolor{keywordtype}{double}\ dn,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}},\ \textcolor{keywordtype}{size\_t}\ axis,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ dir,\ \textcolor{keywordtype}{string}\ fname,\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00428}00428\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00429}00429\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ \ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00430}00430\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00431}00431\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00432}00432\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00434}00434\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00435}00435\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ nf\ \ (\{0,0,0\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00436}00436\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00437}00437\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \textcolor{keywordtype}{id}=0;\textcolor{keywordtype}{id}<3;\textcolor{keywordtype}{id}++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00438}00438\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id}==axis)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ nf[id]=1;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00443}00443\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00444}00444\ \ \ \ \ \textcolor{keywordtype}{double}\ cte\ =\ 0.5*Rho0*U0*U0*A\_proj;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00445}00445\ \ \ \ \ \textcolor{comment}{//double\ ep\ \ =\ 1e-\/8;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00446}00446\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00448}00448\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00449}00449\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00450}00450\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ fps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ bps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<double>\ locCp;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ idx;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}},0,)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Interfaces(i,j,k)>1)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(!FL.Obstacle(i,j,k))}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locSolididx=it-\/>index;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locSolididx==Solididx)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Norm=Normals.get\_sym(Solididx,\ Gasidx);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ DX\ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ DX\ \ \ =\ fabs(Phase.iWidth/Pi\ *\ acos(2.0*Phif-\/1));}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ X\ \ =\ Norm*DX;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))\ X=X*-\/1;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xp\ =\ \{double(i+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}),\ double(j+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}),\ double(k+\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}})\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xp\ -\/\ X;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xc\ =\ Xb\ +\ Norm*dn;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fps.push\_back(Xc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bps.push\_back(Xb);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ nfps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ nbps;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ std::vector<double>\ ds;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ bps.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ p\ =\ bps[i];}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ u\ :\ nbps)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SolidBody_a3f6d05fa825c91e46a84b78c9b564f3e}{is\_close}}(p,\ u))}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nbps.push\_back(p);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nfps.push\_back(fps[i]);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00510}00510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cd=0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Stot=0.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ nds=0.0;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ \textcolor{comment}{//auto\ surf\_neighbors\ =\ surface\_elements\_2d(nbps);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<double>\ ds(nbps.size());}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ (int\ i\ =\ 0;\ i\ <\ nbps.size();\ ++i)\ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ int\ n1\ =\ surf\_neighbors[i].first;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ int\ n2\ =\ surf\_neighbors[i].second;}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ ds[i]\ =\ 0.5\ *\ (dist3(nbps[i],\ nbps[n1])\ +\ dist3(nbps[i],\ nbps[n2]));}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<double>\ surf\_elem\ =\ surface\_elements\_3d(nbps);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nfps.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locds\ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a326b76590e4bf1aa217c037f961c3e00}{curve\_element\_2d}}(nbps,\ i,BC);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ ds.push\_back(locds);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ \ \ =\ nfps[i].getX()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ \ \ =\ nfps[i].getY()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ \ \ =\ nfps[i].getZ()-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ locn\ =\ (nfps[i]\ -\/\ nbps[i]).normalize();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Pf\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a0926af172e317329db136e5e1e2e6820}{CalculateInterpolatedPressure}}(FL,ic,jc,kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ muf\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a253cdec1d5a6ff0c5b998c38aab3f581}{CalculateInterpolatedViscosity}}(FL,ic,jc,kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Vf\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_acba6676c0821c71bc732494a066faaf9}{CalculateInterpolatedVelocity}}(FM,ic,jc,kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Vt\ \ \ =\ Vf\ \ -\/\ locn\ *\ (Vf\ \ *\ locn);\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ loct\ =\ Vt/Vt.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tau\_w\ \ =\ muf\ *\ Vt.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}()/\ (dn*dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ft\ \ \ \ \ =\ nf\ *\ loct\ *\ (tau\_w\ *\ ds[i]*dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Fp\ \ \ \ \ =\ nf\ *\ locn\ *\ (-\/1*Pf\ *\ ds[i]*dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ Cd\ +=\ (Ft\ +\ Fp)/cte;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//locCp.push\_back((Ft\ +\ Fp)/cte);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ Stot\ +=\ ds[i]*dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//nds++;\ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00548}00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Cd!=0.0)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rank=0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00553}00553\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rank=MPI\_RANK;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00555}00555\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ PFidx\ \ \ =\ std::to\_string(Solididx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Coreidx\ =\ std::to\_string(rank);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Write\ centers\ to\ file\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00561}00561\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ flocout(dir+"{}/PF\_"{}+PFidx+"{}\_R\_"{}+Coreidx+"{}\_loc"{}+fname);}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00562}00562\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (!flocout)\ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00563}00563\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00564}00564\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Error:\ Could\ not\ open\ output\ file.\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00565}00565\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00566}00566\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ nbps.size();\ ++i)\ }}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00567}00567\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00568}00568\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flocout\ <<\ nbps[i].getX()\ <<\ "{}\ "{}\ <<\ nbps[i].getY()\ <<\ "{}\ "{}\ <<\ nbps[i].getZ()\ <<\ "{}\ "{}\ <<\ locCp[i]\ <<\ "{}\ "{}\ <<\ ds[i]\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00569}00569\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00570}00570\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ flocout.close();}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00571}00571\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00572}00572\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ fMeanout(dir+\textcolor{stringliteral}{"{}/PF\_"{}}+PFidx+\textcolor{stringliteral}{"{}\_R\_"{}}+Coreidx+\textcolor{stringliteral}{"{}\_"{}}+fname,\ std::ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fMeanout)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Could\ not\ open\ output\ file.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ fMeanout\ <<\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Cd\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ fMeanout.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}rank\ "{}}<<rank<<\textcolor{stringliteral}{"{},\ Numerical\ Total\ Area:\ "{}}<<Stot<<endl;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}boundary\ points\ and\ cd\ values\ written\ to\ "{}}<<dir<<\textcolor{stringliteral}{"{}PF\_"{}}<<PFidx<<\textcolor{stringliteral}{"{}\_R\_"{}}<<Coreidx<<\textcolor{stringliteral}{"{}\_"{}}<<fname<<endl;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00582}00582\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00583}00583\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00584}00584\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00586}\mbox{\hyperlink{classopenphase_1_1SolidBody_a2c206e9c530d56b84de68724de4198e0}{00586}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2c206e9c530d56b84de68724de4198e0}{SolidBody::CalculateInterpolatedTemperature}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{EnergyTransport}}\&\ ET,\ \textcolor{keywordtype}{double}\ ic,\ \textcolor{keywordtype}{double}\ jc,\ \textcolor{keywordtype}{double}\ kc)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00587}00587\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00588}00588\ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00589}00589\ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00590}00590\ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00591}00591\ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00592}00592\ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00593}00593\ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00594}00594\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00595}00595\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00596}00596\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00597}00597\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00598}00598\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00599}00599\ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ \ =\ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00604}00604\ \ \ \ \ \textcolor{keywordflow}{return}\ Tf;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00605}00605\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00607}\mbox{\hyperlink{classopenphase_1_1SolidBody_acba6676c0821c71bc732494a066faaf9}{00607}}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_acba6676c0821c71bc732494a066faaf9}{SolidBody::CalculateInterpolatedVelocity}}(\mbox{\hyperlink{classopenphase_1_1FlowMixture}{FlowMixture}}\&\ FM,\textcolor{keywordtype}{double}\ ic,\ \textcolor{keywordtype}{double}\ jc,\ \textcolor{keywordtype}{double}\ kc)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00608}00608\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00609}00609\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Vf(\{0.0,0.0,0.0\});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00610}00610\ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00611}00611\ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00612}00612\ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00613}00613\ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00614}00614\ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00615}00615\ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00616}00616\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00617}00617\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00618}00618\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00619}00619\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00620}00620\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00621}00621\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ iv=0;iv<3;iv++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00622}00622\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00623}00623\ \ \ \ \ \ \ \ \ Vf[iv]\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i0*idi,j0*jdi,k0*kdi)[iv],FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i1*idi,j0*jdi,k0*kdi)[iv],}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i0*idi,j1*jdi,k0*kdi)[iv],FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i1*idi,j1*jdi,k0*kdi)[iv],}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i0*idi,j0*jdi,k1*kdi)[iv],FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i1*idi,j0*jdi,k1*kdi)[iv],}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i0*idi,j1*jdi,k1*kdi)[iv],FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i1*idi,j1*jdi,k1*kdi)[iv]);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00628}00628\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00629}00629\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00630}00630\ \ \ \ \ \textcolor{keywordflow}{return}\ Vf;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00631}00631\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00632}00632\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00633}\mbox{\hyperlink{classopenphase_1_1SolidBody_a253cdec1d5a6ff0c5b998c38aab3f581}{00633}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a253cdec1d5a6ff0c5b998c38aab3f581}{SolidBody::CalculateInterpolatedViscosity}}(\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,\ \textcolor{keywordtype}{double}\ ic,\ \textcolor{keywordtype}{double}\ jc,\ \textcolor{keywordtype}{double}\ kc)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00634}00634\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00635}00635\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n=0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00636}00636\ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00637}00637\ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00638}00638\ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00639}00639\ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00640}00640\ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00641}00641\ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00642}00642\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00643}00643\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00644}00644\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00645}00645\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00647}00647\ \ \ \ \ \textcolor{keywordtype}{double}\ muf\ \ \ =\ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i0*idi,j0*jdi,k0*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i0*idi,j0*jdi,k0*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i1*idi,j0*jdi,k0*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i1*idi,j0*jdi,k0*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i0*idi,j1*jdi,k0*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i0*idi,j1*jdi,k0*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i1*idi,j1*jdi,k0*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i1*idi,j1*jdi,k0*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i0*idi,j0*jdi,k1*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i0*idi,j0*jdi,k1*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i1*idi,j0*jdi,k1*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i1*idi,j0*jdi,k1*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i0*idi,j1*jdi,k1*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i0*idi,j1*jdi,k1*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i1*idi,j1*jdi,k1*kdi,\{n\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i1*idi,j1*jdi,k1*kdi,\{n\}));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00652}00652\ \ \ \ \ \textcolor{keywordflow}{return}\ muf;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00653}00653\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00655}\mbox{\hyperlink{classopenphase_1_1SolidBody_a0926af172e317329db136e5e1e2e6820}{00655}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a0926af172e317329db136e5e1e2e6820}{SolidBody::CalculateInterpolatedPressure}}(\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,\ \textcolor{keywordtype}{double}\ ic,\ \textcolor{keywordtype}{double}\ jc,\ \textcolor{keywordtype}{double}\ kc)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00656}00656\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00657}00657\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n=0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00658}00658\ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00659}00659\ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00660}00660\ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00661}00661\ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00662}00662\ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00663}00663\ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00664}00664\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00665}00665\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00666}00666\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00667}00667\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SolidBody_a641ec504e14e14ab5620bdf5d0ca3a50}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00668}00668\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00669}00669\ \ \ \ \ \textcolor{keywordtype}{double}\ Pf\ \ \ =\ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i0*idi,j0*jdi,k0*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i1*idi,j0*jdi,k0*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i0*idi,j1*jdi,k0*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i1*idi,j1*jdi,k0*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i0*idi,j0*jdi,k1*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i1*idi,j0*jdi,k1*kdi,\{n\}),}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i0*idi,j1*jdi,k1*kdi,\{n\}),FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_afa690789441704b411b9252d930c2363}{HydroPressure}}(i1*idi,j1*jdi,k1*kdi,\{n\}));}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00674}00674\ \ \ \ \ \textcolor{keywordflow}{return}\ Pf;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00675}00675\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00676}00676\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00677}\mbox{\hyperlink{classopenphase_1_1SolidBody_a400a984ef0921597db5ee20efe7f1023}{00677}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a400a984ef0921597db5ee20efe7f1023}{SolidBody::isOverlapping}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1Circle}{Circle}}\&\ c1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1Circle}{Circle}}\&\ c2)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00678}00678\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00679}00679\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ c1.\mbox{\hyperlink{structopenphase_1_1Circle_a094adf32182a69e8a777189088490130}{x}}\ -\/\ c2.\mbox{\hyperlink{structopenphase_1_1Circle_a094adf32182a69e8a777189088490130}{x}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00680}00680\ \ \ \ \ \textcolor{keywordtype}{double}\ dz\ =\ c1.\mbox{\hyperlink{structopenphase_1_1Circle_acb31e9d0fce507e69ebf40a78ae29bc7}{z}}\ -\/\ c2.\mbox{\hyperlink{structopenphase_1_1Circle_acb31e9d0fce507e69ebf40a78ae29bc7}{z}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00681}00681\ \ \ \ \ \textcolor{keywordtype}{double}\ distanceSquared\ =\ dx\ *\ dx\ +\ dz\ *\ dz;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00682}00682\ \ \ \ \ \textcolor{keywordtype}{double}\ radiusSum\ =\ c1.\mbox{\hyperlink{structopenphase_1_1Circle_a024bc2e41268c81fe47df5b011c188dd}{r}}\ +\ c2.\mbox{\hyperlink{structopenphase_1_1Circle_a024bc2e41268c81fe47df5b011c188dd}{r}}\ +\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a97aecf4141a31facb0d9417ea420ec59}{Clearance}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00683}00683\ \ \ \ \ \textcolor{keywordflow}{return}\ distanceSquared\ <\ radiusSum\ *\ radiusSum;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00684}00684\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00686}\mbox{\hyperlink{classopenphase_1_1SolidBody_a8cf8f0edba1153a41a197fc4a844ed8f}{00686}}\ vector<Circle>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a8cf8f0edba1153a41a197fc4a844ed8f}{SolidBody::generateNonOverlappingCircles}}(\textcolor{keywordtype}{double}\ width,\ \textcolor{keywordtype}{double}\ height,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{double}\ minRadius,\ \textcolor{keywordtype}{double}\ maxRadius,\ \textcolor{keywordtype}{double}\ dx)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00687}00687\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00688}00688\ \ \ \ \ std::vector<Circle>\ circles;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00689}00689\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00690}00690\ \ \ \ \ std::mt19937\ gen(rd());}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00691}00691\ \ \ \ \ std::uniform\_real\_distribution<>\ radiusDist(minRadius/dx,\ maxRadius/dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00692}00692\ \ \ \ \ std::uniform\_real\_distribution<>\ xDist,\ yDist;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00694}00694\ \ \ \ \ \textcolor{keywordtype}{int}\ maxAttempts\ =\ 100000;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00695}00695\ \ \ \ \ \textcolor{keywordtype}{int}\ attempts\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00696}00696\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00697}00697\ \ \ \ \ \textcolor{keywordflow}{while}\ (circles.size()\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(N)\ \&\&\ attempts\ <\ maxAttempts)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00698}00698\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00699}00699\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ =\ radiusDist(gen);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00700}00700\ \ \ \ \ \ \ \ \ xDist\ =\ std::uniform\_real\_distribution<>(r,\ width\ -\/\ r);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00701}00701\ \ \ \ \ \ \ \ \ yDist\ =\ std::uniform\_real\_distribution<>(r,\ height\ -\/\ r);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Circle}{Circle}}\ newCircle\{xDist(gen),\ yDist(gen),\ r\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00704}00704\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlap\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00706}00706\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ c\ :\ circles)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00707}00707\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SolidBody_a400a984ef0921597db5ee20efe7f1023}{isOverlapping}}(newCircle,\ c))\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00709}00709\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overlap\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00711}00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00713}00713\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00714}00714\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00715}00715\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!overlap)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00716}00716\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00717}00717\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Circle}{Circle}}\ phynewCircle\ \{newCircle.\mbox{\hyperlink{structopenphase_1_1Circle_a094adf32182a69e8a777189088490130}{x}},\ newCircle.z,\ newCircle.r\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00718}00718\ \ \ \ \ \ \ \ \ \ \ \ \ circles.push\_back(phynewCircle);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ attempts++;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00721}00721\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00722}00722\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00723}00723\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ circles.size()\ ;\ ic++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00724}00724\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00725}00725\ \ \ \ \ \ \ \ \ circles[ic].x\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00726}00726\ \ \ \ \ \ \ \ \ circles[ic].z\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ circles[ic].r\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00728}00728\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00729}00729\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00730}00730\ \ \ \ \ \textcolor{keywordflow}{if}\ (circles.size()\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(N))\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00731}00731\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00732}00732\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Warning:\ Only\ "{}}\ <<\ circles.size()\ <<\ \textcolor{stringliteral}{"{}\ circles\ placed\ after\ "{}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00733}00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ maxAttempts\ <<\ \textcolor{stringliteral}{"{}\ attempts.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00734}00734\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00735}00735\ \ \ \ \ \textcolor{keywordflow}{return}\ circles;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00736}00736\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00737}00737\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00738}00738\ \textcolor{comment}{//\ Save\ circles\ to\ a\ file}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00739}\mbox{\hyperlink{classopenphase_1_1SolidBody_ad666408427b27ef5e5cd391940974f0d}{00739}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ad666408427b27ef5e5cd391940974f0d}{SolidBody::saveCirclesToFile}}(\textcolor{keyword}{const}\ std::vector<Circle>\&\ circles,\ \textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{double}\ dx)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00740}00740\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00741}00741\ \ \ \ \ std::ofstream\ out(filename);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00742}00742\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00743}00743\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Cannot\ open\ file\ for\ writing:\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00744}00744\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00745}00745\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00746}00746\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00747}00747\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ c\ :\ circles)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00748}00748\ \ \ \ \ \ \ \ \ out\ <<\ c.x\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ c.z\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ c.r\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00749}00749\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00750}00750\ \ \ \ \ out.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00751}00751\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00752}00752\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00753}00753\ \textcolor{comment}{//\ Load\ circles\ from\ a\ file}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00754}\mbox{\hyperlink{classopenphase_1_1SolidBody_a0ac63f5f48731411e9403a7f469c3885}{00754}}\ std::vector<Circle>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a0ac63f5f48731411e9403a7f469c3885}{SolidBody::loadCirclesFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00755}00755\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00756}00756\ \ \ \ \ std::ifstream\ in(filename);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00757}00757\ \ \ \ \ std::vector<Circle>\ circles;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00758}00758\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00759}00759\ \ \ \ \ \textcolor{keywordflow}{if}\ (!in)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00760}00760\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Warning:\ Cannot\ open\ file\ for\ reading:\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ circles;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00762}00762\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00764}00764\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Circle}{Circle}}\ c;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00765}00765\ \ \ \ \ \textcolor{keywordflow}{while}\ (in\ >>\ c.\mbox{\hyperlink{structopenphase_1_1Circle_a094adf32182a69e8a777189088490130}{x}}\ >>\ c.\mbox{\hyperlink{structopenphase_1_1Circle_acb31e9d0fce507e69ebf40a78ae29bc7}{z}}\ >>\ c.\mbox{\hyperlink{structopenphase_1_1Circle_a024bc2e41268c81fe47df5b011c188dd}{r}})\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00766}00766\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ circles.push\_back(c);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00768}00768\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00769}00769\ \ \ \ \ in.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00770}00770\ \ \ \ \ \textcolor{keywordflow}{return}\ circles;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00771}00771\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00772}00772\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00773}\mbox{\hyperlink{classopenphase_1_1SolidBody_aaca19992da93fe940e7426398bcb0616}{00773}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a400a984ef0921597db5ee20efe7f1023}{SolidBody::isOverlapping}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1Sphere}{Sphere}}\&\ s1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1Sphere}{Sphere}}\&\ s2)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00774}00774\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00775}00775\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ s1.\mbox{\hyperlink{structopenphase_1_1Sphere_a4b265c8e1776ea7ce2f89af24d16f909}{x}}\ -\/\ s2.\mbox{\hyperlink{structopenphase_1_1Sphere_a4b265c8e1776ea7ce2f89af24d16f909}{x}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00776}00776\ \ \ \ \ \textcolor{keywordtype}{double}\ dy\ =\ s1.\mbox{\hyperlink{structopenphase_1_1Sphere_a3f522cb84d1d71742840aba87bd76682}{y}}\ -\/\ s2.\mbox{\hyperlink{structopenphase_1_1Sphere_a3f522cb84d1d71742840aba87bd76682}{y}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00777}00777\ \ \ \ \ \textcolor{keywordtype}{double}\ dz\ =\ s1.\mbox{\hyperlink{structopenphase_1_1Sphere_a83070ce02ae32daa6b572801405794d7}{z}}\ -\/\ s2.\mbox{\hyperlink{structopenphase_1_1Sphere_a83070ce02ae32daa6b572801405794d7}{z}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00778}00778\ \ \ \ \ \textcolor{keywordtype}{double}\ distanceSquared\ =\ dx\ *\ dx\ +\ dy\ *\ dy\ +\ dz\ *\ dz;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00779}00779\ \ \ \ \ \textcolor{keywordtype}{double}\ radiusSum\ =\ s1.\mbox{\hyperlink{structopenphase_1_1Sphere_abecd531e9b33b3ad7294d0f318bea46f}{r}}\ +\ s2.\mbox{\hyperlink{structopenphase_1_1Sphere_abecd531e9b33b3ad7294d0f318bea46f}{r}}\ +\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a97aecf4141a31facb0d9417ea420ec59}{Clearance}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00780}00780\ \ \ \ \ \textcolor{keywordflow}{return}\ distanceSquared\ <\ radiusSum\ *\ radiusSum;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00781}00781\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00782}00782\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00783}\mbox{\hyperlink{classopenphase_1_1SolidBody_a53b5dd09e40f057fa2a0315727ce6fff}{00783}}\ std::vector<Sphere>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a53b5dd09e40f057fa2a0315727ce6fff}{SolidBody::generateNonOverlappingSpheres}}(\textcolor{keywordtype}{double}\ Nx,\ \textcolor{keywordtype}{double}\ Ny,\ \textcolor{keywordtype}{double}\ Nz,\ \textcolor{keywordtype}{int}\ N,\textcolor{keywordtype}{double}\ minRadius,\ \textcolor{keywordtype}{double}\ maxRadius,\ \textcolor{keywordtype}{double}\ dx)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00784}00784\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00785}00785\ \ \ \ \ std::vector<Sphere>\ spheres;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00786}00786\ \ \ \ \ std::random\_device\ rd;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00787}00787\ \ \ \ \ std::mt19937\ gen(rd());}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00788}00788\ \ \ \ \ std::uniform\_real\_distribution<>\ radiusDist(minRadius/dx,\ maxRadius/dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00789}00789\ \ \ \ \ std::uniform\_real\_distribution<>\ xDist,\ yDist,\ zDist;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00790}00790\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00791}00791\ \ \ \ \ \textcolor{keywordtype}{int}\ maxAttempts\ =\ 10000;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00792}00792\ \ \ \ \ \textcolor{keywordtype}{int}\ attempts\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00793}00793\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00794}00794\ \ \ \ \ \textcolor{keywordflow}{while}\ (spheres.size()\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(N)\ \&\&\ attempts\ <\ maxAttempts)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00795}00795\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00796}00796\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ =\ radiusDist(gen);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00797}00797\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00798}00798\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ bounds\ to\ keep\ the\ sphere\ entirely\ inside\ the\ box}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00799}00799\ \ \ \ \ \ \ \ \ xDist\ =\ std::uniform\_real\_distribution<>(r,\ Nx\ -\/\ r);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00800}00800\ \ \ \ \ \ \ \ \ yDist\ =\ std::uniform\_real\_distribution<>(r,\ Ny\ -\/\ r);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00801}00801\ \ \ \ \ \ \ \ \ zDist\ =\ std::uniform\_real\_distribution<>(r,\ Nz\ -\/\ r);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00802}00802\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00803}00803\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Sphere}{Sphere}}\ newSphere\{\ xDist(gen),\ yDist(gen),\ zDist(gen),\ r\ \};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00804}00804\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00805}00805\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlap\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00806}00806\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ spheres)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00807}00807\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00808}00808\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SolidBody_a400a984ef0921597db5ee20efe7f1023}{isOverlapping}}(newSphere,\ s))\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00809}00809\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overlap\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00812}00812\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00813}00813\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00814}00814\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00815}00815\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!overlap)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00816}00816\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00817}00817\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Sphere}{Sphere}}\ phynewSphere\{newSphere.\mbox{\hyperlink{structopenphase_1_1Sphere_a4b265c8e1776ea7ce2f89af24d16f909}{x}},\ newSphere.y,\ newSphere.z,\ newSphere.r\};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00818}00818\ \ \ \ \ \ \ \ \ \ \ \ \ spheres.push\_back(phynewSphere);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00819}00819\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00820}00820\ \ \ \ \ \ \ \ \ attempts++;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00821}00821\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00822}00822\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00823}00823\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ is\ =\ 0;\ is\ <\ spheres.size()\ ;\ is++)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00824}00824\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00825}00825\ \ \ \ \ \ \ \ \ spheres[is].x\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00826}00826\ \ \ \ \ \ \ \ \ spheres[is].y\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00827}00827\ \ \ \ \ \ \ \ \ spheres[is].z\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00828}00828\ \ \ \ \ \ \ \ \ spheres[is].r\ *=\ dx;\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00829}00829\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00830}00830\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00831}00831\ \ \ \ \ \textcolor{keywordflow}{if}\ (spheres.size()\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(N))\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00832}00832\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00833}00833\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Warning:\ Only\ "{}}\ <<\ spheres.size()\ <<\ \textcolor{stringliteral}{"{}\ spheres\ were\ placed\ after\ "{}}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00834}00834\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ maxAttempts\ <<\ \textcolor{stringliteral}{"{}\ attempts.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00835}00835\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00836}00836\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00837}00837\ \ \ \ \ \textcolor{keywordflow}{return}\ spheres;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00838}00838\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00839}00839\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00840}00840\ \textcolor{comment}{//\ Save\ spheres\ to\ a\ file}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00841}\mbox{\hyperlink{classopenphase_1_1SolidBody_a6afba42ab85fa08e47ddb974fd865a98}{00841}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a6afba42ab85fa08e47ddb974fd865a98}{SolidBody::saveSpheresToFile}}(\textcolor{keyword}{const}\ std::vector<Sphere>\&\ spheres,\ \textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{double}\ dx)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00842}00842\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00843}00843\ \ \ \ \ std::ofstream\ out(filename);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00844}00844\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00845}00845\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Cannot\ open\ file\ for\ writing:\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00846}00846\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00847}00847\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00848}00848\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00849}00849\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ spheres)\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00850}00850\ \ \ \ \ \ \ \ \ out\ <<\ s.x\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ s.y\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ s.z\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ s.r\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00851}00851\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00852}00852\ \ \ \ \ out.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00853}00853\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00854}00854\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00855}00855\ \textcolor{comment}{//\ Load\ spheres\ from\ a\ file}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00856}\mbox{\hyperlink{classopenphase_1_1SolidBody_a65523f5e3b9068813850a082a79cd9cc}{00856}}\ std::vector<Sphere>\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a65523f5e3b9068813850a082a79cd9cc}{SolidBody::loadSpheresFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00857}00857\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00858}00858\ \ \ \ \ std::ifstream\ in(filename);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00859}00859\ \ \ \ \ std::vector<Sphere>\ spheres;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00860}00860\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00861}00861\ \ \ \ \ \textcolor{keywordflow}{if}\ (!in)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00862}00862\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00863}00863\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Warning:\ Cannot\ open\ file\ for\ reading:\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00864}00864\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ spheres;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00865}00865\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00866}00866\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00867}00867\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1Sphere}{Sphere}}\ s;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00868}00868\ \ \ \ \ \textcolor{keywordflow}{while}\ (in\ >>\ s.\mbox{\hyperlink{structopenphase_1_1Sphere_a4b265c8e1776ea7ce2f89af24d16f909}{x}}\ >>\ s.\mbox{\hyperlink{structopenphase_1_1Sphere_a3f522cb84d1d71742840aba87bd76682}{y}}\ >>\ s.\mbox{\hyperlink{structopenphase_1_1Sphere_a83070ce02ae32daa6b572801405794d7}{z}}\ >>\ s.\mbox{\hyperlink{structopenphase_1_1Sphere_abecd531e9b33b3ad7294d0f318bea46f}{r}})\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00869}00869\ \ \ \ \ \ \ \ \ spheres.push\_back(s);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00870}00870\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00871}00871\ \ \ \ \ in.close();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00872}00872\ \ \ \ \ \textcolor{keywordflow}{return}\ spheres;}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00873}00873\ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00874}00874\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00875}\mbox{\hyperlink{classopenphase_1_1SolidBody_a65cdb25da16cc0be68b5c36040346980}{00875}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a65cdb25da16cc0be68b5c36040346980}{SolidBody::DistributeRandomSolidBodies}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keywordtype}{string}\ dir)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00876}00876\ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00877}00877\ \ \ \ \ \textcolor{keywordtype}{int}\ nDim=locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a70ddf5c25482d7cdefe67b0d25dcd258}{Active}}();}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00878}00878\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00879}00879\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SolidBody_a5850787701bdce9d711b627e614f1d6e}{Do\_randDist}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00880}00880\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00881}00881\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX==0\ and\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ==0)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00882}00882\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00883}00883\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nDim==2)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00884}00884\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00885}00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a8cf8f0edba1153a41a197fc4a844ed8f}{generateNonOverlappingCircles}}(\mbox{\hyperlink{classopenphase_1_1SolidBody_a476b7c477ed11c11df31e8029551cd8c}{XNDistZone}}-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_adea69eed27d98e198f82a4a009598890}{X0DistZone}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2ab80628df5ee3b53a9e15da936545f0}{ZNDistZone}}-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_ac3c6d01314403e1b74e19ebde6d97575}{Z0DistZone}},\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00886}00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a69b3911d1ef8647c9e78e52e5d012c26}{MinRadious}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a66a1dcc2d8eb2e81f7d2d01ceadf3709}{MaxRadious}},\ dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00887}00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ad666408427b27ef5e5cd391940974f0d}{saveCirclesToFile}}(\mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}},dir+\textcolor{stringliteral}{"{}cylindersData.txt"{}},dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00888}00888\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00889}00889\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(nDim==3)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00890}00890\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00891}00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a53b5dd09e40f057fa2a0315727ce6fff}{generateNonOverlappingSpheres}}(\mbox{\hyperlink{classopenphase_1_1SolidBody_a476b7c477ed11c11df31e8029551cd8c}{XNDistZone}}-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_adea69eed27d98e198f82a4a009598890}{X0DistZone}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a65a2a20cbc5b51c2c7ffbe1bce0d8630}{YNDistZone}}-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_ae1120329c25a58122080c8e5f16bd801}{Y0DistZone}},\ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a2ab80628df5ee3b53a9e15da936545f0}{ZNDistZone}}-\/\mbox{\hyperlink{classopenphase_1_1SolidBody_ac3c6d01314403e1b74e19ebde6d97575}{Z0DistZone}},}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00892}00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a69b3911d1ef8647c9e78e52e5d012c26}{MinRadious}},\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a66a1dcc2d8eb2e81f7d2d01ceadf3709}{MaxRadious}},\ dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00893}00893\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a6afba42ab85fa08e47ddb974fd865a98}{saveSpheresToFile}}(\mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}},dir+\textcolor{stringliteral}{"{}spheresData.txt"{}},dx);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00894}00894\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00895}00895\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00896}00896\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00897}00897\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nDim==2)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00898}00898\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00899}00899\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00900}00900\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00901}00901\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00902}00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}[i].r,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00903}00903\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}[i].x,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00904}00904\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}[i].z,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00905}00905\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00906}00906\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00907}00907\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00908}00908\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(nDim==3)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00909}00909\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00910}00910\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SolidBody_ae2d284e52065e396ed3d1047716cb9e0}{nParticles}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00911}00911\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00912}00912\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00913}00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}[i].r,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00914}00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}[i].x,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00915}00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}[i].y,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00916}00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}[i].z,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00917}00917\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00918}00918\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00919}00919\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00920}00920\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00921}00921\ }
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00922}00922\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1SolidBody_a5850787701bdce9d711b627e614f1d6e}{Do\_randDist}})}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00923}00923\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00924}00924\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nDim==2)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00925}00925\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00926}00926\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a662742a2b1733556abbd8d43543e45ae}{rand\_Circles}}\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a0ac63f5f48731411e9403a7f469c3885}{loadCirclesFromFile}}(dir+\textcolor{stringliteral}{"{}cylindersData.txt"{}});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00927}00927\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00928}00928\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(nDim==3)}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00929}00929\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00930}00930\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SolidBody_a94df76573e1bdc654e27972dd3d9203a}{rand\_Spheres}}\ =\ \mbox{\hyperlink{classopenphase_1_1SolidBody_a65523f5e3b9068813850a082a79cd9cc}{loadSpheresFromFile}}(dir+\textcolor{stringliteral}{"{}spheresData.txt"{}});}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00931}00931\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00932}00932\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SolidBody_8cpp_source_l00933}00933\ \}}
+
+\end{DoxyCode}

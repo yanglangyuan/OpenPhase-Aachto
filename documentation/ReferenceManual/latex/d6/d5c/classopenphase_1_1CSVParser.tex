@@ -1,0 +1,271 @@
+\doxysection{openphase\+::CSVParser Class Reference}
+\hypertarget{classopenphase_1_1CSVParser}{}\label{classopenphase_1_1CSVParser}\index{openphase::CSVParser@{openphase::CSVParser}}
+
+
+{\ttfamily \#include "{}CSVParser.\+h"{}}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_a0699f2f59862891496f26cfa342acaa2}{Write\+Header}} (const std\+::string file\+Name, const std\+::vector$<$ std\+::string $>$ header\+Array, const std\+::string seperator="{},"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_a21f8aa313e2dfa01459d262e1e887266}{Clear\+Content}} (const std\+::string file\+Name)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2}{Write\+Data}} (const std\+::string file\+Name, const std\+::vector$<$ int $>$ data\+Array, const std\+::string seperator="{},"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_a3effa2e9492fa37f8744e64a4ffb2406}{Write\+Data}} (const std\+::string file\+Name, const std\+::vector$<$ double $>$ data\+Array, const std\+::string seperator="{},"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e}{read\+File}} (std\+::string \&file\+Name, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&data\+Array, std\+::vector$<$ std\+::string $>$ \&header\+Array, const std\+::string seperator="{},"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1CSVParser_aeea6da638dfb1075e5a0ff0f5e096ce8}{read\+File}} (std\+::string \&file\+Name, std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&data\+Array, std\+::vector$<$ std\+::string $>$ \&header\+Array, std\+::string seperator="{},"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8h_source_l00035}{35}} of file \mbox{\hyperlink{CSVParser_8h_source}{CSVParser.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1CSVParser_a21f8aa313e2dfa01459d262e1e887266}\label{classopenphase_1_1CSVParser_a21f8aa313e2dfa01459d262e1e887266} 
+\index{openphase::CSVParser@{openphase::CSVParser}!ClearContent@{ClearContent}}
+\index{ClearContent@{ClearContent}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{ClearContent()}{ClearContent()}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::\+Clear\+Content (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::trunc);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}ClearContent()"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ file.close();}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e}\label{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e} 
+\index{openphase::CSVParser@{openphase::CSVParser}!readFile@{readFile}}
+\index{readFile@{readFile}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::read\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file\+Name,  }\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{data\+Array,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{header\+Array,  }\item[{const std\+::string}]{seperator = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ std::ifstream\ file(fileName.c\_str());}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}readFile()"{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00125\ \ \ \ \ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ csep\ =\ seperator[0];}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ headerFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00129\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!headerFlag)\ \textcolor{comment}{//populate\ headers}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.clear();}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.push\_back(cell);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ headerFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//populate\ data}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ row\_data;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.clear();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.push\_back(atof(cell.c\_str()));}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ dataArray.push\_back(row\_data);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ file.close();}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1CSVParser_aeea6da638dfb1075e5a0ff0f5e096ce8}\label{classopenphase_1_1CSVParser_aeea6da638dfb1075e5a0ff0f5e096ce8} 
+\index{openphase::CSVParser@{openphase::CSVParser}!readFile@{readFile}}
+\index{readFile@{readFile}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::read\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file\+Name,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{data\+Array,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{header\+Array,  }\item[{std\+::string}]{seperator = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ std::ifstream\ file(fileName.c\_str());}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}readFile()"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00168\ \ \ \ \ \};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ csep\ =\ seperator[0];}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ headerFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00172\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!headerFlag)\ \textcolor{comment}{//populate\ headers}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.clear();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.push\_back(cell);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ headerFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//populate\ data}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ row\_data;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.clear();}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.push\_back(cell);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ dataArray.push\_back(row\_data);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ file.close();}
+\DoxyCodeLine{00200\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1CSVParser_a3effa2e9492fa37f8744e64a4ffb2406}\label{classopenphase_1_1CSVParser_a3effa2e9492fa37f8744e64a4ffb2406} 
+\index{openphase::CSVParser@{openphase::CSVParser}!WriteData@{WriteData}}
+\index{WriteData@{WriteData}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{WriteData()}{WriteData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name,  }\item[{const std\+::vector$<$ double $>$}]{data\+Array,  }\item[{const std\+::string}]{seperator = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::app);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (dataArray.size()\ ==\ 0)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ data\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ dataArray.cbegin();\ iter\ !=\ dataArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ file\ <<\ dataArray.back()\ <<\ endl;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ file.close();}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2}\label{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2} 
+\index{openphase::CSVParser@{openphase::CSVParser}!WriteData@{WriteData}}
+\index{WriteData@{WriteData}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{WriteData()}{WriteData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name,  }\item[{const std\+::vector$<$ int $>$}]{data\+Array,  }\item[{const std\+::string}]{seperator = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::app);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (dataArray.size()\ ==\ 0)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ data\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ dataArray.cbegin();\ iter\ !=\ dataArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ file\ <<\ dataArray.back()\ <<\ endl;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ file.close();}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1CSVParser_a0699f2f59862891496f26cfa342acaa2}\label{classopenphase_1_1CSVParser_a0699f2f59862891496f26cfa342acaa2} 
+\index{openphase::CSVParser@{openphase::CSVParser}!WriteHeader@{WriteHeader}}
+\index{WriteHeader@{WriteHeader}!openphase::CSVParser@{openphase::CSVParser}}
+\doxysubsubsection{\texorpdfstring{WriteHeader()}{WriteHeader()}}
+{\footnotesize\ttfamily void openphase\+::\+CSVParser\+::\+Write\+Header (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name,  }\item[{const std\+::vector$<$ std\+::string $>$}]{header\+Array,  }\item[{const std\+::string}]{seperator = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{CSVParser_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{CSVParser_8cpp_source}{CSVParser.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ std::ofstream\ file(fileName.c\_str());}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteHeader()"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (headerArray.size()\ ==\ 0)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ header\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteHeader()"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ headerArray.cbegin();\ iter\ !=\ headerArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ file\ <<\ headerArray.back()\ <<\ endl;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ file.close();}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CSVParser_8h}{CSVParser.\+h}}\item 
+\mbox{\hyperlink{CSVParser_8cpp}{CSVParser.\+cpp}}\end{DoxyCompactItemize}

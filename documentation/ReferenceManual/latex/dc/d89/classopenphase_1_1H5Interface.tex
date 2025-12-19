@@ -1,0 +1,684 @@
+\doxysection{openphase\+::H5\+Interface Class Reference}
+\hypertarget{classopenphase_1_1H5Interface}{}\label{classopenphase_1_1H5Interface}\index{openphase::H5Interface@{openphase::H5Interface}}
+
+
+{\ttfamily \#include "{}H5\+Interface.\+h"{}}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structopenphase_1_1H5Interface_1_1Field__t}{Field\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Short hand for a field\textquotesingle{}s name and function which will be written to file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_aea2d2ee36b61c6578db59529c6551335}{Open\+File}} (const std\+::string Input\+File\+Name, const std\+::string Output\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a7a308f9fe41f9cee930b64b876045b39}{Write\+Simulation\+Settings}} (const std\+::string Input\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a799d480dd419c39a5015a7307076b85b}{Write\+OPID}} (const std\+::string Input\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a11f7b919226498c0cbf0e877c30a826f}{get\+Project\+Input}} (std\+::stringstream \&data)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a91328bd1ec38c82202fc2f6459e14f68}{get\+OPID}} (std\+::stringstream \&data)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a79acba1f434c2d1b5793e3e1e8e64a00}{Write\+Visualization}} (int t\+Step, const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1H5Interface_1_1Field__t}{Field\+\_\+t}} $>$ List\+Of\+Fields, const int resolution)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb}{Write\+Check\+Point}} (int t\+Step, std\+::string name, std\+::vector$<$ double $>$ \&data)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85}{Read\+Check\+Point}} (int t\+Step, std\+::string name, std\+::vector$<$ double $>$ \&data)
+\item 
+{\footnotesize template$<$class Funktion\+\_\+t $>$ }\\void \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{For\+Each}} (int t\+Step, std\+::string Name, const long int Nx, const long int Ny, const long int Nz, Funktion\+\_\+t Function)
+\item 
+{\footnotesize template$<$class container\+\_\+t $>$ }\\void \mbox{\hyperlink{classopenphase_1_1H5Interface_aa9f46084ff690ed7c9baa65128f6d2a3}{Write\+Point\+Data}} (int t\+Step, container\+\_\+t List\+Of\+Fields, const long int Nx, const long int Ny, const long int Nz, const int precision=16)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5\+Input\+File\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5\+Output\+File\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}} = "{}H5\+Interface"{}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00039}{39}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}\label{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671} 
+\index{openphase::H5Interface@{openphase::H5Interface}!ForEach@{ForEach}}
+\index{ForEach@{ForEach}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{ForEach()}{ForEach()}}
+{\footnotesize\ttfamily template$<$class Funktion\+\_\+t $>$ \\
+void openphase\+::\+H5\+Interface\+::\+For\+Each (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{std\+::string}]{Name,  }\item[{const long int}]{Nx,  }\item[{const long int}]{Ny,  }\item[{const long int}]{Nz,  }\item[{Funktion\+\_\+t}]{Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00122}{122}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::vector<float>\ vdata;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ it\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ Nz;\ ++k)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Ny;\ ++j)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Nx;\ ++i)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ =\ 0;\ n\ <\ Function(i,j,k).size();\ ++n)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ vdata.push\_back(Function(i,j,k)[n]);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/Visualization"{}}))\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ HDF5\ group\ path:}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(\textcolor{stringliteral}{"{}/Visualization"{}});}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/Visualization/"{}}+Name))\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ HDF5\ group\ path:}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(\textcolor{stringliteral}{"{}/Visualization/"{}}+Name);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//H5Easy::dump(file,\ "{}/PhaseField"{},\ data);}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ H5Easy::DataSet\ ds\ =\ H5Easy::dump(file,\textcolor{stringliteral}{"{}/Visualization/"{}}+Name+\textcolor{stringliteral}{"{}/"{}}+std::to\_string(tStep),\ vdata,\ H5Easy::DumpMode::Overwrite);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ el\ =\ ds.getElementCount();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ checking:}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(el\ ==\ 0)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Zero\ elements\ were\ written\ to\ the\ HDF5\ file"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}ForEach()"{}});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}ForEach()"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a91328bd1ec38c82202fc2f6459e14f68}\label{classopenphase_1_1H5Interface_a91328bd1ec38c82202fc2f6459e14f68} 
+\index{openphase::H5Interface@{openphase::H5Interface}!getOPID@{getOPID}}
+\index{getOPID@{getOPID}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{getOPID()}{getOPID()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::get\+OPID (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00163\ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings"{}}))\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}/SimulationSettings\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}getOPID()"{}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings/OPID"{}}))\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}/SimulationSettings/OPID\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}getOPID()"{}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ std::vector<std::string>\ inputlines;}
+\DoxyCodeLine{00173\ \ \ \ \ inputlines\ =\ H5Easy::load<std::vector<std::string>\ >(file,\ \textcolor{stringliteral}{"{}/SimulationSettings/OPID"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ data.clear();}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ inputlines.size();\ ++i)}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ data\ <<\ inputlines[i]\ <<\ std::endl;}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}getOPID()"{}});}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00183\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a11f7b919226498c0cbf0e877c30a826f}\label{classopenphase_1_1H5Interface_a11f7b919226498c0cbf0e877c30a826f} 
+\index{openphase::H5Interface@{openphase::H5Interface}!getProjectInput@{getProjectInput}}
+\index{getProjectInput@{getProjectInput}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{getProjectInput()}{getProjectInput()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::get\+Project\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00138\ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings"{}}))\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}/SimulationSettings\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}getProjectInput()"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings/ProjectInput"{}}))\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}/SimulationSettings/ProjectInput\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}getProjectInput()"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ std::vector<std::string>\ inputlines;}
+\DoxyCodeLine{00148\ \ \ \ \ inputlines\ =\ H5Easy::load<std::vector<std::string>\ >(file,\ \textcolor{stringliteral}{"{}/SimulationSettings/ProjectInput"{}});}
+\DoxyCodeLine{00149\ \ \ \ \ data.clear();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ inputlines.size();\ ++i)}
+\DoxyCodeLine{00151\ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ data\ <<\ inputlines[i]\ <<\ std::endl;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}getProjectInput()"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00158\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_aea2d2ee36b61c6578db59529c6551335}\label{classopenphase_1_1H5Interface_aea2d2ee36b61c6578db59529c6551335} 
+\index{openphase::H5Interface@{openphase::H5Interface}!OpenFile@{OpenFile}}
+\index{OpenFile@{OpenFile}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{OpenFile()}{OpenFile()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Open\+File (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name,  }\item[{const std\+::string}]{Output\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}}\ =\ InputFileName;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}}\ =\ OutputFileName;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::ifstream\ in(\mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}});}
+\DoxyCodeLine{00052\ \ \ \ \ std::ifstream\ out(\mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}});}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}(in.good()\ \&\&\ !out.good())}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::string\ command\ =\ \textcolor{stringliteral}{"{}cp\ "{}}\ +\ \mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}}\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ \mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//system(command.c\_str());}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ in.close();}
+\DoxyCodeLine{00059\ \ \ \ \ out.close();}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85}\label{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85} 
+\index{openphase::H5Interface@{openphase::H5Interface}!ReadCheckPoint@{ReadCheckPoint}}
+\index{ReadCheckPoint@{ReadCheckPoint}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{ReadCheckPoint()}{ReadCheckPoint()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Read\+Check\+Point (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{std\+::string}]{name,  }\item[{std\+::vector$<$ double $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00094}{94}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}{H5InputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/CheckPoints"{}}))\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}/CheckPoints\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}ReadCheckPoint()"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::stringstream\ check1;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ check1\ <<\ \textcolor{stringliteral}{"{}/CheckPoints/"{}}\ <<\ name;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(check1.str().c\_str()))\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(check1.str()+\textcolor{stringliteral}{"{}\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}ReadCheckPoint()"{}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::stringstream\ check2;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ check2\ <<\ \textcolor{stringliteral}{"{}/CheckPoints/"{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}/"{}}\ <<\ tStep;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(check2.str().c\_str()))\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(check2.str()+\textcolor{stringliteral}{"{}\ not\ found."{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}ReadCheckPoint()"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ data\ =\ H5Easy::load<std::vector<double>\ >(file,\ check2.str());}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}ReadCheckPoint()"{}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb}\label{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb} 
+\index{openphase::H5Interface@{openphase::H5Interface}!WriteCheckPoint@{WriteCheckPoint}}
+\index{WriteCheckPoint@{WriteCheckPoint}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{WriteCheckPoint()}{WriteCheckPoint()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Write\+Check\+Point (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{std\+::string}]{name,  }\item[{std\+::vector$<$ double $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00064}{64}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/CheckPoints"{}}))\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ HDF5\ group\ path:}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(\textcolor{stringliteral}{"{}/CheckPoints"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::stringstream\ check1;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ check1\ <<\ \textcolor{stringliteral}{"{}/CheckPoints/"{}}\ <<\ name;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(check1.str().c\_str()))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(check1.str().c\_str());}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::stringstream\ check2;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ check2\ <<\ \textcolor{stringliteral}{"{}/CheckPoints/"{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}/"{}}\ <<\ tStep;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ H5Easy::DataSet\ ds\ =\ H5Easy::dump(file,\ check2.str(),\ data,\ H5Easy::DumpMode::Overwrite);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ el\ =\ ds.getElementCount();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ check2.str()\ <<\ \textcolor{stringliteral}{"{}\ written\ "{}}\ <<\ el\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ checking:}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(el\ ==\ 0)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Zero\ elements\ were\ written\ to\ the\ HDF5\ file"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}WriteCheckPoint()"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}WriteCheckPoint()"{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a799d480dd419c39a5015a7307076b85b}\label{classopenphase_1_1H5Interface_a799d480dd419c39a5015a7307076b85b} 
+\index{openphase::H5Interface@{openphase::H5Interface}!WriteOPID@{WriteOPID}}
+\index{WriteOPID@{WriteOPID}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{WriteOPID()}{WriteOPID()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Write\+OPID (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00101\ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::fstream\ inp(InputFileName.c\_str(),\ std::ios::in\ |\ std::ios\_base::binary);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ "{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}WriteOPID()"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::vector<std::string>\ inputlines;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::string\ str;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(std::getline(inp,\ str))\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ str\ <<\ std::endl;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ inputlines.push\_back(str);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings"{}}))\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ HDF5\ group\ path:}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(\textcolor{stringliteral}{"{}/SimulationSettings"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//H5Easy::dump(file,\ "{}/ProjectInput"{},\ inputlines);}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ H5Easy::DataSet\ ds\ =\ H5Easy::dump(file,\ \textcolor{stringliteral}{"{}/SimulationSettings/OPID"{}},\ inputlines,\ H5Easy::DumpMode::Overwrite);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ el\ =\ ds.getElementCount();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ checking:}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(el\ ==\ 0)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Zero\ elements\ were\ written\ to\ the\ HDF5\ file"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteOPID()"{}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteOPID()"{}});}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_aa9f46084ff690ed7c9baa65128f6d2a3}\label{classopenphase_1_1H5Interface_aa9f46084ff690ed7c9baa65128f6d2a3} 
+\index{openphase::H5Interface@{openphase::H5Interface}!WritePointData@{WritePointData}}
+\index{WritePointData@{WritePointData}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{WritePointData()}{WritePointData()}}
+{\footnotesize\ttfamily template$<$class container\+\_\+t $>$ \\
+void openphase\+::\+H5\+Interface\+::\+Write\+Point\+Data (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{container\+\_\+t}]{List\+Of\+Fields,  }\item[{const long int}]{Nx,  }\item[{const long int}]{Ny,  }\item[{const long int}]{Nz,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00161}{161}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ Field\ :\ ListOfFields)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(\textcolor{keywordtype}{int}))}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ data;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.push\_back(std::any\_cast<double>(Field.Function(i,j,k)));}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ data;\ \});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(\textcolor{keywordtype}{size\_t}))}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ data;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.push\_back(std::any\_cast<size\_t>(Field.Function(i,j,k)));}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ data;\ \});}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(\textcolor{keywordtype}{double}))}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ data;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.push\_back(std::any\_cast<double>(Field.Function(i,j,k)));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ data;\ \});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector3))}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<dVector3>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector6))}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<dVector6>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStrain))}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<vStrain>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStress))}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<vStress>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix3x3))}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<dMatrix3x3>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix6x6))}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_a1262616373538799c0893753d9552671}{ForEach}}(tStep,Field.Name,Nx,Ny,Nz,[\&Field,\ precision](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{return\ std::any\_cast<dMatrix6x6>(Field.Function(i,j,k)).writeBinary();\});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\textcolor{stringliteral}{"{}WritePointData()"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a7a308f9fe41f9cee930b64b876045b39}\label{classopenphase_1_1H5Interface_a7a308f9fe41f9cee930b64b876045b39} 
+\index{openphase::H5Interface@{openphase::H5Interface}!WriteSimulationSettings@{WriteSimulationSettings}}
+\index{WriteSimulationSettings@{WriteSimulationSettings}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{WriteSimulationSettings()}{WriteSimulationSettings()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Write\+Simulation\+Settings (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00065\ \ \ \ \ H5Easy::File\ file(\mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}},\ H5Easy::File::OpenOrCreate);}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::fstream\ inp(InputFileName.c\_str(),\ std::ios::in\ |\ std::ios\_base::binary);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ "{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}H5"{}},\ \textcolor{stringliteral}{"{}WriteSimulationSettings()"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::vector<std::string>\ inputlines;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::string\ str;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(std::getline(inp,\ str))\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ str\ <<\ std::endl;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ inputlines.push\_back(str);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.exist(\textcolor{stringliteral}{"{}/SimulationSettings"{}}))\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ HDF5\ group\ path:}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ file.createGroup(\textcolor{stringliteral}{"{}/SimulationSettings"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//H5Easy::dump(file,\ "{}/ProjectInput"{},\ inputlines);}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ H5Easy::DataSet\ ds\ =\ H5Easy::dump(file,\ \textcolor{stringliteral}{"{}/SimulationSettings/ProjectInput"{}},\ inputlines,\ H5Easy::DumpMode::Overwrite);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ el\ =\ ds.getElementCount();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ checking:}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(el\ ==\ 0)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Zero\ elements\ were\ written\ to\ the\ HDF5\ file"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteSimulationSettings()"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteSimulationSettings()"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1H5Interface_a79acba1f434c2d1b5793e3e1e8e64a00}\label{classopenphase_1_1H5Interface_a79acba1f434c2d1b5793e3e1e8e64a00} 
+\index{openphase::H5Interface@{openphase::H5Interface}!WriteVisualization@{WriteVisualization}}
+\index{WriteVisualization@{WriteVisualization}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{WriteVisualization()}{WriteVisualization()}}
+{\footnotesize\ttfamily void openphase\+::\+H5\+Interface\+::\+Write\+Visualization (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1H5Interface_1_1Field__t}{Field\+\_\+t}} $>$}]{List\+Of\+Fields,  }\item[{const int}]{resolution }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{H5Interface_8cpp_source}{H5\+Interface.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nx\ =\ resolution*locSettings.Grid.Nx;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Ny\ =\ resolution*locSettings.Grid.Ny;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nz\ =\ resolution*locSettings.Grid.Nz;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ std::stringstream\ xdmffilename;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ xdmffilename\ <<\ \mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}}\ <<\ \textcolor{stringliteral}{"{}.xdmf"{}};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ std::ifstream\ f(xdmffilename.str().c\_str());}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!f.good())}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ XMLDocument\ xmlDoc;}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.InsertEndChild(\ xmlDoc.NewDeclaration()\ );}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ XMLUnknown\ *\ pdoctype\ =\ xmlDoc.NewUnknown(\textcolor{stringliteral}{"{}DOCTYPE\ Xdmf\ SYSTEM\ \(\backslash\)"{}Xdmf.dtd\(\backslash\)"{}\ []"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.InsertEndChild(pdoctype);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ XMLElement\ *\ pXdmf\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Xdmf"{}});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ pXdmf-\/>SetAttribute(\textcolor{stringliteral}{"{}Version"{}},\ \textcolor{stringliteral}{"{}2.0"{}});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.InsertEndChild(pXdmf);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ XMLElement\ *\ pDomain\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Domain"{}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ pXdmf-\/>InsertEndChild(pDomain);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ XMLElement\ *\ pTempGrid\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Grid"{}});}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ pTempGrid-\/>SetAttribute(\textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}CellTime"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ pTempGrid-\/>SetAttribute(\textcolor{stringliteral}{"{}GridType"{}},\ \textcolor{stringliteral}{"{}Collection"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ pTempGrid-\/>SetAttribute(\textcolor{stringliteral}{"{}CollectionType"{}},\ \textcolor{stringliteral}{"{}Temporal"{}});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ pDomain-\/>InsertEndChild(pTempGrid);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.SaveFile(xdmffilename.str().c\_str());}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ XMLDocument\ xmlDoc;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetinyxml2_a1fbf88509c3ac88c09117b1947414e08}{XMLError}}\ eResult\ =\ xmlDoc.LoadFile(xdmffilename.str().c\_str());}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ XMLNode\ *\ pXdmf\ =\ xmlDoc.LastChild();}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ XMLNode\ *\ pDomain\ =\ pXdmf-\/>LastChild();}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ XMLNode\ *\ pTempGrid\ =\ pDomain-\/>LastChild();}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ XMLElement\ *\ pStrucGrid\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Grid"{}});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ pStrucGrid-\/>SetAttribute(\textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}Structured\ Grid"{}});}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ pStrucGrid-\/>SetAttribute(\textcolor{stringliteral}{"{}GridType"{}},\ \textcolor{stringliteral}{"{}Uniform"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ pTempGrid-\/>InsertEndChild(pStrucGrid);}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ XMLElement\ *\ pTime\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Time"{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ pTime-\/>SetAttribute(\textcolor{stringliteral}{"{}Value"{}},\ tStep);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ pStrucGrid-\/>InsertEndChild(pTime);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ XMLElement\ *\ pTop\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Topology"{}});}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ pTop-\/>SetAttribute(\textcolor{stringliteral}{"{}TopologyType"{}},\ \textcolor{stringliteral}{"{}3DCoRectMesh"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ std::stringstream\ dims;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ dims\ <<\ Nx\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Ny\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nz;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ pTop-\/>SetAttribute(\textcolor{stringliteral}{"{}Dimensions"{}},\ dims.str().c\_str());}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ pStrucGrid-\/>InsertEndChild(pTop);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ XMLElement\ *\ pGeo\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Geometry"{}});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ pGeo-\/>SetAttribute(\textcolor{stringliteral}{"{}GeometryType"{}},\ \textcolor{stringliteral}{"{}ORIGIN\_DXDYDZ"{}});}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ pStrucGrid-\/>InsertEndChild(pGeo);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ XMLElement\ *\ pOrigin\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}DataItem"{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ pOrigin-\/>SetAttribute(\textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}Origin"{}});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ pOrigin-\/>SetAttribute(\textcolor{stringliteral}{"{}Dimensions"{}},\ 3);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ pOrigin-\/>SetAttribute(\textcolor{stringliteral}{"{}NumberType"{}},\ \textcolor{stringliteral}{"{}Double"{}});}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ pOrigin-\/>SetAttribute(\textcolor{stringliteral}{"{}Precision"{}},\ 4);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ pOrigin-\/>SetAttribute(\textcolor{stringliteral}{"{}Format"{}},\ \textcolor{stringliteral}{"{}XML"{}});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ pOrigin-\/>SetText(\textcolor{stringliteral}{"{}0\ 0\ 0"{}});}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ pGeo-\/>InsertEndChild(pOrigin);}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ XMLElement\ *\ pSpacing\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}DataItem"{}});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ pSpacing-\/>SetAttribute(\textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}Spacing"{}});}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ pSpacing-\/>SetAttribute(\textcolor{stringliteral}{"{}Dimensions"{}},\ 3);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ pSpacing-\/>SetAttribute(\textcolor{stringliteral}{"{}NumberType"{}},\ \textcolor{stringliteral}{"{}Double"{}});}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ pSpacing-\/>SetAttribute(\textcolor{stringliteral}{"{}Precision"{}},\ 4);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ pSpacing-\/>SetAttribute(\textcolor{stringliteral}{"{}Format"{}},\ \textcolor{stringliteral}{"{}XML"{}});}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ pSpacing-\/>SetText(\textcolor{stringliteral}{"{}0.1\ 0.1\ 0.1"{}});}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ pGeo-\/>InsertEndChild(pSpacing);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ std::vector<XMLElement*>\ Attribute(ListOfFields.size());}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ std::vector<XMLElement*>\ Data(ListOfFields.size());}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ Field\ :\ ListOfFields)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}Attribute"{}});}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}Name"{}},\ Field.Name.c\_str());}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector3))}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Vector"{}});}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector6))}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Vector"{}});}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStrain))}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Tensor6"{}});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStress))}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Tensor6"{}});}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix3x3))}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Matrix"{}});}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix6x6))}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Matrix"{}});}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}AttributeType"{}},\ \textcolor{stringliteral}{"{}Scalar"{}});}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}Center"{}},\ \textcolor{stringliteral}{"{}Node"{}});}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ pStrucGrid-\/>InsertEndChild(Attribute[i]);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]\ =\ xmlDoc.NewElement(\textcolor{stringliteral}{"{}DataItem"{}});}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ndims;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ dims.str();}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector3))}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 3"{}};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dVector6))}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 6"{}};}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStrain))}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 6"{}};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(vStress))}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 6"{}};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix3x3))}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 3\ 3"{}};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Field.Function(0,0,0).type()\ ==\ \textcolor{keyword}{typeid}(dMatrix6x6))}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ndims\ <<\ \textcolor{stringliteral}{"{}\ 6\ 6"{}};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}Dimensions"{}},\ ndims.str().c\_str());}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}NumberType"{}},\ \textcolor{stringliteral}{"{}Double"{}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}Precision"{}},\ 16);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]-\/>SetAttribute(\textcolor{stringliteral}{"{}Format"{}},\ \textcolor{stringliteral}{"{}HDF"{}});}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ path;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ path\ <<\ \mbox{\hyperlink{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}{H5OutputFileName}}\ <<\ \textcolor{stringliteral}{"{}:/Visualization/"{}}\ <<\ Field.Name\ <<\ \textcolor{stringliteral}{"{}/"{}}\ <<\ std::to\_string(tStep);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ Data[i]-\/>SetText(path.str().c\_str());}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ Attribute[i]-\/>InsertEndChild(Data[i]);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ ++i;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ xmlDoc.SaveFile(xdmffilename.str().c\_str());}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1H5Interface_aa9f46084ff690ed7c9baa65128f6d2a3}{WritePointData}}(\ tStep,ListOfFields,}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ Nx,\ \ Ny,\ Nz);}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ \mbox{\hyperlink{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteVisualization()"{}});}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}});}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb}\label{classopenphase_1_1H5Interface_a80d2601ac9816d6b7653489f1a3dc1fb} 
+\index{openphase::H5Interface@{openphase::H5Interface}!H5InputFileName@{H5InputFileName}}
+\index{H5InputFileName@{H5InputFileName}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{H5InputFileName}{H5InputFileName}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+H5\+Interface\+::\+H5\+Input\+File\+Name}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00221}{221}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+\Hypertarget{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da}\label{classopenphase_1_1H5Interface_ad68d87355f2b5a90eddb39d6ab55d1da} 
+\index{openphase::H5Interface@{openphase::H5Interface}!H5OutputFileName@{H5OutputFileName}}
+\index{H5OutputFileName@{H5OutputFileName}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{H5OutputFileName}{H5OutputFileName}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+H5\+Interface\+::\+H5\+Output\+File\+Name}
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00222}{222}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+\Hypertarget{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4}\label{classopenphase_1_1H5Interface_aaf4982f18578e2c4b0452338a7821ae4} 
+\index{openphase::H5Interface@{openphase::H5Interface}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::H5Interface@{openphase::H5Interface}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+H5\+Interface\+::thisclassname = "{}H5\+Interface"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{H5Interface_8h_source_l00042}{42}} of file \mbox{\hyperlink{H5Interface_8h_source}{H5\+Interface.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{H5Interface_8h}{H5\+Interface.\+h}}\item 
+\mbox{\hyperlink{H5Interface_8cpp}{H5\+Interface.\+cpp}}\end{DoxyCompactItemize}

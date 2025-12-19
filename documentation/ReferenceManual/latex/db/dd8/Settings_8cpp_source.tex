@@ -1,0 +1,584 @@
+\doxysection{Settings.\+cpp}
+\hypertarget{Settings_8cpp_source}{}\label{Settings_8cpp_source}\index{Settings.cpp@{Settings.cpp}}
+\mbox{\hyperlink{Settings_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GridParameters_8h}{GridParameters.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RunTimeControl_8h}{RunTimeControl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{OPObject_8h}{OPObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00035}00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00038}00038\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00040}\mbox{\hyperlink{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}{00040}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}{Settings::Initialize}}(std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Settings"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a36c021aa7764ad2af93a18b4778ae2d3}{DefaultVTKDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ VTKDir\ is\ empty.\ This\ way,\ VTKDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{DefaultRawDataDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ RawDataDir\ is\ empty.\ This\ way,\ RawDataDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{DefaultRawDataDir}};\ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ InputRawDataDir\ is\ empty.\ This\ way,\ RawDataDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a05d6c6322f925d4acda86484d90ade65}{DefaultTextDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ TextDir\ is\ empty.\ This\ way,\ TextDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}{ConsoleOutput::WriteStartScreen}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00058}\mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{Settings::ReadInput}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}+\textcolor{stringliteral}{"{}\ input"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00063}00063\ \ \ \ \ std::string\ filetype\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a09fe0f4b7796b141b23b39a06c854faa}{FileInterface::getFileExtension}}(InputFileName);\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (filetype\ ==\ \textcolor{stringliteral}{"{}opi"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{ReadInput}}(data);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (filetype\ ==\ \textcolor{stringliteral}{"{}json"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}{ReadJSON}}(InputFileName);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Filetype\ "{}}\ <<\ filetype\ <<\ \textcolor{stringliteral}{"{}\ not\ recognized.\ Filetype\ must\ be\ opi\ or\ json."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(1);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00092}\mbox{\hyperlink{classopenphase_1_1Settings_ab53328d497c36d7a5b33c431840b5bf4}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{Settings::ReadInput}}(std::stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b}{ReadInput}}(inp);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Settings"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Active\ phases"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ endofnames\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{while}(!(endofnames))}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00107}00107\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}Phase\_"{}})\ <<\ n;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1FileInterface_a3470cc1e41f1b06c7458853b9c040297}{FileInterface::FindParameter}}(inp,\ moduleLocation,\ converter.str())\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str());}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ endofnames\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00121}00121\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.size();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ Reading\ states\ of\ matter\ for\ all\ phases.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}State\_"{}})\ <<\ m;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ state\_of\_matter\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str(),\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}SOLID"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ state\_set\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}SOLID"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}LIQUID"{}}\ )}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{AggregateStates::Liquid}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}GAS"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!state\_set)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ state\ of\ matter\ is\ selected\ for\ phase\ "{}}\ +\ to\_string(m)\ +\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ +\ state\_of\_matter,\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00153}00153\ \textcolor{comment}{//\ \ \ \ //\ Reading\ phase\ activation\ modes.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00154}00154\ \textcolor{comment}{//\ \ \ \ PhaseActivationModes.resize(Nphases);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00155}00155\ \textcolor{comment}{//\ \ \ \ for(size\_t\ m\ =\ 0;\ m\ <\ Nphases;\ m++)}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00156}00156\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00157}00157\ \textcolor{comment}{//\ \ \ \ \ \ \ \ stringstream\ converter;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00158}00158\ \textcolor{comment}{//\ \ \ \ \ \ \ \ converter\ <<\ string("{}PhaseActivation\_"{})\ <<\ m;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00159}00159\ \textcolor{comment}{//\ \ \ \ \ \ \ \ string\ state\_of\_matter\ =\ FileInterface::ReadParameterK(inp,\ moduleLocation,\ converter.str(),\ false,\ "{}ENABLED"{});}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00160}00160\ \textcolor{comment}{//\ \ \ \ \ \ \ \ bool\ state\_set\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00161}00161\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(state\_of\_matter\ ==\ "{}ENABLED"{})}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00162}00162\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00163}00163\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ PhaseActivationModes[m]\ =\ ActivationModes::Enabled;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00164}00164\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00165}00165\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00166}00166\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(state\_of\_matter\ ==\ "{}DISABLED"{})}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00167}00167\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00168}00168\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ PhaseActivationModes[m]\ =\ ActivationModes::Disabled;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00169}00169\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00170}00170\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00171}00171\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(!state\_set)}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00172}00172\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00173}00173\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ ConsoleOutput::WriteExit("{}Wrong\ phase\ interaction\ mode\ is\ selected\ for\ phase\ "{}\ +\ to\_string(m)\ +\ "{}\ -\/>\ "{}\ +\ state\_of\_matter,\ "{}Settings"{},\ "{}ReadInput()"{});}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00174}00174\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ OP\_Exit(EXIT\_FAILURE);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00175}00175\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00176}00176\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//\ Reading\ interaction\ modes\ for\ phase\ pairs.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00179}00179\ \textcolor{comment}{//\ \ \ \ PhaseInteractions.Allocate(Nphases,\ Nphases);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00180}00180\ \textcolor{comment}{//\ \ \ \ for(size\_t\ n\ =\ 0;\ n\ <\ Nphases;\ n++)}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00181}00181\ \textcolor{comment}{//\ \ \ \ for(size\_t\ m\ =\ n;\ m\ <\ Nphases;\ m++)}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00182}00182\ \textcolor{comment}{//\ \ \ \ if(PhaseActivationModes[n]\ ==\ ActivationModes::Enabled\ and}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00183}00183\ \textcolor{comment}{//\ \ \ \ \ \ \ PhaseActivationModes[m]\ ==\ ActivationModes::Enabled)}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00184}00184\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00185}00185\ \textcolor{comment}{//\ \ \ \ \ \ \ \ stringstream\ converter;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00186}00186\ \textcolor{comment}{//\ \ \ \ \ \ \ \ converter\ <<\ string("{}PhaseInteractions\_"{})\ <<\ n\ <<\ "{}\_"{}\ <<\ m;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00187}00187\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(n,m)\ =\ FileInterface::ReadParameterB(inp,\ moduleLocation,\ converter.str(),\ false,\ true);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00188}00188\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(m,n)\ =\ PhaseInteractions(n,m);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00189}00189\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00190}00190\ \textcolor{comment}{//\ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00191}00191\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00192}00192\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(n,m)\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00193}00193\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(m,n)\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00194}00194\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//\ Reading\ equilibrium\ density\ for\ all\ phases\ (Rigid-\/Body\ Motion).}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00197}00197\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00199}00199\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}MassDensity\_"{}})\ <<\ m;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}[m]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ converter.str(),\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{comment}{//\ Reading\ number\ of\ crystallographic\ variants\ of\ each\ phase}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00206}00206\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ pIndex\ =\ 0;\ pIndex\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ pIndex++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00208}00208\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ converter\ <<\ \textcolor{stringliteral}{"{}Nvariants\_"{}}\ <<\ pIndex;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ converter.str(),\textcolor{keyword}{false},1);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ <\ 1)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ number\ of\ crystallographic\ variants\ for\ phase\ "{}}\ +\ std::to\_string(pIndex)\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex])\ +\ \textcolor{stringliteral}{"{}\ (Minimum\ 1)"{}},\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00217}00217\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00219}00219\ \ \ \ \ endofnames\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00220}00220\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{while}(!(endofnames))}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00223}00223\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}Comp\_"{}})\ <<\ n;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1FileInterface_a3470cc1e41f1b06c7458853b9c040297}{FileInterface::FindParameter}}(inp,\ moduleLocation,\ converter.str())\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str());}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*if(tmp\ ==\ "{}VA"{})}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00230}00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00231}00231\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ "{}\(\backslash\)"{}VA\(\backslash\)"{}\ as\ a\ component\ is\ not\ allowed\ in\ "{}}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00232}00232\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}ChemicalProperties.opi"{}\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_Exit(EXIT\_SUCCESS);}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00234}00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ endofnames\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00242}00242\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00243}00243\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.size();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}VTKDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}RAWDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}InputRAWDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00248}00248\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}DATADir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordtype}{string}\ from\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keywordtype}{string}\ to\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00253}00253\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00254}00254\ \ \ \ \ from\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00255}00255\ \ \ \ \ to\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00256}00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00260}00260\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00265}00265\ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00267}00267\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00272}00272\ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00274}00274\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00277}00277\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00280}00280\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00286}00286\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00287}00287\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00294}00294\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00298}00298\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00301}00301\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00302}00302\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00304}\mbox{\hyperlink{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}{00304}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}{Settings::ReadJSON}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00305}00305\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00306}00306\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6842be41edf5eba06d1f4f8d06e885df}{ReadJSON}}(InputFileName);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00307}00307\ \ \ \ \ std::ifstream\ f(InputFileName);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00308}00308\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00309}00309\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ data\ =\ json::parse(f);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{if}\ (data.contains(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}))}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00311}00311\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ settings\ =\ data[\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}];}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Settings"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Active\ phases"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_phases\ =\ FileInterface::ReadParameter<size\_t>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},\textcolor{stringliteral}{"{}Number"{}}\});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ number\_of\_phases;\ ++i)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},i,\textcolor{stringliteral}{"{}Name"{}}\});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.size();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ states\ of\ matter\ for\ all\ phases.}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ state\_of\_matter\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},m,\textcolor{stringliteral}{"{}State"{}}\},\textcolor{stringliteral}{"{}SOLID"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ state\_set\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}SOLID"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}LIQUID"{}}\ )}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{AggregateStates::Liquid}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}GAS"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!state\_set)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ state\ of\ matter\ is\ selected\ for\ phase\ "{}}\ +\ to\_string(m)\ +\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ +\ state\_of\_matter,\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ equilibrium\ density\ for\ all\ phases\ (Rigid-\/Body\ Motion).}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}[m]\ =\ FileInterface::ReadParameter<double>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},m,\textcolor{stringliteral}{"{}EquilibriumDensity"{}}\},\ 0.0);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ number\ of\ crystallographic\ variants\ of\ each\ phase}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ pIndex\ =\ 0;\ pIndex\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ pIndex++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ =\ FileInterface::ReadParameter<int>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},pIndex,\textcolor{stringliteral}{"{}Variants"{}}\},\ 1);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ <\ 1)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ number\ of\ crystallographic\ variants\ for\ phase\ "{}}\ +\ std::to\_string(pIndex)\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex])\ +\ \textcolor{stringliteral}{"{}\ (Minimum\ 1)"{}},\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_components\ =\ FileInterface::ReadParameter<size\_t>(settings,\ \{\textcolor{stringliteral}{"{}Components"{}},\textcolor{stringliteral}{"{}Number"{}}\},0);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ number\_of\_components;\ ++i)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Components"{}},i,\textcolor{stringliteral}{"{}Name"{}}\});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.size();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ \ \ \ \ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}VTKDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}RawDataDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}InputRawDataDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ \ \ \ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}TextDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ from\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ to\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00389}00389\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00390}00390\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ from\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ to\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00393}00393\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.empty())}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.rbegin();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00436}00436\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00438}00438\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00439}00439\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00440}00440\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00442}\mbox{\hyperlink{classopenphase_1_1Settings_a5e03eaa6fa0e5bb478a68db750f42baf}{00442}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a5e03eaa6fa0e5bb478a68db750f42baf}{Settings::RemeshAll}}(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00443}00443\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00444}00444\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{RemeshingAllowed}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00445}00445\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ newNx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ newNy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ newNz\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}[n]-\/>Remesh(newNx,\ newNy,\ newNz,\ BC);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00454}00454\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ =\ tStep;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}.push\_back(\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}});}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00460}00460\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00461}00461\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00463}\mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{00463}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{Settings::AddForRemeshing}}(\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\&\ Obj)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00464}00464\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00465}00465\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}.push\_back(\&Obj);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00466}00466\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00468}\mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{00468}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{Settings::AddForAdvection}}(\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\&\ Obj)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00469}00469\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00470}00470\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.push\_back(\&Obj);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00471}00471\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00473}\mbox{\hyperlink{classopenphase_1_1Settings_a4ed3915ddb5094af3a6cfd3c53a08ff7}{00473}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a4ed3915ddb5094af3a6cfd3c53a08ff7}{Settings::AdvectAll}}(\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{AdvectionHR}}\&\ Adv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00474}00474\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00475}00475\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00476}00476\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ !=\ \textcolor{stringliteral}{"{}PhaseField"{}})}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00477}00477\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>Advect(Adv,\ Vel,\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00479}00479\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00480}00480\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00481}00481\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.AdvectALE(Adv,\ Vel,\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00483}00483\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00484}00484\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00486}\mbox{\hyperlink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{00486}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Settings::Advect}}(std::string\ ObjNameBase,\ \mbox{\hyperlink{classopenphase_1_1AdvectionHR}{AdvectionHR}}\&\ Adv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00487}00487\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00489}00489\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ ==\ ObjNameBase)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00490}00490\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>Advect(Adv,\ Vel,\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00492}00492\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00493}00493\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00495}\mbox{\hyperlink{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3}{00495}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3}{Settings::AddForReading}}(\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\&\ Obj)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00496}00496\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00497}00497\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.push\_back(\&Obj);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00498}00498\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00500}\mbox{\hyperlink{classopenphase_1_1Settings_a5fdecb25b0907751756301741acdf542}{00500}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Settings_a5fdecb25b0907751756301741acdf542}{Settings::ReadAll}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00501}00501\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00502}00502\ \ \ \ \ \textcolor{keywordtype}{bool}\ read\_status\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00503}00503\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00504}00504\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ read\_status\ =\ read\_status\ \&\&\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>Read(*\textcolor{keyword}{this},BC,\ tStep);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00506}00506\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00507}00507\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_status;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00508}00508\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00510}\mbox{\hyperlink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{00510}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Settings::Read}}(std::string\ ObjNameBase,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00511}00511\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00512}00512\ \ \ \ \ \textcolor{keywordtype}{bool}\ read\_status\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00513}00513\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00514}00514\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ ==\ ObjNameBase)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00515}00515\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ read\_status\ =\ read\_status\ \&\&\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>Read(*\textcolor{keyword}{this},BC,\ tStep);}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00517}00517\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00518}00518\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_status;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00519}00519\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00521}\mbox{\hyperlink{classopenphase_1_1Settings_ac9890e8c2543265a36d04f2cedbe8303}{00521}}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ \mbox{\hyperlink{classopenphase_1_1Settings_ac9890e8c2543265a36d04f2cedbe8303}{Settings::operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00522}00522\ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00523}00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs)\ \textcolor{comment}{//\ protect\ against\ self-\/assignment}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00524}00524\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ \ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00527}00527\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ \ \ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{RemeshingAllowed}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{RemeshingAllowed}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00535}00535\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00539}00539\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PhaseActivationModes\ =\ rhs.PhaseActivationModes;}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00548}00548\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00549}00549\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00553}00553\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00554}00554\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00555}00555\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00556}00556\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00557}00557\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00558}\mbox{\hyperlink{classopenphase_1_1Settings_abcf9e058ca5fe568c5b4f0da8192b9b4}{00558}}\ \mbox{\hyperlink{classopenphase_1_1GridParameters}{GridParameters}}\ \mbox{\hyperlink{classopenphase_1_1Settings_abcf9e058ca5fe568c5b4f0da8192b9b4}{Settings::GridHistoryParameters}}(\textcolor{keywordtype}{int}\ time\_step)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00559}00559\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00560}00560\ \ \ \ \ \textcolor{keywordflow}{if}(time\_step\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00561}00561\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00562}00562\ \ \ \ \ \ \ \ \ time\_step\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00563}00563\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00565}00565\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ history\_record\_idx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00566}00566\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00567}00567\ \ \ \ \ \textcolor{keywordflow}{if}(n\ <=\ \textcolor{keywordtype}{size\_t}(time\_step))}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00568}00568\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ history\_record\_idx\ =\ n;}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00570}00570\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00571}00571\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00572}00572\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00574}00574\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00575}00575\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}[history\_record\_idx];}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00576}00576\ \}}
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{Settings_8cpp_source_l00578}00578\ \}\ \textcolor{comment}{//namespace\ openphase}}
+
+\end{DoxyCode}

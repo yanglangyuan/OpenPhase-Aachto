@@ -1,0 +1,1093 @@
+\doxysection{openphase\+::Node\+VectorN Class Reference}
+\hypertarget{classopenphase_1_1NodeVectorN}{}\label{classopenphase_1_1NodeVectorN}\index{openphase::NodeVectorN@{openphase::NodeVectorN}}
+
+
+\texorpdfstring{$<$}{<} Basic class to store the vector valued quantities for each phase field.  
+
+
+
+
+{\ttfamily \#include "{}Node\+Vector\+N.\+h"{}}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}} $>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}
+\begin{DoxyCompactList}\small\item\em Iterator over the vector fields. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}}
+\begin{DoxyCompactList}\small\item\em Constant iterator over the vector fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}{Node\+VectorN}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a83a2c91388b66949ee8e849de74da0b5}{Node\+VectorN}} (const size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}})
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_ad578f0ed3cf107f7843dd945d0dc2425}{Node\+VectorN}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&other)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ab31ee40103e7d2a814800ab6ab8f7c2b}{Allocate}} (const size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}})
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a04cfd4f7ea20f27911b4156f5eb16177}{size\+\_\+of\+\_\+vector}} () const
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodeVectorN_abe2924fe0a6df12c05b9e56c2562a634}{exist}} (const size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em True if entry with index "{}idx"{} is present, false otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a25ca4cc7f496b7e5958a4ad54e77821d}{set\+\_\+to\+\_\+value}} (const size\+\_\+t idx, const int value)
+\begin{DoxyCompactList}\small\item\em Set all entries to value for phase field index idx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a8ba2e37b7b5586031f4e97dcbf5e89fa}{set\+\_\+to\+\_\+zero}} (const size\+\_\+t idx)
+\begin{DoxyCompactList}\small\item\em Set all entries to zero for phase field index idx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a822ff5daab3af5172d94ff25e8844192}{set}} (const size\+\_\+t idx, const size\+\_\+t ii, const double value)
+\begin{DoxyCompactList}\small\item\em Set component ii for phase field index idx to value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4bf6c32df449aed10655ed5046c664ee}{set}} (const size\+\_\+t idx, \mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} value)
+\begin{DoxyCompactList}\small\item\em Set \doxylink{classopenphase_1_1dVectorN}{d\+VectorN} for phase field index idx. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a2ed75432ae0ed91dd3d026624ad96bb6}{get}} (const size\+\_\+t idx, const size\+\_\+t ii) const
+\begin{DoxyCompactList}\small\item\em Return value of component ii for phase field index idx. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a111ada585b7c3fc0907d5ac13e54c918}{get}} (const size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em Return values for phase field index idx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa310821b6a8c16e95bf628734ad61e84}{add}} (const size\+\_\+t idx, \mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} value)
+\begin{DoxyCompactList}\small\item\em Increment value using two indeces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ae762fbb5ea655065159deeac0238a8ab}{add}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n) const
+\begin{DoxyCompactList}\small\item\em Add two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a8ebc567794c10ab6654692ee23c7fde8}{add}} (const size\+\_\+t idx, const size\+\_\+t ii, const double value)
+\begin{DoxyCompactList}\small\item\em Add in component ii for phase field index idx to value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a99a73d2d3e56d6e5c0656e6bfbdf8eef}{multiply}} (const size\+\_\+t idx, \mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} value)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a31fb29e5eb3befdf89b99c695be9a77e}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a23a0a8dd27ed684e888b10aed7162cc6}{operator+=}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa75ca1b2ceb38ac215e35169be0f3389}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a20d027bce9060ce11622d3de8e3b7160}{operator-\/=}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a556cce61f01bda706f765afbd32b1571}{operator\texorpdfstring{$\ast$}{*}=}} (const double n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af99315c3ef55d123d0657a8cfb828783}{operator+}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n) const
+\begin{DoxyCompactList}\small\item\em Plus operator. Takes as input another Node type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4bc3c026a100a4e125fc98ce57e477da}{operator-\/}} (const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&n) const
+\begin{DoxyCompactList}\small\item\em Minus operator. Takes as input another Node type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ab574270253b6f9ea41dc674d9fbe17a6}{operator\texorpdfstring{$\ast$}{*}}} (const double n) const
+\begin{DoxyCompactList}\small\item\em Multiply all fields by a number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a3200d75beb190f06868f02a5def7d992}{clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}} () const
+\begin{DoxyCompactList}\small\item\em Empties the vector fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a894fb0fa234549c83f45927b0c50ff90}{read}} (std\+::istream \&inp)
+\begin{DoxyCompactList}\small\item\em Returns the size of vector fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a39ddea383ac51df81e17184074ae8fad}{write}} (std\+::ostream \&outp) const
+\begin{DoxyCompactList}\small\item\em Writes \doxylink{classopenphase_1_1NodeVectorN}{Node\+VectorN} content to the output stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the begin of vector fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Iterator to the end of vector fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the begin of vector fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeVectorN_acce870a6ace8e9c96502b2887fd485f3}{erase}} (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em Constant iterator to the end of vector fields. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ad1e037504651c68c236ea2db85e0b756}{print}} ()
+\begin{DoxyCompactList}\small\item\em Erase a single record pointed by iterator it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ae531c42a11fe2653e382d70015eb8db8}{pack}} (std\+::vector$<$ double $>$ \&buffer)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ace868a8812827153e2ee38213686bcad}{unpack}} (std\+::vector$<$ double $>$ \&buffer, size\+\_\+t \&it)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a677a4f5579ef55da720f62a863bb1930}{Write}} (std\+::ostream \&outp) const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa2ee1eb63e731839c214a2ff68200d94}{Read}} (std\+::istream \&inp)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{Vector\+Fields}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\+\_\+X}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Basic class to store the vector valued quantities for each phase field. 
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00065}{65}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}\label{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!citerator@{citerator}}
+\index{citerator@{citerator}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{citerator}{citerator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{openphase\+::\+Node\+Vector\+N\+::citerator}}}
+
+
+
+Constant iterator over the vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00119}{119}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}\label{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!iterator@{iterator}}
+\index{iterator@{iterator}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}}$>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{openphase\+::\+Node\+Vector\+N\+::iterator}}}
+
+
+
+Iterator over the vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00118}{118}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}\label{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!NodeVectorN@{NodeVectorN}}
+\index{NodeVectorN@{NodeVectorN}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{NodeVectorN()}{NodeVectorN()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+Vector\+N\+::\+Node\+VectorN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00069}{69}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}(0)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a83a2c91388b66949ee8e849de74da0b5}\label{classopenphase_1_1NodeVectorN_a83a2c91388b66949ee8e849de74da0b5} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!NodeVectorN@{NodeVectorN}}
+\index{NodeVectorN@{NodeVectorN}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{NodeVectorN()}{NodeVectorN()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+Vector\+N\+::\+Node\+VectorN (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00073}{73}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}})}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ad578f0ed3cf107f7843dd945d0dc2425}\label{classopenphase_1_1NodeVectorN_ad578f0ed3cf107f7843dd945d0dc2425} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!NodeVectorN@{NodeVectorN}}
+\index{NodeVectorN@{NodeVectorN}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{NodeVectorN()}{NodeVectorN()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+Vector\+N\+::\+Node\+VectorN (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00077}{77}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}(other.VectorFields),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}(other.SIZE\_X)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1NodeVectorN_ae762fbb5ea655065159deeac0238a8ab}\label{classopenphase_1_1NodeVectorN_ae762fbb5ea655065159deeac0238a8ab} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!add@{add}}
+\index{add@{add}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} openphase\+::\+Node\+Vector\+N\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add two nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00336}{336}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00337\ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}{NodeVectorN}}\ result\ =\ n;}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}{cbegin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}{cend}}();\ ++i)}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ result.add(i-\/>index,\ i-\/>Vector);}
+\DoxyCodeLine{00342\ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00344\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a8ebc567794c10ab6654692ee23c7fde8}\label{classopenphase_1_1NodeVectorN_a8ebc567794c10ab6654692ee23c7fde8} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!add@{add}}
+\index{add@{add}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::add (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{const size\+\_\+t}]{ii,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add in component ii for phase field index idx to value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00346}{346}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00347\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00350\ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ assert(ii\ <\ i-\/>Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::add()\ idx\ is\ greater\ than\ dVectorN.size()"{}});}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ i-\/>Vector[ii]\ +=\ value;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00354\ \ \ \ \ \}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},\ idx);}
+\DoxyCodeLine{00357\ \ \ \ \ NewEntry.Vector.set\_to\_zero();}
+\DoxyCodeLine{00358\ \ \ \ \ NewEntry.Vector[ii]\ +=\ value;}
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00360\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_aa310821b6a8c16e95bf628734ad61e84}\label{classopenphase_1_1NodeVectorN_aa310821b6a8c16e95bf628734ad61e84} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!add@{add}}
+\index{add@{add}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::add (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increment value using two indeces. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00306}{306}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00307\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00310\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ assert(i-\/>Vector.size()\ ==\ Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::add\ Vector\ size\ is\ not\ equal"{}});}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ i-\/>Vector\ +=\ Vector;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00314\ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},\ idx);}
+\DoxyCodeLine{00317\ \ \ \ \ NewEntry.Vector\ =\ Vector;}
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00319\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ab31ee40103e7d2a814800ab6ab8f7c2b}\label{classopenphase_1_1NodeVectorN_ab31ee40103e7d2a814800ab6ab8f7c2b} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{Allocate()}{Allocate()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::\+Allocate (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00082}{82}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}};}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}\label{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!begin@{begin}}
+\index{begin@{begin}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} openphase\+::\+Node\+Vector\+N\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00120}{120}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}\label{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}} openphase\+::\+Node\+Vector\+N\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the end of vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00122}{122}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}\label{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!cend@{cend}}
+\index{cend@{cend}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}} openphase\+::\+Node\+Vector\+N\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the begin of vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00123}{123}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a3200d75beb190f06868f02a5def7d992}\label{classopenphase_1_1NodeVectorN_a3200d75beb190f06868f02a5def7d992} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!clear@{clear}}
+\index{clear@{clear}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00113}{113}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \{\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.clear();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}\label{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!end@{end}}
+\index{end@{end}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} openphase\+::\+Node\+Vector\+N\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the begin of vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00121}{121}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_acce870a6ace8e9c96502b2887fd485f3}\label{classopenphase_1_1NodeVectorN_acce870a6ace8e9c96502b2887fd485f3} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!erase@{erase}}
+\index{erase@{erase}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}} openphase\+::\+Node\+Vector\+N\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the end of vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00124}{124}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_abe2924fe0a6df12c05b9e56c2562a634}\label{classopenphase_1_1NodeVectorN_abe2924fe0a6df12c05b9e56c2562a634} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!exist@{exist}}
+\index{exist@{exist}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{exist()}{exist()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+Vector\+N\+::exist (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+True if entry with index "{}idx"{} is present, false otherwise. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00214}{214}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00215\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}{cbegin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}{cend}}();\ ++i)}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00222\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a111ada585b7c3fc0907d5ac13e54c918}\label{classopenphase_1_1NodeVectorN_a111ada585b7c3fc0907d5ac13e54c918} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!get@{get}}
+\index{get@{get}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} openphase\+::\+Node\+Vector\+N\+::get (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return values for phase field index idx. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00294}{294}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ dVectorN\ returndV(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}});\ returndV.set\_to\_zero();}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}{cbegin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}{cend}}();\ ++i)}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00299\ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ returndV\ =\ i-\/>Vector;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordflow}{return}\ returndV;}
+\DoxyCodeLine{00304\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a2ed75432ae0ed91dd3d026624ad96bb6}\label{classopenphase_1_1NodeVectorN_a2ed75432ae0ed91dd3d026624ad96bb6} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!get@{get}}
+\index{get@{get}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+Vector\+N\+::get (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{const size\+\_\+t}]{ii }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return value of component ii for phase field index idx. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00283}{283}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a027e5d697b97d8f0abf73c4e84a62e68}{citerator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_af8a972745f565b4e6304c410d3184882}{cbegin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa133df8d4d685e3e04fb735cad7c8440}{cend}}();\ ++i)}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ assert(ii\ <\ i-\/>Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::get()\ ii\ is\ greater\ than\ dVectorN.size()"{}});}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>Vector[ii];}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00292\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a99a73d2d3e56d6e5c0656e6bfbdf8eef}\label{classopenphase_1_1NodeVectorN_a99a73d2d3e56d6e5c0656e6bfbdf8eef} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!multiply@{multiply}}
+\index{multiply@{multiply}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::multiply (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00321}{321}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00322\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00325\ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ assert(i-\/>Vector.size()\ ==\ Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::multiply()\ Vector\ size\ is\ not\ equal"{}});}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ i-\/>Vector\ *=\ Vector;}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},\ idx);}
+\DoxyCodeLine{00332\ \ \ \ \ NewEntry.Vector\ =\ Vector;}
+\DoxyCodeLine{00333\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00334\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ab574270253b6f9ea41dc674d9fbe17a6}\label{classopenphase_1_1NodeVectorN_ab574270253b6f9ea41dc674d9fbe17a6} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} openphase\+::\+Node\+Vector\+N\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply all fields by a number. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00425}{425}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00426\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}{NodeVectorN}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00429\ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ i-\/>Vector\ *=\ n;}
+\DoxyCodeLine{00431\ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00433\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a556cce61f01bda706f765afbd32b1571}\label{classopenphase_1_1NodeVectorN_a556cce61f01bda706f765afbd32b1571} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& openphase\+::\+Node\+Vector\+N\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00435}{435}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00436\ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00438\ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ i-\/>Vector\ *=\ n;}
+\DoxyCodeLine{00440\ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00442\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_aa75ca1b2ceb38ac215e35169be0f3389}\label{classopenphase_1_1NodeVectorN_aa75ca1b2ceb38ac215e35169be0f3389} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& openphase\+::\+Node\+Vector\+N\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00379}{379}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00380\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ =\ n.SIZE\_X;}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00383\ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a99a73d2d3e56d6e5c0656e6bfbdf8eef}{multiply}}(i-\/>index,\ i-\/>Vector);}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00387\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_af99315c3ef55d123d0657a8cfb828783}\label{classopenphase_1_1NodeVectorN_af99315c3ef55d123d0657a8cfb828783} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator+@{operator+}}
+\index{operator+@{operator+}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} openphase\+::\+Node\+Vector\+N\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Plus operator. Takes as input another Node type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00400}{400}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00401\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}{NodeVectorN}}\ result\ =\ n;}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cend();\ ++i)}
+\DoxyCodeLine{00404\ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ result.add(i-\/>index,\ i-\/>Vector);}
+\DoxyCodeLine{00406\ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00408\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a23a0a8dd27ed684e888b10aed7162cc6}\label{classopenphase_1_1NodeVectorN_a23a0a8dd27ed684e888b10aed7162cc6} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& openphase\+::\+Node\+Vector\+N\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00369}{369}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00370\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ =\ n.SIZE\_X;}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa310821b6a8c16e95bf628734ad61e84}{add}}(i-\/>index,\ i-\/>Vector);}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00377\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a4bc3c026a100a4e125fc98ce57e477da}\label{classopenphase_1_1NodeVectorN_a4bc3c026a100a4e125fc98ce57e477da} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} openphase\+::\+Node\+Vector\+N\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Minus operator. Takes as input another Node type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00410}{410}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00411\ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa8d0a4f65224cc8bb9323130a07b3cd8}{NodeVectorN}}\ result\ =\ n;}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00414\ \ \ \ \ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ i-\/>Vector\ *=\ -\/1.0;}
+\DoxyCodeLine{00416\ \ \ \ \ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.cend();\ ++i)}
+\DoxyCodeLine{00419\ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ result.add(i-\/>index,\ i-\/>Vector);}
+\DoxyCodeLine{00421\ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00423\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a20d027bce9060ce11622d3de8e3b7160}\label{classopenphase_1_1NodeVectorN_a20d027bce9060ce11622d3de8e3b7160} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& openphase\+::\+Node\+Vector\+N\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00389}{389}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00390\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ =\ n.SIZE\_X;}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00393\ \ \ \ \ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ dVectorN\ vec\ =\ i-\/>Vector\ *\ -\/1.0;}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_aa310821b6a8c16e95bf628734ad61e84}{add}}(i-\/>index,\ vec);}
+\DoxyCodeLine{00396\ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00398\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a31fb29e5eb3befdf89b99c695be9a77e}\label{classopenphase_1_1NodeVectorN_a31fb29e5eb3befdf89b99c695be9a77e} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \& openphase\+::\+Node\+Vector\+N\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeVectorN}{Node\+VectorN}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00362}{362}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ \ \ \ \ \ \ =\ n.SIZE\_X;}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}\ =\ n.VectorFields;}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00367\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ae531c42a11fe2653e382d70015eb8db8}\label{classopenphase_1_1NodeVectorN_ae531c42a11fe2653e382d70015eb8db8} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!pack@{pack}}
+\index{pack@{pack}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::pack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00155}{155}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size());}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size();\ ++i)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}[i].index);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}};\ ++n)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}[i].Vector[n]);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ad1e037504651c68c236ea2db85e0b756}\label{classopenphase_1_1NodeVectorN_ad1e037504651c68c236ea2db85e0b756} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!print@{print}}
+\index{print@{print}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Node\+Vector\+N\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Erase a single record pointed by iterator it. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00126}{126}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}index\ :\ \ "{}}\ \ \ \ \ <<\ i-\/>index\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}Size\_X\ :\ "{}}\ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}vec.size()\ :\ "{}}\ <<\ i-\/>Vector.size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}value\ :\ "{}}\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ i-\/>Vector.print(\textcolor{charliteral}{','});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a894fb0fa234549c83f45927b0c50ff90}\label{classopenphase_1_1NodeVectorN_a894fb0fa234549c83f45927b0c50ff90} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!read@{read}}
+\index{read@{read}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the size of vector fields. 
+
+Reads \doxylink{classopenphase_1_1NodeVectorN}{Node\+VectorN} content from the input stream. 
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00444}{444}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00445\ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}\ =\ 0;}
+\DoxyCodeLine{00447\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00448\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00449\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}});}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}})}
+\DoxyCodeLine{00451\ \ \ \ \ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ Field.Vector.Read(inp);}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_aa2ee1eb63e731839c214a2ff68200d94}\label{classopenphase_1_1NodeVectorN_aa2ee1eb63e731839c214a2ff68200d94} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!Read@{Read}}
+\index{Read@{Read}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00194}{194}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}\ =\ 0;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}});}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}})}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ Field.Vector.Read(inp);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a822ff5daab3af5172d94ff25e8844192}\label{classopenphase_1_1NodeVectorN_a822ff5daab3af5172d94ff25e8844192} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!set@{set}}
+\index{set@{set}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::set (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{const size\+\_\+t}]{ii,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set component ii for phase field index idx to value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00252}{252}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ assert(ii\ <\ i-\/>Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::set()\ ii\ is\ greater\ than\ dVectorN.size()"{}});}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ i-\/>Vector[ii]\ =\ value;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},idx);}
+\DoxyCodeLine{00263\ \ \ \ \ NewEntry.Vector.set\_to\_zero();}
+\DoxyCodeLine{00264\ \ \ \ \ NewEntry.Vector[ii]\ =\ value;}
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00266\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a4bf6c32df449aed10655ed5046c664ee}\label{classopenphase_1_1NodeVectorN_a4bf6c32df449aed10655ed5046c664ee} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!set@{set}}
+\index{set@{set}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::set (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set \doxylink{classopenphase_1_1dVectorN}{d\+VectorN} for phase field index idx. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00268}{268}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00272\ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ assert(i-\/>Vector.size()\ ==\ Vector.size()\ \&\&\ \textcolor{stringliteral}{"{}NodeVectorN::set()\ Vector\ size\ is\ not\ equal"{}});}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ i-\/>Vector\ =\ Vector;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},idx);}
+\DoxyCodeLine{00279\ \ \ \ \ NewEntry.Vector\ =\ Vector;}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00281\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a25ca4cc7f496b7e5958a4ad54e77821d}\label{classopenphase_1_1NodeVectorN_a25ca4cc7f496b7e5958a4ad54e77821d} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!set\_to\_value@{set\_to\_value}}
+\index{set\_to\_value@{set\_to\_value}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{set\_to\_value()}{set\_to\_value()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::set\+\_\+to\+\_\+value (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx,  }\item[{const int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set all entries to value for phase field index idx. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00224}{224}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00225\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ i-\/>Vector.set\_to\_value(value);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},\ idx);}
+\DoxyCodeLine{00234\ \ \ \ \ NewEntry.Vector.set\_to\_value(value);}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00236\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a8ba2e37b7b5586031f4e97dcbf5e89fa}\label{classopenphase_1_1NodeVectorN_a8ba2e37b7b5586031f4e97dcbf5e89fa} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!set\_to\_zero@{set\_to\_zero}}
+\index{set\_to\_zero@{set\_to\_zero}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{set\_to\_zero()}{set\_to\_zero()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::set\+\_\+to\+\_\+zero (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set all entries to zero for phase field index idx. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00238}{238}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00239\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a10d3348f765d31b9d26051110820d2ff}{iterator}}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a4709169b5739d3e4750dfc0f194bddd1}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_ac731a3166cd96f5f4414db8e3b5b356c}{end}}();\ ++i)}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ idx)}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ i-\/>Vector.set\_to\_zero();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ VecEntry\ NewEntry(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}},idx);}
+\DoxyCodeLine{00248\ \ \ \ \ NewEntry.Vector.set\_to\_zero();}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00250\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}\label{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!size@{size}}
+\index{size@{size}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+Vector\+N\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empties the vector fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00114}{114}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a04cfd4f7ea20f27911b4156f5eb16177}\label{classopenphase_1_1NodeVectorN_a04cfd4f7ea20f27911b4156f5eb16177} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!size\_of\_vector@{size\_of\_vector}}
+\index{size\_of\_vector@{size\_of\_vector}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{size\_of\_vector()}{size\_of\_vector()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+Vector\+N\+::size\+\_\+of\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00086}{86}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}};}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_ace868a8812827153e2ee38213686bcad}\label{classopenphase_1_1NodeVectorN_ace868a8812827153e2ee38213686bcad} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!unpack@{unpack}}
+\index{unpack@{unpack}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::unpack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer,  }\item[{size\+\_\+t \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00168}{168}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.resize(buffer[it]);\ ++it;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size();\ ++i)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}[i].index\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}[i].Vector.Allocate(\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}});}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}};\ ++n)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}[i].Vector[n]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a39ddea383ac51df81e17184074ae8fad}\label{classopenphase_1_1NodeVectorN_a39ddea383ac51df81e17184074ae8fad} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!write@{write}}
+\index{write@{write}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes \doxylink{classopenphase_1_1NodeVectorN}{Node\+VectorN} content to the output stream. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00457}{457}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00458\ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size();}
+\DoxyCodeLine{00460\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00461\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}})}
+\DoxyCodeLine{00464\ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ Field.Vector.Write(outp);}
+\DoxyCodeLine{00467\ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeVectorN_a677a4f5579ef55da720f62a863bb1930}\label{classopenphase_1_1NodeVectorN_a677a4f5579ef55da720f62a863bb1930} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!Write@{Write}}
+\index{Write@{Write}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+Vector\+N\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00182}{182}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}}.size();}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a7d6104f9df248e8a0b42679386af437f}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}{SIZE\_X}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}{VectorFields}})}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ Field.Vector.Write(outp);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f}\label{classopenphase_1_1NodeVectorN_a68872fcba8e9db6cbcb2ba64ae7ddf4f} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!SIZE\_X@{SIZE\_X}}
+\index{SIZE\_X@{SIZE\_X}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{SIZE\_X}{SIZE\_X}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+Vector\+N\+::\+SIZE\+\_\+X\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00211}{211}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0}\label{classopenphase_1_1NodeVectorN_a5f843924b1968c482393eaca566683d0} 
+\index{openphase::NodeVectorN@{openphase::NodeVectorN}!VectorFields@{VectorFields}}
+\index{VectorFields@{VectorFields}!openphase::NodeVectorN@{openphase::NodeVectorN}}
+\doxysubsubsection{\texorpdfstring{VectorFields}{VectorFields}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1VecEntry}{Vec\+Entry}}$>$ openphase\+::\+Node\+Vector\+N\+::\+Vector\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeVectorN_8h_source_l00210}{210}} of file \mbox{\hyperlink{NodeVectorN_8h_source}{Node\+Vector\+N.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{NodeVectorN_8h}{Node\+Vector\+N.\+h}}\end{DoxyCompactItemize}

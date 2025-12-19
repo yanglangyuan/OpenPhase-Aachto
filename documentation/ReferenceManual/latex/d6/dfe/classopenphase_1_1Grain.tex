@@ -1,0 +1,1006 @@
+\doxysection{openphase\+::Grain Class Reference}
+\hypertarget{classopenphase_1_1Grain}{}\label{classopenphase_1_1Grain}\index{openphase::Grain@{openphase::Grain}}
+
+
+\texorpdfstring{$<$}{<} Stores information about the grain (phase field). Used as the storage bit in the Grain\+Info class  
+
+
+
+
+{\ttfamily \#include "{}Grains\+Properties.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a0b7cf5a7abf39fb3a8851bd54c83ea1a}{is\+\_\+solid}} () const
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a3fa6ef38317098cd07a04623cbfa52f9}{is\+\_\+liquid}} () const
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_ac0aaeb3fbe9b330f276027b943a86d96}{is\+\_\+gas}} () const
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a4eb811ae4bf5b172701ec15fdf0b35f1}{is\+\_\+fluid}} () const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a6c5664b909075014240be684116cfd3e}{Read}} (std\+::ifstream \&inp)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_ac3f30d8e6851570f7668b901c6b98bdb}{Read\+H5}} (std\+::vector$<$ double $>$ dbuffer, int \&n)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a70633fc1fffac7a1955115b9b6a364e9}{Write\+H5}} (std\+::vector$<$ double $>$ \&dbuffer)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_ab4480dff3516e217528f11c2c08c686e}{Write}} (std\+::ostream \&outp) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes grains info to a given file stream \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a35125aaadcf9b610b147fce27e0bc12d}{Write\+Table}} (std\+::ostream \&outp, const long int t\+Step, const char sep=\textquotesingle{},\textquotesingle{}, const int precision=16) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes Statistics into csv Out \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a2cb947c6be88fa04604248ad1c818127}{Write\+Table\+Volumes\+Header}} (std\+::ostream \&outp, const char sep=\textquotesingle{},\textquotesingle{}) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes Statistics into csv Out \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a3ec9615cb767643e23b80b2baa1ffb6e}{Write\+Table\+Volumes}} (std\+::ostream \&outp, const char sep=\textquotesingle{},\textquotesingle{}, const int precision=16) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes Statistics into csv Out \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Grain_a08e0359bf9bae5237e78b58e2d97c077}{Grain}} ()
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_ac81f9cc67c56fa8dfe7c2f8bf1bf1389}{Clear}} ()
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a12708b1343bc9cc9aa851d05f90d3df5}{Clear\+Forces\+And\+Accelerations}} ()
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1Grain_ad6c675ff34492238a6ce0076d23632a8}{pack}} ()
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Grain_a7ec2e58b81ee3523d0964a4f62461f61}{unpack}} (std\+::vector$<$ double $>$ \&loc\+\_\+buffer)
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a736c80aa6e2e99d01c1687c9025ed844}{Is\+Nucleus}} (void) const
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a356f8457322288f7ddba41d0227c0342}{Is\+Present}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}
+\begin{DoxyCompactList}\small\item\em True if the phase field exists in the simulation domain. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}
+\begin{DoxyCompactList}\small\item\em True if grain can move. Relevant for solid-\/liquid coupled motion. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}
+\begin{DoxyCompactList}\small\item\em Parent grain index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}
+\begin{DoxyCompactList}\small\item\em Thermodynamic phase for a given phase field. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}
+\begin{DoxyCompactList}\small\item\em Symmetry variant of a given thermodynamic phase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52e}{Grain\+Stages}} \mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}
+\begin{DoxyCompactList}\small\item\em Indicates growth stages of the grain (Seed, \doxylink{classopenphase_1_1Nucleus}{Nucleus}, Stable) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{Aggregate\+States}} \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}
+\begin{DoxyCompactList}\small\item\em Aggregate state of the grain (Solid, Liquid or Gas). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}
+\begin{DoxyCompactList}\small\item\em Average density of the grain. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{Ref\+Volume}}
+\begin{DoxyCompactList}\small\item\em Reference nucleus radius. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}
+\begin{DoxyCompactList}\small\item\em Total volume of the grain in grid cells. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}
+\begin{DoxyCompactList}\small\item\em Maximum volume of the phase field during the simulation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35}{Volume\+Ratio}}
+\begin{DoxyCompactList}\small\item\em 0.\+0 \texorpdfstring{$<$}{<}= MAXVolume/\+Ref\+Volume \texorpdfstring{$<$}{<}= 1.\+0 ratio for supporting nuclei growth \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}
+\begin{DoxyCompactList}\small\item\em Coordinates of the center of mass. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}
+\begin{DoxyCompactList}\small\item\em Velocity of the center of mass. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}
+\begin{DoxyCompactList}\small\item\em Acceleration of the center of mass. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{a\+Vel}}
+\begin{DoxyCompactList}\small\item\em Angular velocity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{a\+Acc}}
+\begin{DoxyCompactList}\small\item\em Angular acceleration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}
+\begin{DoxyCompactList}\small\item\em Force acting on the grain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}
+\begin{DoxyCompactList}\small\item\em Torque applied to the grain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classopenphase_1_1Tensor}{Tensor} of the moment of inertia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}
+\begin{DoxyCompactList}\small\item\em Orientation of the grain with respect to a reference frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceopenphase_a8903fc4d47c4e62c087ff1f4f8f76529}{Growth\+Constraints\+Violations}} \mbox{\hyperlink{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3}{Growth\+Constraints\+Violation}}
+\begin{DoxyCompactList}\small\item\em Parameter used to detect violations of current grain growth constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores information about the grain (phase field). Used as the storage bit in the Grain\+Info class 
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00051}{51}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1Grain_a08e0359bf9bae5237e78b58e2d97c077}\label{classopenphase_1_1Grain_a08e0359bf9bae5237e78b58e2d97c077} 
+\index{openphase::Grain@{openphase::Grain}!Grain@{Grain}}
+\index{Grain@{Grain}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Grain()}{Grain()}}
+{\footnotesize\ttfamily openphase\+::\+Grain\+::\+Grain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00307}{307}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00308\ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ac81f9cc67c56fa8dfe7c2f8bf1bf1389}{Clear}}();}
+\DoxyCodeLine{00310\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Grain_ac81f9cc67c56fa8dfe7c2f8bf1bf1389}\label{classopenphase_1_1Grain_ac81f9cc67c56fa8dfe7c2f8bf1bf1389} 
+\index{openphase::Grain@{openphase::Grain}!Clear@{Clear}}
+\index{Clear@{Clear}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00312}{312}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00313\ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}\ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eafa3aff3c185c6dc7754235f397c2099a}{GrainStages::Stable}};}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}\ \ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35}{VolumeRatio}}\ \ \ =\ 1.0;}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}.\mbox{\hyperlink{classopenphase_1_1Quaternion_a633adcc09373e76a93dfabda267bcf52}{set\_to\_zero}}();}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa700266bacf759b8654646af58a448fd}{set\_to\_zero}}();}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3}{GrowthConstraintsViolation}}\ =\ \mbox{\hyperlink{namespaceopenphase_a8903fc4d47c4e62c087ff1f4f8f76529a6adf97f83acf6453d4a6a4b1070f3754}{GrowthConstraintsViolations::None}};}
+\DoxyCodeLine{00337\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a12708b1343bc9cc9aa851d05f90d3df5}\label{classopenphase_1_1Grain_a12708b1343bc9cc9aa851d05f90d3df5} 
+\index{openphase::Grain@{openphase::Grain}!ClearForcesAndAccelerations@{ClearForcesAndAccelerations}}
+\index{ClearForcesAndAccelerations@{ClearForcesAndAccelerations}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{ClearForcesAndAccelerations()}{ClearForcesAndAccelerations()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Clear\+Forces\+And\+Accelerations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00339}{339}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00345\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a4eb811ae4bf5b172701ec15fdf0b35f1}\label{classopenphase_1_1Grain_a4eb811ae4bf5b172701ec15fdf0b35f1} 
+\index{openphase::Grain@{openphase::Grain}!is\_fluid@{is\_fluid}}
+\index{is\_fluid@{is\_fluid}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{is\_fluid()}{is\_fluid()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::is\+\_\+fluid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00083}{83}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ !=\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_ac0aaeb3fbe9b330f276027b943a86d96}\label{classopenphase_1_1Grain_ac0aaeb3fbe9b330f276027b943a86d96} 
+\index{openphase::Grain@{openphase::Grain}!is\_gas@{is\_gas}}
+\index{is\_gas@{is\_gas}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{is\_gas()}{is\_gas()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::is\+\_\+gas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00082}{82}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}};\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a3fa6ef38317098cd07a04623cbfa52f9}\label{classopenphase_1_1Grain_a3fa6ef38317098cd07a04623cbfa52f9} 
+\index{openphase::Grain@{openphase::Grain}!is\_liquid@{is\_liquid}}
+\index{is\_liquid@{is\_liquid}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{is\_liquid()}{is\_liquid()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::is\+\_\+liquid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00081}{81}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{AggregateStates::Liquid}};\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a0b7cf5a7abf39fb3a8851bd54c83ea1a}\label{classopenphase_1_1Grain_a0b7cf5a7abf39fb3a8851bd54c83ea1a} 
+\index{openphase::Grain@{openphase::Grain}!is\_solid@{is\_solid}}
+\index{is\_solid@{is\_solid}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{is\_solid()}{is\_solid()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::is\+\_\+solid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00080}{80}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a736c80aa6e2e99d01c1687c9025ed844}\label{classopenphase_1_1Grain_a736c80aa6e2e99d01c1687c9025ed844} 
+\index{openphase::Grain@{openphase::Grain}!IsNucleus@{IsNucleus}}
+\index{IsNucleus@{IsNucleus}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{IsNucleus()}{IsNucleus()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::\+Is\+Nucleus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00393}{393}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00394\ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ !=\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eafa3aff3c185c6dc7754235f397c2099a}{GrainStages::Stable}};}
+\DoxyCodeLine{00396\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a356f8457322288f7ddba41d0227c0342}\label{classopenphase_1_1Grain_a356f8457322288f7ddba41d0227c0342} 
+\index{openphase::Grain@{openphase::Grain}!IsPresent@{IsPresent}}
+\index{IsPresent@{IsPresent}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{IsPresent()}{IsPresent()}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::\+Is\+Present (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00397}{397}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398\ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}};}
+\DoxyCodeLine{00400\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_ad6c675ff34492238a6ce0076d23632a8}\label{classopenphase_1_1Grain_ad6c675ff34492238a6ce0076d23632a8} 
+\index{openphase::Grain@{openphase::Grain}!pack@{pack}}
+\index{pack@{pack}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ openphase\+::\+Grain\+::pack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00347}{347}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00348\ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ std::vector<double>\ loc\_buffer(16,0.0);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ loc\_buffer[0]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}};}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ loc\_buffer[1]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}};}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ loc\_buffer[2]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ loc\_buffer[3]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}};}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ loc\_buffer[4]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}};}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ loc\_buffer[5]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}};}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ loc\_buffer[6]\ \ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ loc\_buffer[7]\ \ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ loc\_buffer[8]\ \ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[0];}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ loc\_buffer[9]\ \ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[1];}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ loc\_buffer[10]\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[2];}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ loc\_buffer[11]\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[0];}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ loc\_buffer[12]\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[1];}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ loc\_buffer[13]\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[2];}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ loc\_buffer[14]\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[3];}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ loc\_buffer[15]\ =\ (double)\mbox{\hyperlink{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3}{GrowthConstraintsViolation}};}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ loc\_buffer;}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a6c5664b909075014240be684116cfd3e}\label{classopenphase_1_1Grain_a6c5664b909075014240be684116cfd3e} 
+\index{openphase::Grain@{openphase::Grain}!Read@{Read}}
+\index{Read@{Read}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & Reads grains info from a given file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00085}{85}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}\ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}\ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35}{VolumeRatio}}\ =\ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}/\mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}(i,j)),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}.\mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_ac3f30d8e6851570f7668b901c6b98bdb}\label{classopenphase_1_1Grain_ac3f30d8e6851570f7668b901c6b98bdb} 
+\index{openphase::Grain@{openphase::Grain}!ReadH5@{ReadH5}}
+\index{ReadH5@{ReadH5}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{ReadH5()}{ReadH5()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Read\+H5 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{dbuffer,  }\item[{int \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Reads grains info from a given file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00123}{123}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}\ \ \ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}\ \ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ \ \ \ \ \ \ \ \ =\ (\mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52e}{GrainStages}})(\textcolor{keywordtype}{int})dbuffer[n];\ ++n;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}\ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ \ \ \ \ \ \ \ \ =\ (\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{AggregateStates}})(\textcolor{keywordtype}{int})dbuffer[n];\ ++n;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}\ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ \ \ \ \ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35}{VolumeRatio}}\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}/\mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}(i,j)\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[i]\ =\ dbuffer[n];\ ++n;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}.\mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a7ec2e58b81ee3523d0964a4f62461f61}\label{classopenphase_1_1Grain_a7ec2e58b81ee3523d0964a4f62461f61} 
+\index{openphase::Grain@{openphase::Grain}!unpack@{unpack}}
+\index{unpack@{unpack}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::unpack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{loc\+\_\+buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc\+\_\+buffer} & Populates the \doxylink{classopenphase_1_1Grain}{Grain} using the received MPI communication buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00372}{372}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}\ \ \ \ \ \ \ \ \ \ =\ (bool)\ \ loc\_buffer[0];}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}\ \ \ \ \ \ \ \ \ =\ (bool)\ \ loc\_buffer[1];}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ \ \ =\ (size\_t)loc\_buffer[2];}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ \ \ =\ (size\_t)loc\_buffer[3];}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}\ \ \ \ \ \ \ \ =\ (size\_t)loc\_buffer[4];}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ \ \ \ \ \ \ \ \ \ =\ (\mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52e}{GrainStages}})\ \ \ \ loc\_buffer[5];}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ \ \ \ \ \ \ \ \ \ =\ (\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{AggregateStates}})loc\_buffer[6];}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ \ \ =\ \ \ \ \ \ \ \ \ loc\_buffer[7];}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[0]\ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ \ loc\_buffer[8];}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[1]\ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ \ loc\_buffer[9];}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}[2]\ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ \ loc\_buffer[10];}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[0]\ =\ \ \ \ \ \ \ \ \ loc\_buffer[11];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[1]\ =\ \ \ \ \ \ \ \ \ loc\_buffer[12];}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[2]\ =\ \ \ \ \ \ \ \ \ loc\_buffer[13];}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[3]\ =\ \ \ \ \ \ \ \ \ loc\_buffer[14];}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3}{GrowthConstraintsViolation}}\ =\ (\mbox{\hyperlink{namespaceopenphase_a8903fc4d47c4e62c087ff1f4f8f76529}{GrowthConstraintsViolations}})loc\_buffer[15];}
+\DoxyCodeLine{00391\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_ab4480dff3516e217528f11c2c08c686e}\label{classopenphase_1_1Grain_ab4480dff3516e217528f11c2c08c686e} 
+\index{openphase::Grain@{openphase::Grain}!Write@{Write}}
+\index{Write@{Write}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes grains info to a given file stream 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00197}{197}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}}\ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ \ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}\ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}(i,j)),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[i]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a70633fc1fffac7a1955115b9b6a364e9}\label{classopenphase_1_1Grain_a70633fc1fffac7a1955115b9b6a364e9} 
+\index{openphase::Grain@{openphase::Grain}!WriteH5@{WriteH5}}
+\index{WriteH5@{WriteH5}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{WriteH5()}{WriteH5()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Write\+H5 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{dbuffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbuffer} & Reads grains info from a given file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00161}{161}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}});}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ dbuffer.push\_back((\textcolor{keywordtype}{int})\mbox{\hyperlink{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}{Stage}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}{Variant}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ dbuffer.push\_back((\textcolor{keywordtype}{int})\mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}});}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [i]);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [i]);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [i]);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [i]);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [i]);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [i]);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[i]);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}(i,j));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ dbuffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[i]);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a35125aaadcf9b610b147fce27e0bc12d}\label{classopenphase_1_1Grain_a35125aaadcf9b610b147fce27e0bc12d} 
+\index{openphase::Grain@{openphase::Grain}!WriteTable@{WriteTable}}
+\index{WriteTable@{WriteTable}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{WriteTable()}{WriteTable()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Write\+Table (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp,  }\item[{const long int}]{t\+Step,  }\item[{const char}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes Statistics into csv Out 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00233}{233}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ header}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \textcolor{stringliteral}{"{}tStep"{}}\ \ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Volume"{}}\ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}MAXVolume"{}}\ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}RefVolume"{}}\ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Density"{}}\ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Phase"{}}\ \ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Parent"{}}\ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}X"{}}\ \ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}Y"{}}\ \ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}Z"{}}\ \ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}VX"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}VY"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}VZ"{}}\ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}AngularVX"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AngularVY"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AngularVZ"{}}\ <<\ sep}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}AX"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AY"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AZ"{}}\ \ \ \ \ \ \ \ <<\ sep}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}AngularAZ"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AngularAY"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}AngularAZ"{}}\ <<\ sep}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}ForceX"{}}\ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}ForceY"{}}\ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}ForceZ"{}}\ \ \ \ <<\ sep}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}TorqueX"{}}\ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueY"{}}\ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueZ"{}}\ \ \ <<\ sep}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}InertiaXX"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueXY"{}}\ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueXZ"{}}\ \ <<\ sep}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}InertiaYX"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueYY"{}}\ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueYZ"{}}\ \ <<\ sep}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}InertiaZX"{}}\ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueZY"{}}\ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}TorqueZZ"{}}\ \ <<\ sep}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Q1"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}Q2"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}Q3"{}}\ \ \ \ \ \ \ \ <<\ sep\ <<\ \textcolor{stringliteral}{"{}Q4\(\backslash\)n"{}};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ outp\ <<\ std::scientific\ \ <<\ std::setprecision(precision);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ outp\ <<\ tStep\ \ \ \ \ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}{Density}}\ \ \ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}{Phase}}\ \ \ \ \ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}{Parent}}\ \ \ \ \ \ \ \ <<\ sep;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}{Rcm}}\ \ \ [2]\ <<\ sep;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}{Vcm}}\ \ \ [2]\ <<\ sep;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}{Acm}}\ \ \ [2]\ <<\ sep;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}{aVel}}\ \ [2]\ <<\ sep;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}{aAcc}}\ \ [2]\ <<\ sep;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}{Force}}\ [2]\ <<\ sep;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[0]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[1]\ <<\ sep\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}{Torque}}[2]\ <<\ sep;}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}{InertiaM}}(i,j)\ <<\ sep;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}{Orientation}}[i]\ <<\ sep;}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ outp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a3ec9615cb767643e23b80b2baa1ffb6e}\label{classopenphase_1_1Grain_a3ec9615cb767643e23b80b2baa1ffb6e} 
+\index{openphase::Grain@{openphase::Grain}!WriteTableVolumes@{WriteTableVolumes}}
+\index{WriteTableVolumes@{WriteTableVolumes}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{WriteTableVolumes()}{WriteTableVolumes()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Write\+Table\+Volumes (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp,  }\item[{const char}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes Statistics into csv Out 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00295}{295}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00297\ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ !=\ 0.0)}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ std::scientific\ \ <<\ std::setprecision(precision);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ \ \ \ <<\ sep;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}{MAXVolume}}\ <<\ sep;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ outp\ <<\ \mbox{\hyperlink{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}{RefVolume}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Grain_a2cb947c6be88fa04604248ad1c818127}\label{classopenphase_1_1Grain_a2cb947c6be88fa04604248ad1c818127} 
+\index{openphase::Grain@{openphase::Grain}!WriteTableVolumesHeader@{WriteTableVolumesHeader}}
+\index{WriteTableVolumesHeader@{WriteTableVolumesHeader}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{WriteTableVolumesHeader()}{WriteTableVolumesHeader()}}
+{\footnotesize\ttfamily void openphase\+::\+Grain\+::\+Write\+Table\+Volumes\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp,  }\item[{const char}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes Statistics into csv Out 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00288}{288}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00289\ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ outp\ <<\ \textcolor{stringliteral}{"{}Volume"{}}\ \ \ \ <<\ sep}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}MAXVolume"{}}\ <<\ sep}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}RefVolume"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17}\label{classopenphase_1_1Grain_a308691b48e8840ee0ac1d1d7e250fb17} 
+\index{openphase::Grain@{openphase::Grain}!aAcc@{aAcc}}
+\index{aAcc@{aAcc}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{aAcc}{aAcc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::a\+Acc}
+
+
+
+Angular acceleration. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00072}{72}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f}\label{classopenphase_1_1Grain_a312861aa2684363381cc8169318e1d4f} 
+\index{openphase::Grain@{openphase::Grain}!Acm@{Acm}}
+\index{Acm@{Acm}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Acm}{Acm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::\+Acm}
+
+
+
+Acceleration of the center of mass. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00070}{70}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72}\label{classopenphase_1_1Grain_ab5643ef70505f849f480367db8132a72} 
+\index{openphase::Grain@{openphase::Grain}!aVel@{aVel}}
+\index{aVel@{aVel}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{aVel}{aVel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::a\+Vel}
+
+
+
+Angular velocity. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00071}{71}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386}\label{classopenphase_1_1Grain_a8da20e6feb4feafab52646d116ae1386} 
+\index{openphase::Grain@{openphase::Grain}!Density@{Density}}
+\index{Density@{Density}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Density}{Density}}
+{\footnotesize\ttfamily double openphase\+::\+Grain\+::\+Density}
+
+
+
+Average density of the grain. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00063}{63}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}\label{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5} 
+\index{openphase::Grain@{openphase::Grain}!Exist@{Exist}}
+\index{Exist@{Exist}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Exist}{Exist}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::\+Exist}
+
+
+
+True if the phase field exists in the simulation domain. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00054}{54}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f}\label{classopenphase_1_1Grain_a7504da16a686168176f00cf8c04bc98f} 
+\index{openphase::Grain@{openphase::Grain}!Force@{Force}}
+\index{Force@{Force}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Force}{Force}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::\+Force}
+
+
+
+Force acting on the grain. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00073}{73}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3}\label{classopenphase_1_1Grain_a40e04e3f3a6d032fafefc1a33b8804e3} 
+\index{openphase::Grain@{openphase::Grain}!GrowthConstraintsViolation@{GrowthConstraintsViolation}}
+\index{GrowthConstraintsViolation@{GrowthConstraintsViolation}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{GrowthConstraintsViolation}{GrowthConstraintsViolation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_a8903fc4d47c4e62c087ff1f4f8f76529}{Growth\+Constraints\+Violations}} openphase\+::\+Grain\+::\+Growth\+Constraints\+Violation}
+
+
+
+Parameter used to detect violations of current grain growth constraints. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00078}{78}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222}\label{classopenphase_1_1Grain_a117beeeed4c39277c8bd258a8cd3d222} 
+\index{openphase::Grain@{openphase::Grain}!InertiaM@{InertiaM}}
+\index{InertiaM@{InertiaM}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{InertiaM}{InertiaM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} openphase\+::\+Grain\+::\+InertiaM}
+
+
+
+\doxylink{classopenphase_1_1Tensor}{Tensor} of the moment of inertia. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00075}{75}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed}\label{classopenphase_1_1Grain_a4910763f19f667f5808ee3b9062168ed} 
+\index{openphase::Grain@{openphase::Grain}!MAXVolume@{MAXVolume}}
+\index{MAXVolume@{MAXVolume}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{MAXVolume}{MAXVolume}}
+{\footnotesize\ttfamily double openphase\+::\+Grain\+::\+MAXVolume}
+
+
+
+Maximum volume of the phase field during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00066}{66}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}\label{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3} 
+\index{openphase::Grain@{openphase::Grain}!Mobile@{Mobile}}
+\index{Mobile@{Mobile}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Mobile}{Mobile}}
+{\footnotesize\ttfamily bool openphase\+::\+Grain\+::\+Mobile}
+
+
+
+True if grain can move. Relevant for solid-\/liquid coupled motion. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00055}{55}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c}\label{classopenphase_1_1Grain_a1d72b4d2ec0d1b86197b366d47a61c4c} 
+\index{openphase::Grain@{openphase::Grain}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Orientation}{Orientation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Grain\+::\+Orientation}
+
+
+
+Orientation of the grain with respect to a reference frame. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00076}{76}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc}\label{classopenphase_1_1Grain_a92e70e628e4ce85f6e09f7e1102782dc} 
+\index{openphase::Grain@{openphase::Grain}!Parent@{Parent}}
+\index{Parent@{Parent}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grain\+::\+Parent}
+
+
+
+Parent grain index. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00056}{56}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4}\label{classopenphase_1_1Grain_a52e79b4b7f4a71c7d44038431186b4a4} 
+\index{openphase::Grain@{openphase::Grain}!Phase@{Phase}}
+\index{Phase@{Phase}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Phase}{Phase}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grain\+::\+Phase}
+
+
+
+Thermodynamic phase for a given phase field. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00057}{57}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642}\label{classopenphase_1_1Grain_ae315563d7bd8ed9308394d2fdc7f8642} 
+\index{openphase::Grain@{openphase::Grain}!Rcm@{Rcm}}
+\index{Rcm@{Rcm}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Rcm}{Rcm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::\+Rcm}
+
+
+
+Coordinates of the center of mass. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00068}{68}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7}\label{classopenphase_1_1Grain_a501b3dd956c327455e7438e6311907b7} 
+\index{openphase::Grain@{openphase::Grain}!RefVolume@{RefVolume}}
+\index{RefVolume@{RefVolume}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{RefVolume}{RefVolume}}
+{\footnotesize\ttfamily double openphase\+::\+Grain\+::\+Ref\+Volume}
+
+
+
+Reference nucleus radius. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00064}{64}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f}\label{classopenphase_1_1Grain_a6583709cc72a2b5ac00395043c99818f} 
+\index{openphase::Grain@{openphase::Grain}!Stage@{Stage}}
+\index{Stage@{Stage}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Stage}{Stage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52e}{Grain\+Stages}} openphase\+::\+Grain\+::\+Stage}
+
+
+
+Indicates growth stages of the grain (Seed, \doxylink{classopenphase_1_1Nucleus}{Nucleus}, Stable) 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00060}{60}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}\label{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3} 
+\index{openphase::Grain@{openphase::Grain}!State@{State}}
+\index{State@{State}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{Aggregate\+States}} openphase\+::\+Grain\+::\+State}
+
+
+
+Aggregate state of the grain (Solid, Liquid or Gas). 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00061}{61}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe}\label{classopenphase_1_1Grain_a96d6d96c35b3cece69fde99ea93d2dfe} 
+\index{openphase::Grain@{openphase::Grain}!Torque@{Torque}}
+\index{Torque@{Torque}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Torque}{Torque}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::\+Torque}
+
+
+
+Torque applied to the grain. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00074}{74}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2}\label{classopenphase_1_1Grain_a38aafdafb4a8ad107fb029e4639da4e2} 
+\index{openphase::Grain@{openphase::Grain}!Variant@{Variant}}
+\index{Variant@{Variant}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Variant}{Variant}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grain\+::\+Variant}
+
+
+
+Symmetry variant of a given thermodynamic phase. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00058}{58}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d}\label{classopenphase_1_1Grain_aa6b83fe77caa52dc8ed2196895e1650d} 
+\index{openphase::Grain@{openphase::Grain}!Vcm@{Vcm}}
+\index{Vcm@{Vcm}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Vcm}{Vcm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Grain\+::\+Vcm}
+
+
+
+Velocity of the center of mass. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00069}{69}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}\label{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c} 
+\index{openphase::Grain@{openphase::Grain}!Volume@{Volume}}
+\index{Volume@{Volume}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{Volume}{Volume}}
+{\footnotesize\ttfamily double openphase\+::\+Grain\+::\+Volume}
+
+
+
+Total volume of the grain in grid cells. 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00065}{65}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35}\label{classopenphase_1_1Grain_a4693f5f89ff01e26df5ebc1d4060da35} 
+\index{openphase::Grain@{openphase::Grain}!VolumeRatio@{VolumeRatio}}
+\index{VolumeRatio@{VolumeRatio}!openphase::Grain@{openphase::Grain}}
+\doxysubsubsection{\texorpdfstring{VolumeRatio}{VolumeRatio}}
+{\footnotesize\ttfamily double openphase\+::\+Grain\+::\+Volume\+Ratio}
+
+
+
+0.\+0 \texorpdfstring{$<$}{<}= MAXVolume/\+Ref\+Volume \texorpdfstring{$<$}{<}= 1.\+0 ratio for supporting nuclei growth 
+
+
+
+Definition at line \mbox{\hyperlink{GrainsProperties_8h_source_l00067}{67}} of file \mbox{\hyperlink{GrainsProperties_8h_source}{Grains\+Properties.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GrainsProperties_8h}{Grains\+Properties.\+h}}\end{DoxyCompactItemize}

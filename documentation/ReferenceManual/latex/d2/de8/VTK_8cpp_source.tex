@@ -1,0 +1,305 @@
+\doxysection{VTK.\+cpp}
+\hypertarget{VTK_8cpp_source}{}\label{VTK_8cpp_source}\index{VTK.cpp@{VTK.cpp}}
+\mbox{\hyperlink{VTK_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Philipp\ Engels,\ Raphael\ Schiedung,\ Muhammad\ Adil\ Ali,}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Marvin\ Tegeler,\ Oleg\ Shchyglo}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}../external/WinBase64/base64.h"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}../external/miniz.h"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00035}00035\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00037}\mbox{\hyperlink{namespaceopenphase_ac480708120654d7bd611b6646245bc6f}{00037}}\ vector<string>\ \mbox{\hyperlink{namespaceopenphase_ac480708120654d7bd611b6646245bc6f}{voigtcon}}\ \{\textcolor{stringliteral}{"{}xx"{}},\ \textcolor{stringliteral}{"{}yy"{}},\ \textcolor{stringliteral}{"{}zz"{}},\ \textcolor{stringliteral}{"{}yz"{}},\ \textcolor{stringliteral}{"{}xz"{}},\ \textcolor{stringliteral}{"{}xy"{}}\};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00038}\mbox{\hyperlink{namespaceopenphase_ae7d61fc47230182472be91229568a731}{00038}}\ vector<string>\ \mbox{\hyperlink{namespaceopenphase_ae7d61fc47230182472be91229568a731}{matrixcon}}\ \ \{\textcolor{stringliteral}{"{}xx"{}},\ \textcolor{stringliteral}{"{}xy"{}},\ \textcolor{stringliteral}{"{}xz"{}},\ \textcolor{stringliteral}{"{}yx"{}},\ \textcolor{stringliteral}{"{}yy"{}},\ \textcolor{stringliteral}{"{}yz"{}},\ \textcolor{stringliteral}{"{}zx"{}},\ \textcolor{stringliteral}{"{}zy"{}},\ \textcolor{stringliteral}{"{}zz"{}}\};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00040}00040\ \textcolor{comment}{//\ Returns\ newly\ allocated\ memory\ filled\ with\ b64\ encoded\ data.\ Remember\ to\ free\ this\ returned\ memory!}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00041}\mbox{\hyperlink{structopenphase_1_1VTK_a6d092283823a6f53b8db8059a7625ca1}{00041}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structopenphase_1_1VTK_a6d092283823a6f53b8db8059a7625ca1}{VTK::encode\_b64}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}*\ b64string;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00044}00044\ \textcolor{comment}{//\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{string}\ result\ =\ base64\_encode((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)data,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(size));}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00046}00046\ \ \ \ \ b64string\ =\ (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ (result.size()+1));}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00047}00047\ \ \ \ \ strcpy(b64string,\ result.c\_str());}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00048}00048\ \textcolor{comment}{//\#else}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00049}00049\ \textcolor{comment}{//\ \ size\_t\ expected\_len\ =\ ceil(size*1.34)+3;\ //\ no\ idea\ why\ +3...}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00050}00050\ \textcolor{comment}{//\ \ b64string\ =\ (char*)malloc(expected\_len);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00051}00051\ \textcolor{comment}{//\ \ size\_t\ stringlen;}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00052}00052\ \textcolor{comment}{//\ \ base64\_encode(data,size,b64string,\&stringlen,0);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00053}00053\ \textcolor{comment}{//\ \ //printf("{}Allocated:\ \%zu,\ got\ \%zu\ for\ \%zu\(\backslash\)n"{},expected\_len,stringlen,size);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00055}00055\ \textcolor{comment}{//\ \ if\ (stringlen\ >=\ expected\_len)\ printf("{}WARNING\ BUFFER\ TOO\ SMALL\ (USED\ \%zu/\%zu)\(\backslash\)n"{},\ stringlen\ +\ 1,\ expected\_len);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00056}00056\ \textcolor{comment}{//\ \ b64string[stringlen]\ =\ '\(\backslash\)0';}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00057}00057\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ b64string;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00061}00061\ \textcolor{comment}{//\ Returns\ memory\ and\ compresses\ into\ that.\ Remember\ to\ free\ this\ memory!}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00062}\mbox{\hyperlink{structopenphase_1_1VTK_a1a248f93be8ed10de56da9d63ae2b701}{00062}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structopenphase_1_1VTK_a1a248f93be8ed10de56da9d63ae2b701}{VTK::compress\_data}}(\textcolor{keywordtype}{size\_t}*\ csize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ comp\_size\ =\ compressBound(size);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//printf("{}Maximum\ Compressed\ Size:\ \%zu\ (\%zu)\(\backslash\)n"{},comp\_size,size);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{char}*\ comp\ =\ (\textcolor{keywordtype}{char}*)malloc(comp\_size);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{if}(!comp)\ printf(\textcolor{stringliteral}{"{}OUT\ OF\ MEMORY!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{int}\ stat\ =\ compress2((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)comp,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}*)\&comp\_size,(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)data,size,10);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//printf("{}Compressed\ to:\ \%zu\ (\%zu)\(\backslash\)n"{},comp\_size,size);}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}(stat!=Z\_OK)\ printf(\textcolor{stringliteral}{"{}COMPRESS\ FAILED!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00071}00071\ \ \ \ \ *csize\ =\ comp\_size;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ comp;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00075}\mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{00075}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Filename,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00078}00078\ \ \ \ \ std::vector<Field\_t>\ ListOfFields,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ resolution)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00081}00081\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a50681214da3009a57d99f685d59ea94f}{get\_Nx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Ny\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ad3e61ae5129108c19d6bf7046cd4ee04}{get\_Ny}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a7ee9b9b981d77e59fa36389f29af05eb}{get\_Nz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00086}00086\ \textcolor{preprocessor}{\#ifndef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00087}00087\ \ \ \ \ ofstream\ vtk\_file(Filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a4433afed9639ed5e4cc2ab2babc9c586}{VTK::WriteHeader}}(vtk\_file,\ Nx,\ Ny,\ Nz);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(vtk\_file,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ac095d1ea0cd3f792631e3f5696bccc0a}{VTK::WriteCoordinates}}(vtk\_file,\ locSettings,\ resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a83e37a0c1a3e92dd1bf1ecea2c26bc06}{VTK::CloseFile}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00095}00095\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00096}00096\ \ \ \ \ std::stringstream\ buffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00097}00097\ \ \ \ \ std::stringstream\ hbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00098}00098\ \ \ \ \ std::stringstream\ tbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a78d6cd457345693d6e1a6ed00367d657}{get\_TotalNx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNy\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a8f4e2ce603920a1d32125564b4760818}{get\_TotalNy}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a86b06590d3e2ceed25f1005af22b8c23}{get\_TotalNz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetX\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a2ad844e2e0d9137380417de49782a0b3}{get\_OffsetX}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetY\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a0165407d49b241fadb07508ad10c6b40}{get\_OffsetY}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetZ\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ada6171603b5c091a207b4af0dd2a3212}{get\_OffsetZ}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00107}00107\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}<Piece\ Extent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nx-\/1\ +\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Ny-\/1\ +\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nz-\/1\ +\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(buffer,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(buffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ac095d1ea0cd3f792631e3f5696bccc0a}{VTK::WriteCoordinates}}(buffer,\ locSettings,\ resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00116}00116\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}</Piece>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00118}00118\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<?xml\ version=\ \(\backslash\)"{}1.0\(\backslash\)"{}\ encoding=\(\backslash\)"{}UTF-\/8\(\backslash\)"{}\ standalone=\(\backslash\)"{}yes\(\backslash\)"{}?>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00119}00119\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<VTKFile\ type=\(\backslash\)"{}StructuredGrid\(\backslash\)"{}\ version=\(\backslash\)"{}0.1\(\backslash\)"{}\ byte\_order=\(\backslash\)"{}LittleEndian\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00120}00120\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<StructuredGrid\ WholeExtent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNx-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNy-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNz-\/1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00124}00124\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</StructuredGrid>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00125}00125\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</VTKFile>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00127}00127\ \ \ \ \ op\_mpi\_write\_vtk(Filename,\ buffer,\ hbuffer,\ tbuffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00128}00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00131}\mbox{\hyperlink{structopenphase_1_1VTK_a71ad48e6f8bdacfcd58cf0d60ba84b97}{00131}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structopenphase_1_1VTK_a71ad48e6f8bdacfcd58cf0d60ba84b97}{VTK::WriteCompressed}}(}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Filename,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ std::vector<Field\_t>\ ListOfFields,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ resolution)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00136}00136\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a50681214da3009a57d99f685d59ea94f}{get\_Nx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Ny\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ad3e61ae5129108c19d6bf7046cd4ee04}{get\_Ny}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a7ee9b9b981d77e59fa36389f29af05eb}{get\_Nz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00141}00141\ \textcolor{preprocessor}{\#ifndef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00142}00142\ \ \ \ \ ofstream\ vtk\_file(Filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00143}00143\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ada831616b6908570250c3ab8042d8f6c}{VTK::WriteHeaderCompressed}}(vtk\_file,\ Nx,\ Ny,\ Nz);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00144}00144\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a9960c8139da06d48546781dcf99ec2f6}{VTK::WritePointDataCompressed}}(vtk\_file,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a8384531df6557653c636b6cf60603d7c}{VTK::WriteCoordinatesCompressed}}(vtk\_file,\ locSettings,\ resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a83e37a0c1a3e92dd1bf1ecea2c26bc06}{VTK::CloseFile}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00150}00150\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00151}00151\ \ \ \ \ std::stringstream\ buffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00152}00152\ \ \ \ \ std::stringstream\ hbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00153}00153\ \ \ \ \ std::stringstream\ tbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a78d6cd457345693d6e1a6ed00367d657}{get\_TotalNx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNy\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a8f4e2ce603920a1d32125564b4760818}{get\_TotalNy}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a86b06590d3e2ceed25f1005af22b8c23}{get\_TotalNz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetX\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a2ad844e2e0d9137380417de49782a0b3}{get\_OffsetX}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetY\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a0165407d49b241fadb07508ad10c6b40}{get\_OffsetY}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetZ\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ada6171603b5c091a207b4af0dd2a3212}{get\_OffsetZ}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00162}00162\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}<Piece\ Extent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nx\ +\ OffsetX-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Ny\ +\ OffsetY-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nz\ +\ OffsetZ-\/1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00166}00166\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(buffer,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00169}00169\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(buffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00170}00170\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ac095d1ea0cd3f792631e3f5696bccc0a}{VTK::WriteCoordinates}}(buffer,\ locSettings,\ resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00171}00171\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}</Piece>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00173}00173\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<?xml\ version=\ \(\backslash\)"{}1.0\(\backslash\)"{}\ encoding=\(\backslash\)"{}UTF-\/8\(\backslash\)"{}\ standalone=\(\backslash\)"{}yes\(\backslash\)"{}?>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00174}00174\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<VTKFile\ type=\(\backslash\)"{}StructuredGrid\(\backslash\)"{}\ version=\(\backslash\)"{}0.1\(\backslash\)"{}\ byte\_order=\(\backslash\)"{}LittleEndian\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00175}00175\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<StructuredGrid\ WholeExtent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNx-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNy-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNz-\/1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00179}00179\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</StructuredGrid>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00180}00180\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</VTKFile>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00182}00182\ \ \ \ \ op\_mpi\_write\_vtk(Filename,\ buffer,\ hbuffer,\ tbuffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00183}00183\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00186}\mbox{\hyperlink{structopenphase_1_1VTK_a5ba0603b984a6dc0fcfddf4e5ecdd536}{00186}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structopenphase_1_1VTK_a5ba0603b984a6dc0fcfddf4e5ecdd536}{VTK::WriteDistorted}}(}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Filename,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00190}00190\ \ \ \ \ std::vector<Field\_t>\ ListOfFields,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ resolution)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00193}00193\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a50681214da3009a57d99f685d59ea94f}{get\_Nx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Ny\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ad3e61ae5129108c19d6bf7046cd4ee04}{get\_Ny}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a7ee9b9b981d77e59fa36389f29af05eb}{get\_Nz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00198}00198\ \textcolor{preprocessor}{\#ifndef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00199}00199\ \ \ \ \ ofstream\ vtk\_file(Filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00200}00200\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a4433afed9639ed5e4cc2ab2babc9c586}{VTK::WriteHeader}}(vtk\_file,\ Nx,\ Ny,\ Nz);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00201}00201\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(vtk\_file,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00204}00204\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00205}00205\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_acd2546930c631818fddf8464bf705d71}{VTK::WriteCoordinatesDistorted}}(vtk\_file,EP,locSettings,resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00206}00206\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a83e37a0c1a3e92dd1bf1ecea2c26bc06}{VTK::CloseFile}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00207}00207\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00208}00208\ \ \ \ \ std::stringstream\ buffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00209}00209\ \ \ \ \ std::stringstream\ hbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00210}00210\ \ \ \ \ std::stringstream\ tbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a78d6cd457345693d6e1a6ed00367d657}{get\_TotalNx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNy\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a8f4e2ce603920a1d32125564b4760818}{get\_TotalNy}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a86b06590d3e2ceed25f1005af22b8c23}{get\_TotalNz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetX\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a2ad844e2e0d9137380417de49782a0b3}{get\_OffsetX}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetY\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a0165407d49b241fadb07508ad10c6b40}{get\_OffsetY}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetZ\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ada6171603b5c091a207b4af0dd2a3212}{get\_OffsetZ}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00219}00219\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}<Piece\ Extent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nx-\/1\ +\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Ny-\/1\ +\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nz-\/1\ +\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00223}00223\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(buffer,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00226}00226\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(buffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00227}00227\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_acd2546930c631818fddf8464bf705d71}{VTK::WriteCoordinatesDistorted}}(buffer,EP,locSettings,resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00228}00228\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}</Piece>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00230}00230\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<?xml\ version=\ \(\backslash\)"{}1.0\(\backslash\)"{}\ encoding=\(\backslash\)"{}UTF-\/8\(\backslash\)"{}\ standalone=\(\backslash\)"{}yes\(\backslash\)"{}?>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00231}00231\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<VTKFile\ type=\(\backslash\)"{}StructuredGrid\(\backslash\)"{}\ version=\(\backslash\)"{}0.1\(\backslash\)"{}\ byte\_order=\(\backslash\)"{}LittleEndian\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00232}00232\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<StructuredGrid\ WholeExtent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNx-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNy-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNz-\/1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00236}00236\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</StructuredGrid>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00237}00237\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</VTKFile>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00239}00239\ \ \ \ \ op\_mpi\_write\_vtk(Filename,\ buffer,\ hbuffer,\ tbuffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00240}00240\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00241}00241\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00243}\mbox{\hyperlink{structopenphase_1_1VTK_a26583a68b9b50f168edb75d3b7c7cbee}{00243}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structopenphase_1_1VTK_a26583a68b9b50f168edb75d3b7c7cbee}{VTK::WriteDistortedCompressed}}(}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Filename,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00247}00247\ \ \ \ \ std::vector<Field\_t>\ ListOfFields,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ resolution)}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00250}00250\ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a50681214da3009a57d99f685d59ea94f}{get\_Nx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Ny\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ad3e61ae5129108c19d6bf7046cd4ee04}{get\_Ny}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00253}00253\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Nz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a7ee9b9b981d77e59fa36389f29af05eb}{get\_Nz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00255}00255\ \textcolor{preprocessor}{\#ifndef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00256}00256\ \ \ \ \ ofstream\ vtk\_file(Filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00257}00257\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ada831616b6908570250c3ab8042d8f6c}{VTK::WriteHeaderCompressed}}(vtk\_file,\ Nx,\ Ny,\ Nz);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00258}00258\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a9960c8139da06d48546781dcf99ec2f6}{WritePointDataCompressed}}(vtk\_file,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00260}00260\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00261}00261\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00262}00262\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a6049cdc81c8f52a6817711acc2b019f9}{VTK::WriteCoordinatesDistortedCompressed}}(vtk\_file,EP,locSettings,resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00263}00263\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a83e37a0c1a3e92dd1bf1ecea2c26bc06}{VTK::CloseFile}}(vtk\_file);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00264}00264\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00265}00265\ \ \ \ \ std::stringstream\ buffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00266}00266\ \ \ \ \ std::stringstream\ hbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00267}00267\ \ \ \ \ std::stringstream\ tbuffer;}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00268}00268\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNx\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a78d6cd457345693d6e1a6ed00367d657}{get\_TotalNx}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00270}00270\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNy\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a8f4e2ce603920a1d32125564b4760818}{get\_TotalNy}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ TotalNz\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a86b06590d3e2ceed25f1005af22b8c23}{get\_TotalNz}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetX\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a2ad844e2e0d9137380417de49782a0b3}{get\_OffsetX}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00273}00273\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetY\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_a0165407d49b241fadb07508ad10c6b40}{get\_OffsetY}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ OffsetZ\ =\ \mbox{\hyperlink{structopenphase_1_1VTK_ada6171603b5c091a207b4af0dd2a3212}{get\_OffsetZ}}(resolution,\ locSettings);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00276}00276\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}<Piece\ Extent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nx-\/1\ +\ OffsetX\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Ny-\/1\ +\ OffsetY\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ <<\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Nz-\/1\ +\ OffsetZ\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00280}00280\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a88099d4493a330e18010eee3caee2f34}{WritePointData}}(buffer,ListOfFields,Nx,Ny,Nz,precision);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00283}00283\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_ad0700d63197c69e2f91287bc9a571ed3}{VTK::WriteEndPointData}}(buffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00284}00284\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_acd2546930c631818fddf8464bf705d71}{VTK::WriteCoordinatesDistorted}}(buffer,EP,locSettings,resolution);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00285}00285\ \ \ \ \ buffer\ <<\ \textcolor{stringliteral}{"{}</Piece>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00287}00287\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<?xml\ version=\ \(\backslash\)"{}1.0\(\backslash\)"{}\ encoding=\(\backslash\)"{}UTF-\/8\(\backslash\)"{}\ standalone=\(\backslash\)"{}yes\(\backslash\)"{}?>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00288}00288\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<VTKFile\ type=\(\backslash\)"{}StructuredGrid\(\backslash\)"{}\ version=\(\backslash\)"{}0.1\(\backslash\)"{}\ byte\_order=\(\backslash\)"{}LittleEndian\(\backslash\)"{}>\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00289}00289\ \ \ \ \ hbuffer\ <<\ \textcolor{stringliteral}{"{}<StructuredGrid\ WholeExtent=\(\backslash\)"{}"{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNx-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNy-\/1\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ TotalNz-\/1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00293}00293\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</StructuredGrid>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00294}00294\ \ \ \ \ tbuffer\ <<\ \textcolor{stringliteral}{"{}</VTKFile>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00296}00296\ \ \ \ \ op\_mpi\_write\_vtk(Filename,\ buffer,\ hbuffer,\ tbuffer);}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00297}00297\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00298}00298\ \}}
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{VTK_8cpp_source_l00300}00300\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

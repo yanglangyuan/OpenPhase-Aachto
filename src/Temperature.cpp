@@ -422,7 +422,7 @@ void Temperature::SetInitial1Dextension(Temperature1Dextension& TxExt)
     for (int k = Zbounds.first; k < Zbounds.second; ++k)
     {
         boundaryValue += Tx(i,j,k);
-        area++;
+        area += 1.0;
     }
 
 #ifdef MPI_PARALLEL
@@ -483,7 +483,7 @@ void Temperature::SetInitial(const BoundaryConditions& BC)
     if (TBC0Y != 0.0)
     for(long int i = -Tx.BcellsX(); i < Tx.sizeX() + Tx.BcellsX(); i++)
     for(long int j = -Tx.BcellsY(); j < 0; j++)
-    for(long int k = -Tx.BcellsZ(); k < Tx.sizeZ() + Tx.BcellsZ(); k++)
+    for(long int k = -Tx.BcellsZ(); k < Tx.sizeZ() + Tx.BcellsZ(); j++)
     {
         Tx(i,j,k) = TBC0Y;
     }
@@ -898,32 +898,49 @@ void Temperature::WriteH5(H5Interface& H5, const int tStep)
 {
     #ifdef H5OP
     std::vector<double> dbuffer;
-    dbuffer.push_back(Nx);
-    dbuffer.push_back(Ny);
-    dbuffer.push_back(Nz);
+    dbuffer.push_back(Grid.Nx);
+    dbuffer.push_back(Grid.Ny);
+    dbuffer.push_back(Grid.Nz);
     H5.WriteCheckPoint(tStep, "TxDomain", dbuffer);
     dbuffer.clear();
 
     dbuffer = Tx.pack();
     H5.WriteCheckPoint(tStep, "Tx", dbuffer);
 
-    if(ExtensionX0.isActive()) {
-        H5.WriteCheckPoint(tStep, "TxExX0", ExtensionX0.Data);
+    if (ExtensionX0.isActive()) {
+        std::vector<double> bufX0(ExtensionX0.Data.size());
+        for (size_t i = 0; i < bufX0.size(); ++i) bufX0[i] = ExtensionX0.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExX0", bufX0);
     }
-    if(ExtensionXN.isActive()){
-        H5.WriteCheckPoint(tStep, "TxExXN", ExtensionXN.Data);
+
+    if (ExtensionXN.isActive()) {
+        std::vector<double> bufXN(ExtensionXN.Data.size());
+        for (size_t i = 0; i < bufXN.size(); ++i) bufXN[i] = ExtensionXN.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExXN", bufXN);
     }
-    if(ExtensionY0.isActive()) {
-        H5.WriteCheckPoint(tStep, "TxExY0", ExtensionY0.Data);
+
+    if (ExtensionY0.isActive()) {
+        std::vector<double> bufY0(ExtensionY0.Data.size());
+        for (size_t i = 0; i < bufY0.size(); ++i) bufY0[i] = ExtensionY0.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExY0", bufY0);
     }
-    if(ExtensionYN.isActive()) {
-        H5.WriteCheckPoint(tStep, "TxExYN", ExtensionYN.Data);
+
+    if (ExtensionYN.isActive()) {
+        std::vector<double> bufYN(ExtensionYN.Data.size());
+        for (size_t i = 0; i < bufYN.size(); ++i) bufYN[i] = ExtensionYN.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExYN", bufYN);
     }
-    if(ExtensionZ0.isActive()) {
-        H5.WriteCheckPoint(tStep, "TxExZ0", ExtensionZ0.Data);
+
+    if (ExtensionZ0.isActive()) {
+        std::vector<double> bufZ0(ExtensionZ0.Data.size());
+        for (size_t i = 0; i < bufZ0.size(); ++i) bufZ0[i] = ExtensionZ0.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExZ0", bufZ0);
     }
-    if(ExtensionZN.isActive()) {
-        H5.WriteCheckPoint(tStep, "TxExZN", ExtensionZN.Data);
+
+    if (ExtensionZN.isActive()) {
+        std::vector<double> bufZN(ExtensionZN.Data.size());
+        for (size_t i = 0; i < bufZN.size(); ++i) bufZN[i] = ExtensionZN.Data[i];
+        H5.WriteCheckPoint(tStep, "TxExZN", bufZN);
     }
 
     #else
@@ -941,12 +958,12 @@ bool Temperature::ReadH5(H5Interface& H5, const int tStep)
     int locNy = dbuffer[1];
     int locNz = dbuffer[2];
     dbuffer.clear();
-    if(locNx != Nx or locNy != Ny or locNz != Nz)
+    if(locNx != Grid.Nx || locNy != Grid.Ny || locNz != Grid.Nz)
     {
         stringstream message;
         message << "Inconsistent system dimensions!\n"
                 << "Input data dimensions: (" << locNx << ", " << locNy << ", " << locNz << ") grid points.\n"
-                << "Required data dimensions: (" << Nx << ", " << Ny << ", " << Nz << ") grid points.\n";
+                << "Required data dimensions: (" << Grid.Nx << ", " << Grid.Ny << ", " << Grid.Nz << ") grid points.\n";
         ConsoleOutput::WriteWarning(message.str(), thisclassname, "Read()");
         return false;
     }
@@ -954,23 +971,52 @@ bool Temperature::ReadH5(H5Interface& H5, const int tStep)
     H5.ReadCheckPoint(tStep, "Tx", dbuffer);
     Tx.unpack(dbuffer);
 
-    if(ExtensionX0.isActive()) {
-        H5.ReadCheckPoint(tStep, "TxExX0", ExtensionX0.Data);
+    // X0
+    if (ExtensionX0.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExX0", buf);
+        ExtensionX0.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionX0.Data[i] = buf[i];
     }
-    if(ExtensionXN.isActive()){
-        H5.ReadCheckPoint(tStep, "TxExXN", ExtensionXN.Data);
+
+    // XN
+    if (ExtensionXN.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExXN", buf);
+        ExtensionXN.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionXN.Data[i] = buf[i];
     }
-    if(ExtensionY0.isActive()) {
-        H5.ReadCheckPoint(tStep, "TxExY0", ExtensionY0.Data);
+
+    // Y0
+    if (ExtensionY0.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExY0", buf);
+        ExtensionY0.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionY0.Data[i] = buf[i];
     }
-    if(ExtensionYN.isActive()) {
-        H5.ReadCheckPoint(tStep, "TxExYN", ExtensionYN.Data);
+
+    // YN
+    if (ExtensionYN.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExYN", buf);
+        ExtensionYN.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionYN.Data[i] = buf[i];
     }
-    if(ExtensionZ0.isActive()) {
-        H5.ReadCheckPoint(tStep, "TxExZ0", ExtensionZ0.Data);
+
+    // Z0
+    if (ExtensionZ0.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExZ0", buf);
+        ExtensionZ0.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionZ0.Data[i] = buf[i];
     }
-    if(ExtensionZN.isActive()) {
-        H5.ReadCheckPoint(tStep, "TxExZN", ExtensionZN.Data);
+
+    // ZN
+    if (ExtensionZN.isActive()) {
+        std::vector<double> buf;
+        H5.ReadCheckPoint(tStep, "TxExZN", buf);
+        ExtensionZN.Data.Allocate(buf.size(), 1);
+        for (size_t i = 0; i < buf.size(); ++i) ExtensionZN.Data[i] = buf[i];
     }
 
     return true;

@@ -31,7 +31,9 @@ PROGS := $(basename $(SRC))
 include $(DEPTH)/Makefile.defs
 
 INCLUDES += ${EXTERNAL_INCLUDES}
-LDFLAGS = -L$(DEPTH)/lib ${EXTERNAL_LIBS}
+LDFLAGS += -L$(DEPTH)/lib ${EXTERNAL_LIBS}
+LDFLAGS += -L$(DEPTH)/hdf5/hdf5/lib -lhdf5
+STDLIBS += -L$(DEPTH)/hdf5/hdf5/lib -lhdf5
 LIBSRC = $(DEPTH)/lib/$(LIBNAME)
 
 MAKE := make SETTINGS="$(SETTINGS)"

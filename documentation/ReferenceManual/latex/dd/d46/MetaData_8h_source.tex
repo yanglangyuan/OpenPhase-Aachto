@@ -1,0 +1,104 @@
+\doxysection{Meta\+Data.\+h}
+\hypertarget{MetaData_8h_source}{}\label{MetaData_8h_source}\index{MetaData.h@{MetaData.h}}
+\mbox{\hyperlink{MetaData_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2024}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Marvin\ Tegeler}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ METADATA\_H}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ METADATA\_H}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00040}\mbox{\hyperlink{structopenphase_1_1AuthorInformation}{00040}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1AuthorInformation}{AuthorInformation}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1AuthorInformation_a9120b8dd0015d24ca66b0f94de8a8d10}{00042}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1AuthorInformation_a9120b8dd0015d24ca66b0f94de8a8d10}{Name}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1AuthorInformation_a1e3b630273224d7ba8641abbb3f1f0e4}{00043}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1AuthorInformation_a1e3b630273224d7ba8641abbb3f1f0e4}{Affiliation}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1AuthorInformation_ac30fb6eebfb8bbb628cab8b7394ba806}{00044}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1AuthorInformation_ac30fb6eebfb8bbb628cab8b7394ba806}{ORCID}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00047}\mbox{\hyperlink{structopenphase_1_1SimulationInformation}{00047}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1SimulationInformation}{SimulationInformation}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00049}\mbox{\hyperlink{structopenphase_1_1SimulationInformation_a9b4e103d5fe9ed26da781fb152b7c925}{00049}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1SimulationInformation_a9b4e103d5fe9ed26da781fb152b7c925}{Title}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00050}\mbox{\hyperlink{structopenphase_1_1SimulationInformation_a1a026101024cdd3dd7ef02a2743b0253}{00050}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1SimulationInformation_a1a026101024cdd3dd7ef02a2743b0253}{Description}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00051}\mbox{\hyperlink{structopenphase_1_1SimulationInformation_ae8efad0df7ca518e1ba92cdaea6e4abb}{00051}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1SimulationInformation_ae8efad0df7ca518e1ba92cdaea6e4abb}{License}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00052}\mbox{\hyperlink{structopenphase_1_1SimulationInformation_a325e3714ee08d9d24a6fb104e593687b}{00052}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{structopenphase_1_1SimulationInformation_a325e3714ee08d9d24a6fb104e593687b}{Keywords}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00053}\mbox{\hyperlink{structopenphase_1_1SimulationInformation_af149362706cc663ae4a6246ab0953e6e}{00053}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{structopenphase_1_1SimulationInformation_af149362706cc663ae4a6246ab0953e6e}{RelatedArticles}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00054}00054\ \};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00056}\mbox{\hyperlink{structopenphase_1_1ProgramInformation}{00056}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1ProgramInformation}{ProgramInformation}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00058}\mbox{\hyperlink{structopenphase_1_1ProgramInformation_ae2be450272bed4714a4c688da3341cee}{00058}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1ProgramInformation_ae2be450272bed4714a4c688da3341cee}{Title}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00059}\mbox{\hyperlink{structopenphase_1_1ProgramInformation_a7a889340cc3ff0c36fbfc1c804c60f59}{00059}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1ProgramInformation_a7a889340cc3ff0c36fbfc1c804c60f59}{GitHashCore}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00060}\mbox{\hyperlink{structopenphase_1_1ProgramInformation_a6e12c88c36ef4c2858a2bf2cdb488a5e}{00060}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1ProgramInformation_a6e12c88c36ef4c2858a2bf2cdb488a5e}{VersionCore}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00061}\mbox{\hyperlink{structopenphase_1_1ProgramInformation_a922a573bd243fa26d0ef54a790824e7a}{00061}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1ProgramInformation_a922a573bd243fa26d0ef54a790824e7a}{GitHashStudio}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00062}\mbox{\hyperlink{structopenphase_1_1ProgramInformation_a559c0df687a810fc47822ae3e55014b1}{00062}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1ProgramInformation_a559c0df687a810fc47822ae3e55014b1}{VersionStudio}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00063}00063\ \};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00065}\mbox{\hyperlink{structopenphase_1_1Part}{00065}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1Part}{Part}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00067}\mbox{\hyperlink{structopenphase_1_1Part_a853886ed9900372aa860d9435212d858}{00067}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1Part_a853886ed9900372aa860d9435212d858}{Name}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00068}\mbox{\hyperlink{structopenphase_1_1Part_ac232d353c03708f2c3e2b2602041d34a}{00068}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1Part_ac232d353c03708f2c3e2b2602041d34a}{Type}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00069}\mbox{\hyperlink{structopenphase_1_1Part_a1da93803cb994aee03a3aced8b26a206}{00069}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1Part_a1da93803cb994aee03a3aced8b26a206}{Description}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00070}\mbox{\hyperlink{structopenphase_1_1Part_a7ec3239011ffba92a6c35e7ea80efda5}{00070}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1Part_a7ec3239011ffba92a6c35e7ea80efda5}{Format}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00071}00071\ \};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00073}\mbox{\hyperlink{classopenphase_1_1MetaData}{00073}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{classopenphase_1_1MetaData}{MetaData}}\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00075}00075\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MetaData}{MetaData}}();}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//MetaData(Settings\&\ locSettings,\ const\ std::string\ InputFileName\ =\ DefaultInputFileName);}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//void\ Initialize(Settings\&\ locSettings);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Initializes\ storages,\ sets\ internal\ variables.}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//void\ ReadInput(const\ std::string\ InputFileName);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Reads\ input\ values\ from\ file}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//void\ ReadInput(std::stringstream\&\ inp);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Reads\ input\ values\ from\ file}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00082}00082\ \ \ \ \ std::string\ to\_iso8601(std::time\_t\ t);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00083}00083\ \ \ \ \ std::string\ make\_relative\_path(\textcolor{keyword}{const}\ std::string\&\ path\_to\_file,}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path\_to\_working\_directory);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ WriteJSON(std::string\ FileName);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{void}\ AddPart(std::string\ FileName,\ std::string\ type,\ std::string\ description,\ std::string\ format);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadAuthorInformation(std::stringstream\&\ inp);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadSimulationInformation(std::stringstream\&);}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00089}\mbox{\hyperlink{classopenphase_1_1MetaData_ab8bf9aa39da33ad3b64fe2fca268dd80}{00089}}\ \ \ \ \ std::vector<AuthorInformation>\ \mbox{\hyperlink{classopenphase_1_1MetaData_ab8bf9aa39da33ad3b64fe2fca268dd80}{Authors}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00090}\mbox{\hyperlink{classopenphase_1_1MetaData_a7f617d6059779d99e6c1a9df0d141f2e}{00090}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SimulationInformation}{SimulationInformation}}\ \mbox{\hyperlink{classopenphase_1_1MetaData_a7f617d6059779d99e6c1a9df0d141f2e}{Simulation}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00091}\mbox{\hyperlink{classopenphase_1_1MetaData_a9a54018229ab349f8095d02f86502efa}{00091}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1ProgramInformation}{ProgramInformation}}\ \mbox{\hyperlink{classopenphase_1_1MetaData_a9a54018229ab349f8095d02f86502efa}{Program}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00092}\mbox{\hyperlink{classopenphase_1_1MetaData_a3a7b70c21d931cdf4c77e4762b298fec}{00092}}\ \ \ \ \ std::vector<Part>\ \mbox{\hyperlink{classopenphase_1_1MetaData_a3a7b70c21d931cdf4c77e4762b298fec}{Parts}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00093}\mbox{\hyperlink{classopenphase_1_1MetaData_a47b8137677665e2e0b13248b2a4b6b7b}{00093}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1MetaData_a47b8137677665e2e0b13248b2a4b6b7b}{StartTime}};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00094}00094\ \};}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00096}00096\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{MetaData_8h_source_l00098}00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MetaData\_H}}
+
+\end{DoxyCode}

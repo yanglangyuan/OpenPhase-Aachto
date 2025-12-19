@@ -1,0 +1,338 @@
+\doxysection{openphase\+::Grand\+Potential\+Density Class Reference}
+\hypertarget{classopenphase_1_1GrandPotentialDensity}{}\label{classopenphase_1_1GrandPotentialDensity}\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+
+
+\texorpdfstring{$<$}{<} Base class of grand potential densities / equations of state  
+
+
+
+
+{\ttfamily \#include "{}Grand\+Potential\+Density.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a303e81bc9bdf98fc0e8551a5210b465d}{Grand\+Potential\+Density}} ()=default
+\begin{DoxyCompactList}\small\item\em Explicitly defaulted automatically generated constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ad1cb80f49fba7a82e3ef664384eb2e8e}{Grand\+Potential\+Density}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Input\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Allocates and initialises memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a0c4f94fd9d546a5aced201a005a70525}{Initialize\+And\+Read\+Input}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::stringstream \&inp)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a9b291b7b6e8308f3e6d04a22e5727f6a}{Initialize\+And\+Read\+Input}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string File\+Name)
+\item 
+\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity}{Grand\+Potential\+Phase\+Density}} \& \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_aea1df013404b382650d74d8a3427b7d3}{operator()}} (size\+\_\+t Phase\+Idx) const
+\item 
+double \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a42031d2c682e073cd1c68b190970e015}{operator()}} (int i, int j, int k, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Computes grand potential density at (i,j,k) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a491695000651e20054b91a7f00c07cbd}{Set}} (const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&Chemical\+Potential)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}} = "{}Grand\+Potential\+Density"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a913734249c42b8173f224b7d2cc26fc7}{Gravity\+Direction}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715}{Do\+Gravity}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of thermodynamic phases. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a8795b6ca392105cf511541403a1d7781}{Phase\+Names}}
+\begin{DoxyCompactList}\small\item\em Names of corresponding thermodynamic phases. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity}{Grand\+Potential\+Phase\+Density}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classopenphase_1_1Storage}{Storage} of grand potential densities for each phase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Base class of grand potential densities / equations of state 
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00041}{41}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a303e81bc9bdf98fc0e8551a5210b465d}\label{classopenphase_1_1GrandPotentialDensity_a303e81bc9bdf98fc0e8551a5210b465d} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!GrandPotentialDensity@{GrandPotentialDensity}}
+\index{GrandPotentialDensity@{GrandPotentialDensity}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{GrandPotentialDensity()}{GrandPotentialDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Grand\+Potential\+Density\+::\+Grand\+Potential\+Density (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Explicitly defaulted automatically generated constructor. 
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_ad1cb80f49fba7a82e3ef664384eb2e8e}\label{classopenphase_1_1GrandPotentialDensity_ad1cb80f49fba7a82e3ef664384eb2e8e} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!GrandPotentialDensity@{GrandPotentialDensity}}
+\index{GrandPotentialDensity@{GrandPotentialDensity}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{GrandPotentialDensity()}{GrandPotentialDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Grand\+Potential\+Density\+::\+Grand\+Potential\+Density (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Allocates and initialises memory. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{GrandPotentialDensity_8cpp_source}{Grand\+Potential\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a0c4f94fd9d546a5aced201a005a70525}{InitializeAndReadInput}}(locSettings,\ filename);}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a9b291b7b6e8308f3e6d04a22e5727f6a}\label{classopenphase_1_1GrandPotentialDensity_a9b291b7b6e8308f3e6d04a22e5727f6a} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!InitializeAndReadInput@{InitializeAndReadInput}}
+\index{InitializeAndReadInput@{InitializeAndReadInput}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{InitializeAndReadInput()}{InitializeAndReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grand\+Potential\+Density\+::\+Initialize\+And\+Read\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{GrandPotentialDensity_8cpp_source}{Grand\+Potential\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ std::fstream\ inp(filename.c\_str(),\ std::ios::in);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ filename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}},\ \textcolor{stringliteral}{"{}InitializeAndReadInput"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::exit(EXIT\_FAILURE);}
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ \ \ \ \ std::stringstream\ inp\_data;}
+\DoxyCodeLine{00101\ \ \ \ \ inp\_data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00102\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ filename);}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a0c4f94fd9d546a5aced201a005a70525}{InitializeAndReadInput}}(locSettings,inp\_data);}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a0c4f94fd9d546a5aced201a005a70525}\label{classopenphase_1_1GrandPotentialDensity_a0c4f94fd9d546a5aced201a005a70525} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!InitializeAndReadInput@{InitializeAndReadInput}}
+\index{InitializeAndReadInput@{InitializeAndReadInput}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{InitializeAndReadInput()}{InitializeAndReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grand\+Potential\+Density\+::\+Initialize\+And\+Read\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{GrandPotentialDensity_8cpp_source}{Grand\+Potential\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a8795b6ca392105cf511541403a1d7781}{PhaseNames}}\ =\ locSettings.PhaseNames;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce}{Nphases}}\ \ \ \ =\ locSettings.Nphases;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp\_data,\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ PhaseIdx\ =\ 0;\ PhaseIdx\ <\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce}{Nphases}};\ PhaseIdx++)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::string\ converter\ =\ \textcolor{stringliteral}{"{}"{}}+std::to\_string(PhaseIdx);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::string\ str\_omega\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp\_data,\ moduleLocation,\ \textcolor{stringliteral}{"{}OMEGA\_"{}}+converter);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \ \ \ \ \ (str\_omega\ ==\ \textcolor{stringliteral}{"{}PARABOLIC"{}}\ )\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}.push\_back(\textcolor{keyword}{new}\ GrandPotentialPhaseDensity\_Parabolic\ \ \ \ \ \ \ \ \ (PhaseIdx));}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str\_omega\ ==\ \textcolor{stringliteral}{"{}IMPLICITPARABOLIC"{}})\ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}.push\_back(\textcolor{keyword}{new}\ GrandPotentialPhaseDensity\_ImplicitParabolic\ (PhaseIdx));}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str\_omega\ ==\ \textcolor{stringliteral}{"{}IDEALGAS"{}})\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}.push\_back(\textcolor{keyword}{new}\ GrandPotentialPhaseDensity\_IdealGas\ \ \ \ \ \ \ \ \ \ (PhaseIdx));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str\_omega\ ==\ \textcolor{stringliteral}{"{}COMPRESSIBLEFLUID"{}})\ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}.push\_back(\textcolor{keyword}{new}\ GrandPotentialPhaseDensity\_CompressibleFluid\ (PhaseIdx));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Phase\ Model\ "{}}+str\_omega+\textcolor{stringliteral}{"{}\ is\ not\ implemented!\(\backslash\)n"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}},\textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715}{DoGravity}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ \textcolor{stringliteral}{"{}Gravity"{}},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715}{DoGravity}})}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a913734249c42b8173f224b7d2cc26fc7}{GravityDirection}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ \textcolor{stringliteral}{"{}GDir"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ omega\ :\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!omega-\/>GravityImplemented)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Gravity\ for\ "{}}\ <<\ omega-\/>thisclassname\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ yet\ implemented!\(\backslash\)n"{}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}},\textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ omega\ :\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}})\ omega-\/>Initialize(locSettings);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ omega\ :\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}})\ omega-\/>ReadInput(inp\_data,\ moduleLocation);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a42031d2c682e073cd1c68b190970e015}\label{classopenphase_1_1GrandPotentialDensity_a42031d2c682e073cd1c68b190970e015} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!operator()@{operator()}}
+\index{operator()@{operator()}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double openphase\+::\+Grand\+Potential\+Density\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Computes grand potential density at (i,j,k) 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00053}{53}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ omega\ =\ 0.0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++alpha)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PhaseIdx\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Phase;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ omega\ +=\ alpha-\/>value*(*\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}[PhaseIdx])(i,j,k);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ omega;}
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_aea1df013404b382650d74d8a3427b7d3}\label{classopenphase_1_1GrandPotentialDensity_aea1df013404b382650d74d8a3427b7d3} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!operator()@{operator()}}
+\index{operator()@{operator()}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity}{Grand\+Potential\+Phase\+Density}} \& openphase\+::\+Grand\+Potential\+Density\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Phase\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00048}{48}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assert(PhaseIdx\ <\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce}{Nphases}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}}[PhaseIdx];}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a491695000651e20054b91a7f00c07cbd}\label{classopenphase_1_1GrandPotentialDensity_a491695000651e20054b91a7f00c07cbd} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!Set@{Set}}
+\index{Set@{Set}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void openphase\+::\+Grand\+Potential\+Density\+::\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&}]{Temperature,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&}]{Chemical\+Potential }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00068}{68}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715}{DoGravity}})}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ omega\ :\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omega-\/>Set(Temperature,ChemicalPotential,\mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_a913734249c42b8173f224b7d2cc26fc7}{GravityDirection}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ omega\ :\ \mbox{\hyperlink{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}{storage}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omega-\/>Set(Temperature,ChemicalPotential);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715}\label{classopenphase_1_1GrandPotentialDensity_aeacc5004718d399d3da2d73bb777c715} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!DoGravity@{DoGravity}}
+\index{DoGravity@{DoGravity}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{DoGravity}{DoGravity}}
+{\footnotesize\ttfamily bool openphase\+::\+Grand\+Potential\+Density\+::\+Do\+Gravity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00093}{93}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a913734249c42b8173f224b7d2cc26fc7}\label{classopenphase_1_1GrandPotentialDensity_a913734249c42b8173f224b7d2cc26fc7} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!GravityDirection@{GravityDirection}}
+\index{GravityDirection@{GravityDirection}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{GravityDirection}{GravityDirection}}
+{\footnotesize\ttfamily int openphase\+::\+Grand\+Potential\+Density\+::\+Gravity\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00092}{92}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce}\label{classopenphase_1_1GrandPotentialDensity_a71b8f5ad2fbc868fe93764c088cd1fce} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grand\+Potential\+Density\+::\+Nphases\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00094}{94}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a8795b6ca392105cf511541403a1d7781}\label{classopenphase_1_1GrandPotentialDensity_a8795b6ca392105cf511541403a1d7781} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!PhaseNames@{PhaseNames}}
+\index{PhaseNames@{PhaseNames}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseNames}{PhaseNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ openphase\+::\+Grand\+Potential\+Density\+::\+Phase\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Names of corresponding thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00095}{95}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922}\label{classopenphase_1_1GrandPotentialDensity_ae4303fdd4967c847726ac02024720922} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!storage@{storage}}
+\index{storage@{storage}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{storage}{storage}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity}{Grand\+Potential\+Phase\+Density}}\texorpdfstring{$\ast$}{*}$>$ openphase\+::\+Grand\+Potential\+Density\+::storage\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{classopenphase_1_1Storage}{Storage} of grand potential densities for each phase. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00096}{96}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c}\label{classopenphase_1_1GrandPotentialDensity_a76a28c28630b5c0c886b73cddad9e24c} 
+\index{openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::GrandPotentialDensity@{openphase::GrandPotentialDensity}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Grand\+Potential\+Density\+::thisclassname = "{}Grand\+Potential\+Density"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialDensity_8h_source_l00089}{89}} of file \mbox{\hyperlink{GrandPotentialDensity_8h_source}{Grand\+Potential\+Density.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GrandPotentialDensity_8h}{Grand\+Potential\+Density.\+h}}\item 
+\mbox{\hyperlink{GrandPotentialDensity_8cpp}{Grand\+Potential\+Density.\+cpp}}\end{DoxyCompactItemize}

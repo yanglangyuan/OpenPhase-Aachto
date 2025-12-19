@@ -1,0 +1,179 @@
+\doxysection{Gradient\+Stencil.\+h}
+\hypertarget{GradientStencil_8h_source}{}\label{GradientStencil_8h_source}\index{GradientStencil.h@{GradientStencil.h}}
+\mbox{\hyperlink{GradientStencil_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2020}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ GRADIENTSTENCIL\_H}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ GRADIENTSTENCIL\_H}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00030}00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00033}\mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3d}{00033}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3d}{GradientStencils}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3da1fbb1e3943c2c6c560247ac8f9289780}{Simple}},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3da14b5edf8fb82e568afeb4413c67fa479}{Isotropic}},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3dac951270e425b15fc20c64da4341c1d89}{LB}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00038}00038\ \};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00040}00040\ \textcolor{comment}{//\ 1D,\ 2D\ and\ 3D\ Gradient\ stencils.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00041}00041\ \textcolor{comment}{//\ Note\ that\ 1D\ and\ 2D\ stencils\ for\ convenience\ defined\ in\ 3D\ arrays}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00042}00042\ \textcolor{comment}{//\ but\ should\ only\ be\ used\ with\ inactive\ dimensions\ suppressed.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00043}00043\ \textcolor{comment}{//\ Gradient\ stencils\ have\ no\ negative\ coefficients\ which\ should\ be\ multiplied}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00044}00044\ \textcolor{comment}{//\ by\ (-\/1)\ manually\ at\ the\ point\ of\ use.}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00046}\mbox{\hyperlink{namespaceopenphase_a233bf0b59ed70dabae55d22f2f3000d3}{00046}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_a233bf0b59ed70dabae55d22f2f3000d3}{GradientStencil1D}}[3][3][3]\ =\ \{\{\{\ 0.0,\ 0.0,\ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.0,\ 0.5,\ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.0,\ 0.0,\ 0.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.0,\ 0.5,\ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.5,\ 0.0,\ 0.5\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.0,\ 0.5,\ 0.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.0,\ 0.0,\ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.0,\ 0.5,\ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.0,\ 0.0,\ 0.0\}\}\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00058}\mbox{\hyperlink{namespaceopenphase_afc05c891699c92f45267517c97ee2f67}{00058}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_afc05c891699c92f45267517c97ee2f67}{GradientStencil2D}}[3][3][3]\ =\ \{\{\{\ \ \ \ \ \ 0.0,\ 0.25/3.0,\ \ \ \ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.25/3.0,\ \ 1.0/3.0,\ 0.25/3.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ 0.0,\ 0.25/3.0,\ \ \ \ \ \ 0.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.25/3.0,\ \ 1.0/3.0,\ 0.25/3.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ 1.0/3.0,\ \ \ \ \ \ 0.0,\ \ 1.0/3.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.25/3.0,\ \ 1.0/3.0,\ 0.25/3.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ \ \ \ \ \ 0.0,\ 0.25/3.0,\ \ \ \ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.25/3.0,\ \ 1.0/3.0,\ 0.25/3.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ 0.0,\ 0.25/3.0,\ \ \ \ \ \ 0.0\}\}\};\ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00070}\mbox{\hyperlink{namespaceopenphase_acd2910d9917acf4b7cc84f3f192e0096}{00070}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_acd2910d9917acf4b7cc84f3f192e0096}{GradientStencil2D\_2}}[3][3][3]\ =\ \{\{\{\ \ \ 0.0,\ 0.125,\ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.125,\ \ 0.25,\ 0.125\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ 0.0,\ 0.125,\ \ \ 0.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.125,\ \ 0.25,\ 0.125\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ 0.25,\ \ \ 0.0,\ \ 0.25\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.125,\ \ 0.25,\ 0.125\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ \ \ 0.0,\ 0.125,\ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.125,\ \ 0.25,\ 0.125\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ 0.0,\ 0.125,\ \ \ 0.0\}\}\};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00082}\mbox{\hyperlink{namespaceopenphase_a97f05eb021959e8a5f9242f07f646b78}{00082}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_a97f05eb021959e8a5f9242f07f646b78}{GradientStencil3D}}[3][3][3]\ =\ \{\{\{\ 0.085/4.64,\ 0.245/4.64,\ 0.085/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.245/4.64,\ \ \ 1.0/4.64,\ 0.245/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.085/4.64,\ 0.245/4.64,\ 0.085/4.64\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.245/4.64,\ 1.0/4.64,\ 0.245/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ 1.0/4.64,\ \ \ \ \ \ 0.0,\ \ \ 1.0/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.245/4.64,\ 1.0/4.64,\ 0.245/4.64\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ 0.085/4.64,\ 0.245/4.64,\ 0.085/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.245/4.64,\ \ \ 1.0/4.64,\ 0.245/4.64\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.085/4.64,\ 0.245/4.64,\ 0.085/4.64\}\}\};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00096}\mbox{\hyperlink{namespaceopenphase_a4f42772687633856a388e88728151104}{00096}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_a4f42772687633856a388e88728151104}{GradientStencil2D\_LB}}[3][3][3]\ =\ \{\{\{\ \ \ \ \ 0.0,\ 1.0/12.0,\ \ \ \ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/12.0,\ 1.0/3.0,\ \ 1.0/12.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ 0.0,\ 1.0/12.0,\ \ \ \ \ \ 0.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1.0/12.0,\ \ \ 1.0/3.0,\ 1.0/12.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/3.0,\ \ \ \ \ \ \ \ 0.0,\ 1.0/3.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/12.0,\ \ \ 1.0/3.0,\ 1.0/12.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{\ \ \ \ \ 0.0,\ 1.0/12.0,\ \ \ \ \ \ 0.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/12.0,\ 1.0/3.0,\ \ 1.0/12.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ 0.0,\ 1.0/12.0,\ \ \ \ \ \ 0.0\}\}\};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00108}\mbox{\hyperlink{namespaceopenphase_aa3a7ef9cfde2a6446109e34bea555795}{00108}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_aa3a7ef9cfde2a6446109e34bea555795}{GradientStencil3D\_LB}}[3][3][3]\ =\ \{\{\{1.0/72.0,\ 1.0/18.0,\ 1.0/72.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/18.0,\ 2.0/9.0,\ \ 1.0/18.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/72.0,\ 1.0/18.0,\ 1.0/72.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1.0/18.0,\ 2.0/9.0,\ 1.0/18.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{2.0/9.0,\ \ \ \ \ \ 0.0,\ 2.0/9.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/18.0,\ 2.0/9.0,\ 1.0/18.0\}\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1.0/72.0,\ 1.0/18.0,\ 1.0/72.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/18.0,\ 2.0/9.0,\ \ 1.0/18.0\},}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/72.0,\ 1.0/18.0,\ 1.0/72.0\}\}\};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00120}\mbox{\hyperlink{classopenphase_1_1GradientStencil}{00120}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1GradientStencil}{GradientStencil}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00122}00122\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00123}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{00123}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{GradientStencilEntry}}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00125}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a9e4deb73a26943136df2aa4077e60931}{00125}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a9e4deb73a26943136df2aa4077e60931}{di}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00126}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a0eb29f49a61e1e4f68a2bd77986f662b}{00126}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a0eb29f49a61e1e4f68a2bd77986f662b}{dj}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00127}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a38bba5ff4641deb7b59f5b08605991cb}{00127}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a38bba5ff4641deb7b59f5b08605991cb}{dk}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00128}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_ac0cdf2790ddb03a4e4d4c5193e8a2d4a}{00128}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_ac0cdf2790ddb03a4e4d4c5193e8a2d4a}{weightX}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00129}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_adc3519c149227d19e4bd2ff6a29b541a}{00129}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_adc3519c149227d19e4bd2ff6a29b541a}{weightY}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00130}\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_af10672a7e323e389d49fc2bc744cce0d}{00130}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_af10672a7e323e389d49fc2bc744cce0d}{weightZ}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00131}00131\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00132}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}{00132}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}{Set}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ UserStencil[3][3][3],\ \textcolor{keywordtype}{double}\ dx,}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dNx\ =\ 1,\ \textcolor{keywordtype}{int}\ dNy\ =\ 1,\ \textcolor{keywordtype}{int}\ dNz\ =\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00134}00134\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.empty())}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.clear();}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ -\/dNx;\ x\ <=\ dNx;\ ++x)}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ -\/dNy;\ y\ <=\ dNy;\ ++y)}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ z\ =\ -\/dNz;\ z\ <=\ dNz;\ ++z)}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UserStencil[x+1][y+1][z+1]\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{GradientStencilEntry}}\ locElement;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a9e4deb73a26943136df2aa4077e60931}{di}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a0eb29f49a61e1e4f68a2bd77986f662b}{dj}}\ =\ y;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_a38bba5ff4641deb7b59f5b08605991cb}{dk}}\ =\ z;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_ac0cdf2790ddb03a4e4d4c5193e8a2d4a}{weightX}}\ =\ x*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_adc3519c149227d19e4bd2ff6a29b541a}{weightY}}\ =\ y*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry_af10672a7e323e389d49fc2bc744cce0d}{weightZ}}\ =\ z*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.push\_back(locElement);}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00157}\mbox{\hyperlink{classopenphase_1_1GradientStencil_aeb26fc55c6e38b77c4811474b80b5271}{00157}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_aeb26fc55c6e38b77c4811474b80b5271}{Set}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ UserStencil[3][3][3],\ \mbox{\hyperlink{classopenphase_1_1GridParameters}{GridParameters}}\&\ Dimensions)}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}{Set}}(UserStencil,\ Dimensions.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ Dimensions.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ Dimensions.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ Dimensions.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}});}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00161}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a4d5107d9c70154b228ead48b96a9735d}{00161}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a4d5107d9c70154b228ead48b96a9735d}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00162}\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{00162}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<GradientStencilEntry>::iterator\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00163}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{00163}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<GradientStencilEntry>::const\_iterator\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00164}\mbox{\hyperlink{classopenphase_1_1GradientStencil_aa71158d092f72badd2ce1cec4354fda9}{00164}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_aa71158d092f72badd2ce1cec4354fda9}{begin}}()\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00165}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a5a4ab9eb5a2e50dbe0b8fd107040e786}{00165}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5a4ab9eb5a2e50dbe0b8fd107040e786}{end}}()\ \ \ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00166}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a5ec4dfe46d684d6597bf546e32943bed}{00166}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5ec4dfe46d684d6597bf546e32943bed}{cbegin}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00167}\mbox{\hyperlink{classopenphase_1_1GradientStencil_afc6c12d29aa0df36b80cfa9132919cc1}{00167}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_afc6c12d29aa0df36b80cfa9132919cc1}{cend}}()\textcolor{keyword}{\ \ \ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00168}\mbox{\hyperlink{classopenphase_1_1GradientStencil_a2222b18bc68a2622c1b03861e3787af3}{00168}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a2222b18bc68a2622c1b03861e3787af3}{erase}}(\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}\ it)\ \{it\ =\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.erase(it);\ \textcolor{keywordflow}{return}\ it;\}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00169}00169\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00170}00170\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00171}\mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{00171}}\ \ \ \ \ std::vector<\ GradientStencilEntry\ >\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00172}00172\ \};}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{GradientStencil_8h_source_l00174}00174\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GRADIENTSTENCIL\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,218 @@
+\doxysection{openphase\+::Van\+Der\+Waals\+Gas Struct Reference}
+\hypertarget{structopenphase_1_1VanDerWaalsGas}{}\label{structopenphase_1_1VanDerWaalsGas}\index{openphase::VanDerWaalsGas@{openphase::VanDerWaalsGas}}
+
+
+Van\+Der\+Waals This class calculated the pressure of a Van der Waals gas which is used by the \doxylink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}. Furthermore, it contains the equilibrium solution of the Van\+Der\+Waals equation, which are needed as input for the \doxylink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}. The values have been obtained by a separate simulation. TODO Add simulation code.  
+
+
+
+
+{\ttfamily \#include "{}Van\+Der\+Waals\+Gas.\+h"{}}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{Equilibrium\+Values\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a45f34eb35b2caf8f326acab3453ac5df}{Reduced\+Pressure}} (const double Density, const double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const double Critical\+Density=1.\+0, const double Critical\+Temperature=1.\+0)
+\item 
+static \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{Equilibrium\+Values\+\_\+t}} \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}{Equilibrium\+Values}} (const double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const double Critical\+Temperature=1.\+0, const double Laplace\+Pressure=0.\+0)
+\begin{DoxyCompactList}\small\item\em Calculates the equilibrium densities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Van\+Der\+Waals This class calculated the pressure of a Van der Waals gas which is used by the \doxylink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}. Furthermore, it contains the equilibrium solution of the Van\+Der\+Waals equation, which are needed as input for the \doxylink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}. The values have been obtained by a separate simulation. TODO Add simulation code. 
+
+Definition at line \mbox{\hyperlink{VanDerWaalsGas_8h_source_l00042}{42}} of file \mbox{\hyperlink{VanDerWaalsGas_8h_source}{Van\+Der\+Waals\+Gas.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}\label{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758} 
+\index{openphase::VanDerWaalsGas@{openphase::VanDerWaalsGas}!EquilibriumValues@{EquilibriumValues}}
+\index{EquilibriumValues@{EquilibriumValues}!openphase::VanDerWaalsGas@{openphase::VanDerWaalsGas}}
+\doxysubsubsection{\texorpdfstring{EquilibriumValues()}{EquilibriumValues()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}{Van\+Der\+Waals\+Gas\+::\+Equilibrium\+Values\+\_\+t}} openphase\+::\+Van\+Der\+Waals\+Gas\+::\+Equilibrium\+Values (\begin{DoxyParamCaption}\item[{const double}]{Temperature,  }\item[{const double}]{Critical\+Temperature = {\ttfamily 1.0},  }\item[{const double}]{Laplace\+Pressure = {\ttfamily 0.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the equilibrium densities. 
+
+NOTE! The following reduced equilibrium values, \doxylink{classopenphase_1_1Temperature}{Temperature}, Vapor\+Density, and Liquid\+Density, of the Van der Waals equation should not be changed! They may be updated by more accurate values or an analytical solution of the Van der Waals equation. They are used as input parameters of the \doxylink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}. TODO Add surface tension
+
+Definition at line \mbox{\hyperlink{VanDerWaalsGas_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{VanDerWaalsGas_8cpp_source}{Van\+Der\+Waals\+Gas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VanDerWaalsGas::EquilibriumValues\_t>\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}{EquilibriumValues}}\ =}
+\DoxyCodeLine{00044\ \ \ \ \ \{\{0.01,3.73587E-\/144,2.99109E+000\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \{0.02,2.79725E-\/071,2.98212E+000\},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \{0.03,4.89974E-\/047,2.97310E+000\},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \{0.04,5.93062E-\/035,2.96403E+000\},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \{0.05,1.00176E-\/027,2.95489E+000\},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \{0.06,6.36164E-\/023,2.94570E+000\},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \{0.07,1.67599E-\/019,2.93645E+000\},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \{0.08,6.04048E-\/017,2.92714E+000\},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \{0.09,5.80403E-\/015,2.91777E+000\},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \{0.10,2.20916E-\/013,2.90834E+000\},}
+\DoxyCodeLine{00054\ \ \ \ \ \ \{0.11,4.29885E-\/012,2.89884E+000\},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \{0.12,5.06427E-\/011,2.88928E+000\},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \{0.13,4.04833E-\/010,2.87965E+000\},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \{0.14,2.39271E-\/009,2.86996E+000\},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \{0.15,1.09051E-\/008,2.86041E+000\},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \{0.16,4.14938E-\/008,2.85063E+000\},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \{0.17,1.34771E-\/007,2.84010E+000\},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \{0.18,3.81679E-\/007,2.83046E+000\},}
+\DoxyCodeLine{00062\ \ \ \ \ \ \{0.19,9.70874E-\/007,2.82008E+000\},}
+\DoxyCodeLine{00063\ \ \ \ \ \ \{0.20,2.22717E-\/006,2.81057E+000\},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \{0.21,4.71698E-\/006,2.80034E+000\},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \{0.22,9.34579E-\/006,2.78940E+000\},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \{0.23,1.73310E-\/005,2.77932E+000\},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \{0.24,3.04878E-\/005,2.76855E+000\},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \{0.25,5.12821E-\/005,2.75862E+000\},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \{0.26,8.26446E-\/005,2.74801E+000\},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \{0.27,1.28205E-\/004,2.73673E+000\},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \{0.28,1.92678E-\/004,2.72628E+000\},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \{0.29,2.80899E-\/004,2.71518E+000\},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \{0.30,3.98406E-\/004,2.70416E+000\},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \{0.31,5.52486E-\/004,2.69324E+000\},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \{0.32,7.51880E-\/004,2.68168E+000\},}
+\DoxyCodeLine{00076\ \ \ \ \ \ \{0.33,1.00100E-\/003,2.67023E+000\},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \{0.34,1.31062E-\/003,2.65887E+000\},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \{0.35,1.68634E-\/003,2.64760E+000\},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \{0.36,2.14133E-\/003,2.63574E+000\},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \{0.37,2.68097E-\/003,2.62398E+000\},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \{0.38,3.31126E-\/003,2.61233E+000\},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \{0.39,4.04858E-\/003,2.60010E+000\},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \{0.40,4.90196E-\/003,2.58799E+000\},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \{0.41,5.88235E-\/003,2.57533E+000\},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \{0.42,6.99301E-\/003,2.56345E+000\},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \{0.43,8.26446E-\/003,2.55037E+000\},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \{0.44,9.61538E-\/003,2.53807E+000\},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \{0.45,1.12108E-\/002,2.52525E+000\},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \{0.46,1.29534E-\/002,2.51193E+000\},}
+\DoxyCodeLine{00090\ \ \ \ \ \ \{0.47,1.48588E-\/002,2.49875E+000\},}
+\DoxyCodeLine{00091\ \ \ \ \ \ \{0.48,1.69492E-\/002,2.48571E+000\},}
+\DoxyCodeLine{00092\ \ \ \ \ \ \{0.49,1.92308E-\/002,2.47219E+000\},}
+\DoxyCodeLine{00093\ \ \ \ \ \ \{0.50,2.17391E-\/002,2.45821E+000\},}
+\DoxyCodeLine{00094\ \ \ \ \ \ \{0.51,2.44499E-\/002,2.44439E+000\},}
+\DoxyCodeLine{00095\ \ \ \ \ \ \{0.52,2.73973E-\/002,2.43072E+000\},}
+\DoxyCodeLine{00096\ \ \ \ \ \ \{0.53,3.05810E-\/002,2.41663E+000\},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \{0.54,3.38983E-\/002,2.40211E+000\},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \{0.55,3.75940E-\/002,2.38777E+000\},}
+\DoxyCodeLine{00099\ \ \ \ \ \ \{0.56,4.14938E-\/002,2.37304E+000\},}
+\DoxyCodeLine{00100\ \ \ \ \ \ \{0.57,4.56621E-\/002,2.35793E+000\},}
+\DoxyCodeLine{00101\ \ \ \ \ \ \{0.58,5.00000E-\/002,2.34247E+000\},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \{0.59,5.46448E-\/002,2.32721E+000\},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \{0.60,5.98802E-\/002,2.31160E+000\},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \{0.61,6.49351E-\/002,2.29568E+000\},}
+\DoxyCodeLine{00105\ \ \ \ \ \ \{0.62,7.04225E-\/002,2.27946E+000\},}
+\DoxyCodeLine{00106\ \ \ \ \ \ \{0.63,7.63359E-\/002,2.26296E+000\},}
+\DoxyCodeLine{00107\ \ \ \ \ \ \{0.64,8.26446E-\/002,2.24669E+000\},}
+\DoxyCodeLine{00108\ \ \ \ \ \ \{0.65,8.92857E-\/002,2.22965E+000\},}
+\DoxyCodeLine{00109\ \ \ \ \ \ \{0.66,9.61538E-\/002,2.21239E+000\},}
+\DoxyCodeLine{00110\ \ \ \ \ \ \{0.67,1.03734E-\/001,2.19491E+000\},}
+\DoxyCodeLine{00111\ \ \ \ \ \ \{0.68,1.11483E-\/001,2.17723E+000\},}
+\DoxyCodeLine{00112\ \ \ \ \ \ \{0.69,1.19474E-\/001,2.15889E+000\},}
+\DoxyCodeLine{00113\ \ \ \ \ \ \{0.70,1.28041E-\/001,2.14041E+000\},}
+\DoxyCodeLine{00114\ \ \ \ \ \ \{0.71,1.36986E-\/001,2.12179E+000\},}
+\DoxyCodeLine{00115\ \ \ \ \ \ \{0.72,1.46199E-\/001,2.10261E+000\},}
+\DoxyCodeLine{00116\ \ \ \ \ \ \{0.73,1.56006E-\/001,2.08290E+000\},}
+\DoxyCodeLine{00117\ \ \ \ \ \ \{0.74,1.66389E-\/001,2.06271E+000\},}
+\DoxyCodeLine{00118\ \ \ \ \ \ \{0.75,1.77305E-\/001,2.04248E+000\},}
+\DoxyCodeLine{00119\ \ \ \ \ \ \{0.76,1.88679E-\/001,2.02143E+000\},}
+\DoxyCodeLine{00120\ \ \ \ \ \ \{0.77,2.00401E-\/001,2.00000E+000\},}
+\DoxyCodeLine{00121\ \ \ \ \ \ \{0.78,2.12766E-\/001,1.97824E+000\},}
+\DoxyCodeLine{00122\ \ \ \ \ \ \{0.79,2.25734E-\/001,1.95580E+000\},}
+\DoxyCodeLine{00123\ \ \ \ \ \ \{0.80,2.39808E-\/001,1.93274E+000\},}
+\DoxyCodeLine{00124\ \ \ \ \ \ \{0.81,2.53807E-\/001,1.90913E+000\},}
+\DoxyCodeLine{00125\ \ \ \ \ \ \{0.82,2.69542E-\/001,1.88466E+000\},}
+\DoxyCodeLine{00126\ \ \ \ \ \ \{0.83,2.84900E-\/001,1.85977E+000\},}
+\DoxyCodeLine{00127\ \ \ \ \ \ \{0.84,3.02115E-\/001,1.83385E+000\},}
+\DoxyCodeLine{00128\ \ \ \ \ \ \{0.85,3.19489E-\/001,1.80701E+000\},}
+\DoxyCodeLine{00129\ \ \ \ \ \ \{0.86,3.37838E-\/001,1.77936E+000\},}
+\DoxyCodeLine{00130\ \ \ \ \ \ \{0.87,3.58423E-\/001,1.75070E+000\},}
+\DoxyCodeLine{00131\ \ \ \ \ \ \{0.88,3.78788E-\/001,1.72087E+000\},}
+\DoxyCodeLine{00132\ \ \ \ \ \ \{0.89,4.01606E-\/001,1.68976E+000\},}
+\DoxyCodeLine{00133\ \ \ \ \ \ \{0.90,4.25532E-\/001,1.65728E+000\},}
+\DoxyCodeLine{00134\ \ \ \ \ \ \{0.91,4.50450E-\/001,1.62311E+000\},}
+\DoxyCodeLine{00135\ \ \ \ \ \ \{0.92,4.78469E-\/001,1.58680E+000\},}
+\DoxyCodeLine{00136\ \ \ \ \ \ \{0.93,5.10204E-\/001,1.54823E+000\},}
+\DoxyCodeLine{00137\ \ \ \ \ \ \{0.94,5.43478E-\/001,1.50670E+000\},}
+\DoxyCodeLine{00138\ \ \ \ \ \ \{0.95,5.78035E-\/001,1.46177E+000\},}
+\DoxyCodeLine{00139\ \ \ \ \ \ \{0.96,6.21118E-\/001,1.41203E+000\},}
+\DoxyCodeLine{00140\ \ \ \ \ \ \{0.97,6.66667E-\/001,1.35575E+000\},}
+\DoxyCodeLine{00141\ \ \ \ \ \ \{0.98,7.24638E-\/001,1.28949E+000\},}
+\DoxyCodeLine{00142\ \ \ \ \ \ \{0.99,8.06452E-\/001,1.20351E+000\},}
+\DoxyCodeLine{00143\ \ \ \ \ \ \{1.00,1.00000E+000,1.00000E+000\}\};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ VanDerWaalsGas::EquilibriumValues\_t\ PreviousValue\ =\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}{EquilibriumValues}}[0];}
+\DoxyCodeLine{00146\ \ \ \ \ VanDerWaalsGas::EquilibriumValues\_t\ Interpolated\ \ =\ \{0.0,0.0,0.0\};}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}:\ \mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_a950642927785bbfb8e25d5afa58ee758}{EquilibriumValues}})}
+\DoxyCodeLine{00148\ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}.Temperature\ ==\ Temperature)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Temperature\ <\ \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}.Temperature\ and}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temperature\ >\ PreviousValue.Temperature)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated\ =\ PreviousValue;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dT\ =\ (\mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}.Temperature-\/PreviousValue.Temperature);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ DT\ =\ (Temperature-\/PreviousValue.Temperature);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ A\ \ =\ DT/dT;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.\mbox{\hyperlink{structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t_a4b4d2e42dc5583c3179231987a326330}{Temperature}}\ \ \ =\ Temperature;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.VaporDensity\ \ +=\ (\mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}.VaporDensity\ -\/\ PreviousValue.VaporDensity)*A;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.LiquidDensity\ +=\ (\mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}.LiquidDensity\ -\/\ PreviousValue.LiquidDensity)*A;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Interpolated;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ PreviousValue\ =\ \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}};}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ Interpolated;}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1VanDerWaalsGas_a45f34eb35b2caf8f326acab3453ac5df}\label{structopenphase_1_1VanDerWaalsGas_a45f34eb35b2caf8f326acab3453ac5df} 
+\index{openphase::VanDerWaalsGas@{openphase::VanDerWaalsGas}!ReducedPressure@{ReducedPressure}}
+\index{ReducedPressure@{ReducedPressure}!openphase::VanDerWaalsGas@{openphase::VanDerWaalsGas}}
+\doxysubsubsection{\texorpdfstring{ReducedPressure()}{ReducedPressure()}}
+{\footnotesize\ttfamily static double openphase\+::\+Van\+Der\+Waals\+Gas\+::\+Reduced\+Pressure (\begin{DoxyParamCaption}\item[{const double}]{Density,  }\item[{const double}]{Temperature,  }\item[{const double}]{Critical\+Density = {\ttfamily 1.0},  }\item[{const double}]{Critical\+Temperature = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Critical\+Temperature} & Equation of State (Van der Waals -\/ reduced properties) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{VanDerWaalsGas_8h_source_l00044}{44}} of file \mbox{\hyperlink{VanDerWaalsGas_8h_source}{Van\+Der\+Waals\+Gas.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((Density\ <\ DBL\_EPSILON)\ ||\ (Density\ >\ DBL\_MAX))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ density"{}}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::to\_string(Density));}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ density\ \ \ \ \ =\ Density/CriticalDensity;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ temperature\ =\ Temperature/CriticalTemperature;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pressure\ \ \ \ =\ 8.0*density*temperature/(3.0-\/density)\ -\/}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3.0*density*density;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pressure;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{VanDerWaalsGas_8h}{Van\+Der\+Waals\+Gas.\+h}}\item 
+\mbox{\hyperlink{VanDerWaalsGas_8cpp}{Van\+Der\+Waals\+Gas.\+cpp}}\end{DoxyCompactItemize}

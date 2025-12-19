@@ -1,0 +1,1794 @@
+\doxysection{openphase\+::Node\+PF Class Reference}
+\hypertarget{classopenphase_1_1NodePF}{}\label{classopenphase_1_1NodePF}\index{openphase::NodePF@{openphase::NodePF}}
+
+
+\texorpdfstring{$<$}{<} Stores the phase-\/fields and their derivatives at a grid point. Provides access and manipulation methods for the phase-\/field entries.  
+
+
+
+
+{\ttfamily \#include "{}Node\+PF.\+h"{}}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} $>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}
+\begin{DoxyCompactList}\small\item\em Iterator over storage vector. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}}
+\begin{DoxyCompactList}\small\item\em Constant iterator over storage vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{Node\+PF}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_a24123428e96b6ba8576615e1ea9fc381}{Node\+PF}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}{clear}} ()
+\item 
+int \mbox{\hyperlink{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773}{finalize}} (void)
+\begin{DoxyCompactList}\small\item\em Adjusts phase-\/field values to (0, 1\mbox{]} interval. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40}{majority\+\_\+index}} (void) const
+\begin{DoxyCompactList}\small\item\em Calculates and returns majority phase-\/field index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \mbox{\hyperlink{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b}{operator+}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n) const
+\begin{DoxyCompactList}\small\item\em Plus operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \mbox{\hyperlink{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed}{operator-\/}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n) const
+\begin{DoxyCompactList}\small\item\em Minus operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \mbox{\hyperlink{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d}{operator\texorpdfstring{$\ast$}{*}}} (const double n) const
+\begin{DoxyCompactList}\small\item\em Multiplies all fields by a number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6}{operator+=}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n)
+\begin{DoxyCompactList}\small\item\em Plus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401}{operator-\/=}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&n)
+\begin{DoxyCompactList}\small\item\em Minus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b}{operator\texorpdfstring{$\ast$}{*}=}} (const double n)
+\begin{DoxyCompactList}\small\item\em Multiply all fields by a number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c}{present}} (const size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em Returns true if the phase-\/field with a given index is present in the node, false otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a}{set\+\_\+value}} (const size\+\_\+t n, const double value)
+\begin{DoxyCompactList}\small\item\em Sets value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{add\+\_\+value}} (const size\+\_\+t n, const double value)
+\begin{DoxyCompactList}\small\item\em Increments value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}{get\+\_\+value}} (const size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Returns value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912}{set\+\_\+laplacian}} (const size\+\_\+t n, const double laplacian)
+\begin{DoxyCompactList}\small\item\em Sets Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{add\+\_\+laplacian}} (const size\+\_\+t n, const double laplacian)
+\begin{DoxyCompactList}\small\item\em Increments Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955}{add\+\_\+laplacian\+\_\+tmp}} (const size\+\_\+t n, const double laplacian)
+\begin{DoxyCompactList}\small\item\em Increments temporary Laplacian. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b}{get\+\_\+laplacian}} (const size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Returns Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c}{set\+\_\+gradient}} (const size\+\_\+t n, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Sets gradient. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{add\+\_\+gradient}} (const size\+\_\+t n, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Increments gradient. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7}{add\+\_\+gradient\+\_\+tmp}} (const size\+\_\+t n, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Increments temporary gradient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700}{get\+\_\+gradient}} (const size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Returns gradient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeA}{NodeA}}$<$ \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} $>$ \mbox{\hyperlink{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6}{get\+\_\+gradients}} () const
+\begin{DoxyCompactList}\small\item\em Returns gradients of all phase-\/fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7}{set\+\_\+derivatives}} (const size\+\_\+t n, const double laplacian, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Sets gradient and Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507}{add\+\_\+derivatives}} (const size\+\_\+t n, const double laplacian, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Increments value and Laplacian. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} $>$ \mbox{\hyperlink{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1}{get\+\_\+derivatives}} (const size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Returns pair$<$\+Laplacian, gradient$>$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111}{set\+\_\+all}} (const size\+\_\+t n, const double value, const double laplacian, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Sets gradient and Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\+\_\+all}} (const size\+\_\+t n, const double value, const double laplacian, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} gradient)
+\begin{DoxyCompactList}\small\item\em Increments value and Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}{get\+\_\+all}} (const size\+\_\+t n, double \&value, double \&laplacian, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&gradient) const
+\begin{DoxyCompactList}\small\item\em Increments value and Laplacian. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22}{add\+\_\+values}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds values of two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1}{add\+\_\+laplacians}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds Laplacians of two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a}{add\+\_\+gradients}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds gradients of two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a259cdedb0158721650b8a1f0173033de}{add\+\_\+derivatives}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds derivatives of two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17}{add\+\_\+existing\+\_\+values}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds only values existing in two nodes simultaneously. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576}{add\+\_\+existing\+\_\+all}} (const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&value)
+\begin{DoxyCompactList}\small\item\em Adds only phase-\/field entries existing in two nodes simultaneously. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882}{set\+\_\+temporary}} (void)
+\begin{DoxyCompactList}\small\item\em Sets temporary Fields copy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2}{copy\+\_\+from\+\_\+temporary}} (void)
+\begin{DoxyCompactList}\small\item\em Restores Fields from tmp\+Fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} \mbox{\hyperlink{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767}{get\+\_\+max}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns Field\+Entry with max value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be}{interface}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns true if flag == 2. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e}{interface\+\_\+halo}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns true if flag == 1. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610}{wide\+\_\+interface}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns true if flag != 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557}{bulk}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns true if flag != 2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the begin of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Iterator to the end of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the begin of storage vector. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the end of storage vector. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodePF_af1d019d5d6c48b631b86c760f9e99337}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}} (\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em Returns the capacity of storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_acad092081b971097fff57547fe0bd8a3}{front}} (void)
+\begin{DoxyCompactList}\small\item\em Erase a single record pointed by iterator it. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} \& \mbox{\hyperlink{classopenphase_1_1NodePF_a963bad6229371491ac625f91d2a95264}{front}} (void) const
+\begin{DoxyCompactList}\small\item\em Reference to the first Field\+Entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8}{pack}} (std\+::vector$<$ double $>$ \&buffer)
+\begin{DoxyCompactList}\small\item\em Constant reference to the first Field\+Entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7}{unpack}} (std\+::vector$<$ double $>$ \&buffer, size\+\_\+t \&it)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047}{read}} (std\+::istream \&inp)
+\begin{DoxyCompactList}\small\item\em Reads \doxylink{classopenphase_1_1NodePF}{Node\+PF} content from the input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7}{write}} (std\+::ostream \&outp) const
+\begin{DoxyCompactList}\small\item\em Writes \doxylink{classopenphase_1_1NodePF}{Node\+PF} content to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}
+\begin{DoxyCompactList}\small\item\em Interface flag\+: 1 if node is near the interface, 2 if it is in the interface and 0 if it is in the bulk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}
+\begin{DoxyCompactList}\small\item\em Stores phase fields and their derivatives. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmp\+Fields}}
+\begin{DoxyCompactList}\small\item\em Stores temporary phase fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores the phase-\/fields and their derivatives at a grid point. Provides access and manipulation methods for the phase-\/field entries. 
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00073}{73}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}\label{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363} 
+\index{openphase::NodePF@{openphase::NodePF}!citerator@{citerator}}
+\index{citerator@{citerator}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{citerator}{citerator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{openphase\+::\+Node\+PF\+::citerator}}}
+
+
+
+Constant iterator over storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00157}{157}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}\label{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662} 
+\index{openphase::NodePF@{openphase::NodePF}!iterator@{iterator}}
+\index{iterator@{iterator}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}}$>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{openphase\+::\+Node\+PF\+::iterator}}}
+
+
+
+Iterator over storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00156}{156}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}\label{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b} 
+\index{openphase::NodePF@{openphase::NodePF}!NodePF@{NodePF}}
+\index{NodePF@{NodePF}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{NodePF()}{NodePF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+PF\+::\+Node\+PF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00076}{76}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}(0),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}(0),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}(0)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.reserve(3);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.reserve(3);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a24123428e96b6ba8576615e1ea9fc381}\label{classopenphase_1_1NodePF_a24123428e96b6ba8576615e1ea9fc381} 
+\index{openphase::NodePF@{openphase::NodePF}!NodePF@{NodePF}}
+\index{NodePF@{NodePF}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{NodePF()}{NodePF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+PF\+::\+Node\+PF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00085}{85}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}(n.flag),}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}(n.Fields),}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}(n.tmpFields)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}\label{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_all@{add\_all}}
+\index{add\_all@{add\_all}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_all()}{add\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+all (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{value,  }\item[{const double}]{laplacian,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments value and Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00552}{552}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00553\ \{}
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00556\ \ \ \ \ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ +=\ value;}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ +=\ laplacian;}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ +=\ gradient;}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00561\ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00563\ \ \ \ \ \{}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00565\ \ \ \ \ \}}
+\DoxyCodeLine{00566\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00567\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00568\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{00569\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00570\ \ \ \ \ NewEntry.gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00571\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00572\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a259cdedb0158721650b8a1f0173033de}\label{classopenphase_1_1NodePF_a259cdedb0158721650b8a1f0173033de} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_derivatives@{add\_derivatives}}
+\index{add\_derivatives@{add\_derivatives}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_derivatives()}{add\_derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds derivatives of two nodes. 
+
+\Hypertarget{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507}\label{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_derivatives@{add\_derivatives}}
+\index{add\_derivatives@{add\_derivatives}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_derivatives()}{add\_derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{laplacian,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments value and Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00607}{607}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00608\ \{}
+\DoxyCodeLine{00609\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00610\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00611\ \ \ \ \ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ +=\ laplacian;}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ +=\ gradient;}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00615\ \ \ \ \ \}}
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00617\ \ \ \ \ \{}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00619\ \ \ \ \ \}}
+\DoxyCodeLine{00620\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00621\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00622\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00623\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00624\ \ \ \ \ NewEntry.gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00625\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00626\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576}\label{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_existing\_all@{add\_existing\_all}}
+\index{add\_existing\_all@{add\_existing\_all}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_existing\_all()}{add\_existing\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+existing\+\_\+all (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds only phase-\/field entries existing in two nodes simultaneously. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00682}{682}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00683\ \{}
+\DoxyCodeLine{00684\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ )}
+\DoxyCodeLine{00685\ \ \ \ \ \{}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locValue\ =\ 0;}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locLaplacian\ =\ 0;}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ dVector3\ locGradient;}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ n.get\_all(i-\/>index,\ locValue,\ locLaplacian,\ locGradient);}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locValue\ !=\ 0.0\ and\ i-\/>value\ !=\ 0.0)}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ +=\ locValue;}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ locLaplacian;}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ locGradient;}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}(i);}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00701\ \ \ \ \ \}}
+\DoxyCodeLine{00702\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00703\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17}\label{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_existing\_values@{add\_existing\_values}}
+\index{add\_existing\_values@{add\_existing\_values}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_existing\_values()}{add\_existing\_values()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+existing\+\_\+values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds only values existing in two nodes simultaneously. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00664}{664}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00665\ \{}
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ )}
+\DoxyCodeLine{00667\ \ \ \ \ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locVal\ =\ n.get\_value(i-\/>index);}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locVal\ !=\ 0.0\ and\ i-\/>value\ !=\ 0.0)}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ +=\ locVal;}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}(i);}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00678\ \ \ \ \ \}}
+\DoxyCodeLine{00679\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00680\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}\label{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_gradient@{add\_gradient}}
+\index{add\_gradient@{add\_gradient}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_gradient()}{add\_gradient()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments gradient. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00394}{394}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00395\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00398\ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ gradient;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00401\ \ \ \ \ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00404\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00405\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00406\ \ \ \ \ NewEntry.laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00407\ \ \ \ \ NewEntry.gradient\ =\ gradient;}
+\DoxyCodeLine{00408\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00409\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7}\label{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_gradient\_tmp@{add\_gradient\_tmp}}
+\index{add\_gradient\_tmp@{add\_gradient\_tmp}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_gradient\_tmp()}{add\_gradient\_tmp()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+gradient\+\_\+tmp (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments temporary gradient. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00411}{411}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00412\ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.end();\ ++i)}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00415\ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ gradient;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00418\ \ \ \ \ \}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00421\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00422\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00423\ \ \ \ \ NewEntry.laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00424\ \ \ \ \ NewEntry.gradient\ =\ gradient;}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00426\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a}\label{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_gradients@{add\_gradients}}
+\index{add\_gradients@{add\_gradients}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_gradients()}{add\_gradients()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+gradients (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds gradients of two nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00655}{655}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00656\ \{}
+\DoxyCodeLine{00657\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00658\ \ \ \ \ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{add\_gradient}}(i-\/>index,\ i-\/>gradient);}
+\DoxyCodeLine{00660\ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00662\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}\label{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_laplacian@{add\_laplacian}}
+\index{add\_laplacian@{add\_laplacian}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_laplacian()}{add\_laplacian()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+laplacian (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{laplacian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00334}{334}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00335\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00338\ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ laplacian;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00344\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00345\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00346\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00347\ \ \ \ \ NewEntry.gradient.set\_to\_zero();}
+\DoxyCodeLine{00348\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00349\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955}\label{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_laplacian\_tmp@{add\_laplacian\_tmp}}
+\index{add\_laplacian\_tmp@{add\_laplacian\_tmp}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_laplacian\_tmp()}{add\_laplacian\_tmp()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+laplacian\+\_\+tmp (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{laplacian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments temporary Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00351}{351}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00352\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.end();\ ++i)}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00355\ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ laplacian;}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00358\ \ \ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00361\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00362\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00363\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00364\ \ \ \ \ NewEntry.gradient.set\_to\_zero();}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00366\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1}\label{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_laplacians@{add\_laplacians}}
+\index{add\_laplacians@{add\_laplacians}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_laplacians()}{add\_laplacians()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+laplacians (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds Laplacians of two nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00646}{646}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00647\ \{}
+\DoxyCodeLine{00648\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00649\ \ \ \ \ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{add\_laplacian}}(i-\/>index,\ i-\/>laplacian);}
+\DoxyCodeLine{00651\ \ \ \ \ \}}
+\DoxyCodeLine{00652\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00653\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}\label{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_value@{add\_value}}
+\index{add\_value@{add\_value}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_value()}{add\_value()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+value (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00288}{288}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00289\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00292\ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ i-\/>value\ +=\ value;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00295\ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00297\ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00301\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00302\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{00303\ \ \ \ \ NewEntry.laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00304\ \ \ \ \ NewEntry.gradient.set\_to\_zero();}
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00306\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22}\label{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22} 
+\index{openphase::NodePF@{openphase::NodePF}!add\_values@{add\_values}}
+\index{add\_values@{add\_values}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{add\_values()}{add\_values()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::add\+\_\+values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds values of two nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00637}{637}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00638\ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00640\ \ \ \ \ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{add\_value}}(i-\/>index,\ i-\/>value);}
+\DoxyCodeLine{00642\ \ \ \ \ \}}
+\DoxyCodeLine{00643\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00644\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}\label{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e} 
+\index{openphase::NodePF@{openphase::NodePF}!begin@{begin}}
+\index{begin@{begin}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} openphase\+::\+Node\+PF\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00159}{159}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557}\label{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557} 
+\index{openphase::NodePF@{openphase::NodePF}!bulk@{bulk}}
+\index{bulk@{bulk}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{bulk()}{bulk()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+PF\+::bulk (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if flag != 2. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00792}{792}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00793\ \{}
+\DoxyCodeLine{00794\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ !=\ 2;}
+\DoxyCodeLine{00795\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_af1d019d5d6c48b631b86c760f9e99337}\label{classopenphase_1_1NodePF_af1d019d5d6c48b631b86c760f9e99337} 
+\index{openphase::NodePF@{openphase::NodePF}!capacity@{capacity}}
+\index{capacity@{capacity}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+PF\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the size of storage. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00165}{165}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.capacity();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}\label{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd} 
+\index{openphase::NodePF@{openphase::NodePF}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}} openphase\+::\+Node\+PF\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the end of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00161}{161}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}\label{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7} 
+\index{openphase::NodePF@{openphase::NodePF}!cend@{cend}}
+\index{cend@{cend}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}} openphase\+::\+Node\+PF\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the begin of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00162}{162}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}\label{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77} 
+\index{openphase::NodePF@{openphase::NodePF}!clear@{clear}}
+\index{clear@{clear}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00093}{93}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.clear();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.clear();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ \ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2}\label{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2} 
+\index{openphase::NodePF@{openphase::NodePF}!copy\_from\_temporary@{copy\_from\_temporary}}
+\index{copy\_from\_temporary@{copy\_from\_temporary}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{copy\_from\_temporary()}{copy\_from\_temporary()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::copy\+\_\+from\+\_\+temporary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores Fields from tmp\+Fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00188}{188}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}};}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.clear();}
+\DoxyCodeLine{00192\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}\label{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67} 
+\index{openphase::NodePF@{openphase::NodePF}!end@{end}}
+\index{end@{end}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} openphase\+::\+Node\+PF\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the begin of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00160}{160}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}\label{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681} 
+\index{openphase::NodePF@{openphase::NodePF}!erase@{erase}}
+\index{erase@{erase}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}} openphase\+::\+Node\+PF\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the capacity of storage. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00166}{166}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773}\label{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773} 
+\index{openphase::NodePF@{openphase::NodePF}!finalize@{finalize}}
+\index{finalize@{finalize}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily int openphase\+::\+Node\+PF\+::finalize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adjusts phase-\/field values to (0, 1\mbox{]} interval. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00214}{214}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00215\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{double}\ total\ =\ 0.0;}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();)}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>value\ >=\ 1.0\ -\/\ DBL\_EPSILON)\ i-\/>value\ =\ 1.0;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>value\ <=\ 0.0\ +\ DBL\_EPSILON)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ =\ 0.0;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ total\ +=\ i-\/>value;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}})}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.erase(i);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ ++i;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size()\ >\ 1)}
+\DoxyCodeLine{00237\ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ 1.0/total;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ *=\ norm;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>gradient.set\_to\_zero();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00248\ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().value\ \ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().gradient.set\_to\_zero();}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 0;}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}};}
+\DoxyCodeLine{00255\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_acad092081b971097fff57547fe0bd8a3}\label{classopenphase_1_1NodePF_acad092081b971097fff57547fe0bd8a3} 
+\index{openphase::NodePF@{openphase::NodePF}!front@{front}}
+\index{front@{front}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} \& openphase\+::\+Node\+PF\+::front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Erase a single record pointed by iterator it. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00167}{167}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a963bad6229371491ac625f91d2a95264}\label{classopenphase_1_1NodePF_a963bad6229371491ac625f91d2a95264} 
+\index{openphase::NodePF@{openphase::NodePF}!front@{front}}
+\index{front@{front}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} \& openphase\+::\+Node\+PF\+::front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reference to the first Field\+Entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00168}{168}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}\label{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::get\+\_\+all (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{double \&}]{value,  }\item[{double \&}]{laplacian,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&}]{gradient }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments value and Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00574}{574}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00575\ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00578\ \ \ \ \ \{}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ value\ =\ i-\/>value;}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ laplacian\ =\ i-\/>laplacian;}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ gradient\ =\ i-\/>gradient;}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00583\ \ \ \ \ \}}
+\DoxyCodeLine{00584\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1}\label{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_derivatives@{get\_derivatives}}
+\index{get\_derivatives@{get\_derivatives}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_derivatives()}{get\_derivatives()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} $>$ openphase\+::\+Node\+PF\+::get\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns pair$<$\+Laplacian, gradient$>$. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00628}{628}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00629\ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00631\ \ \ \ \ \{}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ std::pair<double,dVector3>(i-\/>laplacian,i-\/>gradient);}
+\DoxyCodeLine{00633\ \ \ \ \ \}}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,dVector3>(0.0,\ \mbox{\hyperlink{classopenphase_1_1dVector3_a8018e65b45f756988420358a918933d8}{dVector3::ZeroVector}}());}
+\DoxyCodeLine{00635\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700}\label{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_gradient@{get\_gradient}}
+\index{get\_gradient@{get\_gradient}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_gradient()}{get\_gradient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Node\+PF\+::get\+\_\+gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns gradient. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00428}{428}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00429\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00431\ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>gradient;}
+\DoxyCodeLine{00433\ \ \ \ \ \}}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1dVector3_a8018e65b45f756988420358a918933d8}{dVector3::ZeroVector}}();}
+\DoxyCodeLine{00435\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6}\label{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_gradients@{get\_gradients}}
+\index{get\_gradients@{get\_gradients}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_gradients()}{get\_gradients()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeA}{NodeA}}$<$ \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} $>$ openphase\+::\+Node\+PF\+::get\+\_\+gradients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns gradients of all phase-\/fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00437}{437}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00438\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ NodeA<dVector3>\ result;}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00441\ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ result.set\_value(i-\/>index,\ i-\/>gradient);}
+\DoxyCodeLine{00443\ \ \ \ \ \}}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00445\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b}\label{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_laplacian@{get\_laplacian}}
+\index{get\_laplacian@{get\_laplacian}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_laplacian()}{get\_laplacian()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+PF\+::get\+\_\+laplacian (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00368}{368}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00369\ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00371\ \ \ \ \ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>laplacian;}
+\DoxyCodeLine{00373\ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00375\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767}\label{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_max@{get\_max}}
+\index{get\_max@{get\_max}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_max()}{get\_max()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}} openphase\+::\+Node\+PF\+::get\+\_\+max (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns Field\+Entry with max value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00705}{705}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00706\ \{}
+\DoxyCodeLine{00707\ \ \ \ \ PhaseFieldEntry\ returnFieldEntry;}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ returnFieldEntry.value\ =\ 0.0;}
+\DoxyCodeLine{00710\ }
+\DoxyCodeLine{00711\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00712\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(i-\/>value)\ >\ returnFieldEntry.value)}
+\DoxyCodeLine{00713\ \ \ \ \ \{}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ returnFieldEntry\ =\ *i;}
+\DoxyCodeLine{00715\ \ \ \ \ \}}
+\DoxyCodeLine{00716\ \ \ \ \ \textcolor{keywordflow}{return}\ returnFieldEntry;}
+\DoxyCodeLine{00717\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}\label{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def} 
+\index{openphase::NodePF@{openphase::NodePF}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+PF\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00308}{308}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00309\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00311\ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>value;}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00315\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be}\label{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be} 
+\index{openphase::NodePF@{openphase::NodePF}!interface@{interface}}
+\index{interface@{interface}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{interface()}{interface()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+PF\+::interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if flag == 2. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00777}{777}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00778\ \{}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ ==\ 2;}
+\DoxyCodeLine{00780\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e}\label{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e} 
+\index{openphase::NodePF@{openphase::NodePF}!interface\_halo@{interface\_halo}}
+\index{interface\_halo@{interface\_halo}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{interface\_halo()}{interface\_halo()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+PF\+::interface\+\_\+halo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if flag == 1. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00782}{782}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00783\ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ ==\ 1;}
+\DoxyCodeLine{00785\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40}\label{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40} 
+\index{openphase::NodePF@{openphase::NodePF}!majority\_index@{majority\_index}}
+\index{majority\_index@{majority\_index}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{majority\_index()}{majority\_index()}}
+{\footnotesize\ttfamily int openphase\+::\+Node\+PF\+::majority\+\_\+index (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates and returns majority phase-\/field index. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00194}{194}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size()\ ==\ 1)}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().index;}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{double}\ max\_value\ =\ 0.0;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_index\ =\ 0;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00204\ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>value\ >\ max\_value)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ max\_value\ =\ i-\/>value;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ max\_index\ =\ i-\/>index;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ max\_index;}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d}\label{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d} 
+\index{openphase::NodePF@{openphase::NodePF}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} openphase\+::\+Node\+PF\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies all fields by a number. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00478}{478}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00479\ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{NodePF}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00483\ \ \ \ \ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ n;}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ n;}
+\DoxyCodeLine{00487\ \ \ \ \ \}}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00489\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b}\label{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b} 
+\index{openphase::NodePF@{openphase::NodePF}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& openphase\+::\+Node\+PF\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply all fields by a number. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00511}{511}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00512\ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00514\ \ \ \ \ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ n;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ n;}
+\DoxyCodeLine{00518\ \ \ \ \ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00520\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b}\label{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b} 
+\index{openphase::NodePF@{openphase::NodePF}!operator+@{operator+}}
+\index{operator+@{operator+}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} openphase\+::\+Node\+PF\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Plus operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00447}{447}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00448\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{NodePF}}\ result\ =\ n;}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00452\ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ result.add\_all(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ result.flag\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00457\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6}\label{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6} 
+\index{openphase::NodePF@{openphase::NodePF}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& openphase\+::\+Node\+PF\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Plus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00491}{491}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00492\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00494\ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{00496\ \ \ \ \ \}}
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00499\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed}\label{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed} 
+\index{openphase::NodePF@{openphase::NodePF}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} openphase\+::\+Node\+PF\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Minus operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00459}{459}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00460\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{NodePF}}\ result\ =\ n;}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00464\ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ -\/1.0;}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{00468\ \ \ \ \ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ result.add\_all(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{00473\ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ result.flag\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00476\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401}\label{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401} 
+\index{openphase::NodePF@{openphase::NodePF}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& openphase\+::\+Node\+PF\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Minus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodePF}{Node\+PF} type entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00501}{501}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00502\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00504\ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ -\/i-\/>value,\ -\/i-\/>laplacian,\ i-\/>gradient*(-\/1.0));}
+\DoxyCodeLine{00506\ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.flag);}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00509\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9}\label{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9} 
+\index{openphase::NodePF@{openphase::NodePF}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \& openphase\+::\+Node\+PF\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodePF}{Node\+PF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00522}{522}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00523\ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}\ =\ n.Fields;}
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}\ =\ n.tmpFields;}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ n.flag;}
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00528\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8}\label{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8} 
+\index{openphase::NodePF@{openphase::NodePF}!pack@{pack}}
+\index{pack@{pack}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::pack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant reference to the first Field\+Entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00719}{719}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00720\ \{}
+\DoxyCodeLine{00721\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size());}
+\DoxyCodeLine{00722\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ it\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++it)}
+\DoxyCodeLine{00723\ \ \ \ \ \{}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>index);}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>value);}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>laplacian);}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[0]);}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[1]);}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[2]);}
+\DoxyCodeLine{00730\ \ \ \ \ \}}
+\DoxyCodeLine{00731\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{00732\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c}\label{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c} 
+\index{openphase::NodePF@{openphase::NodePF}!present@{present}}
+\index{present@{present}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+PF\+::present (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if the phase-\/field with a given index is present in the node, false otherwise. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00257}{257}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00260\ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ index)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00264\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047}\label{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047} 
+\index{openphase::NodePF@{openphase::NodePF}!read@{read}}
+\index{read@{read}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads \doxylink{classopenphase_1_1NodePF}{Node\+PF} content from the input stream. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00751}{751}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00752\ \{}
+\DoxyCodeLine{00753\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ 0;}
+\DoxyCodeLine{00754\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 0;}
+\DoxyCodeLine{00755\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00756\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}});}
+\DoxyCodeLine{00757\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ >\ 1)\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00758\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}})}
+\DoxyCodeLine{00759\ \ \ \ \ \{}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.value),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00762\ \ \ \ \ \}}
+\DoxyCodeLine{00763\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111}\label{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_all@{set\_all}}
+\index{set\_all@{set\_all}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_all()}{set\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+all (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{value,  }\item[{const double}]{laplacian,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets gradient and Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00530}{530}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00531\ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00534\ \ \ \ \ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00539\ \ \ \ \ \}}
+\DoxyCodeLine{00540\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00541\ \ \ \ \ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00543\ \ \ \ \ \}}
+\DoxyCodeLine{00544\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00545\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00546\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{00547\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00548\ \ \ \ \ NewEntry.gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00549\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00550\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7}\label{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_derivatives@{set\_derivatives}}
+\index{set\_derivatives@{set\_derivatives}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_derivatives()}{set\_derivatives()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+derivatives (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{laplacian,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets gradient and Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00586}{586}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00587\ \{}
+\DoxyCodeLine{00588\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00589\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00590\ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00594\ \ \ \ \ \}}
+\DoxyCodeLine{00595\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00596\ \ \ \ \ \{}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00598\ \ \ \ \ \}}
+\DoxyCodeLine{00599\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00600\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00601\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00602\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00603\ \ \ \ \ NewEntry.gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{00604\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00605\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c}\label{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_gradient@{set\_gradient}}
+\index{set\_gradient@{set\_gradient}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_gradient()}{set\_gradient()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{gradient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets gradient. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00377}{377}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00378\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00381\ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ i-\/>gradient\ =\ gradient;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00384\ \ \ \ \ \}}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00387\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00388\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00389\ \ \ \ \ NewEntry.laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00390\ \ \ \ \ NewEntry.gradient\ =\ gradient;}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00392\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912}\label{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_laplacian@{set\_laplacian}}
+\index{set\_laplacian@{set\_laplacian}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_laplacian()}{set\_laplacian()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+laplacian (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{laplacian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets Laplacian. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00317}{317}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00318\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00321\ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ i-\/>laplacian\ =\ laplacian;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00327\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00328\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00329\ \ \ \ \ NewEntry.laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{00330\ \ \ \ \ NewEntry.gradient.set\_to\_zero();}
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00332\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882}\label{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_temporary@{set\_temporary}}
+\index{set\_temporary@{set\_temporary}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_temporary()}{set\_temporary()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+temporary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets temporary Fields copy. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00183}{183}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}};}
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a}\label{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a} 
+\index{openphase::NodePF@{openphase::NodePF}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets value. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00266}{266}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00267\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ i-\/>value\ =\ value;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{00276\ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ PhaseFieldEntry\ NewEntry;}
+\DoxyCodeLine{00281\ \ \ \ \ NewEntry.index\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{00282\ \ \ \ \ NewEntry.value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{00283\ \ \ \ \ NewEntry.laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{00284\ \ \ \ \ NewEntry.gradient.set\_to\_zero();}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00286\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}\label{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628} 
+\index{openphase::NodePF@{openphase::NodePF}!size@{size}}
+\index{size@{size}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+PF\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the end of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00164}{164}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7}\label{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7} 
+\index{openphase::NodePF@{openphase::NodePF}!unpack@{unpack}}
+\index{unpack@{unpack}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::unpack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer,  }\item[{size\+\_\+t \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00734}{734}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00735\ \{}
+\DoxyCodeLine{00736\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}{clear}}();}
+\DoxyCodeLine{00737\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}});}
+\DoxyCodeLine{00739\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}};\ ++i)}
+\DoxyCodeLine{00740\ \ \ \ \ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].index\ \ \ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].value\ \ \ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].laplacian\ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[0]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[1]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[2]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00747\ \ \ \ \ \}}
+\DoxyCodeLine{00748\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00749\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610}\label{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610} 
+\index{openphase::NodePF@{openphase::NodePF}!wide\_interface@{wide\_interface}}
+\index{wide\_interface@{wide\_interface}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{wide\_interface()}{wide\_interface()}}
+{\footnotesize\ttfamily bool openphase\+::\+Node\+PF\+::wide\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if flag != 0. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00787}{787}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00788\ \{}
+\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ !=\ 0;}
+\DoxyCodeLine{00790\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7}\label{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7} 
+\index{openphase::NodePF@{openphase::NodePF}!write@{write}}
+\index{write@{write}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+PF\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes \doxylink{classopenphase_1_1NodePF}{Node\+PF} content to the output stream. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00765}{765}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00766\ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size();}
+\DoxyCodeLine{00768\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}})}
+\DoxyCodeLine{00771\ \ \ \ \ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.value),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00774\ \ \ \ \ \}}
+\DoxyCodeLine{00775\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}\label{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f} 
+\index{openphase::NodePF@{openphase::NodePF}!Fields@{Fields}}
+\index{Fields@{Fields}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{Fields}{Fields}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}}$>$ openphase\+::\+Node\+PF\+::\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores phase fields and their derivatives. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00178}{178}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}\label{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8} 
+\index{openphase::NodePF@{openphase::NodePF}!flag@{flag}}
+\index{flag@{flag}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{flag}{flag}}
+{\footnotesize\ttfamily int openphase\+::\+Node\+PF\+::flag}
+
+
+
+Interface flag\+: 1 if node is near the interface, 2 if it is in the interface and 0 if it is in the bulk. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00175}{175}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}\label{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5} 
+\index{openphase::NodePF@{openphase::NodePF}!tmpFields@{tmpFields}}
+\index{tmpFields@{tmpFields}!openphase::NodePF@{openphase::NodePF}}
+\doxysubsubsection{\texorpdfstring{tmpFields}{tmpFields}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{Phase\+Field\+Entry}}$>$ openphase\+::\+Node\+PF\+::tmp\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores temporary phase fields. 
+
+
+
+Definition at line \mbox{\hyperlink{NodePF_8h_source_l00179}{179}} of file \mbox{\hyperlink{NodePF_8h_source}{Node\+PF.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{NodePF_8h}{Node\+PF.\+h}}\end{DoxyCompactItemize}

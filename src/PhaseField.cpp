@@ -2410,7 +2410,7 @@ void PhaseField::WriteH5(H5Interface& H5, const int tStep)
     dbuffer.push_back(Grid.Nz);
     H5.WriteCheckPoint(tStep, "PFDomain", dbuffer);
     dbuffer.clear();
-    switch (Resolution)
+    switch (Grid.Resolution)
     {
         case Resolutions::Single:
         {
@@ -2450,7 +2450,7 @@ bool PhaseField::ReadH5(const BoundaryConditions& BC, H5Interface& H5, const int
         ConsoleOutput::WriteWarning(message.str(), thisclassname, "Read()");
         return false;
     }
-    switch (Resolution)
+    switch (Grid.Resolution)
     {
         case Resolutions::Single:
         {

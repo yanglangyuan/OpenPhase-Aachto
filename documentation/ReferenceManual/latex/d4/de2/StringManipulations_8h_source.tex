@@ -1,0 +1,209 @@
+\doxysection{String\+Manipulations.\+h}
+\hypertarget{StringManipulations_8h_source}{}\label{StringManipulations_8h_source}\index{StringManipulations.h@{StringManipulations.h}}
+\mbox{\hyperlink{StringManipulations_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2024}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ STRINGMANIPULATIONS\_H}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ STRINGMANIPULATIONS\_H}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00033}\mbox{\hyperlink{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}{00033}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}{RemoveAllWhitespaces}}(std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00035}00035\ \ \ \ \ InString.erase(std::remove\_if(\ InString.begin(),\ InString.end(),}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00036}00036\ \ \ \ \ \ [](\textcolor{keywordtype}{char}\ c)\{\ return\ (c\ ==\textcolor{stringliteral}{'\(\backslash\)r'}\ ||\ c\ ==\textcolor{stringliteral}{'\(\backslash\)t'}\ ||\ c\ ==\ \textcolor{stringliteral}{'\ '}\ ||\ c\ ==\ \textcolor{stringliteral}{'\(\backslash\)n'});\}),\ InString.end()\ );}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00039}\mbox{\hyperlink{StringManipulations_8h_ae6ffb00b0fc936f209b84ee44d79cd8f}{00039}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{StringManipulations_8h_ae6ffb00b0fc936f209b84ee44d79cd8f}{RemoveLeadingTrailingWhitespaces}}(std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00041}00041\ \ \ \ \ std::string\ whitespaces\ (\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ first\ =\ InString.find\_first\_not\_of(whitespaces);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ last\ =\ InString.find\_last\_not\_of(whitespaces);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (first\ ==\ last)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ InString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ InString\ =\ InString.substr(first,\ (last-\/first+1));}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00054}\mbox{\hyperlink{StringManipulations_8h_a2a8d69cdfc917d5ff0bb246fab8157d6}{00054}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{StringManipulations_8h_a2a8d69cdfc917d5ff0bb246fab8157d6}{ReplacePunctuationMarksWithComma}}(std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00056}00056\ \ \ \ \ InString.erase\ (std::remove\ (InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'\ '}),\ InString.end());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00057}00057\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00058}00058\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00059}00059\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'@'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00060}00060\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{':'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00061}00061\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{';'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00062}00062\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'!'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00063}00063\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'?'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00064}00064\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'|'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00067}\mbox{\hyperlink{StringManipulations_8h_afe37a110fba4aa57d739b0ba64e0559f}{00067}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{StringManipulations_8h_afe37a110fba4aa57d739b0ba64e0559f}{StringIsEmpty}}(std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00069}00069\ \ \ \ \ std::string\ whitespaces\ (\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\ =\ InString.find\_first\_not\_of(whitespaces);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}(position\ ==\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00079}\mbox{\hyperlink{StringManipulations_8h_ad3b4bb76b9adb6cc5a106b47e57cfe92}{00079}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{StringManipulations_8h_ad3b4bb76b9adb6cc5a106b47e57cfe92}{StringIsComment}}(std::string\&\ InString,\ std::string\ comment\_symbol\ =\ \textcolor{stringliteral}{"{}//"{}})\ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_comment\ =\ InString.find(comment\_symbol);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_text\ \ \ \ =\ InString.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t/"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}(position\_comment\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00085}00085\ \ \ \ \ \ \ \ position\_comment\ <\ position\_text)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00092}\mbox{\hyperlink{StringManipulations_8h_a2c1d6967b040e7698def5c9ba0c31dff}{00092}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{StringManipulations_8h_a2c1d6967b040e7698def5c9ba0c31dff}{StringIsInputParameter}}(\textcolor{keyword}{const}\ std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00094}00094\ \ \ \ \ std::string\ key\_symbol\ (\textcolor{stringliteral}{"{}\$"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00095}00095\ \ \ \ \ std::string\ delimiter\ \ (\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_begin\ =\ InString.find(key\_symbol);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_end\ \ \ =\ InString.find\_first\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t:"{}},\ position\_key\_begin);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_delimiter\ =\ InString.find(delimiter,\ position\_key\_begin);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}(position\_key\_begin\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00102}00102\ \ \ \ \ \ \ \ position\_key\_end\ \ \ >\ \ position\_key\_begin\ +\ 2\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00103}00103\ \ \ \ \ \ \ \ position\_delimiter\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00104}00104\ \ \ \ \ \ \ \ position\_delimiter\ >=\ position\_key\_end\ )}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00105}00105\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00111}\mbox{\hyperlink{StringManipulations_8h_ad50b7462047e4703a415c0519b94ca26}{00111}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{StringManipulations_8h_ad50b7462047e4703a415c0519b94ca26}{StringIsSectionName}}(\textcolor{keyword}{const}\ std::string\&\ InString)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00112}00112\ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00113}00113\ \ \ \ \ std::string\ key\_symbol\ (\textcolor{stringliteral}{"{}@"{}});}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_begin\ =\ InString.find(key\_symbol);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_end\ \ \ =\ InString.find\_first\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)n:"{}},\ position\_key\_begin);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{if}(position\_key\_begin\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00119}00119\ \ \ \ \ \ \ \ position\_key\_end\ \ \ >\ \ position\_key\_begin\ +\ 2)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00126}\mbox{\hyperlink{StringManipulations_8h_afc2ec56b8bb56c180ecff3dcbf7d4b90}{00126}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{StringManipulations_8h_afc2ec56b8bb56c180ecff3dcbf7d4b90}{StringIsInBrackets}}(\textcolor{keyword}{const}\ std::string\&\ InString,\ std::string\ begin\_bracket,}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ end\_bracket)\ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00128}00128\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ \ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00134}00134\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00139}00139\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00141}\mbox{\hyperlink{StringManipulations_8h_afe99d3cedd61c8911598c5c1358291a4}{00141}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{StringManipulations_8h_afe99d3cedd61c8911598c5c1358291a4}{RemoveBrackets}}(std::string\&\ InString,\ std::string\ begin\_bracket,}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ end\_bracket)\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00143}00143\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ \ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00148}00148\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00149}00149\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ InString.erase(position\_end\_bracket,\ end\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ InString.erase(position\_begin\_bracket,\ begin\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00155}\mbox{\hyperlink{StringManipulations_8h_abb8aa0f2c794b4de1c0cdee5c38a580f}{00155}}\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{StringManipulations_8h_abb8aa0f2c794b4de1c0cdee5c38a580f}{ExtractStringBetweenBrackets}}(\textcolor{keyword}{const}\ std::string\&\ InString,}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ begin\_bracket,}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ end\_bracket)\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00158}00158\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00162}00162\ \ \ \ \ std::string\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00164}00164\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00165}00165\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ result\ =\ InString.substr(position\_begin\_bracket\ +\ begin\_bracket.size(),}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ position\_end\_bracket\ -\/\ position\_begin\_bracket\ -\/\ begin\_bracket.size());}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00173}\mbox{\hyperlink{StringManipulations_8h_a9808fe56702c20eccbd24d77955c5017}{00173}}\ \textcolor{keyword}{inline}\ std::vector<std::string>\ \mbox{\hyperlink{StringManipulations_8h_a9808fe56702c20eccbd24d77955c5017}{ExtractSubstrings}}(\textcolor{keyword}{const}\ std::string\&\ InString,}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ delimiter\ =\ \textcolor{stringliteral}{"{},"{}})\ \ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00175}00175\ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00176}00176\ \ \ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00177}00177\ \ \ \ \ std::string\ tmp\ =\ InString;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_at\_end\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}{RemoveAllWhitespaces}}(tmp);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{while}(not\_at\_end)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00184}00184\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ not\_at\_end\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ next\_delimiter\ =\ tmp.find(delimiter,\ position);}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(next\_delimiter\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(tmp.substr(position,\ next\_delimiter\ -\/\ position));}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ next\_delimiter\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ not\_at\_end\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(tmp.substr(position));}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{StringManipulations_8h_source_l00203}00203\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

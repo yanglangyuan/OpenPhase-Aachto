@@ -1,0 +1,460 @@
+\doxysection{Velocities.\+cpp}
+\hypertarget{Velocities_8cpp_source}{}\label{Velocities_8cpp_source}\index{Velocities.cpp@{Velocities.cpp}}
+\mbox{\hyperlink{Velocities_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2012}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitri\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Velocities_8h}{Velocities.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ElasticProperties_8h}{ElasticProperties.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RunTimeControl_8h}{RunTimeControl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00035}00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00037}00037\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00038}00038\ \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00040}\mbox{\hyperlink{classopenphase_1_1Velocities_a8b66bd735fdecec1c385571b87025b1f}{00040}}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a5b5d372b6b8893bbbeda97699496d025}{Velocities::Velocities}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a0c0dc3bfaa326fbef879a39ad0dd77a5}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00045}\mbox{\hyperlink{classopenphase_1_1Velocities_a0c0dc3bfaa326fbef879a39ad0dd77a5}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a0c0dc3bfaa326fbef879a39ad0dd77a5}{Velocities::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Velocities"{}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}}\ \ \ \ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a382bc9b8a4d0d06e8215798299f527e7}{PhaseNames}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a186a6783337110eb8e3d725b7aae164b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00061}00061\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{AddForAdvection}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00062}00062\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{AddForRemeshing}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00068}\mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{Velocities::SetBoundaryConditions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00070}00070\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a24b7052eb5680d2c8b793913ae74468c}{SetXVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00071}00071\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ab36194b00f7274c8f13395b6908f21b7}{SetYVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00072}00072\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a9ec8b64c4c7510b8fa08550d62df30e9}{SetZVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00074}00074\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a24b7052eb5680d2c8b793913ae74468c}{SetXVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00075}00075\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ab36194b00f7274c8f13395b6908f21b7}{SetYVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00076}00076\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a9ec8b64c4c7510b8fa08550d62df30e9}{SetZVector}}(\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00079}\mbox{\hyperlink{classopenphase_1_1Velocities_a186a6783337110eb8e3d725b7aae164b}{00079}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a186a6783337110eb8e3d725b7aae164b}{Velocities::Clear}}()}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k).set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,\ j,\ k,\ \{alpha\}).set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00091}\mbox{\hyperlink{classopenphase_1_1Velocities_ae36108af10d54f95bb4f88e5096048d3}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_ae36108af10d54f95bb4f88e5096048d3}{Velocities::SetAverage}}(\mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ value)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)\ =\ value;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00100}\mbox{\hyperlink{classopenphase_1_1Velocities_a9e09bed7683db835d4dd0c0516c13948}{00100}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_ae36108af10d54f95bb4f88e5096048d3}{Velocities::SetAverage}}(\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,\ \textcolor{keywordtype}{double}\ dt)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx\_dt\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ /\ dt;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,EP.\mbox{\hyperlink{classopenphase_1_1ElasticProperties_aa347064671fc2fd42b316d99df6e4f15}{Displacements}},EP.\mbox{\hyperlink{classopenphase_1_1ElasticProperties_aa347064671fc2fd42b316d99df6e4f15}{Displacements}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)\ =\ EP.\mbox{\hyperlink{classopenphase_1_1ElasticProperties_aa347064671fc2fd42b316d99df6e4f15}{Displacements}}(i,j,k)\ *\ dx\_dt;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00110}\mbox{\hyperlink{classopenphase_1_1Velocities_a88ea9560d8eef91fc892f6340674f057}{00110}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a88ea9560d8eef91fc892f6340674f057}{Velocities::SetAllPhases}}(\mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ value)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00112}00112\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}},\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,\ j,\ k,\{alpha\})\ =\ value;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00120}\mbox{\hyperlink{classopenphase_1_1Velocities_afcd42fd9a069c0afaff5c1612b6176d0}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_afcd42fd9a069c0afaff5c1612b6176d0}{Velocities::PrescribePhaseVelocities}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}})}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}},\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,\ j,\ k,\{alpha\})\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00130}\mbox{\hyperlink{classopenphase_1_1Velocities_ad4d02954cfd6c54b03ae809f3b1435c9}{00130}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_ad4d02954cfd6c54b03ae809f3b1435c9}{Velocities::CalculateAverage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}})}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00131}00131\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k).set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locDensity\ =\ 0.;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ locMomentumDensity\ =\ \{0.,0.,0.\};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.Fields(i,j,k).cbegin();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.Fields(i,j,k).cend();\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locPindex\ =\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.FieldsProperties[alpha-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locDensity\ +=\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.FieldsProperties[alpha-\/>index].Density*alpha-\/>value;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMomentumDensity\ +=\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{locPindex\})*\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.FieldsProperties[alpha-\/>index].Density*alpha-\/>value;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)\ +=\ locMomentumDensity/locDensity;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pInd\ =\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.FieldsProperties[\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.Fields(i,j,k).front().index].Phase;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{pInd\});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00158}\mbox{\hyperlink{classopenphase_1_1Velocities_aa0145dc2526ba308ecd91a8c92b79b02}{00158}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_aa0145dc2526ba308ecd91a8c92b79b02}{Velocities::WriteVTK}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keywordtype}{int}\ tStep)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00159}00159\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00160}00160\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00161}00161\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00162}00162\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\{\textcolor{stringliteral}{"{}VelocityAverage\_"{}},\ \ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k);\}\});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00165}00165\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\{\textcolor{stringliteral}{"{}VelocityPhase\_"{}}\ +\ std::to\_string(n),\ [n,\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\});\}\});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00168}00168\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00171}\mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{00171}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{Velocities::Remesh}}(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00172}00172\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00177}00177\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Remesh(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00178}00178\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Remesh(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00180}00180\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00182}00182\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00183}00183\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00185}\mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{00185}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{Velocities::MoveFrame}}(\textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{int}\ dy,\ \textcolor{keywordtype}{int}\ dz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00186}00186\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordtype}{int}\ xBeg\ =\ (dx\ >=\ 0)\ +\ (dx\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordtype}{int}\ xEnd\ =\ (dx\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ +\ (dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordtype}{int}\ xInc\ =\ 1\ -\/\ 2*(dx\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordtype}{int}\ yBeg\ =\ (dy\ >=\ 0)\ +\ (dy\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordtype}{int}\ yEnd\ =\ (dy\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ +\ (dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordtype}{int}\ yInc\ =\ 1\ -\/\ 2*(dy\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordtype}{int}\ zBeg\ =\ (dz\ >=\ 0)\ +\ (dz\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordtype}{int}\ zEnd\ =\ (dz\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ +\ (dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordtype}{int}\ zInc\ =\ 1\ -\/\ 2*(dz\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ xBeg;\ ((dx\ >=\ 0)\ and\ (i\ <=\ xEnd))\ or\ ((dx\ <\ 0)\ and\ (i\ >=\ xEnd));\ i\ +=\ xInc)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ yBeg;\ ((dy\ >=\ 0)\ and\ (j\ <=\ yEnd))\ or\ ((dy\ <\ 0)\ and\ (j\ >=\ yEnd));\ j\ +=\ yInc)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ zBeg;\ ((dz\ >=\ 0)\ and\ (k\ <=\ zEnd))\ or\ ((dz\ <\ 0)\ and\ (k\ >=\ zEnd));\ k\ +=\ zInc)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,\ j,\ k)\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i\ +\ dx,\ j\ +\ dy,\ k\ +\ dz);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,\ j,\ k)\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i\ +\ dx,\ j\ +\ dy,\ k\ +\ dz);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00209}00209\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Frame\ moved"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00213}\mbox{\hyperlink{classopenphase_1_1Velocities_aafa9ff940a00fe59b178285204ebd1a5}{00213}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_aafa9ff940a00fe59b178285204ebd1a5}{Velocities::PrintPointStatistics}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ z)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00214}00214\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00215}00215\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Point"{}},\ \mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}}\{x,y,z\});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ PhaseIdx\ =\ 0;\ PhaseIdx\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ \ ++PhaseIdx)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00217}00217\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ std::string\ vname\ =\ \textcolor{stringliteral}{"{}Phase\ Velocity\ "{}}+\mbox{\hyperlink{classopenphase_1_1Velocities_a382bc9b8a4d0d06e8215798299f527e7}{PhaseNames}}[PhaseIdx];}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(vname,\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(x,y,z,\{PhaseIdx\}),3);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Average\ Velocity"{}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(x,y,z),3);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00222}00222\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00223}00223\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00225}\mbox{\hyperlink{classopenphase_1_1Velocities_a410f15e1eab92f3af3a5ba23669c2fcf}{00225}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a410f15e1eab92f3af3a5ba23669c2fcf}{Velocities::GetMaxVelocity}}()}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00226}00226\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordtype}{double}\ MAXVelocity\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},0,\ reduction(max:\ MAXVelocity))}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00230}00230\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ MAXVelocity\ =\ max(MAXVelocity,\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k).abs());}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00233}00233\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00235}00235\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00236}00236\ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&MAXVelocity,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_MAX,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00237}00237\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{return}\ MAXVelocity;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00240}00240\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00242}\mbox{\hyperlink{classopenphase_1_1Velocities_a23946f991f1673448eecf1cf48070bd9}{00242}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a23946f991f1673448eecf1cf48070bd9}{Velocities::WriteStatistics}}(\mbox{\hyperlink{classopenphase_1_1RunTimeControl}{RunTimeControl}}\&\ RTC)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00243}00243\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordtype}{double}\ MAXVelocity\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a410f15e1eab92f3af3a5ba23669c2fcf}{GetMaxVelocity}}();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00246}00246\ \ \ \ \ ofstream\ output\_file;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordflow}{if}\ (RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_aa577fc7a6a86ca8f3c3a7eb8874e7acd}{TimeStep}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00248}00248\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ output\_file.open(\textcolor{stringliteral}{"{}VelocityStatistics.txt"{}},\ ios::out);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ output\_file\ <<\ \textcolor{stringliteral}{"{}tStep"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)t"{}}\ <<\ \textcolor{stringliteral}{"{}sim\_time"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}max\ velocity"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ output\_file.close();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00255}00255\ \ \ \ \ output\_file.open(\textcolor{stringliteral}{"{}VelocityStatistics.txt"{}},\ ios::app);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00256}00256\ \ \ \ \ output\_file\ <<\ RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_aa577fc7a6a86ca8f3c3a7eb8874e7acd}{TimeStep}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)t"{}}\ <<\ RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_a5e07ddad97ef8b9bb55c91909a86b283}{SimulationTime}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)t"{}}\ <<\ MAXVelocity\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00257}00257\ \ \ \ \ output\_file.close();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00260}\mbox{\hyperlink{classopenphase_1_1Velocities_af482b27a36a60e242b98230fdd28ffc6}{00260}}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ \mbox{\hyperlink{classopenphase_1_1Velocities_af482b27a36a60e242b98230fdd28ffc6}{Velocities::operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00261}00261\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ protect\ against\ invalid\ self-\/assignment\ and\ copy\ of\ unitialized\ object}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs\ and\ rhs.\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ ==\ \textcolor{stringliteral}{"{}Velocities"{}})}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00264}00264\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.IsNotAllocated())}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}}\},\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Bcells());}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}},\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Bcells());}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.IsSize(rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}))}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Reallocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}.Reallocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}},\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\ \{alpha\})\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\ \{alpha\});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00290}00290\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00291}00291\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00292}00292\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00294}\mbox{\hyperlink{classopenphase_1_1Velocities_a52f1788ff759075349c048f21ef2e15b}{00294}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a52f1788ff759075349c048f21ef2e15b}{Velocities::Advect}}(\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keywordtype}{double}\ dt,\ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0a}{AdvectionSchemes}}\ scheme)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00295}00295\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}.IsNotAllocated())}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00297}00297\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}},\ 1);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}.IsSize(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}))}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00301}00301\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}.Reallocate(\mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00303}00303\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00304}00304\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00306}00306\ \ \ \ \ \textcolor{keywordflow}{switch}(scheme)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00307}00307\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa6d61af52253bb644a0c23a12513a8a76}{AdvectionSchemes::Upwind}}:}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx2\ =\ 0.5/dx;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}},0,)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ dir\ =\ 0;\ dir\ <\ 3;\ dir++)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}(i,j,k)[dir]\ =\ dx2\ *}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i-\/1,j,k)[0])\ +\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i-\/1,j,k)[0])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i-\/1,j,k)[dir]\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j-\/1,k)[1])\ +\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j-\/1,k)[1])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j-\/1,k)[dir]\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k-\/1)[2])\ +\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k-\/1)[2])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k-\/1)[dir]\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i+1,j,k)[0])\ -\/\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i+1,j,k)[0])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i+1,j,k)[dir]\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j+1,k)[1])\ -\/\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j+1,k)[1])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j+1,k)[dir]\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k+1)[2])\ -\/\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k+1)[2])*\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k+1)[dir])\ -\/}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[0])\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[1])\ +}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fabs(\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[2]))\ *\ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,\ j,\ k)[dir]/dx;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ advection\ scheme\ selected"{}},}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Velocities::Advect(BC,\ dt,\ scheme)"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ exit(13);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00336}00336\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00338}00338\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}},0,)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dir\ =\ 0;\ dir\ <\ 3;\ ++dir)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00340}00340\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,\ j,\ k)[dir]\ +=\ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}(i,\ j,\ k)[dir]*dt;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_af59e0c746582cb209532a1b96c785642}{AverageDot}}(i,\ j,\ k)[dir]\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00343}00343\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00344}00344\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00346}00346\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00347}00347\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Advected"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00350}\mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{00350}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{Velocities::Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ OPSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00351}00351\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00352}00352\ \ \ \ \ std::string\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(OPSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\textcolor{stringliteral}{"{}Velocity\_"{}},tStep,\textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00354}00354\ \ \ \ \ std::ofstream\ out(FileName.c\_str(),\ std::ios::out\ |\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00356}00356\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00357}00357\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ FileName\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created!\ Terminating!!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00362}00362\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keywordtype}{int}\ Nx\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordtype}{int}\ Ny\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{keywordtype}{int}\ Nz\ =\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00368}00368\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Nx),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00369}00369\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Ny),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00370}00370\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Nz),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00372}00372\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},0)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00373}00373\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[0]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[1]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[2]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00377}00377\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00378}00378\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00380}00380\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}},0)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00382}00382\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[0]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[1]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[2]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00386}00386\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00387}00387\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00389}00389\ \ \ \ \ out.close();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00391}00391\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00393}\mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{00393}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{Velocities::Read}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ OPSettings,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00394}00394\ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00395}00395\ \ \ \ \ std::string\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(OPSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\textcolor{stringliteral}{"{}Velocity\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00397}00397\ \ \ \ \ std::fstream\ inp(FileName.c\_str(),\ std::ios::in\ |\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00399}00399\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00400}00400\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Read()"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00404}00404\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00406}00406\ \ \ \ \ \textcolor{keywordtype}{int}\ locNx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00407}00407\ \ \ \ \ \textcolor{keywordtype}{int}\ locNy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordtype}{int}\ locNz\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00410}00410\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNx),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00411}00411\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNy),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00412}00412\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNz),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{keywordflow}{if}(locNx\ !=\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ or\ locNy\ !=\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ or\ locNz\ !=\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00415}00415\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Inconsistent\ system\ dimensions!\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ dimensions:\ ("{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ locNx\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ locNy\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ locNz\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ dimensions:\ ("{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Velocities_a7c49fc55a1d942913ba2bbecd47c2101}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00427}00427\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00429}00429\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}},0)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00430}00430\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[0]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[1]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_aaa4a7382fbefed70400db131f2ee4c8f}{Average}}(i,j,k)[2]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00434}00434\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00435}00435\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00437}00437\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}},0)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00438}00438\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Velocities_ac50adc819c6653bd6bcde87fbf3514f4}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00439}00439\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[0]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[1]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1Velocities_a40adc3709793f42898d4402cc4faf0b5}{Phase}}(i,j,k,\{n\})[2]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00443}00443\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00444}00444\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00446}00446\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00448}00448\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00450}00450\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Binary\ input\ loaded"{}});}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00451}00451\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00452}00452\ \}}
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{Velocities_8cpp_source_l00454}00454\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

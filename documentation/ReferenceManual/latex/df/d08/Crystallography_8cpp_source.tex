@@ -1,0 +1,285 @@
+\doxysection{Crystallography.\+cpp}
+\hypertarget{Crystallography_8cpp_source}{}\label{Crystallography_8cpp_source}\index{Crystallography.cpp@{Crystallography.cpp}}
+\mbox{\hyperlink{Crystallography_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2015}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Philipp\ Engels;\ Hesham\ Salama}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Crystallography_8h}{Crystallography.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00030}00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00034}\mbox{\hyperlink{classopenphase_1_1Crystallography_a2351128261c1e63bbded2f869e6a3cec}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Crystallography_a2351128261c1e63bbded2f869e6a3cec}{Crystallography::ReadInput}}(\textcolor{keywordtype}{string}\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Crystal\ Symmetry\ input"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00039}00039\ \ \ \ \ fstream\ inpF(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inpF)}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00045}00045\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00046}00046\ \ \ \ \ stringstream\ inp;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00047}00047\ \ \ \ \ inp\ <<\ inpF.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00048}00048\ \ \ \ \ inpF.close();}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{string}\ Symmetry\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}CrystalSymmetry"{}},\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}CUBIC"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Symmetry\ matrices\ for\ crystal\ lattice.\ Taken\ from\ Kocks,\ Tome\ and\ Wenk}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ 'Texture\ and\ Anisotropy',\ Cambridge\ University\ Press\ 1998}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}CUBIC"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ cubic\ parameters\ (class\ 432)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aec6b5414eb175379ff9efc9b3eef5814}{LatticeSystems::Cubic}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 24;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 45\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ acos(sqrt(1.0\ /\ (2.0\ +\ (pow(tan(\mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}),2.0)))));}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(0,\ 0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[2].set(0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[3].set(0,-\/1,\ 0,\ 0,\ 0,\ 1,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[4].set(0,-\/1,\ 0,\ 0,\ 0,-\/1,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[5].set(0,\ 1,\ 0,\ 0,\ 0,-\/1,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[6].set(\ 0,\ 0,-\/1,\ 1,\ 0,\ 0,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[7].set(\ 0,\ 0,-\/1,-\/1,\ 0,\ 0,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[8].set(\ 0,\ 0,\ 1,-\/1,\ 0,\ 0,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[9].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[10].set(-\/1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[11].set(\ 1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[12].set(\ 0,\ 0,-\/1,\ 0,-\/1,\ 0,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[13].set(\ 0,\ 0,\ 1,\ 0,-\/1,\ 0,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[14].set(\ 0,\ 0,\ 1,\ 0,\ 1,\ 0,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[15].set(\ 0,\ 0,-\/1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[16].set(-\/1,\ 0,\ 0,\ 0,\ 0,-\/1,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[17].set(\ 1,\ 0,\ 0,\ 0,\ 0,-\/1,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[18].set(\ 1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[19].set(-\/1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[20].set(\ 0,-\/1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[21].set(\ 0,\ 1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[22].set(\ 0,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[23].set(\ 0,-\/1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Cubic"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}HEXAGONAL"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ hexagonal\ parameters\ (class\ 622)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a28666f62a0ffe4485fb7c7e878234dda}{LatticeSystems::Hexagonal}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 30\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(-\/0.5,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[2].set(-\/0.5,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[3].set(\ 0.5,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ \ 0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[4].set(-\/1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[5].set(\ 0.5,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ \ 0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[6].set(-\/0.5,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0.5,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[7].set(\ 1,\ 0,\ 0,\ 0,\ -\/1,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[8].set(-\/0.5,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0.5,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[9].set(\ 0.5,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},-\/0.5,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[10].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[11].set(0.5,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ -\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},-\/0.5,\ 0,\ 0,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Hexagonal"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}TETRAGONAL"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00129}00129\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ tetragonal\ parameters\ (class\ 422)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a97c0069c1c88eef33e1c1db21d38de43}{LatticeSystems::Tetragonal}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 45\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[2].set(\ 1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[3].set(-\/1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[4].set(\ 0,\ 1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[5].set(\ 0,-\/1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[6].set(\ 0,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[7].set(\ 0,-\/1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Tetragonal"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}TRIGONAL"{}}\ or\ Symmetry\ ==\ \textcolor{stringliteral}{"{}RHOMBOHEDRAL"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00153}00153\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ trigonal\ parameters\ (class\ 32)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62ae8ae83920b1b094435999b5380270e72}{LatticeSystems::Trigonal}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 60\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(-\/0.5,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[2].set(-\/0.5,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[3].set(\ 0.5,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,\ \mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[4].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[5].set(\ 0.5,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ 0,-\/\mbox{\hyperlink{classopenphase_1_1Crystallography_aa3f55a799dc6c68cbf344d563e5a5da5}{a}},\ -\/0.5,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Trigonal"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}ORTHORHOMBIC"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00175}00175\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ orthorhombic\ parameters\ (class\ 22)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{LatticeSystems::Orthorhombic}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 90\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[2].set(\ 1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[3].set(-\/1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Orthorhombic"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}MONOCLINIC"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00195}00195\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ monoclinic\ parameters\ (class\ 2)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a55a5e68b388b59383b16383d30101b4e}{LatticeSystems::Monoclinic}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 180\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[1].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Monoclinic"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Symmetry\ ==\ \textcolor{stringliteral}{"{}TRICLINIC"{}})}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00213}00213\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Load\ triclinic\ parameters\ (class\ 1)}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9c5e6f1c016638e26e158ae4b41e2f8d}{CrystalSym}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a45d3988e303ecb4da2498e707d28ad39}{LatticeSystems::Triclinic}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a8df0d9a4cd9ef41ce21f5750df15d060}{Theta\_min}}\ =\ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a7465f266c4a107a9216ddf73f35d4d16}{Theta\_max}}\ =\ 360\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a25923e9207ed6dcf216435c505d36794}{Phi\_min}}\ =\ \ \ \ \ 0\ *\ (\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9970240566c48ca2c306dc3a6e1b2a2a}{Phi\_max}}\ =\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9905c01f21c863d09b8f9d898cd4601a}{CrystalSymmetries}}[0].set(1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}CrystalSymmetry::Triclinic"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00228}00228\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00230}00230\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_ad46b8ec83ef1dd39a0a047ba023449cd}{nsym}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}No\ or\ wrong\ CrystalSymmetry\ specified!\(\backslash\)nThe\ default\ \(\backslash\)"{}Cubic\(\backslash\)"{}\ model\ is\ used!"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00233}00233\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00236}00236\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00237}00237\ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00239}\mbox{\hyperlink{classopenphase_1_1Crystallography_af20107edb2201a79d70680e9d7174596}{00239}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Crystallography_af20107edb2201a79d70680e9d7174596}{Crystallography::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00240}00240\ \{}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00241}00241\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Crystallography"{}};}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00242}00242\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{comment}{//\ Symmetry\ matrices\ for\ cubic\ lattice.\ Taken\ from\ Kocks,\ Tome\ and\ Wenk}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{comment}{//\ 'Texture\ and\ Anisotropy',\ Cambridge\ University\ Press\ 1998}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}.Allocate(24);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00249}00249\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[0].set(1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00250}00250\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[1].set(0,\ 0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00251}00251\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[2].set(0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[3].set(0,-\/1,\ 0,\ 0,\ 0,\ 1,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00253}00253\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[4].set(0,-\/1,\ 0,\ 0,\ 0,-\/1,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00254}00254\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[5].set(0,\ 1,\ 0,\ 0,\ 0,-\/1,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00256}00256\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[6].set(\ 0,\ 0,-\/1,\ 1,\ 0,\ 0,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00257}00257\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[7].set(\ 0,\ 0,-\/1,-\/1,\ 0,\ 0,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00258}00258\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[8].set(\ 0,\ 0,\ 1,-\/1,\ 0,\ 0,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00259}00259\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[9].set(-\/1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00260}00260\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[10].set(-\/1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00261}00261\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[11].set(\ 1,\ 0,\ 0,\ 0,-\/1,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00263}00263\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[12].set(\ 0,\ 0,-\/1,\ 0,-\/1,\ 0,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[13].set(\ 0,\ 0,\ 1,\ 0,-\/1,\ 0,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00265}00265\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[14].set(\ 0,\ 0,\ 1,\ 0,\ 1,\ 0,-\/1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00266}00266\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[15].set(\ 0,\ 0,-\/1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00267}00267\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[16].set(-\/1,\ 0,\ 0,\ 0,\ 0,-\/1,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00268}00268\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[17].set(\ 1,\ 0,\ 0,\ 0,\ 0,-\/1,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00270}00270\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[18].set(\ 1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,-\/1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00271}00271\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[19].set(-\/1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00272}00272\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[20].set(\ 0,-\/1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00273}00273\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[21].set(\ 0,\ 1,\ 0,-\/1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00274}00274\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[22].set(\ 0,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,-\/1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00275}00275\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Crystallography_a9221cce21228ca2ff8691ab090b913cd}{SymmetriesCubic}}[23].set(\ 0,-\/1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00277}00277\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00278}00278\ \}}
+\DoxyCodeLine{\Hypertarget{Crystallography_8cpp_source_l00279}00279\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

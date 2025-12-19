@@ -23,6 +23,7 @@
 
 .PHONY : all clean cleanall clean_doc examples exercises benchmarks docs
 SETTINGS = default
+#SETTINGS = H5
 include Makefile.defs
 
 PYTHON ?= python3
@@ -84,7 +85,7 @@ docs:
 	doxygen
 
 clean:
-	rm -rf hdf5 HighFive tinyxml2
+#	rm -rf hdf5 HighFive tinyxml2
 	rm -rf external/miniz.o external/WinBase64/libbase64.o
 	make --no-print-directory -C mpi_wrapper clean
 	make --no-print-directory -C src clean

@@ -1,0 +1,1169 @@
+\doxysection{openphase\+::Noise Class Reference}
+\hypertarget{classopenphase_1_1Noise}{}\label{classopenphase_1_1Noise}\index{openphase::Noise@{openphase::Noise}}
+
+
+\texorpdfstring{$<$}{<} Calculates a noise, which can be added to the \doxylink{classopenphase_1_1DrivingForce}{Driving\+Force}  
+
+
+
+
+{\ttfamily \#include "{}Noise.\+h"{}}
+
+Inheritance diagram for openphase\+::Noise\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d4b/classopenphase_1_1Noise}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b}{\texorpdfstring{$\sim$}{\string~}\+Noise}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Noise_a10ccf5d9fbe5c95050c9e7e2df7f942a}{Noise}} (void)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Noise_ae84843d32a013336e446863def411891}{Noise}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Simple constructor, but Initialize and Read\+Input have to be called additionally. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Allocates memory, initializes the settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads input from input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{Update\+Raw}} (int t\+Step)
+\begin{DoxyCompactList}\small\item\em Updates Raw Driving force. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{Add\+To\+Driving\+Force}} (int t\+Step, \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Temp, \mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&DF)
+\begin{DoxyCompactList}\small\item\em Adds Fields to driving force. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_afc868b865d2f7c836edaf0d94c9be199}{Add\+To\+Driving\+Force}} (int t\+Step, \mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&DF)
+\begin{DoxyCompactList}\small\item\em Adds Fields to driving force. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_a6b1e1819b6f8ec548de22dc7a326ed3c}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads input from input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc}{Write\+VTK}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step, const int precision=16)
+\begin{DoxyCompactList}\small\item\em Writes the noise acting on the driving force from phase field with indexB onto phase field with indexA in \doxylink{structopenphase_1_1VTK}{VTK} format. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{Cut\+Off\+Wave\+Length}}
+\begin{DoxyCompactList}\small\item\em Cut off wave length of noise. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{Fix\+Ampl}}
+\begin{DoxyCompactList}\small\item\em Cut off wave length of noise. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}}
+\begin{DoxyCompactList}\small\item\em Macroscopic response of the system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1Noise_aea4abe843477bc7208fb796ff57d6ffb}{BCells}}
+\begin{DoxyCompactList}\small\item\em Number of boundary cells around the computation domain. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of phase-\/fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1Noise_aafffea25dec6dbf2543d0bd689b25fbf}{Random\+Seed}}
+\begin{DoxyCompactList}\small\item\em Defines the random number table (used to make results reproducible) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{Time\+Steps}}
+\begin{DoxyCompactList}\small\item\em Number of iteration after which a new noise will be scrabbled. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}} (void)
+\begin{DoxyCompactList}\small\item\em Generates a new noise field (it will be interpolated between new and old noise field) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}
+\begin{DoxyCompactList}\small\item\em Real raw noise, which will be merge into the driving force. \end{DoxyCompactList}\item 
+fftw\+\_\+complex \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\+\_\+\+In}}
+\begin{DoxyCompactList}\small\item\em FFTW input pointer. \end{DoxyCompactList}\item 
+fftw\+\_\+complex \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\+\_\+\+Out}}
+\begin{DoxyCompactList}\small\item\em FFTW out pointer. \end{DoxyCompactList}\item 
+fftw\+\_\+plan \mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}}
+\begin{DoxyCompactList}\small\item\em Plan for the execution of FFTW. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{Random\+Fourier}}
+\begin{DoxyCompactList}\small\item\em Pointer to storage of Fourier-\/space random number distribution. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{Random\+Real}}
+\begin{DoxyCompactList}\small\item\em Pointer to storage of real space random number distribution. \end{DoxyCompactList}\item 
+std\+::default\+\_\+random\+\_\+engine \mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+std\+::normal\+\_\+distribution$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}
+\begin{DoxyCompactList}\small\item\em Random number distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Calculates a noise, which can be added to the \doxylink{classopenphase_1_1DrivingForce}{Driving\+Force} 
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00040}{40}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b}\label{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b} 
+\index{openphase::Noise@{openphase::Noise}!````~Noise@{\texorpdfstring{$\sim$}{\string~}Noise}}
+\index{````~Noise@{\texorpdfstring{$\sim$}{\string~}Noise}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Noise()}{\string~Noise()}}
+{\footnotesize\ttfamily openphase\+::\+Noise\+::\texorpdfstring{$\sim$}{\string~}\+Noise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}})}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ fftw\_destroy\_plan(\mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}});}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\#ifdef\ MPI\_PARALLEL\ //\ TODO\ implement\ MPI}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ \ \ \ \ \ op\_fftw\_mpi\_cleanup();}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ fftw\_cleanup\_threads();}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_a10ccf5d9fbe5c95050c9e7e2df7f942a}\label{classopenphase_1_1Noise_a10ccf5d9fbe5c95050c9e7e2df7f942a} 
+\index{openphase::Noise@{openphase::Noise}!Noise@{Noise}}
+\index{Noise@{Noise}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Noise()}{Noise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Noise\+::\+Noise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00044}{44}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_ae84843d32a013336e446863def411891}\label{classopenphase_1_1Noise_ae84843d32a013336e446863def411891} 
+\index{openphase::Noise@{openphase::Noise}!Noise@{Noise}}
+\index{Noise@{Noise}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Noise()}{Noise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Noise\+::\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Simple constructor, but Initialize and Read\+Input have to be called additionally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Constructor includes the call of Initialize and Read\+Input \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00045}{45}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{Initialize}}(locSettings);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Noise_afc868b865d2f7c836edaf0d94c9be199}\label{classopenphase_1_1Noise_afc868b865d2f7c836edaf0d94c9be199} 
+\index{openphase::Noise@{openphase::Noise}!AddToDrivingForce@{AddToDrivingForce}}
+\index{AddToDrivingForce@{AddToDrivingForce}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{AddToDrivingForce()}{AddToDrivingForce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Add\+To\+Driving\+Force (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{\mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&}]{DF }\end{DoxyParamCaption})}
+
+
+
+Adds Fields to driving force. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{UpdateRaw}}(tStep);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ noise\ to\ driving\ force}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ DF.Force(i,j,k).cbegin();\ it\ <\ DF.Force(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ DF.Force(i,j,k).add\_raw(it-\/>indexA,\ it-\/>indexB,\ \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{FixAmpl}}\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k));}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00271\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}\label{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec} 
+\index{openphase::Noise@{openphase::Noise}!AddToDrivingForce@{AddToDrivingForce}}
+\index{AddToDrivingForce@{AddToDrivingForce}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{AddToDrivingForce()}{AddToDrivingForce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Add\+To\+Driving\+Force (\begin{DoxyParamCaption}\item[{int}]{t\+Step,  }\item[{\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Temp,  }\item[{\mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&}]{DF }\end{DoxyParamCaption})}
+
+
+
+Adds Fields to driving force. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{UpdateRaw}}(tStep);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ noise\ to\ driving\ force}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ DF.Force(i,j,k).cbegin();\ it\ <\ DF.Force(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ampl\ =\ sqrt(\ 2\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_a745122c9397934cad6fe8f71195a8f0c}{PhysicalConstants::k\_Boltzmann}}\ *\ Temp(i,j,k)/\mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ DF.Force(i,j,k).add\_raw(it-\/>indexA,\ it-\/>indexB,\ Ampl\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k));}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00255\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::Noise@{openphase::Noise}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::Noise@{openphase::Noise}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::Noise@{openphase::Noise}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}\label{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014} 
+\index{openphase::Noise@{openphase::Noise}!Generate@{Generate}}
+\index{Generate@{Generate}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Generate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Generates a new noise field (it will be interpolated between new and old noise field) 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{double}\ Lx\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{double}\ Ly\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{double}\ Lz\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ dVector3\ WaveVector;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ WaveVector[0]\ =\ Lx*(i*(i\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/i)*(i\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2));}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ WaveVector[1]\ =\ Ly*(j*(j\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/j)*(j\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2));}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ WaveVector[2]\ =\ Lz*(k*(k\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/k)*(k\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2));}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(WaveVector.abs()\ <\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/\mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}})}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ Gaussian\ white\ noise\ coefficients}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ complex<double>\ cijk\{\mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}(\mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}}),\mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}(\mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}})\};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cijk\ /=\ abs(cijk);}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ computed\ coefficient}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ =\ cijk;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ =\ complex<double>(0.0,0.0);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ Do\ Fourier\ transform}}
+\DoxyCodeLine{00171\ \ \ \ \ fftw\_execute(\mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}});}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ Calculate\ global\ maximum\ of\ RandomReal}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{double}\ Max\ =\ 0.0;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,reduction(max:Max))}
+\DoxyCodeLine{00177\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ Max\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(Max,\ abs(real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)])));}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ /=\ Max;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ -\/=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ /=\ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}};}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00189\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}\label{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4} 
+\index{openphase::Noise@{openphase::Noise}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates memory, initializes the settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ \ =\ \textcolor{stringliteral}{"{}Noise"{}};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}{Nphases}}\ \ \ =\ locSettings.Nphases;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Allocate\ three-\/dimensional\ Fourier\ space\ noise}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}\ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()]();}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}\ \ \ \ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()]();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Allocate\ raw\ Noise\ Storage}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}},\ 0);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Assign\ storages\ to\ fftw\ pointers}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\_In}}\ \ =\ \textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}});}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\_Out}}\ =\ \textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Create\ FFT-\/Plan,\ which\ determines\ how\ the\ FFT\ will\ be\ executed}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00077\ \ \ \ \ fftw\_init\_threads();}
+\DoxyCodeLine{00078\ \ \ \ \ fftw\_plan\_with\_nthreads(\mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\_get\_max\_threads}}());}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}}\ =\ fftw\_plan\_dft\_3d(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}},\ \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\_In}},\mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\_Out}},FFTW\_BACKWARD,FFTW\_ESTIMATE);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Initialize\ random\ number\ distribution}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}\ =\ normal\_distribution<double>(0.0,0.5);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ seed\ =\ std::chrono::system\_clock::now().time\_since\_epoch().count();}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}}\ =\ std::default\_random\_engine(seed);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::Noise@{openphase::Noise}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::Noise@{openphase::Noise}!Read@{Read}}
+\index{Read@{Read}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}\label{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec} 
+\index{openphase::Noise@{openphase::Noise}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input from input file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Noise\ input"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00103\ \ \ \ \ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00106\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(data);}
+\DoxyCodeLine{00108\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_a6b1e1819b6f8ec548de22dc7a326ed3c}\label{classopenphase_1_1Noise_a6b1e1819b6f8ec548de22dc7a326ed3c} 
+\index{openphase::Noise@{openphase::Noise}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input from input file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Read\ Parameters}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}}\ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dgamma"{}}),\textcolor{keyword}{false},0);}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}iTime"{}}));}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dWaveLength"{}}));}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{FixAmpl}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dFixAmpl"{}}));}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ input\ TimeSteps\ makes\ sense}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ <\ 1)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ std::string\ message\ =\ \textcolor{stringliteral}{"{}A\ input\ value\ TimeSteps\ <\ 1\ does\ not\ make\ sense!\ "{}}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Set\ TimeSteps\ to\ 1!"{}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\ message,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ =\ 0;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ input\ CutOffWaveLength\ makes\ sense}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ <\ 0)}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ std::string\ message\ =\ \textcolor{stringliteral}{"{}A\ input\ value\ CutOffWaveLength\ <\ 0\ does\ not\ make\ sense!\ "{}}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Set\ CutOffWaveLength\ to\ 0!"{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\ message,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}\label{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583} 
+\index{openphase::Noise@{openphase::Noise}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Remeshes the storages \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Temperature_a4f468ad73bf630f66285e07bffac1180}{openphase\+::\+Temperature}}, \mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a6a31593f97b24ef93c92263e4b494d6c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{openphase\+::\+Elasticity\+Solver\+Spectral}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a555343a7fc792704f3327dcb175c13c0}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1EquilibriumPartitionDiffusionBinary_a4d423f214e0007c6e5687a0f57639f52}{openphase\+::\+Equilibrium\+Partition\+Diffusion\+Binary}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a4e6f273f5ed0752225c0060c9e044a18}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a1221b1fa875c250991ae2cd0e3ea97af}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{openphase\+::\+Heat\+Diffusion}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_afc0b700a4304af3f7b4ba00a8ace8c7d}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a3ff6f0d72311e580559dd1251806d209}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a0f305e969f2b5970684ccf9f8752a669}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{openphase\+::\+Velocities}}, and \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl_af3aabadeb9bb14d37395dd1ff056e2bc}{openphase\+::\+Elasticity\+Solver\+Spectral\+Impl}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00088}{88}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (void)\ newNx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ (void)\ newNy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ (void)\ newNz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::Noise@{openphase::Noise}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}\label{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013} 
+\index{openphase::Noise@{openphase::Noise}!UpdateRaw@{UpdateRaw}}
+\index{UpdateRaw@{UpdateRaw}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{UpdateRaw()}{UpdateRaw()}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Update\+Raw (\begin{DoxyParamCaption}\item[{int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Updates Raw Driving force. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00192\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ initial\ noise\ distribution}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ initial\ noise\ distribution\ and\ add\ it\ to\ the\ driving\ force}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ initial\ noise}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ *\ real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ new\ noise\ distribution\ in\ order\ to\ able\ to\ interpolate}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ between\ the\ old\ distribution\ and\ the\ new\ one.}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00211\ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ check\ if\ a\ new\ noise\ Distribution\ has\ to\ be\ generated}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(tStep\%\mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}))\ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ noise\ for\ this\ time\ step}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ +=\ real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ global\ maximum\ of\ Raw}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{double}\ Max\ =\ 0.0;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,reduction(max:Max))}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ Max\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(Max,\ abs(\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)));}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ /=\ Max;}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::Noise@{openphase::Noise}!Write@{Write}}
+\index{Write@{Write}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc}\label{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc} 
+\index{openphase::Noise@{openphase::Noise}!WriteVTK@{WriteVTK}}
+\index{WriteVTK@{WriteVTK}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{WriteVTK()}{WriteVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Noise\+::\+Write\+VTK (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+Writes the noise acting on the driving force from phase field with indexB onto phase field with indexA in \doxylink{structopenphase_1_1VTK}{VTK} format. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{Noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00274\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00276\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}Noise"{}},\ \ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k);\}\});}
+\DoxyCodeLine{00279\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00280\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::Noise@{openphase::Noise}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_aea4abe843477bc7208fb796ff57d6ffb}\label{classopenphase_1_1Noise_aea4abe843477bc7208fb796ff57d6ffb} 
+\index{openphase::Noise@{openphase::Noise}!BCells@{BCells}}
+\index{BCells@{BCells}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{BCells}{BCells}}
+{\footnotesize\ttfamily int openphase\+::\+Noise\+::\+BCells}
+
+
+
+Number of boundary cells around the computation domain. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00064}{64}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::Noise@{openphase::Noise}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}\label{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8} 
+\index{openphase::Noise@{openphase::Noise}!CutOffWaveLength@{CutOffWaveLength}}
+\index{CutOffWaveLength@{CutOffWaveLength}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{CutOffWaveLength}{CutOffWaveLength}}
+{\footnotesize\ttfamily double openphase\+::\+Noise\+::\+Cut\+Off\+Wave\+Length}
+
+
+
+Cut off wave length of noise. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00061}{61}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}\label{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e} 
+\index{openphase::Noise@{openphase::Noise}!distribution@{distribution}}
+\index{distribution@{distribution}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{distribution}{distribution}}
+{\footnotesize\ttfamily std\+::normal\+\_\+distribution$<$double$>$ openphase\+::\+Noise\+::distribution\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Random number distribution. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00085}{85}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}\label{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7} 
+\index{openphase::Noise@{openphase::Noise}!FFTBackward@{FFTBackward}}
+\index{FFTBackward@{FFTBackward}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{FFTBackward}{FFTBackward}}
+{\footnotesize\ttfamily fftw\+\_\+plan openphase\+::\+Noise\+::\+FFTBackward\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Plan for the execution of FFTW. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00081}{81}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}\label{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82} 
+\index{openphase::Noise@{openphase::Noise}!fftw\_In@{fftw\_In}}
+\index{fftw\_In@{fftw\_In}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{fftw\_In}{fftw\_In}}
+{\footnotesize\ttfamily fftw\+\_\+complex\texorpdfstring{$\ast$}{*} openphase\+::\+Noise\+::fftw\+\_\+\+In\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+FFTW input pointer. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00079}{79}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}\label{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2} 
+\index{openphase::Noise@{openphase::Noise}!fftw\_Out@{fftw\_Out}}
+\index{fftw\_Out@{fftw\_Out}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{fftw\_Out}{fftw\_Out}}
+{\footnotesize\ttfamily fftw\+\_\+complex\texorpdfstring{$\ast$}{*} openphase\+::\+Noise\+::fftw\+\_\+\+Out\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+FFTW out pointer. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00080}{80}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}\label{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845} 
+\index{openphase::Noise@{openphase::Noise}!FixAmpl@{FixAmpl}}
+\index{FixAmpl@{FixAmpl}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{FixAmpl}{FixAmpl}}
+{\footnotesize\ttfamily double openphase\+::\+Noise\+::\+Fix\+Ampl}
+
+
+
+Cut off wave length of noise. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00062}{62}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}\label{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f} 
+\index{openphase::Noise@{openphase::Noise}!gamma@{gamma}}
+\index{gamma@{gamma}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily double openphase\+::\+Noise\+::gamma}
+
+
+
+Macroscopic response of the system. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00063}{63}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}\label{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb} 
+\index{openphase::Noise@{openphase::Noise}!generator@{generator}}
+\index{generator@{generator}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{generator}{generator}}
+{\footnotesize\ttfamily std\+::default\+\_\+random\+\_\+engine openphase\+::\+Noise\+::generator\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Random number generator. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00084}{84}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}\label{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1} 
+\index{openphase::Noise@{openphase::Noise}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Noise\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00067}{67}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::Noise@{openphase::Noise}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::Noise@{openphase::Noise}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}\label{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600} 
+\index{openphase::Noise@{openphase::Noise}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily int openphase\+::\+Noise\+::\+Nphases}
+
+
+
+Number of phase-\/fields. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00065}{65}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}\label{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac} 
+\index{openphase::Noise@{openphase::Noise}!RandomFourier@{RandomFourier}}
+\index{RandomFourier@{RandomFourier}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{RandomFourier}{RandomFourier}}
+{\footnotesize\ttfamily std\+::complex$<$double$>$\texorpdfstring{$\ast$}{*} openphase\+::\+Noise\+::\+Random\+Fourier\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to storage of Fourier-\/space random number distribution. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00082}{82}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}\label{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0} 
+\index{openphase::Noise@{openphase::Noise}!RandomReal@{RandomReal}}
+\index{RandomReal@{RandomReal}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{RandomReal}{RandomReal}}
+{\footnotesize\ttfamily std\+::complex$<$double$>$\texorpdfstring{$\ast$}{*} openphase\+::\+Noise\+::\+Random\+Real\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to storage of real space random number distribution. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00083}{83}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_aafffea25dec6dbf2543d0bd689b25fbf}\label{classopenphase_1_1Noise_aafffea25dec6dbf2543d0bd689b25fbf} 
+\index{openphase::Noise@{openphase::Noise}!RandomSeed@{RandomSeed}}
+\index{RandomSeed@{RandomSeed}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{RandomSeed}{RandomSeed}}
+{\footnotesize\ttfamily int openphase\+::\+Noise\+::\+Random\+Seed}
+
+
+
+Defines the random number table (used to make results reproducible) 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00069}{69}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}\label{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead} 
+\index{openphase::Noise@{openphase::Noise}!Raw@{Raw}}
+\index{Raw@{Raw}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{Raw}{Raw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ openphase\+::\+Noise\+::\+Raw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Real raw noise, which will be merge into the driving force. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00078}{78}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::Noise@{openphase::Noise}!readable@{readable}}
+\index{readable@{readable}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::Noise@{openphase::Noise}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::Noise@{openphase::Noise}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::Noise@{openphase::Noise}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}\label{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125} 
+\index{openphase::Noise@{openphase::Noise}!TimeSteps@{TimeSteps}}
+\index{TimeSteps@{TimeSteps}!openphase::Noise@{openphase::Noise}}
+\doxysubsubsection{\texorpdfstring{TimeSteps}{TimeSteps}}
+{\footnotesize\ttfamily int openphase\+::\+Noise\+::\+Time\+Steps}
+
+
+
+Number of iteration after which a new noise will be scrabbled. 
+
+
+
+Definition at line \mbox{\hyperlink{Noise_8h_source_l00070}{70}} of file \mbox{\hyperlink{Noise_8h_source}{Noise.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Noise_8h}{Noise.\+h}}\item 
+\mbox{\hyperlink{Noise_8cpp}{Noise.\+cpp}}\end{DoxyCompactItemize}

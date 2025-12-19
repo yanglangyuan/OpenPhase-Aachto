@@ -1,0 +1,360 @@
+\doxysection{openphase\+::Composition1\+Dextension Class Reference}
+\hypertarget{classopenphase_1_1Composition1Dextension}{}\label{classopenphase_1_1Composition1Dextension}\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+
+
+\texorpdfstring{$<$}{<} 1D composition field extension storage  
+
+
+
+
+{\ttfamily \#include "{}Composition.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}} (const size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}, const size\+\_\+t phase\+\_\+index, const size\+\_\+t n\+\_\+comp, \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} direction)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Composition1Dextension}{Composition1\+Dextension}} \& \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac6b31d77b8586465407e7c3ebf91cee3}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1Composition1Dextension}{Composition1\+Dextension}} \&RHS)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_af573e685772d1bc192a46d53e657b343}{set\+BC}} (const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}} ext\+BC)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a393921ba0a0b9c57a59f18a815ab6a18}{set\+Fixed\+BC}} (\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ value)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8daa9d93c606f0f4a5520f09ab1c750a}{move\+Frame}} (const int dx, const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}} ext\+BC)
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{is\+Active}} () const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Returns true if extension was activated, false otherwise \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}} () const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a45ea468864b6ffba8a3c065a3fc695eb}{read}} (std\+::ifstream \&out)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a67f976368ae93f3fbc70f963f7e142a6}{write}} (std\+::ofstream \&out)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9}{Phase\+Index}}
+\begin{DoxyCompactList}\small\item\em Index of thermodynamic phase for the extension. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}
+\begin{DoxyCompactList}\small\item\em Number of chemical components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}
+\begin{DoxyCompactList}\small\item\em Data storage array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a9c061ffefa188866e09ec9481afcf494}{Data\+Dot}}
+\begin{DoxyCompactList}\small\item\em Diffusion increments storage for diffusion solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3ad70e653ba82aa43ed215a27b3b6c10}{Direction}}
+\begin{DoxyCompactList}\small\item\em Selects the extension\textquotesingle{}s direction\+: 0 -\/\texorpdfstring{$>$}{>} direction inactive, 1 -\/\texorpdfstring{$>$}{>} upper boundary extension, -\/1 -\/\texorpdfstring{$>$}{>} lower boundary extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} 1D composition field extension storage 
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00047}{47}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}\label{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::\+Initialize (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{size,  }\item[{const size\+\_\+t}]{phase\+\_\+index,  }\item[{const size\+\_\+t}]{n\+\_\+comp,  }\item[{\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00050}{50}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}\ <=\ 0)\ \textcolor{comment}{//\ Checks\ for\ sufficient\ extension\ size}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}1D\ composition\ extension\ size\ =\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}\ <<\ \textcolor{stringliteral}{"{}\ is\ incorrect!\(\backslash\)n"{}}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}It\ should\ be\ in\ the\ range\ [1,\ inf)\ for\ correct\ operation\(\backslash\)n"{}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\ \textcolor{stringliteral}{"{}Composition1Dextension"{}},\ \textcolor{stringliteral}{"{}Initialize()"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9}{PhaseIndex}}\ =\ phase\_index;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}\ =\ n\_comp;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a4f23c3495787593a39a586da4a6bd697}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}\},1);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a9c061ffefa188866e09ec9481afcf494}{DataDot}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a4f23c3495787593a39a586da4a6bd697}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}\},1);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3ad70e653ba82aa43ed215a27b3b6c10}{Direction}}\ =\ direction;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}\label{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!isActive@{isActive}}
+\index{isActive@{isActive}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool openphase\+::\+Composition1\+Dextension\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Returns true if extension was activated, false otherwise 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00126}{126}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}()\ >\ 0;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a8daa9d93c606f0f4a5520f09ab1c750a}\label{classopenphase_1_1Composition1Dextension_a8daa9d93c606f0f4a5520f09ab1c750a} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!moveFrame@{moveFrame}}
+\index{moveFrame@{moveFrame}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{moveFrame()}{moveFrame()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}}}]{ext\+BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ext\+BC} & Moves the data according to the moving frame motion \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00112}{112}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dx\ >\ 0)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ (\textcolor{keywordtype}{long}\ int)\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}();\ x++)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(x)\ =\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(x+dx);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dx\ <\ 0)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ x\ =\ (\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int})\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}()\ -\/\ 1;\ x\ >=\ 0;\ x-\/-\/)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(x)\ =\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(x+dx);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_af573e685772d1bc192a46d53e657b343}{setBC}}(extBC);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_ac6b31d77b8586465407e7c3ebf91cee3}\label{classopenphase_1_1Composition1Dextension_ac6b31d77b8586465407e7c3ebf91cee3} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Composition1Dextension}{Composition1\+Dextension}} \& openphase\+::\+Composition1\+Dextension\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Composition1Dextension}{Composition1\+Dextension}} \&}]{RHS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00068}{68}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}\ \ \ \ =\ RHS.Data;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a9c061ffefa188866e09ec9481afcf494}{DataDot}}\ =\ RHS.DataDot;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3ad70e653ba82aa43ed215a27b3b6c10}{Direction}}\ =\ RHS.Direction;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9}{PhaseIndex}}\ =\ RHS.PhaseIndex;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}\ =\ RHS.Ncomp;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a45ea468864b6ffba8a3c065a3fc695eb}\label{classopenphase_1_1Composition1Dextension_a45ea468864b6ffba8a3c065a3fc695eb} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!read@{read}}
+\index{read@{read}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00134}{134}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ out.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a1f571ff78fe9f2d34948b4e6b3e9698b}{data}}()),\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a844e6591dcc678b2a3acafc9e659aff7}{total\_size}}()*\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_af573e685772d1bc192a46d53e657b343}\label{classopenphase_1_1Composition1Dextension_af573e685772d1bc192a46d53e657b343} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!setBC@{setBC}}
+\index{setBC@{setBC}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{setBC()}{setBC()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::set\+BC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}}}]{ext\+BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ext\+BC} & Sets no-\/flux boundary condition at the far end of the extension \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00078}{78}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(extBC)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ message\ =\ std::string(\textcolor{stringliteral}{"{}If\ 1D\ composition\ extension\ is\ active,\ periodic\ boundary\ conditions\(\backslash\)n"{}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::string(\textcolor{stringliteral}{"{}along\ the\ extension\ dimension\ are\ not\ permitted.\(\backslash\)n"{}})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::string(\textcolor{stringliteral}{"{}Permitted\ boundary\ conditions:\ NoFlux,\ Free\ and\ Fixed."{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(message,\ \textcolor{stringliteral}{"{}Composition1Dextension"{}},\ \textcolor{stringliteral}{"{}setBC()"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba2403def5083f02105e7802b3b315681e}{BoundaryConditionTypes::Mirror}}:}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}())\ =\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}()-\/1);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bab24ce0cd392a5b0b8dedc66c25213594}{BoundaryConditionTypes::Free}}:}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}())\ =\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}()-\/1)*2.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}()-\/2);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a393921ba0a0b9c57a59f18a815ab6a18}\label{classopenphase_1_1Composition1Dextension_a393921ba0a0b9c57a59f18a815ab6a18} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!setFixedBC@{setFixedBC}}
+\index{setFixedBC@{setFixedBC}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{setFixedBC()}{setFixedBC()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::set\+Fixed\+BC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Sets fixed composition at the far end of the extension to the specified value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00108}{108}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}{size}}())\ =\ value;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf}\label{classopenphase_1_1Composition1Dextension_a8982c27eb891a58a70a6ae5879cffdaf} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!size@{size}}
+\index{size@{size}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Composition1\+Dextension\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00130}{130}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_ab6b84d3df97805c436511a372c5b9352}{size}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a67f976368ae93f3fbc70f963f7e142a6}\label{classopenphase_1_1Composition1Dextension_a67f976368ae93f3fbc70f963f7e142a6} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!write@{write}}
+\index{write@{write}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void openphase\+::\+Composition1\+Dextension\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00138}{138}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a1f571ff78fe9f2d34948b4e6b3e9698b}{data}}()),\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a844e6591dcc678b2a3acafc9e659aff7}{total\_size}}()*\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}{Ncomp}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}\label{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!Data@{Data}}
+\index{Data@{Data}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$double,1$>$ openphase\+::\+Composition1\+Dextension\+::\+Data}
+
+
+
+Data storage array. 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00146}{146}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+\Hypertarget{classopenphase_1_1Composition1Dextension_a9c061ffefa188866e09ec9481afcf494}\label{classopenphase_1_1Composition1Dextension_a9c061ffefa188866e09ec9481afcf494} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!DataDot@{DataDot}}
+\index{DataDot@{DataDot}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{DataDot}{DataDot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage1D}{Storage1D}}$<$double,1$>$ openphase\+::\+Composition1\+Dextension\+::\+Data\+Dot}
+
+
+
+Diffusion increments storage for diffusion solver. 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00147}{147}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+\Hypertarget{classopenphase_1_1Composition1Dextension_a3ad70e653ba82aa43ed215a27b3b6c10}\label{classopenphase_1_1Composition1Dextension_a3ad70e653ba82aa43ed215a27b3b6c10} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!Direction@{Direction}}
+\index{Direction@{Direction}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} openphase\+::\+Composition1\+Dextension\+::\+Direction}
+
+
+
+Selects the extension\textquotesingle{}s direction\+: 0 -\/\texorpdfstring{$>$}{>} direction inactive, 1 -\/\texorpdfstring{$>$}{>} upper boundary extension, -\/1 -\/\texorpdfstring{$>$}{>} lower boundary extension. 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00148}{148}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+\Hypertarget{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221}\label{classopenphase_1_1Composition1Dextension_a5f96a4133f8824601741450446909221} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!Ncomp@{Ncomp}}
+\index{Ncomp@{Ncomp}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{Ncomp}{Ncomp}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Composition1\+Dextension\+::\+Ncomp}
+
+
+
+Number of chemical components. 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00144}{144}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+\Hypertarget{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9}\label{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9} 
+\index{openphase::Composition1Dextension@{openphase::Composition1Dextension}!PhaseIndex@{PhaseIndex}}
+\index{PhaseIndex@{PhaseIndex}!openphase::Composition1Dextension@{openphase::Composition1Dextension}}
+\doxysubsubsection{\texorpdfstring{PhaseIndex}{PhaseIndex}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Composition1\+Dextension\+::\+Phase\+Index}
+
+
+
+Index of thermodynamic phase for the extension. 
+
+
+
+Definition at line \mbox{\hyperlink{Composition_8h_source_l00143}{143}} of file \mbox{\hyperlink{Composition_8h_source}{Composition.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Composition_8h}{Composition.\+h}}\end{DoxyCompactItemize}

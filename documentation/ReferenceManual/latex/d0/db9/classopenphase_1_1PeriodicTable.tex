@@ -1,0 +1,1070 @@
+\doxysection{openphase\+::Periodic\+Table Class Reference}
+\hypertarget{classopenphase_1_1PeriodicTable}{}\label{classopenphase_1_1PeriodicTable}\index{openphase::PeriodicTable@{openphase::PeriodicTable}}
+
+
+\texorpdfstring{$<$}{<} Stores the properties of all chemical elements in the periodic table  
+
+
+
+
+{\ttfamily \#include "{}Periodic\+Table.\+h"{}}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Data structure for chemical element \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1PeriodicTable_a89eecb17534a85b8f9c72764e77c4e4b}{Periodic\+Table}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a}{Initialize}} (void)
+\item 
+\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}} \mbox{\hyperlink{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}{Get\+Data}} (std\+::string Name) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}} $>$ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores the properties of all chemical elements in the periodic table 
+
+Definition at line \mbox{\hyperlink{PeriodicTable_8h_source_l00035}{35}} of file \mbox{\hyperlink{PeriodicTable_8h_source}{Periodic\+Table.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1PeriodicTable_a89eecb17534a85b8f9c72764e77c4e4b}\label{classopenphase_1_1PeriodicTable_a89eecb17534a85b8f9c72764e77c4e4b} 
+\index{openphase::PeriodicTable@{openphase::PeriodicTable}!PeriodicTable@{PeriodicTable}}
+\index{PeriodicTable@{PeriodicTable}!openphase::PeriodicTable@{openphase::PeriodicTable}}
+\doxysubsubsection{\texorpdfstring{PeriodicTable()}{PeriodicTable()}}
+{\footnotesize\ttfamily openphase\+::\+Periodic\+Table\+::\+Periodic\+Table (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PeriodicTable_8h_source_l00047}{47}} of file \mbox{\hyperlink{PeriodicTable_8h_source}{Periodic\+Table.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}\label{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163} 
+\index{openphase::PeriodicTable@{openphase::PeriodicTable}!GetData@{GetData}}
+\index{GetData@{GetData}!openphase::PeriodicTable@{openphase::PeriodicTable}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}} openphase\+::\+Periodic\+Table\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PeriodicTable_8h_source_l00997}{997}} of file \mbox{\hyperlink{PeriodicTable_8h_source}{Periodic\+Table.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00998\ \ \ \ \ \{}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ std::transform(Name.begin(),\ Name.end(),\ Name.begin(),\ ::toupper);\ \ \ \ \ \ \textcolor{comment}{//Change\ "{}Element"{}\ to\ upper\ cases\ only}}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.size();\ n++)}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Name\ ==\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}[n].Name)}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}[n];}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ Element\ temp;}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ temp.Name\ =\ Name;}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ temp.FullName\ =\ Name;}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 100;}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 100.0;}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 1E-\/5;}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Could\ not\ find\ Element\ "{}\ <<\ Name}}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<<\ "{}\ in\ PeriodicTable.h!\ Used\ Custom\ Element\ instead!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{01016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a}\label{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a} 
+\index{openphase::PeriodicTable@{openphase::PeriodicTable}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::PeriodicTable@{openphase::PeriodicTable}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Periodic\+Table\+::\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PeriodicTable_8h_source_l00048}{48}} of file \mbox{\hyperlink{PeriodicTable_8h_source}{Periodic\+Table.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Element\ temp;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}H"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Hydrogen"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 1;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 1.008;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 11.42E-\/6;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}HE"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Helium"{}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 2;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 4.003;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 21.00E-\/6;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}LI"{}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Lithium"{}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 3;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 6.940;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.02E-\/6;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BE"{}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Beryllium"{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 4;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 9.012;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 4.85E-\/6;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}B"{}};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Boron"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 5;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 10.810;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 4.39E-\/6;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}C"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Carbon"{}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 6;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 12.011;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 5.31E-\/6;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}N"{}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Nitrogen"{}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 7;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 14.007;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.54E-\/6;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}O"{}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Oxygen"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 8;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 15.999;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.36E-\/6;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}F"{}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Fluorine"{}};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 9;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 18.998;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 11.20E-\/6;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NE"{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Neon"{}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 10;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 20.180;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.23E-\/6;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NA"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Sodium"{}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 11;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 22.990;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 23.78E-\/6;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MG"{}};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Magnesium"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 12;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 24.305;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 14.00E-\/6;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AL"{}};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Aluminium"{}};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 13;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 26.982;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.00E-\/6;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SI"{}};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Silicon"{}};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 14;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 28.085;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 12.06E-\/6;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}P"{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Phosphorus"{}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 15;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 30.974;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.02E-\/6;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}S"{}};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Sulfur"{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 16;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 32.060;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 15.53E-\/6;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CL"{}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Chlorine"{}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 17;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 35.450;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.39E-\/6;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AR"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Argon"{}};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 18;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 39.948;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 22.56E-\/6;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}K"{}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Potassium"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 19;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 39.098;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 45.94E-\/6;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CA"{}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Calcium"{}};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 20;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 40.078;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 26.20E-\/6;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SC"{}};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Scandium"{}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 21;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 44.956;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 15.00E-\/6;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TI"{}};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Titanium"{}};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 22;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 47.867;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.64E-\/6;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}V"{}};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Vanadium"{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 23;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 50.942;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.32E-\/6;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CR"{}};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Chromium"{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 24;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 51.996;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 7.23E-\/6;}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MN"{}};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Manganese"{}};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 25;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 54.938;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 7.35E-\/6;}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}FE"{}};}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Iron"{}};}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 26;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 55.845;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 7.09E-\/6;}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CO"{}};}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Cobalt"{}};}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 27;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 58.933;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 6.67E-\/6;}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NI"{}};}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Nickel"{}};}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 28;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 58.693;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 6.59E-\/6;}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CU"{}};}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Copper"{}};}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 29;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 63.546;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 7.11E-\/6;}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}ZN"{}};}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Zinc"{}};}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 30;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 65.380;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 9.16E-\/6;}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}GA"{}};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Gallium"{}};}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 31;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 69.723;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 11.80E-\/6;}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}GE"{}};}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Germanium"{}};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 32;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 72.630;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.63E-\/6;}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AS"{}};}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Arsenic"{}};}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 33;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 74.922;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 12.95E-\/6;}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SE"{}};}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Selenium"{}};}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 34;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 78.971;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 16.42E-\/6;}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BR"{}};}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Bromine"{}};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 35;}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 79.904;}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.78E-\/6;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}KR"{}};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Krypton"{}};}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 36;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 83.798;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 27.99E-\/6;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RB"{}};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Rubidium"{}};}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 37;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 85.468;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 55.76E-\/6;}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SR"{}};}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Strontium"{}};}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 38;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 87.620;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 33.94E-\/6;}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}Y"{}};}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Yttrium"{}};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 39;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 88.906;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.88E-\/6;}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}ZR"{}};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Zirconium"{}};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 40;}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 91.224;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 14.02E-\/6;}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NB"{}};}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Niobium"{}};}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 41;}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 92.906;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.83E-\/6;}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MO"{}};}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Molybdenum"{}};}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 42;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 95.951;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 9.38E-\/6;}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TC"{}};}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Technetium"{}};}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 43;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 98.906;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.63E-\/6;}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RU"{}};}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Ruthenium"{}};}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 44;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 101.072;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.17E-\/6;}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RH"{}};}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Rhodium"{}};}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 45;}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 102.906;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.28E-\/6;}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PD"{}};}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Palladium"{}};}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 46;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 106.421;}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.56E-\/6;}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AG"{}};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Silver"{}};}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 47;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 107.868;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.27E-\/6;}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CD"{}};}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Cadmium"{}};}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 48;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 112.414;}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.00E-\/6;}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}IN"{}};}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Indium"{}};}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 49;}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 114.818;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 15.76E-\/6;}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SN"{}};}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Tin"{}};}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 50;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 118.710;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 16.29E-\/6;}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SB"{}};}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Antimony"{}};}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 51;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 121.760;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 18.19E-\/6;}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TE"{}};}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Tellurium"{}};}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 52;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 127.603;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 20.46E-\/6;}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}I"{}};}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Iodine"{}};}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 53;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 126.904;}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 25.72E-\/6;}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}XE"{}};}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Xenon"{}};}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 54;}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 131.293;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 35.92E-\/6;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CS"{}};}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Caesium"{}};}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 55;}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 132.905;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 70.94E-\/6;}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BA"{}};}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Barium"{}};}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 56;}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 137.327;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 38.16E-\/6;}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}LA"{}};}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Lanthanum"{}};}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 57;}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 138.905;}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 22.39E-\/6;}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CE"{}};}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Cerium"{}};}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 58;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 140.116;}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 20.69E-\/6;}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PR"{}};}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Praseodymium"{}};}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 59;}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 140.908;}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 20.80E-\/6;}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}ND"{}};}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Neodymium"{}};}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 60;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 144.242;}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 20.59E-\/6;}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PM"{}};}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Promethium"{}};}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 61;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 146.915;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 20.10E-\/6;}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SM"{}};}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Samarium"{}};}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 62;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 150.362;}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.98E-\/6;}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}EU"{}};}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Europium"{}};}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 63;}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 151.964;}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 28.97E-\/6;}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}GD"{}};}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Gadolinium"{}};}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 64;}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 157.253;}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.90E-\/6;}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TB"{}};}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Terbium"{}};}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 65;}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 158.925;}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.30E-\/6;}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}DY"{}};}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Dysprosium"{}};}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 66;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 162.500;}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.01E-\/6;}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}HO"{}};}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Holmium"{}};}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 67;}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 164.930;}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 18.74E-\/6;}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}ER"{}};}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Erbium"{}};}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 68;}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 167.259;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 18.46E-\/6;}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TM"{}};}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Thulium"{}};}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 69;}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 168.934;}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.10E-\/6;}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}YB"{}};}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Ytterbium"{}};}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 70;}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 173.045;}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 24.84E-\/6;}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}LU"{}};}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Lutetium"{}};}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 71;}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 174.967;}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.78E-\/6;}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}HF"{}};}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Hafnium"{}};}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 72;}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 178.492;}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 13.44E-\/6;}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TA"{}};}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Tantalum"{}};}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 73;}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 180.948;}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.85E-\/6;}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}W"{}};}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Tungsten"{}};}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 74;}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 183.841;}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 9.47E-\/6;}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RE"{}};}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Rhenium"{}};}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 75;}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 186.207;}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.86E-\/6;}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}OS"{}};}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Osmium"{}};}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 76;}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 190.233;}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.42E-\/6;}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}IR"{}};}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Iridium"{}};}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 77;}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 192.217;}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 8.52E-\/6;}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PT"{}};}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Platinum"{}};}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 78;}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 195.084;}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 9.09E-\/6;}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AU"{}};}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Gold"{}};}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 79;}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 196.967;}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 10.21E-\/6;}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}HG"{}};}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Mercury"{}};}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 80;}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 200.592;}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 14.09E-\/6;}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TL"{}};}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Thallium"{}};}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 81;}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 204.382;}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.22E-\/6;}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PB"{}};}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Lead"{}};}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 82;}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 207.210;}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 18.26E-\/6;}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BI"{}};}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Bismuth"{}};}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 83;}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 208.980;}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 21.31E-\/6;}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PO"{}};}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Polonium"{}};}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 84;}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 209.980;}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 22.97E-\/6;}
+\DoxyCodeLine{00721\ }
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AT"{}};}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Astatine"{}};}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 85;}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 209.987;}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RN"{}};}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Radon"{}};}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 86;}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 222.000;}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 50.50E-\/6;}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}FR"{}};}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Francium"{}};}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 87;}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 223.020;}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RA"{}};}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Radium"{}};}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 88;}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 226.025;}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 41.09E-\/6;}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AC"{}};}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Actinium"{}};}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 89;}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 227.028;}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 22.55E-\/6;}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TH"{}};}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Thorium"{}};}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 90;}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 232.038;}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 19.80E-\/6;}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PA"{}};}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Protactinium"{}};}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 91;}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 231.036;}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 15.18E-\/6;}
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}U"{}};}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Uranium"{}};}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 92;}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 238.029;}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 12.49E-\/6;}
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NP"{}};}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Neptunium"{}};}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 93;}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 237.048;}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 11.59E-\/6;}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}PU"{}};}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Plutonium"{}};}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 94;}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 244.064;}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 12.29E-\/6;}
+\DoxyCodeLine{00801\ }
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}AM"{}};}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Americium"{}};}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 95;}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 243.061;}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 17.78E-\/6;}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CM"{}};}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Curium"{}};}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 96;}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 247.070;}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 18.05E-\/6;}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BK"{}};}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Berkelium"{}};}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 97;}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 247.0;}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 16.84E-\/6;}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00827\ }
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CF"{}};}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Californium"{}};}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 98;}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 251.0;}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ 16.50E-\/6;}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}ES"{}};}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Einsteinium"{}};}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 99;}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 252.0;}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00843\ }
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}FM"{}};}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Fermium"{}};}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 100;}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 257.095;}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MD"{}};}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Mendelevium"{}};}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 101;}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 258.0;}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00857\ }
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NO"{}};}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Nobelium"{}};}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 102;}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 259.0;}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00867\ }
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}LR"{}};}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Lawrencium"{}};}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 103;}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 266.0;}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00873\ }
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00875\ }
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RD"{}};}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Rutherfordium"{}};}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 104;}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 261.109;}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00881\ }
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}DB"{}};}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Dubnium"{}};}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 105;}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 262.114;}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00891\ }
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}SG"{}};}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Seaborgium"{}};}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 106;}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 263.118;}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00899\ }
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}BH"{}};}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Bohrium"{}};}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 107;}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 262.123;}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00905\ }
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}HS"{}};}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Hassium"{}};}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 108;}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 265.0;}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00915\ }
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MT"{}};}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Meitnerium"{}};}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 109;}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 268.0;}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}DS"{}};}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Darmstadtium"{}};}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 110;}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 281.;}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.;}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}RG"{}};}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Roentgenium"{}};}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 111;}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 280.0;}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00939\ }
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}CN"{}};}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Copernicium"{}};}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 112;}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 277.0;}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00945\ }
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00947\ }
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}NH"{}};}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Nihonium"{}};}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 113;}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 287.;}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.;}
+\DoxyCodeLine{00953\ }
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00955\ }
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}FL"{}};}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Flerovium"{}};}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 114;}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 289.0;}
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00961\ }
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00963\ }
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}MC"{}};}
+\DoxyCodeLine{00965\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Moscovium"{}};}
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 115;}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 288.0;}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00969\ }
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00971\ }
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}LV"{}};}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Livermorium"{}};}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 116;}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 293.0;}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00977\ }
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00979\ }
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}TS"{}};}
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Tennessine"{}};}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 117;}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 292.0;}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00985\ }
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00987\ }
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ temp.Name\ =\ \textcolor{stringliteral}{"{}OG"{}};}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ temp.FullName\ =\ \textcolor{stringliteral}{"{}Oganesson"{}};}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ temp.AtomicNumber\ =\ 118;}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ temp.AtomicWeight\ =\ 294.0;}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ temp.MolarVolume\ \ =\ -\/1.0;}
+\DoxyCodeLine{00993\ }
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{00995\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}\label{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977} 
+\index{openphase::PeriodicTable@{openphase::PeriodicTable}!Data@{Data}}
+\index{Data@{Data}!openphase::PeriodicTable@{openphase::PeriodicTable}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}$>$ openphase\+::\+Periodic\+Table\+::\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PeriodicTable_8h_source_l01020}{1020}} of file \mbox{\hyperlink{PeriodicTable_8h_source}{Periodic\+Table.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PeriodicTable_8h}{Periodic\+Table.\+h}}\end{DoxyCompactItemize}

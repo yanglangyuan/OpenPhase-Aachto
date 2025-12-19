@@ -1,0 +1,118 @@
+\doxysection{Spherical\+Harmonics.\+h}
+\hypertarget{SphericalHarmonics_8h_source}{}\label{SphericalHarmonics_8h_source}\index{SphericalHarmonics.h@{SphericalHarmonics.h}}
+\mbox{\hyperlink{SphericalHarmonics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2016}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ SPHERICALHARMONICS\_H}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ SPHERICALHARMONICS\_H}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00035}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics}{SphericalHarmonics}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00037}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aadb74ffb21853a771a59e89c5d47327f}{00037}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aadb74ffb21853a771a59e89c5d47327f}{operator()}}(\textcolor{keywordtype}{int}\ theta,\ \textcolor{keywordtype}{int}\ phi,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ theta*10\ +\ phi;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ myReturn\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(index)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 00:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}{Y00}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}{Y10}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}{Y11}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 20:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}{Y20}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 21:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}{Y21}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 22:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}{Y22}}(x,y,z);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Non\ existing\ spherical\ harmonic\ implementation\ is\ called!"{}}\ ,\ \textcolor{stringliteral}{"{}SphericalHarmonics"{}},\ \textcolor{stringliteral}{"{}operator()"{}});}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ myReturn;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00082}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}{00082}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}{Y00}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*sqrt(1.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00086}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}{00086}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}{Y10}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(3.0/(4.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}))*z;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00090}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}{00090}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}{Y11}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(3.0/(4.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}))*x;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00094}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}{00094}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}{Y20}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.25*sqrt(5.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(3.0*z*z-\/1.0);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00098}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}{00098}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}{Y21}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*sqrt(15.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*z*x;}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00102}\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}{00102}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}{Y22}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.25*sqrt(15.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(x*x\ -\/\ y*y);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00107}00107\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00108}00108\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00109}00109\ \};}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00110}\mbox{\hyperlink{namespaceopenphase_a52acd77d32b7b840870452933c07a3d5}{00110}}\ \ \ \ \ \textcolor{keyword}{typedef}\ double\ (\mbox{\hyperlink{classopenphase_1_1SphericalHarmonics}{SphericalHarmonics}}::*\mbox{\hyperlink{namespaceopenphase_a52acd77d32b7b840870452933c07a3d5}{sh}})(int\ theta,\ int\ phi);}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00111}00111\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{SphericalHarmonics_8h_source_l00112}00112\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,1368 @@
+\doxysection{openphase\+::Linear\+Magnetic\+Solver Class Reference}
+\hypertarget{classopenphase_1_1LinearMagneticSolver}{}\label{classopenphase_1_1LinearMagneticSolver}\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+
+
+{\ttfamily \#include "{}Linear\+Magnetic\+Solver.\+h"{}}
+
+Inheritance diagram for openphase\+::Linear\+Magnetic\+Solver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/de8/classopenphase_1_1LinearMagneticSolver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aba3e1a11a23d1e9eac930d3bd8d3431f}{Linear\+Magnetic\+Solver}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac646f7c205bb84d65e4c60c024966226}{Linear\+Magnetic\+Solver}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a11b72b1623d9b9600416b5fa5d8a49bb}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a3aa4f5b0e24f564e628bd69c88bcd275}{Read\+Input}} (std\+::stringstream \&inp) override
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a0e68b84fa4163fa58767dc5e6e48b889}{Set\+Effective\+Susceptibility}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a366163b53e867fe2eee987deb2e309b9}{Solve}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double Max\+Residual)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a945ff07f7167b5a60b24f5a51a83e828}{Calc\+Force\+Density}} (\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&EP, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aede6578d875c2609e5c4fd5f783e7079}{Write\+VTK}} (const int t\+Step, const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings)
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}} (const int i, const int j, const int k) const
+\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aeac15ed219730c605fc80a3d7a0bad12}{mu}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Magnetic permeability. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa350a0174ca85f6f3cbca8b7d8f4610d}{H0}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Magnetic susceptibility. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3}{H}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Magnetic field strength or H-\/\+Field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Magnetic flux density or B-\/\+Field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa8a638e8393c69860a9217f0de70435e}{M}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Material magnetization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae380275b284f1be9411efd43b855882d}{Force\+Density}} (const int i, const int j, const int k) const
+\begin{DoxyCompactList}\small\item\em Magnetic Force Density Field. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input}} (const std\+::string Input\+File\+Name)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a9a7696bf13bb3e6b88a6965937aafdbb}{Read\+Input}} (std\+::stringstream \&inp)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}
+\begin{DoxyCompactList}\small\item\em Magnetic susceptibility. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}
+\begin{DoxyCompactList}\small\item\em Magnetic potential field. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}{H0x}}
+\begin{DoxyCompactList}\small\item\em x-\/component of external H-\/\+Field \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}{H0y}}
+\begin{DoxyCompactList}\small\item\em y-\/component of external H-\/\+Field \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}{H0z}}
+\begin{DoxyCompactList}\small\item\em z-\/component of external H-\/\+Field \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{d\+H0x\+\_\+dx}}
+\begin{DoxyCompactList}\small\item\em x-\/component of external H-\/\+Field gradient in x-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}{d\+H0y\+\_\+dx}}
+\begin{DoxyCompactList}\small\item\em y-\/component of external H-\/\+Field gradient in x-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}{d\+H0z\+\_\+dx}}
+\begin{DoxyCompactList}\small\item\em z-\/component of external H-\/\+Field gradient in x-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}{d\+H0x\+\_\+dy}}
+\begin{DoxyCompactList}\small\item\em x-\/component of external H-\/\+Field gradient in y-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{d\+H0y\+\_\+dy}}
+\begin{DoxyCompactList}\small\item\em y-\/component of external H-\/\+Field gradient in y-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}{d\+H0z\+\_\+dy}}
+\begin{DoxyCompactList}\small\item\em z-\/component of external H-\/\+Field gradient in y-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}{d\+H0x\+\_\+dz}}
+\begin{DoxyCompactList}\small\item\em x-\/component of external H-\/\+Field gradient in z-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}{d\+H0y\+\_\+dz}}
+\begin{DoxyCompactList}\small\item\em y-\/component of external H-\/\+Field gradient in z-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{d\+H0z\+\_\+dz}}
+\begin{DoxyCompactList}\small\item\em z-\/component of external H-\/\+Field gradient in z-\/direction \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962}{Nphases}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a2cd0524cbba0806060749482875d7f08}{Max\+Iterations}}
+\begin{DoxyCompactList}\small\item\em Maximal residual value for iteration to stop. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375}{Phase\+Chi}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}{x}}
+\item 
+\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{Sparse\+Matrix\+CSR}} \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00040}{40}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aba3e1a11a23d1e9eac930d3bd8d3431f}\label{classopenphase_1_1LinearMagneticSolver_aba3e1a11a23d1e9eac930d3bd8d3431f} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!LinearMagneticSolver@{LinearMagneticSolver}}
+\index{LinearMagneticSolver@{LinearMagneticSolver}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{LinearMagneticSolver()}{LinearMagneticSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Linear\+Magnetic\+Solver\+::\+Linear\+Magnetic\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00045}{45}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ac646f7c205bb84d65e4c60c024966226}\label{classopenphase_1_1LinearMagneticSolver_ac646f7c205bb84d65e4c60c024966226} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!LinearMagneticSolver@{LinearMagneticSolver}}
+\index{LinearMagneticSolver@{LinearMagneticSolver}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{LinearMagneticSolver()}{LinearMagneticSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Linear\+Magnetic\+Solver\+::\+Linear\+Magnetic\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a11b72b1623d9b9600416b5fa5d8a49bb}{Initialize}}(locSettings);}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}\label{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!B@{B}}
+\index{B@{B}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{B()}{B()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Linear\+Magnetic\+Solver\+::B (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Magnetic flux density or B-\/\+Field. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00122}{122}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3}{H}}(i,j,k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aeac15ed219730c605fc80a3d7a0bad12}{mu}}(i,j,k);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a945ff07f7167b5a60b24f5a51a83e828}\label{classopenphase_1_1LinearMagneticSolver_a945ff07f7167b5a60b24f5a51a83e828} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!CalcForceDensity@{CalcForceDensity}}
+\index{CalcForceDensity@{CalcForceDensity}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{CalcForceDensity()}{CalcForceDensity()}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Calc\+Force\+Density (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&}]{EP,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00244\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{if}(EP.ConsiderExternalForces)}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,EP.ForceDensity,0)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ EP.ForceDensity(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae380275b284f1be9411efd43b855882d}{ForceDensity}}(i,j,k);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ BC.SetX(EP.ForceDensity);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ BC.SetY(EP.ForceDensity);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ BC.SetZ(EP.ForceDensity);}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00257\ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}ForceDensity\ Storage\ not\ allocated!"{}},\ \textcolor{stringliteral}{"{}LinearMagneticSolver"{}},\ \textcolor{stringliteral}{"{}CalcForceDensity"{}});}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ae380275b284f1be9411efd43b855882d}\label{classopenphase_1_1LinearMagneticSolver_ae380275b284f1be9411efd43b855882d} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!ForceDensity@{ForceDensity}}
+\index{ForceDensity@{ForceDensity}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{ForceDensity()}{ForceDensity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Linear\+Magnetic\+Solver\+::\+Force\+Density (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Magnetic Force Density Field. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00134}{134}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ dMatrix3x3\ gradB;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ gradB(0,0)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i+1,j,k)[0]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i-\/1,j,k)[0])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ gradB(0,1)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j+1,k)[0]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j-\/1,k)[0])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ gradB(0,2)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k+1)[0]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k-\/1)[0])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ gradB(1,0)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i+1,j,k)[1]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i-\/1,j,k)[1])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ gradB(1,1)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j+1,k)[1]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j-\/1,k)[1])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ gradB(1,2)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k+1)[1]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k-\/1)[1])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ gradB(2,0)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i+1,j,k)[2]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i-\/1,j,k)[2])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ gradB(2,1)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j+1,k)[2]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j-\/1,k)[2])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ gradB(2,2)\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k+1)[2]-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}(i,j,k-\/1)[2])/(2.0*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}})\ :\ 0.0;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gradB*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa8a638e8393c69860a9217f0de70435e}{M}}(i,j,k);}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3}\label{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!H@{H}}
+\index{H@{H}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{H()}{H()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Linear\+Magnetic\+Solver\+::H (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Magnetic field strength or H-\/\+Field. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00109}{109}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dx\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i+1,j,k)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i-\/1,j,k))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0.0;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dy\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i,j+1,k)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i,j-\/1,k))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0.0;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dz\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i,j,k+1)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i,j,k-\/1))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0.0;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hx\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}{H0x}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{dH0x\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}{dH0x\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}{dH0x\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ -\/\ dchi\_dx;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hy\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}{H0y}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}{dH0y\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{dH0y\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}{dH0y\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ -\/\ dchi\_dy;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hz\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}{H0z}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}{dH0z\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}{dH0z\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{dH0z\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ -\/\ dchi\_dz;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dVector3(\{Hx,Hy,Hz\});}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aa350a0174ca85f6f3cbca8b7d8f4610d}\label{classopenphase_1_1LinearMagneticSolver_aa350a0174ca85f6f3cbca8b7d8f4610d} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!H0@{H0}}
+\index{H0@{H0}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{H0()}{H0()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Linear\+Magnetic\+Solver\+::\+H0 (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Magnetic susceptibility. 
+
+Magnetic field strength or H-\/\+Field 
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00100}{100}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hx\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}{H0x}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{dH0x\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}{dH0x\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}{dH0x\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hy\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}{H0y}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}{dH0y\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{dH0y\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}{dH0y\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hz\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}{H0z}}\ +\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}{dH0z\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}{dH0z\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{dH0z\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dVector3(\{Hx,Hy,Hz\});}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}\label{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!idx@{idx}}
+\index{idx@{idx}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{idx()}{idx()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Linear\+Magnetic\+Solver\+::idx (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00082}{82}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i+\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}*(j+\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*k);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a11b72b1623d9b9600416b5fa5d8a49bb}\label{classopenphase_1_1LinearMagneticSolver_a11b72b1623d9b9600416b5fa5d8a49bb} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}LinearMagneticSolver"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ Bcells\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}},\ 2);}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}},\ Bcells);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}},\ Bcells);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}.\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a9cc5505efc1a2ca8ea73779104f6fabc}{Allocate}}(N,7);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}}.resize(N);}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}{x}}.resize(N);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f}{ConsoleOutput::Write}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aa8a638e8393c69860a9217f0de70435e}\label{classopenphase_1_1LinearMagneticSolver_aa8a638e8393c69860a9217f0de70435e} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!M@{M}}
+\index{M@{M}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{M()}{M()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Linear\+Magnetic\+Solver\+::M (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Material magnetization. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00128}{128}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3}{H}}(i,j,k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k);}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aeac15ed219730c605fc80a3d7a0bad12}\label{classopenphase_1_1LinearMagneticSolver_aeac15ed219730c605fc80a3d7a0bad12} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!mu@{mu}}
+\index{mu@{mu}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{mu()}{mu()}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::mu (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Magnetic permeability. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00088}{88}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k)\ +\ 1)*\mbox{\hyperlink{structopenphase_1_1PhysicalConstants_a54a680502c8f02234e8a5bb9dad693f1}{PhysicalConstants::mu\_0}};}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Read@{Read}}
+\index{Read@{Read}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a9c766ff0ddd3866b7c2f2f83ebebcf31}\label{classopenphase_1_1LinearMagneticSolver_a9c766ff0ddd3866b7c2f2f83ebebcf31} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Reads input data from the user specified input file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00069}{69}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ (void)\ InputFileName;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3}\label{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ std::fstream\ inp(InputFileName.c\_str(),\ std::ios::in);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ "{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\ could\ not\ be\ opened"{}},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}LinearMagneticSolver"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00081\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3}{ReadInput}}(data);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a9a7696bf13bb3e6b88a6965937aafdbb}\label{classopenphase_1_1LinearMagneticSolver_a9a7696bf13bb3e6b88a6965937aafdbb} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & Reads input data from the user specified stringstream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00074}{74}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ (void)\ inp;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a3aa4f5b0e24f564e628bd69c88bcd275}\label{classopenphase_1_1LinearMagneticSolver_a3aa4f5b0e24f564e628bd69c88bcd275} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}{H0x}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0X"{}},\ \ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}{H0y}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0Y"{}},\ \ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}{H0z}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0Z"{}},\ \ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{dH0x\_dx}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0XX"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}{dH0y\_dx}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0YX"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}{dH0z\_dx}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0ZX"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}{dH0x\_dy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0XY"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{dH0y\_dy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0YY"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}{dH0z\_dy}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0ZY"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}{dH0x\_dz}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0XZ"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}{dH0y\_dz}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0YZ"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{dH0z\_dz}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}H0ZZ"{}},\ \ \ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//MaxResidual\ =\ UserInterface::ReadParameterD(inp,\ moduleLocation,"{}MaxRes"{},\ false,\ 1.0e-\/2);}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375}{PhaseChi}}.resize(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962}{Nphases}});}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962}{Nphases}};\ ++i)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::stringstream\ converter;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ converter\ <<\ i;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ std::string\ counter\ =\ converter.str();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375}{PhaseChi}}[i]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}chi\_"{}})\ +\ counter);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}\label{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Remeshes the storages \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Temperature_a4f468ad73bf630f66285e07bffac1180}{openphase\+::\+Temperature}}, \mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a6a31593f97b24ef93c92263e4b494d6c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{openphase\+::\+Elasticity\+Solver\+Spectral}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a555343a7fc792704f3327dcb175c13c0}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1EquilibriumPartitionDiffusionBinary_a4d423f214e0007c6e5687a0f57639f52}{openphase\+::\+Equilibrium\+Partition\+Diffusion\+Binary}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a4e6f273f5ed0752225c0060c9e044a18}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a1221b1fa875c250991ae2cd0e3ea97af}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{openphase\+::\+Heat\+Diffusion}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_afc0b700a4304af3f7b4ba00a8ace8c7d}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a3ff6f0d72311e580559dd1251806d209}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a0f305e969f2b5970684ccf9f8752a669}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{openphase\+::\+Velocities}}, and \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl_af3aabadeb9bb14d37395dd1ff056e2bc}{openphase\+::\+Elasticity\+Solver\+Spectral\+Impl}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00088}{88}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (void)\ newNx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ (void)\ newNy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ (void)\ newNz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a0e68b84fa4163fa58767dc5e6e48b889}\label{classopenphase_1_1LinearMagneticSolver_a0e68b84fa4163fa58767dc5e6e48b889} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!SetEffectiveSusceptibility@{SetEffectiveSusceptibility}}
+\index{SetEffectiveSusceptibility@{SetEffectiveSusceptibility}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{SetEffectiveSusceptibility()}{SetEffectiveSusceptibility()}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Set\+Effective\+Susceptibility (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}},0)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k)\ +=\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375}{PhaseChi}}[\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].Phase]*it-\/>value;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}});}
+\DoxyCodeLine{00133\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}});}
+\DoxyCodeLine{00134\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}});}
+\DoxyCodeLine{00135\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a366163b53e867fe2eee987deb2e309b9}\label{classopenphase_1_1LinearMagneticSolver_a366163b53e867fe2eee987deb2e309b9} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Solve@{Solve}}
+\index{Solve@{Solve}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{Max\+Residual }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}MPI\ Parallelism\ not\ implemented\ !"{}},\ \textcolor{stringliteral}{"{}LinearMagneticSolver"{}},\ \textcolor{stringliteral}{"{}Solve"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}.\mbox{\hyperlink{structopenphase_1_1SparseMatrix_a9dc39353a36488d48f2544af083b6535}{clear}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ ++i)}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ ++j)}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ ++k)}
+\DoxyCodeLine{00148\ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dx\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i+1,j,k)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i-\/1,j,k))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dy\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j+1,k)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j-\/1,k))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dchi\_dz\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k+1)-\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k-\/1))/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mu\_rel\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}(i,j,k)+1);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dphi0\_dx\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ ?\ \ -\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}{H0x}}\ -\/\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{dH0x\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}{dH0x\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}{dH0x\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dphi0\_dy\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ ?\ \ -\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}{H0y}}\ -\/\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}{dH0y\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{dH0y\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}{dH0y\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dphi0\_dz\ =\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ ?\ \ -\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}{H0z}}\ -\/\ (\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}{dH0z\_dx}}*i\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}{dH0z\_dy}}*j\ +\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{dH0z\_dz}}*k)*\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ :\ 0;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Laplacephi0\ =\ -\/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}{dH0x\_dx}}\ -\/\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}{dH0y\_dy}}\ -\/\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}{dH0z\_dz}};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}{x}}[\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k)]\ =\ 0.0;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}}[\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k)]\ =\ -\/dchi\_dx*dphi0\_dx\ -\/\ dchi\_dy*dphi0\_dy\ -\/\ dchi\_dz*dphi0\_dz\ -\/\ mu\_rel*Laplacephi0;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k))\ =\ -\/6.0*mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Axp\ =\ \ dchi\_dx/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Axm\ =\ -\/dchi\_dx/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Ayp\ =\ \ dchi\_dy/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Aym\ =\ -\/dchi\_dy/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Azp\ =\ \ dchi\_dz/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Azm\ =\ -\/dchi\_dz/2.0/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ +\ mu\_rel/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}/\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i+1\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i+1,j,k))\ =\ Axp;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BCNX)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i-\/1,j,k))\ +=\ Axp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(\ \ 0,j,k))\ +=\ Axp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//case\ Free:\ \ \ \ \ \{\ A(idx(i,j,k),idx(Nx-\/1,j,k))\ +=\ 2*Axp;}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A(idx(i,j,k),idx(Nx-\/2,j,k))\ -\/=\ \ \ Axp;\ break;\ \}}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 1\ )\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i-\/1,j,k))\ =\ Axm;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BC0X)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(\ i+1,j,k))\ +=\ Axm;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/1,j,k))\ +=\ Axm;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//case\ Free:\ \ \ \ \ \{\ A(idx(i,j,k),idx(\ \ \ 0,j,k))\ +=\ 2*Axm;}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A(idx(i,j,k),idx(\ \ \ 1,j,k))\ -\/=\ \ \ Axm;\ break;\ \}}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \ \ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j+1\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j+1,k))\ =\ Ayp;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BCNY)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,\ j-\/1,k))\ +=\ Ayp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,\ \ \ 0,k))\ +=\ Ayp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ >=\ 1\ )\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j-\/1,k))\ =\ Aym;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BC0Y)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,\ j+1,k))\ +=\ Aym;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/1,k))\ +=\ Aym;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k+1\ <\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k+1))\ =\ Azp;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BCNZ)}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,\ k-\/1))\ +=\ Azp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,\ \ \ 0))\ +=\ Azp;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ >=\ 1\ )\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k-\/1))\ =\ Azm;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{switch}\ (BC.BC0Z)}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5baa5af8c34dc3d5f295a4ce78e0930690d}{BoundaryConditionTypes::NoFlux}}:\ \ \ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,\ k+1))\ +=\ Azm;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}}:\ \{\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k),\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/1))\ +=\ Azm;\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{BoundaryConditionTypes::Fixed}}:\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Fixes\ potential\ to\ zero\ which\ results\ in\ an\ arbitrary\ but\ constant\ magnetic\ field\ along\ the\ boundary}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Boundary\ Condition\ not\ implemented!"{}});\ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//SystemOfLinearEquationsSolvers::Pivote(A,b);}}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a07a7728ee593704c18d717af5b203b44}{SystemOfLinearEquationsSolvers::FastPivote}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}},\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}});}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5769a21f5a65f5a771c5810226d65412}{SystemOfLinearEquationsSolvers::PreconditionJacobi}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}},\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}});}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5bec547796d7530468667231b1f5c927}{SystemOfLinearEquationsSolvers::BiconjugateGradient}}(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}{A}},\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}{x}},\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}{b}},MaxResidual);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}},0)}
+\DoxyCodeLine{00232\ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}{x}}[\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a18e1b11cb52b509ebb882ee4f7cbb206}{idx}}(i,j,k)];}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}});}
+\DoxyCodeLine{00238\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}});}
+\DoxyCodeLine{00239\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}});}
+\DoxyCodeLine{00240\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Write@{Write}}
+\index{Write@{Write}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aede6578d875c2609e5c4fd5f783e7079}\label{classopenphase_1_1LinearMagneticSolver_aede6578d875c2609e5c4fd5f783e7079} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!WriteVTK@{WriteVTK}}
+\index{WriteVTK@{WriteVTK}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{WriteVTK()}{WriteVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Linear\+Magnetic\+Solver\+::\+Write\+VTK (\begin{DoxyParamCaption}\item[{const int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{LinearMagneticSolver_8cpp_source}{Linear\+Magnetic\+Solver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00264\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00266\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}H"{}}\ \ \ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a1b8e03b9b2efcbe603b95ad036150bb3}{H}}\ \ \ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00267\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}B"{}}\ \ \ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aaf806b8e670aff8adf66cd4a3f36ec6b}{B}}\ \ \ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00268\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}M"{}}\ \ \ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aa8a638e8393c69860a9217f0de70435e}{M}}\ \ \ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00269\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}mu"{}}\ \ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_aeac15ed219730c605fc80a3d7a0bad12}{mu}}\ \ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00270\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}phi"{}}\ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}{phi}}\ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00271\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}chi"{}}\ \ \ \ \ \ \ \ \ ,\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}{chi}}\ \ \ \ \ \ \ \ \ (i,\ j,\ k);\}\});}
+\DoxyCodeLine{00272\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}ForceDensity"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LinearMagneticSolver_ae380275b284f1be9411efd43b855882d}{ForceDensity}}(i,\ j,\ k);\}\});}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{00277\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5}\label{classopenphase_1_1LinearMagneticSolver_a56de6a7adb0b6dbff6d08031e85056d5} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!A@{A}}
+\index{A@{A}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{Sparse\+Matrix\+CSR}} openphase\+::\+Linear\+Magnetic\+Solver\+::A}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00080}{80}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5}\label{classopenphase_1_1LinearMagneticSolver_a6abaee98e8ede249827873a9fcf3f0a5} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!b@{b}}
+\index{b@{b}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Linear\+Magnetic\+Solver\+::b}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00079}{79}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4}\label{classopenphase_1_1LinearMagneticSolver_af89ec4140cfab09608b0cfbc503218d4} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!chi@{chi}}
+\index{chi@{chi}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{chi}{chi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double, 0$>$ openphase\+::\+Linear\+Magnetic\+Solver\+::chi}
+
+
+
+Magnetic susceptibility. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00056}{56}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104}\label{classopenphase_1_1LinearMagneticSolver_ac11d6e45dad77e4dc4017e9c56a77104} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0x\_dx@{dH0x\_dx}}
+\index{dH0x\_dx@{dH0x\_dx}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0x\_dx}{dH0x\_dx}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0x\+\_\+dx}
+
+
+
+x-\/component of external H-\/\+Field gradient in x-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00062}{62}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea}\label{classopenphase_1_1LinearMagneticSolver_af117d97b729cdca4a1858612c957c8ea} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0x\_dy@{dH0x\_dy}}
+\index{dH0x\_dy@{dH0x\_dy}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0x\_dy}{dH0x\_dy}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0x\+\_\+dy}
+
+
+
+x-\/component of external H-\/\+Field gradient in y-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00065}{65}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514}\label{classopenphase_1_1LinearMagneticSolver_a082883dd09428c26fdb45cc4d169d514} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0x\_dz@{dH0x\_dz}}
+\index{dH0x\_dz@{dH0x\_dz}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0x\_dz}{dH0x\_dz}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0x\+\_\+dz}
+
+
+
+x-\/component of external H-\/\+Field gradient in z-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00068}{68}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f}\label{classopenphase_1_1LinearMagneticSolver_a15485372d702879f1770414164528b7f} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0y\_dx@{dH0y\_dx}}
+\index{dH0y\_dx@{dH0y\_dx}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0y\_dx}{dH0y\_dx}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0y\+\_\+dx}
+
+
+
+y-\/component of external H-\/\+Field gradient in x-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00063}{63}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0}\label{classopenphase_1_1LinearMagneticSolver_a21048ec83cb7cc694160779139e1aff0} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0y\_dy@{dH0y\_dy}}
+\index{dH0y\_dy@{dH0y\_dy}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0y\_dy}{dH0y\_dy}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0y\+\_\+dy}
+
+
+
+y-\/component of external H-\/\+Field gradient in y-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00066}{66}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87}\label{classopenphase_1_1LinearMagneticSolver_a50ca2a1c88b60cb6ed63441accbc5a87} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0y\_dz@{dH0y\_dz}}
+\index{dH0y\_dz@{dH0y\_dz}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0y\_dz}{dH0y\_dz}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0y\+\_\+dz}
+
+
+
+y-\/component of external H-\/\+Field gradient in z-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00069}{69}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8}\label{classopenphase_1_1LinearMagneticSolver_aed9c838e7ebb5494164fa8eae9830ee8} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0z\_dx@{dH0z\_dx}}
+\index{dH0z\_dx@{dH0z\_dx}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0z\_dx}{dH0z\_dx}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0z\+\_\+dx}
+
+
+
+z-\/component of external H-\/\+Field gradient in x-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00064}{64}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf}\label{classopenphase_1_1LinearMagneticSolver_ae9fe10e939a2834dccc7200c04c21aaf} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0z\_dy@{dH0z\_dy}}
+\index{dH0z\_dy@{dH0z\_dy}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0z\_dy}{dH0z\_dy}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0z\+\_\+dy}
+
+
+
+z-\/component of external H-\/\+Field gradient in y-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00067}{67}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f}\label{classopenphase_1_1LinearMagneticSolver_a16e89fa4b7cdc0c43c74d2b7d8e75f6f} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!dH0z\_dz@{dH0z\_dz}}
+\index{dH0z\_dz@{dH0z\_dz}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{dH0z\_dz}{dH0z\_dz}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::d\+H0z\+\_\+dz}
+
+
+
+z-\/component of external H-\/\+Field gradient in z-\/direction 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00070}{70}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db}\label{classopenphase_1_1LinearMagneticSolver_aa1e03235ef8c25e60fd3c100fdfd51db} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Linear\+Magnetic\+Solver\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00074}{74}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85}\label{classopenphase_1_1LinearMagneticSolver_aec2e7e5f4cbe8df7eaba129a14896b85} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!H0x@{H0x}}
+\index{H0x@{H0x}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{H0x}{H0x}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::\+H0x}
+
+
+
+x-\/component of external H-\/\+Field 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00059}{59}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f}\label{classopenphase_1_1LinearMagneticSolver_a6f616e1b0a7ee3d6c4f01daf9c2fce6f} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!H0y@{H0y}}
+\index{H0y@{H0y}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{H0y}{H0y}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::\+H0y}
+
+
+
+y-\/component of external H-\/\+Field 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00060}{60}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994}\label{classopenphase_1_1LinearMagneticSolver_a65567f07be02d51f798dcfb7657c0994} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!H0z@{H0z}}
+\index{H0z@{H0z}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{H0z}{H0z}}
+{\footnotesize\ttfamily double openphase\+::\+Linear\+Magnetic\+Solver\+::\+H0z}
+
+
+
+z-\/component of external H-\/\+Field 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00061}{61}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1LinearMagneticSolver_ad10a0cbb2d3af5539fe51fd4978f5fc3}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a2cd0524cbba0806060749482875d7f08}\label{classopenphase_1_1LinearMagneticSolver_a2cd0524cbba0806060749482875d7f08} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!MaxIterations@{MaxIterations}}
+\index{MaxIterations@{MaxIterations}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{MaxIterations}{MaxIterations}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Linear\+Magnetic\+Solver\+::\+Max\+Iterations}
+
+
+
+Maximal residual value for iteration to stop. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00076}{76}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962}\label{classopenphase_1_1LinearMagneticSolver_aa35584880266dcd549df505aeed81962} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Linear\+Magnetic\+Solver\+::\+Nphases}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00072}{72}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375}\label{classopenphase_1_1LinearMagneticSolver_ae4ff92a0394fc9a1b4ba69e4a9845375} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!PhaseChi@{PhaseChi}}
+\index{PhaseChi@{PhaseChi}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{PhaseChi}{PhaseChi}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Linear\+Magnetic\+Solver\+::\+Phase\+Chi}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00078}{78}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d}\label{classopenphase_1_1LinearMagneticSolver_a58e6c4fb265a6f1a894ce340ae30553d} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!phi@{phi}}
+\index{phi@{phi}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{phi}{phi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double, 0$>$ openphase\+::\+Linear\+Magnetic\+Solver\+::phi}
+
+
+
+Magnetic potential field. 
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00057}{57}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!readable@{readable}}
+\index{readable@{readable}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf}\label{classopenphase_1_1LinearMagneticSolver_a055bf1f7f3f6b78d499be26aeb0b90bf} 
+\index{openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}!x@{x}}
+\index{x@{x}!openphase::LinearMagneticSolver@{openphase::LinearMagneticSolver}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Linear\+Magnetic\+Solver\+::x}
+
+
+
+Definition at line \mbox{\hyperlink{LinearMagneticSolver_8h_source_l00079}{79}} of file \mbox{\hyperlink{LinearMagneticSolver_8h_source}{Linear\+Magnetic\+Solver.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LinearMagneticSolver_8h}{Linear\+Magnetic\+Solver.\+h}}\item 
+\mbox{\hyperlink{LinearMagneticSolver_8cpp}{Linear\+Magnetic\+Solver.\+cpp}}\end{DoxyCompactItemize}

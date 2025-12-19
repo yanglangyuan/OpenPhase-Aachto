@@ -1,0 +1,796 @@
+\doxysection{Node\+IP.\+h}
+\hypertarget{NodeIP_8h_source}{}\label{NodeIP_8h_source}\index{NodeIP.h@{NodeIP.h}}
+\mbox{\hyperlink{NodeIP_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2009}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Reza\ Darvishi\ Kamachali;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ NODEIP\_H}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ NODEIP\_H}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00036}00036\ \textcolor{comment}{/**********************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00038}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{00038}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00040}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{00040}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00041}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{00041}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{00042}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{00043}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{00044}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00046}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_afbdad674c7607020060ca0cc0eacbd09}{00046}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_afbdad674c7607020060ca0cc0eacbd09}{InterfacePropertiesFieldEntry}}()\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}(0),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}(0),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}(0.0)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00055}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a772c05a1790fd485172d450591759778}{00055}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a772c05a1790fd485172d450591759778}{InterfacePropertiesFieldEntry}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\&\ entry)\ :\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}(entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}(entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}(entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}(entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}),}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}(entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}})}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00064}\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a90b98df1402f0d078202d0006a81404a}{00064}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\&\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a90b98df1402f0d078202d0006a81404a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\&\ entry)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00073}00073\ \};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00075}00075\ \textcolor{comment}{/**********************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00076}\mbox{\hyperlink{classopenphase_1_1NodeIP}{00076}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00078}00078\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00079}\mbox{\hyperlink{classopenphase_1_1NodeIP_a17ba5f5bf50397ac7a63c288eeba37ee}{00079}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a17ba5f5bf50397ac7a63c288eeba37ee}{NodeIP}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.reserve(3);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00083}\mbox{\hyperlink{classopenphase_1_1NodeIP_a60a75c1f77a6b91b19c0dce9c83f660b}{00083}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a60a75c1f77a6b91b19c0dce9c83f660b}{NodeIP}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}(n.\mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a9525bb02166e1c43e176a4ba1a7493ab}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa5a39bb0bed1617b1c5042524db91fd0}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a9d0687529b089c08d81a50cd035db48d}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa6e7b1d791b3388666e5762cc3259be9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4ff151ccc32a22deccce416c6c93753e}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a38c70c6701bbe37d562096c37c83d457}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a5fd63ece013ee890492726dff8fe821d}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ae8397927be80a7e1454e204097d34a10}{set\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value);\ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_affce51e5e6e22b75e4e821bf70f749d8}{set\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a18c3dffdfe4f0071e359cead7b995a1a}{set\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_abd77c6edf6299f4897e1f1f37f6f0bf3}{get\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a142d0914aa63ed15e04fa9968b26ebce}{get\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad396a88c7938143efb5c31b1f14347d9}{get\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a48c47369a2597def3dce4d3fa136cd25}{add\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value);\ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa0a4dd08ddf8e9692d681fbcc8e8fe15}{add\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad7f87ee37b0bb657e60bf3411cb7aa0d}{add\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a21f37f65fb6631f0378d18897196d96b}{set\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a7cd0e30fef1861c1884dadc9f7e49bb4}{set\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac5da1b6527a175614af58f48805a54a4}{set\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a8de792b09c96155080b396d9ca06cbb5}{set\_energy\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac10070b6ea122a36444b0b1f8ec47142}{add\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a24c0869afb06337e42a7bd7e32310b91}{add\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ stn\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_af961a7040c20c9523b23badd261b3837}{add\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00143}00143\ \ \ \ \ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a03984e001a981533f0a5305b804bdbe2}{get\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00145}00145\ \ \ \ \ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a7ab44abf16f46abb0de2dc06ff903c94}{get\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00147}00147\ \ \ \ \ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4a8762125c48b2d87497325911e5ec4f}{get\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2096aa432018eb8345b106548bad416f}{get\_entry}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a66f057764654832b87eed18357c19ed7}{add\_energies}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ en\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00153}00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aaa335a5ba7d83fb908502c563abfe2c9}{add\_stiffnesses}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ st\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00154}00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac3964949e4c2826226f116d4b88c7870}{add\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ mob\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4a960cd2b0257a54b7001a187f8432fc}{add\_energies\_and\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00157}00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2af718e78c34ea9c9852b4ef88db19bb}{add\_energies\_and\_stiffnesses}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00158}00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a8445a5dba5ec6255e8ec6b666776dca6}{add\_energies\_stiffnesses\_and\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ values);\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_af9f090056a4223dd5c619bdcd057affc}{add\_energies\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ en\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00161}00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a73d414327e8ce6157d4bc8342e7ad172}{add\_stiffnesses\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ en\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00162}00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa8af5f664a8753ab8f1327ce7cfc0ebc}{add\_mobilities\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ mob\_values);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00164}\mbox{\hyperlink{classopenphase_1_1NodeIP_a27b228e651a72bf9e7ce4b72b2f60fe5}{00164}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a27b228e651a72bf9e7ce4b72b2f60fe5}{clear}}()\ \{\mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.clear();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00165}\mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{00165}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00166}\mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{00166}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<InterfacePropertiesFieldEntry>::iterator\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{iterator}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00167}\mbox{\hyperlink{classopenphase_1_1NodeIP_ac1320957558dfe8d1d4da8cb4f77e6f5}{00167}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<InterfacePropertiesFieldEntry>::const\_iterator\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac1320957558dfe8d1d4da8cb4f77e6f5}{citerator}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00168}\mbox{\hyperlink{classopenphase_1_1NodeIP_a5ef65b90963c662498b9c82d14f97e8d}{00168}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a5ef65b90963c662498b9c82d14f97e8d}{begin}}()\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00169}\mbox{\hyperlink{classopenphase_1_1NodeIP_a991df03c038f25552526e36eeb51301c}{00169}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a991df03c038f25552526e36eeb51301c}{end}}()\ \ \ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00170}\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{00170}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac1320957558dfe8d1d4da8cb4f77e6f5}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00171}\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{00171}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac1320957558dfe8d1d4da8cb4f77e6f5}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}()\textcolor{keyword}{\ \ \ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00172}\mbox{\hyperlink{classopenphase_1_1NodeIP_a6f8ba3ce8c246a090dd901105c100436}{00172}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{iterator}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a6f8ba3ce8c246a090dd901105c100436}{erase}}(\mbox{\hyperlink{classopenphase_1_1NodeIP_a80afbe16548b958acea298a77399b8eb}{iterator}}\ it)\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00173}\mbox{\hyperlink{classopenphase_1_1NodeIP_a9b32d24964e076568cc2b4d436409446}{00173}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a9b32d24964e076568cc2b4d436409446}{front}}(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.front();\};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00174}\mbox{\hyperlink{classopenphase_1_1NodeIP_ae1587470a4c47dec72fdeafbfbe161dc}{00174}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ae1587470a4c47dec72fdeafbfbe161dc}{front}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.front();\};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00176}00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ab7423b0be98193fc386a4e1d52ba0444}{pack}}(std::vector<double>\&\ buffer);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2ca722316b38155bbc0595c94be46d77}{unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a940379c18ed0170a1612dbaeaa74e8ff}{read}}(std::istream\&\ inp);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a59e1cc5fa247634438219db54e61c3bd}{write}}(std::ostream\&\ outp)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00181}00181\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00182}00182\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00183}\mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{00183}}\ \ \ \ \ std::vector<InterfacePropertiesFieldEntry>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00184}00184\ \};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00186}00186\ \textcolor{comment}{/***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00188}\mbox{\hyperlink{classopenphase_1_1NodeIP_a9525bb02166e1c43e176a4ba1a7493ab}{00188}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a9525bb02166e1c43e176a4ba1a7493ab}{NodeIP::operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00189}00189\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00193}00193\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>stiffness,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00195}00195\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00197}00197\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00199}\mbox{\hyperlink{classopenphase_1_1NodeIP_aa5a39bb0bed1617b1c5042524db91fd0}{00199}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa5a39bb0bed1617b1c5042524db91fd0}{NodeIP::operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00200}00200\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00201}00201\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_a5ef65b90963c662498b9c82d14f97e8d}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_a991df03c038f25552526e36eeb51301c}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00204}00204\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ i-\/>energy\ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ i-\/>stiffness\ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ i-\/>mobility\ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>stiffness,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00215}00215\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00217}\mbox{\hyperlink{classopenphase_1_1NodeIP_a4ff151ccc32a22deccce416c6c93753e}{00217}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4ff151ccc32a22deccce416c6c93753e}{NodeIP::operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00218}00218\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00220}00220\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>stiffness,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00226}\mbox{\hyperlink{classopenphase_1_1NodeIP_a38c70c6701bbe37d562096c37c83d457}{00226}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a38c70c6701bbe37d562096c37c83d457}{NodeIP::operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00227}00227\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00229}00229\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ -\/i-\/>energy,\ -\/i-\/>stiffness,\ -\/i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00233}00233\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00235}\mbox{\hyperlink{classopenphase_1_1NodeIP_a9d0687529b089c08d81a50cd035db48d}{00235}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a9d0687529b089c08d81a50cd035db48d}{NodeIP::operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00236}00236\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00237}00237\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_a5ef65b90963c662498b9c82d14f97e8d}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodeIP_a991df03c038f25552526e36eeb51301c}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00240}00240\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ i-\/>energy\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ i-\/>stiffness\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ i-\/>mobility\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00244}00244\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00246}00246\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00248}\mbox{\hyperlink{classopenphase_1_1NodeIP_a5fd63ece013ee890492726dff8fe821d}{00248}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a5fd63ece013ee890492726dff8fe821d}{NodeIP::operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00249}00249\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00251}00251\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ i-\/>energy\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ i-\/>stiffness\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ i-\/>mobility\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00257}00257\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00259}\mbox{\hyperlink{classopenphase_1_1NodeIP_aa6e7b1d791b3388666e5762cc3259be9}{00259}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa6e7b1d791b3388666e5762cc3259be9}{NodeIP::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00260}00260\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00261}00261\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00265}\mbox{\hyperlink{classopenphase_1_1NodeIP_ae8397927be80a7e1454e204097d34a10}{00265}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ae8397927be80a7e1454e204097d34a10}{NodeIP::set\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00267}00267\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00271}00271\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ i-\/>energy\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00276}00276\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00277}00277\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00278}00278\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00279}00279\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00281}00281\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00282}00282\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00284}\mbox{\hyperlink{classopenphase_1_1NodeIP_affce51e5e6e22b75e4e821bf70f749d8}{00284}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_affce51e5e6e22b75e4e821bf70f749d8}{NodeIP::set\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00286}00286\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00287}00287\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00288}00288\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00290}00290\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00291}00291\ \ \ \ \ \ \ \ \ i-\/>stiffness\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00295}00295\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00296}00296\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00297}00297\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00298}00298\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00301}00301\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00303}\mbox{\hyperlink{classopenphase_1_1NodeIP_a18c3dffdfe4f0071e359cead7b995a1a}{00303}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a18c3dffdfe4f0071e359cead7b995a1a}{NodeIP::set\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00305}00305\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00306}00306\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00309}00309\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ i-\/>mobility\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00312}00312\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00314}00314\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00315}00315\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00316}00316\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00317}00317\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00319}00319\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00320}00320\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00322}\mbox{\hyperlink{classopenphase_1_1NodeIP_a48c47369a2597def3dce4d3fa136cd25}{00322}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a48c47369a2597def3dce4d3fa136cd25}{NodeIP::add\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00324}00324\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00326}00326\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00328}00328\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ i-\/>energy\ +=\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00331}00331\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00333}00333\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00334}00334\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00335}00335\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00336}00336\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00338}00338\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00339}00339\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00341}\mbox{\hyperlink{classopenphase_1_1NodeIP_aa0a4dd08ddf8e9692d681fbcc8e8fe15}{00341}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa0a4dd08ddf8e9692d681fbcc8e8fe15}{NodeIP::add\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00343}00343\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00347}00347\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ i-\/>stiffness\ +=\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00350}00350\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00352}00352\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00353}00353\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00354}00354\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00355}00355\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00357}00357\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00358}00358\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00360}\mbox{\hyperlink{classopenphase_1_1NodeIP_ad7f87ee37b0bb657e60bf3411cb7aa0d}{00360}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad7f87ee37b0bb657e60bf3411cb7aa0d}{NodeIP::add\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00362}00362\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00363}00363\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00364}00364\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00365}00365\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00366}00366\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ i-\/>mobility\ +=\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00369}00369\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00370}00370\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00371}00371\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00372}00372\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00373}00373\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00374}00374\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00375}00375\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00376}00376\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00377}00377\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00379}\mbox{\hyperlink{classopenphase_1_1NodeIP_abd77c6edf6299f4897e1f1f37f6f0bf3}{00379}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_abd77c6edf6299f4897e1f1f37f6f0bf3}{NodeIP::get\_energy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00380}00380\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00382}00382\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00384}00384\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>energy;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00386}00386\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00387}00387\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00388}00388\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00389}00389\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00390}\mbox{\hyperlink{classopenphase_1_1NodeIP_a142d0914aa63ed15e04fa9968b26ebce}{00390}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a142d0914aa63ed15e04fa9968b26ebce}{NodeIP::get\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00391}00391\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00392}00392\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00393}00393\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00395}00395\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>stiffness;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00397}00397\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00399}00399\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00401}\mbox{\hyperlink{classopenphase_1_1NodeIP_ad396a88c7938143efb5c31b1f14347d9}{00401}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad396a88c7938143efb5c31b1f14347d9}{NodeIP::get\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00402}00402\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00403}00403\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00404}00404\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00406}00406\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>mobility;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00408}00408\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00409}00409\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00410}00410\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00412}\mbox{\hyperlink{classopenphase_1_1NodeIP_a21f37f65fb6631f0378d18897196d96b}{00412}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a21f37f65fb6631f0378d18897196d96b}{NodeIP::set\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00415}00415\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00416}00416\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00417}00417\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00419}00419\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00420}00420\ \ \ \ \ \ \ \ \ i-\/>energy\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00421}00421\ \ \ \ \ \ \ \ \ i-\/>mobility\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00423}00423\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00425}00425\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00426}00426\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00427}00427\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00428}00428\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00429}00429\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00431}00431\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00432}00432\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00434}\mbox{\hyperlink{classopenphase_1_1NodeIP_a7cd0e30fef1861c1884dadc9f7e49bb4}{00434}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a7cd0e30fef1861c1884dadc9f7e49bb4}{NodeIP::set\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00437}00437\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00438}00438\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00439}00439\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00440}00440\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00441}00441\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ i-\/>stiffness\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00443}00443\ \ \ \ \ \ \ \ \ i-\/>mobility\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00445}00445\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00447}00447\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00448}00448\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00449}00449\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00450}00450\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00451}00451\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00453}00453\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00454}00454\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00456}\mbox{\hyperlink{classopenphase_1_1NodeIP_ac5da1b6527a175614af58f48805a54a4}{00456}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac5da1b6527a175614af58f48805a54a4}{NodeIP::set\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00459}00459\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00460}00460\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00461}00461\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00462}00462\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00463}00463\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00464}00464\ \ \ \ \ \ \ \ \ i-\/>energy\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ i-\/>stiffness\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00467}00467\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00469}00469\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00470}00470\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00471}00471\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00472}00472\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00473}00473\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00475}00475\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00476}00476\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00478}\mbox{\hyperlink{classopenphase_1_1NodeIP_a8de792b09c96155080b396d9ca06cbb5}{00478}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a8de792b09c96155080b396d9ca06cbb5}{NodeIP::set\_energy\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00482}00482\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00483}00483\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00484}00484\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00485}00485\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00486}00486\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00487}00487\ \ \ \ \ \ \ \ \ i-\/>energy\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00488}00488\ \ \ \ \ \ \ \ \ i-\/>stiffness\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00489}00489\ \ \ \ \ \ \ \ \ i-\/>mobility\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00490}00490\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00491}00491\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00493}00493\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00494}00494\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00495}00495\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00496}00496\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00497}00497\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00498}00498\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00500}00500\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00501}00501\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00502}00502\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00503}\mbox{\hyperlink{classopenphase_1_1NodeIP_ac10070b6ea122a36444b0b1f8ec47142}{00503}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac10070b6ea122a36444b0b1f8ec47142}{NodeIP::add\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00506}00506\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00507}00507\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00508}00508\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00509}00509\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00510}00510\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00511}00511\ \ \ \ \ \ \ \ \ i-\/>energy\ +=\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00512}00512\ \ \ \ \ \ \ \ \ i-\/>mobility\ +=\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00514}00514\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00515}00515\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00516}00516\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00517}00517\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00518}00518\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00519}00519\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00520}00520\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00522}00522\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00523}00523\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00525}\mbox{\hyperlink{classopenphase_1_1NodeIP_a24c0869afb06337e42a7bd7e32310b91}{00525}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a24c0869afb06337e42a7bd7e32310b91}{NodeIP::add\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00528}00528\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00529}00529\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00530}00530\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00531}00531\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00532}00532\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00533}00533\ \ \ \ \ \ \ \ \ i-\/>stiffness\ +=\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00534}00534\ \ \ \ \ \ \ \ \ i-\/>mobility\ +=\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00535}00535\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00536}00536\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00538}00538\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00539}00539\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00540}00540\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00541}00541\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00542}00542\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00543}00543\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00544}00544\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00545}00545\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00546}00546\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00547}\mbox{\hyperlink{classopenphase_1_1NodeIP_af961a7040c20c9523b23badd261b3837}{00547}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_af961a7040c20c9523b23badd261b3837}{NodeIP::add\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00550}00550\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00551}00551\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00552}00552\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00553}00553\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00554}00554\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00555}00555\ \ \ \ \ \ \ \ \ i-\/>energy\ +=\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00556}00556\ \ \ \ \ \ \ \ \ i-\/>stiffness\ +=\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00557}00557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00558}00558\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00559}00559\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00560}00560\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00561}00561\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00562}00562\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00563}00563\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00564}00564\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00565}00565\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00566}00566\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00567}00567\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00569}\mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{00569}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{NodeIP::add\_energy\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ en\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ st\_value,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mob\_value)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00573}00573\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00574}00574\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00575}00575\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00576}00576\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00577}00577\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00578}00578\ \ \ \ \ \ \ \ \ i-\/>energy\ +=\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00579}00579\ \ \ \ \ \ \ \ \ i-\/>stiffness\ +=\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ i-\/>mobility\ +=\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00582}00582\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00583}00583\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00584}00584\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00585}00585\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00586}00586\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00587}00587\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a2e396620be350c863512b8cd0fc0fe3f}{energy}}\ =\ en\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00588}00588\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ae7a301e6d7e6dc94269cf106d27c21b0}{stiffness}}\ =\ st\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00589}00589\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a84f2f8d760a677e7f748a5cc100a245d}{mobility}}\ =\ mob\_value;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00590}00590\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00591}00591\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00592}00592\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00594}\mbox{\hyperlink{classopenphase_1_1NodeIP_a03984e001a981533f0a5305b804bdbe2}{00594}}\ \textcolor{keyword}{inline}\ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a03984e001a981533f0a5305b804bdbe2}{NodeIP::get\_energy\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00596}00596\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00597}00597\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00598}00598\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00599}00599\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00600}00600\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00601}00601\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(i-\/>energy,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00602}00602\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00603}00603\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00604}00604\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00606}\mbox{\hyperlink{classopenphase_1_1NodeIP_a7ab44abf16f46abb0de2dc06ff903c94}{00606}}\ \textcolor{keyword}{inline}\ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a7ab44abf16f46abb0de2dc06ff903c94}{NodeIP::get\_stiffness\_and\_mobility}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00607}00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00608}00608\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00609}00609\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00610}00610\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00611}00611\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00612}00612\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00613}00613\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(i-\/>stiffness,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00614}00614\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00615}00615\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00616}00616\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00617}00617\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00618}\mbox{\hyperlink{classopenphase_1_1NodeIP_a4a8762125c48b2d87497325911e5ec4f}{00618}}\ \textcolor{keyword}{inline}\ std::pair<double,double>\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4a8762125c48b2d87497325911e5ec4f}{NodeIP::get\_energy\_and\_stiffness}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00620}00620\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00621}00621\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00622}00622\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00623}00623\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00624}00624\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00625}00625\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(i-\/>energy,\ i-\/>stiffness);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00626}00626\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00627}00627\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,double>(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00628}00628\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00629}00629\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00630}\mbox{\hyperlink{classopenphase_1_1NodeIP_a2096aa432018eb8345b106548bad416f}{00630}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2096aa432018eb8345b106548bad416f}{NodeIP::get\_entry}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00632}00632\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00633}00633\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00634}00634\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00635}00635\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)\ )}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00636}00636\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00637}00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *i;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00638}00638\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00640}00640\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry}{InterfacePropertiesFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00641}00641\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_a24b554d1dc82468cbf210560641948e1}{indexA}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00642}00642\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1InterfacePropertiesFieldEntry_ac3fd3479d4a122ab5838778aa4149e26}{indexB}}\ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00643}00643\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00644}00644\ \ \ \ \ \textcolor{keywordflow}{return}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00645}00645\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00647}\mbox{\hyperlink{classopenphase_1_1NodeIP_a66f057764654832b87eed18357c19ed7}{00647}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a66f057764654832b87eed18357c19ed7}{NodeIP::add\_energies}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00648}00648\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00649}00649\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00650}00650\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00651}00651\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a48c47369a2597def3dce4d3fa136cd25}{add\_energy}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00652}00652\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00653}00653\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00655}\mbox{\hyperlink{classopenphase_1_1NodeIP_aaa335a5ba7d83fb908502c563abfe2c9}{00655}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aaa335a5ba7d83fb908502c563abfe2c9}{NodeIP::add\_stiffnesses}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00656}00656\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00657}00657\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00658}00658\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00659}00659\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa0a4dd08ddf8e9692d681fbcc8e8fe15}{add\_stiffness}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>stiffness);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00660}00660\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00661}00661\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00662}00662\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00663}\mbox{\hyperlink{classopenphase_1_1NodeIP_ac3964949e4c2826226f116d4b88c7870}{00663}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac3964949e4c2826226f116d4b88c7870}{NodeIP::add\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00664}00664\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00665}00665\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00666}00666\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00667}00667\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad7f87ee37b0bb657e60bf3411cb7aa0d}{add\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00668}00668\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00669}00669\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00670}00670\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00671}\mbox{\hyperlink{classopenphase_1_1NodeIP_a4a960cd2b0257a54b7001a187f8432fc}{00671}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a4a960cd2b0257a54b7001a187f8432fc}{NodeIP::add\_energies\_and\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00672}00672\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00673}00673\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00674}00674\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00675}00675\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac10070b6ea122a36444b0b1f8ec47142}{add\_energy\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00676}00676\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00677}00677\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00678}00678\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00679}\mbox{\hyperlink{classopenphase_1_1NodeIP_a2af718e78c34ea9c9852b4ef88db19bb}{00679}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2af718e78c34ea9c9852b4ef88db19bb}{NodeIP::add\_energies\_and\_stiffnesses}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00680}00680\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00681}00681\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00682}00682\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00683}00683\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_af961a7040c20c9523b23badd261b3837}{add\_energy\_and\_stiffness}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>stiffness);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00684}00684\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00685}00685\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00686}\mbox{\hyperlink{classopenphase_1_1NodeIP_a8445a5dba5ec6255e8ec6b666776dca6}{00686}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a8445a5dba5ec6255e8ec6b666776dca6}{NodeIP::add\_energies\_stiffnesses\_and\_mobilities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00687}00687\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00688}00688\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00689}00689\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00690}00690\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa957d3ed18483d2daad0c23c62f605d9}{add\_energy\_stiffness\_and\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy,\ i-\/>stiffness,\ i-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00691}00691\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00692}00692\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00694}\mbox{\hyperlink{classopenphase_1_1NodeIP_af9f090056a4223dd5c619bdcd057affc}{00694}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_af9f090056a4223dd5c619bdcd057affc}{NodeIP::add\_energies\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00695}00695\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00696}00696\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00697}00697\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00698}00698\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locVal\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_abd77c6edf6299f4897e1f1f37f6f0bf3}{get\_energy}}(i-\/>indexA,\ i-\/>indexB);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00699}00699\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locVal\ !=\ 0.0\ and\ i-\/>energy\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00700}00700\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00701}00701\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ae8397927be80a7e1454e204097d34a10}{set\_energy}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>energy\ +\ locVal);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00702}00702\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00703}00703\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00704}00704\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00706}\mbox{\hyperlink{classopenphase_1_1NodeIP_a73d414327e8ce6157d4bc8342e7ad172}{00706}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a73d414327e8ce6157d4bc8342e7ad172}{NodeIP::add\_stiffnesses\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00707}00707\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00708}00708\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00709}00709\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00710}00710\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locVal\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a142d0914aa63ed15e04fa9968b26ebce}{get\_stiffness}}(i-\/>indexA,\ i-\/>indexB);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00711}00711\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locVal\ !=\ 0.0\ and\ i-\/>stiffness\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00712}00712\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00713}00713\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_affce51e5e6e22b75e4e821bf70f749d8}{set\_stiffness}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>stiffness\ +\ locVal);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00714}00714\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00715}00715\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00716}00716\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00717}00717\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00718}\mbox{\hyperlink{classopenphase_1_1NodeIP_aa8af5f664a8753ab8f1327ce7cfc0ebc}{00718}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_aa8af5f664a8753ab8f1327ce7cfc0ebc}{NodeIP::add\_mobilities\_exist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeIP}{NodeIP}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00719}00719\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00720}00720\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_abcbcf378f60ce009261aea3fd8165180}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeIP_a2046286acb8d001392da7951aad194d2}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00721}00721\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00722}00722\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locVal\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ad396a88c7938143efb5c31b1f14347d9}{get\_mobility}}(i-\/>indexA,\ i-\/>indexB);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00723}00723\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locVal\ !=\ 0.0\ and\ i-\/>mobility\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00724}00724\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a18c3dffdfe4f0071e359cead7b995a1a}{set\_mobility}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>mobility\ +\ locVal);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00726}00726\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00727}00727\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00728}00728\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00729}00729\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00730}\mbox{\hyperlink{classopenphase_1_1NodeIP_ab7423b0be98193fc386a4e1d52ba0444}{00730}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ab7423b0be98193fc386a4e1d52ba0444}{NodeIP::pack}}(std::vector<double>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00731}00731\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00732}00732\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.size());}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00733}00733\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.begin();\ it\ !=\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.end();++it)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00734}00734\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00735}00735\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexA);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00736}00736\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexB);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00737}00737\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>energy);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00738}00738\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>stiffness);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00739}00739\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>mobility);}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00740}00740\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00741}00741\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00742}00742\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00743}\mbox{\hyperlink{classopenphase_1_1NodeIP_a2ca722316b38155bbc0595c94be46d77}{00743}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a2ca722316b38155bbc0595c94be46d77}{NodeIP::unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00744}00744\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00745}00745\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_a27b228e651a72bf9e7ce4b72b2f60fe5}{clear}}();}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00746}00746\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00747}00747\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}});}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00748}00748\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00749}00749\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00750}00750\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}[i].indexA\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00751}00751\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}[i].indexB\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00752}00752\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}[i].energy\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00753}00753\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}[i].stiffness\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00754}00754\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}[i].mobility\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00755}00755\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00756}00756\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00757}00757\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00758}\mbox{\hyperlink{classopenphase_1_1NodeIP_a940379c18ed0170a1612dbaeaa74e8ff}{00758}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a940379c18ed0170a1612dbaeaa74e8ff}{NodeIP::read}}(std::istream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00759}00759\ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00760}00760\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00761}00761\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00762}00762\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}});}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00764}00764\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00765}00765\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00766}00766\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00767}00767\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00768}00768\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.energy),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00769}00769\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.stiffness),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00770}00770\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.mobility),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00771}00771\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00772}00772\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00773}00773\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00774}\mbox{\hyperlink{classopenphase_1_1NodeIP_a59e1cc5fa247634438219db54e61c3bd}{00774}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_a59e1cc5fa247634438219db54e61c3bd}{NodeIP::write}}(std::ostream\&\ outp)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00775}00775\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00776}00776\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}}.size();}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00777}00777\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeIP_acc1b669a5ec8b540fc33004f197b2f45}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00778}00778\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00779}00779\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeIP_ac6cc2a44e857d8931246f81d5393bdc7}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00780}00780\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00781}00781\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00782}00782\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00783}00783\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.energy),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00784}00784\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.stiffness),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00785}00785\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.mobility),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00786}00786\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00787}00787\ \}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00788}00788\ }
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00789}00789\ \}\textcolor{comment}{//namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{NodeIP_8h_source_l00790}00790\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

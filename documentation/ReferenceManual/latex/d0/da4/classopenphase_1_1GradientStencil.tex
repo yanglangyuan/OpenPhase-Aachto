@@ -1,0 +1,270 @@
+\doxysection{openphase\+::Gradient\+Stencil Class Reference}
+\hypertarget{classopenphase_1_1GradientStencil}{}\label{classopenphase_1_1GradientStencil}\index{openphase::GradientStencil@{openphase::GradientStencil}}
+
+
+\texorpdfstring{$<$}{<} Gradient stencil class (uses user specified stencil as the basis). Allows replacing the loop over array elements by the iterator which is beneficial for compact stencils  
+
+
+
+
+{\ttfamily \#include "{}Gradient\+Stencil.\+h"{}}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}} $>$\+::iterator \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}
+\begin{DoxyCompactList}\small\item\em Returns the size of stencil. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}}
+\begin{DoxyCompactList}\small\item\em Constant iterator over stencil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}{Set}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double dx, int d\+Nx=1, int d\+Ny=1, int d\+Nz=1)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1GradientStencil_aeb26fc55c6e38b77c4811474b80b5271}{Set}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&Dimensions)
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1GradientStencil_a4d5107d9c70154b228ead48b96a9735d}{size}} () const
+\item 
+\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} \mbox{\hyperlink{classopenphase_1_1GradientStencil_aa71158d092f72badd2ce1cec4354fda9}{begin}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5a4ab9eb5a2e50dbe0b8fd107040e786}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the begin of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}} \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5ec4dfe46d684d6597bf546e32943bed}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Iterator to the end of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}} \mbox{\hyperlink{classopenphase_1_1GradientStencil_afc6c12d29aa0df36b80cfa9132919cc1}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the begin of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} \mbox{\hyperlink{classopenphase_1_1GradientStencil_a2222b18bc68a2622c1b03861e3787af3}{erase}} (\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em Constant iterator to the end of stencil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{Stencil\+Elements}}
+\begin{DoxyCompactList}\small\item\em Stencil storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Gradient stencil class (uses user specified stencil as the basis). Allows replacing the loop over array elements by the iterator which is beneficial for compact stencils 
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00120}{120}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}\label{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!citerator@{citerator}}
+\index{citerator@{citerator}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{citerator}{citerator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{openphase\+::\+Gradient\+Stencil\+::citerator}}}
+
+
+
+Constant iterator over stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00163}{163}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+\Hypertarget{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}\label{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!iterator@{iterator}}
+\index{iterator@{iterator}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}}$>$\+::iterator \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{openphase\+::\+Gradient\+Stencil\+::iterator}}}
+
+
+
+Returns the size of stencil. 
+
+Iterator over stencil 
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00162}{162}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1GradientStencil_aa71158d092f72badd2ce1cec4354fda9}\label{classopenphase_1_1GradientStencil_aa71158d092f72badd2ce1cec4354fda9} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!begin@{begin}}
+\index{begin@{begin}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} openphase\+::\+Gradient\+Stencil\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00164}{164}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_a5ec4dfe46d684d6597bf546e32943bed}\label{classopenphase_1_1GradientStencil_a5ec4dfe46d684d6597bf546e32943bed} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}} openphase\+::\+Gradient\+Stencil\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the end of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00166}{166}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_afc6c12d29aa0df36b80cfa9132919cc1}\label{classopenphase_1_1GradientStencil_afc6c12d29aa0df36b80cfa9132919cc1} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!cend@{cend}}
+\index{cend@{cend}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GradientStencil_a5e233398e8aea8254d66049a474e6e7e}{citerator}} openphase\+::\+Gradient\+Stencil\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the begin of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00167}{167}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_a5a4ab9eb5a2e50dbe0b8fd107040e786}\label{classopenphase_1_1GradientStencil_a5a4ab9eb5a2e50dbe0b8fd107040e786} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!end@{end}}
+\index{end@{end}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} openphase\+::\+Gradient\+Stencil\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the begin of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00165}{165}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_a2222b18bc68a2622c1b03861e3787af3}\label{classopenphase_1_1GradientStencil_a2222b18bc68a2622c1b03861e3787af3} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!erase@{erase}}
+\index{erase@{erase}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}} openphase\+::\+Gradient\+Stencil\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1GradientStencil_ab5df797940608bdcd95120083a6b7c86}{iterator}}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the end of stencil. 
+
+Erases entry 
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00168}{168}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+\Hypertarget{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}\label{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!Set@{Set}}
+\index{Set@{Set}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Gradient\+Stencil\+::\+Set (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{double}]{dx,  }\item[{int}]{d\+Nx = {\ttfamily 1},  }\item[{int}]{d\+Ny = {\ttfamily 1},  }\item[{int}]{d\+Nz = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Nz} & Sets nonzero stencil entries for gradient components using user specified stencil \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00132}{132}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.empty())}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.clear();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ -\/dNx;\ x\ <=\ dNx;\ ++x)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ -\/dNy;\ y\ <=\ dNy;\ ++y)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ z\ =\ -\/dNz;\ z\ <=\ dNz;\ ++z)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UserStencil[x+1][y+1][z+1]\ !=\ 0.0)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ GradientStencilEntry\ locElement;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.di\ =\ x;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dj\ =\ y;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dk\ =\ z;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.weightX\ =\ x*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.weightY\ =\ y*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.weightZ\ =\ z*UserStencil[x+1][y+1][z+1]/dx;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.push\_back(locElement);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_aeb26fc55c6e38b77c4811474b80b5271}\label{classopenphase_1_1GradientStencil_aeb26fc55c6e38b77c4811474b80b5271} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!Set@{Set}}
+\index{Set@{Set}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Gradient\+Stencil\+::\+Set (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&}]{Dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00157}{157}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GradientStencil_a598ed8dfc1ea37ded90f3369a12ebed6}{Set}}(UserStencil,\ Dimensions.dx,\ Dimensions.dNx,\ Dimensions.dNy,\ Dimensions.dNz);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GradientStencil_a4d5107d9c70154b228ead48b96a9735d}\label{classopenphase_1_1GradientStencil_a4d5107d9c70154b228ead48b96a9735d} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!size@{size}}
+\index{size@{size}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Gradient\+Stencil\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00161}{161}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}{StencilElements}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3}\label{classopenphase_1_1GradientStencil_ae4cb0abd5181aae6cb6f7541b458e1e3} 
+\index{openphase::GradientStencil@{openphase::GradientStencil}!StencilElements@{StencilElements}}
+\index{StencilElements@{StencilElements}!openphase::GradientStencil@{openphase::GradientStencil}}
+\doxysubsubsection{\texorpdfstring{StencilElements}{StencilElements}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1GradientStencil_1_1GradientStencilEntry}{Gradient\+Stencil\+Entry}} $>$ openphase\+::\+Gradient\+Stencil\+::\+Stencil\+Elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stencil storage. 
+
+
+
+Definition at line \mbox{\hyperlink{GradientStencil_8h_source_l00171}{171}} of file \mbox{\hyperlink{GradientStencil_8h_source}{Gradient\+Stencil.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GradientStencil_8h}{Gradient\+Stencil.\+h}}\end{DoxyCompactItemize}

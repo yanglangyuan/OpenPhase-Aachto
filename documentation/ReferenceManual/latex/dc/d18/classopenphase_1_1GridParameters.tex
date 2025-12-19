@@ -1,0 +1,1402 @@
+\doxysection{openphase\+::Grid\+Parameters Class Reference}
+\hypertarget{classopenphase_1_1GridParameters}{}\label{classopenphase_1_1GridParameters}\index{openphase::GridParameters@{openphase::GridParameters}}
+
+
+{\ttfamily \#include "{}Grid\+Parameters.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters_a878c046c2b03acd7b06597f0dc014983}{Grid\+Parameters}} (std\+::string Object\+Name\+Suffix="{}"{})
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters_ac4508a763ec3f99873811ee67ef9ca7e}{Grid\+Parameters}} (const \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&rhs)
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters_a674e6d0ccdacebca2e5e92ae540dc6bd}{Grid\+Parameters}} (int total\+\_\+nx, int total\+\_\+ny, int total\+\_\+nz)
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \& \mbox{\hyperlink{classopenphase_1_1GridParameters_aacdc92f2386dc8bd97e82a7af5069e0a}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&rhs)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b}{Read\+Input}} (const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Reads input from the specified input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_abff4ccdbebb973cb7ea51d75dfd975c6}{Read\+Input}} (std\+::stringstream \&data)
+\begin{DoxyCompactList}\small\item\em Reads input from the specified input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_a6842be41edf5eba06d1f4f8d06e885df}{Read\+JSON}} (const std\+::string Input\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_a3f373c45bedd26eee003ee886f7d6d42}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, int t\+Step)
+\begin{DoxyCompactList}\small\item\em Reads grid parameters history from the file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_a0120fb0c515b2cee283e2c728aa33b2a}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, int t\+Step)
+\begin{DoxyCompactList}\small\item\em Writes grid parameters history to the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1GridParameters_aa24687417304e06716da10e732d708af}{Double\+Resolution}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns grid parameters in double resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{Set\+Dimensions}} (int total\+\_\+nx, int total\+\_\+ny, int total\+\_\+nz)
+\begin{DoxyCompactList}\small\item\em Sets grid parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a70ddf5c25482d7cdefe67b0d25dcd258}{Active}} (void) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates dimensionality, e.\+g. 1D, 2D or 3D \end{DoxyCompactList}\item 
+long int \mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{Local\+Number\+Of\+Cells}} (void) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Number of grid cells in the local simulation domain \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_a2a6ee9a70c8942a45181a8778a333613}{Local\+Volume}} (void) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of the local simulation domain \end{DoxyCompactList}\item 
+long int \mbox{\hyperlink{classopenphase_1_1GridParameters_a6e23bc9f72a10111916898b3641a8162}{Total\+Number\+Of\+Cells}} (void) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Number of grid cells in the entire simulation domain \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_ada73855c429b6335cdd5f674157e6ed5}{Total\+Volume}} (void) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of the entire simulation domain \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_a9e96c156b3c12ba0bb402d5188dbf1c6}{Cell\+Volume}} (bool ignore\+\_\+active\+\_\+dimensions=false) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of a single grid cell unless ignore\+\_\+active\+\_\+dimensions == true, in which case volume is returned regardless of active dimensions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_ac33a6f00155d505c345ffe1f34898276}{Position\+In\+Bounds}} (const int x, const int y, const int z) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given local grid coordinates are within local domain bounds \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_a4f29874c32890399bfe0e8f5a9346c94}{Position\+In\+Bounds}} (const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&position) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given local grid coordinates are within local domain bounds \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_acef56be2cf66c421e04a1315e9133685}{Position\+In\+Local\+Bounds}} (const int x, const int y, const int z) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within local domain bounds \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_abdc0398a8107e0e74a281624dd75ca8a}{Position\+In\+Local\+Bounds}} (const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&position) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within local domain bounds \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_a4f52e1e3afe7896bbc6e1113039fe221}{Position\+In\+Total\+Bounds}} (const int x, const int y, const int z) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within total domain bounds \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1GridParameters_a1be1be7b7438e271fd5721f2063e3c30}{Position\+In\+Total\+Bounds}} (const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&position) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Indicates if given global position coordinates are within total domain bounds \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \mbox{\hyperlink{classopenphase_1_1GridParameters_a6782d32bbf30589f070b233494d9d51e}{Convert\+To\+Local}} (const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&global\+\_\+position) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Converts global grid coordinates from global to local domain coordinates (relevant for MPI mode) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \mbox{\hyperlink{classopenphase_1_1GridParameters_ac69872dbde644f556c2a4be0ce14142d}{Convert\+To\+Global}} (const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&local\+\_\+position) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Converts grid coordinates from local domain coordinates to global (relevant for MPI mode) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2}{thisobjectname}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}
+\begin{DoxyCompactList}\small\item\em Index of the current instance of the grid parameters (used to store grid history) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}
+\begin{DoxyCompactList}\small\item\em Number of grid cells in X direction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}
+\begin{DoxyCompactList}\small\item\em Number of grid cells in Y direction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}
+\begin{DoxyCompactList}\small\item\em Number of grid cells in Z direction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}
+\begin{DoxyCompactList}\small\item\em Half of the number of grid cells in Z direction for FFT routines. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{d\+Nx}}
+\begin{DoxyCompactList}\small\item\em Stencil step in X direction for reduced dimensions simulations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{d\+Ny}}
+\begin{DoxyCompactList}\small\item\em Stencil step in Y direction for reduced dimensions simulations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{d\+Nz}}
+\begin{DoxyCompactList}\small\item\em Stencil step in Z direction for reduced dimensions simulations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{Total\+Nx}}
+\begin{DoxyCompactList}\small\item\em Total number of grid cells in X direction (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}
+\begin{DoxyCompactList}\small\item\em X coordinate of the local domain coordinate system origin (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{Total\+Ny}}
+\begin{DoxyCompactList}\small\item\em Total system size in Y direction (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of the local domain coordinate system origin (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{Total\+Nz}}
+\begin{DoxyCompactList}\small\item\em Total system size in Z direction (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}
+\begin{DoxyCompactList}\small\item\em Z coordinate of the local domain coordinate system origin (in case of MPI parallelism) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{max\+Nx}}
+\begin{DoxyCompactList}\small\item\em Maximum number of grid cells in X direction during the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{max\+Ny}}
+\begin{DoxyCompactList}\small\item\em Maximum number of grid cells in Y direction during the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{max\+Nz}}
+\begin{DoxyCompactList}\small\item\em Maximum number of grid cells in Z direction during the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{max\+Total\+Nx}}
+\begin{DoxyCompactList}\small\item\em Maximum total number of grid cells in X direction during the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{max\+Total\+Ny}}
+\begin{DoxyCompactList}\small\item\em Maximum total number of grid cells in Y direction during the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{max\+Total\+Nz}}
+\begin{DoxyCompactList}\small\item\em Maximum total number of grid cells in Z direction during the simulation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}
+\begin{DoxyCompactList}\small\item\em Grid spacing in true units. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}
+\begin{DoxyCompactList}\small\item\em Number of boundary cells for setting the boundary conditions. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{i\+Width}}
+\begin{DoxyCompactList}\small\item\em Interface width in grid cells. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}
+\begin{DoxyCompactList}\small\item\em Interface width in true units. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9}{Resolutions}} \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}
+\begin{DoxyCompactList}\small\item\em Phase field resolution (Single or Double) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00037}{37}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1GridParameters_a878c046c2b03acd7b06597f0dc014983}\label{classopenphase_1_1GridParameters_a878c046c2b03acd7b06597f0dc014983} 
+\index{openphase::GridParameters@{openphase::GridParameters}!GridParameters@{GridParameters}}
+\index{GridParameters@{GridParameters}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{GridParameters()}{GridParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily openphase\+::\+Grid\+Parameters\+::\+Grid\+Parameters (\begin{DoxyParamCaption}\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}\ \ =\ \textcolor{stringliteral}{"{}GridParameters"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ \ =\ 1;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ \ =\ 1;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ \ =\ 1;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}\ =\ 1;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ =\ 1;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ =\ 1;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ =\ 1;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ =\ 1;}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ =\ 1;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ =\ 0;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ =\ 1;}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}}\ =\ 1;}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}}\ =\ 1;}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}}\ =\ 1;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}}\ =\ 1;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}}\ =\ 1;}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}}\ =\ 1;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ =\ 1.0;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}\ =\ 1;}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ =\ 1.0;}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ =\ 1.0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}};}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_ac4508a763ec3f99873811ee67ef9ca7e}\label{classopenphase_1_1GridParameters_ac4508a763ec3f99873811ee67ef9ca7e} 
+\index{openphase::GridParameters@{openphase::GridParameters}!GridParameters@{GridParameters}}
+\index{GridParameters@{GridParameters}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{GridParameters()}{GridParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily openphase\+::\+Grid\+Parameters\+::\+Grid\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}\ \ =\ rhs.thisclassname;}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2}{thisobjectname}}\ =\ rhs.thisobjectname;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ =\ rhs.Idx;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ \ =\ rhs.Nx;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ \ =\ rhs.Ny;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ \ =\ rhs.Nz;}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}\ =\ rhs.Nz2;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ =\ rhs.dNx;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ =\ rhs.dNy;}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ =\ rhs.dNz;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ =\ rhs.TotalNx;}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ =\ rhs.OffsetX;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ =\ rhs.TotalNy;}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ =\ rhs.OffsetY;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ =\ rhs.TotalNz;}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ =\ rhs.OffsetZ;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}}\ =\ rhs.maxNx;}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}}\ =\ rhs.maxNy;}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}}\ =\ rhs.maxNz;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}}\ =\ rhs.maxTotalNx;}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}}\ =\ rhs.maxTotalNy;}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}}\ =\ rhs.maxTotalNz;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ =\ rhs.dx;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}\ =\ rhs.Bcells;}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ =\ rhs.iWidth;}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ \ \ \ =\ rhs.Eta;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ rhs.Resolution;}
+\DoxyCodeLine{00119\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a674e6d0ccdacebca2e5e92ae540dc6bd}\label{classopenphase_1_1GridParameters_a674e6d0ccdacebca2e5e92ae540dc6bd} 
+\index{openphase::GridParameters@{openphase::GridParameters}!GridParameters@{GridParameters}}
+\index{GridParameters@{GridParameters}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{GridParameters()}{GridParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily openphase\+::\+Grid\+Parameters\+::\+Grid\+Parameters (\begin{DoxyParamCaption}\item[{int}]{total\+\_\+nx,  }\item[{int}]{total\+\_\+ny,  }\item[{int}]{total\+\_\+nz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(total\_nx,\ total\_ny,\ total\_nz);}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1GridParameters_a70ddf5c25482d7cdefe67b0d25dcd258}\label{classopenphase_1_1GridParameters_a70ddf5c25482d7cdefe67b0d25dcd258} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Active@{Active}}
+\index{Active@{Active}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Active()}{Active()}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates dimensionality, e.\+g. 1D, 2D or 3D 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00060}{60}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a9e96c156b3c12ba0bb402d5188dbf1c6}\label{classopenphase_1_1GridParameters_a9e96c156b3c12ba0bb402d5188dbf1c6} 
+\index{openphase::GridParameters@{openphase::GridParameters}!CellVolume@{CellVolume}}
+\index{CellVolume@{CellVolume}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{CellVolume()}{CellVolume()}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::\+Cell\+Volume (\begin{DoxyParamCaption}\item[{bool}]{ignore\+\_\+active\+\_\+dimensions = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of a single grid cell unless ignore\+\_\+active\+\_\+dimensions == true, in which case volume is returned regardless of active dimensions 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00085}{85}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ignore\_active\_dimensions)\ \textcolor{keywordflow}{return}\ std::pow(\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ 3);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}});}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_ac69872dbde644f556c2a4be0ce14142d}\label{classopenphase_1_1GridParameters_ac69872dbde644f556c2a4be0ce14142d} 
+\index{openphase::GridParameters@{openphase::GridParameters}!ConvertToGlobal@{ConvertToGlobal}}
+\index{ConvertToGlobal@{ConvertToGlobal}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{ConvertToGlobal()}{ConvertToGlobal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} openphase\+::\+Grid\+Parameters\+::\+Convert\+To\+Global (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{local\+\_\+position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Converts grid coordinates from local domain coordinates to global (relevant for MPI mode) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00132}{132}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ local\_position\ +\ iVector3\{\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}},\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}},\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\};}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a6782d32bbf30589f070b233494d9d51e}\label{classopenphase_1_1GridParameters_a6782d32bbf30589f070b233494d9d51e} 
+\index{openphase::GridParameters@{openphase::GridParameters}!ConvertToLocal@{ConvertToLocal}}
+\index{ConvertToLocal@{ConvertToLocal}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{ConvertToLocal()}{ConvertToLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} openphase\+::\+Grid\+Parameters\+::\+Convert\+To\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{global\+\_\+position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Converts global grid coordinates from global to local domain coordinates (relevant for MPI mode) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00127}{127}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ global\_position\ -\/\ iVector3\{\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}},\mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}},\mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\};}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_aa24687417304e06716da10e732d708af}\label{classopenphase_1_1GridParameters_aa24687417304e06716da10e732d708af} 
+\index{openphase::GridParameters@{openphase::GridParameters}!DoubleResolution@{DoubleResolution}}
+\index{DoubleResolution@{DoubleResolution}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{DoubleResolution()}{DoubleResolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Grid\+Parameters\+::\+Double\+Resolution (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns grid parameters in double resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a878c046c2b03acd7b06597f0dc014983}{GridParameters}}\ DoubleGrid(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ DoubleGrid.Nx\ \ \ \ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ DoubleGrid.TotalNx\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ DoubleGrid.OffsetX\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ DoubleGrid.maxNx\ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ DoubleGrid.maxTotalNx\ *=\ 2;}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ DoubleGrid.Ny\ \ \ \ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ DoubleGrid.TotalNy\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ DoubleGrid.OffsetY\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ DoubleGrid.maxNy\ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ DoubleGrid.maxTotalNy\ *=\ 2;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ DoubleGrid.Nz\ \ \ \ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ DoubleGrid.Nz2\ \ \ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ DoubleGrid.TotalNz\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ DoubleGrid.OffsetZ\ \ \ \ *=\ 2;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ DoubleGrid.maxNz\ \ \ \ \ \ *=\ 2;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ DoubleGrid.maxTotalNz\ *=\ 2;}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ DoubleGrid.dx\ \ \ \ \ \ \ \ \ \ \ \ \ *=\ 0.5;}
+\DoxyCodeLine{00200\ \ \ \ \ DoubleGrid.Eta\ \ \ \ \ \ \ \ \ \ \ \ *=\ 0.5;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ DoubleGrid;}
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}\label{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7} 
+\index{openphase::GridParameters@{openphase::GridParameters}!LocalNumberOfCells@{LocalNumberOfCells}}
+\index{LocalNumberOfCells@{LocalNumberOfCells}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{LocalNumberOfCells()}{LocalNumberOfCells()}}
+{\footnotesize\ttfamily long int openphase\+::\+Grid\+Parameters\+::\+Local\+Number\+Of\+Cells (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Number of grid cells in the local simulation domain 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00065}{65}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ *\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ *\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a2a6ee9a70c8942a45181a8778a333613}\label{classopenphase_1_1GridParameters_a2a6ee9a70c8942a45181a8778a333613} 
+\index{openphase::GridParameters@{openphase::GridParameters}!LocalVolume@{LocalVolume}}
+\index{LocalVolume@{LocalVolume}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{LocalVolume()}{LocalVolume()}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::\+Local\+Volume (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of the local simulation domain 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00070}{70}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()*std::pow(\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}});}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_aacdc92f2386dc8bd97e82a7af5069e0a}\label{classopenphase_1_1GridParameters_aacdc92f2386dc8bd97e82a7af5069e0a} 
+\index{openphase::GridParameters@{openphase::GridParameters}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \& openphase\+::\+Grid\+Parameters\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}\ \ =\ rhs.thisclassname;}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2}{thisobjectname}}\ =\ rhs.thisobjectname;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ =\ rhs.Idx;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ \ =\ rhs.Nx;}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ \ =\ rhs.Ny;}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ \ =\ rhs.Nz;}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}\ =\ rhs.Nz2;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ =\ rhs.dNx;}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ =\ rhs.dNy;}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ =\ rhs.dNz;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ =\ rhs.TotalNx;}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ =\ rhs.OffsetX;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ =\ rhs.TotalNy;}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ =\ rhs.OffsetY;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ =\ rhs.TotalNz;}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ =\ rhs.OffsetZ;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}}\ =\ rhs.maxNx;}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}}\ =\ rhs.maxNy;}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}}\ =\ rhs.maxNz;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}}\ =\ rhs.maxTotalNx;}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}}\ =\ rhs.maxTotalNy;}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}}\ =\ rhs.maxTotalNz;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ =\ rhs.dx;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}\ =\ rhs.Bcells;}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ =\ rhs.iWidth;}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ \ \ \ =\ rhs.Eta;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ rhs.Resolution;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00163\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_ac33a6f00155d505c345ffe1f34898276}\label{classopenphase_1_1GridParameters_ac33a6f00155d505c345ffe1f34898276} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInBounds@{PositionInBounds}}
+\index{PositionInBounds@{PositionInBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInBounds()}{PositionInBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Bounds (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{z }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given local grid coordinates are within local domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00091}{91}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ >=\ 0\ and\ x\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ and}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ >=\ 0\ and\ y\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ and}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ >=\ 0\ and\ z\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a4f29874c32890399bfe0e8f5a9346c94}\label{classopenphase_1_1GridParameters_a4f29874c32890399bfe0e8f5a9346c94} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInBounds@{PositionInBounds}}
+\index{PositionInBounds@{PositionInBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInBounds()}{PositionInBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given local grid coordinates are within local domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00098}{98}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ac33a6f00155d505c345ffe1f34898276}{PositionInBounds}}(position[0],position[1],position[2]);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_acef56be2cf66c421e04a1315e9133685}\label{classopenphase_1_1GridParameters_acef56be2cf66c421e04a1315e9133685} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInLocalBounds@{PositionInLocalBounds}}
+\index{PositionInLocalBounds@{PositionInLocalBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInLocalBounds()}{PositionInLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Local\+Bounds (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{z }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within local domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00103}{103}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ >=\ 0\ and\ x\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ and}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ >=\ 0\ and\ y\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ and}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ >=\ 0\ and\ z\ -\/\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_abdc0398a8107e0e74a281624dd75ca8a}\label{classopenphase_1_1GridParameters_abdc0398a8107e0e74a281624dd75ca8a} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInLocalBounds@{PositionInLocalBounds}}
+\index{PositionInLocalBounds@{PositionInLocalBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInLocalBounds()}{PositionInLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Local\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within local domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00110}{110}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_acef56be2cf66c421e04a1315e9133685}{PositionInLocalBounds}}(position[0],position[1],position[2]);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a4f52e1e3afe7896bbc6e1113039fe221}\label{classopenphase_1_1GridParameters_a4f52e1e3afe7896bbc6e1113039fe221} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInTotalBounds@{PositionInTotalBounds}}
+\index{PositionInTotalBounds@{PositionInTotalBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInTotalBounds()}{PositionInTotalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Total\+Bounds (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{z }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given global grid coordinates are within total domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00115}{115}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ >=\ 0\ and\ x\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ and}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ >=\ 0\ and\ y\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ and}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ >=\ 0\ and\ z\ <\ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a1be1be7b7438e271fd5721f2063e3c30}\label{classopenphase_1_1GridParameters_a1be1be7b7438e271fd5721f2063e3c30} 
+\index{openphase::GridParameters@{openphase::GridParameters}!PositionInTotalBounds@{PositionInTotalBounds}}
+\index{PositionInTotalBounds@{PositionInTotalBounds}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{PositionInTotalBounds()}{PositionInTotalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool openphase\+::\+Grid\+Parameters\+::\+Position\+In\+Total\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Indicates if given global position coordinates are within total domain bounds 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00122}{122}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a4f52e1e3afe7896bbc6e1113039fe221}{PositionInTotalBounds}}(position[0],position[1],position[2]);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a3f373c45bedd26eee003ee886f7d6d42}\label{classopenphase_1_1GridParameters_a3f373c45bedd26eee003ee886f7d6d42} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Read@{Read}}
+\index{Read@{Read}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Reads grid parameters history from the file. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00362}{362}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\textcolor{stringliteral}{"{}GridParameters\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ fstream\ inp(FileName.c\_str(),\ ios::in);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}Read"{}});}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00372\ \ \ \ \ \};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a878c046c2b03acd7b06597f0dc014983}{GridParameters}}\ tmpGrid;}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{int}\ tmptStep\ =\ 0;}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{while}(!inp.eof())}
+\DoxyCodeLine{00378\ \ \ \ \ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpTotalNx;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpTotalNy;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpTotalNz;}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ inp\ >>\ tmptStep\ >>\ tmpTotalNx\ >>\ tmpTotalNy\ >>\ tmpTotalNz;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tmptStep\ <=\ tStep)}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ tmpGrid.SetDimensions(tmpTotalNx,tmpTotalNy,tmpTotalNz);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ tmpGrid.Idx\ =\ tmptStep;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ *\textcolor{keyword}{this}\ =\ tmpGrid;}
+\DoxyCodeLine{00395\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b}\label{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b} 
+\index{openphase::GridParameters@{openphase::GridParameters}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Reads input from the specified input file. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}+\textcolor{stringliteral}{"{}\ input"{}});}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00215\ \ \ \ \ \};}
+\DoxyCodeLine{00216\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00217\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00218\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b}{ReadInput}}(data);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00224\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_abff4ccdbebb973cb7ea51d75dfd975c6}\label{classopenphase_1_1GridParameters_abff4ccdbebb973cb7ea51d75dfd975c6} 
+\index{openphase::GridParameters@{openphase::GridParameters}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads input from the specified input file. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Grid\ Parameters"{}});}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}});}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNx\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Nx"{}}));}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNy\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Ny"{}}));}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNz\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Nz"{}}));}
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dx"{}}));}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Bcells"{}}),\ \textcolor{keyword}{false},\ 1);}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \{string(\textcolor{stringliteral}{"{}IWidth"{}}),\ string(\textcolor{stringliteral}{"{}InterfaceWidth"{}})\});}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpNx\ +\ tmpNy\ +\ tmpNz\ ==\ 0)}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}All\ dimensions\ are\ suppressed:\ Nx=Ny=Nz=0!\(\backslash\)n\ OpenPhase\ is\ not\ intended\ for\ simulations\ of\ zero-\/dimensional\ systems"{}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{string}\ locResolution\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Resolution"{}}),\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}SINGLE"{}});}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}(locResolution\ ==\ \textcolor{stringliteral}{"{}DOUBLE"{}}\ or\ locResolution\ ==\ \textcolor{stringliteral}{"{}DUAL"{}})}
+\DoxyCodeLine{00249\ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Resolutions::Dual}};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}*\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}*0.5;}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(locResolution\ ==\ \textcolor{stringliteral}{"{}SINGLE"{}})}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}};}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}*\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00259\ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ resolution\ selected\ -\/>\ "{}}\ +\ locResolution,\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00265\ \ \ \ \ MPI\_3D\_DECOMPOSITION\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}MPI3D"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_3D\_DECOMPOSITION)}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[0]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Ncx"{}}),\ \textcolor{keyword}{false},\ 1);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[1]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Ncy"{}}),\ \textcolor{keyword}{false},\ 1);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[2]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Ncz"{}}),\ \textcolor{keyword}{false},\ 1);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_CART\_SIZE[0]\ *\ MPI\_CART\_SIZE[1]\ *\ MPI\_CART\_SIZE[2]\ !=\ MPI\_SIZE)}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ message\ =\ \textcolor{stringliteral}{"{}The\ requested\ number\ of\ MPI\ parallel\ blocks\ can\ not\ be\ decomposed\ by\ requested\ number\ of\ 3D\ blocks."{}};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message,\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(tmpNx,tmpNy,tmpNz);}
+\DoxyCodeLine{00283\ \ \ \ \ assert(tmpNx\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ ==\ 0);}
+\DoxyCodeLine{00284\ \ \ \ \ assert(tmpNy\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ ==\ 0);}
+\DoxyCodeLine{00285\ \ \ \ \ assert(tmpNz\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ ==\ 0);}
+\DoxyCodeLine{00286\ \ \ \ \ }
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00289\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a6842be41edf5eba06d1f4f8d06e885df}\label{classopenphase_1_1GridParameters_a6842be41edf5eba06d1f4f8d06e885df} 
+\index{openphase::GridParameters@{openphase::GridParameters}!ReadJSON@{ReadJSON}}
+\index{ReadJSON@{ReadJSON}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{ReadJSON()}{ReadJSON()}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Read\+JSON (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00291}{291}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00292\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Grid\ Parameters"{}});}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ std::ifstream\ f(InputFileName);}
+\DoxyCodeLine{00297\ \ \ \ \ }
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ data\ =\ json::parse(f);}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{if}\ (data.contains(\mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}))}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ grid\ =\ data[\mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}}];}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNx\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Nx"{}}\});}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNy\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Ny"{}}\});}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpNz\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Nz"{}}\});}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}\ \ \ \ \ \ \ \ =\ FileInterface::ReadParameter<double>(grid,\ \{\textcolor{stringliteral}{"{}dx"{}}\});}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}\ \ \ \ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Bcells"{}}\},1);}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ \ \ \ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}IWidth"{}}\});}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpNx\ +\ tmpNy\ +\ tmpNz\ ==\ 0)}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}All\ dimensions\ are\ suppressed:\ Nx=Ny=Nz=0!\(\backslash\)n\ OpenPhase\ is\ not\ intended\ for\ simulations\ of\ zero-\/dimensional\ systems"{}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ locResolution\ =\ FileInterface::ReadParameter<std::string>(grid,\ \{\textcolor{stringliteral}{"{}Resolution"{}}\},\textcolor{stringliteral}{"{}SINGLE"{}});}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locResolution\ ==\ \textcolor{stringliteral}{"{}DOUBLE"{}}\ or\ locResolution\ ==\ \textcolor{stringliteral}{"{}DUAL"{}})}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Resolutions::Dual}};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}*\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}*0.5;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(locResolution\ ==\ \textcolor{stringliteral}{"{}SINGLE"{}})}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ =\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}{Eta}}\ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}*\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ resolution\ selected\ -\/>\ "{}}\ +\ locResolution,\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ MPI\_3D\_DECOMPOSITION\ =\ FileInterface::ReadParameter<bool>(grid,\ \{\textcolor{stringliteral}{"{}MPI3D"{}}\},\textcolor{keyword}{false});}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_3D\_DECOMPOSITION)}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[0]\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Ncx"{}}\},1);}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[1]\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Ncy"{}}\},1);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ MPI\_CART\_SIZE[2]\ =\ FileInterface::ReadParameter<int>(grid,\ \{\textcolor{stringliteral}{"{}Ncz"{}}\},1);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_CART\_SIZE[0]\ *\ MPI\_CART\_SIZE[1]\ *\ MPI\_CART\_SIZE[2]\ !=\ MPI\_SIZE)}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ message\ =\ \textcolor{stringliteral}{"{}The\ requested\ number\ of\ MPI\ parallel\ blocks\ can\ not\ be\ decomposed\ by\ requested\ number\ of\ 3D\ blocks."{}};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message,\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(tmpNx,tmpNy,tmpNz);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ assert(tmpNx\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ ==\ 0);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ assert(tmpNy\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ ==\ 0);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ assert(tmpNz\ >\ 0\ ||\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ ==\ 0);}
+\DoxyCodeLine{00356\ \ \ \ \ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00360\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}\label{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d} 
+\index{openphase::GridParameters@{openphase::GridParameters}!SetDimensions@{SetDimensions}}
+\index{SetDimensions@{SetDimensions}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{SetDimensions()}{SetDimensions()}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Set\+Dimensions (\begin{DoxyParamCaption}\item[{int}]{total\+\_\+nx,  }\item[{int}]{total\+\_\+ny,  }\item[{int}]{total\+\_\+nz }\end{DoxyParamCaption})}
+
+
+
+Sets grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00645}{645}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00646\ \{}
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keywordflow}{if}(total\_nx\ !=\ 0)}
+\DoxyCodeLine{00648\ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ \ \ \ \ \ \ \ \ =\ total\_nx;}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ \ \ \ =\ total\_nx;}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}}\ \ \ \ \ \ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}});}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}});}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \ \ \ \ \}}
+\DoxyCodeLine{00657\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ reduced\ X\ dimension}}
+\DoxyCodeLine{00658\ \ \ \ \ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ \ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ \ \ \ =\ 1;}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}{maxNx}}\ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}{maxTotalNx}}\ =\ 1;}
+\DoxyCodeLine{00665\ \ \ \ \ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ \ \ \ \ \textcolor{keywordflow}{if}(total\_ny\ !=\ 0)}
+\DoxyCodeLine{00668\ \ \ \ \ \{}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ \ \ \ \ \ \ \ \ =\ total\_ny;}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ \ \ \ =\ total\_ny;}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}}\ \ \ \ \ \ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}});}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}});}
+\DoxyCodeLine{00675\ \ \ \ \ \}}
+\DoxyCodeLine{00676\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ reduced\ Y\ dimension}}
+\DoxyCodeLine{00677\ \ \ \ \ \{}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ \ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ \ \ \ =\ 1;}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}{OffsetY}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}{maxNy}}\ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}{maxTotalNy}}\ =\ 1;}
+\DoxyCodeLine{00684\ \ \ \ \ \}}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keywordflow}{if}(total\_nz\ !=\ 0)}
+\DoxyCodeLine{00687\ \ \ \ \ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ \ \ \ \ \ \ \ \ =\ total\_nz;}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2\ +\ 1;}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ \ \ \ =\ total\_nz;}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}}\ \ \ \ \ \ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}});}
+\DoxyCodeLine{00695\ \ \ \ \ \}}
+\DoxyCodeLine{00696\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ reduced\ Z\ dimension}}
+\DoxyCodeLine{00697\ \ \ \ \ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ \ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}\ \ \ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ \ \ \ =\ 1;}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}{OffsetZ}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}{maxNz}}\ \ \ \ \ \ =\ 1;}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}{maxTotalNz}}\ =\ 1;}
+\DoxyCodeLine{00705\ \ \ \ \ \}}
+\DoxyCodeLine{00706\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a6e23bc9f72a10111916898b3641a8162}\label{classopenphase_1_1GridParameters_a6e23bc9f72a10111916898b3641a8162} 
+\index{openphase::GridParameters@{openphase::GridParameters}!TotalNumberOfCells@{TotalNumberOfCells}}
+\index{TotalNumberOfCells@{TotalNumberOfCells}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{TotalNumberOfCells()}{TotalNumberOfCells()}}
+{\footnotesize\ttfamily long int openphase\+::\+Grid\+Parameters\+::\+Total\+Number\+Of\+Cells (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Number of grid cells in the entire simulation domain 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00075}{75}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ *\ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ *\ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_ada73855c429b6335cdd5f674157e6ed5}\label{classopenphase_1_1GridParameters_ada73855c429b6335cdd5f674157e6ed5} 
+\index{openphase::GridParameters@{openphase::GridParameters}!TotalVolume@{TotalVolume}}
+\index{TotalVolume@{TotalVolume}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{TotalVolume()}{TotalVolume()}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::\+Total\+Volume (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\texorpdfstring{$<$}{<} Volume in 3D, area in 2D and length in 1D of the entire simulation domain 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00080}{80}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a6e23bc9f72a10111916898b3641a8162}{TotalNumberOfCells}}()*std::pow(\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ +\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}});}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1GridParameters_a0120fb0c515b2cee283e2c728aa33b2a}\label{classopenphase_1_1GridParameters_a0120fb0c515b2cee283e2c728aa33b2a} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Write@{Write}}
+\index{Write@{Write}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void openphase\+::\+Grid\+Parameters\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Writes grid parameters history to the file. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{GridParameters_8cpp_source}{Grid\+Parameters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398\ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\textcolor{stringliteral}{"{}GridParameters\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ ofstream\ out(FileName.c\_str(),\ ios::app);}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)}
+\DoxyCodeLine{00404\ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created"{}},\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}{thisclassname}},\ \textcolor{stringliteral}{"{}Write"{}});}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00407\ \ \ \ \ \};}
+\DoxyCodeLine{00408\ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}{TotalNy}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}{TotalNz}}\ <<\ endl;}
+\DoxyCodeLine{00409\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}\label{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Bcells@{Bcells}}
+\index{Bcells@{Bcells}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Bcells}{Bcells}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Bcells}
+
+
+
+Number of boundary cells for setting the boundary conditions. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00167}{167}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}\label{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18} 
+\index{openphase::GridParameters@{openphase::GridParameters}!dNx@{dNx}}
+\index{dNx@{dNx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{dNx}{dNx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::d\+Nx}
+
+
+
+Stencil step in X direction for reduced dimensions simulations. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00144}{144}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}\label{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc} 
+\index{openphase::GridParameters@{openphase::GridParameters}!dNy@{dNy}}
+\index{dNy@{dNy}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{dNy}{dNy}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::d\+Ny}
+
+
+
+Stencil step in Y direction for reduced dimensions simulations. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00145}{145}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}\label{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e} 
+\index{openphase::GridParameters@{openphase::GridParameters}!dNz@{dNz}}
+\index{dNz@{dNz}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{dNz}{dNz}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::d\+Nz}
+
+
+
+Stencil step in Z direction for reduced dimensions simulations. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00146}{146}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}\label{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c} 
+\index{openphase::GridParameters@{openphase::GridParameters}!dx@{dx}}
+\index{dx@{dx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::dx}
+
+
+
+Grid spacing in true units. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00165}{165}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b}\label{classopenphase_1_1GridParameters_a3e69b0129bd2735e51f8dc0fde93721b} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Eta@{Eta}}
+\index{Eta@{Eta}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Eta}{Eta}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::\+Eta}
+
+
+
+Interface width in true units. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00169}{169}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}\label{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Idx@{Idx}}
+\index{Idx@{Idx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Idx}{Idx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Idx}
+
+
+
+Index of the current instance of the grid parameters (used to store grid history) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00137}{137}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}\label{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e} 
+\index{openphase::GridParameters@{openphase::GridParameters}!iWidth@{iWidth}}
+\index{iWidth@{iWidth}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{iWidth}{iWidth}}
+{\footnotesize\ttfamily double openphase\+::\+Grid\+Parameters\+::i\+Width}
+
+
+
+Interface width in grid cells. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00168}{168}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f}\label{classopenphase_1_1GridParameters_ab897ee326398d3c7934e5ba4995cd04f} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxNx@{maxNx}}
+\index{maxNx@{maxNx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxNx}{maxNx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Nx}
+
+
+
+Maximum number of grid cells in X direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00157}{157}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614}\label{classopenphase_1_1GridParameters_ab1252b7130b73edcb525c7b0b2da3614} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxNy@{maxNy}}
+\index{maxNy@{maxNy}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxNy}{maxNy}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Ny}
+
+
+
+Maximum number of grid cells in Y direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00158}{158}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419}\label{classopenphase_1_1GridParameters_a724fabe3ea3b555d986d79ae672d0419} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxNz@{maxNz}}
+\index{maxNz@{maxNz}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxNz}{maxNz}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Nz}
+
+
+
+Maximum number of grid cells in Z direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00159}{159}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18}\label{classopenphase_1_1GridParameters_aa910ab4dff5505d67ba74c900b401a18} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxTotalNx@{maxTotalNx}}
+\index{maxTotalNx@{maxTotalNx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxTotalNx}{maxTotalNx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Total\+Nx}
+
+
+
+Maximum total number of grid cells in X direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00161}{161}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9}\label{classopenphase_1_1GridParameters_a7b65f6418ac14089aa07e89678c9b0b9} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxTotalNy@{maxTotalNy}}
+\index{maxTotalNy@{maxTotalNy}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxTotalNy}{maxTotalNy}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Total\+Ny}
+
+
+
+Maximum total number of grid cells in Y direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00162}{162}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee}\label{classopenphase_1_1GridParameters_adab254340e18540f0725e70fcd353bee} 
+\index{openphase::GridParameters@{openphase::GridParameters}!maxTotalNz@{maxTotalNz}}
+\index{maxTotalNz@{maxTotalNz}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{maxTotalNz}{maxTotalNz}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::max\+Total\+Nz}
+
+
+
+Maximum total number of grid cells in Z direction during the simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00163}{163}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}\label{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Nx@{Nx}}
+\index{Nx@{Nx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Nx}{Nx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Nx}
+
+
+
+Number of grid cells in X direction. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00139}{139}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}\label{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Ny@{Ny}}
+\index{Ny@{Ny}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Ny}{Ny}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Ny}
+
+
+
+Number of grid cells in Y direction. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00140}{140}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}\label{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Nz@{Nz}}
+\index{Nz@{Nz}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Nz}{Nz}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Nz}
+
+
+
+Number of grid cells in Z direction. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00141}{141}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}\label{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Nz2@{Nz2}}
+\index{Nz2@{Nz2}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Nz2}{Nz2}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Nz2}
+
+
+
+Half of the number of grid cells in Z direction for FFT routines. 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00142}{142}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}\label{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5} 
+\index{openphase::GridParameters@{openphase::GridParameters}!OffsetX@{OffsetX}}
+\index{OffsetX@{OffsetX}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{OffsetX}{OffsetX}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+OffsetX}
+
+
+
+X coordinate of the local domain coordinate system origin (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00149}{149}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88}\label{classopenphase_1_1GridParameters_ade25b3c7a0f4e0349382f6854cad2a88} 
+\index{openphase::GridParameters@{openphase::GridParameters}!OffsetY@{OffsetY}}
+\index{OffsetY@{OffsetY}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{OffsetY}{OffsetY}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+OffsetY}
+
+
+
+Y coordinate of the local domain coordinate system origin (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00152}{152}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a}\label{classopenphase_1_1GridParameters_ab2d101b7c8a941d0895566156c706e5a} 
+\index{openphase::GridParameters@{openphase::GridParameters}!OffsetZ@{OffsetZ}}
+\index{OffsetZ@{OffsetZ}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{OffsetZ}{OffsetZ}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+OffsetZ}
+
+
+
+Z coordinate of the local domain coordinate system origin (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00155}{155}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}\label{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a} 
+\index{openphase::GridParameters@{openphase::GridParameters}!Resolution@{Resolution}}
+\index{Resolution@{Resolution}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{Resolution}{Resolution}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9}{Resolutions}} openphase\+::\+Grid\+Parameters\+::\+Resolution}
+
+
+
+Phase field resolution (Single or Double) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00171}{171}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc}\label{classopenphase_1_1GridParameters_a5b1029df65cb108e2bb567f88fef5ddc} 
+\index{openphase::GridParameters@{openphase::GridParameters}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Grid\+Parameters\+::thisclassname}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00040}{40}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2}\label{classopenphase_1_1GridParameters_a68c51478b27233884f2dc9308ebee4d2} 
+\index{openphase::GridParameters@{openphase::GridParameters}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Grid\+Parameters\+::thisobjectname}
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00041}{41}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}\label{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440} 
+\index{openphase::GridParameters@{openphase::GridParameters}!TotalNx@{TotalNx}}
+\index{TotalNx@{TotalNx}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{TotalNx}{TotalNx}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Total\+Nx}
+
+
+
+Total number of grid cells in X direction (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00148}{148}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2}\label{classopenphase_1_1GridParameters_acc9c421e82dce7125e5c280b978480b2} 
+\index{openphase::GridParameters@{openphase::GridParameters}!TotalNy@{TotalNy}}
+\index{TotalNy@{TotalNy}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{TotalNy}{TotalNy}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Total\+Ny}
+
+
+
+Total system size in Y direction (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00151}{151}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+\Hypertarget{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4}\label{classopenphase_1_1GridParameters_adf4963573a7995245d9701751baa1fd4} 
+\index{openphase::GridParameters@{openphase::GridParameters}!TotalNz@{TotalNz}}
+\index{TotalNz@{TotalNz}!openphase::GridParameters@{openphase::GridParameters}}
+\doxysubsubsection{\texorpdfstring{TotalNz}{TotalNz}}
+{\footnotesize\ttfamily int openphase\+::\+Grid\+Parameters\+::\+Total\+Nz}
+
+
+
+Total system size in Z direction (in case of MPI parallelism) 
+
+
+
+Definition at line \mbox{\hyperlink{GridParameters_8h_source_l00154}{154}} of file \mbox{\hyperlink{GridParameters_8h_source}{Grid\+Parameters.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GridParameters_8h}{Grid\+Parameters.\+h}}\item 
+\mbox{\hyperlink{GridParameters_8cpp}{Grid\+Parameters.\+cpp}}\end{DoxyCompactItemize}

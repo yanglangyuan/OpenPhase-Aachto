@@ -1,0 +1,685 @@
+\doxysection{openphase\+::Elasticity\+Solver\+Spectral Class Reference}
+\hypertarget{classopenphase_1_1ElasticitySolverSpectral}{}\label{classopenphase_1_1ElasticitySolverSpectral}\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+
+
+\texorpdfstring{$<$}{<} Elastic problem solver based on spectral method.  
+
+
+
+
+{\ttfamily \#include "{}Elasticity\+Solver\+Spectral.\+h"{}}
+
+Inheritance diagram for openphase\+::Elasticity\+Solver\+Spectral\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/dee/classopenphase_1_1ElasticitySolverSpectral}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a205ce118c898a0e288816e364c02068d}{Elasticity\+Solver\+Spectral}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a093df098cc0f5de72e6d331a3a1ce2a3}{Elasticity\+Solver\+Spectral}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Constructor calls Initialize and Read\+Input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_ac853041db74c702a1af6a73d7edc4881}{Elasticity\+Solver\+Spectral}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Constructor calls Initialize and Read\+Input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a81b8f4499457e7857e400ddade85a35f}{\texorpdfstring{$\sim$}{\string~}\+Elasticity\+Solver\+Spectral}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a7b248f75d2cf27f20f9c9d9f7723aa2a}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Named constructor, allocates internal storages and initialized variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a3997f3f6824f930cfdb8d7cd564a062f}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, std\+::string Object\+Name\+Suffix="{}"{})
+\begin{DoxyCompactList}\small\item\em Named constructor (considering non periodic boundary conditions) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads elastic properties from the input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a1fbd4f547823006d0c40ad34ab52992e}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads elastic properties from the input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Remeshes the storages, reinitilizes the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a7d4621166c662b35da6ec07a680851e5}{Reinitialize}} (\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&EP, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Needed if the system dimensions have been altered (considering non periodic boundary conditions) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a2191ad55279cddbe15cbcfe207b1b950}{Solve}} (\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&EP, \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, double dt, std\+::function$<$ bool()$>$ End\+Solve=\mbox{[}$\,$\mbox{]}()\{return false;\})
+\begin{DoxyCompactList}\small\item\em Solves mechanical equilibrium problem. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl}{Elasticity\+Solver\+Spectral\+Impl}} $>$ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Elastic problem solver based on spectral method. 
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8h_source_l00056}{56}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8h_source}{Elasticity\+Solver\+Spectral.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a205ce118c898a0e288816e364c02068d}\label{classopenphase_1_1ElasticitySolverSpectral_a205ce118c898a0e288816e364c02068d} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!ElasticitySolverSpectral@{ElasticitySolverSpectral}}
+\index{ElasticitySolverSpectral@{ElasticitySolverSpectral}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{ElasticitySolverSpectral()}{ElasticitySolverSpectral()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Elasticity\+Solver\+Spectral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ :\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}(\textcolor{keyword}{new}\ ElasticitySolverSpectralImpl)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a093df098cc0f5de72e6d331a3a1ce2a3}\label{classopenphase_1_1ElasticitySolverSpectral_a093df098cc0f5de72e6d331a3a1ce2a3} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!ElasticitySolverSpectral@{ElasticitySolverSpectral}}
+\index{ElasticitySolverSpectral@{ElasticitySolverSpectral}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{ElasticitySolverSpectral()}{ElasticitySolverSpectral()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Elasticity\+Solver\+Spectral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Constructor calls Initialize and Read\+Input. 
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}(\textcolor{keyword}{new}\ ElasticitySolverSpectralImpl)\ }
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a7b248f75d2cf27f20f9c9d9f7723aa2a}{Initialize}}(locSettings);}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_ac853041db74c702a1af6a73d7edc4881}\label{classopenphase_1_1ElasticitySolverSpectral_ac853041db74c702a1af6a73d7edc4881} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!ElasticitySolverSpectral@{ElasticitySolverSpectral}}
+\index{ElasticitySolverSpectral@{ElasticitySolverSpectral}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{ElasticitySolverSpectral()}{ElasticitySolverSpectral()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Elasticity\+Solver\+Spectral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Constructor calls Initialize and Read\+Input. 
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}(\textcolor{keyword}{new}\ ElasticitySolverSpectralImpl)\ }
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a7b248f75d2cf27f20f9c9d9f7723aa2a}{Initialize}}(locSettings,\ BC);}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a81b8f4499457e7857e400ddade85a35f}\label{classopenphase_1_1ElasticitySolverSpectral_a81b8f4499457e7857e400ddade85a35f} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!````~ElasticitySolverSpectral@{\texorpdfstring{$\sim$}{\string~}ElasticitySolverSpectral}}
+\index{````~ElasticitySolverSpectral@{\texorpdfstring{$\sim$}{\string~}ElasticitySolverSpectral}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ElasticitySolverSpectral()}{\string~ElasticitySolverSpectral()}}
+{\footnotesize\ttfamily openphase\+::\+Elasticity\+Solver\+Spectral\+::\texorpdfstring{$\sim$}{\string~}\+Elasticity\+Solver\+Spectral (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a3997f3f6824f930cfdb8d7cd564a062f}\label{classopenphase_1_1ElasticitySolverSpectral_a3997f3f6824f930cfdb8d7cd564a062f} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Named constructor (considering non periodic boundary conditions) 
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>Initialize(locSettings,\ BC,\ ObjectNameSuffix);}
+\DoxyCodeLine{00126\ \}\ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a7b248f75d2cf27f20f9c9d9f7723aa2a}\label{classopenphase_1_1ElasticitySolverSpectral_a7b248f75d2cf27f20f9c9d9f7723aa2a} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Named constructor, allocates internal storages and initialized variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>Initialize(locSettings,\ ObjectNameSuffix);}
+\DoxyCodeLine{00122\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Read@{Read}}
+\index{Read@{Read}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41}\label{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads elastic properties from the input file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>ReadInput(InputFileName)\ ;}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a1fbd4f547823006d0c40ad34ab52992e}\label{classopenphase_1_1ElasticitySolverSpectral_a1fbd4f547823006d0c40ad34ab52992e} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads elastic properties from the input stream. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>ReadInput(inp);}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a7d4621166c662b35da6ec07a680851e5}\label{classopenphase_1_1ElasticitySolverSpectral_a7d4621166c662b35da6ec07a680851e5} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Reinitialize@{Reinitialize}}
+\index{Reinitialize@{Reinitialize}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Reinitialize()}{Reinitialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Reinitialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&}]{EP,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Needed if the system dimensions have been altered (considering non periodic boundary conditions) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Needed if the system dimensions have been altered (considering non periodic boundary conditions) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>Reinitialize(EP,\ BC);}
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}\label{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily void openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Remeshes the storages, reinitilizes the solver. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>Remesh(newNx,\ newNy,\ newNz,\ BC);}
+\DoxyCodeLine{00135\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a2191ad55279cddbe15cbcfe207b1b950}\label{classopenphase_1_1ElasticitySolverSpectral_a2191ad55279cddbe15cbcfe207b1b950} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Solve@{Solve}}
+\index{Solve@{Solve}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily int openphase\+::\+Elasticity\+Solver\+Spectral\+::\+Solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&}]{EP,  }\item[{\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{double}]{dt,  }\item[{std\+::function$<$ bool()$>$}]{End\+Solve = {\ttfamily \mbox{[}\mbox{]}()\{return~false;\}} }\end{DoxyParamCaption})}
+
+
+
+Solves mechanical equilibrium problem. 
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8cpp_source}{Elasticity\+Solver\+Spectral.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}}-\/>Solve(EP,BC,dt,\ EndSolve);}
+\DoxyCodeLine{00148\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!Write@{Write}}
+\index{Write@{Write}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}\label{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!impl\_@{impl\_}}
+\index{impl\_@{impl\_}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{impl\_}{impl\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl}{Elasticity\+Solver\+Spectral\+Impl}}$>$ openphase\+::\+Elasticity\+Solver\+Spectral\+::impl\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElasticitySolverSpectral_8h_source_l00077}{77}} of file \mbox{\hyperlink{ElasticitySolverSpectral_8h_source}{Elasticity\+Solver\+Spectral.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1ElasticitySolverSpectral_a8e26e4ccd47af4044734ffb1ad395c41}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!readable@{readable}}
+\index{readable@{readable}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::ElasticitySolverSpectral@{openphase::ElasticitySolverSpectral}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ElasticitySolverSpectral_8h}{Elasticity\+Solver\+Spectral.\+h}}\item 
+\mbox{\hyperlink{ElasticitySolverSpectral_8cpp}{Elasticity\+Solver\+Spectral.\+cpp}}\end{DoxyCompactItemize}

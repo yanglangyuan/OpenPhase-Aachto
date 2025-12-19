@@ -1,0 +1,123 @@
+\doxysection{Type\+Traits.\+h}
+\hypertarget{TypeTraits_8h_source}{}\label{TypeTraits_8h_source}\index{TypeTraits.h@{TypeTraits.h}}
+\mbox{\hyperlink{TypeTraits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2022}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ TYPETRAITS\_H}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ TYPETRAITS\_H}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeA_8h}{NodeA.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeAB_8h}{NodeAB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeAdv_8h}{NodeAdv.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodePF_8h}{NodePF.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeDF_8h}{NodeDF.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeIP_8h}{NodeIP.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NodeVectorN_8h}{NodeVectorN.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dMatrix3x3_8h}{dMatrix3x3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dMatrix6x6_8h}{dMatrix6x6.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dMatrixNxN_8h}{dMatrixNxN.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dVector3_8h}{dVector3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dVector6_8h}{dVector6.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dVectorN_8h}{dVectorN.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{iVector3_8h}{iVector3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00047}00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vStrain_8h}{vStrain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vStress_8h}{vStress.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00050}00050\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00053}00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00054}\mbox{\hyperlink{namespaceopenphase_a084877b581939b03146a685828fb45e5}{00054}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceopenphase_a084877b581939b03146a685828fb45e5}{is\_vector}}\ =\ std::integral\_constant<bool,}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00055}00055\ \ \ \ \ \ \ std::is\_same<T,\ dVector3>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00056}00056\ \ \ \ \ \ \ std::is\_same<T,\ iVector3>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00057}00057\ \ \ \ \ \ \ std::is\_same<T,\ dVector6>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00058}00058\ \ \ \ \ \ \ std::is\_same<T,\ dVectorN>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00059}00059\ \ \ \ \ \ \ std::is\_same<T,\ vStrain\ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00060}00060\ \ \ \ \ \ \ std::is\_same<T,\ vStress\ >::value\ >;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00062}00062\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00063}\mbox{\hyperlink{namespaceopenphase_a8a62d27228e3a684314655e9d3f2c87f}{00063}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceopenphase_a8a62d27228e3a684314655e9d3f2c87f}{is\_matrix}}\ =\ std::integral\_constant<bool,}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00064}00064\ \ \ \ \ \ \ std::is\_same<T,\ dMatrix3x3>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00065}00065\ \ \ \ \ \ \ std::is\_same<T,\ dMatrix6x6>::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00066}00066\ \ \ \ \ \ \ std::is\_same<T,\ dMatrixNxN>::value\ >;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00068}00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ C1\ =\ \textcolor{keywordtype}{double},\ \textcolor{keyword}{typename}\ C2\ =\ \textcolor{keywordtype}{double}>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00069}\mbox{\hyperlink{namespaceopenphase_a1d7c75477345c985c23bd6d0e41de452}{00069}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceopenphase_a1d7c75477345c985c23bd6d0e41de452}{is\_node}}\ =\ std::integral\_constant<bool,}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00070}00070\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeA<C1>\ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00071}00071\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeAB<C1,C2>\ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00072}00072\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeAdv\ \ \ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00073}00073\ \ \ \ \ \ \ std::is\_same<T,\ \ NodePF\ \ \ \ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00074}00074\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeDF\ \ \ \ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00075}00075\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeIP\ \ \ \ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00076}00076\ \ \ \ \ \ \ std::is\_same<T,\ \ NodeVectorN\ \ \ >::value\ >;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00078}00078\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00079}\mbox{\hyperlink{namespaceopenphase_a5284ac996cd6a20589c2935e08a2c8bb}{00079}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceopenphase_a5284ac996cd6a20589c2935e08a2c8bb}{has\_datapointer}}\ =\ std::integral\_constant<bool,}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00080}00080\ \ \ \ \ \ \ \textcolor{comment}{//std::is\_same<T,\ \ std::vector<TT>\ \ \ \ >::value\ |\ //TODO\ std::vector<>\ has\ data()\ method}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00081}00081\ \ \ \ \ \ \ std::is\_same<T,\ \ dVector3\ \ \ \ \ >::value\ |}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00082}00082\ \ \ \ \ \ \ std::is\_same<T,\ \ iVector3\ \ \ \ \ >::value\ >;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00084}00084\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00085}\mbox{\hyperlink{classopenphase_1_1has__clear}{00085}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1has__clear}{has\_clear}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00086}00086\ \{}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00087}\mbox{\hyperlink{classopenphase_1_1has__clear_a1bbf143c0f79ed7dff0b7b7ee2439fea}{00087}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classopenphase_1_1has__clear_a1bbf143c0f79ed7dff0b7b7ee2439fea}{one}};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00088}\mbox{\hyperlink{classopenphase_1_1has__clear_a36b58ee6103884a13e0a0bc7783cd41f}{00088}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classopenphase_1_1has__clear_a36b58ee6103884a13e0a0bc7783cd41f}{two}};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00090}\mbox{\hyperlink{classopenphase_1_1has__clear_af76dca3beac42683fba1f9d8806f2b8b}{00090}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1has__clear_a1bbf143c0f79ed7dff0b7b7ee2439fea}{one}}\ \mbox{\hyperlink{classopenphase_1_1has__clear_af76dca3beac42683fba1f9d8806f2b8b}{test}}(\ \textcolor{keyword}{decltype}(\&C::clear)\ )\ ;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00091}\mbox{\hyperlink{classopenphase_1_1has__clear_aab3730f8e2cd0c9870b4c1de394c573f}{00091}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1has__clear_a36b58ee6103884a13e0a0bc7783cd41f}{two}}\ \mbox{\hyperlink{classopenphase_1_1has__clear_aab3730f8e2cd0c9870b4c1de394c573f}{test}}(...);}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00093}00093\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1has__clear_a26a247eb2e72052e1880ed2dbe8a8410aae30601915664b0fc2afff53da897781}{value}}\ =\ \textcolor{keyword}{sizeof}(test<T>(0))\ ==\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00097}\mbox{\hyperlink{classopenphase_1_1has__clear_a26a247eb2e72052e1880ed2dbe8a8410aae30601915664b0fc2afff53da897781}{00097}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00098}00098\ \};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00100}00100\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00101}\mbox{\hyperlink{classopenphase_1_1has__pack}{00101}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1has__pack}{has\_pack}}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00103}\mbox{\hyperlink{classopenphase_1_1has__pack_afb7cb23f7c4f0afac22642344c17886c}{00103}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classopenphase_1_1has__pack_afb7cb23f7c4f0afac22642344c17886c}{one}};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00104}\mbox{\hyperlink{classopenphase_1_1has__pack_a8440a441b53fd5196b59bbf80c27f253}{00104}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classopenphase_1_1has__pack_a8440a441b53fd5196b59bbf80c27f253}{two}};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00106}\mbox{\hyperlink{classopenphase_1_1has__pack_a65d7a86d79d2321ad9cb51e16b951530}{00106}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1has__pack_afb7cb23f7c4f0afac22642344c17886c}{one}}\ \mbox{\hyperlink{classopenphase_1_1has__pack_a65d7a86d79d2321ad9cb51e16b951530}{test}}(\ \textcolor{keyword}{decltype}(\&C::pack)\ )\ ;}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00107}\mbox{\hyperlink{classopenphase_1_1has__pack_aa5b750e4ff9fb8fbf6c9bcc495335ac5}{00107}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1has__pack_a8440a441b53fd5196b59bbf80c27f253}{two}}\ \mbox{\hyperlink{classopenphase_1_1has__pack_aa5b750e4ff9fb8fbf6c9bcc495335ac5}{test}}(...);}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00109}00109\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00110}00110\ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1has__pack_a6366e30e52d5528ae46d7e2117a0dc9cab64765b40f3a9f3f91c4ae4ec53ff76e}{value}}\ =\ \textcolor{keyword}{sizeof}(test<T>(0))\ ==\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00113}\mbox{\hyperlink{classopenphase_1_1has__pack_a6366e30e52d5528ae46d7e2117a0dc9cab64765b40f3a9f3f91c4ae4ec53ff76e}{00113}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00114}00114\ \};}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00116}00116\ \}\ \textcolor{comment}{//\ end\ of\ namespace\ ophenphase}}
+\DoxyCodeLine{\Hypertarget{TypeTraits_8h_source_l00117}00117\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

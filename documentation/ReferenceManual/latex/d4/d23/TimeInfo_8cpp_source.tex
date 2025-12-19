@@ -1,0 +1,122 @@
+\doxysection{Time\+Info.\+cpp}
+\hypertarget{TimeInfo_8cpp_source}{}\label{TimeInfo_8cpp_source}\index{TimeInfo.cpp@{TimeInfo.cpp}}
+\mbox{\hyperlink{TimeInfo_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2013}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeInfo_8h}{Tools/TimeInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00030}00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00033}00033\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00035}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a30e1eff0461962f7d4ef0d465928912b}{00035}}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a45294b664525c5980d54e6a265641429}{TimeInfo::TimeInfo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ std::string\ Name,\ \textcolor{keywordtype}{bool}\ verbose\_in)}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}{Initialize}}(locSettings,\ Name,\ verbose\_in);}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00040}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a2f87414e61dedc31dd605801345c3cd7}{00040}}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a2f87414e61dedc31dd605801345c3cd7}{TimeInfo::\string~TimeInfo}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}{thisclassname}},\ \textcolor{stringliteral}{"{}Exited\ normally"{}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00045}\mbox{\hyperlink{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}{TimeInfo::Initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ std::string\ Name,\ \textcolor{keywordtype}{bool}\ verbose\_in)}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}TimeInfo"{}};}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}{TimerName}}\ =\ Name;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}}\ =\ verbose\_in;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00053}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a6e8966bc542782712b143a3d04aaa30e}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a6e8966bc542782712b143a3d04aaa30e}{TimeInfo::Reset}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00059}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a0a43b9fa7451f20996e8912ce4729bb3}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a0a43b9fa7451f20996e8912ce4729bb3}{TimeInfo::SetStart}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}++;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00065}\mbox{\hyperlink{classopenphase_1_1TimeInfo_afd306e8f7188ca1a8b8c8ca5ed082786}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_afd306e8f7188ca1a8b8c8ca5ed082786}{TimeInfo::SetTimeStamp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message)}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CurrentTime\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}[Message]\ +=\ CurrentTime\ -\/\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}};}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ CurrentTime;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(Message);}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00076}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a56dc08df289b52d172484b437e3edc76}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a56dc08df289b52d172484b437e3edc76}{TimeInfo::SkipToHere}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CurrentTime\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}[\textcolor{stringliteral}{"{}\#"{}}]\ +=\ CurrentTime\ -\/\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}};}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ CurrentTime;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00083}\mbox{\hyperlink{classopenphase_1_1TimeInfo_a3b06969418c73f9e094ccc697edbe638}{00083}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a3b06969418c73f9e094ccc697edbe638}{TimeInfo::PrintWallClockSummary}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}{TimerName}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TotalTime\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ [message,time]\ :\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}})\ TotalTime\ +=\ time;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TotalConsumedTime\ =\ TotalTime/double(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ std::vector<std::pair<std::string,\ double>>\ tmp(\mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}.begin(),\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}.end());}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::sort(tmp.begin(),\ tmp.end(),\ [](\textcolor{keyword}{const}\ std::pair<std::string,\ double>\&\ a,\ \textcolor{keyword}{const}\ std::pair<std::string,\ double>\&\ b)\ \{\ return\ a.second\ >\ b.second;\ \});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ [message,time]\ :\ tmp)}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message\ !=\ \textcolor{stringliteral}{"{}\#"{}})}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ showtime;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SectionConsumedTime\ =\ time/double(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showtime\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ std::scientific\ <<\ SectionConsumedTime\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ ((SectionConsumedTime/TotalConsumedTime)*100.0)\ <<\ \textcolor{stringliteral}{"{}\ \%"{}};}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(message,\ showtime.str());}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ [message,time]\ :\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}})\ time\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Total\ time\ per\ time\ step\ [s]"{}},\ TotalConsumedTime);}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{TimeInfo_8cpp_source_l00116}00116\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

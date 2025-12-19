@@ -31,8 +31,10 @@
 #include "Initializations.h"
 #include "BoundaryConditions.h"
 #include "InterfaceProperties.h"
+#include "H5Interface.h"
 #include "Tools/TimeInfo.h"
 #include "Tools/MicrostructureAnalysis.h"
+#include "DrivingForce.h"
 
 using namespace openphase;
 
@@ -63,12 +65,27 @@ int main(int argc, char *argv[])
     DoubleObstacle              DO(OPSettings, InputFile);
     InterfaceProperties         IP(OPSettings, InputFile);
     BoundaryConditions          BC(OPSettings, InputFile);
+    DrivingForce                dG(OPSettings, InputFile);
     TimeInfo                    Timer(OPSettings, "Execution Time Statistics");
+    
+    // Initialize HDF5 output
+    H5Interface                 H5;
+    H5.OpenFile("", "NormalGG_output.h5");
+    // WriteSimulationSettings may fail if existing HDF5 structure is incompatible
+    // with the current input (HighFive may throw). Guard to avoid aborting run.
+    try {
+        H5.WriteSimulationSettings(InputFile);
+    }
+    catch (...) {
+        std::cerr << "Warning: could not write simulation settings to HDF5 (continuing)" << std::endl;
+    }
 
     //generating initial grain structure using Voronoi algorithm
     int number_of_grains = 200;
     size_t GrainsPhase = 0;
     Initializations::VoronoiTessellation(Phi, BC, number_of_grains, GrainsPhase);
+
+    
 
     std::cout << "Entering the Time Loop!!!" << std::endl;
     for(RTC.tStep = RTC.tStart; RTC.tStep <= RTC.nSteps; RTC.IncrementTimeStep())
@@ -76,7 +93,16 @@ int main(int argc, char *argv[])
         Timer.SetStart();
         IP.Set(Phi, BC);
         Timer.SetTimeStamp("IP.Set()");
-        DO.CalculatePhaseFieldIncrements(Phi, IP);
+        // prepare/apply any thermodynamic driving force acting on interfaces
+        dG.Clear();
+        // Compute curvature-driven contribution by default. To use elastic
+        // driving force instead, configure @ElasticProperties and call
+        // ElasticProperties::CalculateDrivingForce(...) here.
+        DO.CalculateCurvatureDrivingForce(Phi, IP, dG);
+        dG.Average(Phi, BC);
+
+        // Merge driving force into phase-field increments
+        DO.CalculatePhaseFieldIncrements(Phi, IP, dG);
         Timer.SetTimeStamp("CalculatePhaseFieldIncrements");
         Phi.NormalizeIncrements(BC, RTC.dt);
         Timer.SetTimeStamp("NormalizeIncrements");
@@ -87,7 +113,24 @@ int main(int argc, char *argv[])
         if (RTC.WriteVTK())
         {
             Phi.WriteVTK(OPSettings, RTC.tStep);
-            MicrostructureAnalysis::WriteGrainsStatistics(Phi,RTC.tStep);
+            // write driving force fields (per-phase averages)
+            dG.WriteVTK(OPSettings, Phi, RTC.tStep);
+            MicrostructureAnalysis::WriteGrainsStatistics(Phi, RTC.tStep, "NormalGG_output.h5");
+            
+            // Write HDF5 visualization data (for post-processing)
+            std::vector<H5Interface::Field_t> FieldsToWrite;
+            FieldsToWrite.push_back(H5Interface::Field_t("PhaseField", 
+                [&Phi](int i, int j, int k) -> std::any {
+                    return Phi.Fields(i,j,k).get_max().value;
+                }));
+            FieldsToWrite.push_back(H5Interface::Field_t("GrainIndex", 
+                [&Phi](int i, int j, int k) -> std::any {
+                    return (double)Phi.Fields(i,j,k).get_max().index;
+                }));
+            H5.WriteVisualization(RTC.tStep, OPSettings, FieldsToWrite, 1);
+            
+            // Note: Grain statistics (including HDF5 output) are now written in
+            // MicrostructureAnalysis::WriteGrainsStatistics() called above
         }
         /// Output raw data
         if (RTC.WriteRawData())
@@ -100,6 +143,9 @@ int main(int argc, char *argv[])
             double I_En = DO.AverageEnergyDensity(Phi, IP);
             std::string message = ConsoleOutput::GetStandard("Interface energy density", I_En);
             ConsoleOutput::WriteTimeStep(RTC, message);
+            // print driving force diagnostics and write global averages
+            dG.PrintDiagnostics();
+            dG.AverageGlobal(Phi, RTC.tStep*RTC.dt);
             Timer.PrintWallClockSummary();
         }
     }

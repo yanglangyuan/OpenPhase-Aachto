@@ -1,0 +1,95 @@
+\doxysection{Noise.\+h}
+\hypertarget{Noise_8h_source}{}\label{Noise_8h_source}\index{Noise.h@{Noise.h}}
+\mbox{\hyperlink{Noise_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ NOISE\_H}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ NOISE\_H}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}fftw3.h"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00035}00035\ \textcolor{keyword}{class\ }DrivingForce;}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00036}00036\ \textcolor{keyword}{class\ }PhaseField;}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00037}00037\ \textcolor{keyword}{class\ }Settings;}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00038}00038\ \textcolor{keyword}{class\ }Temperature;}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00040}\mbox{\hyperlink{classopenphase_1_1Noise}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1Noise}{Noise}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00042}00042\ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b}{\string~Noise}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00044}\mbox{\hyperlink{classopenphase_1_1Noise_a10ccf5d9fbe5c95050c9e7e2df7f942a}{00044}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a10ccf5d9fbe5c95050c9e7e2df7f942a}{Noise}}(\textcolor{keywordtype}{void})\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00045}\mbox{\hyperlink{classopenphase_1_1Noise_ae84843d32a013336e446863def411891}{00045}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ae84843d32a013336e446863def411891}{Noise}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName\ =\ \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00050}00050\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(\textcolor{keyword}{const}\ std::string\ InputFileName)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{UpdateRaw}}(\textcolor{keywordtype}{int}\ tStep);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{AddToDrivingForce}}(\textcolor{keywordtype}{int}\ tStep,\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}\&\ Temp,\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ DF);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{AddToDrivingForce}}(\textcolor{keywordtype}{int}\ tStep,\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ DF);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(std::stringstream\&\ inp)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc}{WriteVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00061}\mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{00061}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00062}\mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{00062}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{FixAmpl}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00063}\mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{00063}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00064}\mbox{\hyperlink{classopenphase_1_1Noise_aea4abe843477bc7208fb796ff57d6ffb}{00064}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aea4abe843477bc7208fb796ff57d6ffb}{BCells}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00065}\mbox{\hyperlink{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}{00065}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}{Nphases}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00067}\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{00067}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters}{GridParameters}}\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00069}\mbox{\hyperlink{classopenphase_1_1Noise_aafffea25dec6dbf2543d0bd689b25fbf}{00069}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aafffea25dec6dbf2543d0bd689b25fbf}{RandomSeed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00070}\mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{00070}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//const\ double\ kBoltzmann;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Physical\ constant}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00074}00074\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00078}\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{00078}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D<\ double,\ 0\ >}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00079}\mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{00079}}\ \ \ \ \ fftw\_complex*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\_In}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00080}\mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{00080}}\ \ \ \ \ fftw\_complex*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\_Out}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00081}\mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{00081}}\ \ \ \ \ fftw\_plan\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00082}\mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{00082}}\ \ \ \ \ std::complex<double>*\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00083}\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{00083}}\ \ \ \ \ std::complex<double>*\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00084}\mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{00084}}\ \ \ \ \ std::default\_random\_engine\ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00085}\mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{00085}}\ \ \ \ \ std::normal\_distribution<double>\ \mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00086}00086\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00087}00087\ \};}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8h_source_l00089}00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

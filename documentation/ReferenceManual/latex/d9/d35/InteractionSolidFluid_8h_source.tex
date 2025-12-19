@@ -1,0 +1,104 @@
+\doxysection{Interaction\+Solid\+Fluid.\+h}
+\hypertarget{InteractionSolidFluid_8h_source}{}\label{InteractionSolidFluid_8h_source}\index{InteractionSolidFluid.h@{InteractionSolidFluid.h}}
+\mbox{\hyperlink{InteractionSolidFluid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ INTERACTIONSOLIDFLUID\_H}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ INTERACTIONSOLIDFLUID\_H}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GrainsProperties_8h}{GrainsProperties.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00036}00036\ \textcolor{keyword}{class\ }BoundaryConditions;}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00037}00037\ \textcolor{keyword}{class\ }PhaseField;}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00038}00038\ \textcolor{keyword}{class\ }Settings;}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00039}00039\ \textcolor{keyword}{class\ }Velocities;}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00041}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid}{00041}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid}{InteractionSolidFluid}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a37e1fa6afba195d899febf44eaab6b05}{00043}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a37e1fa6afba195d899febf44eaab6b05}{InteractionSolidFluid}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ InputFileName\ =\ DefaultInputFileName)}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ Initialize(locSettings);}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ ReadInput(InputFileName);}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(std::string\ InputFileName)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(std::stringstream\&\ inp)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ LocalGrainVelocity(\textcolor{keywordtype}{long}\ i,\ \textcolor{keywordtype}{long}\ j,\ \textcolor{keywordtype}{long}\ k,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}}\&\ grain,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ CalculateSolidVelocities(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00058}00058\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CalculateCenterOfMass(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CalculateMomentOfInterita(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ EnforceZeroTotalMomentum(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ EnforceZeroTotalAngularMomentum(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ LimitVelocity(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \textcolor{keywordtype}{double}\ VLimit);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ CalculateRigidBodyVelocities(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{void}\ CalculateRigidBodyVelocitiesWithoutInertia(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ LocalSolidFraction(\textcolor{keywordtype}{long}\ i,\ \textcolor{keywordtype}{long}\ j,\ \textcolor{keywordtype}{long}\ k,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CalculateSolidPhaseVelocities(\mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00078}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{00078}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}}\&\ grain)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grain.\mbox{\hyperlink{classopenphase_1_1Grain_a62c824e5956243504ba557b752e664d5}{Exist}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grain.\mbox{\hyperlink{classopenphase_1_1Grain_a772716a9b81707926d427f39819249c3}{State}}\ !=\ AggregateStates::Solid)\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grain.\mbox{\hyperlink{classopenphase_1_1Grain_a59d86c8a1ac2a5d79b1ffde5cda6dda3}{Mobile}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grain.\mbox{\hyperlink{classopenphase_1_1Grain_a4d4dbe6ecb6780221aef8634224dc39c}{Volume}}\ <=\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00087}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}{00087}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}{TauTranslation}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00088}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}{00088}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}{TauRotation}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00089}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}{00089}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}{VelocityLimit}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00090}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{00090}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{DoInertia}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00091}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{00091}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{DoRotations}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00092}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{00092}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{DoLimitVelocity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00093}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}{00093}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}{DoEnforceZeroTotalMomentum}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00094}\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}{00094}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}{DoEnforceZeroTotalAngularMomentum}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00095}00095\ \};}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00097}00097\ \}\ \textcolor{comment}{//namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{InteractionSolidFluid_8h_source_l00098}00098\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

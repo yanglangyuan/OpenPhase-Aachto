@@ -1,0 +1,1344 @@
+\doxysection{openphase\+::Tools Class Reference}
+\hypertarget{classopenphase_1_1Tools}{}\label{classopenphase_1_1Tools}\index{openphase::Tools@{openphase::Tools}}
+
+
+{\ttfamily \#include "{}Tools.\+h"{}}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} $>$ \mbox{\hyperlink{classopenphase_1_1Tools_a4e705f80c82f77b5ebec80cdbd6d8dcb}{find\+Index\+Permutations}} (\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&loc\+Indices)
+\begin{DoxyCompactList}\small\item\em Finds all index permutations of loc\+Indices. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_afa0e13f9de8e0bc1648eca5fdfafaed4}{jacobi\+Rotate}} (\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&A, \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&R, int p, int q)
+\begin{DoxyCompactList}\small\item\em Implemented from \href{https://dl.acm.org/doi/abs/10.1145/1028523.1028541}{\texttt{ https\+://dl.\+acm.\+org/doi/abs/10.\+1145/1028523.\+1028541}}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_a60a7d5469cdf77db0cec3552f2211936}{eigen\+Decomposition}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&A, \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&eigen\+Vecs, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&eigen\+Vals)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_a6ebd6ae82f8a9dabfd5a1f5879b01845}{rotation\+Matrix\+Irving}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&A, \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&R)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_ad6e64e29384f0f87ba6725561038568f}{Get\+Axis\+Angle\+From\+Rotation\+Matrix}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} Rot\+Matrix, double \&Angle, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&Axis)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_a38134452ff33e20f92082d45081e9d5f}{get\+Axis\+Angle}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&Transformation\+Matrix, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&Axis, double \&Angle)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1Tools_a3ef83a6fc2a78236f42efb36f23eb4ca}{get\+Misorientation}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} Rot\+MatA, const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} Rot\+MatB)
+\begin{DoxyCompactList}\small\item\em Calculates missorientation between two matrices without consideration of symmetries. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classopenphase_1_1Tools_ac027a3ad585e045c39b715a74fbe2c3f}{get\+Misorientation\+Cubic}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} Rot\+MatA, const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} Rot\+MatB, const \mbox{\hyperlink{classopenphase_1_1Crystallography}{Crystallography}} \&\mbox{\hyperlink{tinyxml2_8cpp_ad3136d2f1f34e592c66e09ba8a852812}{CR}})
+\begin{DoxyCompactList}\small\item\em Calculates missorientation between two matrices considering cubic symmetry. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classopenphase_1_1Tools_a535b99b636157282edff658166c7d82d}{get\+Disorientation\+Cubic}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} OrientationA, const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} OrientationB)
+\begin{DoxyCompactList}\small\item\em Calculates Disorientation between two quaternions considering cubic symmetry. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classopenphase_1_1EulerAngles}{Euler\+Angles}} \mbox{\hyperlink{classopenphase_1_1Tools_a0cd80e7273ca0fdd64bbbacefd9a3f6c}{Rotation\+To\+Euler}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&Rot, const \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010}{Euler\+Convention}} loc\+Convention)
+\item 
+static \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Tools_a63240f7905b0aa979dcedd28c93d9896}{Miller\+Conversion}} (const std\+::vector$<$ double $>$ \&hkil, \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} hkl, bool Plane\+Normal=true)
+\begin{DoxyCompactList}\small\item\em Hexagonal Miller plane Normal indices to Miller-\/\+Bravais // flase for directions --. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_a4f3966ce8eed56fba21607b3811dda00}{Set\+Random\+Grain\+Orientations}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const int seed=0)
+\begin{DoxyCompactList}\small\item\em Sets random grains orientations. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1Tools_a2ce9b4d09fcb73e41ca3d4781b186e20}{Extract\+Rotation}} (\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&Mat, \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&Quat, const size\+\_\+t max\+Iter=20)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1Tools_a15c9cac9ba24da74e9115aa11bbc3ea8}{get\+Memory\+Usage\+MB}} ()
+\begin{DoxyCompactList}\small\item\em Returns memory used by the simulation (useful for memory leaks detection) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename vector $>$ }\\static vector \mbox{\hyperlink{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}{Position}} (const vector loc\+\_\+pos, int OffsetX, int OffsetY, int OffsetZ)
+\item 
+{\footnotesize template$<$typename vector $>$ }\\static vector \mbox{\hyperlink{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443}{Distance}} (const vector A, const vector B, int Total\+Nx, int Total\+Ny, int Total\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+{\footnotesize template$<$typename vector $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1Tools_a3497857e4ade828481f4b6990f7e6a88}{Map\+Into\+Simulation\+Domain}} (vector \&A, int Total\+Nx, int Total\+Ny, int Total\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1Tools_aaddb1d4e3844de19b4ec5ad2c91399b0}{Smooth}} (\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ T, 0 $>$ \&Field, size\+\_\+t Smooth\+Iterations=1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Tools_8h_source_l00039}{39}} of file \mbox{\hyperlink{Tools_8h_source}{Tools.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443}\label{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443} 
+\index{openphase::Tools@{openphase::Tools}!Distance@{Distance}}
+\index{Distance@{Distance}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily template$<$typename vector $>$ \\
+static vector openphase\+::\+Tools\+::\+Distance (\begin{DoxyParamCaption}\item[{const vector}]{A,  }\item[{const vector}]{B,  }\item[{int}]{Total\+Nx,  }\item[{int}]{Total\+Ny,  }\item[{int}]{Total\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8h_source_l00074}{74}} of file \mbox{\hyperlink{Tools_8h_source}{Tools.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ vector\ dist\ =\ A-\/B;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TotalNx\ >\ 1)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicX\ or\ BC.BC0X\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0X\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[0]\ -\/\ TotalNx;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[0]))\ dist[0]\ =\ val;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicX\ or\ BC.BCNX\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNX\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[0]\ +\ TotalNx;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[0]))\ dist[0]\ =\ val;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TotalNy\ >\ 1)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicY\ or\ BC.BC0Y\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0Y\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[1]\ -\/\ TotalNy;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[1]))\ dist[1]\ =\ val;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicY\ or\ BC.BCNY\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNY\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[1]\ +\ TotalNy;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[1]))\ dist[1]\ =\ val;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TotalNz\ >\ 1)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicZ\ or\ BC.BC0Z\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0Z\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[2]\ -\/\ TotalNz;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[2]))\ dist[2]\ =\ val;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicZ\ or\ BC.BCNZ\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNZ\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ dist[2]\ +\ TotalNz;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(val)\ <\ std::abs(dist[2]))\ dist[2]\ =\ val;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dist;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a60a7d5469cdf77db0cec3552f2211936}\label{classopenphase_1_1Tools_a60a7d5469cdf77db0cec3552f2211936} 
+\index{openphase::Tools@{openphase::Tools}!eigenDecomposition@{eigenDecomposition}}
+\index{eigenDecomposition@{eigenDecomposition}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{eigenDecomposition()}{eigenDecomposition()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::eigen\+Decomposition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{A,  }\item[{\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{eigen\+Vecs,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&}]{eigen\+Vals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00356\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numJacobiIterations\ =\ 10;}
+\DoxyCodeLine{00358\ \ \ \ \ dMatrix3x3\ D\ =\ A;}
+\DoxyCodeLine{00359\ \ \ \ \ EigenVectors.set\_to\_unity();}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{int}\ iter\ =\ 0;}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordflow}{while}\ (iter\ <\ numJacobiIterations)}
+\DoxyCodeLine{00362\ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ p,\ q;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a,\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}\ =\ fabs(D(0,\ 1));}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ p\ =\ 0;}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ q\ =\ 1;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ a\ =\ fabs(D(0,\ 2));}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >\ max)}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ 0;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ q\ =\ 2;}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}\ =\ a;}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ a\ =\ fabs(D(1,\ 2));}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >\ max)}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ 1;}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ q\ =\ 2;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}\ =\ a;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\ <\ DBL\_EPSILON)}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_afa0e13f9de8e0bc1648eca5fdfafaed4}{jacobiRotate}}(D,\ EigenVectors,\ p,\ q);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ iter++;}
+\DoxyCodeLine{00388\ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ EigenValues[0]\ =\ D(0,\ 0);}
+\DoxyCodeLine{00390\ \ \ \ \ EigenValues[1]\ =\ D(1,\ 1);}
+\DoxyCodeLine{00391\ \ \ \ \ EigenValues[2]\ =\ D(2,\ 2);}
+\DoxyCodeLine{00392\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a2ce9b4d09fcb73e41ca3d4781b186e20}\label{classopenphase_1_1Tools_a2ce9b4d09fcb73e41ca3d4781b186e20} 
+\index{openphase::Tools@{openphase::Tools}!ExtractRotation@{ExtractRotation}}
+\index{ExtractRotation@{ExtractRotation}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{ExtractRotation()}{ExtractRotation()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::\+Extract\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{Mat,  }\item[{\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{Quat,  }\item[{const size\+\_\+t}]{max\+Iter = {\ttfamily 20} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00843}{843}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00844\ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iter\ =\ 0;\ iter\ <\ maxIter;\ iter++)}
+\DoxyCodeLine{00846\ \ \ \ \ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ dMatrix3x3\ Rot\ =\ Quat.getRotationMatrix();}
+\DoxyCodeLine{00848\ }
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ Rot\_col\ =\ \mbox{\hyperlink{namespaceopenphase_a92cbb947f85749fa18dc8398d82c7868}{Col}}(Rot);}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ std::vector<dVector3>\ Mat\_col\ =\ \mbox{\hyperlink{namespaceopenphase_a92cbb947f85749fa18dc8398d82c7868}{Col}}(Mat);}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ b\ =\ 1.0\ /\ fabs(Rot\_col[0]*Mat\_col[0]\ +}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rot\_col[1]*Mat\_col[1]\ +}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rot\_col[2]*Mat\_col[2])\ +\ 1.0e-\/9;}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ dVector3\ omega\ =\ (Rot\_col[0].cross(Mat\_col[0])\ +}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rot\_col[1].cross(Mat\_col[1])\ +}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rot\_col[2].cross(Mat\_col[2]))*b;}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Angle\ =\ omega.length();}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Angle\ <\ 1.0e-\/9)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ dVector3\ Axis\ =\ omega\ *\ (1.0\ /\ Angle);}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ Quaternion\ tempQuat;}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ tempQuat.set(Axis,\ Angle);}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ Quat\ =\ tempQuat*Quat;}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ Quat.normalize();}
+\DoxyCodeLine{00870\ \ \ \ \ \}}
+\DoxyCodeLine{00871\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a4e705f80c82f77b5ebec80cdbd6d8dcb}\label{classopenphase_1_1Tools_a4e705f80c82f77b5ebec80cdbd6d8dcb} 
+\index{openphase::Tools@{openphase::Tools}!findIndexPermutations@{findIndexPermutations}}
+\index{findIndexPermutations@{findIndexPermutations}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{findIndexPermutations()}{findIndexPermutations()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} $>$ openphase\+::\+Tools\+::find\+Index\+Permutations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1iVector3}{i\+Vector3}} \&}]{loc\+Indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finds all index permutations of loc\+Indices. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<iVector3>\ myReturn;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ dropping\ the\ signs}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ x\_val\ =\ std::abs(locIndices.get\_x());}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ y\_val\ =\ std::abs(locIndices.get\_y());}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ z\_val\ =\ std::abs(locIndices.get\_z());}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ sorting\ indices}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\_val\ >\ y\_val)}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::swap(x\_val,\ y\_val);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (y\_val\ >\ z\_val)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::swap(y\_val,\ z\_val);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\_val\ >\ y\_val)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::swap(x\_val,\ y\_val);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ generating\ permutations}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}(x\_val\ ==\ 0)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\_val\ ==\ 0)\ \textcolor{comment}{//\ x\ ==\ 0;\ y\ ==\ 0;}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(z\_val\ ==\ 0)\ \textcolor{comment}{//\ x\ ==\ 0;\ y\ ==\ 0;\ z\ ==\ 0;\ (1)}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ 0,\ 0,\ 0\});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ x\ ==\ 0;\ y\ ==\ 0;\ z\ !=\ 0;\ (6)}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ \ \ \ \ 0,\ z\_val\});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ \ \ \ \ 0,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ \ \ \ \ 0,-\/z\_val\});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ \ \ \ \ 0,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(y\_val\ ==\ z\_val)\ \textcolor{comment}{//\ x\ ==\ 0;\ y\ ==\ z;\ (12)}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ y\_val,\ y\_val\});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ \ \ \ \ 0,\ y\_val\});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ y\_val,-\/y\_val\});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ \ \ \ \ 0,-\/y\_val\});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/y\_val,\ y\_val\});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ \ \ \ \ 0,\ y\_val\});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/y\_val,-\/y\_val\});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ \ \ \ \ 0,-\/y\_val\});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ x\ ==\ 0;\ y\ !=\ z;\ (24)}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ y\_val,\ z\_val\});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ \ \ \ \ 0,\ z\_val\});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ y\_val,-\/z\_val\});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ \ \ \ \ 0,-\/z\_val\});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/y\_val,\ z\_val\});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ \ \ \ \ 0,\ z\_val\});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/y\_val,-\/z\_val\});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ \ \ \ \ 0,-\/z\_val\});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/z\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ z\_val,\ y\_val\});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ \ \ \ \ 0,\ y\_val\});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,\ z\_val,-\/y\_val\});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ \ \ \ \ 0,-\/y\_val\});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/z\_val,\ y\_val\});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ \ \ \ \ 0,\ y\_val\});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ \ \ \ \ 0,-\/z\_val,-\/y\_val\});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ \ \ \ \ 0,-\/y\_val\});}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/y\_val,\ \ \ \ \ 0\});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\_val\ ==\ y\_val\ and\ y\_val\ ==\ z\_val)\ \textcolor{comment}{//\ x\ ==\ y\ ==\ z;\ (8)}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\_val\ ==\ y\_val)\ \textcolor{comment}{//\ x\ ==\ y\ !=\ z;\ (24)}}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,\ z\_val\});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ z\_val,\ x\_val\});}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,-\/z\_val\});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/z\_val,\ x\_val\});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,\ z\_val\});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ z\_val,\ x\_val\});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,-\/z\_val\});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/z\_val,\ x\_val\});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,\ z\_val\});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ z\_val,-\/x\_val\});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,-\/z\_val\});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/z\_val,-\/x\_val\});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,\ z\_val\});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ z\_val,-\/x\_val\});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,-\/z\_val\});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/z\_val,-\/x\_val\});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (y\_val\ ==\ z\_val)\ \textcolor{comment}{//\ x\ !=\ y\ ==\ z;\ (24)}}
+\DoxyCodeLine{00181\ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,\ y\_val\});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,-\/y\_val\});}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,\ y\_val\});}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,-\/y\_val\});}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,\ y\_val\});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,-\/y\_val\});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,\ y\_val\});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,-\/y\_val\});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\_val\ ==\ z\_val)\ \textcolor{comment}{//\ x\ ==\ z;\ x\ !=\ y;\ (24)}}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,\ x\_val\});}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,\ x\_val\});}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,-\/x\_val\});}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,-\/x\_val\});}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ x\ !=\ y\ !=\ z\ !=\ x;\ (48)}}
+\DoxyCodeLine{00249\ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,\ z\_val\});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,\ z\_val\});}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ z\_val,\ x\_val\});}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ y\_val,-\/z\_val\});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ x\_val,-\/z\_val\});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/z\_val,\ x\_val\});}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,\ z\_val\});}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,\ z\_val\});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ z\_val,\ x\_val\});}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/y\_val,-\/z\_val\});}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ x\_val,-\/z\_val\});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/z\_val,\ x\_val\});}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ z\_val,\ y\_val\});}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,\ z\_val,-\/y\_val\});}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/z\_val,\ y\_val\});}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ x\_val,\ y\_val\});}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ y\_val,\ x\_val\});}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ x\_val,-\/z\_val,-\/y\_val\});}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ x\_val,-\/y\_val\});}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/y\_val,\ x\_val\});}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,\ z\_val\});}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,\ z\_val\});}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,\ z\_val,-\/x\_val\});}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ y\_val,-\/z\_val\});}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/x\_val,-\/z\_val\});}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ y\_val,-\/z\_val,-\/x\_val\});}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,\ z\_val\});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,\ z\_val\});}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,\ z\_val,-\/x\_val\});}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/y\_val,-\/z\_val\});}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/x\_val,-\/z\_val\});}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/y\_val,-\/z\_val,-\/x\_val\});}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ z\_val,\ y\_val\});}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,\ z\_val,-\/y\_val\});}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{\ z\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/z\_val,\ y\_val\});}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/x\_val,\ y\_val\});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,\ y\_val,-\/x\_val\});}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/x\_val,-\/z\_val,-\/y\_val\});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/x\_val,-\/y\_val\});}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ myReturn.push\_back(\{-\/z\_val,-\/y\_val,-\/x\_val\});}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{return}\ myReturn;}
+\DoxyCodeLine{00315\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a38134452ff33e20f92082d45081e9d5f}\label{classopenphase_1_1Tools_a38134452ff33e20f92082d45081e9d5f} 
+\index{openphase::Tools@{openphase::Tools}!getAxisAngle@{getAxisAngle}}
+\index{getAxisAngle@{getAxisAngle}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{getAxisAngle()}{getAxisAngle()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::get\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{Transformation\+Matrix,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&}]{Axis,  }\item[{double \&}]{Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00592}{592}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00593\ \{}
+\DoxyCodeLine{00594\ \ \ \ \ dMatrix3x3\ RotationMatrix;}
+\DoxyCodeLine{00595\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_a6ebd6ae82f8a9dabfd5a1f5879b01845}{rotationMatrixIrving}}(TransformationMatrix,RotationMatrix);}
+\DoxyCodeLine{00596\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_ad6e64e29384f0f87ba6725561038568f}{GetAxisAngleFromRotationMatrix}}(RotationMatrix,Angle,Axis);}
+\DoxyCodeLine{00597\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_ad6e64e29384f0f87ba6725561038568f}\label{classopenphase_1_1Tools_ad6e64e29384f0f87ba6725561038568f} 
+\index{openphase::Tools@{openphase::Tools}!GetAxisAngleFromRotationMatrix@{GetAxisAngleFromRotationMatrix}}
+\index{GetAxisAngleFromRotationMatrix@{GetAxisAngleFromRotationMatrix}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{GetAxisAngleFromRotationMatrix()}{GetAxisAngleFromRotationMatrix()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::\+Get\+Axis\+Angle\+From\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}}}]{Rot\+Matrix,  }\item[{double \&}]{Angle,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \&}]{Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Implemented from \href{https://www.euclideanspace.com/maths/geometry/rotations/index.htm}{\texttt{ https\+://www.\+euclideanspace.\+com/maths/geometry/rotations/index.\+htm}}
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00506}{506}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00507\ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordtype}{double}\ epsilon\ =\ 0.01;\ \textcolor{comment}{//\ margin\ to\ allow\ for\ rounding\ errors}}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordtype}{double}\ epsilon2\ =\ 0.1;\ \textcolor{comment}{//\ margin\ to\ distinguish\ between\ 0\ and\ 180\ degrees}}
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordflow}{if}\ ((fabs(RotMatrix(0,1)-\/RotMatrix(1,0))\ <\ epsilon)}
+\DoxyCodeLine{00512\ \ \ \ \ \ \&\&\ (fabs(RotMatrix(0,2)-\/RotMatrix(2,0))\ <\ epsilon)}
+\DoxyCodeLine{00513\ \ \ \ \ \ \&\&\ (fabs(RotMatrix(1,2)-\/RotMatrix(2,1))\ <\ epsilon))}
+\DoxyCodeLine{00514\ \ \ \ \ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ singularity\ found}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ first\ check\ for\ identity\ matrix\ which\ must\ have\ +1\ for\ all\ terms}}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ leading\ diagonal\ and\ zero\ in\ other\ terms}}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((fabs(RotMatrix(0,1)+RotMatrix(1,0))\ <\ epsilon2)}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \&\&\ (fabs(RotMatrix(0,2)+RotMatrix(2,0))\ <\ epsilon2)}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \&\&\ (fabs(RotMatrix(1,2)+RotMatrix(2,1))\ <\ epsilon2)}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \&\&\ (fabs(RotMatrix(0,0)+RotMatrix(1,1)+RotMatrix(2,2)-\/3.0)\ <\ epsilon2))}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ singularity\ is\ identity\ matrix\ so\ angle\ =\ 0}}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ Angle\ =\ 0.0;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{1,0,0\};}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ zero\ angle,\ arbitrary\ axis}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ otherwise\ this\ singularity\ is\ angle\ =\ 180}}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ Angle\ =\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}};}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xx\ =\ (RotMatrix(0,0)+1)/2;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ yy\ =\ (RotMatrix(1,1)+1)/2;}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zz\ =\ (RotMatrix(2,2)+1)/2;}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xy\ =\ (RotMatrix(0,1)+RotMatrix(1,0))/4;}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xz\ =\ (RotMatrix(0,2)+RotMatrix(2,0))/4;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ yz\ =\ (RotMatrix(1,2)+RotMatrix(2,1))/4;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((xx\ >\ yy)\ \&\&\ (xx\ >\ zz))}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ RotMatrix(0,0)\ is\ the\ largest\ diagonal\ term}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (xx<\ epsilon)}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{0,0.7071,0.7071\};}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ sqrt(xx);}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{x,xy/x,xz/x\};}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(yy\ >\ zz)}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m[1][1]\ is\ the\ largest\ diagonal\ term}}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (yy<\ epsilon)}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{0.7071,0,0.7071\};}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ y\ =\ sqrt(yy);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{xy/y,y,yz/y\};}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m[2][2]\ is\ the\ largest\ diagonal\ term\ so\ base\ result\ on\ this}}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zz<\ epsilon)}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{0.7071,0.7071,0\};}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ z\ =\ sqrt(zz);}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Axis\ =\ \{xz/z,yz/z,z\};}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00575\ \ \ \ \ \}}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{comment}{//\ as\ we\ have\ reached\ here\ there\ are\ no\ singularities\ so\ we\ can\ handle\ normally}}
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{comment}{//\ First,\ normalise\ the\ rotation\ matrix}}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordtype}{double}\ Norm\ =\ pow((RotMatrix(1,2)\ -\/\ RotMatrix(2,1)),2)\ +\ pow((RotMatrix(2,0)\ -\/\ RotMatrix(0,2)),2)\ +\ pow((RotMatrix(0,1)\ -\/\ RotMatrix(1,0)),2);}
+\DoxyCodeLine{00579\ \ \ \ \ Norm\ =\ \ sqrt(Norm);}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(Norm)\ <\ 0.001)}
+\DoxyCodeLine{00582\ \ \ \ \ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ Norm\ =\ 1.0;}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ prevent\ divide\ by\ zero,\ should\ not\ happen\ if\ matrix\ is\ orthogonal\ and\ should\ be}}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ caught\ by\ singularity\ test\ above,\ but\ I've\ left\ it\ in\ just\ in\ case}}
+\DoxyCodeLine{00586\ \ \ \ \ \}}
+\DoxyCodeLine{00587\ \ \ \ \ Angle\ =\ acos(0.5*(RotMatrix.trace()\ -\/\ 1));}
+\DoxyCodeLine{00588\ \ \ \ \ Axis[0]\ =\ (\ RotMatrix(2,1)\ -\/\ RotMatrix(1,2)\ )\ /\ Norm;}
+\DoxyCodeLine{00589\ \ \ \ \ Axis[1]\ =\ (\ RotMatrix(0,2)\ -\/\ RotMatrix(2,0)\ )\ /\ Norm;}
+\DoxyCodeLine{00590\ \ \ \ \ Axis[2]\ =\ (\ RotMatrix(1,0)\ -\/\ RotMatrix(0,1)\ )\ /\ Norm;}
+\DoxyCodeLine{00591\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a535b99b636157282edff658166c7d82d}\label{classopenphase_1_1Tools_a535b99b636157282edff658166c7d82d} 
+\index{openphase::Tools@{openphase::Tools}!getDisorientationCubic@{getDisorientationCubic}}
+\index{getDisorientationCubic@{getDisorientationCubic}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{getDisorientationCubic()}{getDisorientationCubic()}}
+{\footnotesize\ttfamily double openphase\+::\+Tools\+::get\+Disorientation\+Cubic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{OrientationA,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{OrientationB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates Disorientation between two quaternions considering cubic symmetry. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00626}{626}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00627\ \{}
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{comment}{//\ Taken\ from\ Grimmer\ 1974}}
+\DoxyCodeLine{00629\ \ \ \ \ \textcolor{comment}{//\ Only\ for\ cubic\ system.\ Needs\ to\ be\ generalized!}}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00631\ \ \ \ \ \textcolor{keywordtype}{double}\ Angle[24];}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keywordtype}{double}\ misorientation\ =\ 0.0;}
+\DoxyCodeLine{00633\ \ \ \ \ Quaternion\ deltaQ;}
+\DoxyCodeLine{00634\ \ \ \ \ deltaQ\ \ =\ OrientationA*\ OrientationB.inverted();}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \ \ \ \ Angle[0]\ \ =\ deltaQ[0];}
+\DoxyCodeLine{00637\ \ \ \ \ Angle[1]\ \ =\ deltaQ[1];}
+\DoxyCodeLine{00638\ \ \ \ \ Angle[2]\ \ =\ deltaQ[2];}
+\DoxyCodeLine{00639\ \ \ \ \ Angle[3]\ \ =\ deltaQ[3];}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \ \ \ \ Angle[4]\ \ =\ (deltaQ[0]\ +\ deltaQ[1])*0.707;}
+\DoxyCodeLine{00642\ \ \ \ \ Angle[5]\ \ =\ (deltaQ[0]\ -\/\ deltaQ[1])*0.707;}
+\DoxyCodeLine{00643\ \ \ \ \ Angle[6]\ \ =\ (deltaQ[2]\ +\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00644\ \ \ \ \ Angle[7]\ \ =\ (deltaQ[2]\ -\/\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00646\ \ \ \ \ Angle[8]\ \ =\ (deltaQ[0]\ +\ deltaQ[2])*0.707;}
+\DoxyCodeLine{00647\ \ \ \ \ Angle[9]\ \ =\ (deltaQ[0]\ -\/\ deltaQ[2])*0.707;}
+\DoxyCodeLine{00648\ \ \ \ \ Angle[10]\ =\ (deltaQ[1]\ +\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00649\ \ \ \ \ Angle[11]\ =\ (deltaQ[1]\ -\/\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00650\ }
+\DoxyCodeLine{00651\ \ \ \ \ Angle[12]\ =\ (deltaQ[0]\ +\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00652\ \ \ \ \ Angle[13]\ =\ (deltaQ[0]\ -\/\ deltaQ[3])*0.707;}
+\DoxyCodeLine{00653\ \ \ \ \ Angle[14]\ =\ (deltaQ[1]\ +\ deltaQ[2])*0.707;}
+\DoxyCodeLine{00654\ \ \ \ \ Angle[15]\ =\ (deltaQ[1]\ -\/\ deltaQ[2])*0.707;}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \ \ \ \ Angle[16]\ =\ (deltaQ[0]\ +\ deltaQ[1]\ +\ deltaQ[2]\ +\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00657\ \ \ \ \ Angle[17]\ =\ (deltaQ[0]\ +\ deltaQ[1]\ -\/\ deltaQ[2]\ -\/\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00658\ \ \ \ \ Angle[18]\ =\ (deltaQ[0]\ -\/\ deltaQ[1]\ +\ deltaQ[2]\ -\/\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00659\ \ \ \ \ Angle[19]\ =\ (deltaQ[0]\ -\/\ deltaQ[1]\ -\/\ deltaQ[2]\ +\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ Angle[20]\ =\ (deltaQ[0]\ +\ deltaQ[1]\ +\ deltaQ[2]\ -\/\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00662\ \ \ \ \ Angle[21]\ =\ (deltaQ[0]\ +\ deltaQ[1]\ -\/\ deltaQ[2]\ +\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00663\ \ \ \ \ Angle[22]\ =\ (deltaQ[0]\ -\/\ deltaQ[1]\ +\ deltaQ[2]\ +\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00664\ \ \ \ \ Angle[23]\ =\ (deltaQ[0]\ -\/\ deltaQ[1]\ -\/\ deltaQ[2]\ -\/\ deltaQ[3])*0.5;}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ a=0;\ a<24;\ a++)}
+\DoxyCodeLine{00667\ \ \ \ \ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ Angle[a]\ =\ abs(Angle[a]);}
+\DoxyCodeLine{00669\ \ \ \ \ \}}
+\DoxyCodeLine{00670\ \ \ \ \ \textcolor{keywordtype}{double}\ DisAngle\ =\ 0;}
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ a=0;\ a<24;\ a++)}
+\DoxyCodeLine{00672\ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (DisAngle\ <\ Angle[a])}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ DisAngle\ =\ \ Angle[a];}
+\DoxyCodeLine{00675\ \ \ \ \ \}}
+\DoxyCodeLine{00676\ \ \ \ \ misorientation\ =\ 2*acos(DisAngle);}
+\DoxyCodeLine{00677\ \ \ \ \ \textcolor{keywordflow}{return}\ misorientation;}
+\DoxyCodeLine{00678\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a15c9cac9ba24da74e9115aa11bbc3ea8}\label{classopenphase_1_1Tools_a15c9cac9ba24da74e9115aa11bbc3ea8} 
+\index{openphase::Tools@{openphase::Tools}!getMemoryUsageMB@{getMemoryUsageMB}}
+\index{getMemoryUsageMB@{getMemoryUsageMB}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{getMemoryUsageMB()}{getMemoryUsageMB()}}
+{\footnotesize\ttfamily double openphase\+::\+Tools\+::get\+Memory\+Usage\+MB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns memory used by the simulation (useful for memory leaks detection) 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00873}{873}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00874\ \{}
+\DoxyCodeLine{00875\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}/proc/self/status"{}});}
+\DoxyCodeLine{00876\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00877\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{00878\ \ \ \ \ \{}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.substr(0,\ 6)\ ==\ \textcolor{stringliteral}{"{}VmRSS:"{}})}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ key,\ value,\ unit;}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ iss\ >>\ key\ >>\ value\ >>\ unit;}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::stol(value)\ /\ 1024.0;\ \ \textcolor{comment}{//\ Convert\ kB\ to\ MB}}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00886\ \ \ \ \ \}}
+\DoxyCodeLine{00887\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1.0;}
+\DoxyCodeLine{00888\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a3ef83a6fc2a78236f42efb36f23eb4ca}\label{classopenphase_1_1Tools_a3ef83a6fc2a78236f42efb36f23eb4ca} 
+\index{openphase::Tools@{openphase::Tools}!getMisorientation@{getMisorientation}}
+\index{getMisorientation@{getMisorientation}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{getMisorientation()}{getMisorientation()}}
+{\footnotesize\ttfamily double openphase\+::\+Tools\+::get\+Misorientation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}}}]{Rot\+MatA,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}}}]{Rot\+MatB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates missorientation between two matrices without consideration of symmetries. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00599}{599}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00600\ \{}
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{comment}{//\ Taken\ from\ Kocks,\ Tome\ and\ Wenk}}
+\DoxyCodeLine{00602\ \ \ \ \ \textcolor{comment}{//\ 'Texture\ and\ Anisotropy',\ Cambride\ University\ Press\ 1998,\ p.\ 69,\ eq.\ 9b}}
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keywordflow}{return}\ acos(((RotMatB*RotMatA.transposed()).trace()-\/1.0)/2.0);}
+\DoxyCodeLine{00604\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_ac027a3ad585e045c39b715a74fbe2c3f}\label{classopenphase_1_1Tools_ac027a3ad585e045c39b715a74fbe2c3f} 
+\index{openphase::Tools@{openphase::Tools}!getMisorientationCubic@{getMisorientationCubic}}
+\index{getMisorientationCubic@{getMisorientationCubic}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{getMisorientationCubic()}{getMisorientationCubic()}}
+{\footnotesize\ttfamily double openphase\+::\+Tools\+::get\+Misorientation\+Cubic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}}}]{Rot\+MatA,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}}}]{Rot\+MatB,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Crystallography}{Crystallography}} \&}]{CR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates missorientation between two matrices considering cubic symmetry. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00606}{606}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00607\ \{}
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{comment}{//\ Taken\ from\ Kocks,\ Tome\ and\ Wenk}}
+\DoxyCodeLine{00609\ \ \ \ \ \textcolor{comment}{//\ 'Texture\ and\ Anisotropy',\ Cambride\ University\ Press\ 1998,\ p.\ 69,\ eq.\ 9b}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \ \ \ \ \textcolor{comment}{//\ Only\ for\ cubic\ system.\ Needs\ to\ be\ generalized!}}
+\DoxyCodeLine{00612\ }
+\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordtype}{double}\ misorientation\ =\ 10.0;}
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 24;\ i++)}
+\DoxyCodeLine{00615\ \ \ \ \ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ misorientationloc\ =\ acos(((\mbox{\hyperlink{tinyxml2_8cpp_ad3136d2f1f34e592c66e09ba8a852812}{CR}}.SymmetriesCubic[i]*RotMatB*}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RotMatA.transposed()).trace()-\/1.0)/2.0);}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(misorientationloc)\ <=\ abs(misorientation))}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ misorientation\ =\ misorientationloc;}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00622\ \ \ \ \ \}}
+\DoxyCodeLine{00623\ \ \ \ \ \textcolor{keywordflow}{return}\ misorientation;}
+\DoxyCodeLine{00624\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_afa0e13f9de8e0bc1648eca5fdfafaed4}\label{classopenphase_1_1Tools_afa0e13f9de8e0bc1648eca5fdfafaed4} 
+\index{openphase::Tools@{openphase::Tools}!jacobiRotate@{jacobiRotate}}
+\index{jacobiRotate@{jacobiRotate}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{jacobiRotate()}{jacobiRotate()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::jacobi\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{A,  }\item[{\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{R,  }\item[{int}]{p,  }\item[{int}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implemented from \href{https://dl.acm.org/doi/abs/10.1145/1028523.1028541}{\texttt{ https\+://dl.\+acm.\+org/doi/abs/10.\+1145/1028523.\+1028541}}. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00320\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordflow}{if}\ (A(p,\ q)\ ==\ 0.0)}
+\DoxyCodeLine{00322\ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ (A(p,\ p)\ -\/\ A(q,\ q))\ /\ (2.0*A(p,\ q));}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ 1.0\ /\ (fabs(d)\ +\ sqrt(d*d\ +\ 1.0));}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ <\ 0.0)}
+\DoxyCodeLine{00328\ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ t\ =\ -\/t;}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{double}\ c\ =\ 1.0\ /\ sqrt(t*t\ +\ 1);}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{double}\ s\ =\ t*c;}
+\DoxyCodeLine{00333\ \ \ \ \ A(p,\ p)\ +=\ t*A(p,\ q);}
+\DoxyCodeLine{00334\ \ \ \ \ A(q,\ q)\ -\/=\ t*A(p,\ q);}
+\DoxyCodeLine{00335\ \ \ \ \ A(p,\ q)\ =\ A(q,\ p)\ =\ 0.0;}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{int}\ k;}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{for}\ (k\ =\ 0;\ k\ <\ 3;\ k++)}
+\DoxyCodeLine{00338\ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ !=\ p\ \&\&\ k\ !=\ q)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Akp\ =\ c*A(k,\ p)\ +\ s*A(k,\ q);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Akq\ =\ -\/s*A(k,\ p)\ +\ c*A(k,\ q);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ A(k,\ p)\ =\ A(p,\ k)\ =\ Akp;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ A(k,\ q)\ =\ A(q,\ k)\ =\ Akq;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{for}\ (k\ =\ 0;\ k\ <\ 3;\ k++)}
+\DoxyCodeLine{00348\ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rkp\ =\ c*R(k,\ p)\ +\ s*R(k,\ q);}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rkq\ =\ -\/s*R(k,\ p)\ +\ c*R(k,\ q);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ R(k,\ p)\ =\ Rkp;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ R(k,\ q)\ =\ Rkq;}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a3497857e4ade828481f4b6990f7e6a88}\label{classopenphase_1_1Tools_a3497857e4ade828481f4b6990f7e6a88} 
+\index{openphase::Tools@{openphase::Tools}!MapIntoSimulationDomain@{MapIntoSimulationDomain}}
+\index{MapIntoSimulationDomain@{MapIntoSimulationDomain}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{MapIntoSimulationDomain()}{MapIntoSimulationDomain()}}
+{\footnotesize\ttfamily template$<$typename vector $>$ \\
+static void openphase\+::\+Tools\+::\+Map\+Into\+Simulation\+Domain (\begin{DoxyParamCaption}\item[{vector \&}]{A,  }\item[{int}]{Total\+Nx,  }\item[{int}]{Total\+Ny,  }\item[{int}]{Total\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8h_source_l00147}{147}} of file \mbox{\hyperlink{Tools_8h_source}{Tools.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicX\ or\ BC.BCNX\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[0]\ >=\ TotalNx)\ A[0]\ -\/=\ TotalNx;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicY\ or\ BC.BCNY\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[1]\ >=\ TotalNy)\ A[1]\ -\/=\ TotalNy;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicZ\ or\ BC.BCNZ\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[2]\ >=\ TotalNz)\ A[2]\ -\/=\ TotalNz;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicX\ or\ BC.BC0X\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[0]\ <\ \ 0)\ A[0]\ +=\ TotalNx;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicY\ or\ BC.BC0Y\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[1]\ <\ \ 0)\ A[1]\ +=\ TotalNy;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.MPIperiodicZ\ or\ BC.BC0Z\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[2]\ <\ \ 0)\ A[2]\ +=\ TotalNz;}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNX\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[0]\ >=\ TotalNx)\ A[0]\ -\/=\ TotalNx;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNY\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[1]\ >=\ TotalNy)\ A[1]\ -\/=\ TotalNy;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BCNZ\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[2]\ >=\ TotalNz)\ A[2]\ -\/=\ TotalNz;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0X\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[0]\ <\ \ 0)\ A[0]\ +=\ TotalNx;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0Y\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[1]\ <\ \ 0)\ A[1]\ +=\ TotalNy;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (BC.BC0Z\ ==\ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5bacdcc32a064503184053bd2018d1c0e7e}{BoundaryConditionTypes::Periodic}})\ \textcolor{keywordflow}{while}\ (A[0]\ <\ \ 0)\ A[2]\ +=\ TotalNz;}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00164\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a63240f7905b0aa979dcedd28c93d9896}\label{classopenphase_1_1Tools_a63240f7905b0aa979dcedd28c93d9896} 
+\index{openphase::Tools@{openphase::Tools}!MillerConversion@{MillerConversion}}
+\index{MillerConversion@{MillerConversion}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{MillerConversion()}{MillerConversion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Tools\+::\+Miller\+Conversion (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{hkil,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{hkl,  }\item[{bool}]{Plane\+Normal = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Hexagonal Miller plane Normal indices to Miller-\/\+Bravais // flase for directions --. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00743}{743}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00744\ \{}
+\DoxyCodeLine{00745\ \ \ \ \ \textcolor{keywordflow}{if}(PlaneNormal)}
+\DoxyCodeLine{00746\ \ \ \ \ \{}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ hkl[0]\ =\ hkil[0];}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ hkl[1]\ =\ hkil[1];}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ hkl[2]\ =\ hkil[3];}
+\DoxyCodeLine{00750\ \ \ \ \ \}}
+\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00752\ \ \ \ \ \{}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ hkl[0]\ =\ hkil[0]-\/hkil[2];}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ hkl[1]\ =\ hkil[1]-\/hkil[2];}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ hkl[2]\ =\ hkil[3];}
+\DoxyCodeLine{00756\ \ \ \ \ \}}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ \ \ \textcolor{comment}{//\ Titanium\ c/a\ ratio\ (\ to\ be\ generalized\ depends\ on\ the\ element\ )}}
+\DoxyCodeLine{00759\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ 0.2950;}
+\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keywordtype}{double}\ c\ =\ 0.4683;}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \ \ \ \ dMatrix3x3\ locMat\ \{a,\ -\/a/2.0,\ 0,}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ a*sqrt(3)/2.0,\ 0,}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ c\};}
+\DoxyCodeLine{00765\ \ \ \ \ hkl\ =\ locMat\ *\ hkl;}
+\DoxyCodeLine{00766\ }
+\DoxyCodeLine{00767\ \ \ \ \ hkl.normalize();}
+\DoxyCodeLine{00768\ \ \ \ \ \textcolor{keywordflow}{return}\ hkl;}
+\DoxyCodeLine{00769\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}\label{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a} 
+\index{openphase::Tools@{openphase::Tools}!Position@{Position}}
+\index{Position@{Position}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}}
+{\footnotesize\ttfamily template$<$typename vector $>$ \\
+static vector openphase\+::\+Tools\+::\+Position (\begin{DoxyParamCaption}\item[{const vector}]{loc\+\_\+pos,  }\item[{int}]{OffsetX,  }\item[{int}]{OffsetY,  }\item[{int}]{OffsetZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em OffsetZ} & Gives global coordinates in MPI mode. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Tools_8h_source_l00064}{64}} of file \mbox{\hyperlink{Tools_8h_source}{Tools.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector(\{loc\_pos[0]\ +\ OffsetX,\ loc\_pos[1]\ +\ OffsetY,\ loc\_pos[2]\ +\ OffsetZ\});}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ loc\_pos;}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a6ebd6ae82f8a9dabfd5a1f5879b01845}\label{classopenphase_1_1Tools_a6ebd6ae82f8a9dabfd5a1f5879b01845} 
+\index{openphase::Tools@{openphase::Tools}!rotationMatrixIrving@{rotationMatrixIrving}}
+\index{rotationMatrixIrving@{rotationMatrixIrving}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{rotationMatrixIrving()}{rotationMatrixIrving()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::rotation\+Matrix\+Irving (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{A,  }\item[{\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{R }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00393}{393}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00394\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ dMatrix3x3\ AT\_A,\ V;}
+\DoxyCodeLine{00396\ \ \ \ \ AT\_A\ =\ A.transposed()\ *\ A;}
+\DoxyCodeLine{00397\ \ \ \ \ dVector3\ S;}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_a60a7d5469cdf77db0cec3552f2211936}{eigenDecomposition}}(AT\_A,\ V,\ S);}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ detV\ =\ V.determinant();}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{if}\ (detV\ <\ 0.0)}
+\DoxyCodeLine{00401\ \ \ \ \ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minLambda\ =\ DBL\_MAX;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pos\ =\ 0;}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (S[l]\ <\ minLambda)}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ l;}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minLambda\ =\ S[l];}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ V(0,\ pos)\ =\ -\/V(0,\ pos);}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ V(1,\ pos)\ =\ -\/V(1,\ pos);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ V(2,\ pos)\ =\ -\/V(2,\ pos);}
+\DoxyCodeLine{00415\ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordflow}{if}\ (S[0]\ <\ 0.0f)}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ S[0]\ =\ 0.0f;}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{if}\ (S[1]\ <\ 0.0f)}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ S[1]\ =\ 0.0f;}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordflow}{if}\ (S[2]\ <\ 0.0f)}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ S[2]\ =\ 0.0f;}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ dVector3\ sigma;}
+\DoxyCodeLine{00424\ \ \ \ \ sigma[0]\ =\ sqrt(S[0]);}
+\DoxyCodeLine{00425\ \ \ \ \ sigma[1]\ =\ sqrt(S[1]);}
+\DoxyCodeLine{00426\ \ \ \ \ sigma[2]\ =\ sqrt(S[2]);}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ chk\ =\ 0;}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pos\ =\ 0;}
+\DoxyCodeLine{00429\ \ \ \ \ dMatrix3x3\ U;}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00431\ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(sigma[l])\ <\ 1.0e-\/4)}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ l;}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ chk++;}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \ \ \ \ \}}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{if}\ (chk\ >\ 0)}
+\DoxyCodeLine{00439\ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (chk\ >\ 1)}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ U.set\_to\_unity();}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ U\ =\ A\ *\ V;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ !=\ pos)}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ m\ =\ 0;\ m\ <\ 3;\ m++)}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ U(m,\ l)\ *=\ 1.0f\ /\ sigma[l];}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ dVector3\ v[2];}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ index\ =\ 0;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ !=\ pos)}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v[index++]\ =\ dVector3(\{U(0,\ l),\ U(1,\ l),\ U(2,\ l)\});}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ dVector3\ vec\ =\ v[0].cross(v[1]);}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ vec.normalized();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ U(0,\ pos)\ =\ vec[0];}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ U(1,\ pos)\ =\ vec[1];}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ U(2,\ pos)\ =\ vec[2];}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00474\ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ dVector3\ sigmaInv;}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ sigmaInv\ =\ \{1.0\ /\ sigma[0],\ 1.0\ /\ sigma[1],\ 1.0\ /\ sigma[2]\};}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ U\ =\ A\ *\ V;}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ m\ =\ 0;\ m\ <\ 3;\ m++)}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ U(m,\ l)\ *=\ sigmaInv[l];}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ detU\ =\ U.determinant();}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordflow}{if}\ (detU\ <\ 0.0)}
+\DoxyCodeLine{00488\ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minLambda\ =\ DBL\_MAX;}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pos\ =\ 0;}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ l\ =\ 0;\ l\ <\ 3;\ l++)}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sigma[l]\ <\ minLambda)}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ l;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minLambda\ =\ sigma[l];}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ sigma[pos]\ =\ -\/sigma[pos];}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ U(0,\ pos)\ =\ -\/U(0,\ pos);}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ U(1,\ pos)\ =\ -\/U(1,\ pos);}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ U(2,\ pos)\ =\ -\/U(2,\ pos);}
+\DoxyCodeLine{00503\ \ \ \ \ \}}
+\DoxyCodeLine{00504\ \ \ \ \ R\ =\ U\ *\ V.transpose();}
+\DoxyCodeLine{00505\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a0cd80e7273ca0fdd64bbbacefd9a3f6c}\label{classopenphase_1_1Tools_a0cd80e7273ca0fdd64bbbacefd9a3f6c} 
+\index{openphase::Tools@{openphase::Tools}!RotationToEuler@{RotationToEuler}}
+\index{RotationToEuler@{RotationToEuler}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{RotationToEuler()}{RotationToEuler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1EulerAngles}{Euler\+Angles}} openphase\+::\+Tools\+::\+Rotation\+To\+Euler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{Rot,  }\item[{const \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010}{Euler\+Convention}}}]{loc\+Convention }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00680}{680}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00681\ \{}
+\DoxyCodeLine{00682\ \ \ \ \ EulerAngles\ Euler;}
+\DoxyCodeLine{00683\ \ \ \ \ Euler.Convention\ =\ EConvention;}
+\DoxyCodeLine{00684\ \ \ \ \ dMatrix3x3\ RT\ =\ Rot.transposed();}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keywordflow}{if}(EConvention\ ==\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010a3f621246b8dd589df33df6fce0956d8c}{ZXZ}})}
+\DoxyCodeLine{00687\ \ \ \ \ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Euler\ ZXZ\ passive\ (following\ formulation\ by\ Martin\ Boeff)}}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ squvw\ =\ sqrt(RT(0,0)*RT(0,0)}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ +\ RT(1,0)*RT(1,0)\ +\ RT(2,0)*RT(2,0));}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sqhk\ =\ sqrt(RT(0,2)*RT(0,2)}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ +\ RT(1,2)*RT(1,2));}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sqhkl\ =\ sqrt(RT(0,2)*RT(0,2)}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ +\ RT(1,2)*RT(1,2)\ +\ RT(2,2)*RT(2,2));}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tempval\ =\ RT(2,2)/sqhkl;}
+\DoxyCodeLine{00696\ }
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ >\ \ 1.0)\ \{tempval\ =\ \ 1.0;\}}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ <\ -\/1.0)\ \{tempval\ =\ -\/1.0;\}}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ Euler.Q[1]\ =\ acos(tempval);}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Euler.Q[1]\ <\ 1.0e-\/8)}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ phi2}}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ Euler.Q[2]\ =\ 0.0;}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ phi1}}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ tempval\ =\ RT(0,0)/squvw;}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ >\ \ 1.0)\ \{tempval\ =\ \ 1.0;\}}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ <\ -\/1.0)\ \{tempval\ =\ -\/1.0;\}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ Euler.Q[0]\ =\ acos(tempval);}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RT(1,0)\ >\ 0.0)\ \{Euler.Q[0]\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ -\/\ Euler.Q[0];\}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ phi2}}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ tempval\ =\ RT(1,2)/sqhk;}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ >\ \ 1.0)\ \{tempval\ =\ \ 1.0;\}}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ <\ -\/1.0)\ \{tempval\ =\ -\/1.0;\}}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ Euler.Q[2]\ =\ acos(tempval);}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RT(0,2)\ <\ 0.0)\ \{Euler.Q[2]\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ -\/\ Euler.Q[2];\}}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ phi1}}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ tempval\ =\ -\/\ RT(2,1)/Euler.SinQ[1];}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ >\ \ 1.0)\ \{tempval\ =\ 1.0;\}}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempval\ <\ -\/1.0)\ \{tempval\ =\ -\/1.0;\}}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ Euler.Q[0]\ =\ acos(tempval);}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RT(2,0)\ <\ 0.0)\ \{Euler.Q[0]\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ -\/\ Euler.Q[0];\}}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ Euler.setTrigonometricFunctions();}
+\DoxyCodeLine{00731\ \ \ \ \ \}}
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00733\ \ \ \ \ \{}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ message<<\ \textcolor{stringliteral}{"{}Wrong/Unknown/None\ Euler\ convention\ used:\ "{}}\ <<\ EConvention\ ;}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\ \textcolor{stringliteral}{"{}Tools"{}},\ \textcolor{stringliteral}{"{}RotationToEulerAngles()"{}});}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ exit(13);}
+\DoxyCodeLine{00739\ \ \ \ \ \}}
+\DoxyCodeLine{00740\ \ \ \ \ \textcolor{keywordflow}{return}\ Euler;}
+\DoxyCodeLine{00741\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_a4f3966ce8eed56fba21607b3811dda00}\label{classopenphase_1_1Tools_a4f3966ce8eed56fba21607b3811dda00} 
+\index{openphase::Tools@{openphase::Tools}!SetRandomGrainOrientations@{SetRandomGrainOrientations}}
+\index{SetRandomGrainOrientations@{SetRandomGrainOrientations}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{SetRandomGrainOrientations()}{SetRandomGrainOrientations()}}
+{\footnotesize\ttfamily void openphase\+::\+Tools\+::\+Set\+Random\+Grain\+Orientations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const int}]{seed = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets random grains orientations. 
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8cpp_source_l00771}{771}} of file \mbox{\hyperlink{Tools_8cpp_source}{Tools.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00772\ \{}
+\DoxyCodeLine{00773\ \ \ \ \ \textcolor{comment}{//\ uniform\ sampling\ of\ quaternion\ parameters\ using\ the\ method\ presented\ in\ (Shoemake,\ 1992)}}
+\DoxyCodeLine{00774\ \ \ \ \ \textcolor{comment}{//\ taken\ from\ ::\ http://planning.cs.uiuc.edu/node198.html\#eqn:shoemake}}
+\DoxyCodeLine{00775\ }
+\DoxyCodeLine{00776\ \ \ \ \ default\_random\_engine\ generator(seed);}
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00778\ \ \ \ \ uniform\_real\_distribution\ <double>\ Q1Distribution(0,\ 1.0);}
+\DoxyCodeLine{00779\ \ \ \ \ uniform\_real\_distribution\ <double>\ Q2Distribution(0,\ 1.0);}
+\DoxyCodeLine{00780\ \ \ \ \ uniform\_real\_distribution\ <double>\ Q3Distribution(0,\ 1.0);}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \ \ \ \ uniform\_real\_distribution\ <double>\ A1Distribution(0.0,\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{00783\ \ \ \ \ uniform\_real\_distribution\ <double>\ A2Distribution(0.0,\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{00784\ \ \ \ \ uniform\_real\_distribution\ <double>\ A3Distribution(0.0,\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ alpha++)}
+\DoxyCodeLine{00787\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Exist)}
+\DoxyCodeLine{00788\ \ \ \ \ \{}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ Quaternion\ tempQuat;}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.Active())}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \textcolor{comment}{//\ 1D}}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Orientation.set(1.0,\ 0.0,\ 0.0,\ 0.0);}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{comment}{//\ 2D}}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a1\ =\ 0.0;}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a2\ =\ 0.0;}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a3\ =\ 0.0;}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dNx\ ==\ 0)\ a1\ =\ A1Distribution(generator);}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dNy\ ==\ 0)\ a2\ =\ A2Distribution(generator);}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dNz\ ==\ 0)\ a3\ =\ A3Distribution(generator);}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EulerAngles\ ph1(\{a1,a2,a3\},\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}});}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Orientation\ =\ ph1.getQuaternion().normalized();}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \textcolor{comment}{//\ 3D\ Full\ Rotation}}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ u1\ =\ Q1Distribution(generator);}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ u2\ =\ Q2Distribution(generator);}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ u3\ =\ Q3Distribution(generator);}
+\DoxyCodeLine{00814\ }
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempQuat.set(sqrt(1.0-\/u1)*sin(2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}*u2),}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sqrt(1.0-\/u1)*cos(2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}*u2),}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sqrt(u1)*sin(2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}*u3),}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sqrt(u1)*cos(2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}*u3));}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Orientation\ =\ tempQuat.normalized();}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00824\ \ \ \ \ \}}
+\DoxyCodeLine{00825\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Tools_aaddb1d4e3844de19b4ec5ad2c91399b0}\label{classopenphase_1_1Tools_aaddb1d4e3844de19b4ec5ad2c91399b0} 
+\index{openphase::Tools@{openphase::Tools}!Smooth@{Smooth}}
+\index{Smooth@{Smooth}!openphase::Tools@{openphase::Tools}}
+\doxysubsubsection{\texorpdfstring{Smooth()}{Smooth()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void openphase\+::\+Tools\+::\+Smooth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ T, 0 $>$ \&}]{Field,  }\item[{size\+\_\+t}]{Smooth\+Iterations = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Tools_8h_source_l00167}{167}} of file \mbox{\hyperlink{Tools_8h_source}{Tools.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Nx\ =\ Field.sizeX();}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Ny\ =\ Field.sizeY();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Nz\ =\ Field.sizeZ();}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dNx\ =\ Field.dNx();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dNy\ =\ Field.dNy();}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dNz\ =\ Field.dNz();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Stencil[3][3][3]\ =\ \{\{\{1.0/64.0,\ \ \ 1.0/32.0,\ 1.0/64.0\},}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/32.0,\ \ \ 1.0/16.0,\ 1.0/32.0\},}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/64.0,\ \ \ 1.0/32.0,\ 1.0/64.0\}\},}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1.0/32.0,\ \ \ 1.0/16.0,\ 1.0/32.0\},}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/16.0,\ \ \ 1.0/8.0,\ 1.0/16.0\},}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/32.0,\ \ \ 1.0/16.0,\ 1.0/32.0\}\},}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1.0/64.0,\ \ \ 1.0/32.0,\ 1.0/64.0\},}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/32.0,\ \ \ 1.0/16.0,\ 1.0/32.0\},}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/64.0,\ \ \ 1.0/32.0,\ 1.0/64.0\}\}\};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ std::function<bool(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})>\ condition\ =\ [Nx,Ny,Nz](\textcolor{keywordtype}{int}\ u,\textcolor{keywordtype}{int}\ v,\textcolor{keywordtype}{int}\ w)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ u\ <\ Nx\ and\ v\ <\ Ny\ and\ w\ <\ Nz\ and\ u\ >=\ 0\ and\ v\ >=\ 0\ and\ w\ >=\ 0;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ Storage3D<T,\ 0>\ FieldTmp;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ FieldTmp.Allocate(Nx,\ Ny,\ Nz,\ dNx,\ dNy,\ dNz,\ 1);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ start\ =\ 0;\ start\ <\ SmoothIterations;\ start++)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(start)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FieldTmp.Reallocate(Nx,\ Ny,\ Nz);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\ Field,Field.Bcells(),)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmpStencil[3][3][3]\ =\ \{\{\{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\}\},}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\}\},}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\},}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ \ \ 0.0,\ \ 0.0\}\}\};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ WS\ =\ 0;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ -\/dNx;\ a\ <=\ +dNx;\ a++)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ b\ =\ -\/dNy;\ b\ <=\ +dNy;\ b++)}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ c\ =\ -\/dNz;\ c\ <=\ +dNz;\ c++)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (condition(i+a,j+b,k+c))}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WS\ +=\ Stencil[a+1][b+1][c+1];}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ -\/dNx;\ a\ <=\ +dNx;\ a++)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ b\ =\ -\/dNy;\ b\ <=\ +dNy;\ b++)}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ c\ =\ -\/dNz;\ c\ <=\ +dNz;\ c++)}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (condition(i+a,j+b,k+c))}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpStencil[a+1][b+1][c+1]\ =\ Stencil[a+1][b+1][c+1]/WS;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpStencil[a+1][b+1][c+1]\ =\ Stencil[a+1][b+1][c+1];}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ -\/dNx;\ a\ <=\ +dNx;\ a++)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ b\ =\ -\/dNy;\ b\ <=\ +dNy;\ b++)}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ c\ =\ -\/dNz;\ c\ <=\ +dNz;\ c++)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition(i+a,j+b,k+c))}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FieldTmp(i,j,k)\ +=\ Field(i+a,j+b,k+c)\ *\ tmpStencil[a+1][b+1][c+1];}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,Field,0,)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Field(i,j,k)\ =\ FieldTmp(i,j,k);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Tools_8h}{Tools.\+h}}\item 
+\mbox{\hyperlink{Tools_8cpp}{Tools.\+cpp}}\end{DoxyCompactItemize}

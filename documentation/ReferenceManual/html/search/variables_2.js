@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['b_0',['b',['../d4/de8/classopenphase_1_1LinearMagneticSolver.html#a6abaee98e8ede249827873a9fcf3f0a5',1,'openphase::LinearMagneticSolver']]],
+  ['b_5fcells_1',['b_cells',['../da/d19/classopenphase_1_1Storage3D.html#a8a585c4bd34a182ae849ff53f0024baf',1,'openphase::Storage3D::b_cells'],['../d6/dc6/classopenphase_1_1Storage3D_3_01T_00_010_01_4.html#ab43946a877fe08661f2d60634ce12384',1,'openphase::Storage3D&lt; T, 0 &gt;::b_cells']]],
+  ['backwardplan_2',['backwardplan',['../d5/d73/classopenphase_1_1ElectricalPotential.html#a4b5ee594ae2fcdcf34815fe7c310bfe4',1,'openphase::ElectricalPotential::BackwardPlan'],['../d8/d38/classopenphase_1_1ElectricSolverSpectral.html#a8a4adf8e9692a4391766057fcb6cbe52',1,'openphase::ElectricSolverSpectral::BackwardPlan']]],
+  ['backwardplandefgrad_3',['BackwardPlanDefGrad',['../d6/de5/classopenphase_1_1ElasticitySolverSpectralImpl.html#acfeb6b00772d1939d9d541fd1b4e6b3a',1,'openphase::ElasticitySolverSpectralImpl']]],
+  ['backwardplanu_4',['BackwardPlanU',['../d6/de5/classopenphase_1_1ElasticitySolverSpectralImpl.html#a9956e85a9e174bd7b562f96fae587a1c',1,'openphase::ElasticitySolverSpectralImpl']]],
+  ['bc0x_5',['BC0X',['../de/ddb/classopenphase_1_1BoundaryConditions.html#a54dcce2fcfaf513171b20a889070fd36',1,'openphase::BoundaryConditions']]],
+  ['bc0y_6',['BC0Y',['../de/ddb/classopenphase_1_1BoundaryConditions.html#abbecbe8541e92043aa46463ee1e3d31e',1,'openphase::BoundaryConditions']]],
+  ['bc0z_7',['BC0Z',['../de/ddb/classopenphase_1_1BoundaryConditions.html#a6d7bff55e0c045c403b19587c4fabb46',1,'openphase::BoundaryConditions']]],
+  ['bcells_8',['bcells',['../dc/d18/classopenphase_1_1GridParameters.html#aae205a52da44fe4c880a16b0f5a48cfb',1,'openphase::GridParameters::Bcells'],['../d8/dba/classopenphase_1_1GrandPotentialSolver.html#a00ae6b7f84a883e681afcd51da02af0e',1,'openphase::GrandPotentialSolver::Bcells'],['../d4/db8/classopenphase_1_1FlowSolverLBM.html#a852ebebddbd520319bcc8b65bffad2a3',1,'openphase::FlowSolverLBM::Bcells'],['../dd/d7c/classopenphase_1_1Storage1D.html#a3d15aa1ae70858182bed0fe92716d770',1,'openphase::Storage1D::Bcells'],['../d5/d4b/classopenphase_1_1Noise.html#aea4abe843477bc7208fb796ff57d6ffb',1,'openphase::Noise::BCells'],['../de/d09/classopenphase_1_1Storage1D_3_01T_00_010_01_4.html#ab8dfcfd193d552db6338033b5c77a401',1,'openphase::Storage1D&lt; T, 0 &gt;::Bcells']]],
+  ['bcnx_9',['BCNX',['../de/ddb/classopenphase_1_1BoundaryConditions.html#a6caa59a07427aa961e64a3d327f18ef7',1,'openphase::BoundaryConditions']]],
+  ['bcny_10',['BCNY',['../de/ddb/classopenphase_1_1BoundaryConditions.html#a4b80324c0e18145af008a9664298cd20',1,'openphase::BoundaryConditions']]],
+  ['bcnz_11',['BCNZ',['../de/ddb/classopenphase_1_1BoundaryConditions.html#adf3e679c09cec8e74f09189c4e5383af',1,'openphase::BoundaryConditions']]],
+  ['bcorder_12',['bcorder',['../d5/d03/classopenphase_1_1EnergyTransport.html#a5a077dd2f40460509f0ac0702c0fab65',1,'openphase::EnergyTransport::BCOrder'],['../df/d99/classopenphase_1_1SpeciesTransport.html#a464c576bca103f31509f2ad90bc4bdd7',1,'openphase::SpeciesTransport::BCOrder']]],
+  ['benziparameter_13',['BenziParameter',['../de/d68/structopenphase_1_1BenziGas_1_1EquilibriumValues__t.html#aa4a15507ffeb1bcdab60c8da9affb278',1,'openphase::BenziGas::EquilibriumValues_t']]],
+  ['beta_14',['beta',['../dc/d44/classopenphase_1_1StencilDirection.html#a3a51b8eb28a91da108c125b05958487d',1,'openphase::StencilDirection::beta'],['../dd/dd7/classopenphase_1_1PotentialCorrections.html#a59f0f276c8f30e003d8674b670523b3c',1,'openphase::PotentialCorrections::beta']]],
+  ['blocksize_15',['blocksize',['../da/dec/structopenphase_1_1header__singleblock.html#a9f2d1be055a6702353fe3ecca8111168',1,'openphase::header_singleblock']]],
+  ['boundary_5fconditions_16',['boundary_conditions',['../d6/dcd/classopenphase_1_1OPObject.html#a49a9d1e352e5dafc93f493012d527ee1',1,'openphase::OPObject']]],
+  ['boundingboxsizex_17',['BoundingBoxSizeX',['../d7/d6d/structopenphase_1_1AnalysisSintering.html#a9596ed48f785381956015e65986c584a',1,'openphase::AnalysisSintering']]],
+  ['boundingboxsizey_18',['BoundingBoxSizeY',['../d7/d6d/structopenphase_1_1AnalysisSintering.html#ab5b74975ba2f628715988df83cd40c37',1,'openphase::AnalysisSintering']]],
+  ['boundingboxsizez_19',['BoundingBoxSizeZ',['../d7/d6d/structopenphase_1_1AnalysisSintering.html#a49cbea0099f81ae3d5e17b9db78f0efd',1,'openphase::AnalysisSintering']]],
+  ['boundingboxvolume_20',['BoundingBoxVolume',['../d7/d6d/structopenphase_1_1AnalysisSintering.html#a0c5802e261c9adcf9b17c647a28b011e',1,'openphase::AnalysisSintering']]],
+  ['bulkmodulus_21',['BulkModulus',['../d9/dd4/structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid.html#a510cd81c7623ae9918b75e31e9656409',1,'openphase::GrandPotentialPhaseDensity_CompressibleFluid']]]
+];

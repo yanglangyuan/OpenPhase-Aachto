@@ -62,7 +62,7 @@ class OP_EXPORTS MicrostructureAnalysis
 
     static void WriteSymmetryVariantsStatistics(size_t pIndex, const PhaseField& Phase, const SymmetryVariants& SV, const int tStep);
     static double GrainBoundaryStatistics(PhaseField& Phase, std::vector<dVector3> Facets, double DegreeTolerance);
-    static void WriteGrainsStatistics(const PhaseField& Phase, const int tStep);
+    static void WriteGrainsStatistics(const PhaseField& Phase, const int tStep, const std::string& h5FileName = "");
 
     static void GrainSizeDistribution();
     static void GrainTopologyStatistics();

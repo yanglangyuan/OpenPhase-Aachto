@@ -1,0 +1,147 @@
+\doxysection{Driving\+Force.\+h}
+\hypertarget{DrivingForce_8h_source}{}\label{DrivingForce_8h_source}\index{DrivingForce.h@{DrivingForce.h}}
+\mbox{\hyperlink{DrivingForce_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ DRIVINGFORCE\_H}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ DRIVINGFORCE\_H}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00037}00037\ \textcolor{keyword}{class\ }Settings;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00038}00038\ \textcolor{keyword}{class\ }PhaseField;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00039}00039\ \textcolor{keyword}{class\ }BoundaryConditions;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00040}00040\ \textcolor{keyword}{class\ }InterfaceProperties;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00041}00041\ \textcolor{keyword}{class\ }SemiImplicitCoupling;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00042}00042\ \textcolor{keyword}{class\ }Temperature;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00043}00043\ \textcolor{keyword}{class\ }ThermodynamicPropertiesEQP;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00044}00044\ \textcolor{keyword}{class\ }ThermodynamicPropertiesEQP;}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00046}\mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163a}{00046}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163a}{AveragingWeightsModes}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163aa87ba2ecc8b6915e8bd6f5089918229fd}{Range}},}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163aaeebaad6a593517bb26cea637089128ed}{PhaseFields}},}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163aa64d129224a5377b63e9727479ec987d9}{Counter}}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00051}00051\ \};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00053}00053\ \textcolor{comment}{/***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00054}\mbox{\hyperlink{classopenphase_1_1DrivingForce}{00054}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00056}\mbox{\hyperlink{classopenphase_1_1DrivingForce_ad7cc22416b1f3ef37abb6d3542f8ea65}{00056}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_ad7cc22416b1f3ef37abb6d3542f8ea65}{ThermodynamicPropertiesEQP}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00057}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a94653049c59646ad9cd96aaf9cb2494c}{00057}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a94653049c59646ad9cd96aaf9cb2494c}{SemiImplicitCoupling}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00059}00059\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00060}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a16458bd57a7f96989164aee95b87eabf}{00060}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a16458bd57a7f96989164aee95b87eabf}{DrivingForce}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName\ =\ DefaultInputFileName);\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(\textcolor{keyword}{const}\ std::string\ InputFileName)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(std::stringstream\&\ inp)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ Remesh(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ Clear(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ Average(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ SetBoundaryConditions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ MergePhaseFieldIncrements(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{InterfaceProperties}}\&\ IP);\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ CalcUnified(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ Unify(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{double}\ MaxTimeStep(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{InterfaceProperties}}\&\ IP,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ OPSettings,\ \textcolor{keywordtype}{double}\ TheorLimit\ =\ 1.0,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ NumLimit\ =\ 1.0e-\/3);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ PrintDiagnostics(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ PrintPointStatistics(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00084}00084\ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ WriteVTK(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ indexA,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ indexB,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ WriteVTK(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phi,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ Force\_at(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ z)\ \textcolor{keyword}{const};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{double}\ GetDrivingForce(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phi,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ beta)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00097}\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{00097}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D<NodeDF,\ 0>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ operator=\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ rhs);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{void}\ AverageGlobal(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \textcolor{keywordtype}{double}\ time);}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00102}\mbox{\hyperlink{classopenphase_1_1DrivingForce_aeaf1078d4389ead2cb48aa8a3d8c8c36}{00102}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_aeaf1078d4389ead2cb48aa8a3d8c8c36}{AverageDG}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00103}\mbox{\hyperlink{classopenphase_1_1DrivingForce_af77dee6ee937c2656b6b9315ad1acb36}{00103}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_af77dee6ee937c2656b6b9315ad1acb36}{AverageDG1}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00104}\mbox{\hyperlink{classopenphase_1_1DrivingForce_abcdc61ede022f87919084be40b18c630}{00104}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_abcdc61ede022f87919084be40b18c630}{AverageDG2}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00106}\mbox{\hyperlink{classopenphase_1_1DrivingForce_aa13d33cc808d5580e87f6c0ebd08b80c}{00106}}\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac302fa610fd163dd18ed18b2b923163a}{AveragingWeightsModes}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_aa13d33cc808d5580e87f6c0ebd08b80c}{WeightsMode}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00108}00108\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00109}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a8ac8514d5ad4660e8bc71cbe3eed8be0}{00109}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix<double>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8ac8514d5ad4660e8bc71cbe3eed8be0}{Limit}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00111}00111\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00113}\mbox{\hyperlink{classopenphase_1_1DrivingForce_afdfb93e7d47a96d7519deed8750f0dbb}{00113}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters}{GridParameters}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_afdfb93e7d47a96d7519deed8750f0dbb}{Grid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00115}\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae047e39ff38e78e36397b87b8e0c63c1}{00115}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_ae047e39ff38e78e36397b87b8e0c63c1}{Nphases}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00116}\mbox{\hyperlink{classopenphase_1_1DrivingForce_aab31f58bbedffc0bb13411778ca04dde}{00116}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_aab31f58bbedffc0bb13411778ca04dde}{Range}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00117}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a9ee821f275621392d73b9c62b34ff2f6}{00117}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a9ee821f275621392d73b9c62b34ff2f6}{PhiThreshold}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00119}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a116d314c168d82c04843c04cccbf1def}{00119}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a116d314c168d82c04843c04cccbf1def}{OvershootCounter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00120}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a5f00ffc1dea4ca6ceaf4410df3572c10}{00120}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix<double>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a5f00ffc1dea4ca6ceaf4410df3572c10}{MAXOvershootPOS}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00121}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a408d8f27cdc7ebd19113407f630808ce}{00121}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix<double>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a408d8f27cdc7ebd19113407f630808ce}{MAXOvershootNEG}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00122}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a4faa15aba816034d7ffe0d384def181d}{00122}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix<double>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a4faa15aba816034d7ffe0d384def181d}{MAXDrivingForcePOS}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00123}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a82851644baab854d83bb81a49f1e109d}{00123}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix<double>}}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a82851644baab854d83bb81a49f1e109d}{MAXDrivingForceNEG}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00125}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a9e8f84440b030df583eb390ee60e788e}{00125}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a9e8f84440b030df583eb390ee60e788e}{Averaging}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00126}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a7f0348f04d3eb28c33535df199a517be}{00126}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a7f0348f04d3eb28c33535df199a517be}{Unifying}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00127}\mbox{\hyperlink{classopenphase_1_1DrivingForce_aad86466bb72a4752e246221925b24b06}{00127}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_aad86466bb72a4752e246221925b24b06}{Limiting}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00129}\mbox{\hyperlink{classopenphase_1_1DrivingForce_a267835a9d8a5de7ce5c2d69dd1fe6ca1}{00129}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1DrivingForce_a267835a9d8a5de7ce5c2d69dd1fe6ca1}{maxPsi}};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{void}\ SkipAverage(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{void}\ SetWeights(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{void}\ CollectAverage(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{void}\ DistributeAverage(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00136}00136\ \ \ \ \ \textcolor{keywordtype}{void}\ MergePhaseFieldIncrementsSR(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{InterfaceProperties}}\&\ IP);}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{void}\ MergePhaseFieldIncrementsDR(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phase,\ \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{InterfaceProperties}}\&\ IP);}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00139}00139\ \};}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00140}00140\ \}\ \textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{DrivingForce_8h_source_l00141}00141\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

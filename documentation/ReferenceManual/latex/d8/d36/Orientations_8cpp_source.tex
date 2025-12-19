@@ -1,0 +1,353 @@
+\doxysection{Orientations.\+cpp}
+\hypertarget{Orientations_8cpp_source}{}\label{Orientations_8cpp_source}\index{Orientations.cpp@{Orientations.cpp}}
+\mbox{\hyperlink{Orientations_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Efim\ Borukhovich;\ Philipp\ Engels;\ Oleg\ Shchyglo}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Orientations_8h}{Orientations.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Tools_8h}{Tools.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Crystallography_8h}{Crystallography.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Velocities_8h}{Velocities.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AdvectionHR_8h}{AdvectionHR.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00039}00039\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00041}\mbox{\hyperlink{classopenphase_1_1Orientations_a2a6e76917ed4e972b58ce29d1a039882}{00041}}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a99881563ad075e1565f5f98152b6ece3}{Orientations::Orientations}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_afd4048102db0bb2327e278413e8d3270}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00046}\mbox{\hyperlink{classopenphase_1_1Orientations_afd4048102db0bb2327e278413e8d3270}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_afd4048102db0bb2327e278413e8d3270}{Orientations::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Orientations"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_abdb0fbd7e16fcc21417e2f0ee366b926}{Nphases}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00058}00058\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{AddForAdvection}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00059}00059\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{AddForRemeshing}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Orientations"{}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00064}\mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{Orientations::SetBoundaryConditions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00066}00066\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00067}00067\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00068}00068\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00071}\mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{Orientations::Remesh}}(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.Remesh(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.Bcells(),)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,\ j,\ k).setRotationMatrix();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00088}\mbox{\hyperlink{classopenphase_1_1Orientations_aeb928d985513c079c6784eb839a2d1c2}{00088}}\ \mbox{\hyperlink{classopenphase_1_1Orientations}{Orientations}}\&\ \mbox{\hyperlink{classopenphase_1_1Orientations_aeb928d985513c079c6784eb839a2d1c2}{Orientations::operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Orientations}{Orientations}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00089}00089\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ protect\ against\ invalid\ self-\/assignment\ and\ copy\ of\ unitialized\ object}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs\ and\ rhs.\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ ==\ \textcolor{stringliteral}{"{}Orientations"{}})}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//DefaultInputFileName\ =\ rhs.DefaultInputFileName;}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_abdb0fbd7e16fcc21417e2f0ee366b926}{Nphases}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Orientations_abdb0fbd7e16fcc21417e2f0ee366b926}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00105}\mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{00105}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{Orientations::Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00106}00106\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\textcolor{stringliteral}{"{}Rotations\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00109}00109\ \ \ \ \ fstream\ out(FileName.c\_str(),\ ios::out\ |\ ios::binary);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}WriteRotations"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00115}00115\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeX();\ ++i)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeY();\ ++j)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeZ();\ ++k)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ n\ =\ 0;\ n\ <\ 4;\ n++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)[n];}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00130}\mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{00130}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{Orientations::Read}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00131}00131\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\textcolor{stringliteral}{"{}Rotations\_"{}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00135}00135\ \ \ \ \ fstream\ inp(FileName.c\_str(),\ ios::in\ |\ ios::binary);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created"{}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadRotations"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00142}00142\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeX();\ ++i)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeY();\ ++j)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}.sizeZ();\ ++k)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp[4];}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ n\ =\ 0;\ n\ <\ 4;\ n++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp[n]),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).set(tmp[0],tmp[1],tmp[2],tmp[3]);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00159}\mbox{\hyperlink{classopenphase_1_1Orientations_a51eb4854ee283c49cd424bfec35207e9}{00159}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a51eb4854ee283c49cd424bfec35207e9}{Orientations::WriteVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00161}00161\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00162}00162\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00163}00163\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}RQ\_0"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)[0];\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00164}00164\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}RQ\_1"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)[1];\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00165}00165\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}RQ\_2"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)[2];\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00166}00166\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}RQ\_3"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)[3];\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00168}00168\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \textcolor{stringliteral}{"{}Quaternions\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00170}00170\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00173}\mbox{\hyperlink{classopenphase_1_1Orientations_acd4cc78671c7c327264c92d005d558c1}{00173}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_acd4cc78671c7c327264c92d005d558c1}{Orientations::WriteTotalVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00177}00177\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00178}00178\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00179}00179\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}R"{}},\ [\textcolor{keyword}{this},\&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a1acdc32149c5695d066a3ce10e0a8482}{getTotalRotation}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ i,\ j,\ k);\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00181}00181\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \textcolor{stringliteral}{"{}TotalRotations\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00183}00183\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00186}\mbox{\hyperlink{classopenphase_1_1Orientations_afa2b44c9558386e732f1e3150b287917}{00186}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_afa2b44c9558386e732f1e3150b287917}{Orientations::WriteMisorientationsVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ measure)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00190}00190\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordtype}{double}\ mult\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{if}\ (!measure.compare(\textcolor{stringliteral}{"{}deg"{}}))\ mult*=180.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00194}00194\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00195}00195\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}Omega"{}},\ [\textcolor{keyword}{this},mult](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Tools_a3ef83a6fc2a78236f42efb36f23eb4ca}{Tools::getMisorientation}}(\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6bd25de17eae46e2c45e0fdc1816a6e9}{dMatrix3x3::UnitTensor}}(),\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).RotationMatrix)*mult;\}\});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00197}00197\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \textcolor{stringliteral}{"{}Misorientations\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00199}00199\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00202}\mbox{\hyperlink{classopenphase_1_1Orientations_a59979af169956cceb94b02e921e3e6d7}{00202}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a59979af169956cceb94b02e921e3e6d7}{Orientations::WriteGrainEBSDDataQuaternions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00205}00205\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00206}00206\ \ \ \ \ stringstream\ outbuffer;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00207}00207\ \ \ \ \ outbuffer\ <<\ \textcolor{stringliteral}{"{}Index\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Phase\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}X\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Y\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Z\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Quat\ real\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Quat\ i\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Quat\ j\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Quat\ k\(\backslash\)t"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00218}00218\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}},0)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00219}00219\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EulerAngles}{EulerAngles}}\ tempAng;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \ tempMatrix;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}\ \ tempQuat;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ outbuffer\ <<\ index\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ linear\ interpolation\ in\ interface\ via\ quaternions}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,\ j,\ k).cbegin();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,\ j,\ k).cend();\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempQuat\ +=\ (\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)\ +\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Orientation)*alpha-\/>value;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ tempQuat.\mbox{\hyperlink{classopenphase_1_1Quaternion_a3277ab78920d774bfd9358c989130983}{normalize}}();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ phase\ index\ to\ 0\ in\ interface}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ outbuffer\ <<\ 0\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ tempQuat\ =\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k)\ +\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).front().index].Orientation;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ outbuffer\ <<\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).front().index].Phase\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ outbuffer\ <<\ i*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ j*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ k*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ tempQuat[0]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ tempQuat[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ tempQuat[2]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ tempQuat[3]\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00251}00251\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\ \textcolor{stringliteral}{"{}EBSD\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00256}00256\ \ \ \ \ ofstream\ ebsd\_file(FileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00257}00257\ \ \ \ \ ebsd\_file\ <<\ outbuffer.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00258}00258\ \ \ \ \ ebsd\_file.close();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00260}00260\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}EBSD\ file"{}},\ FileName);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00261}00261\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00263}\mbox{\hyperlink{classopenphase_1_1Orientations_aa1c9425eedc10c25ef957a5a2dde7ac4}{00263}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_aa1c9425eedc10c25ef957a5a2dde7ac4}{Orientations::WriteRotated100VectorVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00266}00266\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00267}00267\ \ \ \ \ stringstream\ outbufer;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00268}00268\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ X;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00269}00269\ \ \ \ \ X[0]\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00270}00270\ \ \ \ \ X[1]\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00271}00271\ \ \ \ \ X[2]\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00273}00273\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}\#\ vtk\ DataFile\ Version\ 3.0\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00274}00274\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}Rotated100Vector"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00275}00275\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}ASCII\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00276}00276\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}DATASET\ RECTILINEAR\_GRID\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00277}00277\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}DIMENSIONS\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00278}00278\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}X\_COORDINATES\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ <<\ \textcolor{stringliteral}{"{}\ double\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)\ outbufer\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00280}00280\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00281}00281\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}Y\_COORDINATES\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ <<\ \textcolor{stringliteral}{"{}\ double\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00282}00282\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)\ outbufer\ <<\ j\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00283}00283\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00284}00284\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}Z\_COORDINATES\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ <<\ \textcolor{stringliteral}{"{}\ double\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)\ outbufer\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00286}00286\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00287}00287\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}POINT\_DATA\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dir\ =\ 0;\ dir\ <\ 3;\ ++dir)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00290}00290\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}SCALARS\ X\_"{}}\ <<\ dir\ <<\ \textcolor{stringliteral}{"{}\ double\ 1\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}LOOKUP\_TABLE\ default\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ outbufer\ <<\ (\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).RotationMatrix*X)[dir]\ <<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00300}00300\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00301}00301\ \ \ \ \ outbufer\ <<\ \textcolor{stringliteral}{"{}VECTORS\ X\ double\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00303}00303\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00305}00305\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00306}00306\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ outbufer\ <<\ (\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).RotationMatrix*X)[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).RotationMatrix*X)[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(i,j,k).RotationMatrix*X)[2]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00310}00310\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00312}00312\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\textcolor{stringliteral}{"{}Rotated100Vector\_"{}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tStep,\ \textcolor{stringliteral}{"{}.vtk"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00315}00315\ \ \ \ \ ofstream\ vtk\_file(FileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00316}00316\ \ \ \ \ vtk\_file\ <<\ outbufer.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00317}00317\ \ \ \ \ vtk\_file.close();}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00318}00318\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00320}\mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{00320}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{Orientations::Advect}}(\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{AdvectionHR}}\&\ Adv,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00325}00325\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Orientations_a39300f68591f4338e0d58340cf15b87b}{QuaternionsDot}}.IsNotAllocated())}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00327}00327\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a39300f68591f4338e0d58340cf15b87b}{QuaternionsDot}}.Allocate(\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00329}00329\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00330}00330\ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1Orientations_a39300f68591f4338e0d58340cf15b87b}{QuaternionsDot}}.IsSize(\mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}))}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00331}00331\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Orientations_a39300f68591f4338e0d58340cf15b87b}{QuaternionsDot}}.Reallocate(\mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a8ba15b40f31a9195f2b9c9894bcfaf74}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00333}00333\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00335}00335\ \ \ \ \ Adv.\mbox{\hyperlink{classopenphase_1_1AdvectionHR_a09108897e8a9ec570cfc5001e6d538f5}{AdvectField}}(\mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}},\ \mbox{\hyperlink{classopenphase_1_1Orientations_a39300f68591f4338e0d58340cf15b87b}{QuaternionsDot}},\ Vel,\ BC,\ dt);}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00336}00336\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Advected"{}});}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00337}00337\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00339}\mbox{\hyperlink{classopenphase_1_1Orientations_a6b135c6c79457a2b650d097e652ea03b}{00339}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Orientations_a6b135c6c79457a2b650d097e652ea03b}{Orientations::PrintPointStatistics}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ z)}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00340}00340\ \{}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00341}00341\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Point:\ \ \ \ \ \ ("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00342}00342\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quaternions:\(\backslash\)n"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Orientations_a45664b542beaad2e0fbd9e2fdb45827c}{Quaternions}}(x,y,z).print()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00344}00344\ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00345}00345\ \}}
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{Orientations_8cpp_source_l00347}00347\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

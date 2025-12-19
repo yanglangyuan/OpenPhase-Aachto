@@ -1,0 +1,117 @@
+\doxysection{Storage.\+h}
+\hypertarget{Storage_8h_source}{}\label{Storage_8h_source}\index{Storage.h@{Storage.h}}
+\mbox{\hyperlink{Storage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ STORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ STORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00035}00035\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00036}\mbox{\hyperlink{classopenphase_1_1Storage}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}\ \ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00038}00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00039}\mbox{\hyperlink{classopenphase_1_1Storage_ad47dec8a43fca49858b96dc2c060fab2}{00039}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_ad47dec8a43fca49858b96dc2c060fab2}{Storage}}()}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00044}\mbox{\hyperlink{classopenphase_1_1Storage_a33d372c283e4687197c0f6c48054119b}{00044}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a33d372c283e4687197c0f6c48054119b}{Storage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Storage}{Storage<T>}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1Storage_a6ca681a4e77ab3424d2c5c4d6e48d9fa}{size}}();}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}]\ ();}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ !=\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}[n]\ =\ rhs[n];}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00053}\mbox{\hyperlink{classopenphase_1_1Storage_ab2e8c92e658f2f94aa724647eaa4ef4e}{00053}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage}{Storage<T>}}\&\ \mbox{\hyperlink{classopenphase_1_1Storage_ab2e8c92e658f2f94aa724647eaa4ef4e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Storage}{Storage<T>}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ ==\ rhs.\mbox{\hyperlink{classopenphase_1_1Storage_a6ca681a4e77ab3424d2c5c4d6e48d9fa}{size}}())}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a50185a4c767dc6230427e338bdcb3ab8}{Reallocate}}(rhs.\mbox{\hyperlink{classopenphase_1_1Storage_a6ca681a4e77ab3424d2c5c4d6e48d9fa}{size}}());}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ !=\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}[n]\ =\ rhs[n];}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00066}\mbox{\hyperlink{classopenphase_1_1Storage_a0f4db2917ce5c45f014cd5ad4f206fea}{00066}}\ \ \ \ \ T\&\ \mbox{\hyperlink{classopenphase_1_1Storage_a0f4db2917ce5c45f014cd5ad4f206fea}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ x)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ assert(x\ <\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}[x];}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00071}\mbox{\hyperlink{classopenphase_1_1Storage_a305bd2cb1ea273fabbc30e0fd716baba}{00071}}\ \ \ \ \ T\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classopenphase_1_1Storage_a305bd2cb1ea273fabbc30e0fd716baba}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00072}00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ assert(x\ <\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}[x];}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00076}\mbox{\hyperlink{classopenphase_1_1Storage_a4ec188abcaf0cedc842da0ec805034fd}{00076}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Storage_a4ec188abcaf0cedc842da0ec805034fd}{Allocate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nx)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ =\ nx;}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}]\ ();}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00081}\mbox{\hyperlink{classopenphase_1_1Storage_a50185a4c767dc6230427e338bdcb3ab8}{00081}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Storage_a50185a4c767dc6230427e338bdcb3ab8}{Reallocate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nx)}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}\ =\ nx;}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}}]\ ();}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00087}\mbox{\hyperlink{classopenphase_1_1Storage_a6ca681a4e77ab3424d2c5c4d6e48d9fa}{00087}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1Storage_a6ca681a4e77ab3424d2c5c4d6e48d9fa}{size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00088}00088\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00091}\mbox{\hyperlink{classopenphase_1_1Storage_ae81ef4e4bb39f05dec6365aaf4dd9482}{00091}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Storage_ae81ef4e4bb39f05dec6365aaf4dd9482}{IsNotAllocated}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00092}00092\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00095}\mbox{\hyperlink{classopenphase_1_1Storage_a97e3eaa289ada1a56d93a8d621038388}{00095}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1Storage_a97e3eaa289ada1a56d93a8d621038388}{IsAllocated}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00096}00096\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(\mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00099}\mbox{\hyperlink{classopenphase_1_1Storage_a8d0b5236dfe25f182d88e757beb37fdd}{00099}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage_a8d0b5236dfe25f182d88e757beb37fdd}{\string~Storage}}()}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00104}00104\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00105}00105\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00106}\mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{00106}}\ \ \ \ \ T*\ \mbox{\hyperlink{classopenphase_1_1Storage_a477041ad01ca5e268dba8e8a8137e4a7}{Array}};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00107}\mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{00107}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1Storage_aca1908e0a421b133c71954365756462d}{Size\_X}};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00108}00108\ \};}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00110}00110\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{Storage_8h_source_l00111}00111\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

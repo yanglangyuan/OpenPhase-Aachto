@@ -1,0 +1,612 @@
+\doxysection{Node\+DF.\+h}
+\hypertarget{NodeDF_8h_source}{}\label{NodeDF_8h_source}\index{NodeDF.h@{NodeDF.h}}
+\mbox{\hyperlink{NodeDF_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2009}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Reza\ Darvishi\ Kamachali;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ NODEDF\_H}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ NODEDF\_H}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00036}00036\ \textcolor{comment}{/**********************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00038}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{00038}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00040}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{00040}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00041}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{00041}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{00042}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{00043}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{00044}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00045}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{00045}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00047}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a3a91e3d50d28e355f171bc396f7f38ca}{00047}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a3a91e3d50d28e355f171bc396f7f38ca}{DrivingForceEntry}}()\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}(0),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}(0),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}(0.0)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00057}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0eed368f76cd8f98b8ab0397b1ddad5a}{00057}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0eed368f76cd8f98b8ab0397b1ddad5a}{DrivingForceEntry}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\&\ entry)\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}),}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}(entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}})}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00067}\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ac857cfabbd3cba6c24d04b0c4f57d4d5}{00067}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\&\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ac857cfabbd3cba6c24d04b0c4f57d4d5}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\&\ entry)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00077}00077\ \};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00079}00079\ \textcolor{comment}{/**********************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00080}\mbox{\hyperlink{classopenphase_1_1NodeDF}{00080}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00081}00081\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00082}00082\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00083}\mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{00083}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{NodeDF}}()\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}(0)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.reserve(3);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00088}\mbox{\hyperlink{classopenphase_1_1NodeDF_a7aa43b772e3b3f3d6156d68278e90563}{00088}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a7aa43b772e3b3f3d6156d68278e90563}{NodeDF}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}(n.\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c}{set\_raw}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d}{set\_tmp}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9}{set\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69}{set\_weight}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577}{set\_all}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ raw\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tmp\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ avg\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ wgt\_value);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3}{get\_raw}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401}{get\_tmp}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40}{get\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea}{get\_weight}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba}{add\_raw}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d}{add\_tmp}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00118}00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8}{add\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd}{add\_weight}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}\ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ raw\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tmp\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ avg\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ wgt\_value);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00125}\mbox{\hyperlink{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}{00125}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}{clear}}()\ \{\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.clear();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00126}\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{00126}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00127}\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{00127}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<DrivingForceEntry>::iterator\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00128}\mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{00128}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<DrivingForceEntry>::const\_iterator\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00129}\mbox{\hyperlink{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}{00129}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}{begin}}()\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00130}\mbox{\hyperlink{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}{00130}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}{end}}()\ \ \ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00131}\mbox{\hyperlink{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}{00131}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}{cbegin}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00132}\mbox{\hyperlink{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}{00132}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}{cend}}()\textcolor{keyword}{\ \ \ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00133}\mbox{\hyperlink{classopenphase_1_1NodeDF_a3975003de96d817ae4f227d16252d3f2}{00133}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a3975003de96d817ae4f227d16252d3f2}{erase}}(\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}\ it)\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00134}\mbox{\hyperlink{classopenphase_1_1NodeDF_affa4cb0737e4e8a02abc6366d2167475}{00134}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_affa4cb0737e4e8a02abc6366d2167475}{front}}(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00135}\mbox{\hyperlink{classopenphase_1_1NodeDF_ab400beda324414f03bc4d8335af5becf}{00135}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ab400beda324414f03bc4d8335af5becf}{front}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.front();\};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6}{pack}}(std::vector<double>\&\ buffer);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2}{unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00139}00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159}{Read}}(std::istream\&\ inp);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d}{Write}}(std::ostream\&\ outp)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00142}00142\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00143}00143\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00144}\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{00144}}\ \ \ \ \ std::vector<DrivingForceEntry>\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00145}00145\ \};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00147}00147\ \textcolor{comment}{/***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00149}\mbox{\hyperlink{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb}{00149}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb}{NodeDF::operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00150}00150\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00154}00154\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00160}\mbox{\hyperlink{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54}{00160}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54}{NodeDF::operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00161}00161\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00162}00162\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00165}00165\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00175}00175\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00179}\mbox{\hyperlink{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f}{00179}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f}{NodeDF::operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00180}00180\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00186}00186\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00188}\mbox{\hyperlink{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a}{00188}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a}{NodeDF::operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00189}00189\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00191}00191\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ -\/i-\/>raw,\ -\/i-\/>tmp,\ -\/i-\/>average,\ -\/i-\/>weight);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00195}00195\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00197}\mbox{\hyperlink{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a}{00197}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a}{NodeDF::operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00198}00198\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00199}00199\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00211}\mbox{\hyperlink{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8}{00211}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8}{NodeDF::operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00212}00212\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00213}00213\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00214}00214\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00223}\mbox{\hyperlink{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e}{00223}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e}{NodeDF::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodeDF}{NodeDF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00224}00224\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00225}00225\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00227}00227\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00229}\mbox{\hyperlink{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c}{00229}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c}{NodeDF::set\_raw}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00230}00230\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00233}00233\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ i-\/>raw\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00238}00238\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ i-\/>raw\ =\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00243}00243\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00244}00244\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00245}00245\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00246}00246\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00247}00247\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00248}00248\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00249}00249\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00251}00251\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00252}00252\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00254}\mbox{\hyperlink{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d}{00254}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d}{NodeDF::set\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00255}00255\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00258}00258\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ i-\/>tmp\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00261}00261\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00263}00263\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ i-\/>tmp\ =\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00268}00268\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00269}00269\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00270}00270\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00271}00271\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00272}00272\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00273}00273\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00274}00274\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00276}00276\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00277}00277\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00279}\mbox{\hyperlink{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9}{00279}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9}{NodeDF::set\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00280}00280\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00281}00281\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00282}00282\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00283}00283\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ i-\/>average\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00286}00286\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00287}00287\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00288}00288\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ i-\/>average\ =\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00293}00293\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00294}00294\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00295}00295\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00296}00296\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00297}00297\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00298}00298\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00299}00299\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00301}00301\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00302}00302\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00304}\mbox{\hyperlink{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69}{00304}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69}{NodeDF::set\_weight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00305}00305\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00306}00306\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00309}00309\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ i-\/>weight\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00312}00312\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00314}00314\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00315}00315\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00316}00316\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00317}00317\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00318}00318\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00319}00319\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00320}00320\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00322}00322\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00323}00323\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00325}\mbox{\hyperlink{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577}{00325}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577}{NodeDF::set\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ raw\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tmp\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ avg\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ wgt\_value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00329}00329\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00330}00330\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00331}00331\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00332}00332\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ i-\/>average\ =\ avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ i-\/>weight\ \ =\ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00338}00338\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00340}00340\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ =\ -\/raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ =\ -\/tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ i-\/>average\ =\ -\/avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ i-\/>weight\ \ =\ \ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00345}00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00346}00346\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00348}00348\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00349}00349\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00350}00350\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00351}00351\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00352}00352\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00353}00353\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00354}00354\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00356}00356\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00357}00357\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00359}\mbox{\hyperlink{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3}{00359}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3}{NodeDF::get\_raw}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00360}00360\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00361}00361\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00362}00362\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00363}00363\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>raw;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00365}00365\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00366}00366\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00367}00367\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>raw;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00369}00369\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00370}00370\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00371}00371\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00373}\mbox{\hyperlink{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401}{00373}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401}{NodeDF::get\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00374}00374\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00375}00375\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00376}00376\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00377}00377\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>tmp;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00379}00379\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00381}00381\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>tmp;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00383}00383\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00384}00384\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00385}00385\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00387}\mbox{\hyperlink{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40}{00387}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40}{NodeDF::get\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00388}00388\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00389}00389\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00390}00390\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00391}00391\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>average;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00393}00393\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00394}00394\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00395}00395\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>average;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00397}00397\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00399}00399\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00401}\mbox{\hyperlink{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea}{00401}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea}{NodeDF::get\_weight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00402}00402\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00403}00403\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00404}00404\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00406}00406\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>weight;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00408}00408\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00409}00409\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00410}00410\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00412}\mbox{\hyperlink{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba}{00412}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba}{NodeDF::add\_raw}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00413}00413\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00414}00414\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00415}00415\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00416}00416\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ i-\/>raw\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00419}00419\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00420}00420\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00421}00421\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ i-\/>raw\ +=\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00424}00424\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00426}00426\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00427}00427\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00428}00428\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00429}00429\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00430}00430\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00431}00431\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00432}00432\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00434}00434\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00435}00435\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00437}\mbox{\hyperlink{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d}{00437}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d}{NodeDF::add\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00438}00438\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00439}00439\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00440}00440\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00441}00441\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ i-\/>tmp\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00444}00444\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00445}00445\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00446}00446\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00447}00447\ \ \ \ \ \ \ \ \ i-\/>tmp\ +=\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00448}00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00449}00449\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00451}00451\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00452}00452\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00453}00453\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00454}00454\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00455}00455\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00456}00456\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00457}00457\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00459}00459\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00460}00460\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00462}\mbox{\hyperlink{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8}{00462}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8}{NodeDF::add\_average}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00463}00463\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00464}00464\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00465}00465\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00466}00466\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00469}00469\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00470}00470\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00471}00471\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00472}00472\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ -\/value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00473}00473\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00474}00474\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00476}00476\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00477}00477\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00478}00478\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00479}00479\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00480}00480\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00481}00481\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00482}00482\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00484}00484\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00485}00485\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00487}\mbox{\hyperlink{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd}{00487}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd}{NodeDF::add\_weight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00488}00488\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00489}00489\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00490}00490\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00491}00491\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00492}00492\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00493}00493\ \ \ \ \ \ \ \ \ i-\/>weight\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00494}00494\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00495}00495\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00497}00497\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00498}00498\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00499}00499\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00500}00500\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00501}00501\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00502}00502\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00503}00503\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00505}00505\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00506}00506\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00508}\mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{00508}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{NodeDF::add\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ raw\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tmp\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ avg\_value,}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ wgt\_value)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00512}00512\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00513}00513\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00514}00514\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00515}00515\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00516}00516\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ +=\ raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00517}00517\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ +=\ tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00518}00518\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00519}00519\ \ \ \ \ \ \ \ \ i-\/>weight\ \ +=\ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00520}00520\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00521}00521\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00522}00522\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00523}00523\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00524}00524\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ +=\ -\/raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00525}00525\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ +=\ -\/tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00526}00526\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ -\/avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ i-\/>weight\ \ +=\ \ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00529}00529\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00530}00530\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00531}00531\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{DrivingForceEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00532}00532\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a0b6141273d85f67a3ded3c1dd42a5901}{indexA}}\ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00533}00533\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a20eef55f95cf376980db75826418fbf8}{indexB}}\ \ =\ m;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00534}00534\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_ab5c081c45f188e2470535e7b44ce415b}{raw}}\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00535}00535\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a54a304a2eeea6183725bd30faeabfc8e}{tmp}}\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00536}00536\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5f5b62a2001eacdf92d2bbfa45b85417}{average}}\ =\ avg\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00537}00537\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry_a5068c0e67f112674d9c8fd698b6711d0}{weight}}\ \ =\ wgt\_value;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00539}00539\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00540}00540\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00541}00541\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00542}\mbox{\hyperlink{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6}{00542}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6}{NodeDF::pack}}(std::vector<double>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00543}00543\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00544}00544\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size());}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00545}00545\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ it\ !=\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();++it)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00546}00546\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00547}00547\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexA\ );}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00548}00548\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexB\ );}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00549}00549\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>raw\ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00550}00550\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>tmp\ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00551}00551\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>average);}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00552}00552\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>weight\ );}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00553}00553\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00554}00554\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00555}00555\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00556}\mbox{\hyperlink{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2}{00556}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2}{NodeDF::unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00557}00557\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00558}00558\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}{clear}}();}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00559}00559\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00560}00560\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}});}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00561}00561\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00562}00562\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00563}00563\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].indexA\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00564}00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].indexB\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00565}00565\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].raw\ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00566}00566\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].tmp\ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00567}00567\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].average\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00568}00568\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].weight\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00569}00569\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00570}00570\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00572}\mbox{\hyperlink{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159}{00572}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159}{NodeDF::Read}}(std::istream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00573}00573\ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00574}00574\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00575}00575\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00576}00576\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}});}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00578}00578\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00579}00579\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA\ ),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB\ ),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00582}00582\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.raw\ \ \ \ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00583}00583\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.tmp\ \ \ \ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00584}00584\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.average),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00585}00585\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.weight\ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00586}00586\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00587}00587\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00588}00588\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00589}\mbox{\hyperlink{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d}{00589}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d}{NodeDF::Write}}(std::ostream\&\ outp)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00590}00590\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00591}00591\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size();}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00592}00592\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00594}00594\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00595}00595\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00596}00596\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA\ ),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00597}00597\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB\ ),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00598}00598\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.raw\ \ \ \ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00599}00599\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.tmp\ \ \ \ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00600}00600\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.average),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00601}00601\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.weight\ ),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00602}00602\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00603}00603\ \}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00605}00605\ \}\textcolor{comment}{//namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{NodeDF_8h_source_l00606}00606\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

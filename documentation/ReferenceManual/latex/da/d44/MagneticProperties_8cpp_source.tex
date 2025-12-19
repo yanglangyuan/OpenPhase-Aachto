@@ -1,0 +1,191 @@
+\doxysection{Magnetic\+Properties.\+cpp}
+\hypertarget{MagneticProperties_8cpp_source}{}\label{MagneticProperties_8cpp_source}\index{MagneticProperties.cpp@{MagneticProperties.cpp}}
+\mbox{\hyperlink{MagneticProperties_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2017}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MagneticProperties_8h}{Magnetism/MagneticProperties.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Orientations_8h}{Orientations.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00034}00034\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00036}00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00039}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_adf5c4e03a23c7aaf4692b1f8f7f19ffc}{00039}}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a4be68e86e88e7fb9c36aa3cc2fbc54cc}{MagneticProperties::MagneticProperties}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_aaffccd142d12fe802f6ed3eb9a719898}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a12fd9fdac9c077f79d5aa25ed82679f7}{ReadInput}}(\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00045}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_aaffccd142d12fe802f6ed3eb9a719898}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_aaffccd142d12fe802f6ed3eb9a719898}{MagneticProperties::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}MagneticProperties"{}};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//DefaultInputFileName\ =\ ProjectInputDir\ +\ "{}MagneticInput.opi"{};}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ BoundaryCells\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a63aae887dbfdd60f718397bc752a38b8}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a02ff2ac5a77c86b0e6a8dc5e7bf75c66}{PermeabilityPhase}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_af88a2f92981a2df9daa126f4f4346bae}{RelativePermeability}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a5fe4c96e264dc0d48dd96ea9aecc2271}{RelativePermeabilityPhase}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_ab21d398b937ed6bcdd2885dcc9bc5efe}{MagneticField}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a63aae887dbfdd60f718397bc752a38b8}{Grid}},\ BoundaryCells);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00068}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a12fd9fdac9c077f79d5aa25ed82679f7}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a12fd9fdac9c077f79d5aa25ed82679f7}{MagneticProperties::ReadInput}}(std::string\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Magnetic\ properties"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00074}00074\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00080}00080\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00081}00081\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00082}00082\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a12fd9fdac9c077f79d5aa25ed82679f7}{ReadInput}}(data);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00086}00086\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00091}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ae7f020fbdbbe4122102e98b62d3f756b}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a12fd9fdac9c077f79d5aa25ed82679f7}{MagneticProperties::ReadInput}}(stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_ae210279ed8214d883eb7248ce08bd198}{Sublattices}}\ =}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}SUB"{}}));}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a2bbac2a72f88075ac77511f7c6e062a4}{Magnetisation}}.Allocate(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a63aae887dbfdd60f718397bc752a38b8}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ae210279ed8214d883eb7248ce08bd198}{Sublattices}}\},\ 1);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a6295386a024c93d2e7a93e735d4e9a19}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ converter\ <<\ alpha\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ i+1\ <<\ j+1;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}PMEA"{}}\ +\ converter.str();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ name,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_af88a2f92981a2df9daa126f4f4346bae}{RelativePermeability}}\ \ \ \ \ [alpha](i,j)\ =\ value;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a5fe4c96e264dc0d48dd96ea9aecc2271}{RelativePermeabilityPhase}}[alpha](i,j)\ =\ value;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}\ \ \ \ \ \ \ \ \ \ \ \ \ [alpha](i,j)\ =\ value\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_a54a680502c8f02234e8a5bb9dad693f1}{PhysicalConstants::mu\_0}};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a02ff2ac5a77c86b0e6a8dc5e7bf75c66}{PermeabilityPhase}}\ \ \ \ \ \ \ \ [alpha](i,j)\ =\ value\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_a54a680502c8f02234e8a5bb9dad693f1}{PhysicalConstants::mu\_0}};}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00119}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a1cf1585f27b3acdd9c25c3bd713790bb}{00119}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a1cf1585f27b3acdd9c25c3bd713790bb}{MagneticProperties::SetGrainsProperties}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00120}00120\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ NPhaseFields\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}.size()\ !=\ NPhaseFields)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}.Reallocate(NPhaseFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_af88a2f92981a2df9daa126f4f4346bae}{RelativePermeability}}.Reallocate(NPhaseFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ alpha\ =\ 0;\ alpha\ <\ NPhaseFields;\ alpha++)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Exist)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pIndex\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha].Phase;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}\ \ \ \ \ \ \ \ [alpha]\ =\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a02ff2ac5a77c86b0e6a8dc5e7bf75c66}{PermeabilityPhase}}\ \ \ \ \ \ \ \ [pIndex];}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_af88a2f92981a2df9daa126f4f4346bae}{RelativePermeability}}[alpha]\ =\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a5fe4c96e264dc0d48dd96ea9aecc2271}{RelativePermeabilityPhase}}[pIndex];}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00135}00135\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00137}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a04ef73b1dfe2b34eb7c15594899b5cb5}{00137}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a1cf1585f27b3acdd9c25c3bd713790bb}{MagneticProperties::SetGrainsProperties}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Orientations}{Orientations}}\&\ OR)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00139}00139\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ NPhaseFields\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}.size()\ !=\ NPhaseFields)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00142}00142\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a52b369f7a0ada16dd83f945a2301dd1d}{Permeability}}.Reallocate(NPhaseFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_af88a2f92981a2df9daa126f4f4346bae}{RelativePermeability}}.Reallocate(NPhaseFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{comment}{/*for(unsigned\ int\ alpha\ =\ 0;\ alpha\ <\ NPhaseFields;\ alpha++)}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00148}00148\ \textcolor{comment}{\ \ \ \ if(Phase.FieldsProperties[alpha].Exist)}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00149}00149\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00150}00150\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ unsigned\ int\ pIndex\ =\ Phase.FieldsProperties[alpha].Phase;}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00151}00151\ \textcolor{comment}{\ \ \ \ \ \ \ \ //Permeability\ \ \ \ \ \ \ \ [alpha]\ =\ PermeabilityPhase\ \ \ \ \ \ \ \ [pIndex].rotated(OR.GrainRotations[alpha]);}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00152}00152\ \textcolor{comment}{\ \ \ \ \ \ \ \ //RelativePermeability[alpha]\ =\ RelativePermeabilityPhase[pIndex].rotated(OR.GrainRotations[alpha]);}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00153}00153\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00156}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a9475bd80ac24785dc05495b185eb4efe}{00156}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a9475bd80ac24785dc05495b185eb4efe}{MagneticProperties::WriteMagneticFieldVTK}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00157}00157\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00158}00158\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00159}00159\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \textcolor{stringliteral}{"{}MagneticField\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00160}00160\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}MagneticField"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_ab21d398b937ed6bcdd2885dcc9bc5efe}{MagneticField}}(i,j,k);\}\});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00161}00161\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00164}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ada2b5d1ea0fccb04df267b839b0acc95}{00164}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_ada2b5d1ea0fccb04df267b839b0acc95}{MagneticProperties::WriteMagnetisationVTK}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00165}00165\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00166}00166\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00167}00167\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \textcolor{stringliteral}{"{}Magnetisation\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_ae210279ed8214d883eb7248ce08bd198}{Sublattices}};\ n++)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00169}00169\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}Magnetisation\_"{}}\ +\ to\_string(n),\ [\textcolor{keyword}{this},n](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a2bbac2a72f88075ac77511f7c6e062a4}{Magnetisation}}(i,j,k,\{n\});\}\});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00175}\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{00175}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{MagneticProperties::SetBoundaryConditions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00176}00176\ \{}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00177}00177\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a24b7052eb5680d2c8b793913ae74468c}{SetXVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ab21d398b937ed6bcdd2885dcc9bc5efe}{MagneticField}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00178}00178\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ab36194b00f7274c8f13395b6908f21b7}{SetYVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ab21d398b937ed6bcdd2885dcc9bc5efe}{MagneticField}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00179}00179\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a9ec8b64c4c7510b8fa08550d62df30e9}{SetZVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_ab21d398b937ed6bcdd2885dcc9bc5efe}{MagneticField}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00181}00181\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a24b7052eb5680d2c8b793913ae74468c}{SetXVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a2bbac2a72f88075ac77511f7c6e062a4}{Magnetisation}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00182}00182\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ab36194b00f7274c8f13395b6908f21b7}{SetYVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a2bbac2a72f88075ac77511f7c6e062a4}{Magnetisation}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00183}00183\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a9ec8b64c4c7510b8fa08550d62df30e9}{SetZVector}}(\mbox{\hyperlink{classopenphase_1_1MagneticProperties_a2bbac2a72f88075ac77511f7c6e062a4}{Magnetisation}});}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{MagneticProperties_8cpp_source_l00185}00185\ \}\textcolor{comment}{//\ end\ of\ namespace\ openphase}}
+
+\end{DoxyCode}

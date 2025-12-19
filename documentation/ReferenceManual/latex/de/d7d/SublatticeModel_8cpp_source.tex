@@ -1,0 +1,78 @@
+\doxysection{Sublattice\+Model.\+cpp}
+\hypertarget{SublatticeModel_8cpp_source}{}\label{SublatticeModel_8cpp_source}\index{SublatticeModel.cpp@{SublatticeModel.cpp}}
+\mbox{\hyperlink{SublatticeModel_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2015}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Matthias\ Stratmann}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SublatticeModel_8h}{Thermodynamics/SublatticeModel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00029}00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00034}\mbox{\hyperlink{classopenphase_1_1SublatticeModel_ab7f04d4ea1632ca175b86e35c70393ab}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ab7f04d4ea1632ca175b86e35c70393ab}{SublatticeModel::Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}}\ =\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}{getNcons}}();}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a3f31428abcaa1dea1fbccdfec501db7f}{hasVacancies}}\ =\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}{gethasVacancies}}();}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00040}\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}{00040}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}{SublatticeModel::getNcons}}()}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}.size();}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00046}\mbox{\hyperlink{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}{00046}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}{SublatticeModel::gethasVacancies}}()}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ temp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}};\ i++)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}[i].Index\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00059}\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a2de3f4f753ab4f913c2b82d2d3f2711e}{00059}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a2de3f4f753ab4f913c2b82d2d3f2711e}{SublatticeModel::isElementPresent}}(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ temp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}};\ n++)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}[n].Index\ ==\ i)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00073}\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a4e79826877c28601597eb0c7d684ffc8}{00073}}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a4e79826877c28601597eb0c7d684ffc8}{SublatticeModel::SublatticeModel}}(\textcolor{keywordtype}{double}\ n\_sites,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\_cons)}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ad714d72e972c71cd2abf0ef2cbfc56d4}{Site}}\ =\ n\_sites;}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{SublatticeModel_8cpp_source_l00079}00079\ \}}
+
+\end{DoxyCode}

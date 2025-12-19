@@ -1,0 +1,1248 @@
+\doxysection{openphase\+::Quaternion Class Reference}
+\hypertarget{classopenphase_1_1Quaternion}{}\label{classopenphase_1_1Quaternion}\index{openphase::Quaternion@{openphase::Quaternion}}
+
+
+\texorpdfstring{$<$}{<} Stores and manages Quaternions  
+
+
+
+
+{\ttfamily \#include "{}Quaternion.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion_ad360109a5c802d62daeb90c2761ac95d}{Quaternion}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&rhS)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion_a47c0b4a552f085089cd0133e5f11c630}{Quaternion}} (std\+::array$<$ double, 4 $>$ vecinit)
+\begin{DoxyCompactList}\small\item\em Constructs quaternion using array of four values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}{set}} (const double s\+In, const double x, const double y, const double z)
+\begin{DoxyCompactList}\small\item\em Sets quaternion using individual entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a0941074d44018cf58347b5853dda09c8}{set}} (const double s\+In, const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} v\+In)
+\begin{DoxyCompactList}\small\item\em Sets quaternion using first entry and imaginary part vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a0359727683c2ec4d30cffa47144e536f}{set}} (const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&Rot\+Matrix)
+\begin{DoxyCompactList}\small\item\em Sets quaternion from rotation matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a47f60ec8ca2a59d97e9e4ba7d9ac67cd}{set\+\_\+entry}} (const int idx, const double val)
+\begin{DoxyCompactList}\small\item\em Sets individual entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_ae10ddfcde130039ad7fd9c3a0fc2a237}{set}} (\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} Axis, const double Angle)
+\begin{DoxyCompactList}\small\item\em Sets quaternion from rotation axis and angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a633adcc09373e76a93dfabda267bcf52}{set\+\_\+to\+\_\+zero}} ()
+\begin{DoxyCompactList}\small\item\em Sets zero rotation quaternion. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a30258240b2b0bff3a6737f8fc41f148d}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Bi-\/directional access operator for accessing individual entries. \end{DoxyCompactList}\item 
+double const \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a441b1f3dfaee4c971e047a47ae7396b8}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Bi-\/directional access operator for accessing individual entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a9d5d16fb49c654f46de5ca5ac3c3effc}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a0522315f43d00968eb70c0f561a7e692}{operator+}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS) const
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_abb12a5836b35572b1dcd6d1371149eeb}{operator+=}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a2036d99677a5f801abcf428e2792caab}{operator-\/}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS) const
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a212acd8fbba10520577b6fafed9abbf3}{operator-\/=}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_ab4b0e07857fe2695b8bd720de7a67bfe}{operator\texorpdfstring{$\ast$}{*}}} (const double scalar) const
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a141563f974b9feb7fd663179237cc54d}{operator\texorpdfstring{$\ast$}{*}=}} (const double scalar)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a3b4923e6ffa5431107fe8b467b747128}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS) const
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a73662659b53badda0c26cbe3b522185d}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} rhS)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_af31bb2a6bfcd67d1d73e56f052b30183}{operator/}} (const double divisor)
+\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a4918419687283a340984aff2d067d4ed}{operator/=}} (const double divisor)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1Quaternion_aaebabc6f16fdce6e01910a24a2e5336f}{length}} () const
+\begin{DoxyCompactList}\small\item\em Returns length of the quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a3277ab78920d774bfd9358c989130983}{normalize}} ()
+\begin{DoxyCompactList}\small\item\em Normalizes quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a9c575c13986dd6650eed45cd5de6f4d6}{normalized}} () const
+\begin{DoxyCompactList}\small\item\em Returns normalized quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_a14e01c63b3c7e12b50d8372abaa28717}{conjugate}} ()
+\begin{DoxyCompactList}\small\item\em Conjugates quaternion (reverse rotation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a7e91e0f0e8af654f33437669a603649b}{conjugated}} () const
+\begin{DoxyCompactList}\small\item\em Returns conjugated quaternion (reverse rotation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& \mbox{\hyperlink{classopenphase_1_1Quaternion_ab94dabdacb14037aa64f11d9edcbd16b}{invert}} ()
+\begin{DoxyCompactList}\small\item\em Conjugates quaternion (reverse rotation if quaternion is normalized) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a08e2a573ce7b77572dae2d88aec8ec91}{inverted}} () const
+\begin{DoxyCompactList}\small\item\em Returns inverted quaternion (reverse rotation if quaternion is normalized) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a2e4e0151f0c15f90312be97be835246d}{pack}} (std\+::vector$<$ double $>$ \&buffer)
+\begin{DoxyCompactList}\small\item\em Packs the quaternion into communication buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_ac4f3d026e8212e7a0032210f6a6134d5}{unpack}} (std\+::vector$<$ double $>$ \&buffer, size\+\_\+t \&it)
+\begin{DoxyCompactList}\small\item\em Unpacks the quaternion from communication buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{set\+Rotation\+Matrix}} (void)
+\begin{DoxyCompactList}\small\item\em Sets rotation matrix for the quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a915ff73d208e509caaa763283551209a}{get\+Rotation\+Matrix}} (const bool Active=true)
+\begin{DoxyCompactList}\small\item\em Returns rotation matrix (default\+: active rotation) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b83264c4143d8909732f16b8ca7b2fb}{print}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the quaternion as formated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_ab02e450d772c509dba013ad24af2b487}{write}} (std\+::fstream \&out) const
+\begin{DoxyCompactList}\small\item\em Writes quaternion to a file stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_aaacdb5a5368ae4fbd1db89c42d99fd2b}{write}} (std\+::stringstream \&out) const
+\begin{DoxyCompactList}\small\item\em Writes quaternion to a string stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a9226cf16c52ba8f1405f2deb7e2cdc9b}{read}} (std\+::fstream \&inp)
+\begin{DoxyCompactList}\small\item\em Reads quaternion from a file stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Quaternion_a0ea2ee7659b84c4cc49c5ad2d07befb3}{read}} (std\+::stringstream \&inp)
+\begin{DoxyCompactList}\small\item\em Reads quaternion from a string stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Quaternion_a8bd6044e4a2bdff1f96cadce552b6da9}{size}} ()
+\item 
+static \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_af6772b20900afaf96eccb374a62f3c86}{lerp}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&rh\+SQ1, const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&rh\+SQ2, const double t)
+\begin{DoxyCompactList}\small\item\em Linear interpolation between two quaternions, where 0.\+0 \texorpdfstring{$<$}{<} t \texorpdfstring{$<$}{<} 1.\+0. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a952f3b2526f2f531854c2f9c564340fb}{slerp}} (const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&a, const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&b, const double t)
+\begin{DoxyCompactList}\small\item\em Linear interpolation between two quaternions, where 0.\+0 \texorpdfstring{$<$}{<} t \texorpdfstring{$<$}{<} 1.\+0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{Rotation\+Matrix}}
+\begin{DoxyCompactList}\small\item\em Rotation matrix corresponding to the quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}
+\begin{DoxyCompactList}\small\item\em Real component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}
+\begin{DoxyCompactList}\small\item\em Imaginary components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores and manages Quaternions 
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00036}{36}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}\label{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050} 
+\index{openphase::Quaternion@{openphase::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily openphase\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00100}{100}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ 1.0;}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{set\_to\_unity}}();}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ad360109a5c802d62daeb90c2761ac95d}\label{classopenphase_1_1Quaternion_ad360109a5c802d62daeb90c2761ac95d} 
+\index{openphase::Quaternion@{openphase::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily openphase\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{rhS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00107}{107}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ rhS.s;}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ rhS.v;}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a47c0b4a552f085089cd0133e5f11c630}\label{classopenphase_1_1Quaternion_a47c0b4a552f085089cd0133e5f11c630} 
+\index{openphase::Quaternion@{openphase::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily openphase\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{std\+::array$<$ double, 4 $>$}]{vecinit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs quaternion using array of four values. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00114}{114}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//assert(vecinit.size()\ ==\ 4\ \&\&\ "{}Initialization\ list\ size\ is\ not\ equal\ to\ storage\ range"{});}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ ii\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ *vecinit.begin();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ vecinit.begin()+1;\ it\ !=\ vecinit.end();\ it++)}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[ii]\ =\ *it;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ ii\ +=\ 1;}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Quaternion_a14e01c63b3c7e12b50d8372abaa28717}\label{classopenphase_1_1Quaternion_a14e01c63b3c7e12b50d8372abaa28717} 
+\index{openphase::Quaternion@{openphase::Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{conjugate()}{conjugate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::conjugate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conjugates quaternion (reverse rotation) 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00313}{313}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00314\ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*(-\/1.0);}
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00318\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a7e91e0f0e8af654f33437669a603649b}\label{classopenphase_1_1Quaternion_a7e91e0f0e8af654f33437669a603649b} 
+\index{openphase::Quaternion@{openphase::Quaternion}!conjugated@{conjugated}}
+\index{conjugated@{conjugated}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{conjugated()}{conjugated()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::conjugated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns conjugated quaternion (reverse rotation) 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00319}{319}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00320\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00322\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}};}
+\DoxyCodeLine{00323\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*(-\/1.0);}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00325\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a915ff73d208e509caaa763283551209a}\label{classopenphase_1_1Quaternion_a915ff73d208e509caaa763283551209a} 
+\index{openphase::Quaternion@{openphase::Quaternion}!getRotationMatrix@{getRotationMatrix}}
+\index{getRotationMatrix@{getRotationMatrix}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{getRotationMatrix()}{getRotationMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} openphase\+::\+Quaternion\+::get\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const bool}]{Active = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Returns rotation matrix (default\+: active rotation) 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{Quaternion_8cpp_source}{Quaternion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ dMatrix3x3\ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ Qcopy\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a9c575c13986dd6650eed45cd5de6f4d6}{normalized}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{double}\ q\ =\ Qcopy.s\ *\ Qcopy.s\ -\/\ (Qcopy.v[0]\ *\ Qcopy.v[0]\ +\ Qcopy.v[1]\ *\ Qcopy.v[1]\ +\ Qcopy.v[2]\ *\ Qcopy.v[2]);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{if}(Active)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,0)\ =\ q\ +\ 2.0\ *\ Qcopy.v[0]\ *\ Qcopy.v[0];}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,1)\ =\ 2.0\ *\ (Qcopy.v[0]\ *\ Qcopy.v[1]\ -\/\ Qcopy.s\ *\ Qcopy.v[2]);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,2)\ =\ 2.0\ *\ (Qcopy.v[0]\ *\ Qcopy.v[2]\ +\ Qcopy.s\ *\ Qcopy.v[1]);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,0)\ =\ 2.0\ *\ (Qcopy.v[1]\ *\ Qcopy.v[0]\ +\ Qcopy.s\ *\ Qcopy.v[2]);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,1)\ =\ q\ +\ 2.0\ *Qcopy.v[1]\ *\ Qcopy.v[1];}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,2)\ =\ 2.0\ *\ (Qcopy.v[1]\ *\ Qcopy.v[2]\ -\/\ Qcopy.s\ *\ Qcopy.v[0]);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,0)\ =\ 2.0\ *\ (Qcopy.v[2]\ *\ Qcopy.v[0]\ -\/\ Qcopy.s\ *\ Qcopy.v[1]);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,1)\ =\ 2.0\ *\ (Qcopy.v[2]\ *\ Qcopy.v[1]\ +\ Qcopy.s\ *\ Qcopy.v[0]);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,2)\ =\ q\ +\ 2.0\ *Qcopy.v[2]\ *\ Qcopy.v[2];}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,0)\ =\ q\ +\ 2.0\ *\ Qcopy.v[0]\ *\ Qcopy.v[0];}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,1)\ =\ 2.0\ *\ (Qcopy.v[0]\ *\ Qcopy.v[1]\ +\ Qcopy.s\ *\ Qcopy.v[2]);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,2)\ =\ 2.0\ *\ (Qcopy.v[0]\ *\ Qcopy.v[2]\ -\/\ Qcopy.s\ *\ Qcopy.v[1]);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,0)\ =\ 2.0\ *\ (Qcopy.v[1]\ *\ Qcopy.v[0]\ -\/\ Qcopy.s\ *\ Qcopy.v[2]);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,1)\ =\ q\ +\ 2.0\ *Qcopy.v[1]\ *\ Qcopy.v[1];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,2)\ =\ 2.0\ *\ (Qcopy.v[1]\ *\ Qcopy.v[2]\ +\ Qcopy.s\ *\ Qcopy.v[0]);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,0)\ =\ 2.0\ *\ (Qcopy.v[2]\ *\ Qcopy.v[0]\ +\ Qcopy.s\ *\ Qcopy.v[1]);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,1)\ =\ 2.0\ *\ (Qcopy.v[2]\ *\ Qcopy.v[1]\ -\/\ Qcopy.s\ *\ Qcopy.v[0]);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,2)\ =\ q\ +\ 2.0\ *Qcopy.v[2]\ *\ Qcopy.v[2];}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}};}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ab94dabdacb14037aa64f11d9edcbd16b}\label{classopenphase_1_1Quaternion_ab94dabdacb14037aa64f11d9edcbd16b} 
+\index{openphase::Quaternion@{openphase::Quaternion}!invert@{invert}}
+\index{invert@{invert}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::invert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conjugates quaternion (reverse rotation if quaternion is normalized) 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00327}{327}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00328\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{comment}{//\ if\ |q|=1\ then\ q\ inverse\ =\ q\ conjugate}}
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*(-\/1.0);}
+\DoxyCodeLine{00331\ \ \ \ \ *\textcolor{keyword}{this}\ /=\ (\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]);}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00333\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a08e2a573ce7b77572dae2d88aec8ec91}\label{classopenphase_1_1Quaternion_a08e2a573ce7b77572dae2d88aec8ec91} 
+\index{openphase::Quaternion@{openphase::Quaternion}!inverted@{inverted}}
+\index{inverted@{inverted}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::inverted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns inverted quaternion (reverse rotation if quaternion is normalized) 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00335}{335}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00336\ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordflow}{return}\ result\ =\ result.conjugate()/(\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}+\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}});}
+\DoxyCodeLine{00339\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_aaebabc6f16fdce6e01910a24a2e5336f}\label{classopenphase_1_1Quaternion_aaebabc6f16fdce6e01910a24a2e5336f} 
+\index{openphase::Quaternion@{openphase::Quaternion}!length@{length}}
+\index{length@{length}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily double openphase\+::\+Quaternion\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns length of the quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00293}{293}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00294\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]);}
+\DoxyCodeLine{00296\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_af6772b20900afaf96eccb374a62f3c86}\label{classopenphase_1_1Quaternion_af6772b20900afaf96eccb374a62f3c86} 
+\index{openphase::Quaternion@{openphase::Quaternion}!lerp@{lerp}}
+\index{lerp@{lerp}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::lerp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{rh\+SQ1,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{rh\+SQ2,  }\item[{const double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Linear interpolation between two quaternions, where 0.\+0 \texorpdfstring{$<$}{<} t \texorpdfstring{$<$}{<} 1.\+0. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{Quaternion_8cpp_source}{Quaternion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ linear\ interpolation\ between\ two\ quaternions,\ where\ 0.0\ <\ t\ <\ 1.0}}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result\ =\ (rhSQ1*(1.0\ -\/\ t)\ +\ rhSQ2*t).normalized();}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a3277ab78920d774bfd9358c989130983}\label{classopenphase_1_1Quaternion_a3277ab78920d774bfd9358c989130983} 
+\index{openphase::Quaternion@{openphase::Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalizes quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00298}{298}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00299\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ *\textcolor{keyword}{this}\ /=\ sqrt(\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]);}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a9c575c13986dd6650eed45cd5de6f4d6}\label{classopenphase_1_1Quaternion_a9c575c13986dd6650eed45cd5de6f4d6} 
+\index{openphase::Quaternion@{openphase::Quaternion}!normalized@{normalized}}
+\index{normalized@{normalized}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{normalized()}{normalized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns normalized quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00304}{304}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_aaebabc6f16fdce6e01910a24a2e5336f}{length}}();}
+\DoxyCodeLine{00308\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}/norm;}
+\DoxyCodeLine{00309\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}/norm;}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00311\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ab4b0e07857fe2695b8bd720de7a67bfe}\label{classopenphase_1_1Quaternion_ab4b0e07857fe2695b8bd720de7a67bfe} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00240}{240}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00243\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ *\ scalar;}
+\DoxyCodeLine{00244\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ *\ scalar;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//result.setRotationMatrix();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RotationMatrix\ will\ be\ set\ in\ assignment\ operator}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00247\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a3b4923e6ffa5431107fe8b467b747128}\label{classopenphase_1_1Quaternion_a3b4923e6ffa5431107fe8b467b747128} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00257}{257}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00260\ \ \ \ \ result.v[0]\ =\ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*rhS.s\ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*rhS.v[2]\ -\/\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*rhS.v[1]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*rhS.v[0];}
+\DoxyCodeLine{00261\ \ \ \ \ result.v[1]\ =\ -\/\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*rhS.v[2]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*rhS.s\ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*rhS.v[0]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*rhS.v[1];}
+\DoxyCodeLine{00262\ \ \ \ \ result.v[2]\ =\ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*rhS.v[1]\ -\/\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*rhS.v[0]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*rhS.s\ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*rhS.v[2];}
+\DoxyCodeLine{00263\ \ \ \ \ result.s\ \ \ \ =\ -\/\mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]*rhS.v[0]\ -\/\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]*rhS.v[1]\ -\/\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]*rhS.v[2]\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*rhS.s;}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{comment}{//result.setRotationMatrix();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RotationMatrix\ will\ be\ set\ in\ assignment\ operator}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00266\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a141563f974b9feb7fd663179237cc54d}\label{classopenphase_1_1Quaternion_a141563f974b9feb7fd663179237cc54d} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00249}{249}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ *=\ scalar;}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ *=\ scalar;}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00255\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a73662659b53badda0c26cbe3b522185d}\label{classopenphase_1_1Quaternion_a73662659b53badda0c26cbe3b522185d} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00268}{268}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}*rhS.s\ -\/\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*rhS.v;}
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}.\mbox{\hyperlink{classopenphase_1_1dVector3_a7e673b126d43ba04caa548b3d364fe9a}{cross}}(rhS.v)\ +\ rhS.v*\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}*rhS.s;}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00274\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a0522315f43d00968eb70c0f561a7e692}\label{classopenphase_1_1Quaternion_a0522315f43d00968eb70c0f561a7e692} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00205}{205}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ rhS.s;}
+\DoxyCodeLine{00210\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ +\ rhS.v;}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//result.setRotationMatrix();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RotationMatrix\ will\ be\ set\ in\ assignment\ operator}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00213\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_abb12a5836b35572b1dcd6d1371149eeb}\label{classopenphase_1_1Quaternion_abb12a5836b35572b1dcd6d1371149eeb} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00215}{215}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ +\ rhS.s;}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ +\ rhS.v;}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00221\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a2036d99677a5f801abcf428e2792caab}\label{classopenphase_1_1Quaternion_a2036d99677a5f801abcf428e2792caab} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00223}{223}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00226\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ -\/\ rhS.s;}
+\DoxyCodeLine{00227\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ -\/\ rhS.v;}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//result.setRotationMatrix();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RotationMatrix\ will\ be\ set\ in\ assignment\ operator}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00230\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a212acd8fbba10520577b6fafed9abbf3}\label{classopenphase_1_1Quaternion_a212acd8fbba10520577b6fafed9abbf3} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00232}{232}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00233\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ -\/\ rhS.s;}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ -\/\ rhS.v;}
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_af31bb2a6bfcd67d1d73e56f052b30183}\label{classopenphase_1_1Quaternion_af31bb2a6bfcd67d1d73e56f052b30183} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::operator/ (\begin{DoxyParamCaption}\item[{const double}]{divisor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00276}{276}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00277\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00279\ \ \ \ \ result.s\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}/divisor;}
+\DoxyCodeLine{00280\ \ \ \ \ result.v\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}/divisor;}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//result.setRotationMatrix();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RotationMatrix\ will\ be\ set\ in\ assignment\ operator}}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00283\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a4918419687283a340984aff2d067d4ed}\label{classopenphase_1_1Quaternion_a4918419687283a340984aff2d067d4ed} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const double}]{divisor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00285}{285}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}/divisor;}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}/divisor;}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00291\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a9d5d16fb49c654f46de5ca5ac3c3effc}\label{classopenphase_1_1Quaternion_a9d5d16fb49c654f46de5ca5ac3c3effc} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \& openphase\+::\+Quaternion\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}}}]{rhS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00197}{197}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ rhS.s;}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ rhS.v;}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a30258240b2b0bff3a6737f8fc41f148d}\label{classopenphase_1_1Quaternion_a30258240b2b0bff3a6737f8fc41f148d} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \& openphase\+::\+Quaternion\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bi-\/directional access operator for accessing individual entries. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00128}{128}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ assert(index\ <\ 4\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ 0)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}};}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[index-\/1];}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a441b1f3dfaee4c971e047a47ae7396b8}\label{classopenphase_1_1Quaternion_a441b1f3dfaee4c971e047a47ae7396b8} 
+\index{openphase::Quaternion@{openphase::Quaternion}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double const  \& openphase\+::\+Quaternion\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bi-\/directional access operator for accessing individual entries. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00139}{139}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ assert(index\ <\ 4\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ 0)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}};\};}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[index-\/1];}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a2e4e0151f0c15f90312be97be835246d}\label{classopenphase_1_1Quaternion_a2e4e0151f0c15f90312be97be835246d} 
+\index{openphase::Quaternion@{openphase::Quaternion}!pack@{pack}}
+\index{pack@{pack}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::pack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Packs the quaternion into communication buffer. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00341}{341}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00342\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}});}
+\DoxyCodeLine{00344\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}.\mbox{\hyperlink{classopenphase_1_1dVector3_abf2eb619997230e39ba8602f6489df3b}{pack}}(buffer);}
+\DoxyCodeLine{00345\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a2b83264c4143d8909732f16b8ca7b2fb}\label{classopenphase_1_1Quaternion_a2b83264c4143d8909732f16b8ca7b2fb} 
+\index{openphase::Quaternion@{openphase::Quaternion}!print@{print}}
+\index{print@{print}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Quaternion\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the quaternion as formated string. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00353}{353}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00354\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{00356\ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\{\ "{}}\ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ <\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ "{}}\ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ "{}}\ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]\ <<\ \textcolor{stringliteral}{"{}\ >\ \}"{}};}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{00361\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a9226cf16c52ba8f1405f2deb7e2cdc9b}\label{classopenphase_1_1Quaternion_a9226cf16c52ba8f1405f2deb7e2cdc9b} 
+\index{openphase::Quaternion@{openphase::Quaternion}!read@{read}}
+\index{read@{read}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::read (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads quaternion from a file stream. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00387}{387}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00388\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ inp\ >>\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}};}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00391\ \ \ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ inp\ >>\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[i];}
+\DoxyCodeLine{00393\ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a0ea2ee7659b84c4cc49c5ad2d07befb3}\label{classopenphase_1_1Quaternion_a0ea2ee7659b84c4cc49c5ad2d07befb3} 
+\index{openphase::Quaternion@{openphase::Quaternion}!read@{read}}
+\index{read@{read}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::read (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads quaternion from a string stream. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00396}{396}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00397\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ inp\ >>\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}};}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00400\ \ \ \ \ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ inp\ >>\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[i];}
+\DoxyCodeLine{00402\ \ \ \ \ \}}
+\DoxyCodeLine{00403\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a0359727683c2ec4d30cffa47144e536f}\label{classopenphase_1_1Quaternion_a0359727683c2ec4d30cffa47144e536f} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set@{set}}
+\index{set@{set}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} \&}]{Rot\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Sets quaternion from rotation matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Quaternion_8cpp_source}{Quaternion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ assert(std::fabs((RotMatrix.transposed()*RotMatrix\ -\/\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6bd25de17eae46e2c45e0fdc1816a6e9}{dMatrix3x3::UnitTensor}}()).determinant())\ <=\ std::numeric\_limits<float>::epsilon()\ \&\&\ \textcolor{stringliteral}{"{}matrix\ is\ not\ orthogonal"{}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Found\ at\ http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}\ =\ RotMatrix;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ trace\ =\ RotMatrix.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a0e4c09e5549f0ada13f8ef2c94724c2e}{trace}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}(1.0\ +\ trace\ >\ 0)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ss\ =\ sqrt(trace\ +\ 1.0)*2.0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}{set}}(0.25*ss,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(2,1)\ -\/\ RotMatrix(1,2))/ss,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(0,2)\ -\/\ RotMatrix(2,0))/ss,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(1,0)\ -\/\ RotMatrix(0,1))/ss);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RotMatrix(0,0)\ >\ RotMatrix(1,1)\ \&\&\ RotMatrix(0,0)\ >\ RotMatrix(2,2))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ss\ =\ 2.0\ *\ sqrt(\ 1.0\ +\ RotMatrix(0,0)\ -\/\ RotMatrix(1,1)\ -\/\ RotMatrix(2,2));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}{set}}((RotMatrix(2,1)\ -\/\ RotMatrix(1,2))/ss,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.25\ *\ ss,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(0,1)\ +\ RotMatrix(1,0))/ss,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(0,2)\ +\ RotMatrix(2,0))/ss);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (RotMatrix(1,1)\ >\ RotMatrix(2,2))}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ss\ =\ 2.0\ *\ sqrt(1.0\ +\ RotMatrix(1,1)\ -\/\ RotMatrix(0,0)\ -\/\ RotMatrix(2,2));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}{set}}((RotMatrix(0,2)\ -\/\ RotMatrix(2,0))/ss,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(0,1)\ +\ RotMatrix(1,0))/ss,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.25\ *\ ss,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(1,2)\ +\ RotMatrix(2,1))/ss);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ss\ =\ 2.0\ *\ sqrt(1.0\ +\ RotMatrix(2,2)\ -\/\ RotMatrix(0,0)\ -\/\ RotMatrix(1,1));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}{set}}((RotMatrix(1,0)\ -\/\ RotMatrix(0,1))/ss,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(0,2)\ +\ RotMatrix(2,0))/ss,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (RotMatrix(1,2)\ +\ RotMatrix(2,1))/ss,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.25\ *\ ss);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527}\label{classopenphase_1_1Quaternion_a7825462702373f3915f30384c4743527} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set@{set}}
+\index{set@{set}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set (\begin{DoxyParamCaption}\item[{const double}]{s\+In,  }\item[{const double}]{x,  }\item[{const double}]{y,  }\item[{const double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets quaternion using individual entries. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00147}{147}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ sIn;}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ =\ x;}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ =\ y;}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]\ =\ z;}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00154\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a0941074d44018cf58347b5853dda09c8}\label{classopenphase_1_1Quaternion_a0941074d44018cf58347b5853dda09c8} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set@{set}}
+\index{set@{set}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set (\begin{DoxyParamCaption}\item[{const double}]{s\+In,  }\item[{const \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{v\+In }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets quaternion using first entry and imaginary part vector. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00156}{156}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ sIn;}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}\ =\ vIn;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00161\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ae10ddfcde130039ad7fd9c3a0fc2a237}\label{classopenphase_1_1Quaternion_ae10ddfcde130039ad7fd9c3a0fc2a237} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set@{set}}
+\index{set@{set}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}}]{Axis,  }\item[{const double}]{Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets quaternion from rotation axis and angle. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00176}{176}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ Axis.normalize();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//\ https://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/index.htm}}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ cos(Angle/2);}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ =\ Axis[0]\ *\ sin(Angle/2);}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ =\ Axis[1]\ *\ sin(Angle/2);}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]\ =\ Axis[2]\ *\ sin(Angle/2);}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a3277ab78920d774bfd9358c989130983}{normalize}}();}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a47f60ec8ca2a59d97e9e4ba7d9ac67cd}\label{classopenphase_1_1Quaternion_a47f60ec8ca2a59d97e9e4ba7d9ac67cd} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set\_entry@{set\_entry}}
+\index{set\_entry@{set\_entry}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set\_entry()}{set\_entry()}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set\+\_\+entry (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets individual entry. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00163}{163}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ ==\ 0)}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ val;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[idx]\ =\ val;}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}{setRotationMatrix}}();}
+\DoxyCodeLine{00174\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a633adcc09373e76a93dfabda267bcf52}\label{classopenphase_1_1Quaternion_a633adcc09373e76a93dfabda267bcf52} 
+\index{openphase::Quaternion@{openphase::Quaternion}!set\_to\_zero@{set\_to\_zero}}
+\index{set\_to\_zero@{set\_to\_zero}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{set\_to\_zero()}{set\_to\_zero()}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set\+\_\+to\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets zero rotation quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00188}{188}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ \ \ \ =\ 1.0;}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[0]\ =\ 0.0;}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[1]\ =\ 0.0;}
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[2]\ =\ 0.0;}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{set\_to\_unity}}();}
+\DoxyCodeLine{00195\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b}\label{classopenphase_1_1Quaternion_a2b6764d1286b0a0dae918e98e3d39a7b} 
+\index{openphase::Quaternion@{openphase::Quaternion}!setRotationMatrix@{setRotationMatrix}}
+\index{setRotationMatrix@{setRotationMatrix}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{setRotationMatrix()}{setRotationMatrix()}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::set\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets rotation matrix for the quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{Quaternion_8cpp_source}{Quaternion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Quaternion_aaebabc6f16fdce6e01910a24a2e5336f}{length}}()\ <\ DBL\_EPSILON)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{set\_to\_unity}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ Qcopy\ =\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a9c575c13986dd6650eed45cd5de6f4d6}{normalized}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,0)\ =\ 1.0\ -\/\ 2.0*(Qcopy.v[1]*Qcopy.v[1]\ +\ Qcopy.v[2]*Qcopy.v[2]);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,1)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[0]*Qcopy.v[1]\ -\/\ \ \ \ Qcopy.s*Qcopy.v[2]);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(0,2)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[0]*Qcopy.v[2]\ +\ \ \ \ Qcopy.s*Qcopy.v[1]);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,0)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[0]*Qcopy.v[1]\ +\ \ \ \ Qcopy.s*Qcopy.v[2]);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,1)\ =\ 1.0\ -\/\ 2.0*(Qcopy.v[0]*Qcopy.v[0]\ +\ Qcopy.v[2]*Qcopy.v[2]);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(1,2)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[1]*Qcopy.v[2]\ -\/\ \ \ \ Qcopy.s*Qcopy.v[0]);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,0)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[0]*Qcopy.v[2]\ -\/\ \ \ \ Qcopy.s*Qcopy.v[1]);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,1)\ =\ \ \ \ \ \ \ 2.0*(Qcopy.v[1]*Qcopy.v[2]\ +\ \ \ \ Qcopy.s*Qcopy.v[0]);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}{RotationMatrix}}(2,2)\ =\ 1.0\ -\/\ 2.0*(Qcopy.v[0]*Qcopy.v[0]\ +\ Qcopy.v[1]*Qcopy.v[1]);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a8bd6044e4a2bdff1f96cadce552b6da9}\label{classopenphase_1_1Quaternion_a8bd6044e4a2bdff1f96cadce552b6da9} 
+\index{openphase::Quaternion@{openphase::Quaternion}!size@{size}}
+\index{size@{size}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily static constexpr size\+\_\+t openphase\+::\+Quaternion\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00053}{53}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{\textcolor{keywordflow}{return}\ 4u;\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_a952f3b2526f2f531854c2f9c564340fb}\label{classopenphase_1_1Quaternion_a952f3b2526f2f531854c2f9c564340fb} 
+\index{openphase::Quaternion@{openphase::Quaternion}!slerp@{slerp}}
+\index{slerp@{slerp}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{slerp()}{slerp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} openphase\+::\+Quaternion\+::slerp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{a,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Quaternion}{Quaternion}} \&}]{b,  }\item[{const double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Linear interpolation between two quaternions, where 0.\+0 \texorpdfstring{$<$}{<} t \texorpdfstring{$<$}{<} 1.\+0. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{Quaternion_8cpp_source}{Quaternion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ linear\ interpolation\ between\ two\ quaternions,\ where\ 0.0\ <\ t\ <\ 1.0}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//\ taken\ from\ http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/slerp/index.htm}}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a4e9fda026717561a4409d155b9ad7050}{Quaternion}}\ result;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{double}\ cosHalfTheta\ =\ Qa.s\ \ \ \ *\ Qb.s}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ Qa.v[0]\ *\ Qb.v[0]}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ Qa.v[1]\ *\ Qb.v[1]}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ Qa.v[2]\ *\ Qb.v[2];}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{double}\ sign\ =\ 1.0;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (cosHalfTheta\ <\ 0)}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ sign\ =\ -\/1.0;}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}(fabs(cosHalfTheta)\ >=\ 1.0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ rotations\ equal}}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ result\ =\ Qa;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ halfTheta\ =\ acos(sign*cosHalfTheta);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sinHalfTheta\ =\ sqrt(1.0\ -\/\ cosHalfTheta*cosHalfTheta);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(sinHalfTheta)\ <\ 2.0*DBL\_EPSILON)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ rotations\ are\ opposite\ of\ each\ other}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ result.s\ \ \ \ =\ (Qa.s\ \ \ *0.5\ +\ sign*Qb.s\ \ \ *0.5);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[0]\ =\ (Qa.v[0]*0.5\ +\ sign*Qb.v[0]*0.5);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[1]\ =\ (Qa.v[1]*0.5\ +\ sign*Qb.v[1]*0.5);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[2]\ =\ (Qa.v[2]*0.5\ +\ sign*Qb.v[2]*0.5);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ general\ case}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ratioA\ =\ sin((1\ -\/\ t)\ *\ halfTheta)\ /\ sinHalfTheta;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ratioB\ =\ sin(t\ *\ halfTheta)\ /\ sinHalfTheta;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ result.s\ \ \ \ =\ (Qa.s\ \ \ \ *\ ratioA\ +\ sign*Qb.s\ \ \ \ *\ ratioB);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[0]\ =\ (Qa.v[0]\ *\ ratioA\ +\ sign*Qb.v[0]\ *\ ratioB);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[1]\ =\ (Qa.v[1]\ *\ ratioA\ +\ sign*Qb.v[1]\ *\ ratioB);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ result.v[2]\ =\ (Qa.v[2]\ *\ ratioA\ +\ sign*Qb.v[2]\ *\ ratioB);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ result.setRotationMatrix();}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ac4f3d026e8212e7a0032210f6a6134d5}\label{classopenphase_1_1Quaternion_ac4f3d026e8212e7a0032210f6a6134d5} 
+\index{openphase::Quaternion@{openphase::Quaternion}!unpack@{unpack}}
+\index{unpack@{unpack}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::unpack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer,  }\item[{size\+\_\+t \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unpacks the quaternion from communication buffer. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00347}{347}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00348\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00350\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}.\mbox{\hyperlink{classopenphase_1_1dVector3_a903444a365ebe929dfa8d1fb105abebb}{unpack}}(buffer,\ it);}
+\DoxyCodeLine{00351\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_ab02e450d772c509dba013ad24af2b487}\label{classopenphase_1_1Quaternion_ab02e450d772c509dba013ad24af2b487} 
+\index{openphase::Quaternion@{openphase::Quaternion}!write@{write}}
+\index{write@{write}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::write (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes quaternion to a file stream. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00363}{363}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00364\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ out\ <<\ std::scientific\ <<\ std::setprecision(std::numeric\_limits<double>::digits10\ +\ 1);}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ out\ <<\ std::endl;}
+\DoxyCodeLine{00373\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Quaternion_aaacdb5a5368ae4fbd1db89c42d99fd2b}\label{classopenphase_1_1Quaternion_aaacdb5a5368ae4fbd1db89c42d99fd2b} 
+\index{openphase::Quaternion@{openphase::Quaternion}!write@{write}}
+\index{write@{write}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Quaternion\+::write (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes quaternion to a string stream. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00375}{375}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00376\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ out\ <<\ std::scientific\ <<\ std::setprecision(std::numeric\_limits<double>::digits10\ +\ 1);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}{s}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00381\ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}{v}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00383\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ out\ <<\ std::endl;}
+\DoxyCodeLine{00385\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7}\label{classopenphase_1_1Quaternion_ad763ae4cd8b97a47fe368215304c50b7} 
+\index{openphase::Quaternion@{openphase::Quaternion}!RotationMatrix@{RotationMatrix}}
+\index{RotationMatrix@{RotationMatrix}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{RotationMatrix}{RotationMatrix}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{d\+Matrix3x3}} openphase\+::\+Quaternion\+::\+Rotation\+Matrix}
+
+
+
+Rotation matrix corresponding to the quaternion. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00093}{93}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+\Hypertarget{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796}\label{classopenphase_1_1Quaternion_a47a081aff64d2e6722bb251ccc022796} 
+\index{openphase::Quaternion@{openphase::Quaternion}!s@{s}}
+\index{s@{s}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily double openphase\+::\+Quaternion\+::s\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Real component. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00096}{96}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+\Hypertarget{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86}\label{classopenphase_1_1Quaternion_a8d295e6a14e61ae915f5944de3aadb86} 
+\index{openphase::Quaternion@{openphase::Quaternion}!v@{v}}
+\index{v@{v}!openphase::Quaternion@{openphase::Quaternion}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Quaternion\+::v\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Imaginary components. 
+
+
+
+Definition at line \mbox{\hyperlink{Quaternion_8h_source_l00097}{97}} of file \mbox{\hyperlink{Quaternion_8h_source}{Quaternion.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Quaternion_8h}{Quaternion.\+h}}\item 
+\mbox{\hyperlink{Quaternion_8cpp}{Quaternion.\+cpp}}\end{DoxyCompactItemize}

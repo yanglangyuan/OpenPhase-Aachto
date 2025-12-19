@@ -1,0 +1,334 @@
+\doxysection{Thermo\+Chemistry.\+cpp}
+\hypertarget{ThermoChemistry_8cpp_source}{}\label{ThermoChemistry_8cpp_source}\index{ThermoChemistry.cpp@{ThermoChemistry.cpp}}
+\mbox{\hyperlink{ThermoChemistry_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2025}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Reza\ Namdar}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#ifdef\ CANTERA}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ThermoChemistry_8h}{ReactiveFlows/ThermoChemistry.h}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00030}00030\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00033}00033\ \textcolor{keywordtype}{void}\ ThermoChemistry::ReadInput(\textcolor{keywordtype}{string}\ InputFile)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ ConsoleOutput::WriteBlankLine();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ ConsoleOutput::WriteLineInsert(\textcolor{stringliteral}{"{}ThermoChemistry"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ ConsoleOutput::WriteStandard(\textcolor{stringliteral}{"{}Source"{}},\ InputFile);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ std::fstream\ inp(InputFile,\ std::ios::in);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ InputFile\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ std::stringstream\ inp\_data;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ inp\_data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ \ \ =\ FileInterface::FindModuleLocation(inp\_data,\ \textcolor{stringliteral}{"{}ThermoChemistry"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ ReactionMechanism\ \ \ \ =\ FileInterface::ReadParameterS(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}ReactionMechanism"{}}),\textcolor{keyword}{false},\textcolor{stringliteral}{"{}CH4\_BFER.yaml"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ PhaseName\ \ \ \ \ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterS(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}PhaseName"{}}),\textcolor{keyword}{false},\textcolor{stringliteral}{"{}CH4\_BFER\_mix"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ TransportName\ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterS(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}TransportName"{}}),\textcolor{keyword}{false},\textcolor{stringliteral}{"{}mixture-\/averaged"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ FuelName\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterS(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}FuelName"{}}),\textcolor{keyword}{false},\textcolor{stringliteral}{"{}CH4"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ Oxidizer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterS(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Oxidizer"{}}),\textcolor{keyword}{false},\textcolor{stringliteral}{"{}air"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ ER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterD(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}EquivRatio"{}}),\ \textcolor{keyword}{false},\ 1.0);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ nPhases\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ FileInterface::ReadParameterD(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nPhases"{}}),\ \textcolor{keyword}{false},\ 1.0);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00058}00058\ vector<double>\ ThermoChemistry::GettingFuelMixture(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas,\ \textcolor{keywordtype}{string}\ FuelName,\ \textcolor{keywordtype}{string}\ Oxidizer,\ \textcolor{keywordtype}{double}\ ER)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ oxidizer\_cant;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Oxidizer==\textcolor{stringliteral}{"{}air"{}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oxidizer\_cant\ =\ \textcolor{stringliteral}{"{}O2:0.235,\ N2:0.765"{}};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ gas-\/>setEquivalenceRatio(ER,\ FuelName,\ oxidizer\_cant,\ Cantera::ThermoBasis::mass);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{int}\ nSp\ =\ gas-\/>nSpecies();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{double}\ FuelMixture[nSp];}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ gas-\/>getMassFractions(FuelMixture);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ vector<double>\ FM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iSp=0;iSp<nSp;iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FM.push\_back(FuelMixture[iSp]);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00077}00077\ \textcolor{keywordtype}{void}\ ThermoChemistry::UpdateProperties(\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{EnergyTransport}}\&\ ET,\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport}{SpeciesTransport}}\&\ ST,\ \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shared\_ptr<Cantera::ThermoPhase>\ \&gas,\ shared\_ptr<Cantera::Transport>\ \&transp,\ shared\_ptr<Cantera::Kinetics>\ \&kin)\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \textcolor{comment}{//double\ R\ =\ 8.314462618;\ //\ J/(mol*K)}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \textcolor{comment}{//size\_t\ nr\ =\ kin-\/>nReactions();}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gas-\/>setState\_TPY(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k),\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad56f87a52b427bb6a4646208d54574c1}{Pth}},\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k)(\{MixtureComp\})=gas-\/>density();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i,j,k)(\{MixtureComp\})=transp-\/>viscosity()/FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k)(\{MixtureComp\});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k)=gas-\/>cp\_mass();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k)=transp-\/>thermalConductivity();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3}{Species}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transp-\/>getMixDiffCoeffsMass(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kin-\/>getNetProductionRates(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());\ \textcolor{comment}{//kmol/m\string^3/s}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k)(\{ic\})\ *=\ (1000.0*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k)\ -\/=\ \ (ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}{h\_Species}}(i,j,k)(\{ic\})*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k)(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00113}00113\ \textcolor{keywordtype}{void}\ ThermoChemistry::UpdateAllProperties(\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{EnergyTransport}}\&\ ET,\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport}{SpeciesTransport}}\&\ ST,\ \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{FlowSolverLBM}}\&\ FL,}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shared\_ptr<Cantera::ThermoPhase>\ \&gas,\ shared\_ptr<Cantera::Transport>\ \&transp,\ shared\_ptr<Cantera::Kinetics>\ \&kin)\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00115}00115\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \textcolor{comment}{//double\ R\ =\ 8.314462618;\ //\ J/(mol*K)}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \textcolor{comment}{//size\_t\ nr\ =\ kin-\/>nReactions();}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gas-\/>setState\_TPY(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k),\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad56f87a52b427bb6a4646208d54574c1}{Pth}},\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k)(\{MixtureComp\})=gas-\/>density();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i,j,k)(\{MixtureComp\})=transp-\/>viscosity()/FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k)(\{MixtureComp\});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k)=gas-\/>cp\_mass();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k)=transp-\/>thermalConductivity();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3}{Species}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gas-\/>getPartialMolarCp(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transp-\/>getMixDiffCoeffsMass(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kin-\/>getNetProductionRates(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k).\mbox{\hyperlink{classopenphase_1_1Storage3D_addf190976e98c0e88977a6ef7988522a}{data}}());\ \textcolor{comment}{//kmol/m\string^3/s}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ h(ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gas-\/>getPartialMolarEnthalpies(h.data());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k)(\{ic\})\ *=\ (1000.0*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}(i,j,k)(\{ic\})\ /=\ (1000.0*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h[ic]\ /=\ (1000.0*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k)\ -\/=\ \ (h[ic]*ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,j,k)(\{ic\}));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00156}00156\ vector<vector<double>>\ ThermoChemistry::GettingSpeciesPolyConstants(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00157}00157\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ vector<vector<double>>\ speciesdata;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ k=0;\ k\ <\ gas-\/>nSpecies();\ k++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Cantera::Species>\ sp\ =\ gas-\/>species(k);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Cantera::SpeciesThermoInterpType>\ sptype\ =\ sp-\/>thermo;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ type;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a29764db8fd26657ec0965a9612a6053c}{Tmin}},\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a0c2c1a31a5dd7400097585c9ff257b3b}{Tmax}},\ P\_ref;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<double>\ cantCoeffs(sptype-\/>nCoeffs());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sptype-\/>reportParameters(index,type,Tmin,Tmax,P\_ref,cantCoeffs.data());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<double>\ locdata;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nCoeffs\ =\ cantCoeffs.size();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ ii=0;ii<sptype-\/>nCoeffs();ii++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locdata.push\_back(cantCoeffs[ii]);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ speciesdata.push\_back(locdata);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Number\ of\ poly\ nomial\ constants\ used\ to\ determine\ specific\ heat\ capacity\ and\ heat\ of\ formation:\ "{}}<<nCoeffs<<endl;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ speciesdata;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00181}00181\ vector<string>\ ThermoChemistry::GettingSpeciesNames(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00182}00182\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{int}\ nSp\ =\ gas-\/>nSpecies();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00184}00184\ \ \ \ \ vector<string>\ MixtureNames;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iSp=0;iSp<nSp;iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MixtureNames.push\_back(gas-\/>speciesName(iSp));}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MixtureNames;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00192}00192\ vector<double>\ ThermoChemistry::GettingAirMixture()}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00193}00193\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ vector<double>\ AM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<SpeciesNames.size();iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Sp=SpeciesNames.at(iSp);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Sp==\textcolor{stringliteral}{"{}N2"{}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AM.push\_back(0.765);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(Sp==\textcolor{stringliteral}{"{}O2"{}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AM.push\_back(0.235);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AM.push\_back(0.0);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00213}00213\ vector<double>\ ThermoChemistry::GettingBackFlowMixture()}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00214}00214\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ vector<double>\ BFM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<SpeciesNames.size();iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Sp=SpeciesNames.at(iSp);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Sp==\textcolor{stringliteral}{"{}N2"{}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BFM.push\_back(0.765);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(Sp==\textcolor{stringliteral}{"{}O2"{}})}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BFM.push\_back(0.235);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BFM.push\_back(0.0);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BFM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00233}00233\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00234}00234\ vector<double>\ ThermoChemistry::GettingBurntMixture(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas,\ \textcolor{keywordtype}{double}\ Temp,\ \textcolor{keywordtype}{double}\ Pressure)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00235}00235\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ gas-\/>setState\_TP(Temp,Pressure);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ gas-\/>equilibrate(\textcolor{stringliteral}{"{}HP"{}});}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nSp=gas-\/>nSpecies();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordtype}{double}\ BurntMixture[nSp];}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ gas-\/>getMassFractions(BurntMixture);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ BurntTemp\ =\ gas-\/>temperature();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ vector<double>\ BM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<nSp;iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BM.push\_back(BurntMixture[iSp]);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BM;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00248}00248\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00249}00249\ \textcolor{keywordtype}{size\_t}\ ThermoChemistry::GettingFuelIndex(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas,\ \textcolor{keywordtype}{string}\ FuelName)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00250}00250\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ FI=0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nSp=gas-\/>nSpecies();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<nSp;\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00254}00254\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(gas-\/>speciesName(ic)==FuelName)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FI\ =\ ic;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FI;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00261}00261\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00262}00262\ vector<double>\ ThermoChemistry::GettingMolecularweight(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00263}00263\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nSp=gas-\/>nSpecies();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00265}00265\ \ \ \ \ vector<double>\ MW(nSp);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ gas-\/>getMolecularWeights(MW.data());}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MW;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00268}00268\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00270}00270\ \textcolor{keywordtype}{void}\ ThermoChemistry::WriteSpeciesNamesInSettingsInputFile(\textcolor{keywordtype}{string}\ SettingsInputFile)\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00271}00271\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nb=1.0;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00273}00273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK==0)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fstream\ WD;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ tempfilename=SettingsInputFile;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WD.open(tempfilename,\ ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classopenphase_1_1Element}{Element}}=\textcolor{stringliteral}{"{}\$Comp\_"{}};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WD<<\textcolor{stringliteral}{"{}\ \ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<SpeciesNames.size();iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WD<<\mbox{\hyperlink{classopenphase_1_1Element}{Element}}\ +\ to\_string(iSp)\ +\ \textcolor{stringliteral}{"{}\ \ \ \ Chemical\ Component\ "{}}\ +\ to\_string(iSp)\ +\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ :\ "{}}\ +\ SpeciesNames.at(iSp)<<endl;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&nb,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00288}00288\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ fstream\ WD;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ std::string\ tempfilename=SettingsInputFile;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ WD.open(tempfilename,\ ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classopenphase_1_1Element}{Element}}=\textcolor{stringliteral}{"{}\$Comp\_"{}};}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WD<<\textcolor{stringliteral}{"{}\ \ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<SpeciesNames.size();iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WD<<\mbox{\hyperlink{classopenphase_1_1Element}{Element}}\ +\ to\_string(iSp)\ +\ \textcolor{stringliteral}{"{}\ \ \ \ Chemical\ Component\ "{}}\ +\ to\_string(iSp)\ +\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ :\ "{}}\ +\ SpeciesNames.at(iSp)<<endl;}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00299}00299\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00301}00301\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00303}00303\ \textcolor{keywordtype}{void}\ ThermoChemistry::ExportingData(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport}{SpeciesTransport}}\&\ ST)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00304}00304\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iSp=0;iSp<ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};iSp++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695}{nCoeffs}};\ ic++)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{iSp,ic\})\ =\ Coeffs.at(iSp).at(ic);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ST.\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{iSp\})\ =\ MW.at(iSp)/1000.0;\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00313}00313\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00315}00315\ \textcolor{keywordtype}{void}\ ThermoChemistry::Initialize(std::shared\_ptr<Cantera::ThermoPhase>\ \&\ gas,\ \textcolor{keywordtype}{string}\ SettingsInputFile)}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00316}00316\ \{}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ FuelMixture\ \ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingFuelMixture(gas,FuelName,\ Oxidizer,\ ER);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ SpeciesNames\ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingSpeciesNames(gas);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ Coeffs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingSpeciesPolyConstants(gas);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ AirMixture\ \ \ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingAirMixture();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ BackFlowMixture\ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingBackFlowMixture();}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ BurntMixture\ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingBurntMixture(gas,\ 300.0,Cantera::OneAtm);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ MW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingMolecularweight(gas);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ FuelIndex\ \ \ \ \ \ \ \ \ \ \ \ =\ \ \ \ \ \ \ \ GettingFuelIndex(gas,\ FuelName);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ WriteSpeciesNamesInSettingsInputFile(SettingsInputFile);}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00326}00326\ \}}
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{ThermoChemistry_8cpp_source_l00328}00328\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,1332 @@
+\doxysection{openphase\+::Interaction\+Solid\+Fluid Struct Reference}
+\hypertarget{structopenphase_1_1InteractionSolidFluid}{}\label{structopenphase_1_1InteractionSolidFluid}\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+
+
+\texorpdfstring{$<$}{<} Processes solid liquid interaction  
+
+
+
+
+{\ttfamily \#include "{}Interaction\+Solid\+Fluid.\+h"{}}
+
+Inheritance diagram for openphase\+::Interaction\+Solid\+Fluid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d2/d9e/structopenphase_1_1InteractionSolidFluid}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a37e1fa6afba195d899febf44eaab6b05}{Interaction\+Solid\+Fluid}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a18a309fc3778f9d0114f2d26bd040b43}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db}{Read\+Input}} (std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads input parameters from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ac4aa25cbf1c212d3028ee9bf5a84e5f1}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads input data from the input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a694cb2d3410d78921e1dfbfbd6debd13}{Calculate\+Solid\+Velocities}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt) const
+\begin{DoxyCompactList}\small\item\em Calculates velocities of solid particles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a59adf77176a6af42de791dc5a32a73f2}{Local\+Grain\+Velocity}} (long i, long j, long k, const \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}} \&grain, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Returns solid velocity of grain at (i,j,k) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_aa5d3d5fff2a7a12e5d3d064d6c1ab384}{Calculate\+Rigid\+Body\+Velocities}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt) const
+\begin{DoxyCompactList}\small\item\em Calculates rigid body velocities (dot(v) = m\texorpdfstring{$\ast$}{*}F) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_adee5e304659d04c467b1f51a18d30c4a}{Calculate\+Rigid\+Body\+Velocities\+Without\+Inertia}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt) const
+\begin{DoxyCompactList}\small\item\em Calculates rigid body velocities without inertia (v = m\texorpdfstring{$\ast$}{*}\+F\texorpdfstring{$\ast$}{*}tau) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6e52efe4b7ffff91920e6a2b047efb29}{Calculate\+Center\+Of\+Mass}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Calculates the center of mass for each particle (contains OMP and MPI reduction) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6c7e08d75e17e4b53a310e53c659b67c}{Calculate\+Moment\+Of\+Interita}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Calculates the moment of inertia for each particle (contains OMP and MPI reduction) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_adfc733a4d698b7bbf6960bd38cf18fde}{Enforce\+Zero\+Total\+Momentum}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Enforces zero total momentum of rigid bodies. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a22ff1f7aefd7456e08503601ce402542}{Enforce\+Zero\+Total\+Angular\+Momentum}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Enforces zero total angular momentum of rigid bodies. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a044ec366a2d8af61fdbbaab78cc7c7ed}{Limit\+Velocity}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, double VLimit)
+\begin{DoxyCompactList}\small\item\em Enforces velocity limit of rigid bodies. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6a47a3a1749b762d2b86da90a221db0b}{Local\+Solid\+Fraction}} (long i, long j, long k, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Returns local solid fraction. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6264aee1f2d576a59ede927ae06bd0f9}{Calculate\+Solid\+Phase\+Velocities}} (\mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Calculates velocities resulting form rigid body motion (contains OMP and MPI reduction) \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}} (const \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}} \&grain)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}{Tau\+Translation}}
+\begin{DoxyCompactList}\small\item\em Model parameter if no inertial of solid bodies is considered. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}{Tau\+Rotation}}
+\begin{DoxyCompactList}\small\item\em Model parameter if no inertial of solid bodies is considered. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}{Velocity\+Limit}}
+\begin{DoxyCompactList}\small\item\em Limit of solid body velocity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{Do\+Inertia}}
+\begin{DoxyCompactList}\small\item\em If true the inertia of solid bodies is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{Do\+Rotations}}
+\begin{DoxyCompactList}\small\item\em If true the rotation of solid bodies is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{Do\+Limit\+Velocity}}
+\begin{DoxyCompactList}\small\item\em If true the velocity is limited. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}{Do\+Enforce\+Zero\+Total\+Momentum}}
+\begin{DoxyCompactList}\small\item\em If true the law of momentum conservation is enforced. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}{Do\+Enforce\+Zero\+Total\+Angular\+Momentum}}
+\begin{DoxyCompactList}\small\item\em If true the law of angular momentum conservation is enforced. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Processes solid liquid interaction 
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00041}{41}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a37e1fa6afba195d899febf44eaab6b05}\label{structopenphase_1_1InteractionSolidFluid_a37e1fa6afba195d899febf44eaab6b05} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!InteractionSolidFluid@{InteractionSolidFluid}}
+\index{InteractionSolidFluid@{InteractionSolidFluid}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{InteractionSolidFluid()}{InteractionSolidFluid()}}
+{\footnotesize\ttfamily openphase\+::\+Interaction\+Solid\+Fluid\+::\+Interaction\+Solid\+Fluid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00043}{43}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a18a309fc3778f9d0114f2d26bd040b43}{Initialize}}(locSettings);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}\label{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!applicable@{applicable}}
+\index{applicable@{applicable}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{applicable()}{applicable()}}
+{\footnotesize\ttfamily static bool openphase\+::\+Interaction\+Solid\+Fluid\+::applicable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}} \&}]{grain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em grain} & Returns false if grain can not be moved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00078}{78}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grain.Exist)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grain.State\ !=\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grain.Mobile)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grain.Volume\ <=\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a6e52efe4b7ffff91920e6a2b047efb29}\label{structopenphase_1_1InteractionSolidFluid_a6e52efe4b7ffff91920e6a2b047efb29} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateCenterOfMass@{CalculateCenterOfMass}}
+\index{CalculateCenterOfMass@{CalculateCenterOfMass}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateCenterOfMass()}{CalculateCenterOfMass()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Center\+Of\+Mass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates the center of mass for each particle (contains OMP and MPI reduction) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ Nthreads\ =\ 1;}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00089\ \ \ \ \ Nthreads\ =\ \mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\_get\_max\_threads}}();}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ The\ old\ center\ of\ mass\ is\ used\ to\ transform\ the\ system\ coordinates}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ into\ the\ old\ center\ of\ mass.\ The\ new\ center\ of\ mass\ is\ calculated\ and}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ the\ system\ coordinates\ are\ transformed\ back.\ This\ solves\ the\ problem}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ of\ the\ periodic\ boundary\ conditions.}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ setInitialRcm\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<dVector3>\ oldRcm(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size());}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ oldRcm[idx]\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm.set\_to\_zero();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx]))}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldRcm[idx].abs()\ <\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ setInitialRcm\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ If\ no\ old\ or\ initial\ center\ of\ mass\ has\ been\ set,\ an\ arbitrary\ point\ in}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ the\ grain\ is\ searched\ and\ set\ as\ the\ center\ of\ old\ center\ of\ mass.}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (setInitialRcm)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::vector<std::vector<dVector3>>\ initRcm(Nthreads);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ t\ =\ 0;\ t\ <\ initRcm.size();\ t++)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ initRcm[t].resize(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size());}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initRcm[t][idx]\ =\ oldRcm[idx];}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ alpha++)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (initRcm[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index].abs()\ <\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initRcm[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index]\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}{Tools::Position}}(dVector3(\{double(i),double(j),double(k)\}),\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OMP\ reduction}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ oldRcm.size();\ idx++)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ t\ =\ 0;\ t\ <\ initRcm.size();\ t++)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (initRcm[t][idx].abs()\ >\ oldRcm[idx].abs())}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldRcm[idx]\ =\ initRcm[t][idx];}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MPI\ reduction}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ oldRcm.size();\ idx++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{\textcolor{keywordtype}{double}\ value;\ \textcolor{keywordtype}{int}\ rank;\}\ in,\ out;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ in.value\ =\ oldRcm[idx].abs();}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ in.rank\ =\ MPI\_RANK;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&in,\ \&out,\ 1,\ OP\_MPI\_DOUBLE\_INT,\ OP\_MPI\_MAXLOC,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Bcast(oldRcm[idx].data(),\ 3,\ OP\_MPI\_DOUBLE,\ out.rank,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//\ Calculate\ new\ center\ of\ mass}}
+\DoxyCodeLine{00158\ \ \ \ \ std::vector<std::vector<dVector3>>\ localRcm(Nthreads);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ t\ =\ 0;\ t\ <\ localRcm.size();\ t++)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ localRcm[t].resize(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size());}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ localRcm[t][idx].set\_to\_zero();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ alpha++)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index]))}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ position\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}{Tools::Position}}(dVector3(\{double(i),double(j),double(k)\}),\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ distance\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443}{Tools::Distance}}(position,\ oldRcm[alpha-\/>index],\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNx,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNy,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNz,\ BC);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ localRcm[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index]\ +=\ distance*alpha-\/>value;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx]))}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//OMP\ Reduction}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ :\ localRcm)\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm\ +=\ it[idx];}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ localMPI\_Rcm\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&localMPI\_Rcm[0],\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm[0]),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&localMPI\_Rcm[1],\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm[1]),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&localMPI\_Rcm[2],\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm[2]),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm\ *=\ 1.0/double(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Volume);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm\ +=\ oldRcm[idx];}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_a3497857e4ade828481f4b6990f7e6a88}{Tools::MapIntoSimulationDomain}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Rcm,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNx,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNy,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNz,\ BC);}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a6c7e08d75e17e4b53a310e53c659b67c}\label{structopenphase_1_1InteractionSolidFluid_a6c7e08d75e17e4b53a310e53c659b67c} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateMomentOfInterita@{CalculateMomentOfInterita}}
+\index{CalculateMomentOfInterita@{CalculateMomentOfInterita}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateMomentOfInterita()}{CalculateMomentOfInterita()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Moment\+Of\+Interita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates the moment of inertia for each particle (contains OMP and MPI reduction) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM.set\_to\_zero();}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{int}\ Nthreads\ =\ 1;}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00209\ \ \ \ \ Nthreads\ =\ \mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\_get\_max\_threads}}();}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ std::vector<std::vector<dMatrix3x3>>\ locInertiaMs(Nthreads);}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ t\ =\ 0;\ t\ <\ size\_t(Nthreads);\ t++)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ locInertiaMs[t].resize(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size());}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{00219\ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dV\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.CellVolume(\textcolor{keyword}{true});}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ pos\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}{Tools::Position}}(dVector3(\{double(i),double(j),double(k)\}),\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ alpha++)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index]))}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index];}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ r\_Rcm\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443}{Tools::Distance}}(pos,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Rcm,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNx,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNy,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNz,\ BC)*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](0,0)\ +=\ alpha-\/>value*grain.Density*(r\_Rcm[1]*r\_Rcm[1]\ +\ r\_Rcm[2]*r\_Rcm[2])*dV;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](1,1)\ +=\ alpha-\/>value*grain.Density*(r\_Rcm[0]*r\_Rcm[0]\ +\ r\_Rcm[2]*r\_Rcm[2])*dV;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](2,2)\ +=\ alpha-\/>value*grain.Density*(r\_Rcm[0]*r\_Rcm[0]\ +\ r\_Rcm[1]*r\_Rcm[1])*dV;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](0,1)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[0]*r\_Rcm[1])*dV;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](1,0)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[1]*r\_Rcm[0])*dV;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](0,2)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[0]*r\_Rcm[2])*dV;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](2,0)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[2]*r\_Rcm[0])*dV;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](1,2)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[1]*r\_Rcm[2])*dV;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ locInertiaMs[\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()][alpha-\/>index](2,1)\ -\/=\ alpha-\/>value*grain.Density*(r\_Rcm[2]*r\_Rcm[1])*dV;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx]))}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ t\ =\ 0;\ t\ <\ size\_t(Nthreads);\ t++)}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM\ +=\ locInertiaMs[t][idx];}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ locInertiaM\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(0,0),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(0,0)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(1,1),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(1,1)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(2,2),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(2,2)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(0,1),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(0,1)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(1,0),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(1,0)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(0,2),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(0,2)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(2,0),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(2,0)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(1,2),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(1,2)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&locInertiaM(2,1),\ \&(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].InertiaM(2,1)),\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_aa5d3d5fff2a7a12e5d3d064d6c1ab384}\label{structopenphase_1_1InteractionSolidFluid_aa5d3d5fff2a7a12e5d3d064d6c1ab384} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateRigidBodyVelocities@{CalculateRigidBodyVelocities}}
+\index{CalculateRigidBodyVelocities@{CalculateRigidBodyVelocities}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateRigidBodyVelocities()}{CalculateRigidBodyVelocities()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Rigid\+Body\+Velocities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates rigid body velocities (dot(v) = m\texorpdfstring{$\ast$}{*}F) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dV\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.CellVolume(\textcolor{keyword}{true});}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00269\ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GrainMass\_1\ =\ 1.0/(grain.Density*grain.Volume*dV);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Acm\ \ +=\ grain.Force\ *\ GrainMass\_1;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ \ +=\ grain.Acm\ *\ dt;}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{DoRotations}})}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aAcc\ +=\ grain.InertiaM.inverted()\ *\ grain.Torque;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel\ +=\ grain.aAcc\ *\ dt;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EulerAngles\ locAngles(\{grain.aVel[0]\ *\ dt,}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel[1]\ *\ dt,}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel[2]\ *\ dt\},\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}});}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.Orientation\ +=\ locAngles.getQuaternion();}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Acm\ \ =\ \{0,0,0\};}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ \ =\ \{0,0,0\};}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ grain.aAcc\ =\ \{0,0,0\};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel\ =\ \{0,0,0\};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_adee5e304659d04c467b1f51a18d30c4a}\label{structopenphase_1_1InteractionSolidFluid_adee5e304659d04c467b1f51a18d30c4a} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateRigidBodyVelocitiesWithoutInertia@{CalculateRigidBodyVelocitiesWithoutInertia}}
+\index{CalculateRigidBodyVelocitiesWithoutInertia@{CalculateRigidBodyVelocitiesWithoutInertia}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateRigidBodyVelocitiesWithoutInertia()}{CalculateRigidBodyVelocitiesWithoutInertia()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Rigid\+Body\+Velocities\+Without\+Inertia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates rigid body velocities without inertia (v = m\texorpdfstring{$\ast$}{*}\+F\texorpdfstring{$\ast$}{*}tau) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00297}{297}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00299\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dV\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.CellVolume(\textcolor{keyword}{true});}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GrainMass\ =\ grain.Density*grain.Volume*dV;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MobilityTranslation\ =\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}{TauTranslation}}/GrainMass;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ =\ grain.Force\ *\ MobilityTranslation;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{DoRotations}})}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dMatrix3x3\ MobilityRotion\ =\ grain.InertiaM.inverted()*\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}{TauRotation}};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel\ =\ MobilityRotion\ *\ grain.Torque;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EulerAngles\ locAngles(\{grain.aVel[0]\ *\ dt,}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel[1]\ *\ dt,}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel[2]\ *\ dt\},\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}});}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.Orientation\ +=\ locAngles.getQuaternion();}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ \ =\ \{0,0,0\};}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ grain.aVel\ =\ \{0,0,0\};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a6264aee1f2d576a59ede927ae06bd0f9}\label{structopenphase_1_1InteractionSolidFluid_a6264aee1f2d576a59ede927ae06bd0f9} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateSolidPhaseVelocities@{CalculateSolidPhaseVelocities}}
+\index{CalculateSolidPhaseVelocities@{CalculateSolidPhaseVelocities}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateSolidPhaseVelocities()}{CalculateSolidPhaseVelocities()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Solid\+Phase\+Velocities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates velocities resulting form rigid body motion (contains OMP and MPI reduction) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00448}{448}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00450\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{00452\ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SolidFraction\ =\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6a47a3a1749b762d2b86da90a221db0b}{LocalSolidFraction}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ pIdx\ =\ 0;\ pIdx\ !=\ Vel.Nphases;\ pIdx++)}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ Vel.Phase(i,j,k,\{pIdx\}).set\_to\_zero();}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ alpha++)}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index];}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha-\/>value\ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(SolidFraction\ !=\ 0.0);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ alpha-\/>value/SolidFraction;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vel.Phase(i,j,k,\{grain.Phase\})\ +=\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a59adf77176a6af42de791dc5a32a73f2}{LocalGrainVelocity}}(i,j,k,grain,BC,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})*weight;}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ Vel.SetBoundaryConditions(BC);}
+\DoxyCodeLine{00473\ \ \ \ \ Vel.CalculateAverage(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00474\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a694cb2d3410d78921e1dfbfbd6debd13}\label{structopenphase_1_1InteractionSolidFluid_a694cb2d3410d78921e1dfbfbd6debd13} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!CalculateSolidVelocities@{CalculateSolidVelocities}}
+\index{CalculateSolidVelocities@{CalculateSolidVelocities}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{CalculateSolidVelocities()}{CalculateSolidVelocities()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Calculate\+Solid\+Velocities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt }\end{DoxyParamCaption}) const}
+
+
+
+Calculates velocities of solid particles. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00476}{476}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00478\ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6e52efe4b7ffff91920e6a2b047efb29}{CalculateCenterOfMass}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ BC);}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{DoRotations}})\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6c7e08d75e17e4b53a310e53c659b67c}{CalculateMomentOfInterita}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ BC);}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{DoInertia}})\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_aa5d3d5fff2a7a12e5d3d064d6c1ab384}{CalculateRigidBodyVelocities}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ BC,\ dt);}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_adee5e304659d04c467b1f51a18d30c4a}{CalculateRigidBodyVelocitiesWithoutInertia}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ BC,\ dt);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{DoLimitVelocity}})\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a044ec366a2d8af61fdbbaab78cc7c7ed}{LimitVelocity}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}{VelocityLimit}});}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}{DoEnforceZeroTotalMomentum}})\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_adfc733a4d698b7bbf6960bd38cf18fde}{EnforceZeroTotalMomentum}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}{DoEnforceZeroTotalAngularMomentum}})\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a22ff1f7aefd7456e08503601ce402542}{EnforceZeroTotalAngularMomentum}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a6264aee1f2d576a59ede927ae06bd0f9}{CalculateSolidPhaseVelocities}}(Vel,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},BC);}
+\DoxyCodeLine{00490\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a22ff1f7aefd7456e08503601ce402542}\label{structopenphase_1_1InteractionSolidFluid_a22ff1f7aefd7456e08503601ce402542} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!EnforceZeroTotalAngularMomentum@{EnforceZeroTotalAngularMomentum}}
+\index{EnforceZeroTotalAngularMomentum@{EnforceZeroTotalAngularMomentum}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{EnforceZeroTotalAngularMomentum()}{EnforceZeroTotalAngularMomentum()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Enforce\+Zero\+Total\+Angular\+Momentum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Enforces zero total angular momentum of rigid bodies. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00361\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{comment}{//\ TODO\ consider\ Avel}}
+\DoxyCodeLine{00363\ \ \ \ \ dVector3\ AMomentum\ =\ \{0.0,0.0,0.0\};}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ Mass\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ Radius\ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx;}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dV\ =\ dx*dx;}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00370\ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ \ GrainMass\ =\ grain.Density*grain.Volume*dV;}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ Momentum\ \ =\ grain.Vcm\ *\ GrainMass;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ Mass\ \ \ \ \ \ +=\ GrainMass;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ AMomentum\ +=\ grain.Rcm.cross(Momentum);}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ Radius\ \ \ \ +=\ grain.Rcm.abs();}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{if}\ (Radius*Mass\ \ \ \ \ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{if}\ (AMomentum.abs()\ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ \ Fix\ \ =\ AMomentum.abs()/(Radius*Mass);}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ e\_AM\ =\ AMomentum/AMomentum.abs();}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ e\_R\ \ \ =\ grain.Rcm/grain.Rcm.abs();}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ e\_Fix\ =\ e\_AM.cross(e\_R);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].Vcm\ -\/=\ e\_Fix\ *\ Fix;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_adfc733a4d698b7bbf6960bd38cf18fde}\label{structopenphase_1_1InteractionSolidFluid_adfc733a4d698b7bbf6960bd38cf18fde} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!EnforceZeroTotalMomentum@{EnforceZeroTotalMomentum}}
+\index{EnforceZeroTotalMomentum@{EnforceZeroTotalMomentum}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{EnforceZeroTotalMomentum()}{EnforceZeroTotalMomentum()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Enforce\+Zero\+Total\+Momentum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Enforces zero total momentum of rigid bodies. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00328}{328}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00329\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ dVector3\ Momentum\ =\ \{0.0,0.0,0.0\};}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ Mass\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx;}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dV\ =\ dx*dx;}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ GrainMass\ =\ grain.Density*grain.Volume*dV;}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ Mass\ \ \ \ \ +=\ GrainMass;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ Momentum\ +=\ grain.Vcm\ *\ GrainMass\ ;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (Mass\ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00347\ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ VcmFix\ =\ Momentum/Mass;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ -\/=\ VcmFix;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a18a309fc3778f9d0114f2d26bd040b43}\label{structopenphase_1_1InteractionSolidFluid_a18a309fc3778f9d0114f2d26bd040b43} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ \ =\ \textcolor{stringliteral}{"{}InteractionSolidFluid"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a044ec366a2d8af61fdbbaab78cc7c7ed}\label{structopenphase_1_1InteractionSolidFluid_a044ec366a2d8af61fdbbaab78cc7c7ed} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!LimitVelocity@{LimitVelocity}}
+\index{LimitVelocity@{LimitVelocity}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{LimitVelocity()}{LimitVelocity()}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Limit\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{double}]{VLimit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Enforces velocity limit of rigid bodies. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00402}{402}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00403\ \{}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{int}\ VelocityLimitApplied\ =\ 0;}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00406\ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ Grain\&\ grain\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx];}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(grain))}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grain.Vcm.abs()\ >\ VLimit)}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ VelocityLimitApplied++;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ /=\ grain.Vcm.abs();}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ grain.Vcm\ *=\ VLimit;}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00415\ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordflow}{if}\ (VelocityLimitApplied)}
+\DoxyCodeLine{00418\ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Solid\ velocity\ limit\ as\ applied!"{}};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(message.str(),\ \textcolor{stringliteral}{"{}InteractionSolidFluid"{}},\ \textcolor{stringliteral}{"{}LimitVelocity"{}});}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a59adf77176a6af42de791dc5a32a73f2}\label{structopenphase_1_1InteractionSolidFluid_a59adf77176a6af42de791dc5a32a73f2} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!LocalGrainVelocity@{LocalGrainVelocity}}
+\index{LocalGrainVelocity@{LocalGrainVelocity}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{LocalGrainVelocity()}{LocalGrainVelocity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Interaction\+Solid\+Fluid\+::\+Local\+Grain\+Velocity (\begin{DoxyParamCaption}\item[{long}]{i,  }\item[{long}]{j,  }\item[{long}]{k,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Grain}{Grain}} \&}]{grain,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns solid velocity of grain at (i,j,k) 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00439}{439}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00442\ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ pos\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a93a0b7772208d7b50d195dbe45fc816a}{Tools::Position}}(dVector3(\{double(i),double(j),double(k)\}),\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ);}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keyword}{const}\ dVector3\ locR\ =\ \mbox{\hyperlink{classopenphase_1_1Tools_a398f24dcd5f292489423d3eceb3c6443}{Tools::Distance}}(pos,\ grain.Rcm,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNx,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNy,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.TotalNz,\ BC)\ *\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.dx;}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{return}\ grain.Vcm\ +\ grain.aVel.cross(locR);}
+\DoxyCodeLine{00446\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a6a47a3a1749b762d2b86da90a221db0b}\label{structopenphase_1_1InteractionSolidFluid_a6a47a3a1749b762d2b86da90a221db0b} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!LocalSolidFraction@{LocalSolidFraction}}
+\index{LocalSolidFraction@{LocalSolidFraction}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{LocalSolidFraction()}{LocalSolidFraction()}}
+{\footnotesize\ttfamily double openphase\+::\+Interaction\+Solid\+Fluid\+::\+Local\+Solid\+Fraction (\begin{DoxyParamCaption}\item[{long}]{i,  }\item[{long}]{j,  }\item[{long}]{k,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Returns local solid fraction. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00426\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{double}\ SolidFraction\ =\ 0.0;}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ alpha++)}
+\DoxyCodeLine{00429\ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a0c3521a25a2d65496227e14accf5a8ea}{applicable}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index]))}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha-\/>value\ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ SolidFraction\ +=\ alpha-\/>value;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{return}\ SolidFraction;}
+\DoxyCodeLine{00437\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!Read@{Read}}
+\index{Read@{Read}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db}\label{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input parameters from a file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}input"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ std::fstream\ inp(InputFileName.c\_str(),\ std::ios::in);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00061\ \ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00062\ \ \ \ \ \ inp.close();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db}{ReadInput}}(data);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_ac4aa25cbf1c212d3028ee9bf5a84e5f1}\label{structopenphase_1_1InteractionSolidFluid_ac4aa25cbf1c212d3028ee9bf5a84e5f1} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Interaction\+Solid\+Fluid\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input data from the input stream. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{InteractionSolidFluid_8cpp_source}{Interaction\+Solid\+Fluid.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{DoInertia}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Inertia"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}{DoRotations}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Rotations"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{DoLimitVelocity}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}LimitVelocity"{}},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}{DoEnforceZeroTotalMomentum}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}EnforceZeroTotalMomentum"{}},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}{DoEnforceZeroTotalAngularMomentum}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}DoEnforceZeroTotalAngularMomentum"{}},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}{TauTranslation}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}TauTrans"{}},!\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{DoInertia}},0.0);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}{TauRotation}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}TauRot"{}},!\mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}{DoInertia}},0.0);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}{VelocityLimit}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}VelocityLimit"{}},\ \mbox{\hyperlink{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}{DoLimitVelocity}},0.0);}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}\label{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Remeshes the storages \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Temperature_a4f468ad73bf630f66285e07bffac1180}{openphase\+::\+Temperature}}, \mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a6a31593f97b24ef93c92263e4b494d6c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{openphase\+::\+Elasticity\+Solver\+Spectral}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a555343a7fc792704f3327dcb175c13c0}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1EquilibriumPartitionDiffusionBinary_a4d423f214e0007c6e5687a0f57639f52}{openphase\+::\+Equilibrium\+Partition\+Diffusion\+Binary}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a4e6f273f5ed0752225c0060c9e044a18}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a1221b1fa875c250991ae2cd0e3ea97af}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{openphase\+::\+Heat\+Diffusion}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_afc0b700a4304af3f7b4ba00a8ace8c7d}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a3ff6f0d72311e580559dd1251806d209}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a0f305e969f2b5970684ccf9f8752a669}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{openphase\+::\+Velocities}}, and \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl_af3aabadeb9bb14d37395dd1ff056e2bc}{openphase\+::\+Elasticity\+Solver\+Spectral\+Impl}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00088}{88}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (void)\ newNx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ (void)\ newNy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ (void)\ newNz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!Write@{Write}}
+\index{Write@{Write}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf}\label{structopenphase_1_1InteractionSolidFluid_a4a6c50d273dc64530f0b69e628bd85bf} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!DoEnforceZeroTotalAngularMomentum@{DoEnforceZeroTotalAngularMomentum}}
+\index{DoEnforceZeroTotalAngularMomentum@{DoEnforceZeroTotalAngularMomentum}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{DoEnforceZeroTotalAngularMomentum}{DoEnforceZeroTotalAngularMomentum}}
+{\footnotesize\ttfamily bool openphase\+::\+Interaction\+Solid\+Fluid\+::\+Do\+Enforce\+Zero\+Total\+Angular\+Momentum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true the law of angular momentum conservation is enforced. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00094}{94}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274}\label{structopenphase_1_1InteractionSolidFluid_a603148f81612cbaac17d67ffce5a3274} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!DoEnforceZeroTotalMomentum@{DoEnforceZeroTotalMomentum}}
+\index{DoEnforceZeroTotalMomentum@{DoEnforceZeroTotalMomentum}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{DoEnforceZeroTotalMomentum}{DoEnforceZeroTotalMomentum}}
+{\footnotesize\ttfamily bool openphase\+::\+Interaction\+Solid\+Fluid\+::\+Do\+Enforce\+Zero\+Total\+Momentum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true the law of momentum conservation is enforced. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00093}{93}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6}\label{structopenphase_1_1InteractionSolidFluid_a7eb25473480a21d6611f2086649141c6} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!DoInertia@{DoInertia}}
+\index{DoInertia@{DoInertia}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{DoInertia}{DoInertia}}
+{\footnotesize\ttfamily bool openphase\+::\+Interaction\+Solid\+Fluid\+::\+Do\+Inertia\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true the inertia of solid bodies is calculated. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00090}{90}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3}\label{structopenphase_1_1InteractionSolidFluid_ad0e4ff1c0f0621e98979e658cbd7d2e3} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!DoLimitVelocity@{DoLimitVelocity}}
+\index{DoLimitVelocity@{DoLimitVelocity}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{DoLimitVelocity}{DoLimitVelocity}}
+{\footnotesize\ttfamily bool openphase\+::\+Interaction\+Solid\+Fluid\+::\+Do\+Limit\+Velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true the velocity is limited. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00092}{92}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2}\label{structopenphase_1_1InteractionSolidFluid_a8383a1752cdde18843da6d8c15ca50b2} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!DoRotations@{DoRotations}}
+\index{DoRotations@{DoRotations}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{DoRotations}{DoRotations}}
+{\footnotesize\ttfamily bool openphase\+::\+Interaction\+Solid\+Fluid\+::\+Do\+Rotations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true the rotation of solid bodies is calculated. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00091}{91}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{structopenphase_1_1InteractionSolidFluid_afe11e208b07b59d56356235e6156b3db}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!readable@{readable}}
+\index{readable@{readable}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363}\label{structopenphase_1_1InteractionSolidFluid_a05fea0c52eef03133945c5b0340cc363} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!TauRotation@{TauRotation}}
+\index{TauRotation@{TauRotation}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{TauRotation}{TauRotation}}
+{\footnotesize\ttfamily double openphase\+::\+Interaction\+Solid\+Fluid\+::\+Tau\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Model parameter if no inertial of solid bodies is considered. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00088}{88}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1}\label{structopenphase_1_1InteractionSolidFluid_ad2ecdfba0317f257145b3cdd7d04cee1} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!TauTranslation@{TauTranslation}}
+\index{TauTranslation@{TauTranslation}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{TauTranslation}{TauTranslation}}
+{\footnotesize\ttfamily double openphase\+::\+Interaction\+Solid\+Fluid\+::\+Tau\+Translation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Model parameter if no inertial of solid bodies is considered. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00087}{87}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204}\label{structopenphase_1_1InteractionSolidFluid_a9438bd6091fbe57448f66c96ca5f2204} 
+\index{openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}!VelocityLimit@{VelocityLimit}}
+\index{VelocityLimit@{VelocityLimit}!openphase::InteractionSolidFluid@{openphase::InteractionSolidFluid}}
+\doxysubsubsection{\texorpdfstring{VelocityLimit}{VelocityLimit}}
+{\footnotesize\ttfamily double openphase\+::\+Interaction\+Solid\+Fluid\+::\+Velocity\+Limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Limit of solid body velocity. 
+
+
+
+Definition at line \mbox{\hyperlink{InteractionSolidFluid_8h_source_l00089}{89}} of file \mbox{\hyperlink{InteractionSolidFluid_8h_source}{Interaction\+Solid\+Fluid.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{InteractionSolidFluid_8h}{Interaction\+Solid\+Fluid.\+h}}\item 
+\mbox{\hyperlink{InteractionSolidFluid_8cpp}{Interaction\+Solid\+Fluid.\+cpp}}\end{DoxyCompactItemize}

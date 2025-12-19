@@ -1,0 +1,277 @@
+\doxysection{Globals.\+h}
+\hypertarget{Globals_8h_source}{}\label{Globals_8h_source}\index{Globals.h@{Globals.h}}
+\mbox{\hyperlink{Globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2022}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ GLOBALS\_H}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ GLOBALS\_H}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00035}00035\ \textcolor{preprocessor}{\#ifndef\ \_OPENMP}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ overloading\ several\ OpenMP\ methods\ used\ in\ OpenPhase\ for\ serial\ operation}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00037}\mbox{\hyperlink{Globals_8h_ab628587850957d925be0c2157f5f6823}{00037}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Globals_8h_ab628587850957d925be0c2157f5f6823}{omp\_get\_num\_threads}}()}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00041}\mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{00041}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\_get\_max\_threads}}()}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00045}\mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{00045}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\_get\_thread\_num}}()}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00049}\mbox{\hyperlink{Globals_8h_a26c2db9c501cff462039397e97ee2c79}{00049}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_a26c2db9c501cff462039397e97ee2c79}{omp\_set\_num\_threads}}(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00052}00052\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00053}00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00055}00055\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00056}00056\ \textcolor{preprocessor}{\#\ \ \ \ define\ NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00057}00057\ \textcolor{preprocessor}{\#\ \ \ \ define\ and\ \&\&}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00058}00058\ \textcolor{preprocessor}{\#\ \ \ \ define\ or\ ||}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00059}00059\ \textcolor{preprocessor}{\#\ \ \ \ define\ not\ !}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00060}00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00062}00062\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00063}00063\ \textcolor{preprocessor}{\#\ \ \ \ define\ OP\_EXPORTS\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00064}00064\ \textcolor{preprocessor}{\#\ \ \ \ define\ OP\_IMPORTS\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00065}00065\ \textcolor{preprocessor}{\#\ \ \ \ ifdef\ OPENPHASE\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00066}00066\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ OPENPHASE\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00067}00067\ \textcolor{preprocessor}{\#\ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00068}00068\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ OPENPHASE\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00069}00069\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00070}00070\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00071}\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{00071}}\ \textcolor{preprocessor}{\#\ \ \ \ define\ OP\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00072}\mbox{\hyperlink{Globals_8h_ad9bcdeed9e55e3ebc28d0f7725db63d3}{00072}}\ \textcolor{preprocessor}{\#\ \ \ \ define\ OP\_IMPORTS}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00073}00073\ \textcolor{preprocessor}{\#\ \ \ \ ifdef\ OPENPHASE\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00074}00074\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ OPENPHASE\_API}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00075}00075\ \textcolor{preprocessor}{\#\ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00076}\mbox{\hyperlink{Globals_8h_a80fe35b58db2a0452b7bc2048610a1ba}{00076}}\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ OPENPHASE\_API}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00077}00077\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00078}00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00080}00080\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ MPI\_RANK;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ MPI\_SIZE;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ MPI\_CART\_RANK[3];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ MPI\_CART\_SIZE[3];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ MPI\_3D\_DECOMPOSITION;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00086}00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00088}00088\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00089}00089\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00091}\mbox{\hyperlink{namespaceopenphase_a422a08152375ae3920c52971d405e7bc}{00091}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceopenphase_a422a08152375ae3920c52971d405e7bc}{simulation\_end}}()}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00093}00093\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00094}00094\ \ \ \ \ std::getchar();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00095}00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00098}\mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{00098}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(\textcolor{keywordtype}{int}\ exit\_code)}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00100}00100\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00101}00101\ \textcolor{comment}{//Who\ put\ that\ here??}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00102}00102\ \textcolor{comment}{//\ \ \ \ std::cout\ <<\ "{}Press\ enter\ to\ exit\ program!\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00103}00103\ \textcolor{comment}{//\ \ \ \ std::cin.get();}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00106}00106\ \textcolor{preprocessor}{\#if\ defined(NDEBUG)\ }\textcolor{comment}{//\ Release\ mode\ (Normal)}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00107}00107\ \ \ \ \ std::exit(exit\_code);}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00108}00108\ \textcolor{preprocessor}{\#else\ }}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (exit\_code\ ==\ EXIT\_SUCCESS)\ std::exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{else}\ std::abort();}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00111}00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00113}\mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{00113}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{EXIT\_H5\_ERROR}}\ =\ 5;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00114}\mbox{\hyperlink{namespaceopenphase_adb17201d92cd3f47064845a57b4f2435}{00114}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_adb17201d92cd3f47064845a57b4f2435}{EXIT\_NUCMODE\_ERROR}}\ =\ 16;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00115}\mbox{\hyperlink{namespaceopenphase_a8fcd1083270b9e0a199c0829c45489c4}{00115}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_a8fcd1083270b9e0a199c0829c45489c4}{EXIT\_CONTROLMODE\_ERROR}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00116}\mbox{\hyperlink{namespaceopenphase_a03df98affabaeee685d3980c0e79d88e}{00116}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_a03df98affabaeee685d3980c0e79d88e}{EXIT\_LATENTHEATMODE\_ERROR}}\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00118}00118\ \textcolor{preprocessor}{\#ifdef\ M\_PI}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00119}00119\ \textcolor{preprocessor}{\#\ \ \ \ undef\ M\_PI}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00120}00120\ \textcolor{preprocessor}{\#\ \ \ \ undef\ M\_PIl}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00121}00121\ \textcolor{preprocessor}{\#\ \ \ \ undef\ M\_PIf}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00122}00122\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00124}\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{00124}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ =\ 3.14159265358979323846;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00126}\mbox{\hyperlink{namespaceopenphase_a61a4ccda3979d13fd8eaa28b4e8ce72b}{00126}}\ \textcolor{keyword}{const}\ std::complex<\ double\ >\ \mbox{\hyperlink{namespaceopenphase_a61a4ccda3979d13fd8eaa28b4e8ce72b}{I}}(0.0,\ 1.0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00128}00128\ \textcolor{comment}{//\ Special\ keywords}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00129}\mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9}{00129}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9}{Resolutions}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00130}00130\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Single}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Dual}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00133}00133\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00135}\mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0a}{00135}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0a}{AdvectionSchemes}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00136}00136\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00137}00137\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa6d61af52253bb644a0c23a12513a8a76}{Upwind}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa7221ade7ceae31d6ee87650ed5e905b8}{Minmod}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00139}00139\ \textcolor{comment}{//\ \ \ \ VanLeer,}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa1ea3347082a9e5c6d5f0a641d8cbb21c}{Superbee}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//LaxWendroff,}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aab42ac8873377e03f74734fe71744a0b0}{MonotonizedCentral}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00143}00143\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00145}\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{00145}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{AggregateStates}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00146}00146\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{Solid}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{Liquid}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{Gas}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00150}00150\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00152}\mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8}{00152}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8}{EventTriggers}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00153}00153\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a8f9bfe9d1345237cb3b2b205864da075}{User}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a0c2c1a31a5dd7400097585c9ff257b3b}{Tmax}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00156}00156\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a29764db8fd26657ec0965a9612a6053c}{Tmin}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00157}00157\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00158}00158\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a49d468ee906ab549929baa2422336d08}{TimeStep}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a4dea02e61bd80b67beb4b8058167babf}{PhaseFractionMax}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00160}00160\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa2e8412d31ad4d41cd1b140349171814}{PhaseFractionMin}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00161}00161\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a43e350618ec951e034f0981cbb36d038}{Stress}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00162}00162\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a1ed8ac857097c4fbbbc15cd373ef96bc}{Strain}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00163}00163\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00165}\mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647}{00165}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647}{ClearingModes}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00167}00167\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647a086247a9b57fde6eefee2a0c4752242d}{Automatic}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00168}00168\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647ae1ba155a9f2e8c3be94020eef32a0301}{Manual}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00169}00169\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00171}\mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751}{00171}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751}{ExtrapolationModes}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00172}00172\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a6adf97f83acf6453d4a6a4b1070f3754}{None}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a509820290d57f333403f490dde7316f4}{Local}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a4cc6684df7b4a92b1dec6fce3264fac8}{Global}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00176}00176\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00178}\mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208c}{00178}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208c}{ActivationModes}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00179}00179\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00180}00180\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208ca00d23a76e43b46dae9ec7aa9dcbebb32}{Enabled}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208cab9f5c797ebbf55adccdd8539a65a0241}{Disabled}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00182}00182\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00184}\mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772c}{00184}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772c}{InterfaceNormalModels}}\ :\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00185}00185\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00186}00186\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772ca9babac0e9016d89ccebadf43556eb513}{AverageGradient}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00187}00187\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772ca2eef6557154574f8d93facc1f3002cb1}{WeightedGradient}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00188}00188\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00190}\mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9}{00190}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9}{LatticeSystems2D}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00191}00191\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00192}00192\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a55a5e68b388b59383b16383d30101b4e}{Monoclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00193}00193\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{Orthorhombic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00194}00194\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a97c0069c1c88eef33e1c1db21d38de43}{Tetragonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00195}00195\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{Hexagonal}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00196}00196\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00198}\mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62}{00198}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62}{LatticeSystems}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00199}00199\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00200}00200\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a45d3988e303ecb4da2498e707d28ad39}{Triclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00201}00201\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a55a5e68b388b59383b16383d30101b4e}{Monoclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00202}00202\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{Orthorhombic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00203}00203\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a97c0069c1c88eef33e1c1db21d38de43}{Tetragonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00204}00204\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aa549be9cb15a01a366d8b2c1c4a1a087}{Rhombohedral}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00205}00205\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62ae8ae83920b1b094435999b5380270e72}{Trigonal}}\ =\ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aa549be9cb15a01a366d8b2c1c4a1a087}{Rhombohedral}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00206}00206\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{Hexagonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aec6b5414eb175379ff9efc9b3eef5814}{Cubic}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00208}00208\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00210}\mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690}{00210}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690}{LatticeCentering}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00211}00211\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00212}00212\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a210cb929dad1ae2aed26a10365a10b3da1fbb1e3943c2c6c560247ac8f9289780}{Simple}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00213}00213\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690a095a1b43effec73955e31e790438de49}{Base}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00214}00214\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690aac101b32dda4448cf13a93fe283dddd8}{Body}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00215}00215\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690a8af5861002f3c157f9ba842bba10aa3f}{Face}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00216}00216\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00218}\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9b}{00218}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9b}{BravaisLattices}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00219}00219\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a45d3988e303ecb4da2498e707d28ad39}{Triclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a55a5e68b388b59383b16383d30101b4e}{Monoclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00222}00222\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bac873f2c69664263dc9651c9b3257eca2}{MonoclinicBaseCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00223}00223\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{Orthorhombic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bae2e9b00f624b6ccfee14ce7bf17c5de9}{OrthorhombicBaseCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00225}00225\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baef726c4d4315f4d98992ebf3a1086cb9}{OrthorhombicBodyCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00226}00226\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bafd04084ba1e38eb01ed1cd25dcb8c30f}{OrthorhombicFaceCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00227}00227\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a97c0069c1c88eef33e1c1db21d38de43}{Tetragonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00228}00228\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba41ae44f62d924a9cf7066efc31023d7a}{TetragonalBodyCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bad3705d836d285dbd636e293dc0eca7a9}{BCT}}\ =\ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba41ae44f62d924a9cf7066efc31023d7a}{TetragonalBodyCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00230}00230\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aa549be9cb15a01a366d8b2c1c4a1a087}{Rhombohedral}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00231}00231\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{Hexagonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba58c9566f3c750ce7147b045fdd14202b}{HEX}}\ =\ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{Hexagonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00233}00233\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba849d526a3493590c45049a98d640ce99}{HexagonalClosePacked}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00234}00234\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bac812dbb6683bbcfffddebd554aa15055}{HCP}}\ =\ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba849d526a3493590c45049a98d640ce99}{HexagonalClosePacked}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aec6b5414eb175379ff9efc9b3eef5814}{Cubic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00236}00236\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9badefd31164fe2b93da36d03d54fd5d00f}{CubicBodyCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00237}00237\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba1fc5efe020980df2413a97ce9f2f586f}{BCC}}\ =\ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9badefd31164fe2b93da36d03d54fd5d00f}{CubicBodyCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00238}00238\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba670db4928f4b50cab6201ae2eada6003}{CubicFaceCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00239}00239\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baa44b9f61b43631a04f181b6ab1259e51}{FCC}}\ =\ \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba670db4928f4b50cab6201ae2eada6003}{CubicFaceCentered}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00240}00240\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00242}\mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fe}{00242}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fe}{BravaisLattices2D}}\ :\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00243}00243\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00244}00244\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a55a5e68b388b59383b16383d30101b4e}{Monoclinic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{Orthorhombic}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206feafe1f6158d2b02d6b2ac25b7856794924}{OrthorhombicCentered}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a97c0069c1c88eef33e1c1db21d38de43}{Tetragonal}},}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00248}00248\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{Hexagonal}}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00249}00249\ \};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00251}\mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{00251}}\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{sgn}}(T\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{return}\ (T(0)\ <\ val)\ -\/\ (val\ <\ T(0));}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00253}00253\ \}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00255}00255\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00256}\mbox{\hyperlink{namespaceopenphase_ad01adb54ddb890007030c46a387ee8fa}{00256}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceopenphase_ad01adb54ddb890007030c46a387ee8fa}{ignore\_result}}(T\ \textcolor{comment}{/*\ unused\ result\ */})\ \{\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00258}00258\ \textcolor{comment}{//\ Standard\ OpenPhase\ files\ and\ directories}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00259}00259\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00261}00261\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00262}\mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{00262}}\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}}\ =\ \textcolor{stringliteral}{"{}/"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00263}00263\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00265}\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{00265}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}}\ =\ \textcolor{stringliteral}{"{}ProjectInput.opi"{}};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00266}\mbox{\hyperlink{namespaceopenphase_a36c021aa7764ad2af93a18b4778ae2d3}{00266}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_a36c021aa7764ad2af93a18b4778ae2d3}{DefaultVTKDir}}\ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}VTK"{}}\ +\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00267}\mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{00267}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{DefaultRawDataDir}}\ \ \ \ =\ \textcolor{stringliteral}{"{}RawData"{}}\ +\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00268}\mbox{\hyperlink{namespaceopenphase_a05d6c6322f925d4acda86484d90ade65}{00268}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceopenphase_a05d6c6322f925d4acda86484d90ade65}{DefaultTextDir}}\ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}TextData"{}}\ +\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00270}00270\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{Globals_8h_source_l00271}00271\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

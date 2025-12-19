@@ -1,0 +1,402 @@
+\doxysection{openphase\+::Time\+Info Class Reference}
+\hypertarget{classopenphase_1_1TimeInfo}{}\label{classopenphase_1_1TimeInfo}\index{openphase::TimeInfo@{openphase::TimeInfo}}
+
+
+{\ttfamily \#include "{}Time\+Info.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1TimeInfo_a2f87414e61dedc31dd605801345c3cd7}{\texorpdfstring{$\sim$}{\string~}\+Time\+Info}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1TimeInfo_a45294b664525c5980d54e6a265641429}{Time\+Info}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1TimeInfo_a30e1eff0461962f7d4ef0d465928912b}{Time\+Info}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Name, bool \mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}}=false)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}{Initialize}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Name, bool \mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}}=false)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a0a43b9fa7451f20996e8912ce4729bb3}{Set\+Start}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_afd306e8f7188ca1a8b8c8ca5ed082786}{Set\+Time\+Stamp}} (const std\+::string Message)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a56dc08df289b52d172484b437e3edc76}{Skip\+To\+Here}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a6e8966bc542782712b143a3d04aaa30e}{Reset}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a3b06969418c73f9e094ccc697edbe638}{Print\+Wall\+Clock\+Summary}} (void)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a30ab3622cfbea3a47932221d7562977c}{Print\+CPUClock\+Summary}} (void) const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1TimeInfo_a289e7b891a123f7c021f3af40a4ba7cd}{Print\+Full\+Summary}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{Get\+Time}} (void)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa57e5b0308b080c9b6e4ecec81494f46}{Convert\+Time}} (double \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}{thisclassname}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}}
+\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{Time\+Map}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{Clock\+Start}}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}{Timer\+Name}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00036}{36}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1TimeInfo_a2f87414e61dedc31dd605801345c3cd7}\label{classopenphase_1_1TimeInfo_a2f87414e61dedc31dd605801345c3cd7} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!````~TimeInfo@{\texorpdfstring{$\sim$}{\string~}TimeInfo}}
+\index{````~TimeInfo@{\texorpdfstring{$\sim$}{\string~}TimeInfo}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TimeInfo()}{\string~TimeInfo()}}
+{\footnotesize\ttfamily openphase\+::\+Time\+Info\+::\texorpdfstring{$\sim$}{\string~}\+Time\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}{thisclassname}},\ \textcolor{stringliteral}{"{}Exited\ normally"{}});}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a45294b664525c5980d54e6a265641429}\label{classopenphase_1_1TimeInfo_a45294b664525c5980d54e6a265641429} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!TimeInfo@{TimeInfo}}
+\index{TimeInfo@{TimeInfo}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{TimeInfo()}{TimeInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Time\+Info\+::\+Time\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00041}{41}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a30e1eff0461962f7d4ef0d465928912b}\label{classopenphase_1_1TimeInfo_a30e1eff0461962f7d4ef0d465928912b} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!TimeInfo@{TimeInfo}}
+\index{TimeInfo@{TimeInfo}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{TimeInfo()}{TimeInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Time\+Info\+::\+Time\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Name,  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}{Initialize}}(locSettings,\ Name,\ verbose\_in);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1TimeInfo_aa57e5b0308b080c9b6e4ecec81494f46}\label{classopenphase_1_1TimeInfo_aa57e5b0308b080c9b6e4ecec81494f46} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!ConvertTime@{ConvertTime}}
+\index{ConvertTime@{ConvertTime}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{ConvertTime()}{ConvertTime()}}
+{\footnotesize\ttfamily double openphase\+::\+Time\+Info\+::\+Convert\+Time (\begin{DoxyParamCaption}\item[{double}]{Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00074}{74}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{Time}}/double(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}});}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}\label{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily double openphase\+::\+Time\+Info\+::\+Get\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00065}{65}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ omp\_get\_wtime();}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clock()/CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168}\label{classopenphase_1_1TimeInfo_ad85943b5877cf943444e80de8dbd3168} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Name,  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}TimeInfo"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ 0;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}{TimerName}}\ =\ Name;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}}\ =\ verbose\_in;}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a30ab3622cfbea3a47932221d7562977c}\label{classopenphase_1_1TimeInfo_a30ab3622cfbea3a47932221d7562977c} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!PrintCPUClockSummary@{PrintCPUClockSummary}}
+\index{PrintCPUClockSummary@{PrintCPUClockSummary}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{PrintCPUClockSummary()}{PrintCPUClockSummary()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Print\+CPUClock\+Summary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00049}{49}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}TimeInfo::PrintCPUClockSummary()\ not\ yet\ implemented."{}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TimeInfo"{}},\ \textcolor{stringliteral}{"{}PrintCPUClockSummary()"{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a289e7b891a123f7c021f3af40a4ba7cd}\label{classopenphase_1_1TimeInfo_a289e7b891a123f7c021f3af40a4ba7cd} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!PrintFullSummary@{PrintFullSummary}}
+\index{PrintFullSummary@{PrintFullSummary}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{PrintFullSummary()}{PrintFullSummary()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Print\+Full\+Summary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00054}{54}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}TimeInfo::PrintFullSummary()\ not\ yet\ implemented."{}},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TimeInfo"{}},\ \textcolor{stringliteral}{"{}PrintFullSummary()"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a3b06969418c73f9e094ccc697edbe638}\label{classopenphase_1_1TimeInfo_a3b06969418c73f9e094ccc697edbe638} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!PrintWallClockSummary@{PrintWallClockSummary}}
+\index{PrintWallClockSummary@{PrintWallClockSummary}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{PrintWallClockSummary()}{PrintWallClockSummary()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Print\+Wall\+Clock\+Summary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}})}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}{TimerName}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TotalTime\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ [message,time]\ :\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}})\ TotalTime\ +=\ time;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TotalConsumedTime\ =\ TotalTime/double(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::vector<std::pair<std::string,\ double>>\ tmp(\mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}.begin(),\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}.end());}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::sort(tmp.begin(),\ tmp.end(),\ [](\textcolor{keyword}{const}\ std::pair<std::string,\ double>\&\ a,\ \textcolor{keyword}{const}\ std::pair<std::string,\ double>\&\ b)\ \{\ return\ a.second\ >\ b.second;\ \});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ [message,time]\ :\ tmp)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message\ !=\ \textcolor{stringliteral}{"{}\#"{}})}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ showtime;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SectionConsumedTime\ =\ time/double(\mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showtime\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ std::scientific\ <<\ SectionConsumedTime\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ ((SectionConsumedTime/TotalConsumedTime)*100.0)\ <<\ \textcolor{stringliteral}{"{}\ \%"{}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(message,\ showtime.str());}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ [message,time]\ :\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}})\ time\ =\ 0;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Total\ time\ per\ time\ step\ [s]"{}},\ TotalConsumedTime);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a6e8966bc542782712b143a3d04aaa30e}\label{classopenphase_1_1TimeInfo_a6e8966bc542782712b143a3d04aaa30e} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!Reset@{Reset}}
+\index{Reset@{Reset}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ 0;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a0a43b9fa7451f20996e8912ce4729bb3}\label{classopenphase_1_1TimeInfo_a0a43b9fa7451f20996e8912ce4729bb3} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!SetStart@{SetStart}}
+\index{SetStart@{SetStart}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{SetStart()}{SetStart()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Set\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}{counter}}++;}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_afd306e8f7188ca1a8b8c8ca5ed082786}\label{classopenphase_1_1TimeInfo_afd306e8f7188ca1a8b8c8ca5ed082786} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!SetTimeStamp@{SetTimeStamp}}
+\index{SetTimeStamp@{SetTimeStamp}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{SetTimeStamp()}{SetTimeStamp()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Set\+Time\+Stamp (\begin{DoxyParamCaption}\item[{const std\+::string}]{Message }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CurrentTime\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}[Message]\ +=\ CurrentTime\ -\/\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}};}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ CurrentTime;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}{verbose}})}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(Message);}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TimeInfo_a56dc08df289b52d172484b437e3edc76}\label{classopenphase_1_1TimeInfo_a56dc08df289b52d172484b437e3edc76} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!SkipToHere@{SkipToHere}}
+\index{SkipToHere@{SkipToHere}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{SkipToHere()}{SkipToHere()}}
+{\footnotesize\ttfamily void openphase\+::\+Time\+Info\+::\+Skip\+To\+Here (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{TimeInfo_8cpp_source}{Time\+Info.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ CurrentTime\ =\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a431f29cfa88aff28568db71536338fd4}{GetTime}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}{TimeMap}}[\textcolor{stringliteral}{"{}\#"{}}]\ +=\ CurrentTime\ -\/\ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}{ClockStart}}\ =\ CurrentTime;}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422}\label{classopenphase_1_1TimeInfo_aa89afbe05c49de0d340ea302d6a5d422} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!ClockStart@{ClockStart}}
+\index{ClockStart@{ClockStart}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{ClockStart}{ClockStart}}
+{\footnotesize\ttfamily double openphase\+::\+Time\+Info\+::\+Clock\+Start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00080}{80}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+\Hypertarget{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1}\label{classopenphase_1_1TimeInfo_ae1ada1f8eb58fe3fc8831cfdd841c8e1} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!counter@{counter}}
+\index{counter@{counter}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily double openphase\+::\+Time\+Info\+::counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00083}{83}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+\Hypertarget{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4}\label{classopenphase_1_1TimeInfo_ae0853fb6058a5d9c4f0b8288ca13a8a4} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Time\+Info\+::thisclassname\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00062}{62}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+\Hypertarget{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a}\label{classopenphase_1_1TimeInfo_a778a4c60261a7e754b852e9a1fb5bd3a} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!TimeMap@{TimeMap}}
+\index{TimeMap@{TimeMap}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{TimeMap}{TimeMap}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ openphase\+::\+Time\+Info\+::\+Time\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00079}{79}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+\Hypertarget{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5}\label{classopenphase_1_1TimeInfo_ae0ee58c351054456f34bcddbba2e40f5} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!TimerName@{TimerName}}
+\index{TimerName@{TimerName}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{TimerName}{TimerName}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Time\+Info\+::\+Timer\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00082}{82}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+\Hypertarget{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6}\label{classopenphase_1_1TimeInfo_a78389e3e97001bff15c315c31af582f6} 
+\index{openphase::TimeInfo@{openphase::TimeInfo}!verbose@{verbose}}
+\index{verbose@{verbose}!openphase::TimeInfo@{openphase::TimeInfo}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily bool openphase\+::\+Time\+Info\+::verbose\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TimeInfo_8h_source_l00063}{63}} of file \mbox{\hyperlink{TimeInfo_8h_source}{Time\+Info.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TimeInfo_8h}{Time\+Info.\+h}}\item 
+\mbox{\hyperlink{TimeInfo_8cpp}{Time\+Info.\+cpp}}\end{DoxyCompactItemize}

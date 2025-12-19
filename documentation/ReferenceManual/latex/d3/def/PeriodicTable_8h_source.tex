@@ -1,0 +1,1029 @@
+\doxysection{Periodic\+Table.\+h}
+\hypertarget{PeriodicTable_8h_source}{}\label{PeriodicTable_8h_source}\index{PeriodicTable.h@{PeriodicTable.h}}
+\mbox{\hyperlink{PeriodicTable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2016}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Matthias\ Stratmann}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ PERIODICTABLE\_H}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ PERIODICTABLE\_H}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00035}\mbox{\hyperlink{classopenphase_1_1PeriodicTable}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1PeriodicTable}{PeriodicTable}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00037}00037\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00038}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{00038}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00040}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{00040}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00041}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{00041}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00045}00045\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00047}\mbox{\hyperlink{classopenphase_1_1PeriodicTable_a89eecb17534a85b8f9c72764e77c4e4b}{00047}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a89eecb17534a85b8f9c72764e77c4e4b}{PeriodicTable}}(\textcolor{keywordtype}{void})\{\};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00048}\mbox{\hyperlink{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a}{Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}\ temp;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}H"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Hydrogen"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 1.008;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 11.42E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}HE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Helium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 4.003;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 21.00E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}LI"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Lithium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 6.940;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.02E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Beryllium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 9.012;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 4.85E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}B"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Boron"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 10.810;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 4.39E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}C"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Carbon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 12.011;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 5.31E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}N"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Nitrogen"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 14.007;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.54E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}O"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Oxygen"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 15.999;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.36E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}F"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Fluorine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 9;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 18.998;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 11.20E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Neon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 20.180;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.23E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Sodium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 11;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 22.990;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 23.78E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Magnesium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 24.305;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 14.00E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AL"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Aluminium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 13;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 26.982;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.00E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SI"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Silicon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 14;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 28.085;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 12.06E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}P"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Phosphorus"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 15;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 30.974;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.02E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}S"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Sulfur"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 16;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 32.060;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 15.53E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CL"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Chlorine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 17;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 35.450;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.39E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Argon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 18;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 39.948;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 22.56E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}K"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Potassium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 19;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 39.098;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 45.94E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Calcium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 40.078;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 26.20E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SC"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Scandium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 21;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 44.956;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 15.00E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TI"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Titanium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 22;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 47.867;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.64E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00226}00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}V"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Vanadium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 23;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 50.942;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.32E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00236}00236\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00237}00237\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Chromium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 24;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 51.996;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 7.23E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Manganese"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 54.938;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00248}00248\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 7.35E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}FE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Iron"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 26;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00255}00255\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 55.845;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 7.09E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CO"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Cobalt"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 27;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 58.933;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 6.67E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NI"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Nickel"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 28;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 58.693;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 6.59E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Copper"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 29;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 63.546;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 7.11E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}ZN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Zinc"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 30;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 65.380;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 9.16E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00290}00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}GA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00293}00293\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Gallium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00294}00294\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 31;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00295}00295\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 69.723;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 11.80E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}GE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Germanium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 32;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00303}00303\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 72.630;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00304}00304\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.63E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00306}00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Arsenic"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 33;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 74.922;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 12.95E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Selenium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 34;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 78.971;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 16.42E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00325}00325\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Bromine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 35;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 79.904;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.78E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}KR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Krypton"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 36;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 83.798;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 27.99E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Rubidium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 37;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 85.468;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 55.76E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Strontium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 38;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 87.620;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 33.94E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}Y"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Yttrium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00358}00358\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 39;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 88.906;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.88E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}ZR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00365}00365\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Zirconium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00366}00366\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 40;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 91.224;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 14.02E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00373}00373\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Niobium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00374}00374\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 41;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00375}00375\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 92.906;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.83E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00380}00380\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MO"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00381}00381\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Molybdenum"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 42;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 95.951;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00384}00384\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 9.38E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00386}00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TC"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Technetium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00390}00390\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 43;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00391}00391\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 98.906;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.63E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00397}00397\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Ruthenium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00398}00398\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 44;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00399}00399\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 101.072;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00400}00400\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.17E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RH"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Rhodium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00406}00406\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 45;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 102.906;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00408}00408\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.28E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00410}00410\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00412}00412\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PD"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00413}00413\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Palladium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 46;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 106.421;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.56E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00420}00420\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00421}00421\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Silver"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 47;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00423}00423\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 107.868;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.27E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00426}00426\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00428}00428\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CD"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00429}00429\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Cadmium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00430}00430\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 48;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00431}00431\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 112.414;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00432}00432\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.00E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}IN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00437}00437\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Indium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00438}00438\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 49;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00439}00439\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 114.818;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00440}00440\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 15.76E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00444}00444\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00445}00445\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Tin"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00446}00446\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00447}00447\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 118.710;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00448}00448\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 16.29E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00450}00450\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00451}00451\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00452}00452\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00453}00453\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Antimony"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00454}00454\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 51;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 121.760;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 18.19E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00460}00460\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00461}00461\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Tellurium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00462}00462\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 52;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00463}00463\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 127.603;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00464}00464\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 20.46E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}I"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Iodine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 53;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00471}00471\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 126.904;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00472}00472\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 25.72E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00474}00474\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00476}00476\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}XE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00477}00477\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Xenon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00478}00478\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 54;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00479}00479\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 131.293;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00480}00480\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 35.92E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00482}00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00484}00484\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00485}00485\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Caesium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00486}00486\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 55;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00487}00487\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 132.905;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00488}00488\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 70.94E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00489}00489\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00490}00490\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00492}00492\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00493}00493\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Barium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00494}00494\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 56;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00495}00495\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 137.327;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00496}00496\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 38.16E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00497}00497\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00498}00498\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00500}00500\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}LA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00501}00501\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Lanthanum"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00502}00502\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 57;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00503}00503\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 138.905;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00504}00504\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 22.39E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00505}00505\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00506}00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00508}00508\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00509}00509\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Cerium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00510}00510\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 58;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00511}00511\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 140.116;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00512}00512\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 20.69E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00513}00513\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00514}00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00515}00515\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00516}00516\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00517}00517\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Praseodymium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00518}00518\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 59;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00519}00519\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 140.908;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00520}00520\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 20.80E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00522}00522\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00523}00523\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00524}00524\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}ND"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00525}00525\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Neodymium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00526}00526\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 60;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 144.242;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00528}00528\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 20.59E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00530}00530\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00531}00531\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00532}00532\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00533}00533\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Promethium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00534}00534\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 61;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00535}00535\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 146.915;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00536}00536\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 20.10E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00538}00538\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00539}00539\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00540}00540\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00541}00541\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Samarium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00542}00542\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 62;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00543}00543\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 150.362;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00544}00544\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.98E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00546}00546\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00548}00548\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}EU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00549}00549\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Europium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00550}00550\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 63;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00551}00551\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 151.964;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00552}00552\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 28.97E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00553}00553\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00554}00554\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00555}00555\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00556}00556\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}GD"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00557}00557\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Gadolinium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00558}00558\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 64;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00559}00559\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 157.253;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00560}00560\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.90E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00561}00561\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00562}00562\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00564}00564\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00565}00565\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Terbium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00566}00566\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 65;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00567}00567\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 158.925;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00568}00568\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.30E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00569}00569\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00570}00570\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00572}00572\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}DY"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00573}00573\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Dysprosium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00574}00574\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 66;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00575}00575\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 162.500;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00576}00576\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.01E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00578}00578\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}HO"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Holmium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00582}00582\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 67;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00583}00583\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 164.930;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00584}00584\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 18.74E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00586}00586\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00588}00588\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}ER"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00589}00589\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Erbium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00590}00590\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 68;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00591}00591\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 167.259;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00592}00592\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 18.46E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00594}00594\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00595}00595\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00596}00596\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00597}00597\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Thulium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00598}00598\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 69;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00599}00599\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 168.934;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00600}00600\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.10E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00602}00602\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00604}00604\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}YB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00605}00605\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Ytterbium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00606}00606\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 70;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00607}00607\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 173.045;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00608}00608\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 24.84E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00610}00610\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00611}00611\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00612}00612\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}LU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00613}00613\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Lutetium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00614}00614\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 71;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00615}00615\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 174.967;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00616}00616\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.78E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00617}00617\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00618}00618\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00619}00619\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00620}00620\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}HF"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00621}00621\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Hafnium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00622}00622\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 72;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00623}00623\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 178.492;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00624}00624\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 13.44E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00625}00625\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00626}00626\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00627}00627\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00628}00628\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00629}00629\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Tantalum"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00630}00630\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 73;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00631}00631\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 180.948;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00632}00632\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.85E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00634}00634\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00635}00635\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00636}00636\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}W"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00637}00637\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Tungsten"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00638}00638\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 74;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00639}00639\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 183.841;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00640}00640\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 9.47E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00641}00641\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00642}00642\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00643}00643\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00644}00644\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RE"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00645}00645\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Rhenium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00646}00646\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 75;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00647}00647\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 186.207;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00648}00648\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.86E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00650}00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00651}00651\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00652}00652\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}OS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00653}00653\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Osmium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00654}00654\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 76;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00655}00655\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 190.233;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00656}00656\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.42E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00658}00658\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00660}00660\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}IR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00661}00661\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Iridium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00662}00662\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 77;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00663}00663\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 192.217;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00664}00664\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 8.52E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00665}00665\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00666}00666\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00667}00667\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00668}00668\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PT"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00669}00669\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Platinum"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00670}00670\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 78;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00671}00671\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 195.084;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00672}00672\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 9.09E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00673}00673\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00674}00674\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00675}00675\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00676}00676\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00677}00677\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Gold"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00678}00678\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 79;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00679}00679\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 196.967;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00680}00680\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 10.21E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00682}00682\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00683}00683\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00684}00684\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}HG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00685}00685\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Mercury"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00686}00686\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 80;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00687}00687\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 200.592;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00688}00688\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 14.09E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00689}00689\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00690}00690\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00691}00691\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00692}00692\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TL"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00693}00693\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Thallium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00694}00694\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 81;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00695}00695\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 204.382;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00696}00696\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.22E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00697}00697\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00698}00698\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00699}00699\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00700}00700\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00701}00701\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Lead"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00702}00702\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 82;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00703}00703\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 207.210;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00704}00704\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 18.26E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00706}00706\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00707}00707\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00708}00708\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BI"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00709}00709\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Bismuth"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00710}00710\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 83;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00711}00711\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 208.980;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00712}00712\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 21.31E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00714}00714\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00715}00715\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00716}00716\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PO"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00717}00717\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Polonium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00718}00718\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 84;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00719}00719\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 209.980;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00720}00720\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 22.97E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00721}00721\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00722}00722\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00723}00723\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00724}00724\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AT"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00725}00725\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Astatine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00726}00726\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 85;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00727}00727\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 209.987;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00728}00728\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00729}00729\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00730}00730\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00731}00731\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00732}00732\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00733}00733\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Radon"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00734}00734\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 86;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00735}00735\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 222.000;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00736}00736\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 50.50E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00737}00737\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00738}00738\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00739}00739\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00740}00740\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}FR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00741}00741\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Francium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00742}00742\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 87;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00743}00743\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 223.020;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00744}00744\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00746}00746\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00747}00747\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00748}00748\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00749}00749\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Radium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00750}00750\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 88;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00751}00751\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 226.025;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00752}00752\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 41.09E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00753}00753\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00754}00754\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00755}00755\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00756}00756\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AC"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00757}00757\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Actinium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00758}00758\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 89;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00759}00759\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 227.028;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00760}00760\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 22.55E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00761}00761\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00762}00762\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00764}00764\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TH"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00765}00765\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Thorium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00766}00766\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 90;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00767}00767\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 232.038;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00768}00768\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 19.80E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00769}00769\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00770}00770\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00771}00771\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00772}00772\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PA"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00773}00773\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Protactinium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00774}00774\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 91;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00775}00775\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 231.036;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00776}00776\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 15.18E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00777}00777\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00778}00778\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00780}00780\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}U"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00781}00781\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Uranium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00782}00782\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 92;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00783}00783\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 238.029;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00784}00784\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 12.49E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00785}00785\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00786}00786\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00787}00787\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00788}00788\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NP"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00789}00789\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Neptunium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00790}00790\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 93;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00791}00791\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 237.048;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00792}00792\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 11.59E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00793}00793\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00794}00794\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00795}00795\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00796}00796\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}PU"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00797}00797\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Plutonium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00798}00798\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 94;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00799}00799\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 244.064;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00800}00800\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 12.29E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00801}00801\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00802}00802\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00803}00803\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00804}00804\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}AM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00805}00805\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Americium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00806}00806\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 95;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00807}00807\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 243.061;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00808}00808\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 17.78E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00809}00809\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00810}00810\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00811}00811\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00812}00812\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00813}00813\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Curium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00814}00814\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 96;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00815}00815\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 247.070;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00816}00816\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 18.05E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00817}00817\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00818}00818\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00819}00819\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00820}00820\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BK"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00821}00821\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Berkelium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00822}00822\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 97;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00823}00823\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 247.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00824}00824\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 16.84E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00825}00825\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00826}00826\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00827}00827\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00828}00828\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CF"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00829}00829\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Californium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00830}00830\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 98;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00831}00831\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 251.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00832}00832\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 16.50E-\/6;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00833}00833\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00834}00834\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00835}00835\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00836}00836\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}ES"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00837}00837\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Einsteinium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00838}00838\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 99;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00839}00839\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 252.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00840}00840\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00841}00841\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00842}00842\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00843}00843\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00844}00844\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}FM"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00845}00845\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Fermium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00846}00846\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00847}00847\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 257.095;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00848}00848\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00849}00849\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00850}00850\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00851}00851\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00852}00852\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MD"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00853}00853\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Mendelevium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00854}00854\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 101;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00855}00855\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 258.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00856}00856\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00857}00857\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00858}00858\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00859}00859\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00860}00860\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NO"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00861}00861\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Nobelium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00862}00862\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 102;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00863}00863\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 259.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00864}00864\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00865}00865\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00866}00866\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00867}00867\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00868}00868\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}LR"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00869}00869\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Lawrencium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00870}00870\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 103;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00871}00871\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 266.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00872}00872\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00873}00873\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00874}00874\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00875}00875\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00876}00876\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RD"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00877}00877\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Rutherfordium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00878}00878\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 104;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00879}00879\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 261.109;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00880}00880\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00881}00881\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00882}00882\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00883}00883\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00884}00884\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}DB"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00885}00885\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Dubnium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00886}00886\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 105;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00887}00887\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 262.114;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00888}00888\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00889}00889\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00890}00890\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00891}00891\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00892}00892\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}SG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00893}00893\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Seaborgium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00894}00894\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 106;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00895}00895\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 263.118;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00896}00896\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00897}00897\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00898}00898\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00899}00899\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00900}00900\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}BH"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00901}00901\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Bohrium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00902}00902\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 107;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00903}00903\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 262.123;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00904}00904\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00905}00905\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00906}00906\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00907}00907\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00908}00908\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}HS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00909}00909\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Hassium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00910}00910\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 108;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00911}00911\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 265.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00912}00912\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00913}00913\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00914}00914\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00915}00915\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00916}00916\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MT"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00917}00917\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Meitnerium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00918}00918\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 109;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00919}00919\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 268.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00920}00920\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00921}00921\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00922}00922\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00923}00923\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00924}00924\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}DS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00925}00925\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Darmstadtium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00926}00926\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 110;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00927}00927\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 281.;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00928}00928\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00929}00929\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00930}00930\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00931}00931\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00932}00932\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}RG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00933}00933\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Roentgenium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00934}00934\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 111;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00935}00935\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 280.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00936}00936\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00937}00937\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00938}00938\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00939}00939\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00940}00940\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}CN"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00941}00941\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Copernicium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00942}00942\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 112;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00943}00943\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 277.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00944}00944\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00945}00945\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00946}00946\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00947}00947\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00948}00948\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}NH"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00949}00949\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Nihonium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00950}00950\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 113;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00951}00951\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 287.;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00952}00952\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00953}00953\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00954}00954\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00955}00955\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00956}00956\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}FL"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00957}00957\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Flerovium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00958}00958\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 114;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00959}00959\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 289.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00960}00960\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00961}00961\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00962}00962\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00963}00963\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00964}00964\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}MC"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00965}00965\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Moscovium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00966}00966\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 115;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00967}00967\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 288.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00968}00968\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00969}00969\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00970}00970\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00971}00971\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00972}00972\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}LV"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00973}00973\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Livermorium"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00974}00974\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 116;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00975}00975\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 293.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00976}00976\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00977}00977\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00978}00978\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00979}00979\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00980}00980\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}TS"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00981}00981\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Tennessine"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00982}00982\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 117;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00983}00983\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 292.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00984}00984\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00985}00985\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00986}00986\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00987}00987\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00988}00988\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ \textcolor{stringliteral}{"{}OG"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00989}00989\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ \textcolor{stringliteral}{"{}Oganesson"{}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00990}00990\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 118;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00991}00991\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 294.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00992}00992\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00993}00993\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00994}00994\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00995}00995\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00996}00996\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00997}\mbox{\hyperlink{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}{00997}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}{GetData}}(std::string\ Name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00998}00998\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l00999}00999\ \ \ \ \ \ \ \ \ std::transform(Name.begin(),\ Name.end(),\ Name.begin(),\ ::toupper);\ \ \ \ \ \ \textcolor{comment}{//Change\ "{}Element"{}\ to\ upper\ cases\ only}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01000}01000\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}.size();\ n++)}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01001}01001\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01002}01002\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Name\ ==\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}[n].Name)}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01003}01003\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01004}01004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}}[n];}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01005}01005\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01006}01006\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01007}01007\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element}{Element}}\ temp;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01008}01008\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_ade266c5beeab5f44759c75b2876d86e3}{Name}}\ =\ Name;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01009}01009\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a6b05ba6739711e718030ea77694a8946}{FullName}}\ =\ Name;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01010}01010\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a55074e1825a657b8f534d26b75aab507}{AtomicNumber}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01011}01011\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}}\ =\ 100.0;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01012}01012\ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}\ \ =\ 1E-\/5;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01013}01013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Could\ not\ find\ Element\ "{}\ <<\ Name}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01014}01014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<<\ "{}\ in\ PeriodicTable.h!\ Used\ Custom\ Element\ instead!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01015}01015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01016}01016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01017}01017\ }
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01018}01018\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01019}01019\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01020}\mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{01020}}\ \ \ \ \ std::vector<Element>\ \mbox{\hyperlink{classopenphase_1_1PeriodicTable_a9a29ad80737b79c7fedeba9ec8bcb977}{Data}};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01021}01021\ \};}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01022}01022\ \}}
+\DoxyCodeLine{\Hypertarget{PeriodicTable_8h_source_l01023}01023\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//PERIODICTABLE\_H}}
+
+\end{DoxyCode}

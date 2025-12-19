@@ -1,0 +1,475 @@
+\doxysection{v\+Stress.\+h}
+\hypertarget{vStress_8h_source}{}\label{vStress_8h_source}\index{vStress.h@{vStress.h}}
+\mbox{\hyperlink{vStress_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev;}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Philipp\ Engels}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ VSTRESS\_H}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ VSTRESS\_H}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <cfloat>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dMatrix3x3_8h}{dMatrix3x3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dVector3_8h}{dVector3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00046}00046\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00049}\mbox{\hyperlink{classopenphase_1_1vStress}{00049}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \ *\ \ This\ is\ a\ special\ version\ of\ the\ six\ component\ Voigt\ vector}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00053}00053\ \textcolor{comment}{\ \ \ \ \ *\ \ to\ store\ stresses.\ It\ implements\ a\ number\ of\ stress\ specific}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ *\ \ methods.}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00056}00056\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00057}\mbox{\hyperlink{classopenphase_1_1vStress_ae7c5d28c02c448cc3c776886972fbb78}{00057}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ae7c5d28c02c448cc3c776886972fbb78}{vStress}}()}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}.fill(0.0);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00062}\mbox{\hyperlink{classopenphase_1_1vStress_ab16c39af6979acf4e68bbea7c63eb1e8}{00062}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ab16c39af6979acf4e68bbea7c63eb1e8}{vStress}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)\ :}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}(rhs.\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}})}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00068}\mbox{\hyperlink{classopenphase_1_1vStress_abbf4c058302b76893d051dca992df769}{00068}}\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_abbf4c058302b76893d051dca992df769}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ assert(i\ <\ 6\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00074}\mbox{\hyperlink{classopenphase_1_1vStress_ada4d6fa8af2e37d5e7803ca000194c0a}{00074}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_ada4d6fa8af2e37d5e7803ca000194c0a}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00075}00075\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ assert(i\ <\ 6\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00080}\mbox{\hyperlink{classopenphase_1_1vStress_a488f23de8a3ec2d09946fffc52cb95b8}{00080}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1vStress_a488f23de8a3ec2d09946fffc52cb95b8}{pack}}(std::vector<double>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00088}\mbox{\hyperlink{classopenphase_1_1vStress_ab2b6d699c633f15662f57264d83eb6fa}{00088}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1vStress_ab2b6d699c633f15662f57264d83eb6fa}{unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00096}\mbox{\hyperlink{classopenphase_1_1vStress_abee692b690bd00d03e7a84bee293bf98}{00096}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_abee692b690bd00d03e7a84bee293bf98}{set\_to\_zero}}()}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}.fill(0.0);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00102}\mbox{\hyperlink{classopenphase_1_1vStress_ad9ca84a0a3f115a2c527884f46e02489}{00102}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_ad9ca84a0a3f115a2c527884f46e02489}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00108}\mbox{\hyperlink{classopenphase_1_1vStress_ab64a4947858ac169adadd24bb293cf10}{00108}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_ab64a4947858ac169adadd24bb293cf10}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00109}00109\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00120}\mbox{\hyperlink{classopenphase_1_1vStress_a305335375896786f2e1825cbfefce3b0}{00120}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_a305335375896786f2e1825cbfefce3b0}{operator/}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00121}00121\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ num\ =\ 1.0/m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00133}\mbox{\hyperlink{classopenphase_1_1vStress_aba57deb07f787b7ea4dbfb123fa49a7c}{00133}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_aba57deb07f787b7ea4dbfb123fa49a7c}{operator+}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00134}00134\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ +\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00145}\mbox{\hyperlink{classopenphase_1_1vStress_a4ed583ac4f22b1c494ae800972abce61}{00145}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_a4ed583ac4f22b1c494ae800972abce61}{operator-\/}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00146}00146\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ -\/\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00157}\mbox{\hyperlink{classopenphase_1_1vStress_ad15bdad8d11691800adcc8448607c7dc}{00157}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_ad15bdad8d11691800adcc8448607c7dc}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00168}\mbox{\hyperlink{classopenphase_1_1vStress_a7a76b58503f6d7c490d19aadd9bfa179}{00168}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_a7a76b58503f6d7c490d19aadd9bfa179}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00169}00169\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ num\ =\ 1.0/m;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ *=\ num;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00181}\mbox{\hyperlink{classopenphase_1_1vStress_aa3ed2c8cdc8abaf4f18675bba13496d7}{00181}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_aa3ed2c8cdc8abaf4f18675bba13496d7}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00182}00182\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +\ rhs[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +\ rhs[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ +\ rhs[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ +\ rhs[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ +\ rhs[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ +\ rhs[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00191}00191\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00193}\mbox{\hyperlink{classopenphase_1_1vStress_abeea76a18c22a7c657373bfaacbc37f8}{00193}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_abeea76a18c22a7c657373bfaacbc37f8}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00194}00194\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +=\ rhs[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +=\ rhs[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ +=\ rhs[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ +=\ rhs[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ +=\ rhs[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ +=\ rhs[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00202}00202\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00204}\mbox{\hyperlink{classopenphase_1_1vStress_a37191c8f8afad45c5c02bff9608bb543}{00204}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_a37191c8f8afad45c5c02bff9608bb543}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00205}00205\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ tmp[0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ -\/\ rhs[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ tmp[1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ -\/\ rhs[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ tmp[2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ -\/\ rhs[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ tmp[3]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ -\/\ rhs[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00211}00211\ \ \ \ \ \ \ \ \ tmp[4]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ -\/\ rhs[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ tmp[5]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ -\/\ rhs[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00216}\mbox{\hyperlink{classopenphase_1_1vStress_a08d35ebf549402732034a0a1373b43ab}{00216}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_a08d35ebf549402732034a0a1373b43ab}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00217}00217\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ -\/=\ rhs[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ -\/=\ rhs[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ -\/=\ rhs[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ -\/=\ rhs[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ -\/=\ rhs[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ -\/=\ rhs[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00227}\mbox{\hyperlink{classopenphase_1_1vStress_aee3495c9cd20eea5ddb76359ccf8069b}{00227}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_aee3495c9cd20eea5ddb76359ccf8069b}{norm}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00228}00228\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ *\ 2.0}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ *\ 2.0}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ *\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ *\ 2.0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(tmp);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00238}\mbox{\hyperlink{classopenphase_1_1vStress_a4fb6b3b798504675f489f2e5ff8d8cb6}{00238}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a4fb6b3b798504675f489f2e5ff8d8cb6}{double\_contract}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ Bstress)\ \textcolor{keyword}{const}\ \ \textcolor{comment}{//\ "{}double-\/dot\ product"{}}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00239}00239\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ *\ Bstress[0]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ *\ Bstress[1]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ *\ Bstress[2]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ 2.0*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ *\ Bstress[3]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ 2.0*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ *\ Bstress[4]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ 2.0*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ *\ Bstress[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00248}00248\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00250}\mbox{\hyperlink{classopenphase_1_1vStress_a960b217501a303c6305423abf5a0c1a5}{00250}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a960b217501a303c6305423abf5a0c1a5}{Pressure}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00251}00251\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2])/3.0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00255}\mbox{\hyperlink{classopenphase_1_1vStress_a27bbdabd9787756d6dfa6446923a0177}{00255}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a27bbdabd9787756d6dfa6446923a0177}{trace}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00256}00256\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00258}00258\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00260}\mbox{\hyperlink{classopenphase_1_1vStress_a58d1e43db12944d8a7eea9d17f4fd32d}{00260}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a58d1e43db12944d8a7eea9d17f4fd32d}{determinant}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00261}00261\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ -\/}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ -\/}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ -\/}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*2.0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00267}00267\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00269}\mbox{\hyperlink{classopenphase_1_1vStress_a91b5712db2c01756c710262cb24e60fb}{00269}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{classopenphase_1_1vStress_a91b5712db2c01756c710262cb24e60fb}{invariants}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00270}00270\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ I1\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_a27bbdabd9787756d6dfa6446923a0177}{trace}}();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ I2\ =\ 0.5*(\mbox{\hyperlink{classopenphase_1_1vStress_a27bbdabd9787756d6dfa6446923a0177}{trace}}()*\mbox{\hyperlink{classopenphase_1_1vStress_a27bbdabd9787756d6dfa6446923a0177}{trace}}()\ -\/}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*2\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*2\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*2));}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ I3\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_a58d1e43db12944d8a7eea9d17f4fd32d}{determinant}}();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}(\{I1,I2,I3\});}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00281}00281\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00283}\mbox{\hyperlink{classopenphase_1_1vStress_a7eadaaed640703b85dddf2d01bf79b98}{00283}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a7eadaaed640703b85dddf2d01bf79b98}{Mises}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00284}00284\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vMises\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ vMises\ =\ (\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1])*(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1])\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2])*(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2])\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0])*(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]-\/\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0])\ +}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6.0*(\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]+\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]+\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]*\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(0.5*vMises);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00292}00292\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00294}\mbox{\hyperlink{classopenphase_1_1vStress_afdaacdf955e1777b7e9bc99ab0aee7dd}{00294}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ \mbox{\hyperlink{classopenphase_1_1vStress_afdaacdf955e1777b7e9bc99ab0aee7dd}{rotated}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00295}00295\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ In[3][3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Out[3][3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00299}00299\ \ \ \ \ \ \ \ \ In[0][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ In[0][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ In[0][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ In[1][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00303}00303\ \ \ \ \ \ \ \ \ In[1][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00304}00304\ \ \ \ \ \ \ \ \ In[1][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00305}00305\ \ \ \ \ \ \ \ \ In[2][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00306}00306\ \ \ \ \ \ \ \ \ In[2][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00307}00307\ \ \ \ \ \ \ \ \ In[2][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ 3;\ ++p)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ q\ =\ 0;\ q\ <\ 3;\ ++q)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ Out[p][q]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ ++j)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Out[p][q]\ +=\ RotationMatrix(p,i)*In[i][j]*RotationMatrix(q,j);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\ OUT;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ OUT[0]\ =\ Out[0][0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ OUT[5]\ =\ Out[0][1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ OUT[4]\ =\ Out[0][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ OUT[1]\ =\ Out[1][1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00325}00325\ \ \ \ \ \ \ \ \ OUT[3]\ =\ Out[1][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ OUT[2]\ =\ Out[2][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ OUT;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00329}00329\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00331}\mbox{\hyperlink{classopenphase_1_1vStress_a91305198bc6b35f5268c818ef01f1dde}{00331}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress}{vStress}}\&\ \mbox{\hyperlink{classopenphase_1_1vStress_a91305198bc6b35f5268c818ef01f1dde}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00332}00332\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ In[3][3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Out[3][3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ In[0][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ In[0][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ In[0][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ In[1][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ In[1][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ In[1][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ In[2][0]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ In[2][1]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ In[2][2]\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ 3;\ ++p)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ q\ =\ 0;\ q\ <\ 3;\ ++q)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ Out[p][q]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ ++j)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Out[p][q]\ +=\ RotationMatrix(p,i)*In[i][j]*RotationMatrix(q,j);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ =\ Out[0][0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00358}00358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ =\ Out[0][1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ =\ Out[0][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ =\ Out[1][1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ =\ Out[1][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ =\ Out[2][2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00365}00365\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00367}\mbox{\hyperlink{classopenphase_1_1vStress_a24539998439b907661ec71111b2bab47}{00367}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1vStress_a24539998439b907661ec71111b2bab47}{get\_tensor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00368}00368\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[(i==j)?(i):(6-\/(i+j))];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00370}00370\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00372}\mbox{\hyperlink{classopenphase_1_1vStress_a3eee2e6e4be72669088b83be4c521205}{00372}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1vStress_a3eee2e6e4be72669088b83be4c521205}{tensor}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00373}00373\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00374}00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00375}00375\ \ \ \ \ \ \ \ \ tmp(0,0)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ tmp(0,1)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00377}00377\ \ \ \ \ \ \ \ \ tmp(0,2)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ tmp(1,0)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00379}00379\ \ \ \ \ \ \ \ \ tmp(1,1)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00380}00380\ \ \ \ \ \ \ \ \ tmp(1,2)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00381}00381\ \ \ \ \ \ \ \ \ tmp(2,0)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ tmp(2,1)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ tmp(2,2)\ =\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2];}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00385}00385\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00387}\mbox{\hyperlink{classopenphase_1_1vStress_a2b05887f9c8ecd8e4e4f444d59afa607}{00387}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1vStress_a2b05887f9c8ecd8e4e4f444d59afa607}{print}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00388}00388\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00390}00390\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}<\ |\ "{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i]<<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00395}00395\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\ >"{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00397}00397\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00399}\mbox{\hyperlink{classopenphase_1_1vStress_ae38dca590f56d1cf6cb5dfca9971af0e}{00399}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1vStress_ae38dca590f56d1cf6cb5dfca9971af0e}{print\_line}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00400}00400\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00401}00401\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[i]\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00406}00406\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00409}00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00410}00410\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00412}\mbox{\hyperlink{classopenphase_1_1vStress_a8469f77aa60c5791c1d2dbb72690d055}{00412}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1vStress_a8469f77aa60c5791c1d2dbb72690d055}{write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ sep\ =\ \textcolor{charliteral}{'\ '})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00413}00413\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ out\ <<\ std::setprecision(precision)\ <<\ std::defaultfloat;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00419}00419\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00420}00420\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00421}00421\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00423}00423\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00425}\mbox{\hyperlink{classopenphase_1_1vStress_a03dd971a7ed3ed464890f26b4e6e357a}{00425}}\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{classopenphase_1_1vStress_a03dd971a7ed3ed464890f26b4e6e357a}{writeCompressed}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00426}00426\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00427}00427\ \ \ \ \ \ \ \ \ std::vector<float>\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00428}00428\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00429}00429\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00430}00430\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00431}00431\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00432}00432\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00433}00433\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00435}00435\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00437}\mbox{\hyperlink{classopenphase_1_1vStress_a7c541a4fb8e0787b3e061d1f1570668f}{00437}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classopenphase_1_1vStress_a7c541a4fb8e0787b3e061d1f1570668f}{writeBinary}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00438}00438\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00439}00439\ \ \ \ \ \ \ \ \ std::vector<double>\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00440}00440\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[0]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00441}00441\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[1]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[2]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00443}00443\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[5]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00444}00444\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[3]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00445}00445\ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}[4]);}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00446}00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00447}00447\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00449}\mbox{\hyperlink{classopenphase_1_1vStress_a4279e919d2ee739ac9290810ff170897}{00449}}\ \ \ \ \ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classopenphase_1_1vStress_a4279e919d2ee739ac9290810ff170897}{data}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00450}00450\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}.data();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00452}00452\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00454}\mbox{\hyperlink{classopenphase_1_1vStress_afdcbf0f53a759ba8717c341c0d1cd390}{00454}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classopenphase_1_1vStress_afdcbf0f53a759ba8717c341c0d1cd390}{data}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00455}00455\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}}.data();}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00457}00457\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00459}\mbox{\hyperlink{classopenphase_1_1vStress_ab51b81f4bb5b259586580026a340eba4}{00459}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1vStress_ab51b81f4bb5b259586580026a340eba4}{size}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00460}00460\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00461}00461\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 6u;}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00462}00462\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00463}00463\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00464}00464\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00465}\mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{00465}}\ \ \ \ \ std::array<double,6>\ \mbox{\hyperlink{classopenphase_1_1vStress_ada6ee993f2b812283b861561dd84627d}{storage}};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00466}00466\ \};}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00468}00468\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{vStress_8h_source_l00469}00469\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

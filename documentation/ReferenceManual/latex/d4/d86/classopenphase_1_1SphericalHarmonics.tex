@@ -1,0 +1,206 @@
+\doxysection{openphase\+::Spherical\+Harmonics Class Reference}
+\hypertarget{classopenphase_1_1SphericalHarmonics}{}\label{classopenphase_1_1SphericalHarmonics}\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+
+
+\texorpdfstring{$<$}{<} Collection of real spherical harmonics up to six\textquotesingle{}s order  
+
+
+
+
+{\ttfamily \#include "{}Spherical\+Harmonics.\+h"{}}
+
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aadb74ffb21853a771a59e89c5d47327f}{operator()}} (int theta, int phi, double x, double y, double z)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}{Y00}} (double x, double y, double z)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}{Y10}} (double x, double y, double z)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}{Y11}} (double x, double y, double z)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}{Y20}} (double x, double y, double z)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}{Y21}} (double x, double y, double z)
+\item 
+static double \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}{Y22}} (double x, double y, double z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Collection of real spherical harmonics up to six\textquotesingle{}s order 
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00035}{35}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_aadb74ffb21853a771a59e89c5d47327f}\label{classopenphase_1_1SphericalHarmonics_aadb74ffb21853a771a59e89c5d47327f} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!operator()@{operator()}}
+\index{operator()@{operator()}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double openphase\+::\+Spherical\+Harmonics\+::operator() (\begin{DoxyParamCaption}\item[{int}]{theta,  }\item[{int}]{phi,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00037}{37}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ theta*10\ +\ phi;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ myReturn\ =\ 0.0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(index)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 00:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}{Y00}}(x,y,z);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}{Y10}}(x,y,z);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}{Y11}}(x,y,z);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 20:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}{Y20}}(x,y,z);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 21:}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}{Y21}}(x,y,z);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 22:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ myReturn\ =\ \ \mbox{\hyperlink{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}{Y22}}(x,y,z);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Non\ existing\ spherical\ harmonic\ implementation\ is\ called!"{}}\ ,\ \textcolor{stringliteral}{"{}SphericalHarmonics"{}},\ \textcolor{stringliteral}{"{}operator()"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ myReturn;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7}\label{classopenphase_1_1SphericalHarmonics_a07033a6e5e29b7cb6b5d5c0d22826db7} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y00@{Y00}}
+\index{Y00@{Y00}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y00()}{Y00()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y00 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00082}{82}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*sqrt(1.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}});}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439}\label{classopenphase_1_1SphericalHarmonics_a87b5d455f3274efd15ec49c14d708439} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y10@{Y10}}
+\index{Y10@{Y10}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y10()}{Y10()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y10 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00086}{86}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(3.0/(4.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}))*z;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f}\label{classopenphase_1_1SphericalHarmonics_aa44cf44bbff9e4e0c32d1fbb5e6e445f} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y11@{Y11}}
+\index{Y11@{Y11}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y11()}{Y11()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y11 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00090}{90}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(3.0/(4.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}))*x;}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07}\label{classopenphase_1_1SphericalHarmonics_a818612a87582368c98324f9234285f07} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y20@{Y20}}
+\index{Y20@{Y20}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y20()}{Y20()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y20 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00094}{94}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.25*sqrt(5.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(3.0*z*z-\/1.0);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c}\label{classopenphase_1_1SphericalHarmonics_a4162c940fcef977e473286ca092f563c} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y21@{Y21}}
+\index{Y21@{Y21}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y21()}{Y21()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y21 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00098}{98}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*sqrt(15.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*z*x;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6}\label{classopenphase_1_1SphericalHarmonics_a089551c6b9bc681707e8b290178e42c6} 
+\index{openphase::SphericalHarmonics@{openphase::SphericalHarmonics}!Y22@{Y22}}
+\index{Y22@{Y22}!openphase::SphericalHarmonics@{openphase::SphericalHarmonics}}
+\doxysubsubsection{\texorpdfstring{Y22()}{Y22()}}
+{\footnotesize\ttfamily static double openphase\+::\+Spherical\+Harmonics\+::\+Y22 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SphericalHarmonics_8h_source_l00102}{102}} of file \mbox{\hyperlink{SphericalHarmonics_8h_source}{Spherical\+Harmonics.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.25*sqrt(15.0/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}})*(x*x\ -\/\ y*y);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SphericalHarmonics_8h}{Spherical\+Harmonics.\+h}}\end{DoxyCompactItemize}

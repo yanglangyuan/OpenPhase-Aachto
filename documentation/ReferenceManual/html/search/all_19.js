@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['y_0',['y',['../d3/d20/structopenphase_1_1Sphere.html#a3f522cb84d1d71742840aba87bd76682',1,'openphase::Sphere']]],
+  ['y00_1',['Y00',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#a07033a6e5e29b7cb6b5d5c0d22826db7',1,'openphase::SphericalHarmonics']]],
+  ['y0burntzone_2',['Y0BurntZone',['../df/d99/classopenphase_1_1SpeciesTransport.html#aa31a7681840fa7b5c286ecd87e038c85',1,'openphase::SpeciesTransport']]],
+  ['y0distzone_3',['Y0DistZone',['../db/d71/classopenphase_1_1SolidBody.html#ae1120329c25a58122080c8e5f16bd801',1,'openphase::SolidBody']]],
+  ['y0fuelzone_4',['Y0FuelZone',['../df/d99/classopenphase_1_1SpeciesTransport.html#a9c9865b712ab240be1050e08cc8e87c6',1,'openphase::SpeciesTransport']]],
+  ['y0x_5',['Y0X',['../df/d99/classopenphase_1_1SpeciesTransport.html#afc3c660a88ac28d6140739a3af651f03',1,'openphase::SpeciesTransport']]],
+  ['y10_6',['Y10',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#a87b5d455f3274efd15ec49c14d708439',1,'openphase::SphericalHarmonics']]],
+  ['y11_7',['Y11',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#aa44cf44bbff9e4e0c32d1fbb5e6e445f',1,'openphase::SphericalHarmonics']]],
+  ['y20_8',['Y20',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#a818612a87582368c98324f9234285f07',1,'openphase::SphericalHarmonics']]],
+  ['y21_9',['Y21',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#a4162c940fcef977e473286ca092f563c',1,'openphase::SphericalHarmonics']]],
+  ['y22_10',['Y22',['../d4/d86/classopenphase_1_1SphericalHarmonics.html#a089551c6b9bc681707e8b290178e42c6',1,'openphase::SphericalHarmonics']]],
+  ['ybottom_11',['YBottom',['../d0/d6c/namespaceopenphase.html#afbbba5d2bc047ff98cf6c92b0a7af83ca62f6b08ad44bfdd302aa750904b89ac4',1,'openphase']]],
+  ['ynburntzone_12',['YNBurntZone',['../df/d99/classopenphase_1_1SpeciesTransport.html#a5449363b7312c4bf66360d9bfbf62268',1,'openphase::SpeciesTransport']]],
+  ['yndistzone_13',['YNDistZone',['../db/d71/classopenphase_1_1SolidBody.html#a65a2a20cbc5b51c2c7ffbe1bce0d8630',1,'openphase::SolidBody']]],
+  ['ynfuelzone_14',['YNFuelZone',['../df/d99/classopenphase_1_1SpeciesTransport.html#a535495e80d85ac3125d6571686f7fdc5',1,'openphase::SpeciesTransport']]],
+  ['young3_15',['Young3',['../de/dee/classopenphase_1_1Initializations.html#a128f6f13a01a0358bf4903026d50cae7',1,'openphase::Initializations']]],
+  ['young4_16',['Young4',['../de/dee/classopenphase_1_1Initializations.html#a7d99cbf6ca074c5de9bcedcaaa9fe9f9',1,'openphase::Initializations']]],
+  ['young4periodic_17',['Young4Periodic',['../de/dee/classopenphase_1_1Initializations.html#aaf0a337a75548672e4ca7f73fbf0e2e7',1,'openphase::Initializations']]],
+  ['yreflected_18',['yreflected',['../da/d94/classopenphase_1_1dVector3.html#a56808070b6fb80641867a6b69378a021',1,'openphase::dVector3::Yreflected()'],['../da/d9c/classopenphase_1_1iVector3.html#aef5fc620fce7a6cb1c0c3c60a0bfe730',1,'openphase::iVector3::Yreflected()'],['../d5/d57/classopenphase_1_1D3Q27.html#a09e1b6aa367aad40be634293b75aaada',1,'openphase::D3Q27::Yreflected()']]],
+  ['ytop_19',['YTop',['../d0/d6c/namespaceopenphase.html#afbbba5d2bc047ff98cf6c92b0a7af83ca9e9af04ec6c962c9760105042bfd7e0e',1,'openphase']]],
+  ['yxy_20',['YXY',['../d0/d6c/namespaceopenphase.html#a631078f50f3da2bf1138bc0182054010a1f1ee1d541d2deb35bd76f7507918765',1,'openphase']]],
+  ['yxz_21',['YXZ',['../d0/d6c/namespaceopenphase.html#a631078f50f3da2bf1138bc0182054010a4c80110f7da5be36192cc3b7653c25a0',1,'openphase']]],
+  ['yzx_22',['YZX',['../d0/d6c/namespaceopenphase.html#a631078f50f3da2bf1138bc0182054010a5f057cd5cb0c32687b1cf7ffd255809d',1,'openphase']]],
+  ['yzy_23',['YZY',['../d0/d6c/namespaceopenphase.html#a631078f50f3da2bf1138bc0182054010ac19180e5099d5b04f7d22b6fc9c70991',1,'openphase']]]
+];

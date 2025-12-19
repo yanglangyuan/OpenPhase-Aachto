@@ -1,0 +1,658 @@
+\doxysection{d\+Matrix3x3.\+h}
+\hypertarget{dMatrix3x3_8h_source}{}\label{dMatrix3x3_8h_source}\index{dMatrix3x3.h@{dMatrix3x3.h}}
+\mbox{\hyperlink{dMatrix3x3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Dmitry\ Medvedev;}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Philipp\ Engels}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ DMATRIX3X3\_H}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ DMATRIX3X3\_H}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <cfloat>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00046}00046\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00049}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{00049}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00051}00051\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00052}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a3c1d7337cf37cdbfffd297712c3dff15}{00052}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a3c1d7337cf37cdbfffd297712c3dff15}{dMatrix3x3}}():}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ storage(\{0,0,0,0,0,0,0,0,0\})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00057}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a463f04248de927de3605fc3bde1836c1}{00057}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a463f04248de927de3605fc3bde1836c1}{dMatrix3x3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs):}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ storage(rhs.storage)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00062}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4fa88e8b950c5f961f32e0c048bc4a67}{00062}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4fa88e8b950c5f961f32e0c048bc4a67}{dMatrix3x3}}(\textcolor{keyword}{const}\ std::initializer\_list<double>\ matinit)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ assert(matinit.size()\ ==\ 9\ \&\&\ \textcolor{stringliteral}{"{}Initialization\ list\ size\ is\ not\ equal\ to\ storage\ range."{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ii\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ matinit.begin();\ it\ !=\ matinit.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ storage[ii]\ =\ *it;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ ii\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00073}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a52f2b9dc5684909f2b77f04abe2c7e4a}{00073}}\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a52f2b9dc5684909f2b77f04abe2c7e4a}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ assert(i\ <\ 3\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ assert(j\ <\ 3\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage[idx(i,j)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00080}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a1a910eb9eb37105c4de138f217ad8968}{00080}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a1a910eb9eb37105c4de138f217ad8968}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00081}00081\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ assert(i\ <\ 3\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ assert(j\ <\ 3\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage[idx(i,j)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00087}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa700266bacf759b8654646af58a448fd}{00087}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa700266bacf759b8654646af58a448fd}{set\_to\_zero}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ storage.fill(0);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00092}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{00092}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{set\_to\_unity}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ storage.fill(0);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ storage[idx(0,0)]\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ storage[idx(1,1)]\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ storage[idx(2,2)]\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00100}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af8c8b18de5d0b1ef1050370c7dd657ff}{00100}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af8c8b18de5d0b1ef1050370c7dd657ff}{pack}}(std::vector<double>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ ++j)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ buffer.push\_back(storage[idx(i,j)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00108}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af7ab2c39dd91e4edd2821ab68bf023db}{00108}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af7ab2c39dd91e4edd2821ab68bf023db}{unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ ++j)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00116}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a14c964d665e3a2845c558ab36cddceed}{00116}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a14c964d665e3a2845c558ab36cddceed}{set}}(\textcolor{keywordtype}{double}\ r00,\ \textcolor{keywordtype}{double}\ r01,\ \textcolor{keywordtype}{double}\ r02,}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r10,\ \textcolor{keywordtype}{double}\ r11,\ \textcolor{keywordtype}{double}\ r12,}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r20,\ \textcolor{keywordtype}{double}\ r21,\ \textcolor{keywordtype}{double}\ r22)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00119}00119\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ storage[idx(0,0)]\ =\ r00;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ storage[idx(0,1)]\ =\ r01;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ storage[idx(0,2)]\ =\ r02;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ storage[idx(1,0)]\ =\ r10;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ storage[idx(1,1)]\ =\ r11;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ storage[idx(1,2)]\ =\ r12;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ storage[idx(2,0)]\ =\ r20;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ storage[idx(2,1)]\ =\ r21;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ storage[idx(2,2)]\ =\ r22;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00130}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6eb3b9dee861d492d3189e8b8eb0f47c}{00130}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6eb3b9dee861d492d3189e8b8eb0f47c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ storage\ =\ rhs.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4c0b7db773ab47ddab4553b68d232865}{storage}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00135}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a361c12707f4395ba175b0713399fd08d}{00135}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a361c12707f4395ba175b0713399fd08d}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(storage[idx(i,j)]-\/rhs(i,j))\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00147}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae44833db5c65e22b34c724f4a8efec76}{00147}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae44833db5c65e22b34c724f4a8efec76}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00148}00148\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(storage[idx(i,j)]-\/rhs(i,j))\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00159}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ac1b0bc6afa67edfead6670c2748577e7}{00159}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ac1b0bc6afa67edfead6670c2748577e7}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00160}00160\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ =\ storage[idx(i,j)]*m;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00169}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad1509a4619df4a804a4cf140afb3e672}{00169}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad1509a4619df4a804a4cf140afb3e672}{operator/}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00170}00170\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ =\ storage[idx(i,j)]/m;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00179}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a463f67f411314713f03753663356a64a}{00179}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a463f67f411314713f03753663356a64a}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00180}00180\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 3;\ k++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ +=\ storage[idx(i,k)]*rhs(k,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00189}00189\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00190}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a002d7013f327893ed97eb2bffeb06abf}{00190}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a002d7013f327893ed97eb2bffeb06abf}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00191}00191\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ =\ storage[idx(i,j)]\ +\ rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00200}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a9663baad703bf5904d2ef1e930e45114}{00200}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a9663baad703bf5904d2ef1e930e45114}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00201}00201\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ =\ storage[idx(i,j)]\ -\/\ rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00210}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4471fb809373de3db1efa74042d18623}{00210}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4471fb809373de3db1efa74042d18623}{operator*=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 3;\ k++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ +=\ storage[idx(i,k)]*rhs(k,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ =\ tmp(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00227}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7c652338cbb22908a52dbd699372c7e9}{00227}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7c652338cbb22908a52dbd699372c7e9}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00228}00228\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ +=\ rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00236}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a403f92b23a237e7fa12225e3369337a7}{00236}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a403f92b23a237e7fa12225e3369337a7}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00237}00237\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ -\/=\ rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00244}00244\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00245}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a3845140eefbda5e851af4225aaef3acc}{00245}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a3845140eefbda5e851af4225aaef3acc}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00246}00246\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ *=\ m;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00254}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aad35b42c09c3071396d32a39ca41654b}{00254}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aad35b42c09c3071396d32a39ca41654b}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00255}00255\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ /=\ m;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00262}00262\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00263}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a87c6aefbb53c9e469cdf0c72f9e5f079}{00263}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a87c6aefbb53c9e469cdf0c72f9e5f079}{size}}()}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00264}00264\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 9u;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00267}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aabd0211ff3840dbd687fbeb3a31c2805}{00267}}\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aabd0211ff3840dbd687fbeb3a31c2805}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00268}00268\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ assert(i\ <\ size()\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ column\ =\ i\ \%\ 3;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row\ =\ int((i\ -\/\ column)/3);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage[idx(row,column)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00275}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a91481f2c532758ded85a1eb47dcbb619}{00275}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a91481f2c532758ded85a1eb47dcbb619}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00276}00276\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ assert(i\ <\ size()\ \&\&\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range"{}});}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ column\ =\ i\ \%\ 3;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row\ =\ int((i\ -\/\ column)/3);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage[idx(row,column)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00283}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a695c5af4434dc5572ae581d0164df669}{00283}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a695c5af4434dc5572ae581d0164df669}{Hadamard\_product}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00284}00284\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ tmp(i,j)\ =\ storage[idx(i,j)]*rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00291}00291\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00294}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7a636cfd31daed0064336030a5b5dc0e}{00294}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7a636cfd31daed0064336030a5b5dc0e}{determinant}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00295}00295\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (storage[idx(0,0)]*storage[idx(1,1)]*storage[idx(2,2)]\ +}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(1,2)]*storage[idx(2,0)]\ +}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(1,0)]*storage[idx(2,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(1,1)]*storage[idx(2,0)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(1,0)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,0)]*storage[idx(1,2)]*storage[idx(2,1)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00302}00302\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00303}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a5aa3c254d9a6c750b3183625a23ab43b}{00303}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a5aa3c254d9a6c750b3183625a23ab43b}{invert}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00304}00304\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00305}00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00307}00307\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ detInv\ =\ determinant();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(detInv\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ detInv\ =\ 1.0/detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}dMatrix3x3:\ Can\ Not\ Compute\ Inverse\ Matrix.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>print()\ <<\ \textcolor{stringliteral}{"{}Matrix\ is\ Singular\ !!!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ tmp(0,0)\ =\ (storage[idx(1,1)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,2)]*storage[idx(2,1)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ tmp(1,0)\ =-\/(storage[idx(1,0)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,2)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ tmp(2,0)\ =\ (storage[idx(1,0)]*storage[idx(2,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,1)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ tmp(0,1)\ =-\/(storage[idx(0,1)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(2,1)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ tmp(1,1)\ =\ (storage[idx(0,0)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ tmp(2,1)\ =-\/(storage[idx(0,0)]*storage[idx(2,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ tmp(0,2)\ =\ (storage[idx(0,1)]*storage[idx(1,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,1)]*storage[idx(0,2)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ tmp(1,2)\ =-\/(storage[idx(0,0)]*storage[idx(1,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(1,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ tmp(2,2)\ =\ (storage[idx(0,0)]*storage[idx(1,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(1,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ memmove(storage.data(),\ tmp.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00341}00341\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00342}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae5ee24ca7f971d93d6e811cf7d1e0782}{00342}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae5ee24ca7f971d93d6e811cf7d1e0782}{inverted}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00343}00343\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ detInv\ =\ determinant();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(detInv\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ detInv\ =\ 1.0/detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}dMatrix3x3:\ Can\ Not\ Compute\ Inverse\ Matrix.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ this-\/>print()\ <<\ \textcolor{stringliteral}{"{}Matrix\ is\ Singular\ !!!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ tmp(0,0)\ =\ (storage[idx(1,1)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,2)]*storage[idx(2,1)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ tmp(1,0)\ =-\/(storage[idx(1,0)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,2)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00363}00363\ \ \ \ \ \ \ \ \ tmp(2,0)\ =\ (storage[idx(1,0)]*storage[idx(2,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,1)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00365}00365\ \ \ \ \ \ \ \ \ tmp(0,1)\ =-\/(storage[idx(0,1)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(2,1)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ tmp(1,1)\ =\ (storage[idx(0,0)]*storage[idx(2,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ tmp(2,1)\ =-\/(storage[idx(0,0)]*storage[idx(2,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(2,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00371}00371\ \ \ \ \ \ \ \ \ tmp(0,2)\ =\ (storage[idx(0,1)]*storage[idx(1,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(1,1)]*storage[idx(0,2)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00373}00373\ \ \ \ \ \ \ \ \ tmp(1,2)\ =-\/(storage[idx(0,0)]*storage[idx(1,2)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,2)]*storage[idx(1,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00375}00375\ \ \ \ \ \ \ \ \ tmp(2,2)\ =\ (storage[idx(0,0)]*storage[idx(1,1)]\ -\/}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(0,1)]*storage[idx(1,0)])*detInv;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00379}00379\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00380}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a31d1223ba9a37632bc880f3953bdf294}{00380}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a31d1223ba9a37632bc880f3953bdf294}{transpose}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00381}00381\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ \ \ 0;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ i+1;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00384}00384\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ storage[idx(i,j)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ =\ storage[idx(j,i)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(j,i)]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00390}00390\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00391}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a82ac5f7c5540664aaaa7868e0cea55bf}{00391}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a82ac5f7c5540664aaaa7868e0cea55bf}{transposed}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00392}00392\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00393}00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00397}00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ TempMat(i,j)\ =\ storage[idx(j,i)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00399}00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00400}00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00401}00401\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00402}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad1ab4c1e6120c0c2f5f072940323bab1}{00402}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad1ab4c1e6120c0c2f5f072940323bab1}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00403}00403\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00406}00406\ \ \ \ \ \ \ \ \ memmove(TempMat.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ storage.data(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00407}00407\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00408}00408\ \ \ \ \ \ \ \ \ TempMat\ =\ RotationMatrix\ *\ (TempMat\ *\ RotationMatrix.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a82ac5f7c5540664aaaa7868e0cea55bf}{transposed}}());}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00410}00410\ \ \ \ \ \ \ \ \ memmove(storage.data(),\ TempMat.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00411}00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00412}00412\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00413}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a176b21a0d87654ed3714b39e1d0b1fee}{00413}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a176b21a0d87654ed3714b39e1d0b1fee}{rotated}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00414}00414\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ Out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ memmove(Out.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ storage.data(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ Out\ =\ RotationMatrix\ *\ (Out\ *\ RotationMatrix.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a82ac5f7c5540664aaaa7868e0cea55bf}{transposed}}());}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00420}00420\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00421}00421\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00422}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4e0460d19a28d4fe14703109920aacb7}{00422}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4e0460d19a28d4fe14703109920aacb7}{rotateU}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00423}00423\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00426}00426\ \ \ \ \ \ \ \ \ memmove(TempMat.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ storage.data(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00428}00428\ \ \ \ \ \ \ \ \ TempMat\ =\ RotationMatrix\ *\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00430}00430\ \ \ \ \ \ \ \ \ memmove(storage.data(),\ TempMat.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00431}00431\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00432}00432\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00433}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af3027780c12f43cfcb7a42e074622676}{00433}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af3027780c12f43cfcb7a42e074622676}{rotatedU}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ RotationMatrix)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00434}00434\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00435}00435\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ Out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ memmove(Out.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(),\ storage.data(),\ 9*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00438}00438\ \ \ \ \ \ \ \ \ Out\ =\ RotationMatrix\ *\ Out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00440}00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00441}00441\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00442}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad6b3389732e9457fb4b2c552d8371da1}{00442}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad6b3389732e9457fb4b2c552d8371da1}{power\_Elements}}(\textcolor{keywordtype}{double}\ \&n)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00443}00443\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00445}00445\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00446}00446\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ =\ pow(storage[idx(i,j)],n);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00448}00448\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00449}00449\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00450}00450\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00451}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae034b4773fcd43740aaeaa69759be820}{00451}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae034b4773fcd43740aaeaa69759be820}{powered\_Elements}}(\textcolor{keywordtype}{double}\ \&n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00452}00452\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00453}00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ TempMat(i,j)\ =\ pow(storage[idx(i,j)],n);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00459}00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00460}00460\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00461}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af060118faf92ab14ebe1cba656e3717e}{00461}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af060118faf92ab14ebe1cba656e3717e}{double\_contract}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00462}00462\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00463}00463\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ +=\ storage[idx(i,j)]*rhs(i,j);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00470}00470\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00471}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a0e4c09e5549f0ada13f8ef2c94724c2e}{00471}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a0e4c09e5549f0ada13f8ef2c94724c2e}{trace}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00472}00472\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00473}00473\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage[idx(0,0)]\ +\ storage[idx(1,1)]\ +\ storage[idx(2,2)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00474}00474\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00475}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad21e13c98925972d2088bba78efe9fd7}{00475}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad21e13c98925972d2088bba78efe9fd7}{max}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00476}00476\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00477}00477\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ -\/DBL\_MAX;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00478}00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00479}00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00480}00480\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ std::max(value,storage[idx(i,j)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00482}00482\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00483}00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00484}00484\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00485}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ace03812230624e6894d8941ec5371ec0}{00485}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ace03812230624e6894d8941ec5371ec0}{min}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00486}00486\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ DBL\_MAX;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00489}00489\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00490}00490\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ std::min(value,storage[idx(i,j)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00492}00492\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00494}00494\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00495}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad45fb01325bba9201fa62ed6e2afa3a9}{00495}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\&\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ad45fb01325bba9201fa62ed6e2afa3a9}{symmetrize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00496}00496\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00498}00498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00499}00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ j)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00500}00500\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ (storage[idx(i,j)]\ +\ storage[idx(j,i)])\ *\ 0.5;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(i,j)]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ storage[idx(j,i)]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00504}00504\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00505}00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00506}00506\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00507}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a2eb43664fbacbf65de71a383433b738c}{00507}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a2eb43664fbacbf65de71a383433b738c}{symmetrized}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00508}00508\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00509}00509\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00511}00511\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00512}00512\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00513}00513\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ TempMat(i,j)\ =\ (storage[idx(i,j)]\ +\ storage[idx(j,i)])\ *\ 0.5;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00515}00515\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00518}00518\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00519}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4664641b57f8c661ab183444930d95aa}{00519}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4664641b57f8c661ab183444930d95aa}{get\_skew}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00520}00520\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00521}00521\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00523}00523\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00524}00524\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00525}00525\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ TempMat(i,j)\ =\ (storage[idx(i,j)]\ -\/\ storage[idx(j,i)])\ *\ 0.5;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00529}00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TempMat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00530}00530\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00531}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7d5d20ea927d0a9eda5d388b8f28cf5c}{00531}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a7d5d20ea927d0a9eda5d388b8f28cf5c}{norm}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00532}00532\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00533}00533\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00534}00534\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00535}00535\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ +=\ storage[idx(i,0)]\ *\ storage[idx(i,0)]}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ storage[idx(i,1)]\ *\ storage[idx(i,1)]}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ storage[idx(i,2)]\ *\ storage[idx(i,2)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00539}00539\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00541}00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(tmp);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00542}00542\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00543}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ab361185636e27dc3463ede155e99fabb}{00543}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ab361185636e27dc3463ede155e99fabb}{print}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00544}00544\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00545}00545\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00546}00546\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00547}00547\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}||"{}}\ <<\ std::setprecision(6)\ <<\ std::right}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(12)\ <<\ storage[idx(i,0)]\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(12)\ <<\ storage[idx(i,1)]\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(12)\ <<\ storage[idx(i,2)]\ <<\ \textcolor{stringliteral}{"{}||\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00552}00552\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00553}00553\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00554}00554\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00555}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_adb44d7e19f7ca9bcb52353fbc3c482e3}{00555}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_adb44d7e19f7ca9bcb52353fbc3c482e3}{write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ sep\ =\ \textcolor{charliteral}{'\ '})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00556}00556\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00557}00557\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00558}00558\ \ \ \ \ \ \ \ \ out\ <<\ std::setprecision(precision)\ <<\ std::defaultfloat;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00559}00559\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00560}00560\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ storage[idx(i,j)]\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00566}00566\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00567}00567\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00568}00568\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00569}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa87c7de315e95bb3151ca5df461fc2f4}{00569}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa87c7de315e95bb3151ca5df461fc2f4}{read}}(std::fstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00570}00570\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00571}00571\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00572}00572\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00573}00573\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>\ storage[idx(i,j)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00575}00575\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00576}00576\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00577}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af2ee259302d3e9c9e3e2c06bad31dd48}{00577}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_af2ee259302d3e9c9e3e2c06bad31dd48}{writeBinary}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00578}00578\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00579}00579\ \ \ \ \ \ \ \ \ std::vector<double>\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00582}00582\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{double})storage[idx(i,j)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00584}00584\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00585}00585\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00586}00586\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00587}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_addbcfbb31d33fc3d0e4b4f96a50e3730}{00587}}\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_addbcfbb31d33fc3d0e4b4f96a50e3730}{writeCompressed}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00588}00588\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00589}00589\ \ \ \ \ \ \ \ \ std::vector<float>\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00590}00590\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00591}00591\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00592}00592\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00593}00593\ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back((\textcolor{keywordtype}{float})storage[idx(i,j)]);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00594}00594\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00595}00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00596}00596\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00597}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a2fd7ac457142dd32461f342cbd7c1b44}{00597}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a2fd7ac457142dd32461f342cbd7c1b44}{read}}(std::stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00598}00598\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00599}00599\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00600}00600\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00601}00601\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>\ storage[idx(i,j)];}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00603}00603\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00604}00604\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00605}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{00605}}\ \ \ \ \ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a85be92650d356ed3250fe79a50ae04a9}{data}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00606}00606\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00607}00607\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage.data();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00608}00608\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00609}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a113faaaee02d83ecc2c8b3993ef38e93}{00609}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a113faaaee02d83ecc2c8b3993ef38e93}{data}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00610}00610\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00611}00611\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storage.data();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00612}00612\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00613}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6bd25de17eae46e2c45e0fdc1816a6e9}{00613}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a6bd25de17eae46e2c45e0fdc1816a6e9}{UnitTensor}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00614}00614\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00615}00615\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ unity;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00616}00616\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ unity.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ae0d517feb5b6547544d5e6e895c80be9}{set\_to\_unity}}();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00617}00617\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00618}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ac242b3620cd5d300c6ef453210b113c6}{00618}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_ac242b3620cd5d300c6ef453210b113c6}{ZeroTensor}}()}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00619}00619\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00620}00620\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3}{dMatrix3x3}}\ myZeroTensor;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00621}00621\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ myZeroTensor.\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_aa700266bacf759b8654646af58a448fd}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00622}00622\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00623}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a25e78ac783fab5b5f892866b60e9cb76}{00623}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a25e78ac783fab5b5f892866b60e9cb76}{sizeX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00624}00624\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00625}00625\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3u;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00626}00626\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00627}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a9caa12bc844ada0f6cd271136b9b2236}{00627}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a9caa12bc844ada0f6cd271136b9b2236}{sizeY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00628}00628\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00629}00629\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3u;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00630}00630\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00631}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a591ee0cfc9791c1218c53da065f078a3}{00631}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a591ee0cfc9791c1218c53da065f078a3}{p\_norm}}(\textcolor{keywordtype}{double}\ p)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00632}00632\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00633}00633\ \ \ \ \ \ \ \ \ \textcolor{comment}{//NOTE\ this\ is\ the\ simpler\ "{}entry-\/wise"{}\ norm\ and\ not\ supremum\ version}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00634}00634\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00635}00635\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ sizeX();\ i++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00636}00636\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ sizeY();\ j++)}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00637}00637\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00638}00638\ \ \ \ \ \ \ \ \ \ \ \ \ norm\ +=\ std::pow(std::abs(storage[idx(i,j)]),p);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00639}00639\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00640}00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(norm,\ 1.0/p);}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00641}00641\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00642}00642\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00643}00643\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00644}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4c0b7db773ab47ddab4553b68d232865}{00644}}\ \ \ \ \ std::array<double,9>\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a4c0b7db773ab47ddab4553b68d232865}{storage}};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00645}\mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a634fda132fc7454fc408bcbc1314bca2}{00645}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1dMatrix3x3_a634fda132fc7454fc408bcbc1314bca2}{idx}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00646}00646\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00647}00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3*x\ +\ y;}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00648}00648\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00649}00649\ \};}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00650}00650\ }
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00651}00651\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{dMatrix3x3_8h_source_l00652}00652\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DMATRIX3X3\_H}}
+
+\end{DoxyCode}

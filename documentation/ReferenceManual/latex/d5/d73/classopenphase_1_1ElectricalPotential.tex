@@ -1,0 +1,1219 @@
+\doxysection{openphase\+::Electrical\+Potential Class Reference}
+\hypertarget{classopenphase_1_1ElectricalPotential}{}\label{classopenphase_1_1ElectricalPotential}\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+
+
+{\ttfamily \#include "{}Electrical\+Potential.\+h"{}}
+
+Inheritance diagram for openphase\+::Electrical\+Potential\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d73/classopenphase_1_1ElectricalPotential}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a2e121d49f94d0f26f6049351503c0aaa}{Electrical\+Potential}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af79665325595701bba9d589d62be8196}{\texorpdfstring{$\sim$}{\string~}\+Electrical\+Potential}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a45b3d2ce6faf711403e4f9a591c06221}{Electrical\+Potential}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ac0368e52f1e9835ddd5342b07fea228e}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em allocating memory and reading parameters from the \doxylink{classopenphase_1_1Settings}{Settings} object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a073ef9823f1ac1f8b4fad358d630859d}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em reading the input parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abd66d54961a2d3fa6813193becf39f8e}{QXYZ}} (void)
+\begin{DoxyCompactList}\small\item\em reading the input parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a69c75fc474f5267a7698c0732d3d3187}{Solve}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx, \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em generates the wave vector, copied from the spectral solver \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_acc554359deddd0b510db41a032fa87aa}{Set\+Electrode\+Charges}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx)
+\begin{DoxyCompactList}\small\item\em solving the Poisson equation \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5605772e292b11bb19a4e209321c86c6}{Charge\+Density}} (int i, int j, int k, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a456f6a85a379d35979c6c32090cd5b92}{Calculate\+Electrode\+Interface\+Volumes}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em assumes the electrode charge sitting in the middle of the electrode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a3432816e02a99a53a83b3ce2e4e927fe}{Write\+Charge\+Density\+VTK}} (const int t\+Step, const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx)
+\begin{DoxyCompactList}\small\item\em calculates the volume of the electrodes\textquotesingle{} interfaces \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_acfb3ad3de48e0907a733fb4a07ee2f2c}{Write\+Potential\+VTK}} (const int t\+Step, const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings) const
+\begin{DoxyCompactList}\small\item\em Writes the charge density into a \doxylink{structopenphase_1_1VTK}{VTK} file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}}
+\begin{DoxyCompactList}\small\item\em Writes the electrical potential into a \doxylink{structopenphase_1_1VTK}{VTK} file. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1electrode}{electrode}} $>$ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ae36c4bb9e1858b7d48a80fe244c384ca}{Eps\+Inv}}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em inverse of the (electrostatic) permittivity in vacuum \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}{RHS}}
+\begin{DoxyCompactList}\small\item\em Wave vector. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}{ft\+RHS}}
+\begin{DoxyCompactList}\small\item\em right hand side of the Poisson equation \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}{rl\+Potential}}
+\begin{DoxyCompactList}\small\item\em fourier transormed RHS \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ft\+Potential}}
+\begin{DoxyCompactList}\small\item\em fourier transformed electrical potential \end{DoxyCompactList}\item 
+fftw\+\_\+plan \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb}{Forward\+Plan}}
+\begin{DoxyCompactList}\small\item\em fourier transformed electrical potential \end{DoxyCompactList}\item 
+fftw\+\_\+plan \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4}{Backward\+Plan}}
+\begin{DoxyCompactList}\small\item\em Forward FFT Plans. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adb388c7aced169aa4e6126ecf4882780}{Elementar\+Charges}}
+\begin{DoxyCompactList}\small\item\em Backward FFT Plans. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af1ce0e4521efda31be3df60db3d3671e}{Molar\+Charge}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}
+\begin{DoxyCompactList}\small\item\em Molar charges for the components. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}{Size}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ft\+Size}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af5862f7cd16f6659cc069a8725990870}{Ncomp}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a1e94f1c0106cc05a2cf972d48745c344}{Nphases}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ae5bd1fa867dff9ba5a145b36bde1c34c}{Cathode\+Charge}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ac758df58dd25e3f25c8721317779be4a}{Anode\+Charge}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00051}{51}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a2e121d49f94d0f26f6049351503c0aaa}\label{classopenphase_1_1ElectricalPotential_a2e121d49f94d0f26f6049351503c0aaa} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ElectricalPotential@{ElectricalPotential}}
+\index{ElectricalPotential@{ElectricalPotential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ElectricalPotential()}{ElectricalPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Electrical\+Potential\+::\+Electrical\+Potential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00055}{55}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_af79665325595701bba9d589d62be8196}\label{classopenphase_1_1ElectricalPotential_af79665325595701bba9d589d62be8196} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!````~ElectricalPotential@{\texorpdfstring{$\sim$}{\string~}ElectricalPotential}}
+\index{````~ElectricalPotential@{\texorpdfstring{$\sim$}{\string~}ElectricalPotential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ElectricalPotential()}{\string~ElectricalPotential()}}
+{\footnotesize\ttfamily openphase\+::\+Electrical\+Potential\+::\texorpdfstring{$\sim$}{\string~}\+Electrical\+Potential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}})}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//fftw\_free(ftRHS);}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//fftw\_free(ftPotential);}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//fftw\_free(RHS);}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//fftw\_free(rlPotential);}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}{ftRHS}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ftPotential}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}{RHS}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}{rlPotential}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ fftw\_destroy\_plan(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb}{ForwardPlan}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ fftw\_destroy\_plan(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4}{BackwardPlan}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[0];}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[1];}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[2];}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ op\_fftw\_mpi\_cleanup();}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ fftw\_cleanup\_threads();}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a45b3d2ce6faf711403e4f9a591c06221}\label{classopenphase_1_1ElectricalPotential_a45b3d2ce6faf711403e4f9a591c06221} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ElectricalPotential@{ElectricalPotential}}
+\index{ElectricalPotential@{ElectricalPotential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ElectricalPotential()}{ElectricalPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Electrical\+Potential\+::\+Electrical\+Potential (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ac0368e52f1e9835ddd5342b07fea228e}{Initialize}}(locSettings);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a456f6a85a379d35979c6c32090cd5b92}\label{classopenphase_1_1ElectricalPotential_a456f6a85a379d35979c6c32090cd5b92} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!CalculateElectrodeInterfaceVolumes@{CalculateElectrodeInterfaceVolumes}}
+\index{CalculateElectrodeInterfaceVolumes@{CalculateElectrodeInterfaceVolumes}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{CalculateElectrodeInterfaceVolumes()}{CalculateElectrodeInterfaceVolumes()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Calculate\+Electrode\+Interface\+Volumes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})}
+
+
+
+assumes the electrode charge sitting in the middle of the electrode 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00247\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ eIdx\ =\ 0;\ eIdx\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}};\ eIdx++)}
+\DoxyCodeLine{00249\ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[eIdx].interfaceVolume\ =\ 0;}
+\DoxyCodeLine{00251\ \ \ \ \ \}\textcolor{comment}{//electrodes\ loop}}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ eIdx\ =\ 0;\ eIdx\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}};\ eIdx++)}
+\DoxyCodeLine{00253\ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[eIdx].interfaceVolume\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(eIdx+1);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \}\textcolor{comment}{//electrodes\ loop}}
+\DoxyCodeLine{00262\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a5605772e292b11bb19a4e209321c86c6}\label{classopenphase_1_1ElectricalPotential_a5605772e292b11bb19a4e209321c86c6} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ChargeDensity@{ChargeDensity}}
+\index{ChargeDensity@{ChargeDensity}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ChargeDensity()}{ChargeDensity()}}
+{\footnotesize\ttfamily double openphase\+::\+Electrical\+Potential\+::\+Charge\+Density (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+assumes that there is no interface between electrodes
+
+13 atoms in a molecule of PC, 8.\+472e-\/5 mol/m\texorpdfstring{$^\wedge$}{\string^}3
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206\ \{}
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ \ \ \ for(int\ eIdx\ =\ 0;\ eIdx\ <\ Nelectrodes;\ eIdx++)}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(i\ ==\ electrodes[eIdx].position[0]\ and}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ j\ ==\ electrodes[eIdx].position[1]\ and}}
+\DoxyCodeLine{00211\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ k\ ==\ electrodes[eIdx].position[2])}}
+\DoxyCodeLine{00212\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ return\ electrodes[eIdx].charge;}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Index\ =\ -\/1;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ eIdx\ =\ 0;\ eIdx\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}};\ eIdx++)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(eIdx+1)\ >\ 0)\ Index=eIdx;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{comment}{//\ \ \ \ \ \ \ \ cout<<"{}charge\ at\ "{}<<i<<"{}\ "{}<<j<<"{}\ "{}<<k<<"{}\ is:\ "{}}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ <<electrodes[Index].charge/**Phase.Fields(i,j,k)[Index]/}}
+\DoxyCodeLine{00226\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ electrodes[Index].interfaceVolume\ +}}
+\DoxyCodeLine{00227\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cx.phase(i,j,k,0)*Phase.Fields(i,j,k)[0]*Faraday/(13.*8.472e-\/5)*/}}
+\DoxyCodeLine{00228\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ <<endl;}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Index<0)}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ message;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Electrode\ Index\ not\ found!"{}}\ <<\ endl;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(message.str(),\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ChargeDensity()"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ exit(13);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[Index].charge*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(Index+1)/}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[Index].interfaceVolume\ +}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cx.MoleFractions(i,j,k,\{0,0\})*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(0)*\mbox{\hyperlink{structopenphase_1_1PhysicalConstants_ac2eadfc42a6dd9a98b066137e488e2b1}{PhysicalConstants::Faraday}}/(13.0*8.472e-\/5);}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cx.MoleFractions(i,j,k,\{0,0\})*\mbox{\hyperlink{structopenphase_1_1PhysicalConstants_ac2eadfc42a6dd9a98b066137e488e2b1}{PhysicalConstants::Faraday}}/(13.0*8.472e-\/5);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_ac0368e52f1e9835ddd5342b07fea228e}\label{classopenphase_1_1ElectricalPotential_ac0368e52f1e9835ddd5342b07fea228e} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}ElectricalPotential"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ae36c4bb9e1858b7d48a80fe244c384ca}{EpsInv}}\ \ =\ 1.0/8.85418781762e-\/12;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ae5bd1fa867dff9ba5a145b36bde1c34c}{CathodeCharge}}\ =\ 0.0;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ac758df58dd25e3f25c8721317779be4a}{AnodeCharge}}\ \ \ =\ 0.0;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}{Size}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}\ \ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}*\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af5862f7cd16f6659cc069a8725990870}{Ncomp}}\ \ \ =\ locSettings.Ncomp;}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a1e94f1c0106cc05a2cf972d48745c344}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[0]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}];}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[1]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}];}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[2]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}];}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abd66d54961a2d3fa6813193becf39f8e}{QXYZ}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}{ftRHS}}\ \ \ \ \ \ \ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}];}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ftPotential}}\ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}}];}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}{RHS}}\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}{Size}}];}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}{rlPotential}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}{Size}}];}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb}{ForwardPlan}}\ \ =\ fftw\_plan\_dft\_r2c\_3d(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}},\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}{RHS}},\textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}\ (\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}{ftRHS}}),FFTW\_ESTIMATE);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4}{BackwardPlan}}\ =\ fftw\_plan\_dft\_c2r\_3d(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}},\ \textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}\ (\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ftPotential}}),\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}{rlPotential}},\ FFTW\_ESTIMATE);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ PotentialDataDir\ \ \ \ \ =\ "{}PotentialData/"{};}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ \ \ \ int\ ignore\ =\ system(string("{}mkdir\ "{}\ +\ PotentialDataDir).c\_str());}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}},\ Bcells);}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ Rho.Allocate(Dimensions,\ Bcells);}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ \ \ \ MolarVolume.Allocate(nPhases,\ nComp);}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ \ \ \ NuRef.Allocate(nPhases,\ nComp);}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ \ \ \ RhoRef.Allocate(nPhases,\ nComp);}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ \ \ \ Lattice.Allocate(nPhases,\ nComp);}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_abd66d54961a2d3fa6813193becf39f8e}\label{classopenphase_1_1ElectricalPotential_abd66d54961a2d3fa6813193becf39f8e} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!QXYZ@{QXYZ}}
+\index{QXYZ@{QXYZ}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{QXYZ()}{QXYZ()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+QXYZ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reading the input parameters 
+
+copied from the spectral solver
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00277}{277}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00278\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{double}\ DPi\_nX\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/double(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}});}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{double}\ DPi\_nY\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/double(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}});}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{double}\ DPi\_nZ\ =\ 2.0*\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/double(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ ;\ i++)}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ ;\ j++)}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}};\ k++)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}\ =\ k\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1fa303d146c944d6358d269cd64634c0}{Nz2}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[0][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ =\ DPi\_nX*(i*(i\ <=\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/i)*(i\ >\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2))/\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[1][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ =\ DPi\_nY*(j*(j\ <=\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/j)*(j\ >\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2))/\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[2][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ =\ DPi\_nZ*(k*(k\ <=\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/k)*(k\ >\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2))/\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Read@{Read}}
+\index{Read@{Read}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12}\label{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+allocating memory and reading parameters from the \doxylink{classopenphase_1_1Settings}{Settings} object 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}ElectricalPotential\ input"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00130\ \ \ \ \ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00133\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12}{ReadInput}}(data);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a073ef9823f1ac1f8b4fad358d630859d}\label{classopenphase_1_1ElectricalPotential_a073ef9823f1ac1f8b4fad358d630859d} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+reading the input parameters 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Nelectrodes"{}});}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}.resize(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}});}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}{Nelectrodes}};\ i++)}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[i].index\ =\ i+1;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[i].charge\ =\ 0;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[i].interfaceVolume\ =\ 0.0;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ dir\ =\ 0;\ dir\ <\ 3;\ dir++)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[i].position[dir]\ =\ 0;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ converter\ <<\ \textcolor{stringliteral}{"{}CntElectr"{}}\ <<\ i+1;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}{electrodes}}[i].counterElectrode\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ converter.str())-\/1;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ q\ =\ 0\ ;\ q\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af5862f7cd16f6659cc069a8725990870}{Ncomp}};\ q++)}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ converter\ <<\ \textcolor{stringliteral}{"{}Z"{}}\ <<\ q;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adb388c7aced169aa4e6126ecf4882780}{ElementarCharges}}.push\_back(\mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ converter.str()));}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_af1ce0e4521efda31be3df60db3d3671e}{MolarCharge}}.push\_back(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adb388c7aced169aa4e6126ecf4882780}{ElementarCharges}}[q]\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_ac2eadfc42a6dd9a98b066137e488e2b1}{PhysicalConstants::Faraday}});\ \textcolor{comment}{//\ [C/mol]}}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}\label{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Remeshes the storages \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Temperature_a4f468ad73bf630f66285e07bffac1180}{openphase\+::\+Temperature}}, \mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a6a31593f97b24ef93c92263e4b494d6c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{openphase\+::\+Elasticity\+Solver\+Spectral}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a555343a7fc792704f3327dcb175c13c0}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1EquilibriumPartitionDiffusionBinary_a4d423f214e0007c6e5687a0f57639f52}{openphase\+::\+Equilibrium\+Partition\+Diffusion\+Binary}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a4e6f273f5ed0752225c0060c9e044a18}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a1221b1fa875c250991ae2cd0e3ea97af}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{openphase\+::\+Heat\+Diffusion}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_afc0b700a4304af3f7b4ba00a8ace8c7d}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a3ff6f0d72311e580559dd1251806d209}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a0f305e969f2b5970684ccf9f8752a669}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{openphase\+::\+Velocities}}, and \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl_af3aabadeb9bb14d37395dd1ff056e2bc}{openphase\+::\+Elasticity\+Solver\+Spectral\+Impl}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00088}{88}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (void)\ newNx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ (void)\ newNy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ (void)\ newNz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_acc554359deddd0b510db41a032fa87aa}\label{classopenphase_1_1ElectricalPotential_acc554359deddd0b510db41a032fa87aa} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!SetElectrodeCharges@{SetElectrodeCharges}}
+\index{SetElectrodeCharges@{SetElectrodeCharges}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{SetElectrodeCharges()}{SetElectrodeCharges()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Set\+Electrode\+Charges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx }\end{DoxyParamCaption})}
+
+
+
+solving the Poisson equation 
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a69c75fc474f5267a7698c0732d3d3187}\label{classopenphase_1_1ElectricalPotential_a69c75fc474f5267a7698c0732d3d3187} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Solve@{Solve}}
+\index{Solve@{Solve}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx,  }\item[{\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+generates the wave vector, copied from the spectral solver 
+
+\texorpdfstring{$^\wedge$}{\string^}phi = -\/ \texorpdfstring{$^\wedge$}{\string^}rho / (i\texorpdfstring{$\ast$}{*}q\texorpdfstring{$\ast$}{*}i\texorpdfstring{$\ast$}{*}q)
+
+Boundary Conditions (periodic only)\+:
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00296}{296}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00297\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a456f6a85a379d35979c6c32090cd5b92}{CalculateElectrodeInterfaceVolumes}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}{RHS}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5605772e292b11bb19a4e209321c86c6}{ChargeDensity}}(i,\ j,\ k,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ Cx);\textcolor{comment}{//Rho(i+1,j+1,k+1);\ //sin(i*6.28/Nx);}}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ fftw\_execute(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb}{ForwardPlan}});}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}\ =\ 0;\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}{ftSize}};\ \mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}++)}
+\DoxyCodeLine{00309\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Q\_sqr\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[0][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]*\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[0][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[1][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]*\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[1][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[2][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]*\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}{Q}}[2][\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}];}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Q\_sqr\ ==\ 0)}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ftPotential}}[\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ =\ 0.0;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}{ftPotential}}[\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}{ftRHS}}[\mbox{\hyperlink{namespaceopenphase_a631078f50f3da2bf1138bc0182054010ab71eaef9d6f6d31e69a4401fc00b737c}{XYZ}}]\ /\ Q\_sqr\ *\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_ae36c4bb9e1858b7d48a80fe244c384ca}{EpsInv}};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ fftw\_execute(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4}{BackwardPlan}});}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};\ i++)}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}};\ j++)}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}};\ k++)}
+\DoxyCodeLine{00327\ \ \ \ \ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}{rlPotential}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]/\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}{Size}};}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00332\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}});}
+\DoxyCodeLine{00333\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}});}
+\DoxyCodeLine{00334\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}});}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{comment}{//\ End\ Boundary\ Conditions}}
+\DoxyCodeLine{00336\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Write@{Write}}
+\index{Write@{Write}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_a3432816e02a99a53a83b3ce2e4e927fe}\label{classopenphase_1_1ElectricalPotential_a3432816e02a99a53a83b3ce2e4e927fe} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!WriteChargeDensityVTK@{WriteChargeDensityVTK}}
+\index{WriteChargeDensityVTK@{WriteChargeDensityVTK}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{WriteChargeDensityVTK()}{WriteChargeDensityVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Write\+Charge\+Density\+VTK (\begin{DoxyParamCaption}\item[{const int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx }\end{DoxyParamCaption})}
+
+
+
+calculates the volume of the electrodes\textquotesingle{} interfaces 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00339\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a456f6a85a379d35979c6c32090cd5b92}{CalculateElectrodeInterfaceVolumes}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00343\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \textcolor{stringliteral}{"{}ChargeDensity\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00344\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}ChargeDensity"{}},\ [\textcolor{keyword}{this},\&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\&Cx](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_a5605772e292b11bb19a4e209321c86c6}{ChargeDensity}}(i,\ j,\ k,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ Cx)\textcolor{comment}{/*Rho(i,j,k)*/};\}\});}
+\DoxyCodeLine{00345\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \}\ \ \textcolor{comment}{//\ \ WriteVTK}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricalPotential_acfb3ad3de48e0907a733fb4a07ee2f2c}\label{classopenphase_1_1ElectricalPotential_acfb3ad3de48e0907a733fb4a07ee2f2c} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!WritePotentialVTK@{WritePotentialVTK}}
+\index{WritePotentialVTK@{WritePotentialVTK}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{WritePotentialVTK()}{WritePotentialVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Electrical\+Potential\+::\+Write\+Potential\+VTK (\begin{DoxyParamCaption}\item[{const int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings }\end{DoxyParamCaption}) const}
+
+
+
+Writes the charge density into a \doxylink{structopenphase_1_1VTK}{VTK} file. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{ElectricalPotential_8cpp_source}{Electrical\+Potential.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00350\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00352\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \textcolor{stringliteral}{"{}ElectricalPotential\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00353\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}ElectricalPotential"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}{Potential}}(i,j,k);\}\});}
+\DoxyCodeLine{00354\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{00355\ \}\ \ \textcolor{comment}{//\ \ WriteVTK}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_ac758df58dd25e3f25c8721317779be4a}\label{classopenphase_1_1ElectricalPotential_ac758df58dd25e3f25c8721317779be4a} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!AnodeCharge@{AnodeCharge}}
+\index{AnodeCharge@{AnodeCharge}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{AnodeCharge}{AnodeCharge}}
+{\footnotesize\ttfamily double openphase\+::\+Electrical\+Potential\+::\+Anode\+Charge\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00105}{105}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4}\label{classopenphase_1_1ElectricalPotential_a4b5ee594ae2fcdcf34815fe7c310bfe4} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!BackwardPlan@{BackwardPlan}}
+\index{BackwardPlan@{BackwardPlan}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{BackwardPlan}{BackwardPlan}}
+{\footnotesize\ttfamily fftw\+\_\+plan openphase\+::\+Electrical\+Potential\+::\+Backward\+Plan\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Forward FFT Plans. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00091}{91}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_ae5bd1fa867dff9ba5a145b36bde1c34c}\label{classopenphase_1_1ElectricalPotential_ae5bd1fa867dff9ba5a145b36bde1c34c} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!CathodeCharge@{CathodeCharge}}
+\index{CathodeCharge@{CathodeCharge}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{CathodeCharge}{CathodeCharge}}
+{\footnotesize\ttfamily double openphase\+::\+Electrical\+Potential\+::\+Cathode\+Charge\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00104}{104}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2}\label{classopenphase_1_1ElectricalPotential_af62435cdba1f904b617266e10eb672b2} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!electrodes@{electrodes}}
+\index{electrodes@{electrodes}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{electrodes}{electrodes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1electrode}{electrode}}$>$ openphase\+::\+Electrical\+Potential\+::electrodes}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00076}{76}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_adb388c7aced169aa4e6126ecf4882780}\label{classopenphase_1_1ElectricalPotential_adb388c7aced169aa4e6126ecf4882780} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ElementarCharges@{ElementarCharges}}
+\index{ElementarCharges@{ElementarCharges}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ElementarCharges}{ElementarCharges}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ openphase\+::\+Electrical\+Potential\+::\+Elementar\+Charges\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Backward FFT Plans. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00094}{94}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_ae36c4bb9e1858b7d48a80fe244c384ca}\label{classopenphase_1_1ElectricalPotential_ae36c4bb9e1858b7d48a80fe244c384ca} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!EpsInv@{EpsInv}}
+\index{EpsInv@{EpsInv}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{EpsInv}{EpsInv}}
+{\footnotesize\ttfamily double openphase\+::\+Electrical\+Potential\+::\+Eps\+Inv}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00079}{79}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb}\label{classopenphase_1_1ElectricalPotential_a870ffbab66e190d98daa4ce2fe601acb} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ForwardPlan@{ForwardPlan}}
+\index{ForwardPlan@{ForwardPlan}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ForwardPlan}{ForwardPlan}}
+{\footnotesize\ttfamily fftw\+\_\+plan openphase\+::\+Electrical\+Potential\+::\+Forward\+Plan\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+fourier transformed electrical potential 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00090}{90}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98}\label{classopenphase_1_1ElectricalPotential_a5ec786b767d28a9159250dcbb464ad98} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ftPotential@{ftPotential}}
+\index{ftPotential@{ftPotential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ftPotential}{ftPotential}}
+{\footnotesize\ttfamily std\+::complex$<$double$>$\texorpdfstring{$\ast$}{*} openphase\+::\+Electrical\+Potential\+::ft\+Potential\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+fourier transformed electrical potential 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00089}{89}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d}\label{classopenphase_1_1ElectricalPotential_abfd78619249a9abccf3bf6ee2a20c38d} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ftRHS@{ftRHS}}
+\index{ftRHS@{ftRHS}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ftRHS}{ftRHS}}
+{\footnotesize\ttfamily std\+::complex$<$double$>$\texorpdfstring{$\ast$}{*} openphase\+::\+Electrical\+Potential\+::ft\+RHS\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+right hand side of the Poisson equation 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00087}{87}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca}\label{classopenphase_1_1ElectricalPotential_a25b4cb02a3f159e0696ee7ae22de63ca} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!ftSize@{ftSize}}
+\index{ftSize@{ftSize}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{ftSize}{ftSize}}
+{\footnotesize\ttfamily int openphase\+::\+Electrical\+Potential\+::ft\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00100}{100}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261}\label{classopenphase_1_1ElectricalPotential_a4256a78ab3b1b9e2ced49e534a04a261} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Electrical\+Potential\+::\+Grid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Molar charges for the components. 
+
+Simulation grid parameters 
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00098}{98}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1ElectricalPotential_a66e96d394ef317d8791a4a1a82492b12}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_af1ce0e4521efda31be3df60db3d3671e}\label{classopenphase_1_1ElectricalPotential_af1ce0e4521efda31be3df60db3d3671e} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!MolarCharge@{MolarCharge}}
+\index{MolarCharge@{MolarCharge}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{MolarCharge}{MolarCharge}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Electrical\+Potential\+::\+Molar\+Charge\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00095}{95}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_af5862f7cd16f6659cc069a8725990870}\label{classopenphase_1_1ElectricalPotential_af5862f7cd16f6659cc069a8725990870} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Ncomp@{Ncomp}}
+\index{Ncomp@{Ncomp}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Ncomp}{Ncomp}}
+{\footnotesize\ttfamily int openphase\+::\+Electrical\+Potential\+::\+Ncomp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00101}{101}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1}\label{classopenphase_1_1ElectricalPotential_a837e8c9af9aac9464f82b47edc52b0a1} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Nelectrodes@{Nelectrodes}}
+\index{Nelectrodes@{Nelectrodes}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Nelectrodes}{Nelectrodes}}
+{\footnotesize\ttfamily int openphase\+::\+Electrical\+Potential\+::\+Nelectrodes}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00077}{77}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a1e94f1c0106cc05a2cf972d48745c344}\label{classopenphase_1_1ElectricalPotential_a1e94f1c0106cc05a2cf972d48745c344} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily int openphase\+::\+Electrical\+Potential\+::\+Nphases\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00102}{102}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe}\label{classopenphase_1_1ElectricalPotential_adf9f8347c6c4e1696f1fb63b89955dbe} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Potential@{Potential}}
+\index{Potential@{Potential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Potential}{Potential}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double, 0$>$ openphase\+::\+Electrical\+Potential\+::\+Potential}
+
+
+
+Writes the electrical potential into a \doxylink{structopenphase_1_1VTK}{VTK} file. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00074}{74}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f}\label{classopenphase_1_1ElectricalPotential_ad66d20bd3c4abc94af7b08fd6c5f5d0f} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Q@{Q}}
+\index{Q@{Q}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily double\texorpdfstring{$\ast$}{*} openphase\+::\+Electrical\+Potential\+::Q\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+inverse of the (electrostatic) permittivity in vacuum 
+
+objects for Fourier methode 
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00085}{85}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!readable@{readable}}
+\index{readable@{readable}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03}\label{classopenphase_1_1ElectricalPotential_a44cf1bfa92f44504adf5370bda9a3f03} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!RHS@{RHS}}
+\index{RHS@{RHS}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{RHS}{RHS}}
+{\footnotesize\ttfamily double\texorpdfstring{$\ast$}{*} openphase\+::\+Electrical\+Potential\+::\+RHS\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wave vector. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00086}{86}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3}\label{classopenphase_1_1ElectricalPotential_a6ad0b7d4180d117ae5464e1bb1ad77f3} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!rlPotential@{rlPotential}}
+\index{rlPotential@{rlPotential}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{rlPotential}{rlPotential}}
+{\footnotesize\ttfamily double\texorpdfstring{$\ast$}{*} openphase\+::\+Electrical\+Potential\+::rl\+Potential\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+fourier transormed RHS 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00088}{88}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade}\label{classopenphase_1_1ElectricalPotential_aab5b679a35e3b1d0e4338c87a45bdade} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!Size@{Size}}
+\index{Size@{Size}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily int openphase\+::\+Electrical\+Potential\+::\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricalPotential_8h_source_l00100}{100}} of file \mbox{\hyperlink{ElectricalPotential_8h_source}{Electrical\+Potential.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::ElectricalPotential@{openphase::ElectricalPotential}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::ElectricalPotential@{openphase::ElectricalPotential}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ElectricalPotential_8h}{Electrical\+Potential.\+h}}\item 
+\mbox{\hyperlink{ElectricalPotential_8cpp}{Electrical\+Potential.\+cpp}}\end{DoxyCompactItemize}

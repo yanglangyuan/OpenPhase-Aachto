@@ -1,0 +1,951 @@
+\doxysection{openphase\+::Mass\+Density Class Reference}
+\hypertarget{classopenphase_1_1MassDensity}{}\label{classopenphase_1_1MassDensity}\index{openphase::MassDensity@{openphase::MassDensity}}
+
+
+\texorpdfstring{$<$}{<} Stores the mass densities of phases in each point.  
+
+
+
+
+{\ttfamily \#include "{}Mass\+Density.\+h"{}}
+
+Inheritance diagram for openphase\+::Mass\+Density\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/d85/classopenphase_1_1MassDensity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1MassDensity_a4e492614a6734528d916b403c503b212}{Mass\+Density}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1MassDensity_ac0b66295b6aecb89b34ef6a0e3d488b1}{Mass\+Density}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Initializes storages, sets internal variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{Read\+Input}} (const std\+::string File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads input values from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a0b1ef4d872c5e4a93219ef223a85adfd}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads input values from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a9688b1a92150b699b3ccdae88374b527}{Set}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx, \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx)
+\begin{DoxyCompactList}\small\item\em Sets the density depending on composition and temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a37d780e861e4d2bb824f9c3be312972d}{Set\+Initial}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}})
+\begin{DoxyCompactList}\small\item\em Sets initial density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a10081d61c86e1fc9f9ee8bd44560f8bf}{Write\+VTK}} (const int t\+Step, const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int precision=16)
+\begin{DoxyCompactList}\small\item\em Writes density in \doxylink{structopenphase_1_1VTK}{VTK} format. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const override
+\begin{DoxyCompactList}\small\item\em Writes the raw composition into a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step) override
+\begin{DoxyCompactList}\small\item\em Reads the raw composition from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Sets the boundary conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{Move\+Frame}} (const int di, const int dj, const int dk, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Shifts the data on the storage by di, dj and dk in x, y and z directions correspondingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Remesh the storage while keeping the data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1MassDensity_a6b6243e4919b13b64e1fed14af7a368a}{Print\+Point\+Statistics}} (int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em Prints to screen density in a given point (x, y, z) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1MassDensity}{Mass\+Density}} \& \mbox{\hyperlink{classopenphase_1_1MassDensity_a60278fefb746c31613eb0ffc4ca08bac}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1MassDensity}{Mass\+Density}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy operator for Density class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of thermodynamic phases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}
+\begin{DoxyCompactList}\small\item\em Phase densities storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}
+\begin{DoxyCompactList}\small\item\em Total density storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}
+\begin{DoxyCompactList}\small\item\em Initial density of all phases. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores the mass densities of phases in each point. 
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00040}{40}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1MassDensity_a4e492614a6734528d916b403c503b212}\label{classopenphase_1_1MassDensity_a4e492614a6734528d916b403c503b212} 
+\index{openphase::MassDensity@{openphase::MassDensity}!MassDensity@{MassDensity}}
+\index{MassDensity@{MassDensity}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{MassDensity()}{MassDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Mass\+Density\+::\+Mass\+Density (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00043}{43}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_ac0b66295b6aecb89b34ef6a0e3d488b1}\label{classopenphase_1_1MassDensity_ac0b66295b6aecb89b34ef6a0e3d488b1} 
+\index{openphase::MassDensity@{openphase::MassDensity}!MassDensity@{MassDensity}}
+\index{MassDensity@{MassDensity}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{MassDensity()}{MassDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Mass\+Density\+::\+Mass\+Density (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00044}{44}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b}{Initialize}}(locSettings);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::MassDensity@{openphase::MassDensity}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::MassDensity@{openphase::MassDensity}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b}\label{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes storages, sets internal variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Density"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\},\ Bcells);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}},\ Bcells);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ locSettings.AddForAdvection(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00055\ \ \ \ \ locSettings.AddForRemeshing(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00056\ \ \ \ \ locSettings.AddForReading(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}\label{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180} 
+\index{openphase::MassDensity@{openphase::MassDensity}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{di,  }\item[{const int}]{dj,  }\item[{const int}]{dk,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shifts the data on the storage by di, dj and dk in x, y and z directions correspondingly. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ xBeg\ =\ (dx\ >=\ 0)\ +\ (dx\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ -\/\ 1;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ xEnd\ =\ (dx\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ +\ (dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ xInc\ =\ 1\ -\/\ 2*(dx\ <\ 0);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ yBeg\ =\ (dy\ >=\ 0)\ +\ (dy\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ -\/\ 1;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ yEnd\ =\ (dy\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ +\ (dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ yInc\ =\ 1\ -\/\ 2*(dy\ <\ 0);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{int}\ zBeg\ =\ (dz\ >=\ 0)\ +\ (dz\ <\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ -\/\ 1;}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ zEnd\ =\ (dz\ >=\ 0)*(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ +\ (dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ zInc\ =\ 1\ -\/\ 2*(dz\ <\ 0);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ xBeg;\ ((dx\ >=\ 0)\ and\ (i\ <=\ xEnd))\ or\ ((dx\ <\ 0)\ and\ (i\ >=\ xEnd));\ i\ +=\ xInc)}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ yBeg;\ ((dy\ >=\ 0)\ and\ (j\ <=\ yEnd))\ or\ ((dy\ <\ 0)\ and\ (j\ >=\ yEnd));\ j\ +=\ yInc)}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ zBeg;\ ((dz\ >=\ 0)\ and\ (k\ <=\ zEnd))\ or\ ((dz\ <\ 0)\ and\ (k\ >=\ zEnd));\ k\ +=\ zInc)}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i\ +\ dx,\ j\ +\ dy,\ k\ +\ dz);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,\ j,\ k)\ =\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i\ +\ dx,\ j\ +\ dy,\ k\ +\ dz);}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Frame\ moved."{}});}
+\DoxyCodeLine{00181\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a60278fefb746c31613eb0ffc4ca08bac}\label{classopenphase_1_1MassDensity_a60278fefb746c31613eb0ffc4ca08bac} 
+\index{openphase::MassDensity@{openphase::MassDensity}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1MassDensity}{Mass\+Density}} \& openphase\+::\+Mass\+Density\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1MassDensity}{Mass\+Density}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Copy operator for Density class. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00269}{269}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00270\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{comment}{//\ protect\ against\ self-\/assignment\ and\ copy\ of\ unitialized\ object}}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs\ and\ rhs.thisclassname\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00273\ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ rhs.thisclassname;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}\ =\ rhs.Grid;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\ =\ rhs.Nphases;}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_aaa12126f0967bcdfd73041adbced0d31}{IsNotAllocated}}())}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\},\ rhs.Phase.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}());}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}},\ rhs.Total.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}}());}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\});}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a8bef4a6f95a015cc8d3e898356aa8943}{IsSize}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}))}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}});}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a001e4037be92e28de2a1a29353580f12}{Reallocate}}(\{\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}}\});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}\ =\ rhs.Phase;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}\ =\ rhs.Total;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ n++)}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}(\{n\})\ =\ rhs.Initial(\{n\});}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a6b6243e4919b13b64e1fed14af7a368a}\label{classopenphase_1_1MassDensity_a6b6243e4919b13b64e1fed14af7a368a} 
+\index{openphase::MassDensity@{openphase::MassDensity}!PrintPointStatistics@{PrintPointStatistics}}
+\index{PrintPointStatistics@{PrintPointStatistics}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{PrintPointStatistics()}{PrintPointStatistics()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Print\+Point\+Statistics (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Prints to screen density in a given point (x, y, z) 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00259\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Density:\(\backslash\)t"{}};}
+\DoxyCodeLine{00261\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Total:\(\backslash\)t"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(x,\ y,\ z)\ <<\ endl;}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ n++)}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Phase\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)t"{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(x,y,z,\{n\})\ <<\ endl;}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}\label{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Read@{Read}}
+\index{Read@{Read}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily bool openphase\+::\+Mass\+Density\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads the raw composition from a file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}}+std::to\_string(MPI\_RANK)+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ fstream\ inp(FileName.c\_str(),\ ios::in\ |\ ios::binary);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Read"{}});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00232\ \ \ \ \ \};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}},\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}())}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ inp.read(reinterpret\_cast<\textcolor{keywordtype}{char}*>(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k).data()),\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k).size()*sizeof(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}},\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.Bcells())}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ inp.read(reinterpret\_cast<\textcolor{keywordtype}{char}*>(\&\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)),\ sizeof(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00241\ \ \ \ \ ConsoleOutput::WriteStandard(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ "{}Binary\ Input\ \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{Read}}\ Successfully."{});}
+\DoxyCodeLine{00242\ \ \ \ \ return\ true;}
+\DoxyCodeLine{00243\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}\label{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372} 
+\index{openphase::MassDensity@{openphase::MassDensity}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input values from file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Density\ input"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00075\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{ReadInput}}(data);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a0b1ef4d872c5e4a93219ef223a85adfd}\label{classopenphase_1_1MassDensity_a0b1ef4d872c5e4a93219ef223a85adfd} 
+\index{openphase::MassDensity@{openphase::MassDensity}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input values from file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ !=\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ alpha++)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}Rho0\_"{}})\ <<\ alpha;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}(\{alpha\})\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ converter.str());}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}\label{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Remesh the storage while keeping the data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a71062a56a37cb0c070ea7548f02c7ae8}{Remesh}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a71062a56a37cb0c070ea7548f02c7ae8}{Remesh}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a9688b1a92150b699b3ccdae88374b527}\label{classopenphase_1_1MassDensity_a9688b1a92150b699b3ccdae88374b527} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Set@{Set}}
+\index{Set@{Set}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx,  }\item[{\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx }\end{DoxyParamCaption})}
+
+
+
+Sets the density depending on composition and temperature. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Ncomp\ =\ Cx.Ncomp;}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}},0,)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ for(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}},0,)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ if(PF.Fields(i,j,k).wide\_interface())}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ !=\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ alpha++)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)\ +=\ PF.Fractions(i,j,k,\{alpha\})*}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cx.MoleFractions(i,j,k,\{alpha,\ comp\});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ alpha\ =\ PF.FieldsProperties[PF.Fields(i,j,k).front().index].Phase;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)\ =\ Cx.MoleFractions(i,j,k,\{alpha,\ comp\});}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}\label{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105} 
+\index{openphase::MassDensity@{openphase::MassDensity}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the boundary conditions. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00183}{183}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}});}
+\DoxyCodeLine{00186\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}});}
+\DoxyCodeLine{00187\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}});}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}});}
+\DoxyCodeLine{00190\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}});}
+\DoxyCodeLine{00191\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}});}
+\DoxyCodeLine{00192\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a37d780e861e4d2bb824f9c3be312972d}\label{classopenphase_1_1MassDensity_a37d780e861e4d2bb824f9c3be312972d} 
+\index{openphase::MassDensity@{openphase::MassDensity}!SetInitial@{SetInitial}}
+\index{SetInitial@{SetInitial}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{SetInitial()}{SetInitial()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Set\+Initial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Sets initial density. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}},0,)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Tensor<double,1>\ locFractions\ =\ PF.Fractions(i,j,k);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ !=\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ alpha++)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k,\{alpha\})\ =\ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}(\{alpha\});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)\ +=\ locFractions(\{alpha\})*\mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}}(\{alpha\});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00141\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}\label{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Write@{Write}}
+\index{Write@{Write}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily bool openphase\+::\+Mass\+Density\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes the raw composition into a file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}}+std::to\_string(MPI\_RANK)+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.RawDataDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ ofstream\ out(FileName.c\_str(),\ ios::out\ |\ ios::binary);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ FileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Write()"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00208\ \ \ \ \ \};}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}},\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}())}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ out.write(reinterpret\_cast<const\ \textcolor{keywordtype}{char}*>(\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k).data()),\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k).size()*sizeof(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}},\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}.Bcells())}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ out.write(reinterpret\_cast<const\ \textcolor{keywordtype}{char}*>(\&\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k)),\ sizeof(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00215\ \ \ \ \ return\ true;}
+\DoxyCodeLine{00216\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1MassDensity_a10081d61c86e1fc9f9ee8bd44560f8bf}\label{classopenphase_1_1MassDensity_a10081d61c86e1fc9f9ee8bd44560f8bf} 
+\index{openphase::MassDensity@{openphase::MassDensity}!WriteVTK@{WriteVTK}}
+\index{WriteVTK@{WriteVTK}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{WriteVTK()}{WriteVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Mass\+Density\+::\+Write\+VTK (\begin{DoxyParamCaption}\item[{const int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+Writes density in \doxylink{structopenphase_1_1VTK}{VTK} format. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{MassDensity_8cpp_source}{Mass\+Density.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00248\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}Total"{}},\ \ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}}(i,j,k);\}\});}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ n++)}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\{\textcolor{stringliteral}{"{}Phase\_"{}}\ +\ std::to\_string(n),\ [n,\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}}(i,j,k,\{n\});\}\});}
+\DoxyCodeLine{00254\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00256\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::MassDensity@{openphase::MassDensity}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::MassDensity@{openphase::MassDensity}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}\label{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Mass\+Density\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00073}{73}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}\label{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Initial@{Initial}}
+\index{Initial@{Initial}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Initial}{Initial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$double, 1$>$ openphase\+::\+Mass\+Density\+::\+Initial}
+
+
+
+Initial density of all phases. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00078}{78}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::MassDensity@{openphase::MassDensity}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::MassDensity@{openphase::MassDensity}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}\label{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Mass\+Density\+::\+Nphases}
+
+
+
+Number of thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00071}{71}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}\label{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Phase@{Phase}}
+\index{Phase@{Phase}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Phase}{Phase}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double, 1$>$ openphase\+::\+Mass\+Density\+::\+Phase}
+
+
+
+Phase densities storage. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00075}{75}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::MassDensity@{openphase::MassDensity}!readable@{readable}}
+\index{readable@{readable}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::MassDensity@{openphase::MassDensity}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::MassDensity@{openphase::MassDensity}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::MassDensity@{openphase::MassDensity}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}\label{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246} 
+\index{openphase::MassDensity@{openphase::MassDensity}!Total@{Total}}
+\index{Total@{Total}!openphase::MassDensity@{openphase::MassDensity}}
+\doxysubsubsection{\texorpdfstring{Total}{Total}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double, 0$>$ openphase\+::\+Mass\+Density\+::\+Total}
+
+
+
+Total density storage. 
+
+
+
+Definition at line \mbox{\hyperlink{MassDensity_8h_source_l00076}{76}} of file \mbox{\hyperlink{MassDensity_8h_source}{Mass\+Density.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MassDensity_8h}{Mass\+Density.\+h}}\item 
+\mbox{\hyperlink{MassDensity_8cpp}{Mass\+Density.\+cpp}}\end{DoxyCompactItemize}

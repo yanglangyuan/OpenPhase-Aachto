@@ -1,0 +1,208 @@
+\doxysection{CSVParser.\+cpp}
+\hypertarget{CSVParser_8cpp_source}{}\label{CSVParser_8cpp_source}\index{CSVParser.cpp@{CSVParser.cpp}}
+\mbox{\hyperlink{CSVParser_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2015}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Rajendran\ Mohan\ Kumar,\ Philipp\ Engels}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CSVParser_8h}{Tools/CSVParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00029}00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00033}\mbox{\hyperlink{classopenphase_1_1CSVParser_a0699f2f59862891496f26cfa342acaa2}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_a0699f2f59862891496f26cfa342acaa2}{CSVParser::WriteHeader}}(\textcolor{keyword}{const}\ std::string\ fileName,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ headerArray,\ \textcolor{keyword}{const}\ std::string\ seperator)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00036}00036\ \ \ \ \ std::ofstream\ file(fileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteHeader()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (headerArray.size()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ header\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteHeader()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ headerArray.cbegin();\ iter\ !=\ headerArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ file\ <<\ headerArray.back()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00054}00054\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00057}\mbox{\hyperlink{classopenphase_1_1CSVParser_a21f8aa313e2dfa01459d262e1e887266}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_a21f8aa313e2dfa01459d262e1e887266}{CSVParser::ClearContent}}(\textcolor{keyword}{const}\ std::string\ fileName)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00059}00059\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::trunc);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}ClearContent()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00065}00065\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00068}\mbox{\hyperlink{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2}{CSVParser::WriteData}}(\textcolor{keyword}{const}\ std::string\ fileName,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ dataArray,\ \textcolor{keyword}{const}\ std::string\ seperator)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00071}00071\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (dataArray.size()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ data\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ dataArray.cbegin();\ iter\ !=\ dataArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ file\ <<\ dataArray.back()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00089}00089\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00092}\mbox{\hyperlink{classopenphase_1_1CSVParser_a3effa2e9492fa37f8744e64a4ffb2406}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_a9fc56db878c57e2ca660d752c534bfc2}{CSVParser::WriteData}}(\textcolor{keyword}{const}\ std::string\ fileName,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ dataArray,\ \textcolor{keyword}{const}\ std::string\ seperator)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00095}00095\ \ \ \ \ std::ofstream\ file(fileName.c\_str(),\ ios\_base::app);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (dataArray.size()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Tried\ to\ write\ empty\ data\ array"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}WriteData()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ dataArray.cbegin();\ iter\ !=\ dataArray.cend()-\/1;\ iter++)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ *iter\ <<\ seperator;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ file\ <<\ dataArray.back()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00113}00113\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00116}\mbox{\hyperlink{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e}{CSVParser::readFile}}(std::string\&\ fileName,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00117}00117\ \ \ \ \ std::vector<std::vector<double>>\&\ dataArray,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00118}00118\ \ \ \ \ std::vector<std::string>\&\ headerArray,\ \textcolor{keyword}{const}\ std::string\ seperator)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00119}00119\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00120}00120\ \ \ \ \ std::ifstream\ file(fileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}readFile()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00125}00125\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ csep\ =\ seperator[0];}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ headerFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00129}00129\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!headerFlag)\ \textcolor{comment}{//populate\ headers}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.clear();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.push\_back(cell);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ headerFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//populate\ data}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ row\_data;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.clear();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.push\_back(atof(cell.c\_str()));}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ dataArray.push\_back(row\_data);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00156}00156\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00159}\mbox{\hyperlink{classopenphase_1_1CSVParser_aeea6da638dfb1075e5a0ff0f5e096ce8}{00159}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1CSVParser_add7053c753393d9140edd15813692a9e}{CSVParser::readFile}}(std::string\&\ fileName,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00160}00160\ \ \ \ \ std::vector<std::vector<std::string>>\&\ dataArray,}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00161}00161\ \ \ \ \ std::vector<std::string>\&\ headerArray,\ std::string\ seperator)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00162}00162\ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00163}00163\ \ \ \ \ std::ifstream\ file(fileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00165}00165\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \textcolor{stringliteral}{"{}CSVParser"{}},\ \textcolor{stringliteral}{"{}readFile()"{}});}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00168}00168\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ csep\ =\ seperator[0];}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ headerFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00172}00172\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00174}00174\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!headerFlag)\ \textcolor{comment}{//populate\ headers}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.clear();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerArray.push\_back(cell);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ headerFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//populate\ data}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ row\_data;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(line);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cell;}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.clear();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ cell,\ csep))}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_data.push\_back(cell);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ dataArray.push\_back(row\_data);}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00199}00199\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{CSVParser_8cpp_source_l00202}00202\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

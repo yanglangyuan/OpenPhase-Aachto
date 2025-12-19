@@ -1,0 +1,827 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \pdfminorversion=7
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  % Define default fonts
+  % Font selection
+  \usepackage[T1]{fontenc}
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Wed Dec 17 2025 09\+:11\+:02 for Open\+Phase by Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Wed Dec 17 2025 09\+:11\+:02 for Open\+Phase by Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifpdf
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
+      \else
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Open\+Phase},%
+      pdfsubject={}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Open\+Phase}\\
+  \vspace*{1cm}
+  {\large Generated on Wed Dec 17 2025 09\+:11\+:02 for Open\+Phase by Doxygen 1.9.8}\\
+    \vspace*{0.5cm}
+    {\small Wed Dec 17 2025 09:11:02}
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\chapter{Namespace Index}
+\input{namespaces}
+\chapter{Hierarchical Index}
+\input{hierarchy}
+\chapter{Class Index}
+\input{annotated}
+\chapter{File Index}
+\input{files}
+\chapter{Namespace Documentation}
+\input{d0/d6c/namespaceopenphase}
+\input{d1/d21/namespaceopenphase_1_1SystemOfLinearEquationsSolvers}
+\input{da/dce/namespacetinyxml2}
+\chapter{Class Documentation}
+\input{dd/d95/classopenphase_1_1AdvectionHR}
+\input{d1/d33/structopenphase_1_1AdvEntry}
+\input{d7/d6d/structopenphase_1_1AnalysisSintering}
+\input{de/d8c/structopenphase_1_1AuthorInformation}
+\input{d1/d01/structopenphase_1_1BenziGas}
+\input{d9/d14/structtinyxml2_1_1MemPoolT_1_1Block}
+\input{de/ddb/classopenphase_1_1BoundaryConditions}
+\input{d8/d5a/structopenphase_1_1Circle}
+\input{db/d4d/classopenphase_1_1ClearCaller1D}
+\input{d9/d1e/classopenphase_1_1ClearCaller1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01has__clear_3_04ab93464855f1e6e9328901eaedfa84}
+\input{df/d59/classopenphase_1_1ClearCaller1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9has__clear_3_054f87f67cd0ff3b1d797eb79b4345484}
+\input{de/d3f/classopenphase_1_1ClearCaller3D}
+\input{da/d21/classopenphase_1_1ClearCaller3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01has__clear_3_964e7eeb5b753edb8f76b72efaac9c9b}
+\input{d0/d9b/classopenphase_1_1ClearCaller3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9has__clear_3_00cf5d8be351db8bf5e5e4e9ed39cc09b}
+\input{d8/da6/classopenphase_1_1Composition}
+\input{d1/d54/classopenphase_1_1Composition1Dextension}
+\input{d6/d27/structopenphase_1_1ThermodynamicPhase_1_1CompositionLimits}
+\input{d2/db5/classopenphase_1_1ConsoleOutput}
+\input{d4/dbd/classopenphase_1_1Crystallography}
+\input{d6/d5c/classopenphase_1_1CSVParser}
+\input{d5/d57/classopenphase_1_1D3Q27}
+\input{d9/d14/structopenphase_1_1AdvectionHR_1_1dependent__false}
+\input{d4/d51/classtinyxml2_1_1XMLDocument_1_1DepthTracker}
+\input{db/da1/classopenphase_1_1dMatrix3x3}
+\input{dc/dda/classopenphase_1_1dMatrix6x6}
+\input{dc/d4d/classopenphase_1_1dMatrixNxN}
+\input{d9/d92/structopenphase_1_1DoubleIndexFieldEntry}
+\input{d5/d5b/classopenphase_1_1DoubleObstacle}
+\input{d5/d8a/classopenphase_1_1DrivingForce}
+\input{db/d4f/structopenphase_1_1DrivingForceEntry}
+\input{d1/dfd/classopenphase_1_1dVector}
+\input{da/d94/classopenphase_1_1dVector3}
+\input{d8/d51/classopenphase_1_1dVector6}
+\input{da/d8d/classopenphase_1_1dVectorN}
+\input{db/d5b/classtinyxml2_1_1DynArray}
+\input{d3/dee/classopenphase_1_1ElasticitySolverSpectral}
+\input{d6/de5/classopenphase_1_1ElasticitySolverSpectralImpl}
+\input{d2/de8/classopenphase_1_1ElasticProperties}
+\input{d5/d73/classopenphase_1_1ElectricalPotential}
+\input{da/d99/classopenphase_1_1ElectricProperties}
+\input{d1/db8/classopenphase_1_1ElectricSolver}
+\input{d8/d38/classopenphase_1_1ElectricSolverSpectral}
+\input{d2/dea/structopenphase_1_1electrode}
+\input{d1/d34/classopenphase_1_1Element}
+\input{dc/d2c/structopenphase_1_1PeriodicTable_1_1Element}
+\input{d8/d80/classopenphase_1_1Elements}
+\input{d5/d03/classopenphase_1_1EnergyTransport}
+\input{de/d69/structtinyxml2_1_1Entity}
+\input{d1/d0f/structopenphase_1_1SparseMatrix_1_1entry}
+\input{d3/d95/classopenphase_1_1EquilibriumData}
+\input{d6/dd7/classopenphase_1_1EquilibriumPartitionDiffusionBinary}
+\input{de/d68/structopenphase_1_1BenziGas_1_1EquilibriumValues__t}
+\input{de/d4f/structopenphase_1_1VanDerWaalsGas_1_1EquilibriumValues__t}
+\input{db/de4/classopenphase_1_1EulerAngles}
+\input{d5/dfc/structopenphase_1_1H5Interface_1_1Field__t}
+\input{de/d25/structopenphase_1_1VTK_1_1Field__t}
+\input{d2/d61/classopenphase_1_1FileInterface}
+\input{da/d25/classopenphase_1_1FlowMixture}
+\input{d4/db8/classopenphase_1_1FlowSolverLBM}
+\input{d4/d77/classopenphase_1_1FractureField}
+\input{d0/da4/classopenphase_1_1GradientStencil}
+\input{d6/da7/structopenphase_1_1GradientStencil_1_1GradientStencilEntry}
+\input{d6/dfe/classopenphase_1_1Grain}
+\input{d6/d90/classopenphase_1_1GrainsProperties}
+\input{de/d26/classopenphase_1_1GrandPotentialDensity}
+\input{d3/ded/structopenphase_1_1GrandPotentialPhaseDensity}
+\input{d9/dd4/structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid}
+\input{d6/dd2/structopenphase_1_1GrandPotentialPhaseDensity__IdealGas}
+\input{d3/d29/structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic}
+\input{d9/d40/structopenphase_1_1GrandPotentialPhaseDensity__Parabolic}
+\input{d8/dba/classopenphase_1_1GrandPotentialSolver}
+\input{dc/d18/classopenphase_1_1GridParameters}
+\input{dc/d89/classopenphase_1_1H5Interface}
+\input{d1/d0c/classopenphase_1_1has__clear}
+\input{d4/d03/classopenphase_1_1has__pack}
+\input{da/dec/structopenphase_1_1header__singleblock}
+\input{d7/d2b/classopenphase_1_1HeatDiffusion}
+\input{d1/d98/classopenphase_1_1HeatSources}
+\input{d8/d32/structopenphase_1_1HeatSourceStructure}
+\input{de/dee/classopenphase_1_1Initializations}
+\input{dc/d24/classopenphase_1_1InteractionFluidFluid}
+\input{d2/d9e/structopenphase_1_1InteractionSolidFluid}
+\input{d5/d17/classopenphase_1_1InteractionSolidSolid}
+\input{d2/d19/classopenphase_1_1InterfaceDiffusion}
+\input{d9/d6e/classopenphase_1_1InterfaceDiffusionAnisotropic}
+\input{db/d9b/classopenphase_1_1InterfaceEnergyModel}
+\input{d9/d1e/classopenphase_1_1InterfaceMobilityModel}
+\input{db/d7a/classopenphase_1_1InterfaceProperties}
+\input{da/ddc/structopenphase_1_1InterfacePropertiesFieldEntry}
+\input{d7/dca/classopenphase_1_1InterfaceRegularization}
+\input{d5/db2/uniontinyxml2_1_1MemPoolT_1_1Item}
+\input{da/d9c/classopenphase_1_1iVector3}
+\input{d8/d86/classopenphase_1_1LaplacianStencil}
+\input{d4/d89/structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}
+\input{d4/de8/classopenphase_1_1LinearMagneticSolver}
+\input{d9/db5/classopenphase_1_1MagneticProperties}
+\input{dd/d85/classopenphase_1_1MassDensity}
+\input{d1/d51/classopenphase_1_1Matrix}
+\input{d5/dc6/classopenphase_1_1MechanicalLoads}
+\input{de/dfa/structopenphase_1_1MechanicalLoadStructure}
+\input{db/d69/classtinyxml2_1_1MemPool}
+\input{d1/d5d/classtinyxml2_1_1MemPoolT}
+\input{d2/d9c/classopenphase_1_1MetaData}
+\input{dc/d86/classopenphase_1_1MicrostructureAnalysis}
+\input{d3/d17/classopenphase_1_1MovingFrame}
+\input{d8/d8b/classopenphase_1_1NodeA}
+\input{d3/dc0/classopenphase_1_1NodeAB}
+\input{d4/de5/classopenphase_1_1NodeAdv}
+\input{d4/de4/classopenphase_1_1NodeDF}
+\input{dd/d7a/classopenphase_1_1NodeIP}
+\input{da/ddf/classopenphase_1_1NodePF}
+\input{d3/d9b/classopenphase_1_1NodeVectorN}
+\input{d9/dc2/classopenphase_1_1NodeVn}
+\input{d5/d4b/classopenphase_1_1Noise}
+\input{d3/d76/classopenphase_1_1Nucleation}
+\input{de/d84/structopenphase_1_1NucleationParameters}
+\input{d7/dd8/classopenphase_1_1Nucleus}
+\input{d6/dcd/classopenphase_1_1OPObject}
+\input{d0/df3/classopenphase_1_1Orientations}
+\input{de/dc2/classopenphase_1_1PackCaller1D}
+\input{d3/d85/classopenphase_1_1PackCaller1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__cla1cc095657b250958b07470bfb7474d54}
+\input{d3/d14/classopenphase_1_1PackCaller1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__cla37bc0d5023cf2c2b453823e66f55ac65}
+\input{db/d49/classopenphase_1_1PackCaller1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9std_1_1is__clas019bbaf65a1df0d8b5b0d5725c5b4e4c}
+\input{de/dd3/classopenphase_1_1PackCaller3D}
+\input{d6/d97/classopenphase_1_1PackCaller3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__cla6d9e469f5eb2559f99e1dcc24fbe2fc2}
+\input{d0/d18/classopenphase_1_1PackCaller3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__cla26af72c1848d3af0d865bf170f44162e}
+\input{d0/d48/classopenphase_1_1PackCaller3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9std_1_1is__clasf5cd31e1cdc1e87264c02467c9e19bdd}
+\input{d5/d40/classopenphase_1_1PackCallerTensor1D}
+\input{db/d30/classopenphase_1_1PackCallerTensor1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1ifdef70db9253519395140cf697b186ee}
+\input{d7/d2f/classopenphase_1_1PackCallerTensor1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1i9005a705fa49590dd7938fef75745e37}
+\input{d6/d1d/classopenphase_1_1PackCallerTensor1D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9std_1_1is4ed27536327ded027e2ad02f40677f9c}
+\input{dc/d46/classopenphase_1_1PackCallerTensor3D}
+\input{da/d68/classopenphase_1_1PackCallerTensor3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1ie527908488d972962661ed07364d5431}
+\input{d5/d9a/classopenphase_1_1PackCallerTensor3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_01std_1_1i12b5de5416e205f5fec64600b7eefedc}
+\input{d6/dea/classopenphase_1_1PackCallerTensor3D_3_01A_00_01T_00_01typename_01std_1_1enable__if_3_9std_1_1is46e09722664213eadde6a1e8e890937e}
+\input{d3/d7f/classopenphase_1_1PairEquilibriumData}
+\input{d2/d30/structopenphase_1_1Part}
+\input{d0/db9/classopenphase_1_1PeriodicTable}
+\input{d5/d16/classopenphase_1_1PhaseField}
+\input{d2/d78/structopenphase_1_1PhaseFieldEntry}
+\input{d1/d9b/structopenphase_1_1PhysicalConstants}
+\input{dd/dd7/classopenphase_1_1PotentialCorrections}
+\input{d6/deb/classopenphase_1_1ProbabilityDistributions}
+\input{d6/d67/structopenphase_1_1ProgramInformation}
+\input{d2/dda/classopenphase_1_1Quaternion}
+\input{dd/d04/structopenphase_1_1RootFindingAlgorithms}
+\input{da/d4e/classopenphase_1_1RunTimeControl}
+\input{d1/d40/classopenphase_1_1Settings}
+\input{dd/dfe/structopenphase_1_1SimulationInformation}
+\input{d7/d3a/classopenphase_1_1SingleChemicalPotentialData}
+\input{da/d37/classopenphase_1_1SingleEquilibriumData}
+\input{d3/d40/structopenphase_1_1SingleIndexFieldEntry}
+\input{d5/d18/classopenphase_1_1SingleKineticData}
+\input{de/da4/classopenphase_1_1SingleThermodynamicData}
+\input{db/d71/classopenphase_1_1SolidBody}
+\input{d7/d93/structopenphase_1_1SparseMatrix}
+\input{d0/d8d/structopenphase_1_1SparseMatrixCSC}
+\input{df/d9c/structopenphase_1_1SparseMatrixCSR}
+\input{df/d99/classopenphase_1_1SpeciesTransport}
+\input{d3/d20/structopenphase_1_1Sphere}
+\input{d4/d86/classopenphase_1_1SphericalHarmonics}
+\input{d0/d0a/classopenphase_1_1Stabilization}
+\input{df/d89/classopenphase_1_1StabilizationImpl}
+\input{dc/d44/classopenphase_1_1StencilDirection}
+\input{d1/d9b/classopenphase_1_1Storage}
+\input{dd/d7c/classopenphase_1_1Storage1D}
+\input{de/d09/classopenphase_1_1Storage1D_3_01T_00_010_01_4}
+\input{da/d19/classopenphase_1_1Storage3D}
+\input{d6/dc6/classopenphase_1_1Storage3D_3_01T_00_010_01_4}
+\input{d5/dcd/classtinyxml2_1_1StrPair}
+\input{d1/dcb/classopenphase_1_1SublatticeModel}
+\input{d1/d12/classopenphase_1_1SymmetryVariants}
+\input{d2/dd6/classopenphase_1_1Table}
+\input{d3/db2/classopenphase_1_1Table_3_01bool_01_4}
+\input{d4/d35/classopenphase_1_1Temperature}
+\input{d9/dd6/classopenphase_1_1Temperature1Dextension}
+\input{df/d53/structopenphase_1_1TemperatureParameters}
+\input{d2/d51/classopenphase_1_1Tensor}
+\input{d9/da5/classopenphase_1_1TextOutput}
+\input{d2/d71/classopenphase_1_1ThermodynamicPhase}
+\input{d1/db4/classopenphase_1_1TimeInfo}
+\input{df/dfe/classopenphase_1_1Tools}
+\input{d0/db9/classopenphase_1_1UserDrivingForce}
+\input{dc/dbb/structopenphase_1_1VanDerWaalsGas}
+\input{de/d83/classopenphase_1_1VecEntry}
+\input{de/daf/structopenphase_1_1VectorVnEntry}
+\input{d0/ddd/classopenphase_1_1Velocities}
+\input{dd/d6b/classopenphase_1_1vStrain}
+\input{dc/dd0/classopenphase_1_1vStress}
+\input{d3/d89/structopenphase_1_1VTK}
+\input{db/d8e/classtinyxml2_1_1XMLAttribute}
+\input{dd/dcb/classtinyxml2_1_1XMLComment}
+\input{d4/dca/classtinyxml2_1_1XMLConstHandle}
+\input{d7/dde/classtinyxml2_1_1XMLDeclaration}
+\input{d3/d63/classtinyxml2_1_1XMLDocument}
+\input{d5/d83/classtinyxml2_1_1XMLElement}
+\input{dd/d9d/classtinyxml2_1_1XMLHandle}
+\input{d6/de3/classtinyxml2_1_1XMLNode}
+\input{d5/da2/classtinyxml2_1_1XMLPrinter}
+\input{da/de6/classtinyxml2_1_1XMLText}
+\input{d0/d4c/classtinyxml2_1_1XMLUnknown}
+\input{d2/da5/classtinyxml2_1_1XMLUtil}
+\input{d8/d5b/classtinyxml2_1_1XMLVisitor}
+\chapter{File Documentation}
+\input{d9/ddb/AdvectionHR_8h}
+\input{d9/ddb/AdvectionHR_8h_source}
+\input{d0/d4d/BoundaryConditions_8h}
+\input{d0/d4d/BoundaryConditions_8h_source}
+\input{d1/d22/BuildInfo_8h}
+\input{d1/d22/BuildInfo_8h_source}
+\input{db/de2/Composition_8h}
+\input{db/de2/Composition_8h_source}
+\input{d7/dfe/ConsoleOutput_8h}
+\input{d7/dfe/ConsoleOutput_8h_source}
+\input{d0/dc1/Containers_8h}
+\input{d0/dc1/Containers_8h_source}
+\input{dc/daa/dMatrix3x3_8h}
+\input{dc/daa/dMatrix3x3_8h_source}
+\input{da/d9f/dMatrix6x6_8h}
+\input{da/d9f/dMatrix6x6_8h_source}
+\input{db/dff/dMatrixNxN_8h}
+\input{db/dff/dMatrixNxN_8h_source}
+\input{db/db2/dVector_8h}
+\input{db/db2/dVector_8h_source}
+\input{df/da7/dVector3_8h}
+\input{df/da7/dVector3_8h_source}
+\input{dc/da4/dVector6_8h}
+\input{dc/da4/dVector6_8h_source}
+\input{dd/de2/dVectorN_8h}
+\input{dd/de2/dVectorN_8h_source}
+\input{da/d28/EquilibriumData_8h}
+\input{da/d28/EquilibriumData_8h_source}
+\input{d7/d29/EulerAngles_8h}
+\input{d7/d29/EulerAngles_8h_source}
+\input{df/d3e/GradientStencil_8h}
+\input{df/d3e/GradientStencil_8h_source}
+\input{dc/d31/iVector3_8h}
+\input{dc/d31/iVector3_8h_source}
+\input{df/da2/LaplacianStencil_8h}
+\input{df/da2/LaplacianStencil_8h_source}
+\input{d3/db1/Matrix_8h}
+\input{d3/db1/Matrix_8h_source}
+\input{de/db6/MatrixVectorOperators_8h}
+\input{de/db6/MatrixVectorOperators_8h_source}
+\input{dd/d42/NodeA_8h}
+\input{dd/d42/NodeA_8h_source}
+\input{da/d87/NodeAB_8h}
+\input{da/d87/NodeAB_8h_source}
+\input{d6/dc8/NodeAdv_8h}
+\input{d6/dc8/NodeAdv_8h_source}
+\input{d9/dd8/NodeDF_8h}
+\input{d9/dd8/NodeDF_8h_source}
+\input{da/d83/NodeIP_8h}
+\input{da/d83/NodeIP_8h_source}
+\input{d0/dc7/NodePF_8h}
+\input{d0/dc7/NodePF_8h_source}
+\input{d7/d32/NodeVectorN_8h}
+\input{d7/d32/NodeVectorN_8h_source}
+\input{d4/dce/NodeVn_8h}
+\input{d4/dce/NodeVn_8h_source}
+\input{d9/d23/OMPReductions_8h}
+\input{d9/d23/OMPReductions_8h_source}
+\input{d1/d4a/Quaternion_8h}
+\input{d1/d4a/Quaternion_8h_source}
+\input{dc/d15/SparseMatrix_8h}
+\input{dc/d15/SparseMatrix_8h_source}
+\input{db/d6f/Storage_8h}
+\input{db/d6f/Storage_8h_source}
+\input{d5/de0/Storage1D_8h}
+\input{d5/de0/Storage1D_8h_source}
+\input{d9/d8e/Storage3D_8h}
+\input{d9/d8e/Storage3D_8h_source}
+\input{d4/de2/StringManipulations_8h}
+\input{d4/de2/StringManipulations_8h_source}
+\input{da/d75/Table_8h}
+\input{da/d75/Table_8h_source}
+\input{df/d11/Tensor_8h}
+\input{df/d11/Tensor_8h_source}
+\input{d0/d95/TypeTraits_8h}
+\input{d0/d95/TypeTraits_8h_source}
+\input{d8/d4e/vStrain_8h}
+\input{d8/d4e/vStrain_8h_source}
+\input{d2/d14/vStress_8h}
+\input{d2/d14/vStress_8h_source}
+\input{d6/dd0/Crystallography_8h}
+\input{d6/dd0/Crystallography_8h_source}
+\input{de/df6/DoubleObstacle_8h}
+\input{de/df6/DoubleObstacle_8h_source}
+\input{dc/df4/DrivingForce_8h}
+\input{dc/df4/DrivingForce_8h_source}
+\input{d1/d20/ElasticitySolverSpectral_8h}
+\input{d1/d20/ElasticitySolverSpectral_8h_source}
+\input{de/dcf/ElasticProperties_8h}
+\input{de/dcf/ElasticProperties_8h_source}
+\input{d3/d86/ElectricalPotential_8h}
+\input{d3/d86/ElectricalPotential_8h_source}
+\input{d4/d2b/ElectricProperties_8h}
+\input{d4/d2b/ElectricProperties_8h_source}
+\input{dd/d37/ElectricSolver_8h}
+\input{dd/d37/ElectricSolver_8h_source}
+\input{de/d4d/ElectricSolverSpectral_8h}
+\input{de/d4d/ElectricSolverSpectral_8h_source}
+\input{d4/dd9/EquilibriumPartitionDiffusionBinary_8h}
+\input{d4/dd9/EquilibriumPartitionDiffusionBinary_8h_source}
+\input{d7/df2/FileInterface_8h}
+\input{d7/df2/FileInterface_8h_source}
+\input{dd/d3b/BenziGas_8h}
+\input{dd/d3b/BenziGas_8h_source}
+\input{d0/d0b/D3Q27_8h}
+\input{d0/d0b/D3Q27_8h_source}
+\input{da/d41/FlowSolverLBM_8h}
+\input{da/d41/FlowSolverLBM_8h_source}
+\input{d6/d70/InteractionFluidFluid_8h}
+\input{d6/d70/InteractionFluidFluid_8h_source}
+\input{d9/d35/InteractionSolidFluid_8h}
+\input{d9/d35/InteractionSolidFluid_8h_source}
+\input{da/d61/InteractionSolidSolid_8h}
+\input{da/d61/InteractionSolidSolid_8h_source}
+\input{d5/d3b/VanDerWaalsGas_8h}
+\input{d5/d3b/VanDerWaalsGas_8h_source}
+\input{df/db3/FractureField_8h}
+\input{df/db3/FractureField_8h_source}
+\input{d9/df1/Globals_8h}
+\input{d9/df1/Globals_8h_source}
+\input{da/dab/GrainsProperties_8h}
+\input{da/dab/GrainsProperties_8h_source}
+\input{d0/d1a/GrandPotentialDensity_8h}
+\input{d0/d1a/GrandPotentialDensity_8h_source}
+\input{dc/d72/GrandPotentialPhaseDensity_8h}
+\input{dc/d72/GrandPotentialPhaseDensity_8h_source}
+\input{d2/d01/GrandPotentialPhaseDensity__CompressibleFluid_8h}
+\input{d2/d01/GrandPotentialPhaseDensity__CompressibleFluid_8h_source}
+\input{d9/d98/GrandPotentialPhaseDensity__IdealGas_8h}
+\input{d9/d98/GrandPotentialPhaseDensity__IdealGas_8h_source}
+\input{d2/da2/GrandPotentialPhaseDensity__ImplicitParabolic_8h}
+\input{d2/da2/GrandPotentialPhaseDensity__ImplicitParabolic_8h_source}
+\input{d5/d75/GrandPotentialPhaseDensity__Parabolic_8h}
+\input{d5/d75/GrandPotentialPhaseDensity__Parabolic_8h_source}
+\input{d4/d11/GrandPotentialSolver_8h}
+\input{d4/d11/GrandPotentialSolver_8h_source}
+\input{d7/d68/GridParameters_8h}
+\input{d7/d68/GridParameters_8h_source}
+\input{d8/d02/H5Interface_8h}
+\input{d8/d02/H5Interface_8h_source}
+\input{d2/d32/HeatDiffusion_8h}
+\input{d2/d32/HeatDiffusion_8h_source}
+\input{d7/ddb/HeatSources_8h}
+\input{d7/ddb/HeatSources_8h_source}
+\input{d8/dcf/Includes_8h}
+\input{d8/dcf/Includes_8h_source}
+\input{df/db1/Initializations_8h}
+\input{df/db1/Initializations_8h_source}
+\input{d6/d8e/InterfaceDiffusion_8h}
+\input{d6/d8e/InterfaceDiffusion_8h_source}
+\input{db/d8f/InterfaceProperties_8h}
+\input{db/d8f/InterfaceProperties_8h_source}
+\input{dd/d89/InterfaceEnergyModel_8h}
+\input{dd/d89/InterfaceEnergyModel_8h_source}
+\input{d3/dfe/InterfaceMobilityModel_8h}
+\input{d3/dfe/InterfaceMobilityModel_8h_source}
+\input{d5/df0/InterfaceRegularization_8h}
+\input{d5/df0/InterfaceRegularization_8h_source}
+\input{df/d0a/Macros_8h}
+\input{df/d0a/Macros_8h_source}
+\input{d0/dcb/LinearMagneticSolver_8h}
+\input{d0/dcb/LinearMagneticSolver_8h_source}
+\input{dd/d7a/MagneticProperties_8h}
+\input{dd/d7a/MagneticProperties_8h_source}
+\input{de/d8b/MassDensity_8h}
+\input{de/d8b/MassDensity_8h_source}
+\input{da/dbc/MechanicalLoads_8h}
+\input{da/dbc/MechanicalLoads_8h_source}
+\input{d0/de6/Mechanics_8h}
+\input{d0/de6/Mechanics_8h_source}
+\input{dd/d46/MetaData_8h}
+\input{dd/d46/MetaData_8h_source}
+\input{db/d6c/MovingFrame_8h}
+\input{db/d6c/MovingFrame_8h_source}
+\input{d8/d56/Noise_8h}
+\input{d8/d56/Noise_8h_source}
+\input{d0/ddf/Nucleation_8h}
+\input{d0/ddf/Nucleation_8h_source}
+\input{dc/d01/RootFindingAlgorithms_8h}
+\input{dc/d01/RootFindingAlgorithms_8h_source}
+\input{dc/d33/SystemOfLinearEquationsSolvers_8h}
+\input{dc/d33/SystemOfLinearEquationsSolvers_8h_source}
+\input{d5/d1c/OPObject_8h}
+\input{d5/d1c/OPObject_8h_source}
+\input{d0/d88/Orientations_8h}
+\input{d0/d88/Orientations_8h_source}
+\input{d9/dc5/PhaseField_8h}
+\input{d9/dc5/PhaseField_8h_source}
+\input{dd/d09/PhysicalConstants_8h}
+\input{dd/d09/PhysicalConstants_8h_source}
+\input{df/db3/EnergyTransport_8h}
+\input{df/db3/EnergyTransport_8h_source}
+\input{d6/d6a/FlowMixture_8h}
+\input{d6/d6a/FlowMixture_8h_source}
+\input{d6/d9f/SolidBody_8h}
+\input{d6/d9f/SolidBody_8h_source}
+\input{d4/dd0/SpeciesTransport_8h}
+\input{d4/dd0/SpeciesTransport_8h_source}
+\input{d4/d4a/ThermoChemistry_8h}
+\input{d4/d4a/ThermoChemistry_8h_source}
+\input{db/d31/RunTimeControl_8h}
+\input{db/d31/RunTimeControl_8h_source}
+\input{dd/dbc/Settings_8h}
+\input{dd/dbc/Settings_8h_source}
+\input{d0/dd8/Stabilization_8h}
+\input{d0/dd8/Stabilization_8h_source}
+\input{dd/d5b/SymmetryVariants_8h}
+\input{dd/d5b/SymmetryVariants_8h_source}
+\input{d4/dd8/Temperature_8h}
+\input{d4/dd8/Temperature_8h_source}
+\input{d8/d4b/TextOutput_8h}
+\input{d8/d4b/TextOutput_8h_source}
+\input{d5/d76/Element_8h}
+\input{d5/d76/Element_8h_source}
+\input{d3/def/PeriodicTable_8h}
+\input{d3/def/PeriodicTable_8h_source}
+\input{d8/d56/SublatticeModel_8h}
+\input{d8/d56/SublatticeModel_8h_source}
+\input{da/d42/ThermodynamicPhase_8h}
+\input{da/d42/ThermodynamicPhase_8h_source}
+\input{d7/d95/tinyxml2_8h}
+\input{d7/d95/tinyxml2_8h_source}
+\input{d2/d8f/Tools_8h}
+\input{d2/d8f/Tools_8h_source}
+\input{d1/d53/AnalysisSintering_8h}
+\input{d1/d53/AnalysisSintering_8h_source}
+\input{df/d3f/CSVParser_8h}
+\input{df/d3f/CSVParser_8h_source}
+\input{d9/dda/Elements_8h}
+\input{d9/dda/Elements_8h_source}
+\input{d4/dfa/MicrostructureAnalysis_8h}
+\input{d4/dfa/MicrostructureAnalysis_8h_source}
+\input{d5/da4/ProbabilityDistributions_8h}
+\input{d5/da4/ProbabilityDistributions_8h_source}
+\input{d2/de2/SphericalHarmonics_8h}
+\input{d2/de2/SphericalHarmonics_8h_source}
+\input{d1/dca/TimeInfo_8h}
+\input{d1/dca/TimeInfo_8h_source}
+\input{dd/d8a/UserDrivingForce_8h}
+\input{dd/d8a/UserDrivingForce_8h_source}
+\input{d4/dd2/Velocities_8h}
+\input{d4/dd2/Velocities_8h_source}
+\input{d6/d23/VTK_8h}
+\input{d6/d23/VTK_8h_source}
+\input{d8/d35/AdvectionHR_8cpp}
+\input{d8/d35/AdvectionHR_8cpp_source}
+\input{d3/d59/BoundaryConditions_8cpp}
+\input{d3/d59/BoundaryConditions_8cpp_source}
+\input{d7/dd5/Composition_8cpp}
+\input{d7/dd5/Composition_8cpp_source}
+\input{da/da0/ConsoleOutput_8cpp}
+\input{da/da0/ConsoleOutput_8cpp_source}
+\input{d9/d90/EulerAngles_8cpp}
+\input{d9/d90/EulerAngles_8cpp_source}
+\input{d4/d11/Quaternion_8cpp}
+\input{d4/d11/Quaternion_8cpp_source}
+\input{d1/d58/SparseMatrix_8cpp}
+\input{d1/d58/SparseMatrix_8cpp_source}
+\input{df/d08/Crystallography_8cpp}
+\input{df/d08/Crystallography_8cpp_source}
+\input{da/d56/DoubleObstacle_8cpp}
+\input{da/d56/DoubleObstacle_8cpp_source}
+\input{dc/dde/DrivingForce_8cpp}
+\input{dc/dde/DrivingForce_8cpp_source}
+\input{d4/d42/ElasticitySolverSpectral_8cpp}
+\input{d4/d42/ElasticitySolverSpectral_8cpp_source}
+\input{d1/d02/ElasticProperties_8cpp}
+\input{d1/d02/ElasticProperties_8cpp_source}
+\input{dc/d8b/ElectricalPotential_8cpp}
+\input{dc/d8b/ElectricalPotential_8cpp_source}
+\input{df/d14/ElectricProperties_8cpp}
+\input{df/d14/ElectricProperties_8cpp_source}
+\input{d3/d54/ElectricSolverSpectral_8cpp}
+\input{d3/d54/ElectricSolverSpectral_8cpp_source}
+\input{d0/d2a/EquilibriumPartitionDiffusionBinary_8cpp}
+\input{d0/d2a/EquilibriumPartitionDiffusionBinary_8cpp_source}
+\input{df/de6/FileInterface_8cpp}
+\input{df/de6/FileInterface_8cpp_source}
+\input{dc/df1/BenziGas_8cpp}
+\input{dc/df1/BenziGas_8cpp_source}
+\input{d7/d72/FlowSolverLBM_8cpp}
+\input{d7/d72/FlowSolverLBM_8cpp_source}
+\input{db/ded/InteractionFluidFluid_8cpp}
+\input{db/ded/InteractionFluidFluid_8cpp_source}
+\input{dc/d17/InteractionSolidFluid_8cpp}
+\input{dc/d17/InteractionSolidFluid_8cpp_source}
+\input{df/dfb/InteractionSolidSolid_8cpp}
+\input{df/dfb/InteractionSolidSolid_8cpp_source}
+\input{df/d47/VanDerWaalsGas_8cpp}
+\input{df/d47/VanDerWaalsGas_8cpp_source}
+\input{d3/d7f/FractureField_8cpp}
+\input{d3/d7f/FractureField_8cpp_source}
+\input{d6/dc2/Globals_8cpp}
+\input{d6/dc2/Globals_8cpp_source}
+\input{d9/d7c/GrandPotentialDensity_8cpp}
+\input{d9/d7c/GrandPotentialDensity_8cpp_source}
+\input{df/db1/GrandPotentialPhaseDensity__CompressibleFluid_8cpp}
+\input{df/db1/GrandPotentialPhaseDensity__CompressibleFluid_8cpp_source}
+\input{de/db1/GrandPotentialPhaseDensity__IdealGas_8cpp}
+\input{de/db1/GrandPotentialPhaseDensity__IdealGas_8cpp_source}
+\input{d7/d0d/GrandPotentialPhaseDensity__ImplicitParabolic_8cpp}
+\input{d7/d0d/GrandPotentialPhaseDensity__ImplicitParabolic_8cpp_source}
+\input{d8/dc8/GrandPotentialPhaseDensity__Parabolic_8cpp}
+\input{d8/dc8/GrandPotentialPhaseDensity__Parabolic_8cpp_source}
+\input{da/db9/GrandPotentialSolver_8cpp}
+\input{da/db9/GrandPotentialSolver_8cpp_source}
+\input{d5/d43/GridParameters_8cpp}
+\input{d5/d43/GridParameters_8cpp_source}
+\input{d0/dea/H5Interface_8cpp}
+\input{d0/dea/H5Interface_8cpp_source}
+\input{d6/d0c/HeatDiffusion_8cpp}
+\input{d6/d0c/HeatDiffusion_8cpp_source}
+\input{d0/d92/HeatSources_8cpp}
+\input{d0/d92/HeatSources_8cpp_source}
+\input{d3/d3a/Initializations_8cpp}
+\input{d3/d3a/Initializations_8cpp_source}
+\input{d9/d1f/InterfaceDiffusion_8cpp}
+\input{d9/d1f/InterfaceDiffusion_8cpp_source}
+\input{d0/d82/InterfaceProperties_8cpp}
+\input{d0/d82/InterfaceProperties_8cpp_source}
+\input{df/d9e/InterfaceRegularization_8cpp}
+\input{df/d9e/InterfaceRegularization_8cpp_source}
+\input{d1/df7/LinearMagneticSolver_8cpp}
+\input{d1/df7/LinearMagneticSolver_8cpp_source}
+\input{da/d44/MagneticProperties_8cpp}
+\input{da/d44/MagneticProperties_8cpp_source}
+\input{d9/d57/MassDensity_8cpp}
+\input{d9/d57/MassDensity_8cpp_source}
+\input{df/dd5/MechanicalLoads_8cpp}
+\input{df/dd5/MechanicalLoads_8cpp_source}
+\input{d9/d15/MetaData_8cpp}
+\input{d9/d15/MetaData_8cpp_source}
+\input{d7/d7e/MovingFrame_8cpp}
+\input{d7/d7e/MovingFrame_8cpp_source}
+\input{da/d61/Noise_8cpp}
+\input{da/d61/Noise_8cpp_source}
+\input{d2/dc9/Nucleation_8cpp}
+\input{d2/dc9/Nucleation_8cpp_source}
+\input{df/d53/OPObject_8cpp}
+\input{df/d53/OPObject_8cpp_source}
+\input{d8/d36/Orientations_8cpp}
+\input{d8/d36/Orientations_8cpp_source}
+\input{d9/d26/PhaseField_8cpp}
+\input{d9/d26/PhaseField_8cpp_source}
+\input{d2/d17/EnergyTransport_8cpp}
+\input{d2/d17/EnergyTransport_8cpp_source}
+\input{d6/d36/FlowMixture_8cpp}
+\input{d6/d36/FlowMixture_8cpp_source}
+\input{df/d44/SolidBody_8cpp}
+\input{df/d44/SolidBody_8cpp_source}
+\input{db/dcd/SpeciesTransport_8cpp}
+\input{db/dcd/SpeciesTransport_8cpp_source}
+\input{dd/dab/ThermoChemistry_8cpp}
+\input{dd/dab/ThermoChemistry_8cpp_source}
+\input{d5/da5/RunTimeControl_8cpp}
+\input{d5/da5/RunTimeControl_8cpp_source}
+\input{db/dd8/Settings_8cpp}
+\input{db/dd8/Settings_8cpp_source}
+\input{d2/df5/Stabilization_8cpp}
+\input{d2/df5/Stabilization_8cpp_source}
+\input{d1/d79/SymmetryVariants_8cpp}
+\input{d1/d79/SymmetryVariants_8cpp_source}
+\input{db/de5/Temperature_8cpp}
+\input{db/de5/Temperature_8cpp_source}
+\input{d3/db9/TextOutput_8cpp}
+\input{d3/db9/TextOutput_8cpp_source}
+\input{de/d7d/SublatticeModel_8cpp}
+\input{de/d7d/SublatticeModel_8cpp_source}
+\input{d1/de5/ThermodynamicPhase_8cpp}
+\input{d1/de5/ThermodynamicPhase_8cpp_source}
+\input{d6/d0a/tinyxml2_8cpp}
+\input{d6/d0a/tinyxml2_8cpp_source}
+\input{dc/d48/Tools_8cpp}
+\input{dc/d48/Tools_8cpp_source}
+\input{dd/dd0/AnalysisSintering_8cpp}
+\input{dd/dd0/AnalysisSintering_8cpp_source}
+\input{d2/d67/CSVParser_8cpp}
+\input{d2/d67/CSVParser_8cpp_source}
+\input{d3/deb/MicrostructureAnalysis_8cpp}
+\input{d3/deb/MicrostructureAnalysis_8cpp_source}
+\input{df/d99/ProbabilityDistributions_8cpp}
+\input{df/d99/ProbabilityDistributions_8cpp_source}
+\input{d4/d23/TimeInfo_8cpp}
+\input{d4/d23/TimeInfo_8cpp_source}
+\input{d8/de7/UserDrivingForce_8cpp}
+\input{d8/de7/UserDrivingForce_8cpp_source}
+\input{dc/d5d/Velocities_8cpp}
+\input{dc/d5d/Velocities_8cpp_source}
+\input{d2/de8/VTK_8cpp}
+\input{d2/de8/VTK_8cpp_source}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

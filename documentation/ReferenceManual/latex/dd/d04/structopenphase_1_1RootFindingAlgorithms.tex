@@ -1,0 +1,589 @@
+\doxysection{openphase\+::Root\+Finding\+Algorithms Struct Reference}
+\hypertarget{structopenphase_1_1RootFindingAlgorithms}{}\label{structopenphase_1_1RootFindingAlgorithms}\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+
+
+\texorpdfstring{$<$}{<} Numerically find the solution x of f(x) = 0  
+
+
+
+
+{\ttfamily \#include "{}Root\+Finding\+Algorithms.\+h"{}}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename UNARY , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a2217b187d439a141f2f41e201d477718}{Bisection}} (UNARY func, T \&x0, T xa, T xb, T accuracy, unsigned long iterations)
+\item 
+{\footnotesize template$<$typename UNARY1 , typename UNARY2 , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_ae27a58d5cf393fed1642b1ac2afe5b84}{Newton}} (UNARY1 func, UNARY2 dfunc, T \&x0, T accuracy, unsigned long iterations)
+\item 
+{\footnotesize template$<$typename UNARY1 , typename UNARY2 , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_ab4a0171be76df2cb38971d16c57348ac}{Positiv\+Newton}} (UNARY1 func, UNARY2 dfunc, T \&x0, T accuracy, unsigned long iterations)
+\item 
+{\footnotesize template$<$typename UNARY , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a7ed5dc0fe50eb6e07e08f081ad824ddf}{Secant}} (UNARY func, T \&x0, T \&x1, T accuracy, unsigned long iterations)
+\item 
+{\footnotesize template$<$typename UNARY , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_ae525c9fa96fa3fc9e4965f5785bdca71}{Broyden}} (UNARY func, T \&x0, T accuracy, unsigned long iterations)
+\item 
+{\footnotesize template$<$typename function , typename vector , typename T $>$ }\\static void \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a17b800a16bc09b28256e98d4f446bca5}{Broyden}} (function func, vector \&x0, T accuracy, unsigned long iterations)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{Zero\+Gradient}} = "{}Zero\+Gradient"{}
+\item 
+static constexpr auto \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a428ef8ef9f8b3f4b58ce9cdf42d8db5d}{Not\+Converging}} = "{}Not\+Converging"{}
+\item 
+static constexpr auto \mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{Max\+Iterations}} = "{}Max\+Iterations"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Numerically find the solution x of f(x) = 0 
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00039}{39}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a2217b187d439a141f2f41e201d477718}\label{structopenphase_1_1RootFindingAlgorithms_a2217b187d439a141f2f41e201d477718} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!Bisection@{Bisection}}
+\index{Bisection@{Bisection}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{Bisection()}{Bisection()}}
+{\footnotesize\ttfamily template$<$typename UNARY , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Bisection (\begin{DoxyParamCaption}\item[{UNARY}]{func,  }\item[{T \&}]{x0,  }\item[{T}]{xa,  }\item[{T}]{xb,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00050}{50}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ T\ fb\ =\ func(xb);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ T\ fa\ =\ func(xa);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((xa\ >\ xb)\ \ or\ (fa\ >\ 0\ and\ fb\ >\ 0)\ or\ (fa\ <\ 0\ and\ fb\ <\ 0))}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Unsuitable\ initial\ conditions!\(\backslash\)n"{}}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}xa\ =\ "{}}\ <<\ xa\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}xb\ =\ "{}}\ <<\ xb\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}fa\ =\ "{}}\ <<\ fa\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}fb\ =\ "{}}\ <<\ fb;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ T\ f0\ =\ func(x0);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ itr\ =\ 0;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::abs(f0)\ >\ accuracy\ \&\&\ std::abs((xb\ -\/\ xa)/xa)\ >\ std::numeric\_limits<double>::epsilon())}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((fa\ >\ 0\ and\ f0\ >\ 0)\ or\ (fa\ <\ 0\ and\ f0\ <\ 0))}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xa\ =\ x0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fa\ =\ f0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xb\ =\ x0;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fb\ =\ f0;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr\ >=\ iterations)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ x0\ =\ (xb\ +\ xa)/2.0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ f0\ =\ func(x0);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a17b800a16bc09b28256e98d4f446bca5}\label{structopenphase_1_1RootFindingAlgorithms_a17b800a16bc09b28256e98d4f446bca5} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!Broyden@{Broyden}}
+\index{Broyden@{Broyden}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{Broyden()}{Broyden()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename function , typename vector , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Broyden (\begin{DoxyParamCaption}\item[{function}]{func,  }\item[{vector \&}]{x0,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00200}{200}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ std::size\_t\ size\ =\ x0.size();}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<std::vector<T>>\ matrix;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ vector\ f\_p1;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ calculate\_jacobian\ =\ [\&func,\&size,\&f\_p1]\ (matrix\&\ J,\ \textcolor{keyword}{const}\ vector\&\ x0,\ \textcolor{keyword}{const}\ vector\&\ f0,\ \textcolor{keyword}{const}\ vector\&\ dx)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ f\_p1\ =\ f0;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector\ x\_p1\ =\ x0;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\_p1[m]\ +=\ dx[m];}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector\ f\_p1\ =\ func(x\_p1);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ J[n][m]\ =\ (f\_p1[n]\ -\/\ f0[n])/dx[m];}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ calculate\_inverted\ =\ [size](matrix\&\ Jinv,\ \textcolor{keyword}{const}\ matrix\&\ J)}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ 1)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (J[0][0]\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][0]\ =\ 1.0/J[0][0];}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ ==\ 2)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ det\ =\ J[0][0]*J[1][1]-\/J[1][0]*J[1][0];}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (det\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][0]\ =\ \ J[1][1]/det;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][1]\ =\ -\/J[0][1]/det;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[1][0]\ =\ -\/J[1][0]/det;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[1][1]\ =\ \ J[0][0]/det;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ ==\ 3)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ a\ =\ J[0][0];}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ b\ =\ J[0][1];}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ c\ =\ J[0][2];}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ d\ =\ J[1][0];}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ e\ =\ J[1][1];}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ f\ =\ J[1][2];}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ g\ =\ J[2][0];}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ h\ =\ J[2][1];}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ i\ =\ J[2][2];}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ A\ =\ \ (e*i-\/f*h);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ B\ =\ -\/(d*i-\/f*g);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ C\ =\ \ (d*h-\/e*g);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ D\ =\ -\/(b*i-\/c*h);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ E\ =\ \ (a*i-\/c*g);}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ F\ =\ -\/(a*h-\/b*g);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ G\ =\ \ (b*f-\/c*e);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ H\ =\ -\/(a*f-\/c*d);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{namespaceopenphase_a61a4ccda3979d13fd8eaa28b4e8ce72b}{I}}\ =\ \ (a*e-\/b*d);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ det\ =\ a*A+b*B+c*C;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (det\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][0]\ =\ A/det;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][1]\ =\ B/det;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[0][2]\ =\ C/det;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[1][0]\ =\ D/det;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[1][1]\ =\ E/det;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[1][2]\ =\ F/det;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[2][0]\ =\ G/det;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[2][1]\ =\ H/det;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv[2][2]\ =\ \mbox{\hyperlink{namespaceopenphase_a61a4ccda3979d13fd8eaa28b4e8ce72b}{I}}/det;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Matrix\ inversion\ for\ more\ that\ 3\ components\ is\ not\ yet\ implemented"{}});}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ matrix\ J0\ \ \ \ (size,vector(size,0.0));}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ matrix\ J1\ \ \ \ (size,vector(size,0.0));}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ matrix\ Jinv0\ (size,vector(size,0.0));}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ matrix\ Jinv1\ (size,vector(size,0.0));}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ vector\ x1\ =\ x0;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ vector\ f0\ =\ func(x0);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ vector\ f1\ =\ f0;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ vector\ dx\ \ (size,0.0);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ vector\ p0\ \ (size,0.0);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ vector\ y0\ \ (size,0.0);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ L2Norm\ =\ [size](vector\&\ x)}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ T\ norm\ =\ 0.0;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)\ norm\ +=\ x[n]*x[n];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(norm);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ T\ f\_norm0\ =\ L2Norm(f0);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ T\ f\_norm1\ =\ f\_norm0;}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ iterate\ =\ [size,accuracy]\ (\textcolor{keyword}{const}\ vector\&\ f)}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(f[n])\ >\ accuracy)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iterate(f0))}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//bool\ converging\ =\ true;}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ T\ eps\ =\ 1.0;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ T\ del\ =\ 1.0;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ itr\ =\ 0;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ inverted\ Jacobian}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ calculate\_step\_size\ =\ [size]\ (vector\&\ dx,\ \textcolor{keyword}{const}\ vector\&\ f0)}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ dx\_init\ =\ std::abs(f0[0]);}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 1;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(f0[n])\ >\ dx\_init)\ dx\_init\ =\ std::abs(f0[n]);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\_init\ /=\ 10;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx[n]\ =\ dx\_init;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_step\_size(dx,f0);}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_jacobian(J0,x0,f0,dx);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_inverted(Jinv0,J0);}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ update\_mu\ =\ [\&]()}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)\ f1[n]\ =\ f0[n];}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\_norm1\ =\ f\_norm0;}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x1[n]\ =\ x0[n];}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ del\ =\ 1.0;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eps\ =\ 1.0;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p0[n]\ =\ 0.0;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p0[n]\ -\/=\ Jinv0[n][m]*f0[m];}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x0[n]\ +=\ eps*p0[n];}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f0\ \ \ \ \ \ =\ func(x0);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\_norm0\ =\ L2Norm(f0);}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f\_norm0\ <\ f\_norm1\ or\ itr\ <\ 3)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ eps\_new\ =\ 0.75*eps;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ del\ =\ eps\_new-\/eps;}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eps\ =\ eps\_new;}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x0[n]\ =\ x1[n];}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (eps\ <\ accuracy)}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//converging\ =\ false;}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itr++;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ update\_mu();}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iterate(f0))}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recalculate\ Jacobian}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_step\_size(dx,f0);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_jacobian(J0,x0,f0,dx);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_inverted(Jinv0,J0);}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ Jacobian}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\{}}
+\DoxyCodeLine{00382\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(del\ ==\ 1)}}
+\DoxyCodeLine{00383\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00384\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00385\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00386\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y0[n]\ =\ (f0[n]-\/f1[n]);}}
+\DoxyCodeLine{00387\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00388\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00389\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{00390\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00391\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00392\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00393\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mus[n]\ =\ mu0[n]\ -\/\ del*p0[n];}}
+\DoxyCodeLine{00394\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00395\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_resiudal(fs,mu0,mus);}}
+\DoxyCodeLine{00396\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00397\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00398\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y0[n]\ =\ (f0[n]-\/fs[n]);}}
+\DoxyCodeLine{00399\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00400\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00401\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00402\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00403\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00404\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ J1[n][m]\ =\ J0[n][m];}}
+\DoxyCodeLine{00405\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00406\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ norm\ =\ 0;}}
+\DoxyCodeLine{00407\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00408\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00409\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ norm\ +=\ p0[n]*p0[n];}}
+\DoxyCodeLine{00410\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00411\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ norm\ *=\ del;}}
+\DoxyCodeLine{00412\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (norm\ !=\ 0.0)}}
+\DoxyCodeLine{00413\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00414\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00415\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00416\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ an\ =\ 0;}}
+\DoxyCodeLine{00417\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00418\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00419\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ an\ +=\ J1[n][m]*p0[m];}}
+\DoxyCodeLine{00420\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00421\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ an\ *=\ del;}}
+\DoxyCodeLine{00422\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00423\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00424\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ J0[n][m]\ +=\ (y0[n]\ -\/\ an)*p0[m]/norm;}}
+\DoxyCodeLine{00425\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00426\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00427\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00428\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ calculate\_jacobian(J0,mu0,f0);}}
+\DoxyCodeLine{00429\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_inverted(Jinv0,J0);}}
+\DoxyCodeLine{00430\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ inverted\ Jacobian}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\{}}
+\DoxyCodeLine{00434\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00435\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00436\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00437\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv1[n][m]\ =\ Jinv0[n][m];}}
+\DoxyCodeLine{00438\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00439\ \textcolor{comment}{}}
+\DoxyCodeLine{00440\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ norm\ =\ 0;}}
+\DoxyCodeLine{00441\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00442\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00443\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00444\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ norm\ -\/=\ p0[m]*Jinv1[m][n]*y0[n];}}
+\DoxyCodeLine{00445\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00446\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (norm\ !=\ 0.0)}}
+\DoxyCodeLine{00447\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00448\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ n\ =\ 0;\ n\ <\ size;\ n++)}}
+\DoxyCodeLine{00449\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00450\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ an\ =\ 0;}}
+\DoxyCodeLine{00451\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00452\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00453\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ an\ +=\ del*p0[n]-\/Jinv1[n][m]*y0[m];}}
+\DoxyCodeLine{00454\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00455\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ m\ =\ 0;\ m\ <\ size;\ m++)}}
+\DoxyCodeLine{00456\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00457\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ bm\ =\ 0;}}
+\DoxyCodeLine{00458\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (std::size\_t\ o\ =\ 0;\ o\ <\ size;\ o++)}}
+\DoxyCodeLine{00459\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00460\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bm\ -\/=\ p0[m]*Jinv1[m][o];}}
+\DoxyCodeLine{00461\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00462\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //Jinv0[n][m]\ +=\ a[n]*b[m]/norm;}}
+\DoxyCodeLine{00463\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv0[n][m]\ +=\ an*bm/norm;}}
+\DoxyCodeLine{00464\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00465\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00466\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00467\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{00468\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00469\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_step\_size(dx,f0);}}
+\DoxyCodeLine{00470\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_jacobian(J0,x0,f0,dx);}}
+\DoxyCodeLine{00471\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_inverted(Jinv0,J0);}}
+\DoxyCodeLine{00472\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00473\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//print(itr,mu0,f0,J0,Jinv0,f\_norm0);}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\_mu();}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr>=iterations)\ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00481\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_ae525c9fa96fa3fc9e4965f5785bdca71}\label{structopenphase_1_1RootFindingAlgorithms_ae525c9fa96fa3fc9e4965f5785bdca71} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!Broyden@{Broyden}}
+\index{Broyden@{Broyden}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{Broyden()}{Broyden()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename UNARY , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Broyden (\begin{DoxyParamCaption}\item[{UNARY}]{func,  }\item[{T \&}]{x0,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00142}{142}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ gradient\ =\ [func]\ (T\ x0,\ T\ dx)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x\_p1\ =\ x0\ +\ dx;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x\_m1\ =\ x0\ -\/\ dx;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ T\ f\_m1\ =\ func(x\_m1);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ T\ f\_p1\ =\ func(x\_p1);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (f\_p1\ -\/\ f\_m1)/dx/2;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ T\ x1\ =\ x0;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ T\ f0\ =\ func(x0);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ T\ f1\ =\ f0;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(f0)\ >\ accuracy)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ itr\ =\ 1;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ T\ eps\ =\ 1.0;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ T\ del\ =\ 0.5;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ T\ dx\ \ =\ f0/1000;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ T\ J0\ \ =\ gradient(x0,dx);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (J0\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ T\ Jinv0\ =\ 1.0/J0;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ T\ p0\ =\ -\/\ Jinv0*f0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ x0\ \ +=\ eps*p0;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ f0\ \ \ =\ func(x0);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ itr++;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx\ \ =\ del*(x0\ -\/\ x1);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ J0\ \ =\ gradient(x0,dx);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (J0\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Jinv0\ =\ 1.0/J0;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eps\ =\ 1.0;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ del\ =\ 0.5;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x1\ \ =\ x0;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f1\ \ =\ f0;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ p0\ =\ -\/\ Jinv0*f0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x0\ +=\ eps*p0;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f0\ \ =\ func(x0);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f0*f0\ <\ f1*f1\ or\ itr\ <\ 3)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ eps\_new\ =\ 0.75*eps;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ del\ =\ eps\_new-\/eps;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eps\ =\ eps\_new;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x0\ =\ x1;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (eps\ <\ accuracy)\ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a428ef8ef9f8b3f4b58ce9cdf42d8db5d}{NotConverging}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr>=iterations)\ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::abs(f0)\ >\ accuracy);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_ae27a58d5cf393fed1642b1ac2afe5b84}\label{structopenphase_1_1RootFindingAlgorithms_ae27a58d5cf393fed1642b1ac2afe5b84} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!Newton@{Newton}}
+\index{Newton@{Newton}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{Newton()}{Newton()}}
+{\footnotesize\ttfamily template$<$typename UNARY1 , typename UNARY2 , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Newton (\begin{DoxyParamCaption}\item[{UNARY1}]{func,  }\item[{UNARY2}]{dfunc,  }\item[{T \&}]{x0,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00087}{87}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ T\ f0\ =\ func(x0);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ itr\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::abs(f0)\ >\ accuracy)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ T\ df0\ =\ dfunc(x0);\ \textcolor{keywordflow}{if}\ (df0\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ itr\ <<\ "{}\ "{}\ <<\ x0\ <<\ "{}\ "{}\ <<\ f0\ <<\ \ "{}\ "{}\ <<\ df0\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ T\ p0\ \ =\ -\/\ f0/df0;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ x0\ +=\ p0;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr\ >=\ iterations)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ f0\ =\ func(x0);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_ab4a0171be76df2cb38971d16c57348ac}\label{structopenphase_1_1RootFindingAlgorithms_ab4a0171be76df2cb38971d16c57348ac} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!PositivNewton@{PositivNewton}}
+\index{PositivNewton@{PositivNewton}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{PositivNewton()}{PositivNewton()}}
+{\footnotesize\ttfamily template$<$typename UNARY1 , typename UNARY2 , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Positiv\+Newton (\begin{DoxyParamCaption}\item[{UNARY1}]{func,  }\item[{UNARY2}]{dfunc,  }\item[{T \&}]{x0,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00103}{103}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ T\ f0\ =\ func(x0);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ itr\ =\ 0;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::abs(f0)\ >\ accuracy)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ T\ df0\ =\ dfunc(x0);\ \textcolor{keywordflow}{if}\ (df0\ ==\ 0.0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ T\ p0\ \ =\ -\/\ f0/df0;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (x0\ +\ p0\ <=\ 0.0\ )\ p0/=2.0;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ x0\ +=\ p0;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr\ >=\ iterations\ and\ x0\ >\ 0.0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ f0\ =\ func(x0);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a7ed5dc0fe50eb6e07e08f081ad824ddf}\label{structopenphase_1_1RootFindingAlgorithms_a7ed5dc0fe50eb6e07e08f081ad824ddf} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!Secant@{Secant}}
+\index{Secant@{Secant}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{Secant()}{Secant()}}
+{\footnotesize\ttfamily template$<$typename UNARY , typename T $>$ \\
+static void openphase\+::\+Root\+Finding\+Algorithms\+::\+Secant (\begin{DoxyParamCaption}\item[{UNARY}]{func,  }\item[{T \&}]{x0,  }\item[{T \&}]{x1,  }\item[{T}]{accuracy,  }\item[{unsigned long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00119}{119}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ T\ f0\ =\ func(x0);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ T\ f1\ =\ func(x1);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(f0)\ >\ accuracy)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ itr\ =\ 0;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ dx\ =\ (x0\ -\/\ x1);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ df\ =\ (f0\ -\/\ f1);\ \textcolor{keywordflow}{if}\ (df\ ==\ 0)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}{ZeroGradient}});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ p0\ =\ -\/\ f0*dx/df;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x1\ \ =\ x0;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x0\ +=\ p0;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f1\ \ =\ f0;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f0\ \ =\ func(x0);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itr++;\ \textcolor{keywordflow}{if}\ (itr\ >=\ iterations)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\mbox{\hyperlink{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}{MaxIterations}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(std::abs(f0)\ >\ accuracy);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065}\label{structopenphase_1_1RootFindingAlgorithms_a13f283afd9ad844b3cedb5b6a4757065} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!MaxIterations@{MaxIterations}}
+\index{MaxIterations@{MaxIterations}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{MaxIterations}{MaxIterations}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Root\+Finding\+Algorithms\+::\+Max\+Iterations = "{}Max\+Iterations"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00047}{47}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a428ef8ef9f8b3f4b58ce9cdf42d8db5d}\label{structopenphase_1_1RootFindingAlgorithms_a428ef8ef9f8b3f4b58ce9cdf42d8db5d} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!NotConverging@{NotConverging}}
+\index{NotConverging@{NotConverging}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{NotConverging}{NotConverging}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Root\+Finding\+Algorithms\+::\+Not\+Converging = "{}Not\+Converging"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00046}{46}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+\Hypertarget{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2}\label{structopenphase_1_1RootFindingAlgorithms_a22b55752267399f1c04ea338337853a2} 
+\index{openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}!ZeroGradient@{ZeroGradient}}
+\index{ZeroGradient@{ZeroGradient}!openphase::RootFindingAlgorithms@{openphase::RootFindingAlgorithms}}
+\doxysubsubsection{\texorpdfstring{ZeroGradient}{ZeroGradient}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Root\+Finding\+Algorithms\+::\+Zero\+Gradient = "{}Zero\+Gradient"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{RootFindingAlgorithms_8h_source_l00045}{45}} of file \mbox{\hyperlink{RootFindingAlgorithms_8h_source}{Root\+Finding\+Algorithms.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RootFindingAlgorithms_8h}{Root\+Finding\+Algorithms.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,803 @@
+\doxysection{Node\+PF.\+h}
+\hypertarget{NodePF_8h_source}{}\label{NodePF_8h_source}\index{NodePF.h@{NodePF.h}}
+\mbox{\hyperlink{NodePF_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2009}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Reza\ Darvishi\ Kamachali;\ Dmitry\ Medvedev}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ NODEPF\_H}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ NODEPF\_H}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dVector3_8h}{dVector3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00036}00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00038}00038\ \textcolor{comment}{/*********************************\ Declaration\ *******************************/}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00040}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{00040}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00042}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{00042}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00043}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{00043}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{00044}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00045}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{00045}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00047}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a12a5d5e5c945aba00a4161c0c829d666}{00047}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a12a5d5e5c945aba00a4161c0c829d666}{PhaseFieldEntry}}()\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}(0),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}(0.0),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}(\mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}::ZeroVector())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00055}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aa3a9bfbaa7282a42cc457eb26f26dc90}{00055}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aa3a9bfbaa7282a42cc457eb26f26dc90}{PhaseFieldEntry}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\&\ entry)\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}(entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}(entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}(entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}(entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00063}\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a9f922474e0a0d4d2e286d0e3aa3e55b6}{00063}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\&\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a9f922474e0a0d4d2e286d0e3aa3e55b6}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\&\ entry)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ =\ entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ \ =\ entry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00071}00071\ \};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00073}\mbox{\hyperlink{classopenphase_1_1NodePF}{00073}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00075}00075\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00076}\mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{00076}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a456343b44ae1f4f8d1cd057381a2353b}{NodePF}}()\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}(0),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}(0),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}(0)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.reserve(3);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.reserve(3);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00085}\mbox{\hyperlink{classopenphase_1_1NodePF_a24123428e96b6ba8576615e1ea9fc381}{00085}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a24123428e96b6ba8576615e1ea9fc381}{NodePF}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)\ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}(n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}(n.\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}),}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}(n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00093}\mbox{\hyperlink{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}{00093}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}{clear}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.clear();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.clear();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00098}00098\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773}{finalize}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40}{majority\_index}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c}{present}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a}{set\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{add\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}{get\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00118}00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912}{set\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{add\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955}{add\_laplacian\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b}{get\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c}{set\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{add\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7}{add\_gradient\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700}{get\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeA}{NodeA<dVector3>}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6}{get\_gradients}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7}{set\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507}{add\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00133}00133\ \ \ \ \ std::pair<double,dVector3>\ \mbox{\hyperlink{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1}{get\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00135}00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111}{set\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00136}00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}{get\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keywordtype}{double}\&\ value,\ \textcolor{keywordtype}{double}\&\ laplacian,\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ gradient)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00139}00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22}{add\_values}}\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1}{add\_laplacians}}\ \ \ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a}{add\_gradients}}\ \ \ \ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00142}\mbox{\hyperlink{classopenphase_1_1NodePF_a259cdedb0158721650b8a1f0173033de}{00142}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a259cdedb0158721650b8a1f0173033de}{add\_derivatives}}\ \ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00143}00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17}{add\_existing\_values}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576}{add\_existing\_all}}\ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00146}00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882}{set\_temporary}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00147}00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2}{copy\_from\_temporary}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767}{get\_max}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be}{interface}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e}{interface\_halo}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00153}00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610}{wide\_interface}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00154}00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557}{bulk}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00156}\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{00156}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<PhaseFieldEntry>::iterator\ \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00157}\mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{00157}}\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<PhaseFieldEntry>::const\_iterator\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00159}\mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{00159}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}()\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00160}\mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{00160}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}()\ \ \ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00161}\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{00161}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00162}\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{00162}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab9d86bf0658a44de5aff74d71bd46363}{citerator}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}()\textcolor{keyword}{\ \ \ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00164}\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{00164}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00165}\mbox{\hyperlink{classopenphase_1_1NodePF_af1d019d5d6c48b631b86c760f9e99337}{00165}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1d019d5d6c48b631b86c760f9e99337}{capacity}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.capacity();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00166}\mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{00166}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}\ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}(\mbox{\hyperlink{classopenphase_1_1NodePF_a75a65b0c3b11fb479fba4031f46a8662}{iterator}}\ it)\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00167}\mbox{\hyperlink{classopenphase_1_1NodePF_acad092081b971097fff57547fe0bd8a3}{00167}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_acad092081b971097fff57547fe0bd8a3}{front}}(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00168}\mbox{\hyperlink{classopenphase_1_1NodePF_a963bad6229371491ac625f91d2a95264}{00168}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a963bad6229371491ac625f91d2a95264}{front}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8}{pack}}(std::vector<double>\&\ buffer);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00171}00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7}{unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047}{read}}(std::istream\&\ inp);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7}{write}}(std::ostream\&\ outp)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00175}\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{00175}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00176}00176\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00177}00177\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00178}\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{00178}}\ \ \ \ \ std::vector<PhaseFieldEntry>\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00179}\mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{00179}}\ \ \ \ \ std::vector<PhaseFieldEntry>\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00180}00180\ \};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00182}00182\ \textcolor{comment}{/*******************************\ Implementation\ ******************************/}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00183}\mbox{\hyperlink{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882}{00183}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a66674a4a742548b1232ebf1599001882}{NodePF::set\_temporary}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00184}00184\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00185}00185\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00186}00186\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00188}\mbox{\hyperlink{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2}{00188}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a1d7127c82ca2f643b96d0b6f0f7981b2}{NodePF::copy\_from\_temporary}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00189}00189\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00191}00191\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.clear();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00192}00192\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00194}\mbox{\hyperlink{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40}{00194}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a89d17c2245e9b16fb7653ed3080a3e40}{NodePF::majority\_index}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00195}00195\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00197}00197\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().index;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00201}00201\ \ \ \ \ \textcolor{keywordtype}{double}\ max\_value\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00202}00202\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00204}00204\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>value\ >\ max\_value)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ max\_value\ =\ i-\/>value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ max\_index\ =\ i-\/>index;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{return}\ max\_index;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00214}\mbox{\hyperlink{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773}{00214}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a7e11ad2939a92cbed4e5b50c6b785773}{NodePF::finalize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00215}00215\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00216}00216\ \ \ \ \ \textcolor{keywordtype}{double}\ total\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00218}00218\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>value\ >=\ 1.0\ -\/\ DBL\_EPSILON)\ i-\/>value\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>value\ <=\ 0.0\ +\ DBL\_EPSILON)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00226}00226\ \ \ \ \ \ \ \ \ total\ +=\ i-\/>value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.erase(i);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ ++i;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00236}00236\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00237}00237\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ 1.0/total;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ *=\ norm;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>gradient.set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00246}00246\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00247}00247\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00248}00248\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().value\ \ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().laplacian\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.front().gradient.set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00257}\mbox{\hyperlink{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c}{00257}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af505e5b9392ea0420e9361a6c3b17a7c}{NodePF::present}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00258}00258\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00260}00260\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ index)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00262}00262\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00266}\mbox{\hyperlink{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a}{00266}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_aca3b19dcae96eabd64e04c136b4b873a}{NodePF::set\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00267}00267\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00270}00270\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ i-\/>value\ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00275}00275\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00276}00276\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00280}00280\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00281}00281\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00282}00282\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00283}00283\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00284}00284\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00285}00285\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00286}00286\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00288}\mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{00288}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{NodePF::add\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00289}00289\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00290}00290\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00291}00291\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00292}00292\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00293}00293\ \ \ \ \ \ \ \ \ i-\/>value\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00295}00295\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00297}00297\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00301}00301\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00302}00302\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00303}00303\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00304}00304\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00305}00305\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00306}00306\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00308}\mbox{\hyperlink{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}{00308}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}{NodePF::get\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00309}00309\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00311}00311\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00313}00313\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00314}00314\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00315}00315\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00317}\mbox{\hyperlink{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912}{00317}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a741f24b9f16628c39ca9d35036c85912}{NodePF::set\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00318}00318\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00319}00319\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00320}00320\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00321}00321\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ i-\/>laplacian\ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00324}00324\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00326}00326\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00327}00327\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00328}00328\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00329}00329\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00330}00330\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00331}00331\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00332}00332\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00334}\mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{00334}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{NodePF::add\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00335}00335\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00336}00336\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00337}00337\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00338}00338\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00341}00341\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00343}00343\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00344}00344\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00345}00345\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00346}00346\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00347}00347\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00348}00348\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00349}00349\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00351}\mbox{\hyperlink{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955}{00351}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_abbe99fa378e46ca135da90d0c0a22955}{NodePF::add\_laplacian\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00352}00352\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00353}00353\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00354}00354\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00355}00355\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00358}00358\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00360}00360\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00361}00361\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00362}00362\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00363}00363\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00364}00364\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}.\mbox{\hyperlink{classopenphase_1_1dVector3_aeac755dc3b1ad8c1a00726b09c6a169d}{set\_to\_zero}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00365}00365\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00368}\mbox{\hyperlink{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b}{00368}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ad4f4224a886dca18951d95d8f9aea74b}{NodePF::get\_laplacian}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00369}00369\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00370}00370\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00371}00371\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00373}00373\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00374}00374\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00375}00375\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00377}\mbox{\hyperlink{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c}{00377}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_acb1df24ec0ba0d6507c8ea20db7e250c}{NodePF::set\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00378}00378\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00379}00379\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00381}00381\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ i-\/>gradient\ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00384}00384\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00386}00386\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00387}00387\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00388}00388\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00389}00389\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00390}00390\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00391}00391\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00392}00392\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00394}\mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{00394}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{NodePF::add\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00395}00395\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00396}00396\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00397}00397\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00398}00398\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00399}00399\ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00400}00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00401}00401\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00403}00403\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00404}00404\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00405}00405\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00406}00406\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00407}00407\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00408}00408\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00409}00409\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00411}\mbox{\hyperlink{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7}{00411}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af623c06c4e0660ec67b06da6ca8024f7}{NodePF::add\_gradient\_tmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00412}00412\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00413}00413\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00414}00414\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00415}00415\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00418}00418\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00420}00420\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00421}00421\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00422}00422\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00423}00423\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00424}00424\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00425}00425\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00426}00426\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00428}\mbox{\hyperlink{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700}{00428}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d2bf44555f568f49e19ff4d0bde4700}{NodePF::get\_gradient}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00429}00429\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00430}00430\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00431}00431\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00432}00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ i-\/>gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00433}00433\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00434}00434\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1dVector3_a8018e65b45f756988420358a918933d8}{dVector3::ZeroVector}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00435}00435\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00437}\mbox{\hyperlink{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6}{00437}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodeA}{NodeA<dVector3>}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a316e9a2e71a67969d5baec03413817e6}{NodePF::get\_gradients}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00438}00438\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00439}00439\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeA}{NodeA<dVector3>}}\ result;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00440}00440\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00441}00441\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodeA_a4c91977e9c449706e3527585dcc950a8}{set\_value}}(i-\/>index,\ i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00443}00443\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00444}00444\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00445}00445\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00447}\mbox{\hyperlink{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b}{00447}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab34ab7ac41135a45943aa714305ec34b}{NodePF::operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00448}00448\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00449}00449\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00451}00451\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00452}00452\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00453}00453\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00454}00454\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00455}00455\ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00456}00456\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00457}00457\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00459}\mbox{\hyperlink{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed}{00459}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_aedd7a734ed6534d9d409430c86e152ed}{NodePF::operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00460}00460\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00461}00461\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ result\ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00463}00463\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00464}00464\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00468}00468\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00470}00470\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00471}00471\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00472}00472\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00473}00473\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00474}00474\ \ \ \ \ result.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00475}00475\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00476}00476\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00478}\mbox{\hyperlink{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d}{00478}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4c82e146706a780b38f65066cde09f4d}{NodePF::operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00479}00479\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00480}00480\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00482}00482\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.\mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ result.\mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00483}00483\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00484}00484\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00485}00485\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00486}00486\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00487}00487\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00489}00489\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00491}\mbox{\hyperlink{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6}{00491}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a61ac9b3ec359ec7b577a1659beee19e6}{NodePF::operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00492}00492\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00493}00493\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00494}00494\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00495}00495\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ i-\/>value,\ i-\/>laplacian,\ i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00496}00496\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00497}00497\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00498}00498\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00499}00499\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00501}\mbox{\hyperlink{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401}{00501}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a6d8b8bf08df71c558563d1be7e00c401}{NodePF::operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00502}00502\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00503}00503\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00504}00504\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00505}00505\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{add\_all}}(i-\/>index,\ -\/i-\/>value,\ -\/i-\/>laplacian,\ i-\/>gradient*(-\/1.0));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00506}00506\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00507}00507\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00508}00508\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00509}00509\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00511}\mbox{\hyperlink{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b}{00511}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_aae81055ae79179149f1dc1b4e6aec62b}{NodePF::operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00512}00512\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00513}00513\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00514}00514\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00515}00515\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00516}00516\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00517}00517\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ *=\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00518}00518\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00519}00519\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00520}00520\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00522}\mbox{\hyperlink{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9}{00522}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ \mbox{\hyperlink{classopenphase_1_1NodePF_a16e55248665e13ca87705c3584fd51a9}{NodePF::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00523}00523\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00524}00524\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00525}00525\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}}\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9a5f839cd06ce1f2b83ecef22deca9f5}{tmpFields}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00526}00526\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00527}00527\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00528}00528\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00530}\mbox{\hyperlink{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111}{00530}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a57091c07e27bb5b0cac9c18bab9ad111}{NodePF::set\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00531}00531\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00532}00532\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00533}00533\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00534}00534\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00535}00535\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00536}00536\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00537}00537\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00538}00538\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00539}00539\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00540}00540\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00541}00541\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00542}00542\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00543}00543\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00544}00544\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00545}00545\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00546}00546\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00547}00547\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00548}00548\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00549}00549\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00550}00550\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00551}00551\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00552}\mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{00552}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6859cd3e234bef1d3b63b9c371ef682}{NodePF::add\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00553}00553\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00554}00554\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00555}00555\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00556}00556\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00557}00557\ \ \ \ \ \ \ \ \ i-\/>value\ \ \ \ \ \ +=\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00558}00558\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ +=\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00559}00559\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ +=\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00560}00560\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00561}00561\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00562}00562\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00563}00563\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00564}00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00565}00565\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00566}00566\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00567}00567\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00568}00568\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00569}00569\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00570}00570\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00571}00571\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00572}00572\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00574}\mbox{\hyperlink{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}{00574}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}{NodePF::get\_all}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keywordtype}{double}\&\ value,\ \textcolor{keywordtype}{double}\&\ laplacian,\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\&\ gradient)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00575}00575\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00576}00576\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00577}00577\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00578}00578\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00579}00579\ \ \ \ \ \ \ \ \ value\ =\ i-\/>value;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ laplacian\ =\ i-\/>laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ gradient\ =\ i-\/>gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00582}00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00583}00583\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00584}00584\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00586}\mbox{\hyperlink{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7}{00586}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a2981e136f4c3b550c5414c6290f9ccc7}{NodePF::set\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00587}00587\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00588}00588\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00589}00589\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00590}00590\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00591}00591\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00592}00592\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00593}00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00594}00594\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00595}00595\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00596}00596\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00597}00597\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00598}00598\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00599}00599\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00600}00600\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00601}00601\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00602}00602\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00603}00603\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00604}00604\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00605}00605\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00607}\mbox{\hyperlink{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507}{00607}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a6848c834e52f371fff676e07f5bde507}{NodePF::add\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ laplacian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ gradient)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00608}00608\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00609}00609\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00610}00610\ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00611}00611\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00612}00612\ \ \ \ \ \ \ \ \ i-\/>laplacian\ \ +=\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00613}00613\ \ \ \ \ \ \ \ \ i-\/>gradient\ \ \ +=\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00614}00614\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00615}00615\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00616}00616\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size())}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00617}00617\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00618}00618\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00619}00619\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00620}00620\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ NewEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00621}00621\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_aeb78dac7617612e48f302da355759bbd}{index}}\ \ \ \ \ \ =\ n;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00622}00622\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00623}00623\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_ad73858fc7d0961b4c72b748d4fc8e250}{laplacian}}\ \ =\ laplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00624}00624\ \ \ \ \ NewEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a0ace453a97288f2dd7f688e4a2aa7567}{gradient}}\ \ \ =\ gradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00625}00625\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00626}00626\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00627}00627\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00628}\mbox{\hyperlink{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1}{00628}}\ \textcolor{keyword}{inline}\ std::pair<double,dVector3>\ \mbox{\hyperlink{classopenphase_1_1NodePF_ada5037cf75a00bc481a39c60d89457e1}{NodePF::get\_derivatives}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00629}00629\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00630}00630\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00631}00631\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00632}00632\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/>index\ ==\ n)\ \textcolor{keywordflow}{return}\ std::pair<double,dVector3>(i-\/>laplacian,i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00633}00633\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00634}00634\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<double,dVector3>(0.0,\ \mbox{\hyperlink{classopenphase_1_1dVector3_a8018e65b45f756988420358a918933d8}{dVector3::ZeroVector}}());}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00635}00635\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00636}00636\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00637}\mbox{\hyperlink{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22}{00637}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab59cdaaf4ff5125134835f9deb017c22}{NodePF::add\_values}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00638}00638\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00639}00639\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00640}00640\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00641}00641\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_ae72b415227f349d71d89ce4285f735bd}{add\_value}}(i-\/>index,\ i-\/>value);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00642}00642\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00643}00643\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00644}00644\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00645}00645\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00646}\mbox{\hyperlink{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1}{00646}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a11083a1f95b537710967921fb40399c1}{NodePF::add\_laplacians}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00647}00647\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00648}00648\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00649}00649\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00650}00650\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abf837b6460f19a4c2507af3d5a8b1d90}{add\_laplacian}}(i-\/>index,\ i-\/>laplacian);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00651}00651\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00652}00652\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00653}00653\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00655}\mbox{\hyperlink{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a}{00655}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ad3ce6f8a4c01f55e54b1719aef0eef0a}{NodePF::add\_gradients}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00656}00656\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00657}00657\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a9bfddbfd5e0233468bc9cd57796b69dd}{cbegin}}();\ i\ <\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_accbf09459e683061ec1dc7d7ed2440c7}{cend}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00658}00658\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00659}00659\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a60bb9048e98e34abe3a8cb8e7e78b2a3}{add\_gradient}}(i-\/>index,\ i-\/>gradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00660}00660\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00661}00661\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00662}00662\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00663}00663\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00664}\mbox{\hyperlink{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17}{00664}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a29ae74b2b41dcbf74a979da284f28d17}{NodePF::add\_existing\_values}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00665}00665\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00666}00666\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ )}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00667}00667\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00668}00668\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locVal\ =\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_a4970e18273c0da643f28f7b6e3440def}{get\_value}}(i-\/>index);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00669}00669\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locVal\ !=\ 0.0\ and\ i-\/>value\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00670}00670\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ +=\ locVal;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00673}00673\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00674}00674\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00675}00675\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}(i);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00677}00677\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00678}00678\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00679}00679\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00680}00680\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00682}\mbox{\hyperlink{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576}{00682}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a379547f5d942360dde49a77701ff1576}{NodePF::add\_existing\_all}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1NodePF}{NodePF}}\&\ n)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00683}00683\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00684}00684\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a3d442872ead92893d7c2a021e963935e}{begin}}();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_aabfe0632b8c16aedab90b391d0a67f67}{end}}();\ )}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00685}00685\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00686}00686\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locValue\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00687}00687\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locLaplacian\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00688}00688\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ locGradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00689}00689\ \ \ \ \ \ \ \ \ n.\mbox{\hyperlink{classopenphase_1_1NodePF_ab6188d963bad4883ae3fc9739154d679}{get\_all}}(i-\/>index,\ locValue,\ locLaplacian,\ locGradient);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00690}00690\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locValue\ !=\ 0.0\ and\ i-\/>value\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00691}00691\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>value\ +=\ locValue;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>laplacian\ +=\ locLaplacian;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>gradient\ +=\ locGradient;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00696}00696\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00697}00697\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00698}00698\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00699}00699\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0b268a82d2a877518d0c7adc93b32681}{erase}}(i);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00700}00700\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00701}00701\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00702}00702\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ std::max(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}},\ n.\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00703}00703\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00704}00704\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00705}\mbox{\hyperlink{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767}{00705}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ \mbox{\hyperlink{classopenphase_1_1NodePF_ab355e49b1e86530c6f55ccfaa00a0767}{NodePF::get\_max}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00706}00706\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00707}00707\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry}{PhaseFieldEntry}}\ returnFieldEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00708}00708\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00709}00709\ \ \ \ \ returnFieldEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00710}00710\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00711}00711\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00712}00712\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(i-\/>value)\ >\ returnFieldEntry.\mbox{\hyperlink{structopenphase_1_1PhaseFieldEntry_a78000453518e5a7a1029ebf1673de601}{value}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00713}00713\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00714}00714\ \ \ \ \ \ \ \ \ returnFieldEntry\ =\ *i;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00715}00715\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00716}00716\ \ \ \ \ \textcolor{keywordflow}{return}\ returnFieldEntry;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00717}00717\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00719}\mbox{\hyperlink{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8}{00719}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a5c264ece3e98373ae1fbde6b7039f4d8}{NodePF::pack}}(std::vector<double>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00720}00720\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00721}00721\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size());}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00722}00722\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.begin();\ it\ !=\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.end();\ ++it)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00723}00723\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00724}00724\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>index);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00725}00725\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>value);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00726}00726\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>laplacian);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00727}00727\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[0]);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00728}00728\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[1]);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00729}00729\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>gradient[2]);}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00730}00730\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00731}00731\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00732}00732\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00733}00733\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00734}\mbox{\hyperlink{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7}{00734}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a5168e4be41ac8dcb2d97f803ec6df4e7}{NodePF::unpack}}(std::vector<double>\&\ buffer,\ \textcolor{keywordtype}{size\_t}\&\ it)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00735}00735\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00736}00736\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_abdece29bffc314095a77c22e7a7fcb77}{clear}}();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00737}00737\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00738}00738\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00739}00739\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00740}00740\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00741}00741\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].index\ \ \ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00742}00742\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].value\ \ \ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00743}00743\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].laplacian\ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00744}00744\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[0]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00745}00745\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[1]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00746}00746\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}[i].gradient[2]\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00747}00747\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00748}00748\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00749}00749\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00750}00750\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00751}\mbox{\hyperlink{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047}{00751}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a771f5f8129043fffd982c2eec6397047}{NodePF::read}}(std::istream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00752}00752\ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00753}00753\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00754}00754\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00755}00755\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00756}00756\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}});}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00757}00757\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ >\ 1)\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00758}00758\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00759}00759\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00760}00760\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00761}00761\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.value),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00762}00762\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00763}00763\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00764}00764\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00765}\mbox{\hyperlink{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7}{00765}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1NodePF_aa9fb294acdd6adc44b3b0c4b2a6582c7}{NodePF::write}}(std::ostream\&\ outp)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00766}00766\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00767}00767\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}}.size();}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00768}00768\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodePF_a4fcfb9acd364d7e8b4bbde409fff2628}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00769}00769\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00770}00770\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0cc0901f53dcb00c2cd046f301c0463f}{Fields}})}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00771}00771\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00772}00772\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.index),\ \textcolor{keyword}{sizeof}(size\_t));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00773}00773\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.value),\ \textcolor{keyword}{sizeof}(double));}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00774}00774\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00775}00775\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00776}00776\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00777}\mbox{\hyperlink{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be}{00777}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a7df3e01f2f2ce0e4eb7450198a8281be}{NodePF::interface}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00778}00778\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00779}00779\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ ==\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00780}00780\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00781}00781\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00782}\mbox{\hyperlink{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e}{00782}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a82f0032d11c26a54d8ac6b2b4e9fec2e}{NodePF::interface\_halo}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00783}00783\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00784}00784\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ ==\ 1;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00785}00785\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00786}00786\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00787}\mbox{\hyperlink{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610}{00787}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a0356f9802e34f83f731b483b0bf55610}{NodePF::wide\_interface}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00788}00788\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00789}00789\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00790}00790\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00791}00791\ }
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00792}\mbox{\hyperlink{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557}{00792}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1NodePF_a10ba255339d3f0ca5cae07d3a9ba5557}{NodePF::bulk}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00793}00793\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00794}00794\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodePF_af1f1f39abdac6f1041de81c498fd3dd8}{flag}}\ !=\ 2;}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00795}00795\ \}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00796}00796\ \}\textcolor{comment}{//namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{NodePF_8h_source_l00797}00797\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

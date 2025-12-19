@@ -1,0 +1,493 @@
+\doxysection{System\+Of\+Linear\+Equations\+Solvers.\+h}
+\hypertarget{SystemOfLinearEquationsSolvers_8h_source}{}\label{SystemOfLinearEquationsSolvers_8h_source}\index{SystemOfLinearEquationsSolvers.h@{SystemOfLinearEquationsSolvers.h}}
+\mbox{\hyperlink{SystemOfLinearEquationsSolvers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2020}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ SOLVELINEARSYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ SOLVELINEARSYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConsoleOutput_8h}{ConsoleOutput.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00038}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers}{00038}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers}{openphase::SystemOfLinearEquationsSolvers}}\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00041}00041\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00042}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a98dbe7a66e6f0ec294537d8649530593}{00042}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a98dbe7a66e6f0ec294537d8649530593}{operator+}}(\textcolor{keyword}{const}\ Vector\ \&\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00044}00044\ \ \ \ \ assert(lhs.size()\ ==\ rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00046}00046\ \ \ \ \ Vector\ tmp(lhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ tmp[i]\ =\ lhs[i]+rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00055}00055\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00056}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3cbddf75ead607c6ef6a413b0f5ee0ff}{00056}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3cbddf75ead607c6ef6a413b0f5ee0ff}{operator+=}}(Vector\&\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00058}00058\ \ \ \ \ assert(lhs.size()\ ==\ rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ lhs[i]\ +=\ rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ lhs;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00068}00068\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00069}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a6a73ce83856aae4408742e1741b39af5}{00069}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a6a73ce83856aae4408742e1741b39af5}{operator-\/}}(\textcolor{keyword}{const}\ Vector\&\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00071}00071\ \ \ \ \ assert(lhs.size()\ ==\ rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00073}00073\ \ \ \ \ Vector\ tmp(lhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00074}00074\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ tmp[i]\ =\ lhs[i]-\/rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00082}00082\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00083}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_ab25624605212d7fd4bda6e058f77b926}{00083}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_ab25624605212d7fd4bda6e058f77b926}{operator-\/=}}(Vector\&\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00085}00085\ \ \ \ \ assert(lhs.size()\ ==\ rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00087}00087\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ lhs[i]\ -\/=\ rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ lhs;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00095}00095\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00096}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2b98c6b4d8cdc09cc9c20b1dfc537461}{00096}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2b98c6b4d8cdc09cc9c20b1dfc537461}{operator*}}(\textcolor{keyword}{const}\ Vector\&\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00097}00097\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00098}00098\ \ \ \ \ assert(lhs.size()\ ==\ rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ 0.;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00101}00101\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for\ reduction(+:tmp)}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ tmp\ +=\ lhs[i]*rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00109}00109\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00110}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5624b29a773a516ae58795427a830b9a}{00110}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2b98c6b4d8cdc09cc9c20b1dfc537461}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ lhs,\ \textcolor{keyword}{const}\ Vector\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00112}00112\ \ \ \ \ Vector\ tmp(rhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00113}00113\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ rhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ tmp[i]\ =\ lhs*rhs[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00121}00121\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00122}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_aab72a2455a9fc72815b35b9666bc6954}{00122}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2b98c6b4d8cdc09cc9c20b1dfc537461}{operator*}}(\textcolor{keyword}{const}\ Vector\&\ lhs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00124}00124\ \ \ \ \ Vector\ tmp(lhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00125}00125\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ tmp[i]\ =\ lhs[i]*rhs;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00133}00133\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00134}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a69c82ecd29566c94759839129840b6b8}{00134}}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a69c82ecd29566c94759839129840b6b8}{operator/}}(\textcolor{keyword}{const}\ Vector\&\ lhs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ rhs)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00135}00135\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00136}00136\ \ \ \ \ Vector\ tmp(lhs.size());}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00137}00137\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ lhs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ tmp[i]\ =\ lhs[i]/rhs;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00145}00145\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00146}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{00146}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(\textcolor{keyword}{const}\ Vector\&\ x)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00147}00147\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00149}00149\ \ \ \ \ \textcolor{keywordtype}{double}\ MaxValue\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for\ reduction(max:MaxValue)}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00152}00152\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(x[i])\ >\ MaxValue)\ MaxValue\ =\ std::abs(x[i]);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ MaxValue;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00158}00158\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00159}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{00159}}\ \textcolor{keyword}{inline}\ Vector\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return}\ (b-\/A*x);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00165}00165\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00166}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_aae8cb9061937d9bd2f3f053b97b51c9d}{00166}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_aae8cb9061937d9bd2f3f053b97b51c9d}{swap}}(\textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keywordtype}{size\_t}\ j,\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00167}00167\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00168}00168\ \ \ \ \ A.SwapRows(i,j);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{double}\ tmp\ =\ b[j];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00170}00170\ \ \ \ \ b[j]\ =\ b[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00171}00171\ \ \ \ \ b[i]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00172}00172\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00175}00175\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00176}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a506976ecb2e454888659b7911d0d9516}{00176}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a506976ecb2e454888659b7911d0d9516}{Pivote}}(\mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00177}00177\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\ =\ b.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ h\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00181}00181\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ k\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{while}\ (h\ <\ N\ and\ k\ <\ N)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\_max\ =\ A.MaxRow(h,k);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (A(i\_max,k)\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_aae8cb9061937d9bd2f3f053b97b51c9d}{swap}}(i\_max,h,A,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00197}00197\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00200}00200\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00201}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a07a7728ee593704c18d717af5b203b44}{00201}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a07a7728ee593704c18d717af5b203b44}{FastPivote}}(\mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00202}00202\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\ =\ b.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00205}00205\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ h\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00206}00206\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ k\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{while}\ (h\ <\ N\ and\ k\ <\ N)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00208}00208\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\_max\ =\ A.NonZeroRow(h,k);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (A(i\_max,k)\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_aae8cb9061937d9bd2f3f053b97b51c9d}{swap}}(i\_max,h,A,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00221}00221\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00222}00222\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00224}00224\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00225}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a925cae5daaf7b6021c4c928a2d646d5e}{00225}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a925cae5daaf7b6021c4c928a2d646d5e}{SpectralNumberMAX}}(\mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ \textcolor{keywordtype}{size\_t}\ N)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00226}00226\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00227}00227\ \ \ \ \ \textcolor{keywordtype}{double}\ AMAX\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00228}00228\ \ \ \ \ \textcolor{keywordtype}{double}\ AMIN\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00229}00229\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00230}00230\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00231}00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ for\ reduction(max:AMAX)}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(A(i,i))\ >\ AMAX)\ AMAX\ =\ A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00236}00236\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ for\ reduction(min:AMIN)}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(A(i,i))\ <\ AMIN)\ AMIN\ =\ A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{if}\ (AMIN\ >\ std::numeric\_limits<double>::epsilon())\ \textcolor{keywordflow}{return}\ AMAX/AMIN;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00246}00246\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00247}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5769a21f5a65f5a771c5810226d65412}{00247}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5769a21f5a65f5a771c5810226d65412}{PreconditionJacobi}}(\mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00248}00248\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00249}00249\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N\ =\ b.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00250}00250\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00251}00251\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00252}00252\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ norm\ =\ A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ A.DivideRowBy(i,norm);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00255}00255\ \ \ \ \ \ \ \ \ b[i]/=norm;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00257}00257\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00259}00259\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00260}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_af4139e16cb4b44e333b14e4fe2b60533}{00260}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_af4139e16cb4b44e333b14e4fe2b60533}{Gauss}}(\mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ Vector\&\ b)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00261}00261\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ Source\ (09.07.2020):\ https://en.wikipedia.org/wiki/Gaussian\_elimination}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00263}00263\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00265}00265\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ h\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00266}00266\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ k\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{while}\ (h\ <\ N\ and\ k\ <\ N)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00268}00268\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00269}00269\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ parallel\ for\ }\textcolor{comment}{//NOTE\ parallelism\ will\ slow\ algorithm}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i!=h)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (A(i,k)\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ f\ =\ A(i,k)/A(h,k);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A(i,k)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ k+1;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A(i,j)\ -\/=\ A(h,j)*f;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b[i]\ -\/=\ b[h]*f;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00288}00288\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Element:\ ("{}}\ <<\ h\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{})/("{}}\ <<\ N\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ N\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00290}00290\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00294}00294\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00295}00295\ \ \ \ \ \ \ \ \ x[i]\ =\ b[i]/A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00296}00296\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00297}00297\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00299}00299\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00300}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a15744eae2ba9ae9aecf3330a823b4cd8}{00300}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a15744eae2ba9ae9aecf3330a823b4cd8}{Jacobi}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00301}00301\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00302}00302\ \ \ \ \ \textcolor{comment}{//\ Source\ (08.07.2020):\ https://en.wikipedia.org/wiki/Jacobi\_method}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00303}00303\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00304}00304\ \ \ \ \ Vector\ xOld(x);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00305}00305\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ N*N*N;\ k++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00306}00306\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00307}00307\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ x[i]\ =\ b[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i!=j)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x[i]\ -\/=\ A(i,j)*xOld[j];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ x[i]/=A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00320}00320\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ xOld[i]\ =\ x[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector\ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ locResidual\ =\ max(r);}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ locResidual\ =\ sqrt(r*r);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00329}00329\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Iteration:\ "{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tResidual:\ "{}}\ <<\ locResidual\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00331}00331\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (locResidual\ <\ MaxResidual)\ \textcolor{keywordflow}{return}\ k;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00333}00333\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00334}00334\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Solution\ did\ not\ converge"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}Jacob"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00335}00335\ \ \ \ \ \textcolor{keywordflow}{return}\ N*N*N;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00336}00336\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00338}00338\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00339}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a7bea666c62a5f219634f1f3b926b694d}{00339}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a7bea666c62a5f219634f1f3b926b694d}{GaussSeidel}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00340}00340\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00341}00341\ \ \ \ \ \textcolor{comment}{//source\ (13.07.2020):\ http://www.netlib.org/linalg/html\_templates/node14.html\#SECTION00722000000000000000}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00342}00342\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00343}00343\ \ \ \ \ Vector\ xOld(x);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ N*N*N;\ k++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00345}00345\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigma\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#pragma\ omp\ parallel\ for\ //NOTE\ parallelism\ will\ slow\ algorithm}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ i;\ j++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sigma\ +=\ A(i,j)*x[j];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#pragma\ omp\ parallel\ for\ //NOTE\ parallelism\ will\ slow\ algorithm}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i+1;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sigma\ +=\ A(i,j)*xOld[j];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ x[i]\ =\ (b[i]\ -\/\ sigma)/A(i,i);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#pragma\ omp\ parallel\ for\ //NOTE\ parallelism\ will\ slow\ algorithm}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00366}00366\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ xOld[i]\ =\ x[i];}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector\ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00371}00371\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ locResidual\ =\ max(r);}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ locResidual\ =\ sqrt(r*r);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00373}00373\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00374}00374\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Iteration:\ "{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tResidual:\ "{}}\ <<\ locResidual\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00375}00375\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (locResidual\ <\ MaxResidual)\ \textcolor{keywordflow}{return}\ k;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00377}00377\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00378}00378\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Solution\ did\ not\ converge"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}GaussSeidel"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00379}00379\ \ \ \ \ \textcolor{keywordflow}{return}\ N*N*N;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00380}00380\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00382}00382\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00383}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_acff7d016f61160e4abcd398a42646e64}{00383}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_acff7d016f61160e4abcd398a42646e64}{GradientDescent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00384}00384\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00385}00385\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00386}00386\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ N*N*N;\ k++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00387}00387\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ Vector\ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ locResidual\ =\ max(r);}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ locResidual\ =\ sqrt(r*r);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00391}00391\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Iteration:\ "{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tResidual:\ "{}}\ <<\ locResidual\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00393}00393\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (locResidual\ <\ MaxResidual)\ \textcolor{keywordflow}{return}\ k;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ alpha\ =\ (r*b\ -\/\ 0.5*(x*(A*r)+r*(A*x)))/(r*(A*r));}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00397}00397\ \ \ \ \ \ \ \ \ x\ +=\ alpha*r;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00398}00398\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00399}00399\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Solution\ did\ not\ converge"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}GradientDescent"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00400}00400\ \ \ \ \ \textcolor{keywordflow}{return}\ N*N*N;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00401}00401\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00403}00403\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00404}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2cad829c2e5225669a9b112e24db0153}{00404}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a2cad829c2e5225669a9b112e24db0153}{ConjugateGradient}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00405}00405\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00406}00406\ \ \ \ \ \textcolor{comment}{//source:\ Fletcher,\ Roger.\ "{}Conjugate\ gradient\ methods\ for\ indefinite\ systems."{}\ Numerical\ analysis.\ Springer,\ Berlin,\ Heidelberg,\ 1976.\ 73-\/89.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00407}00407\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00409}00409\ \ \ \ \ Vector\ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00410}00410\ \ \ \ \ Vector\ p\ =\ r;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00412}00412\ \ \ \ \ \textcolor{keywordflow}{if}\ (sqrt(r*r)\ >\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00413}00413\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ N;\ k++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00414}00414\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ alpha\ =\ p*b/(p*(A*p));}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ alpha\ =\ r*r/(p*(A*p));}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ rr\ =\ r*r;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ x\ +=\ alpha*p;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00419}00419\ \ \ \ \ \ \ \ \ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00420}00420\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ beta\ =\ (-\/1.0)*p*(A*r)/(p*(A*p));}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00421}00421\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ beta\ =\ r*r/rr;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ p\ =\ r\ +\ beta*p;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ locResidual\ =\ max(r);}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ locResidual\ =\ sqrt(r*r);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00426}00426\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00427}00427\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Iteration:\ "{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tResidual:\ "{}}\ <<\ locResidual\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00428}00428\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00429}00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (locResidual\ <\ MaxResidual)\ \textcolor{keywordflow}{return}\ k;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00430}00430\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00431}00431\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Solution\ did\ not\ converge"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}ConjugateGradient"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00432}00432\ \ \ \ \ \textcolor{keywordflow}{return}\ N;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00433}00433\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00435}00435\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Matrix,\ \textcolor{keyword}{class}\ Vector>}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00436}\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5bec547796d7530468667231b1f5c927}{00436}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a5bec547796d7530468667231b1f5c927}{BiconjugateGradient}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\&\ A,\ Vector\&\ x,\ \textcolor{keyword}{const}\ Vector\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00437}00437\ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00438}00438\ \ \ \ \ \textcolor{comment}{//source:\ Fletcher,\ Roger.\ "{}Conjugate\ gradient\ methods\ for\ indefinite\ systems."{}\ Numerical\ analysis.\ Springer,\ Berlin,\ Heidelberg,\ 1976.\ 73-\/89.}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00439}00439\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ N\ \ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00440}00440\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Matrix}{Matrix}}\ AT\ =\ A.transposed();}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00442}00442\ \ \ \ \ Vector\ xb\ =\ x;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00443}00443\ \ \ \ \ Vector\ ra\ =\ (b-\/\ A*x\ );}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00444}00444\ \ \ \ \ Vector\ rb\ =\ (b-\/AT*xb);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00445}00445\ \ \ \ \ Vector\ pa\ =\ ra;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00446}00446\ \ \ \ \ Vector\ pb\ =\ rb;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00448}00448\ \ \ \ \ \textcolor{comment}{//if\ (sqrt(ra*ra)\ >\ MaxResidual)}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00449}00449\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(ra)\ >\ MaxResidual)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00450}00450\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ N;\ k++)}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00452}00452\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ alpha\ =\ rb*ra/(pb*(A*pb));}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00454}00454\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ alpha*pa;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//xb\ +=\ alpha*pb;}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ denom\ =\ rb*ra;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ ra\ -\/=\ alpha*(A*pa);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ rb\ -\/=\ alpha*(A*pb);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ beta\ =\ rb*ra/denom;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ pa\ =\ ra\ +\ beta*pa;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ pb\ =\ rb\ +\ beta*pb;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector\ r\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}(A,x,b);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ locResidual\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(r);}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ locResidual\ =\ sqrt(r*r);}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00471}00471\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Iteration:\ "{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tResidual:\ "{}}\ <<\ locResidual\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00473}00473\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (locResidual\ <\ MaxResidual)\ \textcolor{keywordflow}{return}\ k;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00475}00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00476}00476\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00477}00477\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00478}00478\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00479}00479\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00480}00480\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}No\ iteration\ performed!"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}BiconjugateGradient"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00481}00481\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00483}00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00484}00484\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00485}00485\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{stringliteral}{"{}Solution\ did\ not\ converge"{}},\ \textcolor{stringliteral}{"{}SolveLinearSystem"{}},\ \textcolor{stringliteral}{"{}BiconjugateGradient"{}});}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00486}00486\ \ \ \ \ \textcolor{keywordflow}{return}\ N;}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00487}00487\ \}}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00489}00489\ \};}
+\DoxyCodeLine{\Hypertarget{SystemOfLinearEquationsSolvers_8h_source_l00490}00490\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

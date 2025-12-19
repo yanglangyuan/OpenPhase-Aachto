@@ -1,0 +1,1203 @@
+\doxysection{openphase\+::Node\+DF Class Reference}
+\hypertarget{classopenphase_1_1NodeDF}{}\label{classopenphase_1_1NodeDF}\index{openphase::NodeDF@{openphase::NodeDF}}
+
+
+\texorpdfstring{$<$}{<} Stores driving forces at a grid point. Provides access and manipulation methods for the stored entries.  
+
+
+
+
+{\ttfamily \#include "{}Node\+DF.\+h"{}}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} $>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}
+\begin{DoxyCompactList}\small\item\em Returns the size of storage. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}}
+\begin{DoxyCompactList}\small\item\em Constant iterator over storage vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{Node\+DF}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a7aa43b772e3b3f3d6156d68278e90563}{Node\+DF}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n)
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \mbox{\hyperlink{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb}{operator+}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n) const
+\begin{DoxyCompactList}\small\item\em Plus operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Adds all entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \mbox{\hyperlink{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54}{operator-\/}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n) const
+\begin{DoxyCompactList}\small\item\em Minus operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Subtracts all entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \mbox{\hyperlink{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a}{operator\texorpdfstring{$\ast$}{*}}} (const double n) const
+\begin{DoxyCompactList}\small\item\em Multiplies all entries by a number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f}{operator+=}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n)
+\begin{DoxyCompactList}\small\item\em Plus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Adds all entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a}{operator-\/=}} (const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&n)
+\begin{DoxyCompactList}\small\item\em Minus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Subtracts all entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8}{operator\texorpdfstring{$\ast$}{*}=}} (const double n)
+\begin{DoxyCompactList}\small\item\em Multiplies all entries by a number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c}{set\+\_\+raw}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Sets raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d}{set\+\_\+tmp}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Sets tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9}{set\+\_\+average}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Sets average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69}{set\+\_\+weight}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Sets weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577}{set\+\_\+all}} (const size\+\_\+t n, const size\+\_\+t m, const double raw\+\_\+value, const double tmp\+\_\+value, const double avg\+\_\+value, const double wgt\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets all values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3}{get\+\_\+raw}} (const size\+\_\+t n, const size\+\_\+t m) const
+\begin{DoxyCompactList}\small\item\em Returns raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401}{get\+\_\+tmp}} (const size\+\_\+t n, const size\+\_\+t m) const
+\begin{DoxyCompactList}\small\item\em Returns tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40}{get\+\_\+average}} (const size\+\_\+t n, const size\+\_\+t m) const
+\begin{DoxyCompactList}\small\item\em Returns average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea}{get\+\_\+weight}} (const size\+\_\+t n, const size\+\_\+t m) const
+\begin{DoxyCompactList}\small\item\em Returns weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba}{add\+\_\+raw}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Increments raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d}{add\+\_\+tmp}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Increments tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8}{add\+\_\+average}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Increments average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd}{add\+\_\+weight}} (const size\+\_\+t n, const size\+\_\+t m, const double value)
+\begin{DoxyCompactList}\small\item\em Increments weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\+\_\+all}} (const size\+\_\+t n, const size\+\_\+t m, const double raw\+\_\+value, const double tmp\+\_\+value, const double avg\+\_\+value, const double wgt\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Adds all values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}{clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}} () const
+\begin{DoxyCompactList}\small\item\em Empties the field storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}{begin}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the begin of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Iterator to the end of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}} \mbox{\hyperlink{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the begin of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} \mbox{\hyperlink{classopenphase_1_1NodeDF_a3975003de96d817ae4f227d16252d3f2}{erase}} (\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em Constant iterator to the end of storage vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_affa4cb0737e4e8a02abc6366d2167475}{front}} (void)
+\begin{DoxyCompactList}\small\item\em Erase a single record pointed by iterator it. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} \& \mbox{\hyperlink{classopenphase_1_1NodeDF_ab400beda324414f03bc4d8335af5becf}{front}} (void) const
+\begin{DoxyCompactList}\small\item\em Reference to the first Field\+Entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6}{pack}} (std\+::vector$<$ double $>$ \&buffer)
+\begin{DoxyCompactList}\small\item\em Constant reference to the first \doxylink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2}{unpack}} (std\+::vector$<$ double $>$ \&buffer, size\+\_\+t \&it)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159}{Read}} (std\+::istream \&inp)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d}{Write}} (std\+::ostream \&outp) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry} storage vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores driving forces at a grid point. Provides access and manipulation methods for the stored entries. 
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00080}{80}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}\label{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7} 
+\index{openphase::NodeDF@{openphase::NodeDF}!citerator@{citerator}}
+\index{citerator@{citerator}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{citerator}{citerator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{openphase\+::\+Node\+DF\+::citerator}}}
+
+
+
+Constant iterator over storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00128}{128}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+\Hypertarget{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}\label{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec} 
+\index{openphase::NodeDF@{openphase::NodeDF}!iterator@{iterator}}
+\index{iterator@{iterator}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}}$>$\+::iterator \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{openphase\+::\+Node\+DF\+::iterator}}}
+
+
+
+Returns the size of storage. 
+
+Iterator over storage vector 
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00127}{127}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}\label{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744} 
+\index{openphase::NodeDF@{openphase::NodeDF}!NodeDF@{NodeDF}}
+\index{NodeDF@{NodeDF}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{NodeDF()}{NodeDF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+DF\+::\+Node\+DF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00083}{83}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}(0)}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.reserve(3);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a7aa43b772e3b3f3d6156d68278e90563}\label{classopenphase_1_1NodeDF_a7aa43b772e3b3f3d6156d68278e90563} 
+\index{openphase::NodeDF@{openphase::NodeDF}!NodeDF@{NodeDF}}
+\index{NodeDF@{NodeDF}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{NodeDF()}{NodeDF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Node\+DF\+::\+Node\+DF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00088}{88}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}(n.Fields)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}\label{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a} 
+\index{openphase::NodeDF@{openphase::NodeDF}!add\_all@{add\_all}}
+\index{add\_all@{add\_all}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{add\_all()}{add\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::add\+\_\+all (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{raw\+\_\+value,  }\item[{const double}]{tmp\+\_\+value,  }\item[{const double}]{avg\+\_\+value,  }\item[{const double}]{wgt\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds all values. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00508}{508}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00512\ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00515\ \ \ \ \ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ +=\ raw\_value;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ +=\ tmp\_value;}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ avg\_value;}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ i-\/>weight\ \ +=\ wgt\_value;}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00521\ \ \ \ \ \}}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00523\ \ \ \ \ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ +=\ -\/raw\_value;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ +=\ -\/tmp\_value;}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ -\/avg\_value;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ i-\/>weight\ \ +=\ \ wgt\_value;}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00529\ \ \ \ \ \}}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00532\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00533\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00534\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{00535\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{00536\ \ \ \ \ NewEntry.average\ =\ avg\_value;}
+\DoxyCodeLine{00537\ \ \ \ \ NewEntry.weight\ \ =\ wgt\_value;}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00540\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8}\label{classopenphase_1_1NodeDF_afea24606b0d6b7c4d54c018bdcd661f8} 
+\index{openphase::NodeDF@{openphase::NodeDF}!add\_average@{add\_average}}
+\index{add\_average@{add\_average}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{add\_average()}{add\_average()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::add\+\_\+average (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00462}{462}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00463\ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00466\ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ value;}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ i-\/>average\ +=\ -\/value;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00474\ \ \ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00477\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00478\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00479\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00480\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00481\ \ \ \ \ NewEntry.average\ =\ value;}
+\DoxyCodeLine{00482\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00485\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba}\label{classopenphase_1_1NodeDF_a0c9f14b8a98289ec1dd30e0f4cc19cba} 
+\index{openphase::NodeDF@{openphase::NodeDF}!add\_raw@{add\_raw}}
+\index{add\_raw@{add\_raw}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{add\_raw()}{add\_raw()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::add\+\_\+raw (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00412}{412}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00413\ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00416\ \ \ \ \ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ i-\/>raw\ +=\ value;}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00419\ \ \ \ \ \}}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00421\ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ i-\/>raw\ +=\ -\/value;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00424\ \ \ \ \ \}}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00427\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00428\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00429\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ value;}
+\DoxyCodeLine{00430\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00431\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00432\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00435\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d}\label{classopenphase_1_1NodeDF_a8163552288a4e13dcc6ce2428162161d} 
+\index{openphase::NodeDF@{openphase::NodeDF}!add\_tmp@{add\_tmp}}
+\index{add\_tmp@{add\_tmp}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{add\_tmp()}{add\_tmp()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::add\+\_\+tmp (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00437}{437}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00438\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00441\ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ i-\/>tmp\ +=\ value;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00444\ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00446\ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ i-\/>tmp\ +=\ -\/value;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00449\ \ \ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00452\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00453\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00454\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00455\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ value;}
+\DoxyCodeLine{00456\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00457\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00460\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd}\label{classopenphase_1_1NodeDF_a0d86213f1208d0749c986106f45345fd} 
+\index{openphase::NodeDF@{openphase::NodeDF}!add\_weight@{add\_weight}}
+\index{add\_weight@{add\_weight}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{add\_weight()}{add\_weight()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::add\+\_\+weight (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00487}{487}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{00492\ \ \ \ \ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ i-\/>weight\ +=\ value;}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00495\ \ \ \ \ \}}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00498\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00499\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00500\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00501\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00502\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00503\ \ \ \ \ NewEntry.weight\ \ =\ value;}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00506\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0}\label{classopenphase_1_1NodeDF_a33326f42f9246ca001581051ffe2afb0} 
+\index{openphase::NodeDF@{openphase::NodeDF}!begin@{begin}}
+\index{begin@{begin}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} openphase\+::\+Node\+DF\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00129}{129}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd}\label{classopenphase_1_1NodeDF_a69d4d54de8d896915d690f119a52cfcd} 
+\index{openphase::NodeDF@{openphase::NodeDF}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}} openphase\+::\+Node\+DF\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the end of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00131}{131}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a}\label{classopenphase_1_1NodeDF_aaaa56bafb4c112059351b351ce26ac5a} 
+\index{openphase::NodeDF@{openphase::NodeDF}!cend@{cend}}
+\index{cend@{cend}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF_a83fcf7004194740f8989de393d4afdc7}{citerator}} openphase\+::\+Node\+DF\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the begin of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00132}{132}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}\label{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec} 
+\index{openphase::NodeDF@{openphase::NodeDF}!clear@{clear}}
+\index{clear@{clear}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00125}{125}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \{\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.clear();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305}\label{classopenphase_1_1NodeDF_a34a9a6b16ca4539db9f95e3008b20305} 
+\index{openphase::NodeDF@{openphase::NodeDF}!end@{end}}
+\index{end@{end}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} openphase\+::\+Node\+DF\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the begin of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00130}{130}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a3975003de96d817ae4f227d16252d3f2}\label{classopenphase_1_1NodeDF_a3975003de96d817ae4f227d16252d3f2} 
+\index{openphase::NodeDF@{openphase::NodeDF}!erase@{erase}}
+\index{erase@{erase}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}} openphase\+::\+Node\+DF\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1NodeDF_a06e8d668f33fc5b1a55f97b9813237ec}{iterator}}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the end of storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00133}{133}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.erase(it);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_affa4cb0737e4e8a02abc6366d2167475}\label{classopenphase_1_1NodeDF_affa4cb0737e4e8a02abc6366d2167475} 
+\index{openphase::NodeDF@{openphase::NodeDF}!front@{front}}
+\index{front@{front}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} \& openphase\+::\+Node\+DF\+::front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Erase a single record pointed by iterator it. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00134}{134}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.front();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_ab400beda324414f03bc4d8335af5becf}\label{classopenphase_1_1NodeDF_ab400beda324414f03bc4d8335af5becf} 
+\index{openphase::NodeDF@{openphase::NodeDF}!front@{front}}
+\index{front@{front}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}} \& openphase\+::\+Node\+DF\+::front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reference to the first Field\+Entry. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00135}{135}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.front();\};\ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40}\label{classopenphase_1_1NodeDF_aaff148860905616cd8e47ef0e8bf8c40} 
+\index{openphase::NodeDF@{openphase::NodeDF}!get\_average@{get\_average}}
+\index{get\_average@{get\_average}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{get\_average()}{get\_average()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+DF\+::get\+\_\+average (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00387}{387}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00388\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00391\ \ \ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>average;}
+\DoxyCodeLine{00393\ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00395\ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>average;}
+\DoxyCodeLine{00397\ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00399\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3}\label{classopenphase_1_1NodeDF_ad6c79dee1e56309153762babb76003d3} 
+\index{openphase::NodeDF@{openphase::NodeDF}!get\_raw@{get\_raw}}
+\index{get\_raw@{get\_raw}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{get\_raw()}{get\_raw()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+DF\+::get\+\_\+raw (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00359}{359}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00360\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00363\ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>raw;}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00367\ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>raw;}
+\DoxyCodeLine{00369\ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00371\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401}\label{classopenphase_1_1NodeDF_af7fdbbaa19ba79b74eaf66965c1d9401} 
+\index{openphase::NodeDF@{openphase::NodeDF}!get\_tmp@{get\_tmp}}
+\index{get\_tmp@{get\_tmp}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{get\_tmp()}{get\_tmp()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+DF\+::get\+\_\+tmp (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00373}{373}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00374\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00377\ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>tmp;}
+\DoxyCodeLine{00379\ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00381\ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/i-\/>tmp;}
+\DoxyCodeLine{00383\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00385\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea}\label{classopenphase_1_1NodeDF_ac3929e4471ca8960a013ba6cc3f2f6ea} 
+\index{openphase::NodeDF@{openphase::NodeDF}!get\_weight@{get\_weight}}
+\index{get\_weight@{get\_weight}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{get\_weight()}{get\_weight()}}
+{\footnotesize\ttfamily double openphase\+::\+Node\+DF\+::get\+\_\+weight (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00401}{401}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00402\ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{00406\ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i-\/>weight;}
+\DoxyCodeLine{00408\ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00410\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a}\label{classopenphase_1_1NodeDF_abdcc3c4b4238c0f5972b8a5b11f2fe8a} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} openphase\+::\+Node\+DF\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies all entries by a number. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00197}{197}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{NodeDF}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00202\ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ n;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ n;}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00209\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8}\label{classopenphase_1_1NodeDF_a373c8cc0f06982b5d689bfe430a505a8} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& openphase\+::\+Node\+DF\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies all entries by a number. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00211}{211}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ n;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ n;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ n;}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00221\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb}\label{classopenphase_1_1NodeDF_ad8fd1d012e0f04432d06ef455b8acafb} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator+@{operator+}}
+\index{operator+@{operator+}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} openphase\+::\+Node\+DF\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Plus operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Adds all entries. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00149}{149}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{NodeDF}}\ result\ =\ n;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ result.add\_all(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00158\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f}\label{classopenphase_1_1NodeDF_a0c57fff7fc3af43a97c48ecfe165ab7f} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& openphase\+::\+Node\+DF\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Plus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Adds all entries. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00179}{179}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54}\label{classopenphase_1_1NodeDF_aaa98aa2b7db0ca7629372a10bf579a54} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} openphase\+::\+Node\+DF\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Minus operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Subtracts all entries. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00160}{160}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a40c29932f23a70f20b4e201c81e6d744}{NodeDF}}\ result\ =\ n;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ result.begin();\ i\ <\ result.end();\ ++i)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ *=\ -\/1.0;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ i-\/>average\ *=\ -\/1.0;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ i-\/>weight\ \ *=\ -\/1.0;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cbegin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.cend();\ ++i)}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ result.add\_all(i-\/>indexA,\ i-\/>indexB,\ i-\/>raw,\ i-\/>tmp,\ i-\/>average,\ i-\/>weight);}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a}\label{classopenphase_1_1NodeDF_a7cf155268d003e2d694d39250492fc2a} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& openphase\+::\+Node\+DF\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Minus-\/equal operator. Takes as input another \doxylink{classopenphase_1_1NodeDF}{Node\+DF} type entry. Subtracts all entries. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00188}{188}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ n.cbegin();\ i\ <\ n.cend();\ ++i)}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a6b415981812d99c718f03ba86ed5232a}{add\_all}}(i-\/>indexA,\ i-\/>indexB,\ -\/i-\/>raw,\ -\/i-\/>tmp,\ -\/i-\/>average,\ -\/i-\/>weight);}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00195\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e}\label{classopenphase_1_1NodeDF_a41dcd0310e058f09a912846cc061d33e} 
+\index{openphase::NodeDF@{openphase::NodeDF}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \& openphase\+::\+Node\+DF\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00223}{223}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}\ =\ n.Fields;}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6}\label{classopenphase_1_1NodeDF_a37d009940478520aec9338ad439b73a6} 
+\index{openphase::NodeDF@{openphase::NodeDF}!pack@{pack}}
+\index{pack@{pack}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::pack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant reference to the first \doxylink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00542}{542}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00543\ \{}
+\DoxyCodeLine{00544\ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size());}
+\DoxyCodeLine{00545\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ it\ !=\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();++it)}
+\DoxyCodeLine{00546\ \ \ \ \ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexA\ );}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>indexB\ );}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>raw\ \ \ \ );}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>tmp\ \ \ \ );}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>average);}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ buffer.push\_back(it-\/>weight\ );}
+\DoxyCodeLine{00553\ \ \ \ \ \}}
+\DoxyCodeLine{00554\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159}\label{classopenphase_1_1NodeDF_acb3a2f4ace11c3c3da1c898682f47159} 
+\index{openphase::NodeDF@{openphase::NodeDF}!Read@{Read}}
+\index{Read@{Read}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00572}{572}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00573\ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ 0;}
+\DoxyCodeLine{00575\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00576\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}});}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}})}
+\DoxyCodeLine{00579\ \ \ \ \ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.raw\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.tmp\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.average),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.weight\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00586\ \ \ \ \ \}}
+\DoxyCodeLine{00587\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577}\label{classopenphase_1_1NodeDF_a997aa4c6e17e73650a1c17ae47e80577} 
+\index{openphase::NodeDF@{openphase::NodeDF}!set\_all@{set\_all}}
+\index{set\_all@{set\_all}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{set\_all()}{set\_all()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::set\+\_\+all (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{raw\+\_\+value,  }\item[{const double}]{tmp\+\_\+value,  }\item[{const double}]{avg\+\_\+value,  }\item[{const double}]{wgt\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets all values. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00325}{325}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00329\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00332\ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ i-\/>average\ =\ avg\_value;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ i-\/>weight\ \ =\ wgt\_value;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ i-\/>raw\ \ \ \ \ =\ -\/raw\_value;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ i-\/>tmp\ \ \ \ \ =\ -\/tmp\_value;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ i-\/>average\ =\ -\/avg\_value;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ i-\/>weight\ \ =\ \ wgt\_value;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00346\ \ \ \ \ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00349\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00350\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00351\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ raw\_value;}
+\DoxyCodeLine{00352\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ tmp\_value;}
+\DoxyCodeLine{00353\ \ \ \ \ NewEntry.average\ =\ avg\_value;}
+\DoxyCodeLine{00354\ \ \ \ \ NewEntry.weight\ \ =\ wgt\_value;}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00357\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9}\label{classopenphase_1_1NodeDF_a0abfbb32f8c5858b5f8ef27ec3617fc9} 
+\index{openphase::NodeDF@{openphase::NodeDF}!set\_average@{set\_average}}
+\index{set\_average@{set\_average}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{set\_average()}{set\_average()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::set\+\_\+average (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets average in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00279}{279}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ i-\/>average\ =\ value;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00288\ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ i-\/>average\ =\ -\/value;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00294\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00295\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00296\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00297\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00298\ \ \ \ \ NewEntry.average\ =\ value;}
+\DoxyCodeLine{00299\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c}\label{classopenphase_1_1NodeDF_a6a1a3464d03705e26d3ce71097fdd46c} 
+\index{openphase::NodeDF@{openphase::NodeDF}!set\_raw@{set\_raw}}
+\index{set\_raw@{set\_raw}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{set\_raw()}{set\_raw()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::set\+\_\+raw (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets raw in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n) 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00229}{229}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00233\ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ i-\/>raw\ =\ value;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ i-\/>raw\ =\ -\/value;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00244\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00245\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00246\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ value;}
+\DoxyCodeLine{00247\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00248\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00249\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00252\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d}\label{classopenphase_1_1NodeDF_a7a65a946706f9a0d07e9abc73bf2a40d} 
+\index{openphase::NodeDF@{openphase::NodeDF}!set\_tmp@{set\_tmp}}
+\index{set\_tmp@{set\_tmp}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{set\_tmp()}{set\_tmp()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::set\+\_\+tmp (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets tmp in antisymmetric case (changes sign when index order changes)\+: f(n,m) = -\/f(m,n) 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00254}{254}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00255\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)}
+\DoxyCodeLine{00258\ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ i-\/>tmp\ =\ value;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n)}
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ i-\/>tmp\ =\ -\/value;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00269\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00270\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00271\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00272\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ value;}
+\DoxyCodeLine{00273\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00274\ \ \ \ \ NewEntry.weight\ \ =\ 0.0;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00277\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69}\label{classopenphase_1_1NodeDF_a41b49fb6dfc10456a847f4e8feca0a69} 
+\index{openphase::NodeDF@{openphase::NodeDF}!set\_weight@{set\_weight}}
+\index{set\_weight@{set\_weight}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{set\_weight()}{set\_weight()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::set\+\_\+weight (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n,  }\item[{const size\+\_\+t}]{m,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets weight in symmetric case (does not change the sign when index order changes)\+: f(n,m) = f(m,n). 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00304}{304}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.begin();\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.end();\ ++i)}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{if}\ ((i-\/>indexA\ ==\ n\ and\ i-\/>indexB\ ==\ m)\ or}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ (i-\/>indexA\ ==\ m\ and\ i-\/>indexB\ ==\ n))}
+\DoxyCodeLine{00309\ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ i-\/>weight\ =\ value;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ DrivingForceEntry\ NewEntry;}
+\DoxyCodeLine{00315\ \ \ \ \ NewEntry.indexA\ \ =\ n;}
+\DoxyCodeLine{00316\ \ \ \ \ NewEntry.indexB\ \ =\ m;}
+\DoxyCodeLine{00317\ \ \ \ \ NewEntry.raw\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00318\ \ \ \ \ NewEntry.tmp\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00319\ \ \ \ \ NewEntry.average\ =\ 0.0;}
+\DoxyCodeLine{00320\ \ \ \ \ NewEntry.weight\ \ =\ value;}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.push\_back(NewEntry);}
+\DoxyCodeLine{00323\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}\label{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9} 
+\index{openphase::NodeDF@{openphase::NodeDF}!size@{size}}
+\index{size@{size}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Node\+DF\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empties the field storage. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00126}{126}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2}\label{classopenphase_1_1NodeDF_a9cf01a60b73cef014eef18d7418e21c2} 
+\index{openphase::NodeDF@{openphase::NodeDF}!unpack@{unpack}}
+\index{unpack@{unpack}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::unpack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{buffer,  }\item[{size\+\_\+t \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00556}{556}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00557\ \{}
+\DoxyCodeLine{00558\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_a654ebd806eeeb2df6a97ee4cb8eae6ec}{clear}}();}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00560\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.resize(\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}});}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}};\ ++i)}
+\DoxyCodeLine{00562\ \ \ \ \ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].indexA\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].indexB\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].raw\ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].tmp\ \ \ \ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].average\ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}[i].weight\ \ =\ buffer[it];\ ++it;}
+\DoxyCodeLine{00569\ \ \ \ \ \}}
+\DoxyCodeLine{00570\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d}\label{classopenphase_1_1NodeDF_a293006f75f4c48c2521f3d917ad4ae7d} 
+\index{openphase::NodeDF@{openphase::NodeDF}!Write@{Write}}
+\index{Write@{Write}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void openphase\+::\+Node\+DF\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{outp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00589}{589}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00590\ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}\ =\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}}.size();}
+\DoxyCodeLine{00592\ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classopenphase_1_1NodeDF_a2cadc6e4d1b0b026e8f9cce620f524f9}{size}}),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&Field\ :\ \mbox{\hyperlink{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}{Fields}})}
+\DoxyCodeLine{00595\ \ \ \ \ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexA\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.indexB\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.raw\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.tmp\ \ \ \ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.average),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ outp.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&Field.weight\ ),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00602\ \ \ \ \ \}}
+\DoxyCodeLine{00603\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed}\label{classopenphase_1_1NodeDF_ae1cc0a5215a30bb2ef90ca5e4611e7ed} 
+\index{openphase::NodeDF@{openphase::NodeDF}!Fields@{Fields}}
+\index{Fields@{Fields}!openphase::NodeDF@{openphase::NodeDF}}
+\doxysubsubsection{\texorpdfstring{Fields}{Fields}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry}}$>$ openphase\+::\+Node\+DF\+::\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{structopenphase_1_1DrivingForceEntry}{Driving\+Force\+Entry} storage vector. 
+
+
+
+Definition at line \mbox{\hyperlink{NodeDF_8h_source_l00144}{144}} of file \mbox{\hyperlink{NodeDF_8h_source}{Node\+DF.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{NodeDF_8h}{Node\+DF.\+h}}\end{DoxyCompactItemize}

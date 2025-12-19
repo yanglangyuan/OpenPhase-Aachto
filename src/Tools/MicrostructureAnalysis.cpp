@@ -29,6 +29,10 @@
 #include "SymmetryVariants.h"
 #include "Tools.h"
 
+#ifdef H5OP
+#include "../HighFive/include/highfive/H5Easy.hpp"
+#endif
+
 namespace openphase
 {
 using namespace std;
@@ -646,7 +650,7 @@ void MicrostructureAnalysis::WriteSymmetryVariantsStatistics(size_t pIndex, cons
     out_file.close();
 }
 
-void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, const int tStep)
+void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, const int tStep, const std::string& h5FileName)
 {
 /// ++++++++++++++++++++++++++++++++++++++++++++
     size_t nPFs = Phase.FieldsProperties.size();
@@ -743,6 +747,119 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
         }
     }
     Fl4.close();
+
+    /// ++++++++++++++++++++++++++++++++++++++++++++
+    /// Write grain statistics to HDF5 file (if available)
+    #ifdef H5OP
+    if (!h5FileName.empty())
+    {
+        try {
+            // Collect grain volumes
+            std::vector<double> GrainVolumes;
+            std::vector<double> GrainNeighbors;
+            std::vector<double> GrainConnections;
+            
+            // Build edge_index (row, col) format for ML/GNN
+            std::vector<double> EdgeIndexRow;
+            std::vector<double> EdgeIndexCol;
+            
+            for (size_t i = 0; i < nPFs; i++)
+            {
+                GrainVolumes.push_back(Phase.FieldsProperties[i].Volume);
+                
+                // Count neighbors for this grain
+                std::vector<size_t> neighbors;
+                for(size_t j = 0; j < nPFs; ++j)
+                {
+                    if ((i != j) && (pairs.find(i*nPFs+j) != pairs.end()))
+                        neighbors.push_back(j);
+                }
+                GrainNeighbors.push_back((double)neighbors.size());
+                
+                // Flatten grain connections for HDF5 storage
+                // Format: [grain_id, neighbor_count, neighbor1, neighbor2, ...]
+                GrainConnections.push_back((double)i);  // grain ID
+                GrainConnections.push_back((double)neighbors.size());  // number of neighbors
+                for (const auto& neighbor : neighbors)
+                {
+                    GrainConnections.push_back((double)neighbor);  // neighbor IDs
+                }
+                
+                // Build edge_index (row, col) for ML/GNN
+                // For undirected graph, we include both (i, j) and (j, i)
+                for (const auto& neighbor : neighbors)
+                {
+                    EdgeIndexRow.push_back((double)i);  // source node
+                    EdgeIndexCol.push_back((double)neighbor);  // target node
+                }
+            }
+            
+            // Write to HDF5 file
+            H5Easy::File file(h5FileName, H5Easy::File::OpenOrCreate);
+            
+            // Create CheckPoints group if not exists
+            if (!file.exist("/CheckPoints")) {
+                file.createGroup("/CheckPoints");
+            }
+            
+            // Write GrainVolumes
+            std::stringstream volPath;
+            volPath << "/CheckPoints/GrainVolumes";
+            if (!file.exist(volPath.str())) {
+                file.createGroup(volPath.str());
+            }
+            volPath << "/t_" << tStep;
+            H5Easy::dump(file, volPath.str(), GrainVolumes, H5Easy::DumpMode::Overwrite);
+            std::cout << volPath.str() << " written " << GrainVolumes.size() << std::endl;
+            
+            // Write GrainNeighbors
+            std::stringstream neighPath;
+            neighPath << "/CheckPoints/GrainNeighbors";
+            if (!file.exist(neighPath.str())) {
+                file.createGroup(neighPath.str());
+            }
+            neighPath << "/t" << tStep;
+            H5Easy::dump(file, neighPath.str(), GrainNeighbors, H5Easy::DumpMode::Overwrite);
+            std::cout << neighPath.str() << " written " << GrainNeighbors.size() << std::endl;
+            
+            // Write GrainConnections
+            std::stringstream connPath;
+            connPath << "/CheckPoints/GrainConnections";
+            if (!file.exist(connPath.str())) {
+                file.createGroup(connPath.str());
+            }
+            connPath << "/t_" << tStep;
+            H5Easy::dump(file, connPath.str(), GrainConnections, H5Easy::DumpMode::Overwrite);
+            std::cout << connPath.str() << " written " << GrainConnections.size() << std::endl;
+            
+            // Write EdgeIndex with proper structure: /CheckPoints/EdgeIndex/{timestep}/row and col
+            std::stringstream edgeIndexGroup;
+            edgeIndexGroup << "/CheckPoints/EdgeIndex";
+            if (!file.exist(edgeIndexGroup.str())) {
+                file.createGroup(edgeIndexGroup.str());
+            }
+            edgeIndexGroup << "/t_" << tStep;
+            if (!file.exist(edgeIndexGroup.str())) {
+                file.createGroup(edgeIndexGroup.str());
+            }
+            
+            std::string rowPath = edgeIndexGroup.str() + "/row";
+            std::string colPath = edgeIndexGroup.str() + "/col";
+            H5Easy::dump(file, rowPath, EdgeIndexRow, H5Easy::DumpMode::Overwrite);
+            H5Easy::dump(file, colPath, EdgeIndexCol, H5Easy::DumpMode::Overwrite);
+            std::cout << rowPath << " written " << EdgeIndexRow.size() << std::endl;
+            std::cout << colPath << " written " << EdgeIndexCol.size() << std::endl;
+            
+        } catch (const std::exception& e) {
+            ConsoleOutput::WriteWarning("Failed to write HDF5 grain statistics: " + std::string(e.what()),
+                                       "MicrostructureAnalysis", "WriteGrainsStatistics");
+        } catch (...) {
+            ConsoleOutput::WriteWarning("Failed to write HDF5 grain statistics",
+                                       "MicrostructureAnalysis", "WriteGrainsStatistics");
+        }
+    }
+    #endif
+    /// ++++++++++++++++++++++++++++++++++++++++++++
 }
 
 dVector3 MicrostructureAnalysis::FindValuePosition(PhaseField& Phi, size_t index, double value, dVector3 start_position, dVector3 direction, double tolerance)

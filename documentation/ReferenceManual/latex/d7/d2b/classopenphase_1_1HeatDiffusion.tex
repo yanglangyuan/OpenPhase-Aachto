@@ -1,0 +1,1259 @@
+\doxysection{openphase\+::Heat\+Diffusion Class Reference}
+\hypertarget{classopenphase_1_1HeatDiffusion}{}\label{classopenphase_1_1HeatDiffusion}\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+
+
+\texorpdfstring{$<$}{<} Heat equation solver class  
+
+
+
+
+{\ttfamily \#include "{}Heat\+Diffusion.\+h"{}}
+
+Inheritance diagram for openphase\+::Heat\+Diffusion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/d2b/classopenphase_1_1HeatDiffusion}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_adb0ea59be698428db54cc6a216470a4e}{Heat\+Diffusion}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a77348c5c248422566e3e8331986e70e5}{Heat\+Diffusion}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd10629914789085fcabad8e5cd641dd}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Allocates memory, initializes the settings);. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36}{Read\+Input}} (const std\+::string File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads input parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aed8563b9f8cf9b67a1a563ec01d7e86f}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads input parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Changes system size while keeping the data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aa0cd0b908d0dbb74c4de2f3640e77ebf}{Set\+Effective\+Properties}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx)
+\begin{DoxyCompactList}\small\item\em Set effective thermal properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afeae00aaa918ae21fd4a763273183032}{Set\+Local\+Latent\+Heat}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx)
+\begin{DoxyCompactList}\small\item\em Sets local latent heat sources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a5e38e6479459be11c33464c4aaf1c5a7}{Set\+Local\+Latent\+Heat\+And\+Apply}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx, double dt)
+\item 
+int \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a67be7040ab84635a5618fae63244ba10}{Solve\+Implicit}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx, const double dt)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04}{Max\+Thermal\+Conductivity}}
+\begin{DoxyCompactList}\small\item\em Maximum thermal conductivity in the system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}{Phase\+Thermal\+Conductivity}}
+\begin{DoxyCompactList}\small\item\em Thermal conductivity for each phase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef}{Phase\+Volumetric\+Heat\+Capacity}}
+\begin{DoxyCompactList}\small\item\em Volumetric heat capacity for each phase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{Effective\+Thermal\+Conductivity}}
+\begin{DoxyCompactList}\small\item\em Thermal conductivity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{Effective\+Heat\+Capacity}}
+\begin{DoxyCompactList}\small\item\em Volumetric heat capacity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}
+\begin{DoxyCompactList}\small\item\em Heat source in the bulk of the simulation domain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}{Tx\+Old}}
+\begin{DoxyCompactList}\small\item\em Temporary temperature storage for the iterative solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{d\+Tx}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classopenphase_1_1Temperature}{Temperature} increments. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}}
+\begin{DoxyCompactList}\small\item\em Solver convergence tolerance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{Max\+Iterations}}
+\begin{DoxyCompactList}\small\item\em Maximum number of implicit solver iterations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{Solver\+Calls\+Interval}}
+\begin{DoxyCompactList}\small\item\em Solve heat diffusion only on Solver\+Calls\+Interval (in time steps) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{Solver\+Calls\+Counter}}
+\begin{DoxyCompactList}\small\item\em Counts solver calls. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}{Verbose\+Iterations}}
+\begin{DoxyCompactList}\small\item\em If true enables iterations statistics output to console. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of phases. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1\+DIteration}} (\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&Tx, \mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \&Tx\+Ext, \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}} ext\+BC, double \&residual, double dt)
+\begin{DoxyCompactList}\small\item\em Performs solver iteration in the 1D temperature field extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Heat equation solver class 
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00044}{44}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1HeatDiffusion_adb0ea59be698428db54cc6a216470a4e}\label{classopenphase_1_1HeatDiffusion_adb0ea59be698428db54cc6a216470a4e} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!HeatDiffusion@{HeatDiffusion}}
+\index{HeatDiffusion@{HeatDiffusion}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{HeatDiffusion()}{HeatDiffusion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Heat\+Diffusion\+::\+Heat\+Diffusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00047}{47}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_a77348c5c248422566e3e8331986e70e5}\label{classopenphase_1_1HeatDiffusion_a77348c5c248422566e3e8331986e70e5} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!HeatDiffusion@{HeatDiffusion}}
+\index{HeatDiffusion@{HeatDiffusion}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{HeatDiffusion()}{HeatDiffusion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Heat\+Diffusion\+::\+Heat\+Diffusion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Initializes storages, sets internal variables. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00048}{48}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd10629914789085fcabad8e5cd641dd}{Initialize}}(locSettings);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_abd10629914789085fcabad8e5cd641dd}\label{classopenphase_1_1HeatDiffusion_abd10629914789085fcabad8e5cd641dd} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates memory, initializes the settings);. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}HeatDiffusion"{}};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}}\ =\ 1.0e-\/9;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{MaxIterations}}\ =\ 10000;}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{SolverCallsInterval}}\ =\ 1;}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{SolverCallsCounter}}\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}{VerboseIterations}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}{PhaseThermalConductivity}}.\mbox{\hyperlink{classopenphase_1_1Storage_a4ec188abcaf0cedc842da0ec805034fd}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}});}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef}{PhaseVolumetricHeatCapacity}}.\mbox{\hyperlink{classopenphase_1_1Storage_a4ec188abcaf0cedc842da0ec805034fd}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}},\ Bcells);}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}},\ Bcells);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}{TxOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}},\ Bcells);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}},\ Bcells);}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}},\ Bcells);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ locSettings.AddForRemeshing(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}\label{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Perform1DIteration@{Perform1DIteration}}
+\index{Perform1DIteration@{Perform1DIteration}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Perform1DIteration()}{Perform1DIteration()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Perform1\+DIteration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx,  }\item[{\mbox{\hyperlink{classopenphase_1_1Temperature1Dextension}{Temperature1\+Dextension}} \&}]{Tx\+Ext,  }\item[{\mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5b}{Boundary\+Condition\+Types}}}]{ext\+BC,  }\item[{double \&}]{residual,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs solver iteration in the 1D temperature field extension. 
+
+Calculates one iteration of the heat diffusion using a Jacobi implicit algorithm for different 1D-\/\+Extensions\+:
+
+double dT = (Rho\+Cp\texorpdfstring{$\ast$}{*}\+Tx\+Old\mbox{[}x\mbox{]}+Lambda\texorpdfstring{$\ast$}{*}dt/(dx\texorpdfstring{$\ast$}{*}dx)\texorpdfstring{$\ast$}{*}(Tx\mbox{[}x-\/1\mbox{]}+Tx\mbox{[}x+1\mbox{]})) /(Rho\+Cp + 2.\+0\texorpdfstring{$\ast$}{*}\+Lambda\texorpdfstring{$\ast$}{*}dt/(dx\texorpdfstring{$\ast$}{*}dx)) -\/ Tx\mbox{[}x\mbox{]};
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00233\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ std::pair<int,\ int>\ Xbounds\ =\ \mbox{\hyperlink{namespaceopenphase_af2156970df42803e19de81b80cbb96bf}{three\_state\_bounds\_selector}}(TxExt.Direction[0],\ 0,\ Tx.Grid.Nx);}
+\DoxyCodeLine{00241\ \ \ \ \ std::pair<int,\ int>\ Ybounds\ =\ \mbox{\hyperlink{namespaceopenphase_af2156970df42803e19de81b80cbb96bf}{three\_state\_bounds\_selector}}(TxExt.Direction[1],\ 0,\ Tx.Grid.Ny);}
+\DoxyCodeLine{00242\ \ \ \ \ std::pair<int,\ int>\ Zbounds\ =\ \mbox{\hyperlink{namespaceopenphase_af2156970df42803e19de81b80cbb96bf}{three\_state\_bounds\_selector}}(TxExt.Direction[2],\ 0,\ Tx.Grid.Nz);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{double}\ boundaryValue\ =\ 0.0;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{double}\ averageRhoCP\ \ =\ 0.0;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{double}\ averageLambda\ =\ 0.0;}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{double}\ area\ \ \ \ \ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Xbounds.first;\ i\ <\ Xbounds.second;\ ++i)}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ Ybounds.first;\ j\ <\ Ybounds.second;\ ++j)}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ Zbounds.first;\ k\ <\ Zbounds.second;\ ++k)}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ averageRhoCP\ \ +=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}(i,j,k);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ volumetric\ heat\ capacity\ [J/(m\string^3\ K)]}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ averageLambda\ +=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}(i,j,k);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ thermal\ conductivity\ [J/(m\ s\ K)]}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ boundaryValue\ +=\ Tx(i,j,k);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ area++;}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{if}(TxExt.Direction[0]\ ==\ 0)}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&averageRhoCP,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&averageLambda,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&boundaryValue,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&area,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ averageRhoCP\ \ /=\ area;}
+\DoxyCodeLine{00270\ \ \ \ \ averageLambda\ /=\ area;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ TxExt.Data(-\/1)\ =\ boundaryValue/area;}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\_dx2\ =\ dt/(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}*\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ TxExt.size();\ ++i)}
+\DoxyCodeLine{00277\ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locQ\ =\ 0.0;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ ==\ TxExt.size()-\/1)}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ locQ\ =\ TxExt.Qdot;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ loc\_deltaT\ =\ (averageRhoCP*TxExt.DataTMP(i)\ +}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ averageLambda*dt\_dx2*(TxExt.Data(i+1)\ +\ TxExt.Data(i-\/1))\ +\ locQ*dt)}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /(averageRhoCP\ +\ 2.0*averageLambda*dt\_dx2)\ -\/\ TxExt.Data(i);}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(residual,loc\_deltaT*loc\_deltaT);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ TxExt.Data(i)\ +=\ loc\_deltaT;}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Xbounds.first;\ i\ <\ Xbounds.second;\ ++i)}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ Ybounds.first;\ j\ <\ Ybounds.second;\ ++j)}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ Zbounds.first;\ k\ <\ Zbounds.second;\ ++k)}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ Tx(i+TxExt.Direction[0],j+TxExt.Direction[1],k+TxExt.Direction[2])\ =\ TxExt.Data(0);}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ TxExt.setBC(extBC);}
+\DoxyCodeLine{00300\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Read@{Read}}
+\index{Read@{Read}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36}\label{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input parameters. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}HeatDiffusion\ input"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName.c\_str());}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ fstream\ inpF(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inpF)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00105\ \ \ \ \ \};}
+\DoxyCodeLine{00106\ \ \ \ \ stringstream\ inp;}
+\DoxyCodeLine{00107\ \ \ \ \ inp\ <<\ inpF.rdbuf();}
+\DoxyCodeLine{00108\ \ \ \ \ inpF.close();}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36}{ReadInput}}(inp);}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_aed8563b9f8cf9b67a1a563ec01d7e86f}\label{classopenphase_1_1HeatDiffusion_aed8563b9f8cf9b67a1a563ec01d7e86f} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads input parameters. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}};\ n++)}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ converter\ <<\ n;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ counter\ =\ converter.str();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}{PhaseThermalConductivity}}[n]\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}ThermalConductivity\_"{}})\ +\ counter);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef}{PhaseVolumetricHeatCapacity}}[n]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}VolumetricHeatCapacity\_"{}})\ +\ counter,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Tolerance"{}}),\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}});}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{MaxIterations}}\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}MaxIterations"{}}),\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{MaxIterations}});}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{SolverCallsInterval}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}SolverCallsInterval"{}}),\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{SolverCallsInterval}});}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}{VerboseIterations}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}VerboseIterations"{}}),\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}{VerboseIterations}});}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04}{MaxThermalConductivity}}\ =\ 0.0;}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}{Nphases}};\ n++)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04}{MaxThermalConductivity}}\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04}{MaxThermalConductivity}},\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}{PhaseThermalConductivity}}[n]);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00141\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}\label{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Changes system size while keeping the data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}{TxOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_a0d8d0ac8475f544e2e72929d4b9bae12}{Reallocate}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{00154\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}\label{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a8a6d98362bb758bd9db818aee7932d3c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_abbc1ab2b73dfa443a229d29f1cfd1fed}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{openphase\+::\+Electric\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_aac503798c87d57cd342e2d56063f481b}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_aef219f624f3b81f6468a02e971b7a256}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_abc96d1d43d31ce138389284b8c602d6b}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_af984180c4030714991b47987ce376fc2}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MagneticProperties_a750a5b42048942a811048a123d1f1c7c}{openphase\+::\+Magnetic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a82404c971c69a49de0e33e50ab547eea}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a825ae7162676d2a690c3e072d0a49581}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a24586483bcb5fc254b7541fd8ff79c87}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a1e2a94e2f48b36eb25554fcd50bf5170}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00125}{125}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_aa0cd0b908d0dbb74c4de2f3640e77ebf}\label{classopenphase_1_1HeatDiffusion_aa0cd0b908d0dbb74c4de2f3640e77ebf} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SetEffectiveProperties@{SetEffectiveProperties}}
+\index{SetEffectiveProperties@{SetEffectiveProperties}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SetEffectiveProperties()}{SetEffectiveProperties()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Set\+Effective\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx }\end{DoxyParamCaption})}
+
+
+
+Set effective thermal properties. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{if}(Tx.LatentHeatMode\ ==\ \mbox{\hyperlink{namespaceopenphase_afb73c6466b9020b14e7256a3fd6b0da9a509820290d57f333403f490dde7316f4}{LatentHeatModes::Local}})}
+\DoxyCodeLine{00207\ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afeae00aaa918ae21fd4a763273183032}{SetLocalLatentHeat}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ Tx);}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}},\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++alpha)}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{alpha\})\ >\ 0.0)}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}(i,j,k)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ +=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef}{PhaseVolumetricHeatCapacity}}[alpha]*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{alpha\});}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}(i,j,k)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ +=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}{PhaseThermalConductivity}}[alpha]*\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{alpha\});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_afeae00aaa918ae21fd4a763273183032}\label{classopenphase_1_1HeatDiffusion_afeae00aaa918ae21fd4a763273183032} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SetLocalLatentHeat@{SetLocalLatentHeat}}
+\index{SetLocalLatentHeat@{SetLocalLatentHeat}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SetLocalLatentHeat()}{SetLocalLatentHeat()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Set\+Local\+Latent\+Heat (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx }\end{DoxyParamCaption})}
+
+
+
+Sets local latent heat sources. 
+
+This function accounts for the latent heat release due to phase-\/transformations.
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}},0,)}
+\DoxyCodeLine{00162\ \ \ \ \ if(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDot(i,j,k).cbegin();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDot(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(it-\/>value1)\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PIdxA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Phase;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PIdxB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Phase;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}(i,j,k)\ +=\ Tx.LatentHeat(\{PIdxA,PIdxB\})*it-\/>value1;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00175\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_a5e38e6479459be11c33464c4aaf1c5a7}\label{classopenphase_1_1HeatDiffusion_a5e38e6479459be11c33464c4aaf1c5a7} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SetLocalLatentHeatAndApply@{SetLocalLatentHeatAndApply}}
+\index{SetLocalLatentHeatAndApply@{SetLocalLatentHeatAndApply}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SetLocalLatentHeatAndApply()}{SetLocalLatentHeatAndApply()}}
+{\footnotesize\ttfamily void openphase\+::\+Heat\+Diffusion\+::\+Set\+Local\+Latent\+Heat\+And\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+This function accounts for the latent heat release due to phase-\/transformations.
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}},0,)}
+\DoxyCodeLine{00183\ \ \ \ \ if(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDot(i,j,k).cbegin();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDot(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(it-\/>value1)\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PIdxA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Phase;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PIdxB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Phase;}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}(i,j,k)\ +=\ Tx.LatentHeat(\{PIdxA,PIdxB\})*it-\/>value1;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}},0,)}
+\DoxyCodeLine{00197\ \ \ \ \ if(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ Tx(i,j,k)\ +=\ dt*\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}(i,j,k)/\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}(i,j,k);}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_ad80d41db92c3e64fb924984fc0d7ab7a}{Clear}}();}
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1HeatDiffusion_a67be7040ab84635a5618fae63244ba10}\label{classopenphase_1_1HeatDiffusion_a67be7040ab84635a5618fae63244ba10} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SolveImplicit@{SolveImplicit}}
+\index{SolveImplicit@{SolveImplicit}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SolveImplicit()}{SolveImplicit()}}
+{\footnotesize\ttfamily int openphase\+::\+Heat\+Diffusion\+::\+Solve\+Implicit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}} \&}]{Tx,  }\item[{const double}]{dt }\end{DoxyParamCaption})}
+
+This function calculates the heat conductivity in the simulation domain using an implicit solver method.
+\begin{DoxyParams}{Parameters}
+{\em BC} & Implicit Solver \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{HeatDiffusion_8cpp_source}{Heat\+Diffusion.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00306\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{int}\ iteration\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterations\ counter}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\ =\ dt\_in;}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{SolverCallsCounter}}\ !=\ 0)\ dt\ =\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{SolverCallsInterval}}*dt\_in;}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{SolverCallsCounter}}\ \%\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}{SolverCallsInterval}})\ ==\ 0)}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Populate\ "{}old"{}\ temperature\ for\ the\ iterations.\ */}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionsActive)}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionX0.isActive())\ \{Temp.ExtensionX0.store\_temporary();\}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionXN.isActive())\ \{Temp.ExtensionXN.store\_temporary();\}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionY0.isActive())\ \{Temp.ExtensionY0.store\_temporary();\}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionYN.isActive())\ \{Temp.ExtensionYN.store\_temporary();\}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionZ0.isActive())\ \{Temp.ExtensionZ0.store\_temporary();\}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionZN.isActive())\ \{Temp.ExtensionZN.store\_temporary();\}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ Temp.CalculateMinMaxAvg();}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}{TxOld}}\ =\ Temp.Tx;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}\ =\ 0.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Residual\ for\ calculating\ the\ accuracy\ of\ the\ converged\ solution}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt\_dx2\ =\ dt/(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}}*\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dimension\ =\ 2.0*double(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a70ddf5c25482d7cdefe67b0d25dcd258}{Active}}());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Laplacian\ stencil\ dimension\ parameter}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ iteration++;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}\ =\ 0.0;}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionsActive)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Calculation\ of\ heat\ diffusion\ in\ 1D\ extension\ using\ Gauss–Seidel\ implicit\ method.\ */}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionX0.isActive())}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionX0,\ BC.BC0X,\ residual,\ dt);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ MPI\_SIZE\ -\/\ 1)}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionXN.isActive())}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionXN,\ BC.BCNX,\ residual,\ dt);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionY0.isActive())}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionY0,\ BC.BC0Y,\ residual,\ dt);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionYN.isActive())}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionYN,\ BC.BCNY,\ residual,\ dt);}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionZ0.isActive())}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionZ0,\ BC.BC0Z,\ residual,\ dt);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Temp.ExtensionZN.isActive())}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abd29d86e04739f0e3e4d3a31c03fe32d}{Perform1DIteration}}(Temp,\ Temp.ExtensionZN,\ BC.BCNZ,\ residual,\ dt);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,Temp.Tx,0,reduction(max:\mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}))}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Calculation\ of\ heat\ diffusion\ using\ Jacobi\ implicit\ method.\ */}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ RhoCp\ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}{EffectiveHeatCapacity}}(i,j,k);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Volumetric\ heat\ capacity\ [J/(m\string^3\ K)]}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Lambda\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}{EffectiveThermalConductivity}}(i,j,k);\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Thermal\ conductivity\ [J/(m\ s\ K)]}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locQdot\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}(i,j,k);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Heat\ source\ [J/(m\string^3\ s)]}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locStencil\ =\ 0.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Temperature\ stencil\ from\ the\ updated\ field\ [K]}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ >\ 0)\ locStencil\ +=\ (Temp(i+1,j,k)\ +\ Temp(i-\/1,j,k));}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ >\ 0)\ locStencil\ +=\ (Temp(i,j+1,k)\ +\ Temp(i,j-\/1,k));}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ >\ 0)\ locStencil\ +=\ (Temp(i,j,k+1)\ +\ Temp(i,j,k-\/1));}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}(i,j,k)\ =\ (RhoCp*\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}{TxOld}}(i,j,k)\ +\ Lambda*locStencil*dt\_dx2\ +\ locQdot*dt)}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /(RhoCp\ +\ dimension*Lambda*dt\_dx2)\ -\/\ Temp(i,j,k);}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}\ =\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a3c9fdec2355fde577142bf782e7c581c}{max}}(residual,\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}(i,j,k)*\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}(i,j,k));}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Updating\ the\ temperature\ with\ the\ calculated\ increment.*/}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,Temp.Tx,0,)}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp(i,j,k)\ +=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}(i,j,k);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}{dTx}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Assigning\ values\ for\ the\ boundary\ cells.\ */}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ Temp.SetBoundaryConditions(BC);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Warning\ output,\ if\ number\ of\ iterations\ exceeds\ MaxIterations.\ */}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}}\ =\ sqrt(residual)/(Temp.Tavg\ +\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}});\ \textcolor{comment}{//\ Added\ Tolerance\ in\ denominator\ in\ case\ if\ Tavg\ ==\ 0}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&residual,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_MAX,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}{VerboseIterations}})}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ message\ \ =\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{ConsoleOutput::GetStandard}}(\textcolor{stringliteral}{"{}Solver\ call"{}},}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{SolverCallsCounter}}));}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message\ +=\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{ConsoleOutput::GetStandard}}(\textcolor{stringliteral}{"{}Iteration"{}},}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(iteration));}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message\ +=\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{ConsoleOutput::GetStandard}}(\textcolor{stringliteral}{"{}Residual"{}},}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}{ConsoleOutput::to\_string\_with\_precision}}(residual));}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message\ +=\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{ConsoleOutput::GetStandard}}(\textcolor{stringliteral}{"{}Tolerance"{}},}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}{ConsoleOutput::to\_string\_with\_precision}}(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}}));}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054}{ConsoleOutput::WriteWithinMethod}}(message,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}SolveImplicit()"{}});}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(iteration\ ==\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{MaxIterations}})}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ value;}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value.precision(16);}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ <<\ \mbox{\hyperlink{namespaceopenphase_1_1SystemOfLinearEquationsSolvers_a8be14318d84fda719a06937b2d0e619a}{residual}};}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \textcolor{stringliteral}{"{}Maximum\ number\ of\ "{}}\ +\ to\_string(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}{MaxIterations}})\ +\ \textcolor{stringliteral}{"{}\ iterations\ reached.\(\backslash\)n"{}}}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}Solver\ failed\ to\ converge\ to\ the\ requested\ tolerance\ of\ "{}}\ +\ to\_string(\mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}})\ +\ \textcolor{stringliteral}{"{}.\(\backslash\)n"{}}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}Current\ convergence\ residual\ is\ "{}}\ +\ value.str()\ +\ \textcolor{stringliteral}{"{}.\(\backslash\)n"{}}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}Simulation\ will\ continue!\(\backslash\)n"{}};}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(tmp,\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\textcolor{stringliteral}{"{}SolveImplicit()"{}});}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (residual\ >=\ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}{Tolerance}});}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Evaluate\ temperature\ statistics.\ */}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ Temp.CalculateMinMaxAvg();}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionsActive)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionX0.isActive())\ \{Temp.ExtensionX0.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionXN.isActive())\ \{Temp.ExtensionXN.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionY0.isActive())\ \{Temp.ExtensionY0.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionYN.isActive())\ \{Temp.ExtensionYN.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionZ0.isActive())\ \{Temp.ExtensionZ0.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Temp.ExtensionZN.isActive())\ \{Temp.ExtensionZN.Qdot\ =\ 0.0;\}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}{Qdot}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_ad80d41db92c3e64fb924984fc0d7ab7a}{Clear}}();}
+\DoxyCodeLine{00457\ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}{SolverCallsCounter}}++;}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordflow}{return}\ iteration;}
+\DoxyCodeLine{00460\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Write@{Write}}
+\index{Write@{Write}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e}\label{classopenphase_1_1HeatDiffusion_aec6cd8e5744da60f1c50784ecd89a85e} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!dTx@{dTx}}
+\index{dTx@{dTx}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{dTx}{dTx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Heat\+Diffusion\+::d\+Tx}
+
+
+
+\doxylink{classopenphase_1_1Temperature}{Temperature} increments. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00077}{77}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699}\label{classopenphase_1_1HeatDiffusion_a0595565848bc517c453792def8fb5699} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!EffectiveHeatCapacity@{EffectiveHeatCapacity}}
+\index{EffectiveHeatCapacity@{EffectiveHeatCapacity}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{EffectiveHeatCapacity}{EffectiveHeatCapacity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Heat\+Diffusion\+::\+Effective\+Heat\+Capacity}
+
+
+
+Volumetric heat capacity. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00073}{73}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb}\label{classopenphase_1_1HeatDiffusion_ac15a4b3e093fcc998f94515c09e585eb} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!EffectiveThermalConductivity@{EffectiveThermalConductivity}}
+\index{EffectiveThermalConductivity@{EffectiveThermalConductivity}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{EffectiveThermalConductivity}{EffectiveThermalConductivity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Heat\+Diffusion\+::\+Effective\+Thermal\+Conductivity}
+
+
+
+Thermal conductivity. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00072}{72}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551}\label{classopenphase_1_1HeatDiffusion_abef23bb00efeac2950208d6fce614551} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Heat\+Diffusion\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00085}{85}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1HeatDiffusion_ad3e845266b60eeb0c50c94b36d475f36}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77}\label{classopenphase_1_1HeatDiffusion_a22431862090df3dff328d812dbc47f77} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!MaxIterations@{MaxIterations}}
+\index{MaxIterations@{MaxIterations}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{MaxIterations}{MaxIterations}}
+{\footnotesize\ttfamily int openphase\+::\+Heat\+Diffusion\+::\+Max\+Iterations}
+
+
+
+Maximum number of implicit solver iterations. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00080}{80}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04}\label{classopenphase_1_1HeatDiffusion_a7f448ebae5354930c6cda5ac09543a04} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!MaxThermalConductivity@{MaxThermalConductivity}}
+\index{MaxThermalConductivity@{MaxThermalConductivity}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{MaxThermalConductivity}{MaxThermalConductivity}}
+{\footnotesize\ttfamily double openphase\+::\+Heat\+Diffusion\+::\+Max\+Thermal\+Conductivity}
+
+
+
+Maximum thermal conductivity in the system. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00067}{67}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70}\label{classopenphase_1_1HeatDiffusion_abbb66c508317df637938753beb979f70} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Heat\+Diffusion\+::\+Nphases}
+
+
+
+Number of phases. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00087}{87}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65}\label{classopenphase_1_1HeatDiffusion_ab38605eba86685e24f475d5cbfb77a65} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!PhaseThermalConductivity@{PhaseThermalConductivity}}
+\index{PhaseThermalConductivity@{PhaseThermalConductivity}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{PhaseThermalConductivity}{PhaseThermalConductivity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$double$>$ openphase\+::\+Heat\+Diffusion\+::\+Phase\+Thermal\+Conductivity}
+
+
+
+Thermal conductivity for each phase. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00069}{69}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef}\label{classopenphase_1_1HeatDiffusion_ace49d9a768f91e19f455755ad4d133ef} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!PhaseVolumetricHeatCapacity@{PhaseVolumetricHeatCapacity}}
+\index{PhaseVolumetricHeatCapacity@{PhaseVolumetricHeatCapacity}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{PhaseVolumetricHeatCapacity}{PhaseVolumetricHeatCapacity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$double$>$ openphase\+::\+Heat\+Diffusion\+::\+Phase\+Volumetric\+Heat\+Capacity}
+
+
+
+Volumetric heat capacity for each phase. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00070}{70}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f}\label{classopenphase_1_1HeatDiffusion_a8c2e46a71f6d4f0066275609832d320f} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Qdot@{Qdot}}
+\index{Qdot@{Qdot}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Qdot}{Qdot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Heat\+Diffusion\+::\+Qdot}
+
+
+
+Heat source in the bulk of the simulation domain. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00074}{74}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!readable@{readable}}
+\index{readable@{readable}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9}\label{classopenphase_1_1HeatDiffusion_a975ab24449ece2f33d11d5e1ec7091b9} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SolverCallsCounter@{SolverCallsCounter}}
+\index{SolverCallsCounter@{SolverCallsCounter}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SolverCallsCounter}{SolverCallsCounter}}
+{\footnotesize\ttfamily int openphase\+::\+Heat\+Diffusion\+::\+Solver\+Calls\+Counter}
+
+
+
+Counts solver calls. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00082}{82}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa}\label{classopenphase_1_1HeatDiffusion_af874630ef76cae36f93a105049b31ffa} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!SolverCallsInterval@{SolverCallsInterval}}
+\index{SolverCallsInterval@{SolverCallsInterval}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{SolverCallsInterval}{SolverCallsInterval}}
+{\footnotesize\ttfamily int openphase\+::\+Heat\+Diffusion\+::\+Solver\+Calls\+Interval}
+
+
+
+Solve heat diffusion only on Solver\+Calls\+Interval (in time steps) 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00081}{81}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7}\label{classopenphase_1_1HeatDiffusion_afb214002ba1bfef7efbf0ae877f1d0b7} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!Tolerance@{Tolerance}}
+\index{Tolerance@{Tolerance}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{Tolerance}{Tolerance}}
+{\footnotesize\ttfamily double openphase\+::\+Heat\+Diffusion\+::\+Tolerance}
+
+
+
+Solver convergence tolerance. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00079}{79}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606}\label{classopenphase_1_1HeatDiffusion_a9ac2a2b9f19041b0718299936f928606} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!TxOld@{TxOld}}
+\index{TxOld@{TxOld}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{TxOld}{TxOld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Heat\+Diffusion\+::\+Tx\+Old}
+
+
+
+Temporary temperature storage for the iterative solver. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00076}{76}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+\Hypertarget{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf}\label{classopenphase_1_1HeatDiffusion_a7e383e6f5b928595b3d54f6a455660cf} 
+\index{openphase::HeatDiffusion@{openphase::HeatDiffusion}!VerboseIterations@{VerboseIterations}}
+\index{VerboseIterations@{VerboseIterations}!openphase::HeatDiffusion@{openphase::HeatDiffusion}}
+\doxysubsubsection{\texorpdfstring{VerboseIterations}{VerboseIterations}}
+{\footnotesize\ttfamily bool openphase\+::\+Heat\+Diffusion\+::\+Verbose\+Iterations}
+
+
+
+If true enables iterations statistics output to console. 
+
+
+
+Definition at line \mbox{\hyperlink{HeatDiffusion_8h_source_l00083}{83}} of file \mbox{\hyperlink{HeatDiffusion_8h_source}{Heat\+Diffusion.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{HeatDiffusion_8h}{Heat\+Diffusion.\+h}}\item 
+\mbox{\hyperlink{HeatDiffusion_8cpp}{Heat\+Diffusion.\+cpp}}\end{DoxyCompactItemize}

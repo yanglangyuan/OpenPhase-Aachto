@@ -1,0 +1,722 @@
+\doxysection{openphase\+::Text\+Output Class Reference}
+\hypertarget{classopenphase_1_1TextOutput}{}\label{classopenphase_1_1TextOutput}\index{openphase::TextOutput@{openphase::TextOutput}}
+
+
+{\ttfamily \#include "{}Text\+Output.\+h"{}}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_aa5d10fde33d406484f08542c48774795}{Write\+Value}} (double \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}, std\+::string filename, double time)
+\begin{DoxyCompactList}\small\item\em Write double value in column. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_a0ccc2d8245921542e15ebfdbaf7acc98}{Write\+Multiple\+Values}} (std\+::vector$<$ std\+::string $>$ Names, std\+::vector$<$ double $>$ value, std\+::string filename, double time)
+\begin{DoxyCompactList}\small\item\em Write vector values and names of value in columns. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_aa905b12960f8c8c6f331fbfca6dea4e1}{Writed\+Vector\+NValues}} (std\+::vector$<$ std\+::string $>$ Names, \mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}} value, std\+::string filename, double time)
+\begin{DoxyCompactList}\small\item\em Write \doxylink{classopenphase_1_1dVectorN}{d\+VectorN} values and names of values in columns. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_a1780f568bd6bc0a0d59a844a640d1887}{Line\+Concentration}} (\mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, std\+::string filename, double timestep, std\+::string type, std\+::string axis, int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em Write total composition over a straight line in separate files. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_a7119e4c8716a9da991c5fc69959b72c5}{Average\+Plastic\+Strain}} (\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&EP, std\+::string filename, double time\+Or\+Strain, size\+\_\+t precision=5)
+\begin{DoxyCompactList}\small\item\em Write average Plastic strain over time. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1TextOutput_a55a87faaccfcc03e0403a896d5ceaed4}{max\+Elastic\+Rotation}} (\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&EP, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1Orientations}{Orientations}} \&OR, int t\+Step, std\+::string Filename)
+\begin{DoxyCompactList}\small\item\em Write max elastic rotations over time. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$ \mbox{\hyperlink{classopenphase_1_1TextOutput_a479dcd149b35445aca6fecfb53ba0cbe}{Integrate\+DG}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&dG, std\+::string filename, double Real\+Time)
+\item 
+static \mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$ \mbox{\hyperlink{classopenphase_1_1TextOutput_a4d590f6d7796320a0e088b07d927e402}{Integrate\+DG}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&dG, std\+::string filename, \mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$ dgold, double Real\+Time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}} = \textquotesingle{} \textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8h_source_l00046}{46}} of file \mbox{\hyperlink{TextOutput_8h_source}{Text\+Output.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1TextOutput_a7119e4c8716a9da991c5fc69959b72c5}\label{classopenphase_1_1TextOutput_a7119e4c8716a9da991c5fc69959b72c5} 
+\index{openphase::TextOutput@{openphase::TextOutput}!AveragePlasticStrain@{AveragePlasticStrain}}
+\index{AveragePlasticStrain@{AveragePlasticStrain}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{AveragePlasticStrain()}{AveragePlasticStrain()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::\+Average\+Plastic\+Strain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&}]{EP,  }\item[{std\+::string}]{filename,  }\item[{double}]{time\+Or\+Strain,  }\item[{size\+\_\+t}]{precision = {\ttfamily 5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write average Plastic strain over time. 
+
+This function will create tabulated data on the average strain in the system. Each time this function is called, a new row will be written in the specified file name for the current time step. If the file is not present it will be created, if the phase already exists, the new data will be appended!
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ vStrain\ avgStrain\ =\ EP.AveragePlasticStrain();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ vStrain\ OldStrain;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ OldTimeStep\ =\ 0.0;}
+\DoxyCodeLine{00134\ \ \ \ \ vStrain\ Rate;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (timeOrStrain)}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Rate\ =\ (avgStrain\ -\/\ OldStrain)/(timeOrStrain\ -\/\ OldTimeStep);}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ OldStrain\ =\ avgStrain;}
+\DoxyCodeLine{00140\ \ \ \ \ OldTimeStep\ =\ timeOrStrain;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{double}\ averagePEEQ\ =\ 0.0;}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,EP.DeformationGradientsTotal,0,reduction(+:averagePEEQ))}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ averagePEEQ\ +=\ EP.PlasticStrains(i,j,k).PEEQ();}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{double}\ \ tempaverage\ =\ averagePEEQ\ ;}
+\DoxyCodeLine{00150\ \ \ \ \ OP\_MPI\_Reduce(\&tempaverage,\&averagePEEQ\ ,1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,0,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ averagePEEQ\ /=\ double(EP.Grid.TotalNumberOfCells());}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename))}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}time"{}}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_0"{}}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_1"{}}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_2"{}}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_3"{}}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_4"{}}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Epsilon\_5"{}}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}PEEQ"{}}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_0"{}}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_1"{}}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_2"{}}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_3"{}}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_4"{}}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Rate\_5\(\backslash\)n"{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00176\ \ \ \ \ file.precision(precision);}
+\DoxyCodeLine{00177\ \ \ \ \ file\ <<\ timeOrStrain\ <<\ scientific}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[0]}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[1]}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[2]}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[3]}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[4]}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ avgStrain[5]}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ averagePEEQ}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[0]}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[1]}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[2]}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[3]}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[4]}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ Rate[5]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00191\ \ \ \ \ file.close();}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_a479dcd149b35445aca6fecfb53ba0cbe}\label{classopenphase_1_1TextOutput_a479dcd149b35445aca6fecfb53ba0cbe} 
+\index{openphase::TextOutput@{openphase::TextOutput}!IntegrateDG@{IntegrateDG}}
+\index{IntegrateDG@{IntegrateDG}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{IntegrateDG()}{IntegrateDG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$ openphase\+::\+Text\+Output\+::\+Integrate\+DG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&}]{dG,  }\item[{std\+::string}]{filename,  }\item[{double}]{Real\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00448}{448}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00449\ \{}
+\DoxyCodeLine{00450\ \ \ \ \ NodeAB<double,double>\ dg;}
+\DoxyCodeLine{00451\ \ \ \ \ NodeAB<double,double>\ num\_point;}
+\DoxyCodeLine{00452\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,\ 0)}
+\DoxyCodeLine{00453\ \ \ \ \ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ dG.Force(i,j,k).begin();}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ dG.Force(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexA\ =\ it-\/>indexA;}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexB\ =\ it-\/>indexB;}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[indexA].Phase;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[indexB].Phase;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phase\ =\ 1.;\ \textcolor{comment}{//sqrt(Phase.Fields(i,j,k).get\_value(indexA)*Phase.Fields(i,j,k).get\_value(indexB));}}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dg.add\_asym1(pIndexA,\ pIndexB,\ phase*it-\/>raw);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_point.add\_sym1(pIndexA,\ pIndexB,phase);}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ i;\ ++j)}
+\DoxyCodeLine{00474\ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ dg.get\_asym1(i,j);}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rvalue\ =\ 0;}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&value,\&rvalue,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,rvalue);}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ numpoints\ =\ num\_point.get\_sym1(i,j);}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rnumpoints\ =\ 0;}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&numpoints,\&rnumpoints,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ num\_point.set\_asym1(i,j,rnumpoints);}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ i;\ ++j)}
+\DoxyCodeLine{00487\ \ \ \ \ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ dg.get\_asym1(i,j);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ numpoints\ =\ std::abs(num\_point.get\_sym1(i,j));}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numpoints\ >\ 0.)}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,value/numpoints);}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,0.);}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00498\ \ \ \ \ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename)\ or\ RealTime\ ==\ 0.)}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out\ |\ ios::trunc);}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}Time"{}};}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i+1;\ j\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++j)}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}dG\_"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ j;}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ file\ <<\ RealTime;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i+1;\ j\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++j)}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ dg.get\_asym1(i,j);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00521\ \ \ \ \ \}}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keywordflow}{return}\ dg;}
+\DoxyCodeLine{00523\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_a4d590f6d7796320a0e088b07d927e402}\label{classopenphase_1_1TextOutput_a4d590f6d7796320a0e088b07d927e402} 
+\index{openphase::TextOutput@{openphase::TextOutput}!IntegrateDG@{IntegrateDG}}
+\index{IntegrateDG@{IntegrateDG}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{IntegrateDG()}{IntegrateDG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$ openphase\+::\+Text\+Output\+::\+Integrate\+DG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1DrivingForce}{Driving\+Force}} \&}]{dG,  }\item[{std\+::string}]{filename,  }\item[{\mbox{\hyperlink{classopenphase_1_1NodeAB}{Node\+AB}}$<$ double, double $>$}]{dgold,  }\item[{double}]{Real\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00525}{525}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00526\ \{}
+\DoxyCodeLine{00527\ \ \ \ \ NodeAB<double,double>\ dg;}
+\DoxyCodeLine{00528\ \ \ \ \ NodeAB<double,double>\ num\_point;}
+\DoxyCodeLine{00529\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,\ 0)}
+\DoxyCodeLine{00530\ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ dG.Force(i,j,k).begin();}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ dG.Force(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexA\ =\ it-\/>indexA;}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexB\ =\ it-\/>indexB;}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[indexA].Phase;}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[indexB].Phase;}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phase\ =\ 1.;\ \textcolor{comment}{//sqrt(Phase.Fields(i,j,k).get\_value(indexA)*Phase.Fields(i,j,k).get\_value(indexB));}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dg.add\_asym1(pIndexA,\ pIndexB,\ phase*it-\/>raw);}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_point.add\_sym1(pIndexA,\ pIndexB,phase);}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \}}
+\DoxyCodeLine{00547\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00549\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00550\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ i;\ ++j)}
+\DoxyCodeLine{00551\ \ \ \ \ \{}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ dg.get\_asym1(i,j);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rvalue\ =\ 0;}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&value,\&rvalue,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,rvalue);}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ numpoints\ =\ num\_point.get\_sym1(i,j);}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rnumpoints\ =\ 0;}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(\&numpoints,\&rnumpoints,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ num\_point.set\_asym1(i,j,rnumpoints);}
+\DoxyCodeLine{00560\ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ i;\ ++j)}
+\DoxyCodeLine{00564\ \ \ \ \ \{}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ dg.get\_asym1(i,j);}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ numpoints\ =\ std::abs(num\_point.get\_sym1(i,j));}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numpoints\ >\ 0.)}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,value/numpoints);}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ dg.set\_asym1(i,j,0.);}
+\DoxyCodeLine{00571\ \ \ \ \ \}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00575\ \ \ \ \ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename)\ or\ RealTime\ ==\ 0.)}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out);}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}Time"{}};}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i+1;\ j\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++j)}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}dG\_"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ j;}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ file\ <<\ RealTime;}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++i)}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i+1;\ j\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Nphases;\ ++j)}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ dg.get\_asym1(i,j)-\/dgold.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(i,j);}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00598\ \ \ \ \ \}}
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordflow}{return}\ dg;}
+\DoxyCodeLine{00600\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_a1780f568bd6bc0a0d59a844a640d1887}\label{classopenphase_1_1TextOutput_a1780f568bd6bc0a0d59a844a640d1887} 
+\index{openphase::TextOutput@{openphase::TextOutput}!LineConcentration@{LineConcentration}}
+\index{LineConcentration@{LineConcentration}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{LineConcentration()}{LineConcentration()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::\+Line\+Concentration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{std\+::string}]{filename,  }\item[{double}]{timestep,  }\item[{std\+::string}]{type,  }\item[{std\+::string}]{axis,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write total composition over a straight line in separate files. 
+
+This function will create a separate file each time it is called, with a different file name according to the current time step. In this file, the tabulated composition data will be written down along a single line along a given axis with type = "{}\+X"{}, "{}\+Y"{} or "{}\+Z"{}. The line can be positioned with a point on it given with "{}x"{}, "{}y"{} and "{}z"{}. The output can be weight fraction with type = "{}\+WF"{}, weight percent "{}\+WP"{}, mole fraction "{}\+MF"{} and mole percent with "{}\+MP"{}.
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{int}\ mode\ =\ -\/1;}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{int}\ dir\ =\ -\/1;}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{int}\ tablength\ =\ 16;}
+\DoxyCodeLine{00229\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{if}(type\ ==\ \textcolor{stringliteral}{"{}WF"{}})}
+\DoxyCodeLine{00232\ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ mode\ =\ 0;}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(type\ ==\ \textcolor{stringliteral}{"{}WP"{}})}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ mode\ =\ 1;}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(type\ ==\ \textcolor{stringliteral}{"{}MF"{}})}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ mode\ =\ 2;}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(type\ ==\ \textcolor{stringliteral}{"{}MP"{}})}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ mode\ =\ 3;}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00248\ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Undefined\ type\ "{}}\ <<\ type}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ in\ TextOutput::LineConcentration()!\ Chose\ \(\backslash\)"{}WF\(\backslash\)"{},\ \(\backslash\)"{}WP\(\backslash\)"{},\ "{}}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}MF\(\backslash\)"{}\ or\ \(\backslash\)"{}MP\(\backslash\)"{}.\ Now\ exiting!\(\backslash\)n"{}};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{if}(axis\ ==\ \textcolor{stringliteral}{"{}X"{}})}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ dir\ =\ 0;}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(axis\ ==\ \textcolor{stringliteral}{"{}Y"{}})}
+\DoxyCodeLine{00260\ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ dir\ =\ 1;}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(axis\ ==\ \textcolor{stringliteral}{"{}Z"{}})}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ dir\ =\ 2;}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Undefined\ axis\ direction\ "{}}\ <<\ axis}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ in\ TextOutput::LineConcentration()!\ Chose\ \(\backslash\)"{}X\(\backslash\)"{},\ \(\backslash\)"{}Y\(\backslash\)"{}\ or"{}}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}Z\(\backslash\)"{}.\ Now\ exiting!\(\backslash\)n"{}};}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ ss\ <<\ fixed\ <<\ std::setw(9)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ int(timestep);}
+\DoxyCodeLine{00276\ \ \ \ \ std::string\ s\ =\ ss.str();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{string}\ name\ =\ filename\ +\ s\ +\ \textcolor{stringliteral}{"{}.opd"{}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ ofstream\ file(name,\ ios::out);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Create\ file\ and\ write\ header\ (or\ overwrite)}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ file\ <<\ std::setw(5)\ <<\ std::setfill(\textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}x"{}};}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}y"{}};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}z"{}};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Cx.Ncomp;\ comp++)}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name(Cx.Component[comp].Name);}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mode\ ==\ 0)}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}wf."{}}\ +\ name;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mode\ ==\ 1)}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}wp."{}}\ +\ name;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mode\ ==\ 2)}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}mf."{}}\ +\ name;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mode\ ==\ 3)}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}mp."{}}\ +\ name;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ file\ <<\ std::setw(tablength)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ temp;}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{switch}(dir)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ data\ to\ the\ file}}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ Cx.Grid.Nx;\ x++)}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ fixed\ <<\ std::setw(5)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ x;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Cx.Ncomp;\ comp++)}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ 0.0;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(mode)}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WF}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\});}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WP}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\})*100.0;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MF}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\});}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MP}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\})*100.0;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ scientific\ <<\ std::setw(tablength)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ val;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ Cx.Grid.Ny;\ y++)}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ fixed\ <<\ std::setw(5)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ y;}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Cx.Ncomp;\ comp++)}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ 0.0;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(mode)}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WF}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\});}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WP}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\})*100.0;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MF}}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\});}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MP}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\})*100.0;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ scientific\ <<\ std::setw(tablength)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ val;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ Cx.Grid.Nz;\ z++)}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ fixed\ <<\ std::setw(5)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ z;}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Cx.Ncomp;\ comp++)}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val\ =\ 0.0;}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(mode)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WF}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\});}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//WP}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.WeightFractionsTotal(x,y,z)(\{comp\})*100.0;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MF}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\});}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//MP}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ Cx.MoleFractionsTotal(x,y,z,\{comp\})*100.0;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ scientific\ <<\ std::setw(tablength)\ <<\ std::setfill(\textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ val;}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ file.close();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Close\ file}}
+\DoxyCodeLine{00446\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_a55a87faaccfcc03e0403a896d5ceaed4}\label{classopenphase_1_1TextOutput_a55a87faaccfcc03e0403a896d5ceaed4} 
+\index{openphase::TextOutput@{openphase::TextOutput}!maxElasticRotation@{maxElasticRotation}}
+\index{maxElasticRotation@{maxElasticRotation}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{maxElasticRotation()}{maxElasticRotation()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::max\+Elastic\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{Elastic\+Properties}} \&}]{EP,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1Orientations}{Orientations}} \&}]{OR,  }\item[{int}]{t\+Step,  }\item[{std\+::string}]{Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write max elastic rotations over time. 
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{double}\ maxRotation\ =\ 0.0;}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,\ reduction(max:maxRotation))}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locangle\ =\ 0;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ dVector3\ locaxis;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tools_a38134452ff33e20f92082d45081e9d5f}{Tools::getAxisAngle}}(EP.DeformationGradientsTotal(i,\ j,\ k),\ locaxis,\ locangle);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ locangle\ *=\ 180.0\ /\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ maxRotation\ =\ std::max(maxRotation,\ locangle);}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{double}\ tempmaxRotation\ =\ maxRotation;}
+\DoxyCodeLine{00208\ \ \ \ \ OP\_MPI\_Allreduce(\&tempmaxRotation,\&maxRotation,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_MAX,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1TextOutput_aa5d10fde33d406484f08542c48774795}{WriteValue}}(maxRotation,\ Filename,\ tStep);}
+\DoxyCodeLine{00211\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_aa905b12960f8c8c6f331fbfca6dea4e1}\label{classopenphase_1_1TextOutput_aa905b12960f8c8c6f331fbfca6dea4e1} 
+\index{openphase::TextOutput@{openphase::TextOutput}!WritedVectorNValues@{WritedVectorNValues}}
+\index{WritedVectorNValues@{WritedVectorNValues}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{WritedVectorNValues()}{WritedVectorNValues()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::\+Writed\+Vector\+NValues (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{Names,  }\item[{\mbox{\hyperlink{classopenphase_1_1dVectorN}{d\+VectorN}}}]{value,  }\item[{std\+::string}]{filename,  }\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write \doxylink{classopenphase_1_1dVectorN}{d\+VectorN} values and names of values in columns. 
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename))}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}time"{}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ N\ :\ Names)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ N;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ file\ <<\ time\ <<\ scientific;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.size();\ i++\ )}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\ ,\ "{}}\ <<\ value[i];}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_a0ccc2d8245921542e15ebfdbaf7acc98}\label{classopenphase_1_1TextOutput_a0ccc2d8245921542e15ebfdbaf7acc98} 
+\index{openphase::TextOutput@{openphase::TextOutput}!WriteMultipleValues@{WriteMultipleValues}}
+\index{WriteMultipleValues@{WriteMultipleValues}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{WriteMultipleValues()}{WriteMultipleValues()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::\+Write\+Multiple\+Values (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{Names,  }\item[{std\+::vector$<$ double $>$}]{value,  }\item[{std\+::string}]{filename,  }\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write vector values and names of value in columns. 
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename))}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}time"{}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ N\ :\ Names)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ N;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ file\ <<\ time\ <<\ scientific;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ V\ :\ value)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\ ,\ "{}}\ <<\ V;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1TextOutput_aa5d10fde33d406484f08542c48774795}\label{classopenphase_1_1TextOutput_aa5d10fde33d406484f08542c48774795} 
+\index{openphase::TextOutput@{openphase::TextOutput}!WriteValue@{WriteValue}}
+\index{WriteValue@{WriteValue}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{WriteValue()}{WriteValue()}}
+{\footnotesize\ttfamily void openphase\+::\+Text\+Output\+::\+Write\+Value (\begin{DoxyParamCaption}\item[{double}]{Value,  }\item[{std\+::string}]{filename,  }\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write double value in column. 
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{TextOutput_8cpp_source}{Text\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(filename))}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::out);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}time"{}}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \textcolor{stringliteral}{"{}Value\(\backslash\)n"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ ofstream\ file(filename,\ ios::app);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ file\ <<\ time\ <<\ \mbox{\hyperlink{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}{separator}}\ <<\ \mbox{\hyperlink{namespaceopenphase_a109a9856c6c1a62d6681238bfcab964aa689202409e48743b914713f96d93947c}{Value}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58}\label{classopenphase_1_1TextOutput_a3282d67aa13ef6b766ba98b9cf718d58} 
+\index{openphase::TextOutput@{openphase::TextOutput}!separator@{separator}}
+\index{separator@{separator}!openphase::TextOutput@{openphase::TextOutput}}
+\doxysubsubsection{\texorpdfstring{separator}{separator}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Text\+Output\+::separator = \textquotesingle{} \textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TextOutput_8h_source_l00064}{64}} of file \mbox{\hyperlink{TextOutput_8h_source}{Text\+Output.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TextOutput_8h}{Text\+Output.\+h}}\item 
+\mbox{\hyperlink{TextOutput_8cpp}{Text\+Output.\+cpp}}\end{DoxyCompactItemize}

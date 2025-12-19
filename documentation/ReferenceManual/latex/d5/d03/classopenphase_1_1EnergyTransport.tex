@@ -1,0 +1,1458 @@
+\doxysection{openphase\+::Energy\+Transport Class Reference}
+\hypertarget{classopenphase_1_1EnergyTransport}{}\label{classopenphase_1_1EnergyTransport}\index{openphase::EnergyTransport@{openphase::EnergyTransport}}
+
+
+{\ttfamily \#include "{}Energy\+Transport.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a82e6248738e27495d21bc0af5b71a02f}{Energy\+Transport}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7a66715506532db4a29b9707f18c9d97}{Read\+Input}} (string Input\+File)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9ac7470d95f713d06859f6d4cd1adb76}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae9eaa851fb77600e87e42f34007cf6a7}{Update\+Fields}} ()
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a67e2c44dfd66468f2e1a57d3306bd935}{Set\+Boundary\+Conditions}} (\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aff14a93b92e3d7870ba2935231ff9b13}{Set\+Free\+BCNX}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a4052cced294a08b0c230167abc01a634}{Set\+Solid\+Phase\+Temp}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, bool DI)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a8f057572d6a988d3f0b8b2d03dde6819}{Calculate\+Advection}} (\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1FlowMixture}{Flow\+Mixture}} \&FM, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab7b5c96dd4c06735fcdd524b9475d402}{Calculate\+Diffusion}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9ea31f3775f5d340e96d2799eaaacd86}{Calculate\+Phase\+Field\+Coupling}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, double hT, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad438ba19c8bd6b173ecabd6f7da10df4}{Calculate\+Thermodynamic\+Pressure}} (\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, double P0, double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3e489180336e4cf959972625b58105d}{Update\+Ghost\+Points}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a09d9533bbb0fc9a65b1c818db2692be5}{Calculate\+Ghost\+Points}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad9486ee9ab0b6e716ba0211486a6fcfc}{Calculate\+Ghost\+Points\+Conjugate\+Heat\+Transfer}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aa5795d2cc995d34b4d4b4666fcb292fc}{Set\+Initial}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aa125a28bd1cbb115280c5a0ae1c45aa1}{Write\+VTKTemperature}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, const int t\+Step, const int precision=16)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad10dad9e430a68343b508436c8bd43c6}{Integrate\+Temperature}} (\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd}{Lagrange\+\_\+polynomial4}} (double T1, double T2, double T3, double T4, double T5, double f1, double f2, double f3, double f4)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a0db775799657bd9bd130688980cc96dd}{Calculate\+Mixture\+Specific\+Heat\+Capacity\+And\+Thermal\+Conductivity}} (\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae7a0b2b57c7be9abf43986fb907c2d4f}{Calculate\+Solid\+Diffusion}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, double dt)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aa54ae5ea51815c74f744f91c2ba85887}{Calculate\+Phi\+Van\+Leer}} (double r)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{Tx\+Old}}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{Surface\+Temp}}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3043f520de98e495f9013fb77ba2505d}{Surface\+Flux}}
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3a047aae6105e862593d23767acdc0bd}{IF\+\_\+\+Const\+Temp}}
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad8d6067c6e78c8df25f8a4777dc002de}{IF\+\_\+\+Const\+Flux}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1EnergyTransport_afa2a2885c826fa25b563894293958874}{IF\+\_\+\+ENERGY}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a0bb70afc95dc7b65679e8a39d5afe92c}{Temp\+Burnt\+Gas}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{Temp\+Solid}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a62040cd5534ce9c07c40597dad9dcd14}{Temp\+Solid\+Cold}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac9a5f0d1d3152e845a0ab7bdffe2c473}{Heat\+Flux}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a8a07c190ab989fdb4c19bec94f6461a7}{Temp\+Back\+Flow}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac9d730c6d1af3d4e97cfa14c1e9a73d1}{ATstar}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}{Pr}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}{Cp}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9}{Mw}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a1f3935fb4b49229626a32d56300ad8f2}{Advection\+Upwind}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a57ed67e7def21b1418dcd00d91015684}{Advection\+Central}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a685fbabcbc5bb4bd79b42a234941b31a}{Advection\+Van\+Leer}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\+\_\+\+Mixture}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\+\_\+\+Mixture}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_accd992906f9f2733e0811017f3433532}{K0}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}}
+\begin{DoxyCompactList}\small\item\em thermal conductivity at film temperature ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classopenphase_1_1Temperature}{Temperature} store for conjugated heat tranfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{Ts\+Old}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classopenphase_1_1Temperature}{Temperature} store for conjugated heat tranfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}{Cp\+\_\+\+Solid}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\+\_\+\+Solid}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}{Density\+\_\+\+Solid}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf}{Rhos}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983}{Ks}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca}{Cps}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef}{Ts0}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aa91d4684009f5fcf22df3a49fdca99b1}{TMu0}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac52b96556db29bddd0d56e68391eb326}{SMu0}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a0d873a34a7ec8655c145c86a6f10be58}{Mu0}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00060}{60}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1EnergyTransport_a82e6248738e27495d21bc0af5b71a02f}\label{classopenphase_1_1EnergyTransport_a82e6248738e27495d21bc0af5b71a02f} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!EnergyTransport@{EnergyTransport}}
+\index{EnergyTransport@{EnergyTransport}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{EnergyTransport()}{EnergyTransport()}}
+{\footnotesize\ttfamily openphase\+::\+Energy\+Transport\+::\+Energy\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Constructor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00063}{63}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9ac7470d95f713d06859f6d4cd1adb76}{Initialize}}(locSettings);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7a66715506532db4a29b9707f18c9d97}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1EnergyTransport_a8f057572d6a988d3f0b8b2d03dde6819}\label{classopenphase_1_1EnergyTransport_a8f057572d6a988d3f0b8b2d03dde6819} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateAdvection@{CalculateAdvection}}
+\index{CalculateAdvection@{CalculateAdvection}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateAdvection()}{CalculateAdvection()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Advection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowMixture}{Flow\+Mixture}} \&}]{FM,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00502}{502}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00503\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ std::vector<int>\ dir(3);}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{double}\ eps=1e-\/10;}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00508\ \ \ \ \ \{\ \ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tc\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k);}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ direction=0;\ direction<3;\ ++direction)}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[0]\ =\ (direction\ ==\ 0)?1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}:0;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[1]\ =\ (direction\ ==\ 1)?1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}:0;}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[2]\ =\ (direction\ ==\ 2)?1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}:0;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip=i+dir[0];}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jp=j+dir[1];}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kp=k+dir[2];}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ im=i-\/dir[0];}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jm=j-\/dir[1];}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ km=k-\/dir[2];}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tp\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ip,jp,kp);}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tm\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(im,jm,km);}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Vc\ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i,j,k)[direction];}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a1f3935fb4b49229626a32d56300ad8f2}{AdvectionUpwind}})}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Vc>=0)}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tc-\/Tm);}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tp-\/Tc);}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a685fbabcbc5bb4bd79b42a234941b31a}{AdvectionVanLeer}})}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Thp\ =\ (Tc+Tp)/2.0;}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Thm\ =\ (Tc+Tm)/2.0;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Vc>=0)}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ imm=i-\/2.0*dir[0];}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jmm=j-\/2.0*dir[1];}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kmm=k-\/2.0*dir[2];}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tmm\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(imm,jmm,kmm);}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ \ \ =\ (Tc-\/Tm)/(Tp-\/Tc+eps);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi\ \ =\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thp\ \ \ \ \ \ \ \ \ =\ Tc+0.5*phi*(Tp-\/Tc);}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ =\ (Tm-\/Tmm)/(Tc-\/Tm+eps);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim=(rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thm=Tm+0.5*phim*(Tc-\/Tm);}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ \ -\/dt*Vc*(Thp-\/Thm)/dx;}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ipp=i+2.0*dir[0];}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jpp=j+2.0*dir[1];}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kpp=k+2.0*dir[2];}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tpp\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ipp,jpp,kpp);}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ =\ (Tpp-\/Tp)/(Tp-\/Tc+eps);}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi=(r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thp=Tp-\/0.5*phi*(Tp-\/Tc);}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ =\ (Tp-\/Tc)/(Tc-\/Tm+eps);}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim=(rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thm=Tc-\/0.5*phim*(Tc-\/Tm);}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ \ +=\ \ -\/dt*Vc*(Thp-\/Thm)/dx;}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a57ed67e7def21b1418dcd00d91015684}{AdvectionCentral}})}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tp-\/Tm)/2.0;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00578\ \ \ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00580\ \}\ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ab7b5c96dd4c06735fcdd524b9475d402}\label{classopenphase_1_1EnergyTransport_ab7b5c96dd4c06735fcdd524b9475d402} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateDiffusion@{CalculateDiffusion}}
+\index{CalculateDiffusion@{CalculateDiffusion}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateDiffusion()}{CalculateDiffusion()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Diffusion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00442\ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{00444\ \ \ \ \ std::vector<int>\ dir(3);}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00447\ \ \ \ \ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tc\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k);}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhoc\ \ \ =\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k,\{MixtureComp\});}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cpc\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktc\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ direction=0;\ direction<3;\ ++direction)}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[0]\ =\ (direction\ ==\ 0)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ :\ 0;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[1]\ =\ (direction\ ==\ 1)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ :\ 0;}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[2]\ =\ (direction\ ==\ 2)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ :\ 0;}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip=i+dir[0];}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jp=j+dir[1];}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kp=k+dir[2];}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ im=i-\/dir[0];}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jm=j-\/dir[1];}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ km=k-\/dir[2];}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tp\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ip,jp,kp);}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tm\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(im,jm,km);}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktp\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(ip,jp,kp);}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktm\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(im,jm,km);}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ +=\ dt/(Rhoc*cpc)\ *\ (ktc\ *\ (Tp+Tm-\/2.0*Tc)/dx/dx\ +\ (ktp-\/ktm)/dx/2.0\ *\ (Tp-\/Tm)/dx/2.0);}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00477\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a09d9533bbb0fc9a65b1c818db2692be5}\label{classopenphase_1_1EnergyTransport_a09d9533bbb0fc9a65b1c818db2692be5} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateGhostPoints@{CalculateGhostPoints}}
+\index{CalculateGhostPoints@{CalculateGhostPoints}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateGhostPoints()}{CalculateGhostPoints()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Ghost\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00320}{320}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00321\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ =\ 0;}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ 1;}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{double}\ Tb=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{TempSolid}};}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{double}\ Qb=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac9a5f0d1d3152e845a0ab7bdffe2c473}{HeatFlux}};}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{double}\ ep=1e-\/8;}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{double}\ D\ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}};}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{00330\ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{00332\ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{int}\ iBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}*2.0;}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{int}\ jBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}*2.0;}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{int}\ kBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}*2.0;}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00341\ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_Tfout=\textcolor{keyword}{false};}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_Tfout)}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xs\ +\ Norm*X;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ Xb\ +\ Norm*SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}};}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kf\ \ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3a047aae6105e862593d23767acdc0bd}{IF\_ConstTemp}}[Solididx])}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Tb\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[Solididx];}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(X<ep)}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ Tb;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \ Tb\ *\ (1.0+X/D)\ -\/\ X/D\ *\ Tf;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad8d6067c6e78c8df25f8a4777dc002de}{IF\_ConstFlux}}[Solididx])}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Qb\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3043f520de98e495f9013fb77ba2505d}{SurfaceFlux}}[Solididx];}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ Tf-\/(X+D)*Qb/Kf;}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_Tfout\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \}}
+\DoxyCodeLine{00413\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00414\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ad9486ee9ab0b6e716ba0211486a6fcfc}\label{classopenphase_1_1EnergyTransport_ad9486ee9ab0b6e716ba0211486a6fcfc} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateGhostPointsConjugateHeatTransfer@{CalculateGhostPointsConjugateHeatTransfer}}
+\index{CalculateGhostPointsConjugateHeatTransfer@{CalculateGhostPointsConjugateHeatTransfer}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateGhostPointsConjugateHeatTransfer()}{CalculateGhostPointsConjugateHeatTransfer()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Ghost\+Points\+Conjugate\+Heat\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ \ \ =\ 0;}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ 1;}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{double}\ ep=1e-\/8;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{double}\ D\ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{00188\ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{int}\ iBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}*2.0;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{int}\ jBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}*2.0;}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{int}\ kBC=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}*2.0;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_TsOut=\textcolor{keyword}{false};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_TsOut)}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xf\ -\/\ Norm*X;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ Xb\ -\/\ Norm*D;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tsi\ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ksi\ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kf\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tb\ \ =\ (Kf/X*Tf+Ksi/D*Tsi)/(Kf/X+Ksi/D);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}\ (i,j,k)\ =\ Tb\ *\ (1.0+X/D)\ -\/\ X/D*Tsi;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_TsOut=\textcolor{keyword}{true};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_TfOut=\textcolor{keyword}{false};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_TfOut)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xs\ +\ Norm*X;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ Xb\ +\ Norm*D;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tfi\ \ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kfi\ \ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k0*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k1*kdi),\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tsi\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ksi\ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i,j,k);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(X<ep)}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}\ (i,j,k)\ =\ Tsi;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tb\ \ =\ (Kfi/D*Tfi+Ksi/X*Tsi)/(Kfi/D+Ksi/X);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \ Tb\ *\ (1.0+X/D)\ -\/\ X/D\ *\ Tfi;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_TfOut=\textcolor{keyword}{true};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00318\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a0db775799657bd9bd130688980cc96dd}\label{classopenphase_1_1EnergyTransport_a0db775799657bd9bd130688980cc96dd} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateMixtureSpecificHeatCapacityAndThermalConductivity@{CalculateMixtureSpecificHeatCapacityAndThermalConductivity}}
+\index{CalculateMixtureSpecificHeatCapacityAndThermalConductivity@{CalculateMixtureSpecificHeatCapacityAndThermalConductivity}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateMixtureSpecificHeatCapacityAndThermalConductivity()}{CalculateMixtureSpecificHeatCapacityAndThermalConductivity()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Mixture\+Specific\+Heat\+Capacity\+And\+Thermal\+Conductivity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}},\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}{Cp}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k)=FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k,\{MixtureComp\})*FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a62faa8027eaa45caa436c65f032bc584}{nut}}(i,j,k,\{MixtureComp\})*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k)/\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}{Pr}};}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00120\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a9ea31f3775f5d340e96d2799eaaacd86}\label{classopenphase_1_1EnergyTransport_a9ea31f3775f5d340e96d2799eaaacd86} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculatePhaseFieldCoupling@{CalculatePhaseFieldCoupling}}
+\index{CalculatePhaseFieldCoupling@{CalculatePhaseFieldCoupling}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculatePhaseFieldCoupling()}{CalculatePhaseFieldCoupling()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Phase\+Field\+Coupling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{double}]{hT,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00479}{479}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00480\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{TempSolid}};}
+\DoxyCodeLine{00482\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00483\ \ \ \ \ if(!FL.\mbox{\hyperlink{namespaceopenphase_a2231e54e8d99c1a29708d1d567535c21a58cc2e326d59b90264a3d210391bb667}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00484\ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SF=0;}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PhaseIdx\ =\ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].Phase;}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[PhaseIdx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ PFIdx=it-\/>index;}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[PFIdx];}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SF\ +=\ it-\/>value;}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ST\ \ =\ hT\ *\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k)*\ pow(SF,2)*(1.0-\/SF)\ /\ pow(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},2.0)\ *\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k)-\/\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}});}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ -\/=\ \ \ dt\ /\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k,\{0\})\ /\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k)\ *\ ST;\ }
+\DoxyCodeLine{00498\ \ \ \ \ \}}
+\DoxyCodeLine{00499\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00500\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_aa54ae5ea51815c74f744f91c2ba85887}\label{classopenphase_1_1EnergyTransport_aa54ae5ea51815c74f744f91c2ba85887} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculatePhiVanLeer@{CalculatePhiVanLeer}}
+\index{CalculatePhiVanLeer@{CalculatePhiVanLeer}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculatePhiVanLeer()}{CalculatePhiVanLeer()}}
+{\footnotesize\ttfamily double Energy\+Transport\+::\+Calculate\+Phi\+Van\+Leer (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00416}{416}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00417\ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{return}\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00419\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ae7a0b2b57c7be9abf43986fb907c2d4f}\label{classopenphase_1_1EnergyTransport_ae7a0b2b57c7be9abf43986fb907c2d4f} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateSolidDiffusion@{CalculateSolidDiffusion}}
+\index{CalculateSolidDiffusion@{CalculateSolidDiffusion}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateSolidDiffusion()}{CalculateSolidDiffusion()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Solid\+Diffusion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00582}{582}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00583\ \{}
+\DoxyCodeLine{00584\ \ \ \ \ std::vector<int>\ dir(3);}
+\DoxyCodeLine{00585\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}},0,)}
+\DoxyCodeLine{00586\ \ \ \ \ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ direction=0;\ direction<3;\ ++direction)}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[0]\ =\ (direction\ ==\ 0)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ :\ 0;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[1]\ =\ (direction\ ==\ 1)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ :\ 0;}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[2]\ =\ (direction\ ==\ 2)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ :\ 0;}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip=i+dir[0];}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jp=j+dir[1];}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kp=k+dir[2];}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ im=i-\/dir[0];}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jm=j-\/dir[1];}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ km=k-\/dir[2];}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tc\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(i,j,k);}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tp\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(ip,jp,kp);}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tm\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(im,jm,km);}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhoc\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}{Density\_Solid}}(i,j,k);}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cpc\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}{Cp\_Solid}}(i,j,k);}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktc\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i,j,k);}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,\ j,\ k)\ +=\ dt/(Rhoc*cpc)\ *\ (ktc\ *\ (Tp+Tm-\/2.0*Tc)/dx/dx);}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00610\ \ \ \ \ \}}
+\DoxyCodeLine{00611\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00612\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ad438ba19c8bd6b173ecabd6f7da10df4}\label{classopenphase_1_1EnergyTransport_ad438ba19c8bd6b173ecabd6f7da10df4} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!CalculateThermodynamicPressure@{CalculateThermodynamicPressure}}
+\index{CalculateThermodynamicPressure@{CalculateThermodynamicPressure}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateThermodynamicPressure()}{CalculateThermodynamicPressure()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Calculate\+Thermodynamic\+Pressure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{double}]{P0,  }\item[{double}]{T0 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordtype}{double}\ SumTinv=0.0;}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordtype}{double}\ fcells=0.0;}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00426\ \ \ \ \ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ SumTinv\ +=\ 1.0/\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ fcells++;\ }
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \ \ \ \ \}}
+\DoxyCodeLine{00433\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&SumTinv,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&fcells,\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00438\ \ \ \ \ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad56f87a52b427bb6a4646208d54574c1}{Pth}}\ =\ P0/\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}}*fcells/SumTinv;\ \ \ \ }
+\DoxyCodeLine{00439\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a9ac7470d95f713d06859f6d4cd1adb76}\label{classopenphase_1_1EnergyTransport_a9ac7470d95f713d06859f6d4cd1adb76} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ \ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}{Cp\_Solid}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ \ \ \ \ \ \ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}{Density\_Solid}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ad10dad9e430a68343b508436c8bd43c6}\label{classopenphase_1_1EnergyTransport_ad10dad9e430a68343b508436c8bd43c6} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!IntegrateTemperature@{IntegrateTemperature}}
+\index{IntegrateTemperature@{IntegrateTemperature}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{IntegrateTemperature()}{IntegrateTemperature()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Integrate\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00623}{623}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00624\ \{}
+\DoxyCodeLine{00625\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}},0,)}
+\DoxyCodeLine{00626\ \ \ \ \ \{}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k);}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00631\ \ \ \ \ \}}
+\DoxyCodeLine{00632\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00633\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd}\label{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Lagrange\_polynomial4@{Lagrange\_polynomial4}}
+\index{Lagrange\_polynomial4@{Lagrange\_polynomial4}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Lagrange\_polynomial4()}{Lagrange\_polynomial4()}}
+{\footnotesize\ttfamily double Energy\+Transport\+::\+Lagrange\+\_\+polynomial4 (\begin{DoxyParamCaption}\item[{double}]{T1,  }\item[{double}]{T2,  }\item[{double}]{T3,  }\item[{double}]{T4,  }\item[{double}]{T5,  }\item[{double}]{f1,  }\item[{double}]{f2,  }\item[{double}]{f3,  }\item[{double}]{f4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00635}{635}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00637\ \{}
+\DoxyCodeLine{00638\ \ \ \ \ \textcolor{keywordflow}{return}\ ((T5\ -\/\ T2)\ *\ (T5\ -\/\ T3)\ *\ (T5\ -\/\ T4)\ *\ f1)\ /\ (-\/6.0)\ +}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ ((T5\ -\/\ T1)\ *\ (T5\ -\/\ T3)\ *\ (T5\ -\/\ T4)\ *\ f2)\ /\ (2.0)\ +}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ ((T5\ -\/\ T1)\ *\ (T5\ -\/\ T2)\ *\ (T5\ -\/\ T4)\ *\ f3)\ /\ (-\/2.0)\ +}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ ((T5\ -\/\ T1)\ *\ (T5\ -\/\ T2)\ *\ (T5\ -\/\ T3)\ *\ f4)\ /\ (6.0);}
+\DoxyCodeLine{00642\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a7a66715506532db4a29b9707f18c9d97}\label{classopenphase_1_1EnergyTransport_a7a66715506532db4a29b9707f18c9d97} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{string}]{Input\+File }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}EnergyTransport"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFile);}
+\DoxyCodeLine{00046\ \ \ \ \ std::fstream\ inp(InputFile,\ std::ios::in);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ InputFile\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ std::stringstream\ inp\_data;}
+\DoxyCodeLine{00054\ \ \ \ \ inp\_data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00055\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp\_data,\ \textcolor{stringliteral}{"{}EnergyTransport"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}{Pr}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Pr"{}}),\ \textcolor{keyword}{false},\ 0.71);}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}{Cp}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Cp"{}}),\ \textcolor{keyword}{false},\ 1005.0);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9}{Mw}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mw"{}}),\ \textcolor{keyword}{false},\ 0.02896);}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a1f3935fb4b49229626a32d56300ad8f2}{AdvectionUpwind}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionUpwind"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a57ed67e7def21b1418dcd00d91015684}{AdvectionCentral}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionCentral"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a685fbabcbc5bb4bd79b42a234941b31a}{AdvectionVanLeer}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionVanLeer"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Conjugate"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef}{Ts0}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Ts0"{}}),\ \textcolor{keyword}{false},\ 300.0);}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca}{Cps}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Cps"{}}),\ \textcolor{keyword}{false},\ 900.0);}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf}{Rhos}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Rhos"{}}),\ \textcolor{keyword}{false},\ 5000.0);}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983}{Ks}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Ks"{}}),\ \textcolor{keyword}{false},\ 237);}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}T0"{}}),\ \textcolor{keyword}{false},\ 300.0);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac9d730c6d1af3d4e97cfa14c1e9a73d1}{ATstar}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}ATstar"{}}),\ \textcolor{keyword}{false},\ 100.0);}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{TempSolid}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}TempSolid"{}}),\ \textcolor{keyword}{false},\ 300.0);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a62040cd5534ce9c07c40597dad9dcd14}{TempSolidCold}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}TempSolidCold"{}}),\ \textcolor{keyword}{false},\ 300.0);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_aa91d4684009f5fcf22df3a49fdca99b1}{TMu0}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}TMu0"{}}),\ \textcolor{keyword}{false},\ 273.0);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac52b96556db29bddd0d56e68391eb326}{SMu0}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}SMu0"{}}),\ \textcolor{keyword}{false},\ 110.5);}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a0d873a34a7ec8655c145c86a6f10be58}{Mu0}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Mu0"{}}),\ \textcolor{keyword}{false},\ 1.68e-\/05);}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_afa2a2885c826fa25b563894293958874}{IF\_ENERGY}}\ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}IF\_ENERGY"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}BCOrder"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a67e2c44dfd66468f2e1a57d3306bd935}\label{classopenphase_1_1EnergyTransport_a67e2c44dfd66468f2e1a57d3306bd935} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}});}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}});}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}});}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}});}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_aff14a93b92e3d7870ba2935231ff9b13}\label{classopenphase_1_1EnergyTransport_aff14a93b92e3d7870ba2935231ff9b13} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SetFreeBCNX@{SetFreeBCNX}}
+\index{SetFreeBCNX@{SetFreeBCNX}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SetFreeBCNX()}{SetFreeBCNX()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Set\+Free\+BCNX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ iEnd\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{double}\ Temp=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Temporary\ variable\ for\ extrapolated\ temperature}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ Loop\ over\ the\ extrapolated\ boundary\ nodes}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}+\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}==\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}})}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ iEnd;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ +\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}();\ ++i)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ ;\ ++j)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k<\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ ;\ ++k)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}==0)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}==1)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ 2.0\ *\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ 0,\ k)\ -\/\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ 0,\ k);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}==2)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ +\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ -\/\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k))\ +}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.5\ *\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ -\/\ 2.0\ *\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k)\ +\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 3,\ j,\ k));}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}{BCOrder}}==3)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd}{Lagrange\_polynomial4}}(0.0,\ 1.0,\ 2.0,\ 3.0,\ 4.0,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 4,\ j,\ k),\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 3,\ j,\ k),}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k),\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k));}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ =\ Temp;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_aa5795d2cc995d34b4d4b4666fcb292fc}\label{classopenphase_1_1EnergyTransport_aa5795d2cc995d34b4d4b4666fcb292fc} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SetInitial@{SetInitial}}
+\index{SetInitial@{SetInitial}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SetInitial()}{SetInitial()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Set\+Initial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00665}{665}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00666\ \{}
+\DoxyCodeLine{00667\ \ \ \ \ }
+\DoxyCodeLine{00668\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00669\ \ \ \ \ \{}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}};}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}};}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}{Cp\_Solid}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca}{Cps}};}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983}{Ks}};}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}{Density\_Solid}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf}{Rhos}};}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef}{Ts0}};}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef}{Ts0}};}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00683\ \ \ \ \ \}}
+\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00685\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_a4052cced294a08b0c230167abc01a634}\label{classopenphase_1_1EnergyTransport_a4052cced294a08b0c230167abc01a634} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SetSolidPhaseTemp@{SetSolidPhaseTemp}}
+\index{SetSolidPhaseTemp@{SetSolidPhaseTemp}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SetSolidPhaseTemp()}{SetSolidPhaseTemp()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Set\+Solid\+Phase\+Temp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{bool}]{DI }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00644}{644}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00645\ \{}
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keywordtype}{double}\ CRI\ =\ (DI)?(1.0-\/DBL\_EPSILON):(0.5-\/DBL\_EPSILON);}
+\DoxyCodeLine{00647\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00648\ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ PhaseIdx\ =\ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].Phase;}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[PhaseIdx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k)[PhaseIdx]>=CRI)}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ PFIdx\ =\ it-\/>index;}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ =\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[PFIdx];}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \ \ \ \ \}}
+\DoxyCodeLine{00662\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00663\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ae9eaa851fb77600e87e42f34007cf6a7}\label{classopenphase_1_1EnergyTransport_ae9eaa851fb77600e87e42f34007cf6a7} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!UpdateFields@{UpdateFields}}
+\index{UpdateFields@{UpdateFields}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{UpdateFields()}{UpdateFields()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Update\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}\ (i,j,k,\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(i,j,k)=\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_ab3e489180336e4cf959972625b58105d}\label{classopenphase_1_1EnergyTransport_ab3e489180336e4cf959972625b58105d} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!UpdateGhostPoints@{UpdateGhostPoints}}
+\index{UpdateGhostPoints@{UpdateGhostPoints}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{UpdateGhostPoints()}{UpdateGhostPoints()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Update\+Ghost\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad9486ee9ab0b6e716ba0211486a6fcfc}{CalculateGhostPointsConjugateHeatTransfer}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ FL,\ SB);}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_a09d9533bbb0fc9a65b1c818db2692be5}{CalculateGhostPoints}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ FL,\ SB);}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1EnergyTransport_aa125a28bd1cbb115280c5a0ae1c45aa1}\label{classopenphase_1_1EnergyTransport_aa125a28bd1cbb115280c5a0ae1c45aa1} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!WriteVTKTemperature@{WriteVTKTemperature}}
+\index{WriteVTKTemperature@{WriteVTKTemperature}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{WriteVTKTemperature()}{WriteVTKTemperature()}}
+{\footnotesize\ttfamily void Energy\+Transport\+::\+Write\+VTKTemperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{const int}]{t\+Step,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8cpp_source_l00614}{614}} of file \mbox{\hyperlink{EnergyTransport_8cpp_source}{Energy\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00615\ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad10dad9e430a68343b508436c8bd43c6}{IntegrateTemperature}}(FL);}
+\DoxyCodeLine{00617\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00618\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}Temperature"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);\}\});}
+\DoxyCodeLine{00619\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\textcolor{stringliteral}{"{}Temperature\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00620\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00621\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1EnergyTransport_a57ed67e7def21b1418dcd00d91015684}\label{classopenphase_1_1EnergyTransport_a57ed67e7def21b1418dcd00d91015684} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!AdvectionCentral@{AdvectionCentral}}
+\index{AdvectionCentral@{AdvectionCentral}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionCentral}{AdvectionCentral}}
+{\footnotesize\ttfamily bool openphase\+::\+Energy\+Transport\+::\+Advection\+Central}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00115}{115}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a1f3935fb4b49229626a32d56300ad8f2}\label{classopenphase_1_1EnergyTransport_a1f3935fb4b49229626a32d56300ad8f2} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!AdvectionUpwind@{AdvectionUpwind}}
+\index{AdvectionUpwind@{AdvectionUpwind}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionUpwind}{AdvectionUpwind}}
+{\footnotesize\ttfamily bool openphase\+::\+Energy\+Transport\+::\+Advection\+Upwind}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00114}{114}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a685fbabcbc5bb4bd79b42a234941b31a}\label{classopenphase_1_1EnergyTransport_a685fbabcbc5bb4bd79b42a234941b31a} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!AdvectionVanLeer@{AdvectionVanLeer}}
+\index{AdvectionVanLeer@{AdvectionVanLeer}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionVanLeer}{AdvectionVanLeer}}
+{\footnotesize\ttfamily bool openphase\+::\+Energy\+Transport\+::\+Advection\+Van\+Leer}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00116}{116}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ac9d730c6d1af3d4e97cfa14c1e9a73d1}\label{classopenphase_1_1EnergyTransport_ac9d730c6d1af3d4e97cfa14c1e9a73d1} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!ATstar@{ATstar}}
+\index{ATstar@{ATstar}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{ATstar}{ATstar}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+ATstar}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00109}{109}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65}\label{classopenphase_1_1EnergyTransport_a5a077dd2f40460509f0ac0702c0fab65} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!BCOrder@{BCOrder}}
+\index{BCOrder@{BCOrder}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{BCOrder}{BCOrder}}
+{\footnotesize\ttfamily int openphase\+::\+Energy\+Transport\+::\+BCOrder}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00101}{101}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}\label{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Conjugate@{Conjugate}}
+\index{Conjugate@{Conjugate}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Conjugate}{Conjugate}}
+{\footnotesize\ttfamily bool openphase\+::\+Energy\+Transport\+::\+Conjugate}
+
+
+
+thermal conductivity at film temperature ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00123}{123}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896}\label{classopenphase_1_1EnergyTransport_a9adb745500a547d64fd477b5bfff0896} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Cp@{Cp}}
+\index{Cp@{Cp}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Cp}{Cp}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Cp}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00111}{111}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}\label{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Cp\_Mixture@{Cp\_Mixture}}
+\index{Cp\_Mixture@{Cp\_Mixture}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Cp\_Mixture}{Cp\_Mixture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Cp\+\_\+\+Mixture}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00119}{119}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}\label{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Cp\_Solid@{Cp\_Solid}}
+\index{Cp\_Solid@{Cp\_Solid}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Cp\_Solid}{Cp\_Solid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Cp\+\_\+\+Solid}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00127}{127}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca}\label{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Cps@{Cps}}
+\index{Cps@{Cps}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Cps}{Cps}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Cps}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00132}{132}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}\label{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Density\_Solid@{Density\_Solid}}
+\index{Density\_Solid@{Density\_Solid}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Density\_Solid}{Density\_Solid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Density\+\_\+\+Solid}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00129}{129}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40}\label{classopenphase_1_1EnergyTransport_a17903aaf30c15b95e30a9121b35b9b40} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Energy\+Transport\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00089}{89}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ac9a5f0d1d3152e845a0ab7bdffe2c473}\label{classopenphase_1_1EnergyTransport_ac9a5f0d1d3152e845a0ab7bdffe2c473} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!HeatFlux@{HeatFlux}}
+\index{HeatFlux@{HeatFlux}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{HeatFlux}{HeatFlux}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Heat\+Flux}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00107}{107}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ad8d6067c6e78c8df25f8a4777dc002de}\label{classopenphase_1_1EnergyTransport_ad8d6067c6e78c8df25f8a4777dc002de} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!IF\_ConstFlux@{IF\_ConstFlux}}
+\index{IF\_ConstFlux@{IF\_ConstFlux}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{IF\_ConstFlux}{IF\_ConstFlux}}
+{\footnotesize\ttfamily vector$<$bool$>$ openphase\+::\+Energy\+Transport\+::\+IF\+\_\+\+Const\+Flux}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00097}{97}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a3a047aae6105e862593d23767acdc0bd}\label{classopenphase_1_1EnergyTransport_a3a047aae6105e862593d23767acdc0bd} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!IF\_ConstTemp@{IF\_ConstTemp}}
+\index{IF\_ConstTemp@{IF\_ConstTemp}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{IF\_ConstTemp}{IF\_ConstTemp}}
+{\footnotesize\ttfamily vector$<$bool$>$ openphase\+::\+Energy\+Transport\+::\+IF\+\_\+\+Const\+Temp}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00096}{96}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_afa2a2885c826fa25b563894293958874}\label{classopenphase_1_1EnergyTransport_afa2a2885c826fa25b563894293958874} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!IF\_ENERGY@{IF\_ENERGY}}
+\index{IF\_ENERGY@{IF\_ENERGY}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{IF\_ENERGY}{IF\_ENERGY}}
+{\footnotesize\ttfamily bool openphase\+::\+Energy\+Transport\+::\+IF\+\_\+\+ENERGY}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00099}{99}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_accd992906f9f2733e0811017f3433532}\label{classopenphase_1_1EnergyTransport_accd992906f9f2733e0811017f3433532} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!K0@{K0}}
+\index{K0@{K0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{K0}{K0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+K0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00121}{121}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}\label{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!K\_Mixture@{K\_Mixture}}
+\index{K\_Mixture@{K\_Mixture}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{K\_Mixture}{K\_Mixture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+K\+\_\+\+Mixture}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00120}{120}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}\label{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!K\_Solid@{K\_Solid}}
+\index{K\_Solid@{K\_Solid}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{K\_Solid}{K\_Solid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+K\+\_\+\+Solid}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00128}{128}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983}\label{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Ks@{Ks}}
+\index{Ks@{Ks}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Ks}{Ks}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Ks}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00131}{131}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a0d873a34a7ec8655c145c86a6f10be58}\label{classopenphase_1_1EnergyTransport_a0d873a34a7ec8655c145c86a6f10be58} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Mu0@{Mu0}}
+\index{Mu0@{Mu0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Mu0}{Mu0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Mu0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00138}{138}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9}\label{classopenphase_1_1EnergyTransport_ac5f5e41961b68014dc0af35cabaa63e9} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Mw@{Mw}}
+\index{Mw@{Mw}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Mw}{Mw}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Mw}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00112}{112}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b}\label{classopenphase_1_1EnergyTransport_a17b2fd039bd10ebdd860297885d2ce2b} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Pr@{Pr}}
+\index{Pr@{Pr}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Pr}{Pr}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Pr}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00110}{110}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf}\label{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Rhos@{Rhos}}
+\index{Rhos@{Rhos}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Rhos}{Rhos}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Rhos}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00130}{130}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ac52b96556db29bddd0d56e68391eb326}\label{classopenphase_1_1EnergyTransport_ac52b96556db29bddd0d56e68391eb326} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SMu0@{SMu0}}
+\index{SMu0@{SMu0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SMu0}{SMu0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+SMu0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00137}{137}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a3043f520de98e495f9013fb77ba2505d}\label{classopenphase_1_1EnergyTransport_a3043f520de98e495f9013fb77ba2505d} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SurfaceFlux@{SurfaceFlux}}
+\index{SurfaceFlux@{SurfaceFlux}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SurfaceFlux}{SurfaceFlux}}
+{\footnotesize\ttfamily vector$<$double$>$ openphase\+::\+Energy\+Transport\+::\+Surface\+Flux}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00095}{95}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}\label{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!SurfaceTemp@{SurfaceTemp}}
+\index{SurfaceTemp@{SurfaceTemp}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{SurfaceTemp}{SurfaceTemp}}
+{\footnotesize\ttfamily vector$<$double$>$ openphase\+::\+Energy\+Transport\+::\+Surface\+Temp}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00094}{94}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}\label{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!T0@{T0}}
+\index{T0@{T0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{T0}{T0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+T0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00090}{90}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a8a07c190ab989fdb4c19bec94f6461a7}\label{classopenphase_1_1EnergyTransport_a8a07c190ab989fdb4c19bec94f6461a7} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TempBackFlow@{TempBackFlow}}
+\index{TempBackFlow@{TempBackFlow}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TempBackFlow}{TempBackFlow}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Temp\+Back\+Flow}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00108}{108}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a0bb70afc95dc7b65679e8a39d5afe92c}\label{classopenphase_1_1EnergyTransport_a0bb70afc95dc7b65679e8a39d5afe92c} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TempBurntGas@{TempBurntGas}}
+\index{TempBurntGas@{TempBurntGas}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TempBurntGas}{TempBurntGas}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Temp\+Burnt\+Gas}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00103}{103}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}\label{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TempSolid@{TempSolid}}
+\index{TempSolid@{TempSolid}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TempSolid}{TempSolid}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Temp\+Solid}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00104}{104}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a62040cd5534ce9c07c40597dad9dcd14}\label{classopenphase_1_1EnergyTransport_a62040cd5534ce9c07c40597dad9dcd14} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TempSolidCold@{TempSolidCold}}
+\index{TempSolidCold@{TempSolidCold}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TempSolidCold}{TempSolidCold}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Temp\+Solid\+Cold}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00106}{106}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_aa91d4684009f5fcf22df3a49fdca99b1}\label{classopenphase_1_1EnergyTransport_aa91d4684009f5fcf22df3a49fdca99b1} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TMu0@{TMu0}}
+\index{TMu0@{TMu0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TMu0}{TMu0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+TMu0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00136}{136}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}\label{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Ts@{Ts}}
+\index{Ts@{Ts}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Ts}{Ts}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Ts}
+
+
+
+\doxylink{classopenphase_1_1Temperature}{Temperature} store for conjugated heat tranfer. 
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00125}{125}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef}\label{classopenphase_1_1EnergyTransport_a7e4ec4301b68dacde788cd6043293cef} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Ts0@{Ts0}}
+\index{Ts0@{Ts0}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Ts0}{Ts0}}
+{\footnotesize\ttfamily double openphase\+::\+Energy\+Transport\+::\+Ts0}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00133}{133}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}\label{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TsOld@{TsOld}}
+\index{TsOld@{TsOld}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TsOld}{TsOld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Ts\+Old}
+
+
+
+\doxylink{classopenphase_1_1Temperature}{Temperature} store for conjugated heat tranfer. 
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00126}{126}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}\label{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!Tx@{Tx}}
+\index{Tx@{Tx}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{Tx}{Tx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Tx}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00091}{91}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}\label{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0} 
+\index{openphase::EnergyTransport@{openphase::EnergyTransport}!TxOld@{TxOld}}
+\index{TxOld@{TxOld}!openphase::EnergyTransport@{openphase::EnergyTransport}}
+\doxysubsubsection{\texorpdfstring{TxOld}{TxOld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Energy\+Transport\+::\+Tx\+Old}
+
+
+
+Definition at line \mbox{\hyperlink{EnergyTransport_8h_source_l00092}{92}} of file \mbox{\hyperlink{EnergyTransport_8h_source}{Energy\+Transport.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{EnergyTransport_8h}{Energy\+Transport.\+h}}\item 
+\mbox{\hyperlink{EnergyTransport_8cpp}{Energy\+Transport.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,276 @@
+\doxysection{Globals.\+h File Reference}
+\hypertarget{Globals_8h}{}\label{Globals_8h}\index{Globals.h@{Globals.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceopenphase}{openphase}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\+\_\+\+EXPORTS}}
+\item 
+\#define \mbox{\hyperlink{Globals_8h_ad9bcdeed9e55e3ebc28d0f7725db63d3}{OP\+\_\+\+IMPORTS}}
+\item 
+\#define \mbox{\hyperlink{Globals_8h_a80fe35b58db2a0452b7bc2048610a1ba}{OPENPHASE\+\_\+\+API}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9}{openphase\+::\+Resolutions}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{openphase\+::\+Single}}
+, \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{openphase\+::\+Dual}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0a}{openphase\+::\+Advection\+Schemes}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa6d61af52253bb644a0c23a12513a8a76}{openphase\+::\+Upwind}}
+, \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa7221ade7ceae31d6ee87650ed5e905b8}{openphase\+::\+Minmod}}
+, \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aa1ea3347082a9e5c6d5f0a641d8cbb21c}{openphase\+::\+Superbee}}
+, \mbox{\hyperlink{namespaceopenphase_a0b94ac1863fd11643ad9291e71190c0aab42ac8873377e03f74734fe71744a0b0}{openphase\+::\+Monotonized\+Central}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{openphase\+::\+Aggregate\+States}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{openphase\+::\+Solid}}
+, \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{openphase\+::\+Liquid}}
+, \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{openphase\+::\+Gas}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8}{openphase\+::\+Event\+Triggers}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a8f9bfe9d1345237cb3b2b205864da075}{openphase\+::\+User}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a0c2c1a31a5dd7400097585c9ff257b3b}{openphase\+::\+Tmax}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a29764db8fd26657ec0965a9612a6053c}{openphase\+::\+Tmin}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa76d4ef5f3f6a672bbfab2865563e530}{openphase\+::\+Time}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a49d468ee906ab549929baa2422336d08}{openphase\+::\+Time\+Step}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a4dea02e61bd80b67beb4b8058167babf}{openphase\+::\+Phase\+Fraction\+Max}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8aa2e8412d31ad4d41cd1b140349171814}{openphase\+::\+Phase\+Fraction\+Min}}
+, \mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a43e350618ec951e034f0981cbb36d038}{openphase\+::\+Stress}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_ae0319d54a2b7e18854ca8423b14b40f8a1ed8ac857097c4fbbbc15cd373ef96bc}{openphase\+::\+Strain}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647}{openphase\+::\+Clearing\+Modes}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647a086247a9b57fde6eefee2a0c4752242d}{openphase\+::\+Automatic}}
+, \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647ae1ba155a9f2e8c3be94020eef32a0301}{openphase\+::\+Manual}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751}{openphase\+::\+Extrapolation\+Modes}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a6adf97f83acf6453d4a6a4b1070f3754}{openphase\+::\+None}}
+, \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a509820290d57f333403f490dde7316f4}{openphase\+::\+Local}}
+, \mbox{\hyperlink{namespaceopenphase_acc31b86c032f88e25be70a07f501c751a4cc6684df7b4a92b1dec6fce3264fac8}{openphase\+::\+Global}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208c}{openphase\+::\+Activation\+Modes}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208ca00d23a76e43b46dae9ec7aa9dcbebb32}{openphase\+::\+Enabled}}
+, \mbox{\hyperlink{namespaceopenphase_a6bcebe4831a485a1578b1908aad2208cab9f5c797ebbf55adccdd8539a65a0241}{openphase\+::\+Disabled}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772c}{openphase\+::\+Interface\+Normal\+Models}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772ca9babac0e9016d89ccebadf43556eb513}{openphase\+::\+Average\+Gradient}}
+, \mbox{\hyperlink{namespaceopenphase_a5148c5d7019baf33d0a115bcb065772ca2eef6557154574f8d93facc1f3002cb1}{openphase\+::\+Weighted\+Gradient}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9}{openphase\+::\+Lattice\+Systems2D}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a55a5e68b388b59383b16383d30101b4e}{openphase\+::\+Monoclinic}}
+, \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{openphase\+::\+Orthorhombic}}
+, \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a97c0069c1c88eef33e1c1db21d38de43}{openphase\+::\+Tetragonal}}
+, \mbox{\hyperlink{namespaceopenphase_abf49ce4308968f3c9bf1296a3ea6b8f9a28666f62a0ffe4485fb7c7e878234dda}{openphase\+::\+Hexagonal}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62}{openphase\+::\+Lattice\+Systems}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a45d3988e303ecb4da2498e707d28ad39}{openphase\+::\+Triclinic}}
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a55a5e68b388b59383b16383d30101b4e}{openphase\+::\+Monoclinic}}
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a907e1b0cb3cdf81f70b6b7e2c7d19e5a}{openphase\+::\+Orthorhombic}}
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a97c0069c1c88eef33e1c1db21d38de43}{openphase\+::\+Tetragonal}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aa549be9cb15a01a366d8b2c1c4a1a087}{openphase\+::\+Rhombohedral}}
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62ae8ae83920b1b094435999b5380270e72}{openphase\+::\+Trigonal}} = Rhombohedral
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62a28666f62a0ffe4485fb7c7e878234dda}{openphase\+::\+Hexagonal}}
+, \mbox{\hyperlink{namespaceopenphase_a6bf2c42973ca93e655d6c57a48b52a62aec6b5414eb175379ff9efc9b3eef5814}{openphase\+::\+Cubic}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690}{openphase\+::\+Lattice\+Centering}} \+: int \{ \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690a1fbb1e3943c2c6c560247ac8f9289780}{openphase\+::\+Simple}}
+, \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690a095a1b43effec73955e31e790438de49}{openphase\+::\+Base}}
+, \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690aac101b32dda4448cf13a93fe283dddd8}{openphase\+::\+Body}}
+, \mbox{\hyperlink{namespaceopenphase_ac9e4a8981001e5fb0d353516bb465690a8af5861002f3c157f9ba842bba10aa3f}{openphase\+::\+Face}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9b}{openphase\+::\+Bravais\+Lattices}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba45d3988e303ecb4da2498e707d28ad39}{openphase\+::\+Triclinic}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba55a5e68b388b59383b16383d30101b4e}{openphase\+::\+Monoclinic}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bac873f2c69664263dc9651c9b3257eca2}{openphase\+::\+Monoclinic\+Base\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba907e1b0cb3cdf81f70b6b7e2c7d19e5a}{openphase\+::\+Orthorhombic}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bae2e9b00f624b6ccfee14ce7bf17c5de9}{openphase\+::\+Orthorhombic\+Base\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baef726c4d4315f4d98992ebf3a1086cb9}{openphase\+::\+Orthorhombic\+Body\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bafd04084ba1e38eb01ed1cd25dcb8c30f}{openphase\+::\+Orthorhombic\+Face\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba97c0069c1c88eef33e1c1db21d38de43}{openphase\+::\+Tetragonal}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba41ae44f62d924a9cf7066efc31023d7a}{openphase\+::\+Tetragonal\+Body\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bad3705d836d285dbd636e293dc0eca7a9}{openphase\+::\+BCT}} = Tetragonal\+Body\+Centered
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baa549be9cb15a01a366d8b2c1c4a1a087}{openphase\+::\+Rhombohedral}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba28666f62a0ffe4485fb7c7e878234dda}{openphase\+::\+Hexagonal}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba58c9566f3c750ce7147b045fdd14202b}{openphase\+::\+HEX}} = Hexagonal
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba849d526a3493590c45049a98d640ce99}{openphase\+::\+Hexagonal\+Close\+Packed}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9bac812dbb6683bbcfffddebd554aa15055}{openphase\+::\+HCP}} = Hexagonal\+Close\+Packed
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baec6b5414eb175379ff9efc9b3eef5814}{openphase\+::\+Cubic}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9badefd31164fe2b93da36d03d54fd5d00f}{openphase\+::\+Cubic\+Body\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba1fc5efe020980df2413a97ce9f2f586f}{openphase\+::\+BCC}} = Cubic\+Body\+Centered
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9ba670db4928f4b50cab6201ae2eada6003}{openphase\+::\+Cubic\+Face\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_a72c86083440913388579cb8ac50a1e9baa44b9f61b43631a04f181b6ab1259e51}{openphase\+::\+FCC}} = Cubic\+Face\+Centered
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fe}{openphase\+::\+Bravais\+Lattices2D}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fea55a5e68b388b59383b16383d30101b4e}{openphase\+::\+Monoclinic}}
+, \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fea907e1b0cb3cdf81f70b6b7e2c7d19e5a}{openphase\+::\+Orthorhombic}}
+, \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206feafe1f6158d2b02d6b2ac25b7856794924}{openphase\+::\+Orthorhombic\+Centered}}
+, \mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fea97c0069c1c88eef33e1c1db21d38de43}{openphase\+::\+Tetragonal}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_aae24496b269b3f6ed7cbdc0a28f206fea28666f62a0ffe4485fb7c7e878234dda}{openphase\+::\+Hexagonal}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Globals_8h_ab628587850957d925be0c2157f5f6823}{omp\+\_\+get\+\_\+num\+\_\+threads}} ()
+\item 
+int \mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\+\_\+get\+\_\+max\+\_\+threads}} ()
+\item 
+int \mbox{\hyperlink{Globals_8h_aba06990768c6b572ca3f69029334a9df}{omp\+\_\+get\+\_\+thread\+\_\+num}} ()
+\item 
+void \mbox{\hyperlink{Globals_8h_a26c2db9c501cff462039397e97ee2c79}{omp\+\_\+set\+\_\+num\+\_\+threads}} (int)
+\item 
+void \mbox{\hyperlink{namespaceopenphase_a422a08152375ae3920c52971d405e7bc}{openphase\+::simulation\+\_\+end}} ()
+\item 
+void \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{openphase\+::\+OP\+\_\+\+Exit}} (int exit\+\_\+code)
+\item 
+const std\+::complex$<$ double $>$ \mbox{\hyperlink{namespaceopenphase_a61a4ccda3979d13fd8eaa28b4e8ce72b}{openphase\+::I}} (0.\+0, 1.\+0)
+\begin{DoxyCompactList}\small\item\em sqrt(-\/1) declaration \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{openphase\+::sgn}} (T val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceopenphase_ad01adb54ddb890007030c46a387ee8fa}{openphase\+::ignore\+\_\+result}} (T)
+\begin{DoxyCompactList}\small\item\em Allows to suppress warnings on unused function return values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{namespaceopenphase_ab73d51f3247521914daf0d578fc97a05}{openphase\+::\+EXIT\+\_\+\+H5\+\_\+\+ERROR}} = 5
+\begin{DoxyCompactList}\small\item\em Open\+Phase not compiled for HDF5 support. \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{namespaceopenphase_adb17201d92cd3f47064845a57b4f2435}{openphase\+::\+EXIT\+\_\+\+NUCMODE\+\_\+\+ERROR}} = 16
+\item 
+static constexpr int \mbox{\hyperlink{namespaceopenphase_a8fcd1083270b9e0a199c0829c45489c4}{openphase\+::\+EXIT\+\_\+\+CONTROLMODE\+\_\+\+ERROR}} = 10
+\item 
+static constexpr int \mbox{\hyperlink{namespaceopenphase_a03df98affabaeee685d3980c0e79d88e}{openphase\+::\+EXIT\+\_\+\+LATENTHEATMODE\+\_\+\+ERROR}} = 13
+\item 
+static constexpr double \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{openphase\+::\+Pi}} = 3.\+14159265358979323846
+\begin{DoxyCompactList}\small\item\em Pi constant value. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{openphase\+::dir\+Separator}} = "{}/"{}
+\begin{DoxyCompactList}\small\item\em Unix/\+Linux style directory separator. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{openphase\+::\+Default\+Input\+File\+Name}} = "{}Project\+Input.\+opi"{}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceopenphase_a36c021aa7764ad2af93a18b4778ae2d3}{openphase\+::\+Default\+VTKDir}} = "{}VTK"{} + \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dir\+Separator}}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{openphase\+::\+Default\+Raw\+Data\+Dir}} = "{}Raw\+Data"{} + \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dir\+Separator}}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceopenphase_a05d6c6322f925d4acda86484d90ade65}{openphase\+::\+Default\+Text\+Dir}} = "{}Text\+Data"{} + \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dir\+Separator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Globals_8h_ae75458c416806ab9737833b201e7de24}\label{Globals_8h_ae75458c416806ab9737833b201e7de24} 
+\index{Globals.h@{Globals.h}!OP\_EXPORTS@{OP\_EXPORTS}}
+\index{OP\_EXPORTS@{OP\_EXPORTS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{OP\_EXPORTS}{OP\_EXPORTS}}
+{\footnotesize\ttfamily \#define OP\+\_\+\+EXPORTS}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00071}{71}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+\Hypertarget{Globals_8h_ad9bcdeed9e55e3ebc28d0f7725db63d3}\label{Globals_8h_ad9bcdeed9e55e3ebc28d0f7725db63d3} 
+\index{Globals.h@{Globals.h}!OP\_IMPORTS@{OP\_IMPORTS}}
+\index{OP\_IMPORTS@{OP\_IMPORTS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{OP\_IMPORTS}{OP\_IMPORTS}}
+{\footnotesize\ttfamily \#define OP\+\_\+\+IMPORTS}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00072}{72}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+\Hypertarget{Globals_8h_a80fe35b58db2a0452b7bc2048610a1ba}\label{Globals_8h_a80fe35b58db2a0452b7bc2048610a1ba} 
+\index{Globals.h@{Globals.h}!OPENPHASE\_API@{OPENPHASE\_API}}
+\index{OPENPHASE\_API@{OPENPHASE\_API}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{OPENPHASE\_API}{OPENPHASE\_API}}
+{\footnotesize\ttfamily \#define OPENPHASE\+\_\+\+API}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00076}{76}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}\label{Globals_8h_a84e35f14fe6cb1b6648be757446483e2} 
+\index{Globals.h@{Globals.h}!omp\_get\_max\_threads@{omp\_get\_max\_threads}}
+\index{omp\_get\_max\_threads@{omp\_get\_max\_threads}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{omp\_get\_max\_threads()}{omp\_get\_max\_threads()}}
+{\footnotesize\ttfamily int omp\+\_\+get\+\_\+max\+\_\+threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00041}{41}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{Globals_8h_ab628587850957d925be0c2157f5f6823}\label{Globals_8h_ab628587850957d925be0c2157f5f6823} 
+\index{Globals.h@{Globals.h}!omp\_get\_num\_threads@{omp\_get\_num\_threads}}
+\index{omp\_get\_num\_threads@{omp\_get\_num\_threads}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{omp\_get\_num\_threads()}{omp\_get\_num\_threads()}}
+{\footnotesize\ttfamily int omp\+\_\+get\+\_\+num\+\_\+threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00037}{37}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{Globals_8h_aba06990768c6b572ca3f69029334a9df}\label{Globals_8h_aba06990768c6b572ca3f69029334a9df} 
+\index{Globals.h@{Globals.h}!omp\_get\_thread\_num@{omp\_get\_thread\_num}}
+\index{omp\_get\_thread\_num@{omp\_get\_thread\_num}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{omp\_get\_thread\_num()}{omp\_get\_thread\_num()}}
+{\footnotesize\ttfamily int omp\+\_\+get\+\_\+thread\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00045}{45}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{Globals_8h_a26c2db9c501cff462039397e97ee2c79}\label{Globals_8h_a26c2db9c501cff462039397e97ee2c79} 
+\index{Globals.h@{Globals.h}!omp\_set\_num\_threads@{omp\_set\_num\_threads}}
+\index{omp\_set\_num\_threads@{omp\_set\_num\_threads}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{omp\_set\_num\_threads()}{omp\_set\_num\_threads()}}
+{\footnotesize\ttfamily void omp\+\_\+set\+\_\+num\+\_\+threads (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Globals_8h_source_l00049}{49}} of file \mbox{\hyperlink{Globals_8h_source}{Globals.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing}}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,1217 @@
+\doxysection{openphase\+::Settings Class Reference}
+\hypertarget{classopenphase_1_1Settings}{}\label{classopenphase_1_1Settings}\index{openphase::Settings@{openphase::Settings}}
+
+
+\texorpdfstring{$<$}{<} System settings module. Reads and stores system settings  
+
+
+
+
+{\ttfamily \#include "{}Settings.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Settings_a48fd4b70ae8b100af9f7c2db4a013de8}{Settings}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1Settings_afc798b66ea053c0e26a6843ce5744727}{Settings}} (const std\+::string Input\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}{Initialize}} (std\+::string Object\+Name\+Suffix="{}"{})
+\begin{DoxyCompactList}\small\item\em Initializes the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{Read\+Input}} (const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Reads input from the specified input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_ab53328d497c36d7a5b33c431840b5bf4}{Read\+Input}} (std\+::stringstream \&data)
+\begin{DoxyCompactList}\small\item\em Reads input from the specified input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}{Read\+JSON}} (const std\+::string Input\+File\+Name)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{Add\+For\+Remeshing}} (\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em Adds object to be remeshed to the Objects\+To\+Remesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a5e03eaa6fa0e5bb478a68db750f42baf}{Remesh\+All}} (int new\+Nx, int new\+Ny, int new\+Nz, int t\+Step, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Calls Remesh() on all objects in Objects\+To\+Remesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{Add\+For\+Advection}} (\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em Adds object to be advected to the Objects\+To\+Advect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a4ed3915ddb5094af3a6cfd3c53a08ff7}{Advect\+All}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, double dt, int t\+Step)
+\begin{DoxyCompactList}\small\item\em Calls \doxylink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Advect()} on all objects in Objects\+To\+Advect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Advect}} (std\+::string Object\+Name, \mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, double dt, int t\+Step)
+\begin{DoxyCompactList}\small\item\em Calls \doxylink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Advect()} on object(s) with the given name base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3}{Add\+For\+Reading}} (\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em Adds object which can read raw data to the Objects\+To\+Read. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1Settings_a5fdecb25b0907751756301741acdf542}{Read\+All}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\begin{DoxyCompactList}\small\item\em Calls \doxylink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Read()} on all objects in Objects\+To\+Read. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Read}} (std\+::string Object\+Name, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\begin{DoxyCompactList}\small\item\em Calls \doxylink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Read()} on object(s) with the given name base. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1Settings_abcf9e058ca5fe568c5b4f0da8192b9b4}{Grid\+History\+Parameters}} (int time\+\_\+step) const
+\begin{DoxyCompactList}\small\item\em Returns grid parameters for a given time step based on grid history records. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \& \mbox{\hyperlink{classopenphase_1_1Settings_ac9890e8c2543265a36d04f2cedbe8303}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of thermodynamic phases. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}
+\begin{DoxyCompactList}\small\item\em Number of chemical elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}
+\begin{DoxyCompactList}\small\item\em Number of crystallographic (symmetry/translation/...) variants. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{Remeshing\+Allowed}}
+\begin{DoxyCompactList}\small\item\em Remeshing allowed (Yes or No) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em Indicates if the settings have been initialized. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{Objects\+To\+Remesh}}
+\begin{DoxyCompactList}\small\item\em Stores pointers to objects which have remeshing capability. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{Objects\+To\+Advect}}
+\begin{DoxyCompactList}\small\item\em Stores pointers to objects which have advection capability. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{Objects\+To\+Read}}
+\begin{DoxyCompactList}\small\item\em Stores pointers to objects which have raw data reading capability. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{Phase\+Names}}
+\begin{DoxyCompactList}\small\item\em Names of thermodynamic phases. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{Element\+Names}}
+\begin{DoxyCompactList}\small\item\em Names of chemical elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{Aggregate\+States}} $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{Phase\+Aggregate\+States}}
+\begin{DoxyCompactList}\small\item\em Aggregate states of all phases. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{Phase\+Equilibrium\+Densities}}
+\begin{DoxyCompactList}\small\item\em Equilibrium densities for all phases. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_a8a03a9b2e0646a1b30d4ea413c8f36b5}{Out\+Put\+Dir}}
+\begin{DoxyCompactList}\small\item\em Directory name for the \doxylink{structopenphase_1_1VTK}{VTK} files. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}
+\begin{DoxyCompactList}\small\item\em Directory name for the \doxylink{structopenphase_1_1VTK}{VTK} files. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{Raw\+Data\+Dir}}
+\begin{DoxyCompactList}\small\item\em Directory name for the raw data files. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{Input\+Raw\+Data\+Dir}}
+\begin{DoxyCompactList}\small\item\em Directory name for the raw data files. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{Text\+Dir}}
+\begin{DoxyCompactList}\small\item\em Directory name for the text files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1MetaData}{Meta\+Data}} \mbox{\hyperlink{classopenphase_1_1Settings_a74a6d835c2d578ec16e52a131d621475}{Meta}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} $>$ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{Grid\+History}}
+\begin{DoxyCompactList}\small\item\em Stores grid parameters evolution history over the simulation time. Syntax\+: \{\{Time\+Step1, Nx1, Ny1, Nz1\}, ... ,\{Time\+StepN, NxN, NyN, NzN\}\}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} System settings module. Reads and stores system settings 
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00044}{44}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1Settings_a48fd4b70ae8b100af9f7c2db4a013de8}\label{classopenphase_1_1Settings_a48fd4b70ae8b100af9f7c2db4a013de8} 
+\index{openphase::Settings@{openphase::Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00059}{59}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}{Initialize}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_afc798b66ea053c0e26a6843ce5744727}\label{classopenphase_1_1Settings_afc798b66ea053c0e26a6843ce5744727} 
+\index{openphase::Settings@{openphase::Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Constructor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00064}{64}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}{Initialize}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}\label{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2} 
+\index{openphase::Settings@{openphase::Settings}!AddForAdvection@{AddForAdvection}}
+\index{AddForAdvection@{AddForAdvection}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{AddForAdvection()}{AddForAdvection()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Add\+For\+Advection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds object to be advected to the Objects\+To\+Advect. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00468}{468}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00469\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.push\_back(\&Obj);}
+\DoxyCodeLine{00471\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3}\label{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3} 
+\index{openphase::Settings@{openphase::Settings}!AddForReading@{AddForReading}}
+\index{AddForReading@{AddForReading}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{AddForReading()}{AddForReading()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Add\+For\+Reading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds object which can read raw data to the Objects\+To\+Read. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00495}{495}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.push\_back(\&Obj);}
+\DoxyCodeLine{00498\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}\label{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d} 
+\index{openphase::Settings@{openphase::Settings}!AddForRemeshing@{AddForRemeshing}}
+\index{AddForRemeshing@{AddForRemeshing}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{AddForRemeshing()}{AddForRemeshing()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Add\+For\+Remeshing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds object to be remeshed to the Objects\+To\+Remesh. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00463}{463}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00464\ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}.push\_back(\&Obj);}
+\DoxyCodeLine{00466\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}\label{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72} 
+\index{openphase::Settings@{openphase::Settings}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Advect (\begin{DoxyParamCaption}\item[{std\+::string}]{Object\+Name,  }\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{double}]{dt,  }\item[{int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Calls \doxylink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Advect()} on object(s) with the given name base. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00486}{486}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00487\ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.size();\ n++)}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ ==\ ObjNameBase)}
+\DoxyCodeLine{00490\ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>Advect(Adv,\ Vel,\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{00492\ \ \ \ \ \}}
+\DoxyCodeLine{00493\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a4ed3915ddb5094af3a6cfd3c53a08ff7}\label{classopenphase_1_1Settings_a4ed3915ddb5094af3a6cfd3c53a08ff7} 
+\index{openphase::Settings@{openphase::Settings}!AdvectAll@{AdvectAll}}
+\index{AdvectAll@{AdvectAll}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{AdvectAll()}{AdvectAll()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Advect\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{double}]{dt,  }\item[{int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Calls \doxylink{classopenphase_1_1Settings_a3e69e255a2826f6cc67b6f73d2078e72}{Advect()} on all objects in Objects\+To\+Advect. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00473}{473}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00474\ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}.size();\ n++)}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ !=\ \textcolor{stringliteral}{"{}PhaseField"{}})}
+\DoxyCodeLine{00477\ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}[n]-\/>Advect(Adv,\ Vel,\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}},\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{00479\ \ \ \ \ \}}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00481\ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.AdvectALE(Adv,\ Vel,\ BC,\ dt,\ tStep);}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_abcf9e058ca5fe568c5b4f0da8192b9b4}\label{classopenphase_1_1Settings_abcf9e058ca5fe568c5b4f0da8192b9b4} 
+\index{openphase::Settings@{openphase::Settings}!GridHistoryParameters@{GridHistoryParameters}}
+\index{GridHistoryParameters@{GridHistoryParameters}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{GridHistoryParameters()}{GridHistoryParameters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Settings\+::\+Grid\+History\+Parameters (\begin{DoxyParamCaption}\item[{int}]{time\+\_\+step }\end{DoxyParamCaption}) const}
+
+
+
+Returns grid parameters for a given time step based on grid history records. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00558}{558}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00559\ \{}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordflow}{if}(time\_step\ <\ 0)}
+\DoxyCodeLine{00561\ \ \ \ \ \{}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ time\_step\ =\ 0;}
+\DoxyCodeLine{00563\ \ \ \ \ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ history\_record\_idx\ =\ 0;}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}.size();\ n++)}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{if}(n\ <=\ \textcolor{keywordtype}{size\_t}(time\_step))}
+\DoxyCodeLine{00568\ \ \ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ history\_record\_idx\ =\ n;}
+\DoxyCodeLine{00570\ \ \ \ \ \}}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00572\ \ \ \ \ \{}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00574\ \ \ \ \ \}}
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}[history\_record\_idx];}
+\DoxyCodeLine{00576\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613}\label{classopenphase_1_1Settings_a867df442d890143b8876a3cfee521613} 
+\index{openphase::Settings@{openphase::Settings}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Initialize (\begin{DoxyParamCaption}\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Initializes the class. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Settings"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a36c021aa7764ad2af93a18b4778ae2d3}{DefaultVTKDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ VTKDir\ is\ empty.\ This\ way,\ VTKDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{DefaultRawDataDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ RawDataDir\ is\ empty.\ This\ way,\ RawDataDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a43de3f8e66a52f44423f49b7f15c2af0}{DefaultRawDataDir}};\ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ InputRawDataDir\ is\ empty.\ This\ way,\ RawDataDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.size()\ ==\ 0)\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ =\ \mbox{\hyperlink{namespaceopenphase_a05d6c6322f925d4acda86484d90ade65}{DefaultTextDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Only\ overwrite\ default\ directory\ if\ TextDir\ is\ empty.\ This\ way,\ TextDir\ can\ be\ defined\ earlier.}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}{ConsoleOutput::WriteStartScreen}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_ac9890e8c2543265a36d04f2cedbe8303}\label{classopenphase_1_1Settings_ac9890e8c2543265a36d04f2cedbe8303} 
+\index{openphase::Settings@{openphase::Settings}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \& openphase\+::\+Settings\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00521}{521}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00522\ \{}
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs)\ \textcolor{comment}{//\ protect\ against\ self-\/assignment}}
+\DoxyCodeLine{00524\ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}\ \ =\ rhs.thisclassname;}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ =\ rhs.thisobjectname;}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}\ =\ rhs.Grid;}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ rhs.Nphases;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ \ \ =\ rhs.Ncomp;}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{RemeshingAllowed}}\ =\ rhs.RemeshingAllowed;}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}{initialized}}\ =\ rhs.initialized;}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}\ =\ rhs.ObjectsToRemesh;}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}{ObjectsToAdvect}}\ =\ rhs.ObjectsToAdvect;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}\ =\ rhs.ObjectsToRead;}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}\ =\ rhs.PhaseNames;}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}\ =\ rhs.ElementNames;}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}\ =\ rhs.PhaseAggregateStates;}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}\ =\ rhs.PhaseEquilibriumDensities;}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PhaseActivationModes\ =\ rhs.PhaseActivationModes;}}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ =\ rhs.VTKDir;}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ rhs.RawDataDir;}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ rhs.InputRawDataDir;}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ =\ rhs.TextDir;}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}\ =\ rhs.GridHistory;}
+\DoxyCodeLine{00554\ \ \ \ \ \}}
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00556\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}\label{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c} 
+\index{openphase::Settings@{openphase::Settings}!Read@{Read}}
+\index{Read@{Read}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily bool openphase\+::\+Settings\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::string}]{Object\+Name,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Calls \doxylink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Read()} on object(s) with the given name base. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00510}{510}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00511\ \{}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{bool}\ read\_status\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.size();\ n++)}
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>\mbox{\hyperlink{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}{thisobjectname}}\ ==\ ObjNameBase)}
+\DoxyCodeLine{00515\ \ \ \ \ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ read\_status\ =\ read\_status\ \&\&\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>Read(*\textcolor{keyword}{this},BC,\ tStep);}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_status;}
+\DoxyCodeLine{00519\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a5fdecb25b0907751756301741acdf542}\label{classopenphase_1_1Settings_a5fdecb25b0907751756301741acdf542} 
+\index{openphase::Settings@{openphase::Settings}!ReadAll@{ReadAll}}
+\index{ReadAll@{ReadAll}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ReadAll()}{ReadAll()}}
+{\footnotesize\ttfamily bool openphase\+::\+Settings\+::\+Read\+All (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})}
+
+
+
+Calls \doxylink{classopenphase_1_1Settings_a3301031ab6515a4e44e79f07cc1fcc6c}{Read()} on all objects in Objects\+To\+Read. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00500}{500}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00501\ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordtype}{bool}\ read\_status\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}.size();\ n++)}
+\DoxyCodeLine{00504\ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ read\_status\ =\ read\_status\ \&\&\ \mbox{\hyperlink{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}{ObjectsToRead}}[n]-\/>Read(*\textcolor{keyword}{this},BC,\ tStep);}
+\DoxyCodeLine{00506\ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_status;}
+\DoxyCodeLine{00508\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}\label{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d} 
+\index{openphase::Settings@{openphase::Settings}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Reads input from the specified input file. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}+\textcolor{stringliteral}{"{}\ input"{}});}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::string\ filetype\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a09fe0f4b7796b141b23b39a06c854faa}{FileInterface::getFileExtension}}(InputFileName);\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (filetype\ ==\ \textcolor{stringliteral}{"{}opi"{}})}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9b05d3220ed8ad738e0cf3c6d863610d}{ReadInput}}(data);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ inp.close();}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (filetype\ ==\ \textcolor{stringliteral}{"{}json"{}})}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}{ReadJSON}}(InputFileName);}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Filetype\ "{}}\ <<\ filetype\ <<\ \textcolor{stringliteral}{"{}\ not\ recognized.\ Filetype\ must\ be\ opi\ or\ json."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(1);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_ab53328d497c36d7a5b33c431840b5bf4}\label{classopenphase_1_1Settings_ab53328d497c36d7a5b33c431840b5bf4} 
+\index{openphase::Settings@{openphase::Settings}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads input from the specified input stream. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_abfec1c754ac929a9eeb7ddbd7581f54b}{ReadInput}}(inp);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Settings"{}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}});}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Active\ phases"{}});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ endofnames\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ 0;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{while}(!(endofnames))}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}Phase\_"{}})\ <<\ n;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1FileInterface_a3470cc1e41f1b06c7458853b9c040297}{FileInterface::FindParameter}}(inp,\ moduleLocation,\ converter.str())\ !=\ -\/1)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str());}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ endofnames\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.size();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Reading\ states\ of\ matter\ for\ all\ phases.}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}State\_"{}})\ <<\ m;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ state\_of\_matter\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str(),\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}SOLID"{}});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ state\_set\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}SOLID"{}})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}LIQUID"{}}\ )}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{AggregateStates::Liquid}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}GAS"{}})}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!state\_set)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ state\ of\ matter\ is\ selected\ for\ phase\ "{}}\ +\ to\_string(m)\ +\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ +\ state\_of\_matter,\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ \ \ \ //\ Reading\ phase\ activation\ modes.}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ \ \ \ PhaseActivationModes.resize(Nphases);}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ \ \ \ for(size\_t\ m\ =\ 0;\ m\ <\ Nphases;\ m++)}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ \ \ \ \ \ \ \ stringstream\ converter;}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ \ \ \ \ \ \ \ converter\ <<\ string("{}PhaseActivation\_"{})\ <<\ m;}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ \ \ \ \ \ \ string\ state\_of\_matter\ =\ FileInterface::ReadParameterK(inp,\ moduleLocation,\ converter.str(),\ false,\ "{}ENABLED"{});}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ \ \ \ \ \ \ \ bool\ state\_set\ =\ false;}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(state\_of\_matter\ ==\ "{}ENABLED"{})}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ PhaseActivationModes[m]\ =\ ActivationModes::Enabled;}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ true;}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(state\_of\_matter\ ==\ "{}DISABLED"{})}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ PhaseActivationModes[m]\ =\ ActivationModes::Disabled;}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ true;}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if(!state\_set)}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ ConsoleOutput::WriteExit("{}Wrong\ phase\ interaction\ mode\ is\ selected\ for\ phase\ "{}\ +\ to\_string(m)\ +\ "{}\ -\/>\ "{}\ +\ state\_of\_matter,\ "{}Settings"{},\ "{}ReadInput()"{});}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ OP\_Exit(EXIT\_FAILURE);}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ Reading\ interaction\ modes\ for\ phase\ pairs.}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//\ \ \ \ PhaseInteractions.Allocate(Nphases,\ Nphases);}}
+\DoxyCodeLine{00180\ \textcolor{comment}{//\ \ \ \ for(size\_t\ n\ =\ 0;\ n\ <\ Nphases;\ n++)}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ \ \ \ for(size\_t\ m\ =\ n;\ m\ <\ Nphases;\ m++)}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ \ \ \ if(PhaseActivationModes[n]\ ==\ ActivationModes::Enabled\ and}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ \ \ \ \ \ \ PhaseActivationModes[m]\ ==\ ActivationModes::Enabled)}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ \ \ \ \ \ \ \ stringstream\ converter;}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//\ \ \ \ \ \ \ \ converter\ <<\ string("{}PhaseInteractions\_"{})\ <<\ n\ <<\ "{}\_"{}\ <<\ m;}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(n,m)\ =\ FileInterface::ReadParameterB(inp,\ moduleLocation,\ converter.str(),\ false,\ true);}}
+\DoxyCodeLine{00188\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(m,n)\ =\ PhaseInteractions(n,m);}}
+\DoxyCodeLine{00189\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ \ \ \ else}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(n,m)\ =\ false;}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ \ \ \ \ \ \ \ PhaseInteractions(m,n)\ =\ false;}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//\ Reading\ equilibrium\ density\ for\ all\ phases\ (Rigid-\/Body\ Motion).}}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{00199\ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}MassDensity\_"{}})\ <<\ m;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}[m]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ converter.str(),\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//\ Reading\ number\ of\ crystallographic\ variants\ of\ each\ phase}}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ pIndex\ =\ 0;\ pIndex\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ pIndex++)}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ converter\ <<\ \textcolor{stringliteral}{"{}Nvariants\_"{}}\ <<\ pIndex;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ converter.str(),\textcolor{keyword}{false},1);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ <\ 1)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ number\ of\ crystallographic\ variants\ for\ phase\ "{}}\ +\ std::to\_string(pIndex)\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex])\ +\ \textcolor{stringliteral}{"{}\ (Minimum\ 1)"{}},\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ endofnames\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00220\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{while}(!(endofnames))}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}Comp\_"{}})\ <<\ n;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1FileInterface_a3470cc1e41f1b06c7458853b9c040297}{FileInterface::FindParameter}}(inp,\ moduleLocation,\ converter.str())\ !=\ -\/1)}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str());}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*if(tmp\ ==\ "{}VA"{})}}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00231\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ "{}\(\backslash\)"{}VA\(\backslash\)"{}\ as\ a\ component\ is\ not\ allowed\ in\ "{}}}
+\DoxyCodeLine{00232\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}ChemicalProperties.opi"{}\ <<\ endl;}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OP\_Exit(EXIT\_SUCCESS);}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.push\_back(tmp);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ endofnames\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.size();}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}VTKDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}});}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}RAWDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}InputRAWDir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a91e3c4e44c5f03a3bbdd5a6bf1cb0de4}{FileInterface::ReadParameterF}}(inp,\ moduleLocation,\textcolor{stringliteral}{"{}DATADir"{}},\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}});}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{string}\ from\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{string}\ to\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00254\ \ \ \ \ from\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00255\ \ \ \ \ to\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\_pos\ =\ 0;}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00260\ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00267\ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.empty())}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.rbegin();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.empty())}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.rbegin();}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.empty())}
+\DoxyCodeLine{00294\ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.rbegin();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e}\label{classopenphase_1_1Settings_a64f7d66a17351a8503ce3d6ed53f477e} 
+\index{openphase::Settings@{openphase::Settings}!ReadJSON@{ReadJSON}}
+\index{ReadJSON@{ReadJSON}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ReadJSON()}{ReadJSON()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Read\+JSON (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00304}{304}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6842be41edf5eba06d1f4f8d06e885df}{ReadJSON}}(InputFileName);}
+\DoxyCodeLine{00307\ \ \ \ \ std::ifstream\ f(InputFileName);}
+\DoxyCodeLine{00308\ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ data\ =\ json::parse(f);}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{if}\ (data.contains(\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}))}
+\DoxyCodeLine{00311\ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4aedb30971859356857f74882a628759}{json}}\ settings\ =\ data[\mbox{\hyperlink{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}{thisclassname}}];}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Settings"{}});}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Active\ phases"{}});}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_phases\ =\ FileInterface::ReadParameter<size\_t>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},\textcolor{stringliteral}{"{}Number"{}}\});}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ number\_of\_phases;\ ++i)}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},i,\textcolor{stringliteral}{"{}Name"{}}\});}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.size();}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ states\ of\ matter\ for\ all\ phases.}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ state\_of\_matter\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},m,\textcolor{stringliteral}{"{}State"{}}\},\textcolor{stringliteral}{"{}SOLID"{}});}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ state\_set\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}SOLID"{}})}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}};}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}LIQUID"{}}\ )}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca5635bf596d97c1c2e7afe481ed060774}{AggregateStates::Liquid}};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state\_of\_matter\ ==\ \textcolor{stringliteral}{"{}GAS"{}})}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[m]\ =\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\_set\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!state\_set)}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ state\ of\ matter\ is\ selected\ for\ phase\ "{}}\ +\ to\_string(m)\ +\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ +\ state\_of\_matter,\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ equilibrium\ density\ for\ all\ phases\ (Rigid-\/Body\ Motion).}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ m++)}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}{PhaseEquilibriumDensities}}[m]\ =\ FileInterface::ReadParameter<double>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},m,\textcolor{stringliteral}{"{}EquilibriumDensity"{}}\},\ 0.0);}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reading\ number\ of\ crystallographic\ variants\ of\ each\ phase}}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}.resize(\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}});}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ pIndex\ =\ 0;\ pIndex\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};\ pIndex++)}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ =\ FileInterface::ReadParameter<int>(settings,\ \{\textcolor{stringliteral}{"{}Phases"{}},pIndex,\textcolor{stringliteral}{"{}Variants"{}}\},\ 1);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex]\ <\ 1)}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}Wrong\ number\ of\ crystallographic\ variants\ for\ phase\ "{}}\ +\ std::to\_string(pIndex)\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}{Nvariants}}[pIndex])\ +\ \textcolor{stringliteral}{"{}\ (Minimum\ 1)"{}},\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_components\ =\ FileInterface::ReadParameter<size\_t>(settings,\ \{\textcolor{stringliteral}{"{}Components"{}},\textcolor{stringliteral}{"{}Number"{}}\},0);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ number\_of\_components;\ ++i)}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}Components"{}},i,\textcolor{stringliteral}{"{}Name"{}}\});}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}.push\_back(tmp);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}}\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}.size();}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ \ \ \ \ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}VTKDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}});}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}RawDataDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}}\ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}InputRawDataDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}});}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ \ \ \ =\ FileInterface::ReadParameter<std::string>(settings,\ \{\textcolor{stringliteral}{"{}TextDir"{}}\},\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}});}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ from\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ to\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ from\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ to\ =\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\_pos\ =\ 0;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ start\_pos\ =\ 0;}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((start\_pos\ =\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.find(from,\ start\_pos))\ !=\ std::string::npos)}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.replace(start\_pos,\ from.length(),\ to);}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ start\_pos\ +=\ to.length();}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.empty())}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}.rbegin();}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.empty())}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}.rbegin();}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.empty())}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss;\ ss\ <<\ *\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}.rbegin();}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ s;\ ss\ >>\ s;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s\ !=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}})\ \mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +=\ \mbox{\hyperlink{namespaceopenphase_aef4f38f0737fdc472a7933b77d438a2d}{dirSeparator}};}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00439\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00440\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1Settings_a5e03eaa6fa0e5bb478a68db750f42baf}\label{classopenphase_1_1Settings_a5e03eaa6fa0e5bb478a68db750f42baf} 
+\index{openphase::Settings@{openphase::Settings}!RemeshAll@{RemeshAll}}
+\index{RemeshAll@{RemeshAll}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{RemeshAll()}{RemeshAll()}}
+{\footnotesize\ttfamily void openphase\+::\+Settings\+::\+Remesh\+All (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{int}]{t\+Step,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Calls Remesh() on all objects in Objects\+To\+Remesh. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8cpp_source_l00442}{442}} of file \mbox{\hyperlink{Settings_8cpp_source}{Settings.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00443\ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}{RemeshingAllowed}})}
+\DoxyCodeLine{00445\ \ \ \ \ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ newNx\ =\ 0;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ newNy\ =\ 0;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ newNz\ =\ 0;}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}.size();\ n++)}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}{ObjectsToRemesh}}[n]-\/>Remesh(newNx,\ newNy,\ newNz,\ BC);}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a271684f7d77d7d9c61694acae440d8bf}{Idx}}\ =\ tStep;}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}{GridHistory}}.push\_back(\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}});}
+\DoxyCodeLine{00460\ \ \ \ \ \}}
+\DoxyCodeLine{00461\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}\label{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1} 
+\index{openphase::Settings@{openphase::Settings}!ElementNames@{ElementNames}}
+\index{ElementNames@{ElementNames}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ElementNames}{ElementNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ openphase\+::\+Settings\+::\+Element\+Names}
+
+
+
+Names of chemical elements. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00095}{95}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}\label{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1} 
+\index{openphase::Settings@{openphase::Settings}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Settings\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00050}{50}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57}\label{classopenphase_1_1Settings_aa0f41d5d56b17040c644fa40ab78de57} 
+\index{openphase::Settings@{openphase::Settings}!GridHistory@{GridHistory}}
+\index{GridHistory@{GridHistory}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{GridHistory}{GridHistory}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}}$>$ openphase\+::\+Settings\+::\+Grid\+History}
+
+
+
+Stores grid parameters evolution history over the simulation time. Syntax\+: \{\{Time\+Step1, Nx1, Ny1, Nz1\}, ... ,\{Time\+StepN, NxN, NyN, NzN\}\}. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00111}{111}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320}\label{classopenphase_1_1Settings_a2ba29683daa24384f7d45e0a94a5d320} 
+\index{openphase::Settings@{openphase::Settings}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+Settings\+::initialized = false}
+
+
+
+Indicates if the settings have been initialized. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00057}{57}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}\label{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210} 
+\index{openphase::Settings@{openphase::Settings}!InputRawDataDir@{InputRawDataDir}}
+\index{InputRawDataDir@{InputRawDataDir}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{InputRawDataDir}{InputRawDataDir}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::\+Input\+Raw\+Data\+Dir}
+
+
+
+Directory name for the raw data files. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00104}{104}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a74a6d835c2d578ec16e52a131d621475}\label{classopenphase_1_1Settings_a74a6d835c2d578ec16e52a131d621475} 
+\index{openphase::Settings@{openphase::Settings}!Meta@{Meta}}
+\index{Meta@{Meta}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Meta}{Meta}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1MetaData}{Meta\+Data}} openphase\+::\+Settings\+::\+Meta}
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00109}{109}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}\label{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9} 
+\index{openphase::Settings@{openphase::Settings}!Ncomp@{Ncomp}}
+\index{Ncomp@{Ncomp}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Ncomp}{Ncomp}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Settings\+::\+Ncomp}
+
+
+
+Number of chemical elements. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00053}{53}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}\label{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92} 
+\index{openphase::Settings@{openphase::Settings}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Settings\+::\+Nphases}
+
+
+
+Number of thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00052}{52}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79}\label{classopenphase_1_1Settings_a7c9e11d8a94bdb0697222caac11d4a79} 
+\index{openphase::Settings@{openphase::Settings}!Nvariants@{Nvariants}}
+\index{Nvariants@{Nvariants}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{Nvariants}{Nvariants}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ openphase\+::\+Settings\+::\+Nvariants}
+
+
+
+Number of crystallographic (symmetry/translation/...) variants. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00054}{54}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff}\label{classopenphase_1_1Settings_a32971d379118bb499fd211a0705069ff} 
+\index{openphase::Settings@{openphase::Settings}!ObjectsToAdvect@{ObjectsToAdvect}}
+\index{ObjectsToAdvect@{ObjectsToAdvect}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ObjectsToAdvect}{ObjectsToAdvect}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\texorpdfstring{$\ast$}{*}$>$ openphase\+::\+Settings\+::\+Objects\+To\+Advect}
+
+
+
+Stores pointers to objects which have advection capability. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00091}{91}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967}\label{classopenphase_1_1Settings_ad86c972e179198cc2e6891266d5ca967} 
+\index{openphase::Settings@{openphase::Settings}!ObjectsToRead@{ObjectsToRead}}
+\index{ObjectsToRead@{ObjectsToRead}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ObjectsToRead}{ObjectsToRead}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\texorpdfstring{$\ast$}{*}$>$ openphase\+::\+Settings\+::\+Objects\+To\+Read}
+
+
+
+Stores pointers to objects which have raw data reading capability. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00092}{92}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7}\label{classopenphase_1_1Settings_a2c06f352d21e3f82530684ebe542cfe7} 
+\index{openphase::Settings@{openphase::Settings}!ObjectsToRemesh@{ObjectsToRemesh}}
+\index{ObjectsToRemesh@{ObjectsToRemesh}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{ObjectsToRemesh}{ObjectsToRemesh}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\texorpdfstring{$\ast$}{*}$>$ openphase\+::\+Settings\+::\+Objects\+To\+Remesh}
+
+
+
+Stores pointers to objects which have remeshing capability. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00090}{90}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a8a03a9b2e0646a1b30d4ea413c8f36b5}\label{classopenphase_1_1Settings_a8a03a9b2e0646a1b30d4ea413c8f36b5} 
+\index{openphase::Settings@{openphase::Settings}!OutPutDir@{OutPutDir}}
+\index{OutPutDir@{OutPutDir}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{OutPutDir}{OutPutDir}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::\+Out\+Put\+Dir}
+
+
+
+Directory name for the \doxylink{structopenphase_1_1VTK}{VTK} files. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00101}{101}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}\label{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb} 
+\index{openphase::Settings@{openphase::Settings}!PhaseAggregateStates@{PhaseAggregateStates}}
+\index{PhaseAggregateStates@{PhaseAggregateStates}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{PhaseAggregateStates}{PhaseAggregateStates}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61c}{Aggregate\+States}}$>$ openphase\+::\+Settings\+::\+Phase\+Aggregate\+States}
+
+
+
+Aggregate states of all phases. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00096}{96}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d}\label{classopenphase_1_1Settings_a6b21388a3dedfb35175bf7739f0aac4d} 
+\index{openphase::Settings@{openphase::Settings}!PhaseEquilibriumDensities@{PhaseEquilibriumDensities}}
+\index{PhaseEquilibriumDensities@{PhaseEquilibriumDensities}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{PhaseEquilibriumDensities}{PhaseEquilibriumDensities}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ openphase\+::\+Settings\+::\+Phase\+Equilibrium\+Densities}
+
+
+
+Equilibrium densities for all phases. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00097}{97}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}\label{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a} 
+\index{openphase::Settings@{openphase::Settings}!PhaseNames@{PhaseNames}}
+\index{PhaseNames@{PhaseNames}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{PhaseNames}{PhaseNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ openphase\+::\+Settings\+::\+Phase\+Names}
+
+
+
+Names of thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00094}{94}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}\label{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4} 
+\index{openphase::Settings@{openphase::Settings}!RawDataDir@{RawDataDir}}
+\index{RawDataDir@{RawDataDir}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{RawDataDir}{RawDataDir}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::\+Raw\+Data\+Dir}
+
+
+
+Directory name for the raw data files. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00103}{103}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934}\label{classopenphase_1_1Settings_aede5c765f5ee993d398d3c0814bca934} 
+\index{openphase::Settings@{openphase::Settings}!RemeshingAllowed@{RemeshingAllowed}}
+\index{RemeshingAllowed@{RemeshingAllowed}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{RemeshingAllowed}{RemeshingAllowed}}
+{\footnotesize\ttfamily bool openphase\+::\+Settings\+::\+Remeshing\+Allowed}
+
+
+
+Remeshing allowed (Yes or No) 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00056}{56}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}\label{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd} 
+\index{openphase::Settings@{openphase::Settings}!TextDir@{TextDir}}
+\index{TextDir@{TextDir}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{TextDir}{TextDir}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::\+Text\+Dir}
+
+
+
+Directory name for the text files. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00105}{105}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15}\label{classopenphase_1_1Settings_ad4fd6897a7b6267ca3a2f185e58aef15} 
+\index{openphase::Settings@{openphase::Settings}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::thisclassname}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00047}{47}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d}\label{classopenphase_1_1Settings_a11f75da77808fd3f6af4c8b060ebe46d} 
+\index{openphase::Settings@{openphase::Settings}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::thisobjectname}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00048}{48}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+\Hypertarget{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}\label{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea} 
+\index{openphase::Settings@{openphase::Settings}!VTKDir@{VTKDir}}
+\index{VTKDir@{VTKDir}!openphase::Settings@{openphase::Settings}}
+\doxysubsubsection{\texorpdfstring{VTKDir}{VTKDir}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Settings\+::\+VTKDir}
+
+
+
+Directory name for the \doxylink{structopenphase_1_1VTK}{VTK} files. 
+
+
+
+Definition at line \mbox{\hyperlink{Settings_8h_source_l00102}{102}} of file \mbox{\hyperlink{Settings_8h_source}{Settings.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Settings_8h}{Settings.\+h}}\item 
+\mbox{\hyperlink{Settings_8cpp}{Settings.\+cpp}}\end{DoxyCompactItemize}

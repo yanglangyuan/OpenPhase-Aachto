@@ -1,0 +1,835 @@
+\doxysection{openphase\+::Electric\+Properties Class Reference}
+\hypertarget{classopenphase_1_1ElectricProperties}{}\label{classopenphase_1_1ElectricProperties}\index{openphase::ElectricProperties@{openphase::ElectricProperties}}
+
+
+\doxylink{classopenphase_1_1Storage}{Storage} class for electric material properties.  
+
+
+
+
+{\ttfamily \#include "{}Electric\+Properties.\+h"{}}
+
+Inheritance diagram for openphase\+::Electric\+Properties\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/d99/classopenphase_1_1ElectricProperties}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8fc2604692ca5d84267ef5700dde8cd4}{Electric\+Properties}} (void)
+\item 
+\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a16fa14d85cea3c446e529817e4578035}{Electric\+Properties}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Empty constructor (does nothing) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a5de3d1c2a8847b03163ce5ec290f593c}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Allocates memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads the initial parameters for the interface diffusion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a789670b252d3fca3225d30321604b86f}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads the initial parameters for the interface diffusion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Sets boundary conditions for stored fields properties. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ad15e8b7a89053c532174d801bc9a34e6}{Electric\+Displacement\+Field}} (long int i, long int j, long int k) const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a55ef2f0d94172f6a15eb7313eb105faf}{Calculate\+Charge\+Density}} (const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&Cx)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae4ef5947f4e67cc531a1b4b09f580832}{Write\+VTK}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step, const int precision=16) const
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{Polarization\+Density}}
+\begin{DoxyCompactList}\small\item\em Polarization density \mbox{[} C\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/2) = A\texorpdfstring{$\ast$}{*}s\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/2) \mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{Electric\+Field}}
+\begin{DoxyCompactList}\small\item\em Electric field \mbox{[}V\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/1) = kg\texorpdfstring{$\ast$}{*}m\texorpdfstring{$\ast$}{*}s\texorpdfstring{$^\wedge$}{\string^}(-\/3)\texorpdfstring{$\ast$}{*}\+A\texorpdfstring{$^\wedge$}{\string^}(-\/1) \mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}}, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae1628b4eeeefd54ad8414a6dc832d7b4}{Wave\+Vector}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{Electric\+Potential}}
+\begin{DoxyCompactList}\small\item\em Electric potential \mbox{[}v = kg\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}2⋅s\texorpdfstring{$^\wedge$}{\string^}(-\/3)⋅\+A\texorpdfstring{$^\wedge$}{\string^}(-\/1) \mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{Charge\+Density}}
+\begin{DoxyCompactList}\small\item\em Charge density \mbox{[}C\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/3) = A\texorpdfstring{$\ast$}{*}s\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/3)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$ double $>$ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7}{Molar\+Charge}}
+\begin{DoxyCompactList}\small\item\em Charge of component per mole \mbox{[}C/mol = A\texorpdfstring{$\ast$}{*}s/mol\mbox{]}. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a22acca30cf8e41c8619e578423089a95}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of phases. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}{Ncomp}}
+\begin{DoxyCompactList}\small\item\em Number of components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classopenphase_1_1Storage}{Storage} class for electric material properties. 
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00039}{39}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1ElectricProperties_a8fc2604692ca5d84267ef5700dde8cd4}\label{classopenphase_1_1ElectricProperties_a8fc2604692ca5d84267ef5700dde8cd4} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ElectricProperties@{ElectricProperties}}
+\index{ElectricProperties@{ElectricProperties}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ElectricProperties()}{ElectricProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Electric\+Properties\+::\+Electric\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00042}{42}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_a16fa14d85cea3c446e529817e4578035}\label{classopenphase_1_1ElectricProperties_a16fa14d85cea3c446e529817e4578035} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ElectricProperties@{ElectricProperties}}
+\index{ElectricProperties@{ElectricProperties}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ElectricProperties()}{ElectricProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Electric\+Properties\+::\+Electric\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Empty constructor (does nothing) 
+
+Constructs and initializes class 
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a5de3d1c2a8847b03163ce5ec290f593c}{Initialize}}(locSettings);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_a55ef2f0d94172f6a15eb7313eb105faf}\label{classopenphase_1_1ElectricProperties_a55ef2f0d94172f6a15eb7313eb105faf} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!CalculateChargeDensity@{CalculateChargeDensity}}
+\index{CalculateChargeDensity@{CalculateChargeDensity}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{CalculateChargeDensity()}{CalculateChargeDensity()}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Calculate\+Charge\+Density (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}} \&}]{Cx }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}},\mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}{Ncomp}};\ comp++)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MolarComponentDensity\ =\ Cx.MoleFractionsTotal(i,j,k,\{comp\})*Cx.PT.GetData(Cx.Component[comp].Name).MolarVolume;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}}(i,j,k)\ +=\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7}{MolarCharge}}[comp]\ *\ MolarComponentDensity;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_ad15e8b7a89053c532174d801bc9a34e6}\label{classopenphase_1_1ElectricProperties_ad15e8b7a89053c532174d801bc9a34e6} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ElectricDisplacementField@{ElectricDisplacementField}}
+\index{ElectricDisplacementField@{ElectricDisplacementField}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ElectricDisplacementField()}{ElectricDisplacementField()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}} openphase\+::\+Electric\+Properties\+::\+Electric\+Displacement\+Field (\begin{DoxyParamCaption}\item[{long int}]{i,  }\item[{long int}]{j,  }\item[{long int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00058}{58}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{ElectricField}}(i,j,k)\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_ae67c9fe52c5aeddd20644b2727eb7d8e}{PhysicalConstants::epsilon\_0}}\ +\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{PolarizationDensity}}(i,j,k);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_a5de3d1c2a8847b03163ce5ec290f593c}\label{classopenphase_1_1ElectricProperties_a5de3d1c2a8847b03163ce5ec290f593c} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates memory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}ElectricProperties"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a22acca30cf8e41c8619e578423089a95}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}{Ncomp}}\ \ \ =\ locSettings.Ncomp;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{PolarizationDensity}}.Allocate(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}},\ Bcells);}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{ElectricField}}\ \ \ \ \ \ .Allocate(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}},\ Bcells);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{ElectricPotential}}\ \ .\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}},\ Bcells);}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}}\ \ \ \ \ \ .\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}},\ Bcells);}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae1628b4eeeefd54ad8414a6dc832d7b4}{WaveVector}}\ \ \ \ \ \ \ \ \ .Allocate(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}{Grid}},\ Bcells);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7}{MolarCharge}}.\mbox{\hyperlink{classopenphase_1_1Storage_a4ec188abcaf0cedc842da0ec805034fd}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}{Ncomp}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Read@{Read}}
+\index{Read@{Read}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209}\label{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads the initial parameters for the interface diffusion. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Electric\ properties\ input"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::fstream\ inpF(InputFileName.c\_str(),\ std::ios::in\ |\ std::ios\_base::binary);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inpF)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::stringstream\ inp;}
+\DoxyCodeLine{00079\ \ \ \ \ inp\ <<\ inpF.rdbuf();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209}{ReadInput}}(inp);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ inpF.close();}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_a789670b252d3fca3225d30321604b86f}\label{classopenphase_1_1ElectricProperties_a789670b252d3fca3225d30321604b86f} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads the initial parameters for the interface diffusion. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}{Ncomp}};\ comp++)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}MolarCharge\_"{}}\ +\ comp;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7}{MolarCharge}}[comp]\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ name,\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}\label{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Remeshes the storages \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Temperature_a4f468ad73bf630f66285e07bffac1180}{openphase\+::\+Temperature}}, \mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1DrivingForce_a6a31593f97b24ef93c92263e4b494d6c}{openphase\+::\+Driving\+Force}}, \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a0f43cb0cd646cd949207dc11504079a0}{openphase\+::\+Elasticity\+Solver\+Spectral}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a555343a7fc792704f3327dcb175c13c0}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1EquilibriumPartitionDiffusionBinary_a4d423f214e0007c6e5687a0f57639f52}{openphase\+::\+Equilibrium\+Partition\+Diffusion\+Binary}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a4e6f273f5ed0752225c0060c9e044a18}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a1221b1fa875c250991ae2cd0e3ea97af}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatDiffusion_a0050a095ec6ae76c07c12b9873b7da0e}{openphase\+::\+Heat\+Diffusion}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties_afc0b700a4304af3f7b4ba00a8ace8c7d}{openphase\+::\+Interface\+Properties}}, \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{openphase\+::\+Interface\+Regularization}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a3ff6f0d72311e580559dd1251806d209}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7fb68dadae179da5dd2342a81c456f40}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a0f305e969f2b5970684ccf9f8752a669}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a3509815f20fc4cf008b43d803a52a691}{openphase\+::\+Velocities}}, and \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectralImpl_af3aabadeb9bb14d37395dd1ff056e2bc}{openphase\+::\+Elasticity\+Solver\+Spectral\+Impl}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00088}{88}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (void)\ newNx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ (void)\ newNy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ (void)\ newNz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}\label{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets boundary conditions for stored fields properties. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{PolarizationDensity}});}
+\DoxyCodeLine{00113\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{PolarizationDensity}});}
+\DoxyCodeLine{00114\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}{PolarizationDensity}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{ElectricField}});}
+\DoxyCodeLine{00117\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{ElectricField}});}
+\DoxyCodeLine{00118\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}{ElectricField}});}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{ElectricPotential}});}
+\DoxyCodeLine{00121\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{ElectricPotential}});}
+\DoxyCodeLine{00122\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{ElectricPotential}});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ BC.SetX(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}});}
+\DoxyCodeLine{00125\ \ \ \ \ BC.SetY(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}});}
+\DoxyCodeLine{00126\ \ \ \ \ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}});}
+\DoxyCodeLine{00127\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Write@{Write}}
+\index{Write@{Write}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ElectricProperties_ae4ef5947f4e67cc531a1b4b09f580832}\label{classopenphase_1_1ElectricProperties_ae4ef5947f4e67cc531a1b4b09f580832} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!WriteVTK@{WriteVTK}}
+\index{WriteVTK@{WriteVTK}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{WriteVTK()}{WriteVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Electric\+Properties\+::\+Write\+VTK (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{ElectricProperties_8cpp_source}{Electric\+Properties.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00132\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Electric\ Charge\ Density\ [A*s/m\string^3]"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}{ChargeDensity}}(i,j,k);\}\});}
+\DoxyCodeLine{00133\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Electric\ Potential\ [V]"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}{ElectricPotential}}(i,j,k);\}\});}
+\DoxyCodeLine{00134\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Wave\ Vector\ [1/m]"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ElectricProperties_ae1628b4eeeefd54ad8414a6dc832d7b4}{WaveVector}}(i,j,k);\}\});}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \textcolor{stringliteral}{"{}ElectricProperties"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1ElectricProperties_a9d700aa910a329460ff84769bbcfd609}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91}\label{classopenphase_1_1ElectricProperties_aac3d2bcb5b9433b11cf34f1d96834f91} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ChargeDensity@{ChargeDensity}}
+\index{ChargeDensity@{ChargeDensity}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ChargeDensity}{ChargeDensity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Electric\+Properties\+::\+Charge\+Density}
+
+
+
+Charge density \mbox{[}C\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/3) = A\texorpdfstring{$\ast$}{*}s\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/3)\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00055}{55}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5}\label{classopenphase_1_1ElectricProperties_a8f2ab9c6b10b0c04271161ace7ff0ce5} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ElectricField@{ElectricField}}
+\index{ElectricField@{ElectricField}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ElectricField}{ElectricField}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}},0$>$ openphase\+::\+Electric\+Properties\+::\+Electric\+Field}
+
+
+
+Electric field \mbox{[}V\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/1) = kg\texorpdfstring{$\ast$}{*}m\texorpdfstring{$\ast$}{*}s\texorpdfstring{$^\wedge$}{\string^}(-\/3)\texorpdfstring{$\ast$}{*}\+A\texorpdfstring{$^\wedge$}{\string^}(-\/1) \mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00052}{52}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904}\label{classopenphase_1_1ElectricProperties_af4dd6d88e370665697248f0dacab1904} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!ElectricPotential@{ElectricPotential}}
+\index{ElectricPotential@{ElectricPotential}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{ElectricPotential}{ElectricPotential}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Electric\+Properties\+::\+Electric\+Potential}
+
+
+
+Electric potential \mbox{[}v = kg\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}2⋅s\texorpdfstring{$^\wedge$}{\string^}(-\/3)⋅\+A\texorpdfstring{$^\wedge$}{\string^}(-\/1) \mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00054}{54}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047}\label{classopenphase_1_1ElectricProperties_a9c31edafd8ec659557cce4463a481047} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Electric\+Properties\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00068}{68}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1ElectricProperties_ad76031442d44a95b7e567c5a175ab209}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7}\label{classopenphase_1_1ElectricProperties_ac6b439bebf26b7d4f9786ae588a259a7} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!MolarCharge@{MolarCharge}}
+\index{MolarCharge@{MolarCharge}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{MolarCharge}{MolarCharge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage}{Storage}}$<$double$>$ openphase\+::\+Electric\+Properties\+::\+Molar\+Charge}
+
+
+
+Charge of component per mole \mbox{[}C/mol = A\texorpdfstring{$\ast$}{*}s/mol\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00056}{56}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0}\label{classopenphase_1_1ElectricProperties_ae08d12f57db5820a2470a00a6ebc63f0} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Ncomp@{Ncomp}}
+\index{Ncomp@{Ncomp}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Ncomp}{Ncomp}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Electric\+Properties\+::\+Ncomp}
+
+
+
+Number of components. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00067}{67}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_a22acca30cf8e41c8619e578423089a95}\label{classopenphase_1_1ElectricProperties_a22acca30cf8e41c8619e578423089a95} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Electric\+Properties\+::\+Nphases}
+
+
+
+Number of phases. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00066}{66}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af}\label{classopenphase_1_1ElectricProperties_a126ad1d27f33359adb4463642bc8e0af} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!PolarizationDensity@{PolarizationDensity}}
+\index{PolarizationDensity@{PolarizationDensity}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{PolarizationDensity}{PolarizationDensity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}},0$>$ openphase\+::\+Electric\+Properties\+::\+Polarization\+Density}
+
+
+
+Polarization density \mbox{[} C\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/2) = A\texorpdfstring{$\ast$}{*}s\texorpdfstring{$\ast$}{*}m\texorpdfstring{$^\wedge$}{\string^}(-\/2) \mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00051}{51}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!readable@{readable}}
+\index{readable@{readable}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1ElectricProperties_ae1628b4eeeefd54ad8414a6dc832d7b4}\label{classopenphase_1_1ElectricProperties_ae1628b4eeeefd54ad8414a6dc832d7b4} 
+\index{openphase::ElectricProperties@{openphase::ElectricProperties}!WaveVector@{WaveVector}}
+\index{WaveVector@{WaveVector}!openphase::ElectricProperties@{openphase::ElectricProperties}}
+\doxysubsubsection{\texorpdfstring{WaveVector}{WaveVector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$\mbox{\hyperlink{classopenphase_1_1dVector3}{d\+Vector3}},0$>$ openphase\+::\+Electric\+Properties\+::\+Wave\+Vector}
+
+
+
+Definition at line \mbox{\hyperlink{ElectricProperties_8h_source_l00053}{53}} of file \mbox{\hyperlink{ElectricProperties_8h_source}{Electric\+Properties.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ElectricProperties_8h}{Electric\+Properties.\+h}}\item 
+\mbox{\hyperlink{ElectricProperties_8cpp}{Electric\+Properties.\+cpp}}\end{DoxyCompactItemize}

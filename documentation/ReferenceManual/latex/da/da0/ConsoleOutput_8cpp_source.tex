@@ -1,0 +1,293 @@
+\doxysection{Console\+Output.\+cpp}
+\hypertarget{ConsoleOutput_8cpp_source}{}\label{ConsoleOutput_8cpp_source}\index{ConsoleOutput.cpp@{ConsoleOutput.cpp}}
+\mbox{\hyperlink{ConsoleOutput_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2013}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Philipp\ Engels;\ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConsoleOutput_8h}{ConsoleOutput.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RunTimeControl_8h}{RunTimeControl.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BuildInfo_8h}{BuildInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00035}00035\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00037}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{00037}}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{ConsoleOutput::get\_time}}()}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00039}00039\ \ \ \ \ std::time\_t\ now\ =\ std::chrono::system\_clock::to\_time\_t(std::chrono::system\_clock::now());}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00040}00040\ \ \ \ \ std::string\ s(30,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \ std::strftime(\&s[0],\ s.size(),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}},\ std::localtime(\&now));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00042}00042\ \ \ \ \ s.resize(size);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00046}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{ConsoleOutput::WriteTimeStep}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1RunTimeControl}{RunTimeControl}}\&\ RTC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ ColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time\ step"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ to\_string(RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_aa577fc7a6a86ca8f3c3a7eb8874e7acd}{TimeStep}})\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ to\_string(RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_a6249e13188d028e98ceec062ab20b1c4}{MaxTimeStep}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Simulation\ time"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ RTC.\mbox{\hyperlink{classopenphase_1_1RunTimeControl_a5e07ddad97ef8b9bb55c91909a86b283}{SimulationTime}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Wall\ clock\ time"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Message\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ Message;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00070}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_afc2e6fe5838194d2873710ca88f48770}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{ConsoleOutput::WriteTimeStep}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nSteps,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ ColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00073}00073\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TimeStep"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ to\_string(tStep)\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ to\_string(nSteps)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Message\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00091}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ac2d32ed88f3587b219fa312e5f7c2113}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{ConsoleOutput::WriteTimeStep}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tScreenWrite,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nSteps,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,\ \textcolor{keywordtype}{size\_t}\ ColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00094}00094\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00096}00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00098}00098\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(tStep\%tScreenWrite))}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{WriteTimeStep}}(tStep,\ nSteps,\ Message,\ ColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00106}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{00106}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ LineType)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00107}00107\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00108}00108\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00110}00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(LineType[0])\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00117}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Insert,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ LineType)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00119}00119\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00121}00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ cout\ <<\ LineType[0]\ <<\ LineType[0]\ <<\ \textcolor{stringliteral}{"{}<\ "{}}\ <<\ Insert\ <<\ \textcolor{stringliteral}{"{}\ >"{}}\ <<\ setfill(LineType[0])\ <<}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setw(std::max<int>(0,\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}}-\/Insert.size()-\/6))\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00127}00127\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00129}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00130}00130\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00131}00131\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00133}00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00140}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{00140}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00141}00141\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00142}00142\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00144}00144\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00146}00146\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ cout\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00151}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_afaf06400de7db36b71321b4ab27d463a}{00151}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_afaf06400de7db36b71321b4ab27d463a}{ConsoleOutput::WriteCoordinate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ z,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00152}00152\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(\textcolor{stringliteral}{"{}Point"{}},\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}}\{x,y,x\});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(\textcolor{stringliteral}{"{}Coordinate"{}},\mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\{x*dx,y*dx,x*dx\});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00157}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054}{00157}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054}{ConsoleOutput::WriteWithinMethod}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Instance,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Method)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00159}00159\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00160}00160\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00162}00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00164}00164\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ \ <<\ left\ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ Message\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00174}00174\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00176}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{00176}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Instance,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Method)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00179}00179\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00181}00181\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Warning)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\string~'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ \ <<\ left\ <<\ \textcolor{stringliteral}{"{}Warning:\ "{}}\ \ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ "{}}\ <<\ Message\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\string~'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00196}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{00196}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Message,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Instance,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ Method)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00197}00197\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00198}00198\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00200}00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00201}00201\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'*'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Calculation\ terminated!"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Instance:"{}}\ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Reason:\ "{}}\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Time:\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'*'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00216}00216\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00218}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}{00218}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}{ConsoleOutput::WriteStartScreen}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00219}00219\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00220}00220\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00222}00222\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00224}00224\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}>"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ \ OpenPhase\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ Copyright\ (c)\ Ruhr-\/Universitaet\ Bochum,\ Universitaetsstrasse\ 150,\ 44801\ Bochum,\ Germany\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ and\ OpenPhase\ Solutions\ GmbH,\ Universitaetsstrasse\ 136,\ 44799\ Bochum,\ Germany.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ All\ rights\ reserved.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}<"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Build\ time:\ "{}}\ <<\ \mbox{\hyperlink{BuildInfo_8h_aa0566a4cbfe1e0d65d5bd7c7eb51b208}{BUILD\_TIME}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Git\ commit\ SHA:\ "{}}\ <<\ \mbox{\hyperlink{BuildInfo_8h_a6c2739dc1239747a4e883d150d85d3e1}{GIT\_COMMIT\_SHA}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00237}00237\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00239}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aeff5fd1fe1b015cfbbb9ab57d704a7d7}{00239}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aeff5fd1fe1b015cfbbb9ab57d704a7d7}{ConsoleOutput::PressEnterToContinue}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00240}00240\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00241}00241\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Press\ ENTER\ to\ continue...\ "{}}\ <<\ flush;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00242}00242\ \ \ \ \ cin.ignore(\ numeric\_limits\ <streamsize>\ ::max(),\ \textcolor{charliteral}{'\(\backslash\)n'}\ );}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00243}00243\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00245}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_adc741bd713ef03fa4a2e95055effc2f0}{00245}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_adc741bd713ef03fa4a2e95055effc2f0}{ConsoleOutput::StartProgressIndicator}}(std::string\ IndicatorTitle)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00246}00246\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00247}00247\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00249}00249\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00251}00251\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(IndicatorTitle+\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}0-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/25-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/50-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/75-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/100\%"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00254}00254\ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}0\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_25\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_50\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_75\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_100\%"{}\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00256}00256\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00258}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0d699e41af6f89b4ea022723e8ff6e2e}{00258}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0d699e41af6f89b4ea022723e8ff6e2e}{ConsoleOutput::AdvanceProgressIndicator}}(\textcolor{keywordtype}{double}\ start\_value,\ \textcolor{keywordtype}{double}\ end\_value,\ \textcolor{keywordtype}{double}\ current\_value,\ \textcolor{keywordtype}{int}\&\ pos)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00259}00259\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00260}00260\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00262}00262\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00264}00264\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ current\_value\_normalized\ =\ 80.0*fabs((current\_value\ -\/\ start\_value)/(end\_value\ -\/\ start\_value));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ n\ =\ pos;\ n\ <\ current\_value\_normalized;\ n++)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ pos++;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\#"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ cout\ <<\ flush;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00273}00273\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00275}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1e5e83eb43dc21106d6610e655ac4f7f}{00275}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1e5e83eb43dc21106d6610e655ac4f7f}{ConsoleOutput::EndProgressIndicator}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00276}00276\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00277}00277\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00279}00279\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00281}00281\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}Done!"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00285}00285\ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8cpp_source_l00287}00287\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

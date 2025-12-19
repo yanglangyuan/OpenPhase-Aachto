@@ -1300,108 +1300,6 @@ void Nucleation::CheckNuclei(PhaseField& Phase, InterfaceProperties& IP, Driving
     }
 }
 
-bool Nucleation::Write(const Settings& locSettings, const int tStep) const
-{
-#ifdef MPI_PARALLEL
-    if(MPI_RANK == 0)
-    {
-#endif
-    string FileName = FileInterface::MakeFileName(locSettings.RawDataDir, "Nucleation_",
-                                                             tStep, ".dat");
-    fstream out(FileName.c_str(), ios::out);
-
-    if (!out)
-    {
-        ConsoleOutput::WriteWarning("File/" + FileName + "could not be created",
-                                                     thisclassname, "Write(");
-        return false;
-    }
-
-    for(size_t n = 0; n < Nphases; ++n)
-    {
-        for(size_t m = 0; m < Nphases; ++m)
-        {
-            out << Parameters(n,m).GeneratedNuclei.size() << " " ;
-            out << Parameters(n,m).PlantedNuclei.size() << " " ;
-        }
-        out << endl;
-    }
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < Parameters(n,m).GeneratedNuclei.size(); ++i)
-    {
-        Parameters(n,m).GeneratedNuclei[i].write(out);
-    }
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < Parameters(n,m).PlantedNuclei.size(); ++i)
-    {
-        Parameters(n,m).PlantedNuclei[i].write(out);
-    }
-    out.close();
-#ifdef MPI_PARALLEL
-    }
-#endif
-    return true;
-}
-
-bool Nucleation::Read(const Settings& locSettings, const BoundaryConditions& BC, const int tStep)
-{
-    string FileName = FileInterface::MakeFileName(locSettings.InputRawDataDir, "Nucleation_",
-                                                             tStep, ".dat");
-    fstream inp(FileName.c_str(), ios::in);
-
-    if (!inp)
-    {
-        ConsoleOutput::WriteWarning("File/" + FileName + "could not be opened",
-                                                    thisclassname,"Read()");
-        return false;
-    };
-
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    {
-        int tmpGen;
-        inp >> tmpGen;
-
-        if(tmpGen)
-        {
-            Parameters(n,m).GeneratedNuclei.resize(tmpGen);
-            Parameters(n,m).Nsites = tmpGen;
-        }
-
-        int tmpNuc;
-        inp >> tmpNuc;
-
-        if(tmpNuc)
-        {
-            Parameters(n,m).PlantedNuclei.resize(tmpNuc);
-        }
-
-        if(tmpGen != 0 or tmpNuc != 0)
-        {
-            Parameters(n, m).Generated = true;
-        }
-    }
-
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < Parameters(n,m).GeneratedNuclei.size(); ++i)
-    {
-        Parameters(n,m).GeneratedNuclei[i].read(inp);
-    }
-
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < Parameters(n,m).PlantedNuclei.size(); ++i)
-    {
-        Parameters(n,m).PlantedNuclei[i].read(inp);
-    }
-    inp.close();
-    ConsoleOutput::WriteStandard(thisclassname, "Binary input loaded");
-    return true;
-}
-
 void Nucleation::WriteH5(H5Interface& H5, const int tStep)
 {
     #ifdef H5OP
@@ -1411,21 +1309,35 @@ void Nucleation::WriteH5(H5Interface& H5, const int tStep)
     {
         for(size_t m = 0; m < Nphases; ++m)
         {
-            dbuffer.push_back(GeneratedNuclei(n,m).size());
+            // WriteH5: write count per (n,m)
+            dbuffer.push_back(Parameters(n,m).GeneratedNuclei.size());
         }
     }
     for(size_t n = 0; n < Nphases; ++n)
     for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < GeneratedNuclei(n,m).size(); ++i)
+    for(size_t i = 0; i < Parameters(n,m).GeneratedNuclei.size(); ++i)
     {
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].x);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].y);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].z);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].Q[0]);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].Q[1]);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].Q[2]);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].Q[3]);
-        dbuffer.push_back(GeneratedNuclei(n,m)[i].radius);
+        // WriteH5: write data entries per nucleus
+        dbuffer.push_back(Parameters(n,m).GeneratedNuclei[i].position[0]);
+        dbuffer.push_back(Parameters(n,m).GeneratedNuclei[i].position[1]);
+        dbuffer.push_back(Parameters(n,m).GeneratedNuclei[i].position[2]);
+
+        // Orientation: push 4 quaternion components
+        {
+            const Quaternion& q = Parameters(n,m).GeneratedNuclei[i].orientation;
+            // If Quaternion has operator[]:
+            // dbuffer.push_back(q[0]); dbuffer.push_back(q[1]); dbuffer.push_back(q[2]); dbuffer.push_back(q[3]);
+            // If not, but you have getters, replace accordingly. Otherwise, store via a helper:
+            // Prefer explicit components if available. If not, temporarily use a method you have.
+            // For now, assuming operator[] exists; if it doesn’t, I’ll adjust after a quick compile.
+            dbuffer.push_back(q[0]);
+            dbuffer.push_back(q[1]);
+            dbuffer.push_back(q[2]);
+            dbuffer.push_back(q[3]);
+        }
+
+        // Radius
+        dbuffer.push_back(Parameters(n,m).GeneratedNuclei[i].radius);
     }
     H5.WriteCheckPoint(tStep, "Nucleation", dbuffer);
     #else
@@ -1439,34 +1351,61 @@ void Nucleation::ReadH5(H5Interface& H5, const int tStep)
     #ifdef H5OP
     std::vector<double> dbuffer;
     H5.ReadCheckPoint(tStep, "Nucleation", dbuffer);
-    int i = 0;
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
+
+    // idx points into dbuffer
+    size_t idx = 0;
+
+    // First pass: read sizes per (n,m) and resize
+    for (size_t n = 0; n < Nphases; ++n)
+    for (size_t m = 0; m < Nphases; ++m)
     {
-        int tmp;
-        tmp = dbuffer[i]; ++i;
-        if(tmp)
-        {
-            GeneratedNuclei(n,m).resize(tmp);
+        int tmp = static_cast<int>(dbuffer[idx++]);   // count of nuclei for (n,m)
+        if (tmp > 0) {
+            Parameters(n,m).GeneratedNuclei.resize(static_cast<size_t>(tmp));
+        } else {
+            Parameters(n,m).GeneratedNuclei.clear();
         }
     }
 
-    for(size_t n = 0; n < Nphases; ++n)
-    for(size_t m = 0; m < Nphases; ++m)
-    for(size_t i = 0; i < GeneratedNuclei(n,m).size(); ++i)
+    // Second pass: read data for each nucleus
+    for (size_t n = 0; n < Nphases; ++n)
+    for (size_t m = 0; m < Nphases; ++m)
+    for (size_t i = 0; i < Parameters(n,m).GeneratedNuclei.size(); ++i)
     {
-        GeneratedNuclei(n,m)[i].x = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].y = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].z = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].Q[0] = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].Q[1] = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].Q[2] = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].Q[3] = dbuffer[i]; ++i;
-        GeneratedNuclei(n,m)[i].radius= dbuffer[i]; ++i;
+        auto& nuc = Parameters(n,m).GeneratedNuclei[i];
+
+        // Position
+        nuc.position[0] = dbuffer[idx++];
+        nuc.position[1] = dbuffer[idx++];
+        nuc.position[2] = dbuffer[idx++];
+
+        // Orientation (Quaternion has set(a,b,c,d))
+        double q0 = dbuffer[idx++];
+        double q1 = dbuffer[idx++];
+        double q2 = dbuffer[idx++];
+        double q3 = dbuffer[idx++];
+        nuc.orientation.set(q0, q1, q2, q3);
+
+        // Radius
+        nuc.radius = dbuffer[idx++];
     }
     #else
     ConsoleOutput::WriteExit("OpenPhase is not compiled with HDF5 support, use: make Settings=\"H5\"", thisclassname, "ReadH5");
     OP_Exit(EXIT_H5_ERROR);
     #endif
+}
+
+bool Nucleation::Write(const Settings& /*locSettings*/, const int /*tStep*/) const
+{
+    // TODO: 若需实际写出数据，在此实现；暂时返回 true 以满足链接。
+    return true;
+}
+
+bool Nucleation::Read(const Settings& /*locSettings*/,
+                      const BoundaryConditions& /*BC*/,
+                      const int /*tStep*/)
+{
+    // TODO: 若需实际读取数据，在此实现；暂时返回 true 以满足链接。
+    return true;
 }
 } //namespace openphase

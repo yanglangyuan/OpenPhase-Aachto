@@ -1,0 +1,288 @@
+\doxysection{Noise.\+cpp}
+\hypertarget{Noise_8cpp_source}{}\label{Noise_8cpp_source}\index{Noise.cpp@{Noise.cpp}}
+\mbox{\hyperlink{Noise_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DrivingForce_8h}{DrivingForce.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Noise_8h}{Noise.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Temperature_8h}{Temperature.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}fftw3.h"{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00035}00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00037}00037\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00039}\mbox{\hyperlink{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b}{00039}}\ \mbox{\hyperlink{classopenphase_1_1Noise_aec01c246bd30674aeada1729ba78d65b}{Noise::\string~Noise}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}})}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ fftw\_destroy\_plan(\mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00046}00046\ \textcolor{comment}{//\#ifdef\ MPI\_PARALLEL\ //\ TODO\ implement\ MPI}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00047}00047\ \textcolor{comment}{//\ \ \ \ \ \ \ \ op\_fftw\_mpi\_cleanup();}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00048}00048\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ fftw\_cleanup\_threads();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00055}\mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a998972377ed4a97de0ce07aa0d9968f4}{Noise::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ \ =\ \textcolor{stringliteral}{"{}Noise"{}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aaa6c7e406b076048c872fa688ee5a600}{Nphases}}\ \ \ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Allocate\ three-\/dimensional\ Fourier\ space\ noise}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}\ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()]();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}\ \ \ \ =\ \textcolor{keyword}{new}\ complex<double>[\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a749ad64048dd36c958443ecb61ba78a7}{LocalNumberOfCells}}()]();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Allocate\ raw\ Noise\ Storage}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}},\ 0);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ Assign\ storages\ to\ fftw\ pointers}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\_In}}\ \ =\ \textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\_Out}}\ =\ \textcolor{keyword}{reinterpret\_cast<}fftw\_complex*\textcolor{keyword}{>}(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ Create\ FFT-\/Plan,\ which\ determines\ how\ the\ FFT\ will\ be\ executed}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00076}00076\ \textcolor{preprocessor}{\#ifdef\ \_OPENMP}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00077}00077\ \ \ \ \ fftw\_init\_threads();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00078}00078\ \ \ \ \ fftw\_plan\_with\_nthreads(\mbox{\hyperlink{Globals_8h_a84e35f14fe6cb1b6648be757446483e2}{omp\_get\_max\_threads}}());}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00079}00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}}\ =\ fftw\_plan\_dft\_3d(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}},\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}},\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}},\ \mbox{\hyperlink{classopenphase_1_1Noise_ab3cb7bb4115105e95702bc0887af5c82}{fftw\_In}},\mbox{\hyperlink{classopenphase_1_1Noise_afe7d8a8057a2c9c22082a44dc2737bc2}{fftw\_Out}},FFTW\_BACKWARD,FFTW\_ESTIMATE);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ Initialize\ random\ number\ distribution}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}\ =\ normal\_distribution<double>(0.0,0.5);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ seed\ =\ std::chrono::system\_clock::now().time\_since\_epoch().count();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}}\ =\ std::default\_random\_engine(seed);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00092}\mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{Noise::ReadInput}}(\textcolor{keyword}{const}\ std::string\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}Noise\ input"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00097}00097\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00103}00103\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00105}00105\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00106}00106\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{ReadInput}}(data);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00108}00108\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00111}\mbox{\hyperlink{classopenphase_1_1Noise_a6b1e1819b6f8ec548de22dc7a326ed3c}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a0a10c65c76711d0276ff9ea9e14325ec}{Noise::ReadInput}}(std::stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00112}00112\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//\ Read\ Parameters}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}}\ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dgamma"{}}),\textcolor{keyword}{false},0);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}iTime"{}}));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dWaveLength"{}}));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{FixAmpl}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}dFixAmpl"{}}));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ input\ TimeSteps\ makes\ sense}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ <\ 1)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ std::string\ message\ =\ \textcolor{stringliteral}{"{}A\ input\ value\ TimeSteps\ <\ 1\ does\ not\ make\ sense!\ "{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Set\ TimeSteps\ to\ 1!"{}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\ message,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ input\ CutOffWaveLength\ makes\ sense}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00132}00132\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ std::string\ message\ =\ \textcolor{stringliteral}{"{}A\ input\ value\ CutOffWaveLength\ <\ 0\ does\ not\ make\ sense!\ "{}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Set\ CutOffWaveLength\ to\ 0!"{}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{ConsoleOutput::WriteWarning}}(\ message,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00139}00139\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00142}\mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{00142}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Noise::Generate}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00143}00143\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{double}\ Lx\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{double}\ Ly\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordtype}{double}\ Lz\ =\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ /\ (double(\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}})\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00149}00149\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ WaveVector;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ WaveVector[0]\ =\ Lx*(i*(i\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/i)*(i\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}/2));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ WaveVector[1]\ =\ Ly*(j*(j\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/j)*(j\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}/2));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ WaveVector[2]\ =\ Lz*(k*(k\ <=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2)\ -\/\ (\mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/k)*(k\ >\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}/2));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(WaveVector.\mbox{\hyperlink{classopenphase_1_1dVector3_a9a8c36d79ee72cd4466209026f8c1db9}{abs}}()\ <\ 2.0\ *\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/\mbox{\hyperlink{classopenphase_1_1Noise_a4d313209887909952f407f24bfb888a8}{CutOffWaveLength}})}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ Gaussian\ white\ noise\ coefficients}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ complex<double>\ cijk\{\mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}(\mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}}),\mbox{\hyperlink{classopenphase_1_1Noise_a8da9039ca4d2ecbbb89ef8e3ac93ae9e}{distribution}}(\mbox{\hyperlink{classopenphase_1_1Noise_ad2299a49747d08557ee28cbf63ddcadb}{generator}})\};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cijk\ /=\ abs(cijk);}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ computed\ coefficient}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ =\ cijk;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a78ce837f23a99b20a62caf3ecb86c7ac}{RandomFourier}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ =\ complex<double>(0.0,0.0);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00169}00169\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{comment}{//\ Do\ Fourier\ transform}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00171}00171\ \ \ \ \ fftw\_execute(\mbox{\hyperlink{classopenphase_1_1Noise_a98852b7300364a8b27242fc894f59cb7}{FFTBackward}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{comment}{//\ Calculate\ global\ maximum\ of\ RandomReal}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordtype}{double}\ Max\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00176}00176\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,reduction(max:Max))}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00177}00177\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ Max\ =\ max(Max,\ abs(real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)])));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00180}00180\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00182}00182\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ /=\ Max;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ -\/=\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]\ /=\ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}};}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00188}00188\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00191}\mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{00191}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{Noise::UpdateRaw}}(\textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00192}00192\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00194}00194\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ initial\ noise\ distribution}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ initial\ noise\ distribution\ and\ add\ it\ to\ the\ driving\ force}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ initial\ noise}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}\ *\ real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ new\ noise\ distribution\ in\ order\ to\ able\ to\ interpolate}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ between\ the\ old\ distribution\ and\ the\ new\ one.}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ check\ if\ a\ new\ noise\ Distribution\ has\ to\ be\ generated}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(tStep\%\mbox{\hyperlink{classopenphase_1_1Noise_a04742a6af815a9c573b5dadbab7a8125}{TimeSteps}}))\ \mbox{\hyperlink{classopenphase_1_1Noise_ad23b30dc87dedcfba0d93000582f8014}{Generate}}();}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ noise\ for\ this\ time\ step}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ +=\ real(\mbox{\hyperlink{classopenphase_1_1Noise_acf24930d74d3de8341eaa3d64dc0f0e0}{RandomReal}}[k\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}*(j\ +\ \mbox{\hyperlink{classopenphase_1_1Noise_aa4f517798d5f7a11302c6c3e6f6d08d1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}*i)]);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ global\ maximum\ of\ Raw}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordtype}{double}\ Max\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00227}00227\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,reduction(max:Max))}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00228}00228\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ Max\ =\ max(Max,\ abs(\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00231}00231\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00233}00233\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00234}00234\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k)\ /=\ Max;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00237}00237\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00240}\mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{00240}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{Noise::AddToDrivingForce}}(\textcolor{keywordtype}{int}\ tStep,\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}\&\ Temp,\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ DF)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00241}00241\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00242}00242\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{UpdateRaw}}(tStep);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00246}00246\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ noise\ to\ driving\ force}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).cbegin();\ it\ <\ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ampl\ =\ sqrt(\ 2\ *\ \mbox{\hyperlink{structopenphase_1_1PhysicalConstants_a745122c9397934cad6fe8f71195a8f0c}{PhysicalConstants::k\_Boltzmann}}\ *\ Temp(i,j,k)/\mbox{\hyperlink{classopenphase_1_1Noise_a22d0504ec9a55e670c8aae4501eedd6f}{gamma}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(it-\/>indexA,\ it-\/>indexB,\ Ampl\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00254}00254\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00257}\mbox{\hyperlink{classopenphase_1_1Noise_afc868b865d2f7c836edaf0d94c9be199}{00257}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_ad3e74715d23e41e37be7c75dea2b4fec}{Noise::AddToDrivingForce}}(\textcolor{keywordtype}{int}\ tStep,\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ DF)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00258}00258\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00259}00259\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Noise_a927b072b8703968c24187bb4a2aa9013}{UpdateRaw}}(tStep);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{comment}{//\ Interpolate\ between\ old\ and\ new\ noise\ distribution\ by\ adding\ RandomReal}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00262}00262\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}},0,)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00263}00263\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ noise\ to\ driving\ force}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).cbegin();\ it\ <\ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ DF.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(it-\/>indexA,\ it-\/>indexB,\ \mbox{\hyperlink{classopenphase_1_1Noise_a88da89982d3e0a9d5c0a3af9dd70d845}{FixAmpl}}\ *\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k));}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00269}00269\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00270}00270\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00271}00271\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00273}\mbox{\hyperlink{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc}{00273}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Noise_aa65fb28095b7b94f2d80a6855d7690dc}{Noise::WriteVTK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision)}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00274}00274\ \{}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00275}00275\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00276}00276\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00278}00278\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\{\textcolor{stringliteral}{"{}Noise"{}},\ \ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1Noise_aa69e7880312f754d41b9342f4c5cfead}{Raw}}(i,j,k);\}\});}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00279}00279\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00280}00280\ \}}
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{Noise_8cpp_source_l00282}00282\ \}\textcolor{comment}{//\ end\ of\ name\ space}}
+
+\end{DoxyCode}

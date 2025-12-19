@@ -4,9 +4,9 @@ Standard Open Phase Input File
 @RunTimeControl
 
 $SimTtl   Simulation Title                          : Normal grain growth
-$nSteps   Number of Time Steps                      : 2000
-$FTime    Output to disk every (tSteps)             : 100
-$STime    Output to screen every (tSteps)           : 100
+$nSteps   Number of Time Steps                      : 100
+$FTime    Output to disk every (tSteps)             : 50
+$STime    Output to screen every (tSteps)           : 50
 $LUnits   Units of length                           : m
 $TUnits   Units of time                             : s
 $MUnits   Units of mass                             : kg
@@ -35,7 +35,8 @@ $EnergyModel_0_0    Interface energy model          : ISO
 $Sigma_0_0          Interface energy                : 0.24
 
 $MobilityModel_0_0  Interface energy model          : ISO
-$Mu_0_0             Interface mobility              : 1.0e-7
+
+$Mu_0_0             Interface mobility              :  1.0e-7
 
 @BoundaryConditions
 
@@ -47,3 +48,24 @@ $BCNY   Y axis far end boundary condition           : Periodic
 
 $BC0Z   Z axis beginning boundary condition         : Periodic
 $BCNZ   Z axis far end boundary condition           : Periodic
+
+@DrivingForce
+! DrivingForce module controls additional driving forces acting on interfaces.
+! Parameters:
+!   Average   : YES/NO    -> perform spatial averaging of local dG before applying
+!   bUnify    : YES/NO    -> unify driving force to a single value across interface
+!   Range     : integer   -> averaging radius (in grid points)
+!   Threshold : real      -> phi threshold for weight cutoff when averaging
+!   Limiting  : YES/NO    -> enable limiting of large dG to stabilize interface
+!   Limit_i_j : real in (0,1] -> limiting factor for thermodynamic phase pair (i,j)
+! Notes:
+!   - For systems with a single thermodynamic phase (Nphases=1) only Limit_0_0 is relevant.
+!   - Use UserDrivingForce, ElasticProperties::CalculateDrivingForce or
+!     DoubleObstacle::CalculateCurvatureDrivingForce to populate driving forces.
+$Average    : Yes
+$bUnify     : No
+$Range      : 3
+$Threshold  : 0.2
+$Limiting   : Yes
+$WeightsMode: PHASEFIELDS
+$Limit_0_0  : 0.95

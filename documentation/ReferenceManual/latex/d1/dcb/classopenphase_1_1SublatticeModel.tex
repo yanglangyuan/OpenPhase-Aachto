@@ -1,0 +1,226 @@
+\doxysection{openphase\+::Sublattice\+Model Class Reference}
+\hypertarget{classopenphase_1_1SublatticeModel}{}\label{classopenphase_1_1SublatticeModel}\index{openphase::SublatticeModel@{openphase::SublatticeModel}}
+
+
+\texorpdfstring{$<$}{<} Stores the sublattice properties  
+
+
+
+
+{\ttfamily \#include "{}Sublattice\+Model.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ab7f04d4ea1632ca175b86e35c70393ab}{Initialize}} (void)
+\item 
+\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a4e79826877c28601597eb0c7d684ffc8}{Sublattice\+Model}} (double n\+\_\+sites, unsigned int n\+\_\+cons=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a2de3f4f753ab4f913c2b82d2d3f2711e}{is\+Element\+Present}} (int i)
+\begin{DoxyCompactList}\small\item\em Returns boolean values, if constituent is present on sublattice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a3f31428abcaa1dea1fbccdfec501db7f}{has\+Vacancies}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1Element}{Element}} $>$ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}
+\begin{DoxyCompactList}\small\item\em Constituents composing the sublattice. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ad714d72e972c71cd2abf0ef2cbfc56d4}{Site}}
+\begin{DoxyCompactList}\small\item\em Sublattice contribution to the chemical formular unit. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ab4cf575f59b6226c13a2083a9584d050}{Reference}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}{get\+Ncons}} ()
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}{gethas\+Vacancies}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Stores the sublattice properties 
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00036}{36}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1SublatticeModel_a4e79826877c28601597eb0c7d684ffc8}\label{classopenphase_1_1SublatticeModel_a4e79826877c28601597eb0c7d684ffc8} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!SublatticeModel@{SublatticeModel}}
+\index{SublatticeModel@{SublatticeModel}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{SublatticeModel()}{SublatticeModel()}}
+{\footnotesize\ttfamily openphase\+::\+Sublattice\+Model\+::\+Sublattice\+Model (\begin{DoxyParamCaption}\item[{double}]{n\+\_\+sites,  }\item[{unsigned int}]{n\+\_\+cons = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructor
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{SublatticeModel_8cpp_source}{Sublattice\+Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_ad714d72e972c71cd2abf0ef2cbfc56d4}{Site}}\ =\ n\_sites;}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}\label{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!gethasVacancies@{gethasVacancies}}
+\index{gethasVacancies@{gethasVacancies}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{gethasVacancies()}{gethasVacancies()}}
+{\footnotesize\ttfamily bool openphase\+::\+Sublattice\+Model\+::gethas\+Vacancies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function will loop over all constituents and checks, if one of them is considered a vacancy.
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{SublatticeModel_8cpp_source}{Sublattice\+Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ temp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}};\ i++)}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}[i].Index\ <\ 0)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}\label{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!getNcons@{getNcons}}
+\index{getNcons@{getNcons}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{getNcons()}{getNcons()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Sublattice\+Model\+::get\+Ncons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This will return the number of constituents of this sublattice.
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{SublatticeModel_8cpp_source}{Sublattice\+Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}.size();}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SublatticeModel_ab7f04d4ea1632ca175b86e35c70393ab}\label{classopenphase_1_1SublatticeModel_ab7f04d4ea1632ca175b86e35c70393ab} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Sublattice\+Model\+::\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{SublatticeModel_8cpp_source}{Sublattice\+Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}}\ =\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a59536e226416f47a4a8710373888c160}{getNcons}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a3f31428abcaa1dea1fbccdfec501db7f}{hasVacancies}}\ =\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_abe617352148fd733607f8aebf84c7386}{gethasVacancies}}();}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SublatticeModel_a2de3f4f753ab4f913c2b82d2d3f2711e}\label{classopenphase_1_1SublatticeModel_a2de3f4f753ab4f913c2b82d2d3f2711e} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!isElementPresent@{isElementPresent}}
+\index{isElementPresent@{isElementPresent}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{isElementPresent()}{isElementPresent()}}
+{\footnotesize\ttfamily bool openphase\+::\+Sublattice\+Model\+::is\+Element\+Present (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Returns boolean values, if constituent is present on sublattice. 
+
+This function will loop over all constituents and checks, if element i is present on this sublattice. "{}i"{} has to be the index, not the component number!!
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{SublatticeModel_8cpp_source}{Sublattice\+Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ temp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}{Ncons}};\ n++)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}{Constituent}}[n].Index\ ==\ i)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f}\label{classopenphase_1_1SublatticeModel_a75fc6ee1fa105072d6f5663cbca55c7f} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!Constituent@{Constituent}}
+\index{Constituent@{Constituent}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{Constituent}{Constituent}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classopenphase_1_1Element}{Element}}$>$ openphase\+::\+Sublattice\+Model\+::\+Constituent}
+
+
+
+Constituents composing the sublattice. 
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00044}{44}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1SublatticeModel_a3f31428abcaa1dea1fbccdfec501db7f}\label{classopenphase_1_1SublatticeModel_a3f31428abcaa1dea1fbccdfec501db7f} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!hasVacancies@{hasVacancies}}
+\index{hasVacancies@{hasVacancies}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{hasVacancies}{hasVacancies}}
+{\footnotesize\ttfamily bool openphase\+::\+Sublattice\+Model\+::has\+Vacancies}
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00040}{40}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050}\label{classopenphase_1_1SublatticeModel_a251eb53396fa841ccd0710bfab518050} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!Ncons@{Ncons}}
+\index{Ncons@{Ncons}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{Ncons}{Ncons}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Sublattice\+Model\+::\+Ncons}
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00039}{39}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1SublatticeModel_ab4cf575f59b6226c13a2083a9584d050}\label{classopenphase_1_1SublatticeModel_ab4cf575f59b6226c13a2083a9584d050} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!Reference@{Reference}}
+\index{Reference@{Reference}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{Reference}{Reference}}
+{\footnotesize\ttfamily int openphase\+::\+Sublattice\+Model\+::\+Reference}
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00046}{46}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+\Hypertarget{classopenphase_1_1SublatticeModel_ad714d72e972c71cd2abf0ef2cbfc56d4}\label{classopenphase_1_1SublatticeModel_ad714d72e972c71cd2abf0ef2cbfc56d4} 
+\index{openphase::SublatticeModel@{openphase::SublatticeModel}!Site@{Site}}
+\index{Site@{Site}!openphase::SublatticeModel@{openphase::SublatticeModel}}
+\doxysubsubsection{\texorpdfstring{Site}{Site}}
+{\footnotesize\ttfamily double openphase\+::\+Sublattice\+Model\+::\+Site}
+
+
+
+Sublattice contribution to the chemical formular unit. 
+
+
+
+Definition at line \mbox{\hyperlink{SublatticeModel_8h_source_l00045}{45}} of file \mbox{\hyperlink{SublatticeModel_8h_source}{Sublattice\+Model.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SublatticeModel_8h}{Sublattice\+Model.\+h}}\item 
+\mbox{\hyperlink{SublatticeModel_8cpp}{Sublattice\+Model.\+cpp}}\end{DoxyCompactItemize}

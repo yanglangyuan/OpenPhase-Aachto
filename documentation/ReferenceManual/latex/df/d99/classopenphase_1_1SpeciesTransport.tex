@@ -1,0 +1,1584 @@
+\doxysection{openphase\+::Species\+Transport Class Reference}
+\hypertarget{classopenphase_1_1SpeciesTransport}{}\label{classopenphase_1_1SpeciesTransport}\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+
+
+{\ttfamily \#include "{}Species\+Transport.\+h"{}}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a7a9c659248ad244461bab959794a7365}{Species\+Transport}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_adddd7ca33f594b500a9f4f40ecf7679b}{Read\+Input}} (string Input\+File)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_af9d735cc0c9b8dfb8ed6cca69b59decb}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ac7735f242ae9808d664ce3d1c8895278}{Calculate\+Species\+Heat\+Capacities\+And\+Enthalpies}} (\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ae3b13376ee12cea47868dec24dc475ec}{Update\+Fields}} (\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_acbfd7a7a058e93bb809b8465799047d1}{Set\+Boundary\+Conditions}} (\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a7b440190db073ef309362750852ff165}{Set\+Free\+BCNX}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a95248eb224ecd39d49db1dbf25f743eb}{Calculate\+Advection}} (\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1FlowMixture}{Flow\+Mixture}} \&FM, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a179fe6f1bf868382d0295262a754b54b}{Calculate\+Diffusion}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a34c34af7fc043c12eb9d00fc4975e85b}{Calculate\+Reaction}} (\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, int n\+Dim, double dt)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aaf9534eb97a03ef810b43ba44328ce57}{Update\+Ghost\+Points}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6d0c258292a75d2560e24c08fae52e14}{Calculate\+Ghost\+Points}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a0b1e68f286b561fb6a3abcd9e53ede25}{Calculate\+Ghost\+Points\+Conjugate\+Heat\+Transfer}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&SB)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9ccfb9753eee62aa2a50a19191b6a567}{Set\+Initial}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&FL, \mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&ET, const vector$<$ double $>$ \&BM, const vector$<$ double $>$ \&FM, const vector$<$ double $>$ \&AM, double TB, double TF, double TA)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a30a5babc31fc63215905346c7df9349d}{Write\+VTKMass\+Fractions}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step, const int precision=16)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6a9c4ea4a89a7e259af9b62690dd4cc1}{Write\+VTKHHR}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step, const int precision=16)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aabdaddf058280918212425d616b80cde}{Calculate\+Mean\+Molar\+Mass}} (const int i, const int j, const int k, string whichtime)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a78c02305de009409f74fdee55cc6db42}{Mole\+Fraction}} (const int i, const int j, const int k, double MMW, size\+\_\+t kc)
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a450a6d57a2f3cfdb8f3902b18cfd8300}{Calculate\+Phi\+Van\+Leer}} (double r)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a12639244b90c925c27996731c6a65f09}{IF\+\_\+\+REACTION}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{n\+Species}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a64801383bf5c30e018cbecde1ae572a9}{X0\+Burnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa63e8806c2783d5a1bbe024cfad98b3c}{XNBurnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa31a7681840fa7b5c286ecd87e038c85}{Y0\+Burnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a5449363b7312c4bf66360d9bfbf62268}{YNBurnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_af065e14d1e9a3b8d2142bff40b21366e}{Z0\+Burnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8a7359b9036e87dcbad80fce52a9a3d5}{ZNBurnt\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a83e3d560c2d5904f7f14beb6a3e5d751}{X0\+Fuel\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ad14dd79d10fa246f1e8a9a54cdda14a0}{XNFuel\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9c9865b712ab240be1050e08cc8e87c6}{Y0\+Fuel\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a535495e80d85ac3125d6571686f7fdc5}{YNFuel\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a36d2b92e24a6767319354d6df8e3e95e}{Z0\+Fuel\+Zone}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a67ca35afb275c51837f4373e649f92f9}{ZNFuel\+Zone}}
+\item 
+int \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a11c5409fa221ff8d27e414ebf137f973}{Temp\+Burnt\+Gas}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2ed987025a10ee5c2fed3125c1e9661d}{Advection\+Upwind}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a4c5ae8e8ff4a5220d8f5d1475399edfa}{Advection\+Central}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ac43408f5521c63da79490c6a7a5bb39a}{Advection\+Van\+Leer}}
+\item 
+bool \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3}{Species}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}
+\begin{DoxyCompactList}\small\item\em Heat release rate of reaction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\+\_\+\+Species}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}{h\+\_\+\+Species}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{Mass\+Diff\+\_\+\+Species}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\+\_\+\+Species}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{Mass\+Fractions}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{Mass\+Fractions\+Old}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695}{n\+Coeffs}} =15
+\item 
+\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_afc3c660a88ac28d6140739a3af651f03}{Y0X}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{Molecular\+Weight}}
+\item 
+\mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 2 $>$ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{Poly\+Nom\+Coeffs}}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac}{Fuel\+Consumption\+Rate}} =0.\+0
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa0f7aa5ca93bc45fa1eaec042546943e}{Fuel\+Index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00063}{63}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a7a9c659248ad244461bab959794a7365}\label{classopenphase_1_1SpeciesTransport_a7a9c659248ad244461bab959794a7365} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!SpeciesTransport@{SpeciesTransport}}
+\index{SpeciesTransport@{SpeciesTransport}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{SpeciesTransport()}{SpeciesTransport()}}
+{\footnotesize\ttfamily openphase\+::\+Species\+Transport\+::\+Species\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+File\+Name} & Constructor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00066}{66}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_af9d735cc0c9b8dfb8ed6cca69b59decb}{Initialize}}(locSettings);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_adddd7ca33f594b500a9f4f40ecf7679b}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a95248eb224ecd39d49db1dbf25f743eb}\label{classopenphase_1_1SpeciesTransport_a95248eb224ecd39d49db1dbf25f743eb} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateAdvection@{CalculateAdvection}}
+\index{CalculateAdvection@{CalculateAdvection}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateAdvection()}{CalculateAdvection()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Advection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowMixture}{Flow\+Mixture}} \&}]{FM,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00682}{682}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00683\ \{}
+\DoxyCodeLine{00684\ \ \ \ \ std::vector<int>\ dir(3);}
+\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keywordtype}{double}\ eps=1e-\/10;}
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00687\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}},0,)}
+\DoxyCodeLine{00688\ \ \ \ \ \{\ \ }
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tc\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k);}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ direction=0;\ direction<3;\ ++direction)}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[0]\ =\ (direction\ ==\ 0)?1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}:0;}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[1]\ =\ (direction\ ==\ 1)?1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}:0;}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[2]\ =\ (direction\ ==\ 2)?1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}:0;}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip=i+dir[0];}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jp=j+dir[1];}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kp=k+dir[2];}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ im=i-\/dir[0];}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jm=j-\/dir[1];}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ km=k-\/dir[2];}
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tp\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ip,jp,kp);}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tm\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(im,jm,km);}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Vc\ =\ FM.\mbox{\hyperlink{classopenphase_1_1FlowMixture_a012b44fb4715c7d94412bde28e453998}{V\_Mixture}}(i,j,k)[direction];}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2ed987025a10ee5c2fed3125c1e9661d}{AdvectionUpwind}})}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Vc>=0)}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tc-\/Tm);}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{n\});}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cm\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(im,jm,km,\{n\});}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{n\})\ +=\ (\ -\/dt/dx\ *\ Vc\ *\ (C-\/Cm));}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tp-\/Tc);}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{n\});}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cp\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ip,jp,kp,\{n\});}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{n\})\ +=\ (\ -\/dt/dx\ *\ Vc\ *\ (Cp-\/C));}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ac43408f5521c63da79490c6a7a5bb39a}{AdvectionVanLeer}})}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Thp\ =\ (Tc+Tp)/2.0;}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Thm\ =\ (Tc+Tm)/2.0;}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Vc>=0)}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ imm=i-\/2.0*dir[0];}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jmm=j-\/2.0*dir[1];}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kmm=k-\/2.0*dir[2];}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tmm\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(imm,jmm,kmm);}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ \ \ =\ (Tc-\/Tm)/(Tp-\/Tc+eps);}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi\ \ =\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thp\ \ \ \ \ \ \ \ \ =\ Tc+0.5*phi*(Tp-\/Tc);}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ =\ (Tm-\/Tmm)/(Tc-\/Tm+eps);}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim=(rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thm=Tm+0.5*phim*(Tc-\/Tm);}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ \ -\/dt*Vc*(Thp-\/Thm)/dx;}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{n\});}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cp\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ip,jp,kp,\{n\});}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cm\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(im,jm,km,\{n\});}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cmm\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(imm,jmm,kmm,\{n\});}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ \ \ =\ (C-\/Cm)/(Cp-\/C+eps);}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi\ \ =\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Chp\ \ \ \ \ \ \ \ \ =\ C+0.5*phi*(Cp-\/C);}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ \ =\ (Cm-\/Cmm)/(C-\/Cm+eps);}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim\ =\ (rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Chm\ \ \ \ \ \ \ \ \ =\ Cm+0.5*phim*(C-\/Cm);}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{n\})\ +=\ \ -\/dt\ *\ Vc\ *\ (Chp-\/Chm)/dx;}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ipp=i+2.0*dir[0];}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jpp=j+2.0*dir[1];}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kpp=k+2.0*dir[2];}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tpp\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ipp,jpp,kpp);}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ =\ (Tpp-\/Tp)/(Tp-\/Tc+eps);}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi=(r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thp=Tp-\/0.5*phi*(Tp-\/Tc);}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ =\ (Tp-\/Tc)/(Tc-\/Tm+eps);}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim=(rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thm=Tc-\/0.5*phim*(Tc-\/Tm);}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ \ +=\ \ -\/dt*Vc*(Thp-\/Thm)/dx;}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{n\});}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cm\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(im,jm,km,\{n\});}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cp\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ip,jp,kp,\{n\});}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cpp\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ipp,jpp,kpp,\{n\});}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ \ \ \ =\ (Cpp-\/Cp)/(Cp-\/C+eps);}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi\ \ =\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Chp\ \ =\ Cp-\/0.5*phi*(Cp-\/C);}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rm\ \ \ =\ (Cp-\/C)/(C-\/Cm+eps);}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phim\ =\ (rm+fabs(rm))/(1.0+fabs(rm));}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Chm\ \ =\ C-\/0.5*phim*(C-\/Cm);}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{n\})\ +=\ \ -\/dt\ *\ Vc\ *\ (Chp-\/Chm)/dx;}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a4c5ae8e8ff4a5220d8f5d1475399edfa}{AdvectionCentral}})}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ -\/dt/dx\ *\ Vc\ *\ (Tp-\/Tm)/2.0;}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cm\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(im,jm,km,\{n\});}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cp\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ip,jp,kp,\{n\});}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{n\})\ +=\ (\ -\/dt/dx\ *\ Vc\ *\ (Cp-\/Cm)/2.0);}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00805\ \ \ \ \ \}}
+\DoxyCodeLine{00806\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00807\ \}\ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a179fe6f1bf868382d0295262a754b54b}\label{classopenphase_1_1SpeciesTransport_a179fe6f1bf868382d0295262a754b54b} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateDiffusion@{CalculateDiffusion}}
+\index{CalculateDiffusion@{CalculateDiffusion}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateDiffusion()}{CalculateDiffusion()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Diffusion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00554}{554}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00555\ \{}
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{00557\ \ \ \ \ std::vector<int>\ dir(3);}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}};}
+\DoxyCodeLine{00559\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}},0,)}
+\DoxyCodeLine{00560\ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tc\ \ \ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k);}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhoc\ \ \ =\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k,\{MixtureComp\});}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cpc\ \ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktc\ \ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ direction=0;\ direction<3;\ ++direction)}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[0]\ =\ (direction\ ==\ 0)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ :\ 0;}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[1]\ =\ (direction\ ==\ 1)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ :\ 0;}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir[2]\ =\ (direction\ ==\ 2)\ ?\ 1*\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ :\ 0;}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip=i+dir[0];}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jp=j+dir[1];}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kp=k+dir[2];}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ im=i-\/dir[0];}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jm=j-\/dir[1];}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ km=k-\/dir[2];}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tp\ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(ip,jp,kp);}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tm\ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(im,jm,km);}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktp\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(ip,jp,kp);}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ktm\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(im,jm,km);}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ +=\ dt/(Rhoc*cpc)\ *\ (ktc\ *\ (Tp+Tm-\/2.0*Tc)/dx/dx\ +\ (ktp-\/ktm)/dx/2.0\ *\ (Tp-\/Tm)/dx/2.0);}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhop\ \ \ \ =\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(ip,jp,kp,\{MixtureComp\});}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Rhom\ \ \ \ =\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(im,jm,km,\{MixtureComp\});}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ipp=i+2.0*dir[0];}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jpp=j+2.0*dir[1];}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kpp=k+2.0*dir[2];}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ imm=i-\/2.0*dir[0];}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ jmm=j-\/2.0*dir[1];}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kmm=k-\/2.0*dir[2];}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00593\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVkc1[nSpecies];}}
+\DoxyCodeLine{00594\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVkp1[nSpecies];}}
+\DoxyCodeLine{00595\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVkm1[nSpecies];}}
+\DoxyCodeLine{00596\ \textcolor{comment}{}}
+\DoxyCodeLine{00597\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ MMWc\ \ =\ CalculateMeanMolarMass(i,\ j,\ k,\ "{}old"{});}}
+\DoxyCodeLine{00598\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ MMWp\ \ =\ CalculateMeanMolarMass(ip\ ,jp\ ,kp\ \ ,"{}old"{});}}
+\DoxyCodeLine{00599\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ MMWpp\ =\ CalculateMeanMolarMass(ipp,jpp,kpp\ ,"{}old"{});}}
+\DoxyCodeLine{00600\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ MMWm\ \ =\ CalculateMeanMolarMass(im\ ,jm\ ,km\ \ ,"{}old"{});}}
+\DoxyCodeLine{00601\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ MMWmm\ =\ CalculateMeanMolarMass(imm,jmm,kmm\ ,"{}old"{});}}
+\DoxyCodeLine{00602\ \textcolor{comment}{}}
+\DoxyCodeLine{00603\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVcc=0.0;}}
+\DoxyCodeLine{00604\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVcp=0.0;}}
+\DoxyCodeLine{00605\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ YkVcm=0.0;}}
+\DoxyCodeLine{00606\ \textcolor{comment}{}}
+\DoxyCodeLine{00607\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for(size\_t\ ic\ =0;\ ic\ <\ nSpecies;\ ic++)}}
+\DoxyCodeLine{00608\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00609\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Mk\ \ \ \ =\ MolecularWeight(\{ic\});}}
+\DoxyCodeLine{00610\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Xc\ \ \ \ =\ MoleFraction(i,j,k,\ MMWc\ ,ic);}}
+\DoxyCodeLine{00611\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Xp\ \ \ \ =\ MoleFraction(ip\ ,jp\ ,kp,\ MMWp,ic);}}
+\DoxyCodeLine{00612\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Xpp\ \ \ =\ MoleFraction(ipp,jpp,kpp,\ MMWpp,ic);}}
+\DoxyCodeLine{00613\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Xm\ \ \ \ =\ MoleFraction(im\ ,jm\ ,km,\ MMWm,ic);}}
+\DoxyCodeLine{00614\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Xmm\ \ \ =\ MoleFraction(imm,jmm,kmm,\ MMWmm,ic);}}
+\DoxyCodeLine{00615\ \textcolor{comment}{}}
+\DoxyCodeLine{00616\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkc1[ic]\ \ \ =\ -\/\ MassDiff\_Species(i,j,k,\{ic\})\ \ \ *Mk/MMWc*(Xp-\/Xm)\ /dx/2.0;}}
+\DoxyCodeLine{00617\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkp1[ic]\ \ \ =\ -\/\ MassDiff\_Species(ip,jp,kp,\{ic\})*Mk/MMWp*(Xpp-\/Xc)/dx/2.0;}}
+\DoxyCodeLine{00618\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkm1[ic]\ \ \ =\ -\/\ MassDiff\_Species(im,jm,km,\{ic\})*Mk/MMWm*(Xc-\/Xmm)/dx/2.0;}}
+\DoxyCodeLine{00619\ \textcolor{comment}{}}
+\DoxyCodeLine{00620\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVcc\ \ \ \ \ \ \ +=\ \ MassFractionsOld(i,j,k)\ \ \ (\{ic\})*MassDiff\_Species(i,j,k,\{ic\})\ \ \ *\ Mk/MMWc*(Xp-\/Xm)\ /dx/2.0;}}
+\DoxyCodeLine{00621\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVcp\ \ \ \ \ \ \ +=\ \ MassFractionsOld(ip,jp,kp,\{ic\})*MassDiff\_Species(ip,jp,kp,\{ic\})*\ Mk/MMWp*(Xpp-\/Xc)/dx/2.0;}}
+\DoxyCodeLine{00622\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVcm\ \ \ \ \ \ \ +=\ \ MassFractionsOld(im,jm,km,\{ic\})*MassDiff\_Species(im,jm,km,\{ic\})*\ Mk/MMWm*(Xc-\/Xmm)/dx/2.0;}}
+\DoxyCodeLine{00623\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00624\ \textcolor{comment}{}}
+\DoxyCodeLine{00625\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for(size\_t\ ic\ =0;\ ic\ <\ nSpecies;\ ic++)}}
+\DoxyCodeLine{00626\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00627\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.Tx(i,\ j,\ k)\ -\/=\ dt/cpc\ *\ (Cp\_Species(i,j,k,\{ic\})\ *\ (YkVkc1[ic]+\ YkVcc))\ *\ (Tp-\/Tm)/dx/2.0;}}
+\DoxyCodeLine{00628\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MassFractionsOld(i,\ j,\ k,\{ic\})\ -\/=\ dt/Rhoc\ *\ (Rhop\ *\ (YkVkp1[ic]+\ YkVcp)\ -\/\ Rhom*(YkVkm1[ic]+\ YkVcm))/dx/2.0;}}
+\DoxyCodeLine{00629\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00630\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ YkVkc[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ YkVkp[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ YkVkm[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ ic\ =0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MFc\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{ic\});}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MFp\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ip,jp,kp,\{ic\});}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MFpp\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(ipp,jpp,kpp,\{ic\});}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MFm\ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(im,jm,km,\{ic\});}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MFmm\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(imm,jmm,kmm,\{ic\});}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkc[ic]\ \ \ =\ -\/\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}(i,j,k,\{ic\})\ \ \ *(MFp-\/MFm)/dx/2.0;}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkp[ic]\ \ \ =\ -\/\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}(ip,jp,kp,\{ic\})*(MFpp-\/MFc)/dx/2.0;}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ YkVkm[ic]\ \ \ =\ -\/\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}(im,jm,km,\{ic\})*(MFc-\/MFmm)/dx/2.0;}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ ic\ =0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ -\/=\ dt/cpc\ *\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}(i,j,k,\{ic\})\ *\ (YkVkc[ic]))\ *\ (Tp-\/Tm)/dx/2.0;}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ -\/=\ dt/Rhoc\ *\ (Rhop\ *\ (YkVkp[ic])\ -\/\ Rhom*(YkVkm[ic]))/dx/2.0;}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00655\ \ \ \ \ \}}
+\DoxyCodeLine{00656\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00657\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a6d0c258292a75d2560e24c08fae52e14}\label{classopenphase_1_1SpeciesTransport_a6d0c258292a75d2560e24c08fae52e14} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateGhostPoints@{CalculateGhostPoints}}
+\index{CalculateGhostPoints@{CalculateGhostPoints}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateGhostPoints()}{CalculateGhostPoints()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Ghost\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00409\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ =\ 0;}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ 1;}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordtype}{double}\ ep=1e-\/8;}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordtype}{double}\ Tb=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a5249a282ae95e0d6c61d92cceaf36763}{TempSolid}};}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{double}\ Qb=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac9a5f0d1d3152e845a0ab7bdffe2c473}{HeatFlux}};}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordtype}{double}\ D\ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}};}
+\DoxyCodeLine{00416\ \ \ \ \ }
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{00419\ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{00421\ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{int}\ iBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}*2.0;}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordtype}{int}\ jBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}*2.0;}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordtype}{int}\ kBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}*2.0;}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00431\ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_Tfout=\textcolor{keyword}{false};}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_Tfout)}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xs\ +\ Norm*X;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ Xb\ +\ Norm*D;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kf\ \ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cf[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ isp\ =\ 0;\ isp\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ isp++)}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cf[isp]=\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j0*jdi,k0*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j0*jdi,k0*kdi,\{isp\}),}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j1*jdi,k0*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j1*jdi,k0*kdi,\{isp\}),}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j0*jdi,k1*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j0*jdi,k1*kdi,\{isp\}),}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j1*jdi,k1*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j1*jdi,k1*kdi,\{isp\}));}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//dVector3\ Xf\_2\ =\ Xb\ +\ Norm*D*2.0;}}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ ic\_2\ \ \ =\ Xf\_2.getX();}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ jc\_2\ \ \ =\ Xf\_2.getY();}}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ kc\_2\ \ \ =\ Xf\_2.getZ();}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ i0\_2\ \ \ =\ floor(ic\_2);}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ i1\_2\ \ \ =\ i0\_2\ +\ 1.0;}}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ j0\_2\ \ \ =\ floor(jc\_2);}}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ j1\_2\ \ \ =\ j0\_2\ +\ 1.0;}}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ k0\_2\ \ \ =\ floor(kc\_2);}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ k1\_2\ \ \ =\ k0\_2\ +\ 1.0;}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Tf\_2\ \ \ =\ \ SB.TrilinearInterPolation(ic\_2,jc\_2,kc\_2,}}
+\DoxyCodeLine{00499\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.Tx(i0\_2*idi,j0\_2*jdi,k0\_2*kdi),ET.Tx(i1\_2*idi,j0\_2*jdi,k0\_2*kdi),}}
+\DoxyCodeLine{00500\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.Tx(i0\_2*idi,j1\_2*jdi,k0\_2*kdi),ET.Tx(i1\_2*idi,j1\_2*jdi,k0\_2*kdi),}}
+\DoxyCodeLine{00501\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.Tx(i0\_2*idi,j0\_2*jdi,k1\_2*kdi),ET.Tx(i1\_2*idi,j0\_2*jdi,k1\_2*kdi),}}
+\DoxyCodeLine{00502\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.Tx(i0\_2*idi,j1\_2*jdi,k1\_2*kdi),ET.Tx(i1\_2*idi,j1\_2*jdi,k1\_2*kdi));}}
+\DoxyCodeLine{00503\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Kf\_2\ \ \ =\ \ SB.TrilinearInterPolation(ic\_2,jc\_2,kc\_2,}}
+\DoxyCodeLine{00504\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.K\_Mixture(i0\_2*idi,j0\_2*jdi,k0\_2*kdi),ET.K\_Mixture(i1\_2*idi,j0\_2*jdi,k0\_2*kdi),}}
+\DoxyCodeLine{00505\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.K\_Mixture(i0\_2*idi,j1\_2*jdi,k0\_2*kdi),ET.K\_Mixture(i1\_2*idi,j1\_2*jdi,k0\_2*kdi),}}
+\DoxyCodeLine{00506\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.K\_Mixture(i0\_2*idi,j0\_2*jdi,k1\_2*kdi),ET.K\_Mixture(i1\_2*idi,j0\_2*jdi,k1\_2*kdi),}}
+\DoxyCodeLine{00507\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.K\_Mixture(i0\_2*idi,j1\_2*jdi,k1\_2*kdi),ET.K\_Mixture(i1\_2*idi,j1\_2*jdi,k1\_2*kdi));}}
+\DoxyCodeLine{00508\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ Cf\_2[nSpecies];}}
+\DoxyCodeLine{00509\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (size\_t\ isp\ =\ 0;\ isp\ <\ nSpecies;\ isp++)}}
+\DoxyCodeLine{00510\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00511\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cf\_2[isp]=\ SB.TrilinearInterPolation(ic\_2,jc\_2,kc\_2,}}
+\DoxyCodeLine{00512\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MassFractions(i0\_2*idi,j0\_2*jdi,k0\_2*kdi,\{isp\}),MassFractions(i1\_2*idi,j0\_2*jdi,k0\_2*kdi,\{isp\}),}}
+\DoxyCodeLine{00513\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MassFractions(i0\_2*idi,j1\_2*jdi,k0\_2*kdi,\{isp\}),MassFractions(i1\_2*idi,j1\_2*jdi,k0\_2*kdi,\{isp\}),}}
+\DoxyCodeLine{00514\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MassFractions(i0\_2*idi,j0\_2*jdi,k1\_2*kdi,\{isp\}),MassFractions(i1\_2*idi,j0\_2*jdi,k1\_2*kdi,\{isp\}),}}
+\DoxyCodeLine{00515\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MassFractions(i0\_2*idi,j1\_2*jdi,k1\_2*kdi,\{isp\}),MassFractions(i1\_2*idi,j1\_2*jdi,k1\_2*kdi,\{isp\}));}}
+\DoxyCodeLine{00516\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3a047aae6105e862593d23767acdc0bd}{IF\_ConstTemp}}[Solididx])}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Tb\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[Solididx];}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(X<ep)}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ Tb;}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \ Tb\ *\ (1.0+X/D)\ -\/\ X/D\ *\ Tf;}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ad8d6067c6e78c8df25f8a4777dc002de}{IF\_ConstFlux}}[Solididx])}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Qb\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3043f520de98e495f9013fb77ba2505d}{SurfaceFlux}}[Solididx];}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ Tf-\/(X+D)*Qb/Kf;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ isp=0;\ isp<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ isp++)}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{isp\})\ =\ Cf[isp]\ ;}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//HRR(i,j,k)\ =\ WTi;}}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_Tfout\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00545\ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00547\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a0b1e68f286b561fb6a3abcd9e53ede25}\label{classopenphase_1_1SpeciesTransport_a0b1e68f286b561fb6a3abcd9e53ede25} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateGhostPointsConjugateHeatTransfer@{CalculateGhostPointsConjugateHeatTransfer}}
+\index{CalculateGhostPointsConjugateHeatTransfer@{CalculateGhostPointsConjugateHeatTransfer}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateGhostPointsConjugateHeatTransfer()}{CalculateGhostPointsConjugateHeatTransfer()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Ghost\+Points\+Conjugate\+Heat\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Gasidx\ =\ 0;}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Solididx\ =\ 1;}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{double}\ D\ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a9f258c375f8afb661d832b24f67f2451}{nDist}};}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{double}\ ep=1e-\/8;}
+\DoxyCodeLine{00257\ \ \ \ \ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties.size();\ idx++)}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[idx].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61ca635459702f9817de29e608fa3395637c}{AggregateStates::Gas}})}
+\DoxyCodeLine{00260\ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ Gasidx\ =\ idx;}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{int}\ iBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}*2.0;}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{int}\ jBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}*2.0;}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{int}\ kBC=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}*2.0;}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{int}\ idi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{int}\ jdi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{int}\ kdi=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},0,)}
+\DoxyCodeLine{00272\ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_TsOut=\textcolor{keyword}{false};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_TsOut)}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xf\ -\/\ Norm*X;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ Xb\ -\/\ Norm*D;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xs.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tsi\ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ksi\ \ =\ \ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tf\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kf\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i,j,k);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tb\ \ =\ (Kf/X*Tf+Ksi/D*Tsi)/(Kf/X+Ksi/D);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}\ (i,j,k)\ =\ Tb\ *\ (1.0+X/D)\ -\/\ X/D*Tsi;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_TsOut=\textcolor{keyword}{true};}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Set\_TfOut=\textcolor{keyword}{false};}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/iBC;\ ii\ <=\ iBC;\ ii++)}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/jBC;\ jj\ <=\ jBC;\ jj++)}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/kBC;\ kk\ <=\ kBC;\ kk++)}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i+ii,j+jj,k+kk))}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Set\_TfOut)}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Norm\{0.0,0.0,0.0\};}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\ \mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Solididx=it-\/>index;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1NodeAB}{NodeAB<dVector3,dVector3>}}\ Normals=\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Normals(i,j,k);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Norm=Normals.\mbox{\hyperlink{classopenphase_1_1NodeAB_a4f86c2584555ad5743176911c059e3a0}{get\_asym1}}(Solididx,\ Gasidx);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Phif\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fractions(i,j,k,\{Gasidx\});}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ X\ \ \ \ =\ fabs(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.iWidth/\mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}\ *\ asin(1.0-\/2.0*Phif));}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xs\ =\ \{double(i),\ double(j),\ double(k)\};}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xb\ =\ Xs\ +\ Norm*X;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1dVector3}{dVector3}}\ Xf\ =\ Xb\ +\ Norm*D;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ic\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_aea01f7c5c45728b704a32b763654e59a}{getX}}();}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ jc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a0e79365ab3d72e97fc59643e237d1e3a}{getY}}();}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kc\ \ \ =\ Xf.\mbox{\hyperlink{classopenphase_1_1dVector3_a3c1d1bb0758f42f75386bc0ae71ad4a0}{getZ}}();}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i0\ \ \ =\ floor(ic);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ i1\ \ \ =\ i0\ +\ 1.0;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j0\ \ \ =\ floor(jc);}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ j1\ \ \ =\ j0\ +\ 1.0;}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k0\ \ \ =\ floor(kc);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ \ \ =\ k0\ +\ 1.0;}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tfi\ \ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Kfi\ \ =\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k0*kdi),}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k0*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k0*kdi),}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j0*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j0*jdi,k1*kdi),}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i0*idi,j1*jdi,k1*kdi),ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a85156c966f2c0d77afebc3706cc3770e}{K\_Mixture}}(i1*idi,j1*jdi,k1*kdi));}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tsi\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Ksi\ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i,j,k);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(X<ep)}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}\ (i,j,k)\ =\ Tsi;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tb\ \ \ =\ (Kfi/D*Tfi+Ksi/X*Tsi)/(Kfi/D+Ksi/X);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ \ Tb\ *\ (1.0+X/D)\ -\/\ X/D\ *\ Tfi;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cf[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ isp\ =\ 0;\ isp\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ isp++)}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Cf[isp]=\ SB.\mbox{\hyperlink{classopenphase_1_1SolidBody_a99257ef354510ea7a43b229ecabfcb7a}{TrilinearInterPolation}}(ic,jc,kc,}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j0*jdi,k0*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j0*jdi,k0*kdi,\{isp\}),}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j1*jdi,k0*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j1*jdi,k0*kdi,\{isp\}),}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j0*jdi,k1*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j0*jdi,k1*kdi,\{isp\}),}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i0*idi,j1*jdi,k1*kdi,\{isp\}),\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i1*idi,j1*jdi,k1*kdi,\{isp\}));}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ isp=0;\ isp<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ isp++)}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{isp\})\ =\ Cf[isp]\ ;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Set\_TfOut=\textcolor{keyword}{true};}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \}}
+\DoxyCodeLine{00405\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00406\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_aabdaddf058280918212425d616b80cde}\label{classopenphase_1_1SpeciesTransport_aabdaddf058280918212425d616b80cde} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateMeanMolarMass@{CalculateMeanMolarMass}}
+\index{CalculateMeanMolarMass@{CalculateMeanMolarMass}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateMeanMolarMass()}{CalculateMeanMolarMass()}}
+{\footnotesize\ttfamily double Species\+Transport\+::\+Calculate\+Mean\+Molar\+Mass (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k,  }\item[{string}]{whichtime }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00223\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{double}\ MMWi=0.0;}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ n++)}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (whichtime\ ==\ \textcolor{stringliteral}{"{}old"{}})}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ MMWi\ +=\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{n\})\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{n\});}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (whichtime\ ==\ \textcolor{stringliteral}{"{}new"{}})}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ MMWi\ +=\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{n\})\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{n\});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{double}\ MMW=1.0/MMWi;}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ MMW;}
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a450a6d57a2f3cfdb8f3902b18cfd8300}\label{classopenphase_1_1SpeciesTransport_a450a6d57a2f3cfdb8f3902b18cfd8300} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculatePhiVanLeer@{CalculatePhiVanLeer}}
+\index{CalculatePhiVanLeer@{CalculatePhiVanLeer}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculatePhiVanLeer()}{CalculatePhiVanLeer()}}
+{\footnotesize\ttfamily double Species\+Transport\+::\+Calculate\+Phi\+Van\+Leer (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00549}{549}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00550\ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \textcolor{keywordflow}{return}\ (r+fabs(r))/(1.0+fabs(r));}
+\DoxyCodeLine{00552\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a34c34af7fc043c12eb9d00fc4975e85b}\label{classopenphase_1_1SpeciesTransport_a34c34af7fc043c12eb9d00fc4975e85b} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateReaction@{CalculateReaction}}
+\index{CalculateReaction@{CalculateReaction}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateReaction()}{CalculateReaction()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Reaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{int}]{n\+Dim,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00659}{659}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00660\ \{}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MixtureComp=0;}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac}{FuelConsumptionRate}}=0.0;}
+\DoxyCodeLine{00663\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}},0,)}
+\DoxyCodeLine{00664\ \ \ \ \ \{}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ +=\ dt/(FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,j,k,\{MixtureComp\})\ *\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab9913b8b46fa57ef4c827845e61c05d6}{Cp\_Mixture}}(i,j,k))\ *\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k);}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ +=\ dt\ /\ FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_ad5001f5c5e9e2aa3f12640ce3f31614a}{DensityWetting}}(i,\ j,\ k,\{MixtureComp\})\ *\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,\ j,\ k,\{ic\}));}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ Fuel\ Consumption\ only\ if\ species\ is\ fuel}}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac}{FuelConsumptionRate}}\ +=\ abs(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}(i,\ j,\ k,\{\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa0f7aa5ca93bc45fa1eaec042546943e}{FuelIndex}}\})\ *\ pow(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a1b2728d875d39b6eed2284849e95956c}{dx}},\ nDim));}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00676\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ OP\_MPI\_Allreduce(OP\_MPI\_IN\_PLACE,\ \&\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac}{FuelConsumptionRate}},\ 1,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00680\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_ac7735f242ae9808d664ce3d1c8895278}\label{classopenphase_1_1SpeciesTransport_ac7735f242ae9808d664ce3d1c8895278} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!CalculateSpeciesHeatCapacitiesAndEnthalpies@{CalculateSpeciesHeatCapacitiesAndEnthalpies}}
+\index{CalculateSpeciesHeatCapacitiesAndEnthalpies@{CalculateSpeciesHeatCapacitiesAndEnthalpies}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{CalculateSpeciesHeatCapacitiesAndEnthalpies()}{CalculateSpeciesHeatCapacitiesAndEnthalpies()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Calculate\+Species\+Heat\+Capacities\+And\+Enthalpies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ 8.314510;\ \ \ \textcolor{comment}{//\ J/mol.K}}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}},\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ T\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0\ ;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(T\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,0\}))}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}(i,j,k,\{ic\})\ =\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,8\})\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,9\})*T\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,10\})*pow(T,2.0)\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,11\})*pow(T,3.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,12\})*pow(T,4.0)\ )\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ R\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}{h\_Species}}(i,j,k,\{ic\})\ \ =\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,8\})\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,9\})/2.0*T\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,10\})/3.0*pow(T,2.0)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,11\})/4.0*pow(T,3.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,12\})/5.0*pow(T,4.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,13\})/T)\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ R\ *\ T\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}(i,j,k,\{ic\})\ =\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,1\})\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,2\})*T\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,3\})*pow(T,2.0)\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,4\})*pow(T,3.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,5\})*pow(T,4.0)\ )\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ R\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}{h\_Species}}(i,j,k,\{ic\})\ \ =\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,1\})\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,2\})/2.0*T\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,3\})/3.0*pow(T,2.0)\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,4\})/4.0*pow(T,3.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,5\})/5.0*pow(T,4.0)\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}(\{ic,6\})/T)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ R\ *\ T\ /\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{ic\});}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_af9d735cc0c9b8dfb8ed6cca69b59decb}\label{classopenphase_1_1SpeciesTransport_af9d735cc0c9b8dfb8ed6cca69b59decb} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\ Bcells);}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}{Cp\_Species}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}{MassDiff\_Species}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}{W\_Species}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}{h\_Species}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}\ (locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}},\{nSpecies\},\ Bcells);\ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}\});}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_afc3c660a88ac28d6140739a3af651f03}{Y0X}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}\});}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}{PolyNomCoeffs}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}},\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695}{nCoeffs}}\});}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a78c02305de009409f74fdee55cc6db42}\label{classopenphase_1_1SpeciesTransport_a78c02305de009409f74fdee55cc6db42} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!MoleFraction@{MoleFraction}}
+\index{MoleFraction@{MoleFraction}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{MoleFraction()}{MoleFraction()}}
+{\footnotesize\ttfamily double Species\+Transport\+::\+Mole\+Fraction (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k,  }\item[{double}]{MMW,  }\item[{size\+\_\+t}]{kc }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{return}\ (\ MMW/\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}{MolecularWeight}}(\{kc\})\ *\ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k,\{kc\})\ );}
+\DoxyCodeLine{00243\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_adddd7ca33f594b500a9f4f40ecf7679b}\label{classopenphase_1_1SpeciesTransport_adddd7ca33f594b500a9f4f40ecf7679b} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{string}]{Input\+File }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}SpeciesTransport"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFile);}
+\DoxyCodeLine{00046\ \ \ \ \ std::fstream\ inp(InputFile,\ std::ios::in);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ InputFile\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(message.str());}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ std::stringstream\ inp\_data;}
+\DoxyCodeLine{00054\ \ \ \ \ inp\_data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00055\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp\_data,\ \textcolor{stringliteral}{"{}SpeciesTransport"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}BCOrder"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a11c5409fa221ff8d27e414ebf137f973}{TempBurntGas}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}TempBurntGas"{}}),\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3}{Species}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Species"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa0f7aa5ca93bc45fa1eaec042546943e}{FuelIndex}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}FuelIndex"{}}),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a2ed987025a10ee5c2fed3125c1e9661d}{AdvectionUpwind}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionUpwind"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a4c5ae8e8ff4a5220d8f5d1475399edfa}{AdvectionCentral}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionCentral"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ac43408f5521c63da79490c6a7a5bb39a}{AdvectionVanLeer}}\ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}AdvectionVanLeer"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a64801383bf5c30e018cbecde1ae572a9}{X0BurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}X0BurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa63e8806c2783d5a1bbe024cfad98b3c}{XNBurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}XNBurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa31a7681840fa7b5c286ecd87e038c85}{Y0BurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Y0BurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a5449363b7312c4bf66360d9bfbf62268}{YNBurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}YNBurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_af065e14d1e9a3b8d2142bff40b21366e}{Z0BurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Z0BurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8a7359b9036e87dcbad80fce52a9a3d5}{ZNBurntZone}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}ZNBurntZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a83e3d560c2d5904f7f14beb6a3e5d751}{X0FuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}X0FuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ad14dd79d10fa246f1e8a9a54cdda14a0}{XNFuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}XNFuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9c9865b712ab240be1050e08cc8e87c6}{Y0FuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Y0FuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a535495e80d85ac3125d6571686f7fdc5}{YNFuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}YNFuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a36d2b92e24a6767319354d6df8e3e95e}{Z0FuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}Z0FuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a67ca35afb275c51837f4373e649f92f9}{ZNFuelZone}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}ZNFuelZone"{}}),\ \textcolor{keyword}{false},\ -\/10);}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a12639244b90c925c27996731c6a65f09}{IF\_REACTION}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}IF\_REACTION"{}}),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695}{nCoeffs}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp\_data,\ moduleLocation,\ std::string(\textcolor{stringliteral}{"{}nCoeffs"{}}),\ \textcolor{keyword}{false},\ 15);}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_acbfd7a7a058e93bb809b8465799047d1}\label{classopenphase_1_1SpeciesTransport_acbfd7a7a058e93bb809b8465799047d1} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00215\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a67e2c44dfd66468f2e1a57d3306bd935}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}});}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}});}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}\ >\ 0)\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}});}
+\DoxyCodeLine{00220\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a7b440190db073ef309362750852ff165}\label{classopenphase_1_1SpeciesTransport_a7b440190db073ef309362750852ff165} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!SetFreeBCNX@{SetFreeBCNX}}
+\index{SetFreeBCNX@{SetFreeBCNX}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{SetFreeBCNX()}{SetFreeBCNX()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Set\+Free\+BCNX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{int}\ iEnd\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}};}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{double}\ Temp\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a236f86867e92129e2f1c36a0374d6a66}{T0}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Temporary\ variable\ for\ extrapolated\ temperature}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{double}\ f4[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];\ \ \ \ \textcolor{comment}{//\ Temporary\ array\ for\ extrapolated\ compositions}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{double}\ f3[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{double}\ f2[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ f1[\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}}];}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//\ Loop\ over\ the\ extrapolated\ boundary\ nodes}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a77c3cc57b7a3f3bf027c4009086c41c5}{OffsetX}}+\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}==\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a696f288eba9b872bde8e18aedd6da440}{TotalNx}})}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ iEnd;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}\ +\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}();\ ++i)}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}\ ;\ ++j)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k<\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}\ ;\ ++k)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ values\ from\ previous\ points\ for\ extrapolation}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f4[ic]\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(iEnd\ -\/\ 1,\ j,\ k,\{ic\});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f3[ic]\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(iEnd\ -\/\ 2,\ j,\ k,\{ic\});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f2[ic]\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(iEnd\ -\/\ 3,\ j,\ k,\{ic\});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f1[ic]\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(iEnd\ -\/\ 4,\ j,\ k,\{ic\});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}==0)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ =\ f4[ic];}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}==1)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ 2.0\ *\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ 0,\ k)\ -\/\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ 0,\ k);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ =\ 2.0\ *\ f4[ic]\ -\/\ f3[ic];}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}==2)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ +\ (ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ -\/\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k))\ +}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.5\ *\ (ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k)\ -\/\ 2.0\ *\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k)\ +\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 3,\ j,\ k));}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ =\ f4[ic]\ +\ (f4[ic]\ -\/\ f3[ic])\ +}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.5\ *\ (f4[ic]\ -\/\ 2.0\ *\ f3[ic]\ +\ f2[ic]);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}{BCOrder}}==3)}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Temp\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd}{Lagrange\_polynomial4}}(0.0,\ 1.0,\ 2.0,\ 3.0,\ 4.0,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 4,\ j,\ k),\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 3,\ j,\ k),}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 2,\ j,\ k),\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(iEnd\ -\/\ 1,\ j,\ k));}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic\ =\ 0;\ ic\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,\ j,\ k,\{ic\})\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a25df9846fab89cef9af0a0cf657472bd}{Lagrange\_polynomial4}}(0.0,\ 1.0,\ 2.0,\ 3.0,\ 4.0,\ f1[ic],\ f2[ic],\ f3[ic],\ f4[ic]);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,\ j,\ k)\ =\ Temp;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a9ccfb9753eee62aa2a50a19191b6a567}\label{classopenphase_1_1SpeciesTransport_a9ccfb9753eee62aa2a50a19191b6a567} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!SetInitial@{SetInitial}}
+\index{SetInitial@{SetInitial}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{SetInitial()}{SetInitial()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Set\+Initial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{const vector$<$ double $>$ \&}]{BM,  }\item[{const vector$<$ double $>$ \&}]{FM,  }\item[{const vector$<$ double $>$ \&}]{AM,  }\item[{double}]{TB,  }\item[{double}]{TF,  }\item[{double}]{TA }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00829}{829}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00832\ \{}
+\DoxyCodeLine{00833\ \ \ \ \ \textcolor{comment}{//Simple\ composition\ set\ up,\ uniform\ component\ fractions\ per\ phase.}}
+\DoxyCodeLine{00834\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}},\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00835\ \ \ \ \ \{}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k)\ =\ 0.0;}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ (i+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a64801383bf5c30e018cbecde1ae572a9}{X0BurntZone}}\ and\ (i+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa63e8806c2783d5a1bbe024cfad98b3c}{XNBurntZone}}\ and}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \ \ (j+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_aa31a7681840fa7b5c286ecd87e038c85}{Y0BurntZone}}\ and\ (j+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a5449363b7312c4bf66360d9bfbf62268}{YNBurntZone}}\ and}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ (k+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_af065e14d1e9a3b8d2142bff40b21366e}{Z0BurntZone}}\ and\ (k+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8a7359b9036e87dcbad80fce52a9a3d5}{ZNBurntZone}}\ and\ !FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ TB;}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{ic\})\ =\ BM[ic];}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\ (i+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a83e3d560c2d5904f7f14beb6a3e5d751}{X0FuelZone}}\ and\ (i+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetX)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_ad14dd79d10fa246f1e8a9a54cdda14a0}{XNFuelZone}}\ and}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (j+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9c9865b712ab240be1050e08cc8e87c6}{Y0FuelZone}}\ and\ (j+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetY)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a535495e80d85ac3125d6571686f7fdc5}{YNFuelZone}}\ and}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (k+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ)>=\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a36d2b92e24a6767319354d6df8e3e95e}{Z0FuelZone}}\ and\ (k+\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.OffsetZ)<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a67ca35afb275c51837f4373e649f92f9}{ZNFuelZone}}\ and\ !FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ TF;}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{ic\})\ =\ FM[ic];}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FL.\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_add3ce72d4d4ffd34781bac8b0f7a6673}{Obstacle}}(i,j,k))}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ TA;}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{ic\})\ =\ AM[ic];}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();\ it\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++it)}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>index].State\ ==\mbox{\hyperlink{namespaceopenphase_a545a7e1c8dca42c00f8f139a1913c61cae41480b6bbfbf7407974a88d3d34f4fa}{AggregateStates::Solid}})}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ PFIdx=it-\/>index;}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k)\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a16d7690c6220fb97ca7f32f3d0ed7ad7}{SurfaceTemp}}[PFIdx];}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ic=0;\ ic<\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ ic++)}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{ic\})\ =\ AM[ic];}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00883\ \ \ \ \ \}}
+\DoxyCodeLine{00884\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00885\ }
+\DoxyCodeLine{00886\ \ \ \ \ \textcolor{keywordflow}{if}(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00887\ \ \ \ \ \{}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}},\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k)=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(i,j,k)=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af99d21804cf42d83c1c6a112fcfd8d99}{Cp\_Solid}}(i,j,k)=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ae32375ad07e4334b215f9dffe78264ca}{Cps}};}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ab3353b63c7f2052eb09f69d37c52f6a0}{K\_Solid}}(i,j,k)=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a07acf50d5853ee10f3f658e76bc68983}{Ks}};}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a3d7cf290c664e7a57312dc3edcf8053c}{Density\_Solid}}(i,j,k)=ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a324973df4b7eb6815037e338a6c9e4bf}{Rhos}};}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00897\ \ \ \ \ \}}
+\DoxyCodeLine{00898\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_ae3b13376ee12cea47868dec24dc475ec}\label{classopenphase_1_1SpeciesTransport_ae3b13376ee12cea47868dec24dc475ec} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!UpdateFields@{UpdateFields}}
+\index{UpdateFields@{UpdateFields}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{UpdateFields()}{UpdateFields()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Update\+Fields (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}\ (i,j,k,\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}},\mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a9a529f46e42c3fdb559279ac83096ab0}{TxOld}}(i,j,k)\ \ \ \ \ \ \ \ \ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_af595876d5c3b93e62af6b85798bbcaa1}{Tx}}(i,j,k);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}{MassFractionsOld}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_ac1db719a7c46d9f093a0580c615594c4}{TsOld}}(i,j,k)\ =\ ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a17d857ee9b88bc2a37c671cbfdb31640}{Ts}}(i,j,k);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_aaf9534eb97a03ef810b43ba44328ce57}\label{classopenphase_1_1SpeciesTransport_aaf9534eb97a03ef810b43ba44328ce57} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!UpdateGhostPoints@{UpdateGhostPoints}}
+\index{UpdateGhostPoints@{UpdateGhostPoints}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{UpdateGhostPoints()}{UpdateGhostPoints()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Update\+Ghost\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1EnergyTransport}{Energy\+Transport}} \&}]{ET,  }\item[{\mbox{\hyperlink{classopenphase_1_1FlowSolverLBM}{Flow\+Solver\+LBM}} \&}]{FL,  }\item[{\mbox{\hyperlink{classopenphase_1_1SolidBody}{Solid\+Body}} \&}]{SB }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{if}(ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a0b1e68f286b561fb6a3abcd9e53ede25}{CalculateGhostPointsConjugateHeatTransfer}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},ET,FL,SB);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}(!ET.\mbox{\hyperlink{classopenphase_1_1EnergyTransport_a009f6df90fcde7a1dcf8c301b4a2ee4a}{Conjugate}})\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a6d0c258292a75d2560e24c08fae52e14}{CalculateGhostPoints}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},ET,FL,SB);}
+\DoxyCodeLine{00249\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a6a9c4ea4a89a7e259af9b62690dd4cc1}\label{classopenphase_1_1SpeciesTransport_a6a9c4ea4a89a7e259af9b62690dd4cc1} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!WriteVTKHHR@{WriteVTKHHR}}
+\index{WriteVTKHHR@{WriteVTKHHR}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{WriteVTKHHR()}{WriteVTKHHR()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Write\+VTKHHR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00821}{821}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00822\ \{}
+\DoxyCodeLine{00823\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00824\ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{\textcolor{stringliteral}{"{}omega\_T\ (W/m\string^3)"{}},\ [\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}{HRR}}(i,j,k);\}\});}
+\DoxyCodeLine{00825\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\textcolor{stringliteral}{"{}HHR\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00826\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00827\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a30a5babc31fc63215905346c7df9349d}\label{classopenphase_1_1SpeciesTransport_a30a5babc31fc63215905346c7df9349d} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!WriteVTKMassFractions@{WriteVTKMassFractions}}
+\index{WriteVTKMassFractions@{WriteVTKMassFractions}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{WriteVTKMassFractions()}{WriteVTKMassFractions()}}
+{\footnotesize\ttfamily void Species\+Transport\+::\+Write\+VTKMass\+Fractions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8cpp_source_l00809}{809}} of file \mbox{\hyperlink{SpeciesTransport_8cpp_source}{Species\+Transport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00810\ \{}
+\DoxyCodeLine{00811\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00812\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}{nSpecies}};\ comp++)}
+\DoxyCodeLine{00813\ \ \ \ \ \{}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ nameComp1\ =\ \textcolor{stringliteral}{"{}MassFraction\_"{}}\ +\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}[comp];}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{nameComp1,\ [\textcolor{keyword}{this},\ comp](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}{MassFractions}}(i,j,k,\{comp\});\}\});}
+\DoxyCodeLine{00816\ \ \ \ \ \}}
+\DoxyCodeLine{00817\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\textcolor{stringliteral}{"{}MassFractions\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00818\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00819\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1SpeciesTransport_a4c5ae8e8ff4a5220d8f5d1475399edfa}\label{classopenphase_1_1SpeciesTransport_a4c5ae8e8ff4a5220d8f5d1475399edfa} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!AdvectionCentral@{AdvectionCentral}}
+\index{AdvectionCentral@{AdvectionCentral}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionCentral}{AdvectionCentral}}
+{\footnotesize\ttfamily bool openphase\+::\+Species\+Transport\+::\+Advection\+Central}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00112}{112}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a2ed987025a10ee5c2fed3125c1e9661d}\label{classopenphase_1_1SpeciesTransport_a2ed987025a10ee5c2fed3125c1e9661d} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!AdvectionUpwind@{AdvectionUpwind}}
+\index{AdvectionUpwind@{AdvectionUpwind}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionUpwind}{AdvectionUpwind}}
+{\footnotesize\ttfamily bool openphase\+::\+Species\+Transport\+::\+Advection\+Upwind}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00111}{111}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_ac43408f5521c63da79490c6a7a5bb39a}\label{classopenphase_1_1SpeciesTransport_ac43408f5521c63da79490c6a7a5bb39a} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!AdvectionVanLeer@{AdvectionVanLeer}}
+\index{AdvectionVanLeer@{AdvectionVanLeer}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{AdvectionVanLeer}{AdvectionVanLeer}}
+{\footnotesize\ttfamily bool openphase\+::\+Species\+Transport\+::\+Advection\+Van\+Leer}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00113}{113}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7}\label{classopenphase_1_1SpeciesTransport_a464c576bca103f31509f2ad90bc4bdd7} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!BCOrder@{BCOrder}}
+\index{BCOrder@{BCOrder}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{BCOrder}{BCOrder}}
+{\footnotesize\ttfamily int openphase\+::\+Species\+Transport\+::\+BCOrder}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00108}{108}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41}\label{classopenphase_1_1SpeciesTransport_a56965500148798f59b9b9e2d638e5b41} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Cp\_Species@{Cp\_Species}}
+\index{Cp\_Species@{Cp\_Species}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Cp\_Species}{Cp\_Species}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::\+Cp\+\_\+\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00118}{118}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac}\label{classopenphase_1_1SpeciesTransport_a51bfe875565448a4efeabe393c9b70ac} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!FuelConsumptionRate@{FuelConsumptionRate}}
+\index{FuelConsumptionRate@{FuelConsumptionRate}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{FuelConsumptionRate}{FuelConsumptionRate}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Fuel\+Consumption\+Rate =0.\+0}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00131}{131}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_aa0f7aa5ca93bc45fa1eaec042546943e}\label{classopenphase_1_1SpeciesTransport_aa0f7aa5ca93bc45fa1eaec042546943e} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!FuelIndex@{FuelIndex}}
+\index{FuelIndex@{FuelIndex}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{FuelIndex}{FuelIndex}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Species\+Transport\+::\+Fuel\+Index}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00132}{132}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b}\label{classopenphase_1_1SpeciesTransport_a42779ed941d9e03ac81bb642d17bb44b} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Species\+Transport\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00095}{95}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5}\label{classopenphase_1_1SpeciesTransport_a3d438d2b483ac8d0e1f29a953cf239e5} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!h\_Species@{h\_Species}}
+\index{h\_Species@{h\_Species}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{h\_Species}{h\_Species}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::h\+\_\+\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00119}{119}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf}\label{classopenphase_1_1SpeciesTransport_a249afb38e20b523fdc53058199c0d8cf} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!HRR@{HRR}}
+\index{HRR@{HRR}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{HRR}{HRR}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,0$>$ openphase\+::\+Species\+Transport\+::\+HRR}
+
+
+
+Heat release rate of reaction. 
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00117}{117}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a12639244b90c925c27996731c6a65f09}\label{classopenphase_1_1SpeciesTransport_a12639244b90c925c27996731c6a65f09} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!IF\_REACTION@{IF\_REACTION}}
+\index{IF\_REACTION@{IF\_REACTION}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{IF\_REACTION}{IF\_REACTION}}
+{\footnotesize\ttfamily bool openphase\+::\+Species\+Transport\+::\+IF\+\_\+\+REACTION}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00097}{97}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223}\label{classopenphase_1_1SpeciesTransport_a6f4a8e8602449efcbfae5055a1e66223} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!MassDiff\_Species@{MassDiff\_Species}}
+\index{MassDiff\_Species@{MassDiff\_Species}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{MassDiff\_Species}{MassDiff\_Species}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::\+Mass\+Diff\+\_\+\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00120}{120}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee}\label{classopenphase_1_1SpeciesTransport_a9d1a0ece23819632ba7b3949643b79ee} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!MassFractions@{MassFractions}}
+\index{MassFractions@{MassFractions}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{MassFractions}{MassFractions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::\+Mass\+Fractions}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00122}{122}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0}\label{classopenphase_1_1SpeciesTransport_a902fbb0e0cc29a9d12db74cf3c4fabc0} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!MassFractionsOld@{MassFractionsOld}}
+\index{MassFractionsOld@{MassFractionsOld}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{MassFractionsOld}{MassFractionsOld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::\+Mass\+Fractions\+Old}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00123}{123}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad}\label{classopenphase_1_1SpeciesTransport_a859ff636bb53c4c5d738c0f0ea075dad} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!MolecularWeight@{MolecularWeight}}
+\index{MolecularWeight@{MolecularWeight}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{MolecularWeight}{MolecularWeight}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$double, 1$>$ openphase\+::\+Species\+Transport\+::\+Molecular\+Weight}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00128}{128}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695}\label{classopenphase_1_1SpeciesTransport_a3d637567f3caaa20c6e08ec3c859b695} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!nCoeffs@{nCoeffs}}
+\index{nCoeffs@{nCoeffs}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{nCoeffs}{nCoeffs}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Species\+Transport\+::n\+Coeffs =15}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00125}{125}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411}\label{classopenphase_1_1SpeciesTransport_a8fc9db4bdf88f1022a91cae7cc672411} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!nSpecies@{nSpecies}}
+\index{nSpecies@{nSpecies}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{nSpecies}{nSpecies}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Species\+Transport\+::n\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00098}{98}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745}\label{classopenphase_1_1SpeciesTransport_a2466c3c8561bc019f5857a6d4631d745} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!PolyNomCoeffs@{PolyNomCoeffs}}
+\index{PolyNomCoeffs@{PolyNomCoeffs}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{PolyNomCoeffs}{PolyNomCoeffs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$double, 2$>$ openphase\+::\+Species\+Transport\+::\+Poly\+Nom\+Coeffs}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00129}{129}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3}\label{classopenphase_1_1SpeciesTransport_aba735b8c9083b239f9d52ef860985fc3} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Species@{Species}}
+\index{Species@{Species}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Species}{Species}}
+{\footnotesize\ttfamily bool openphase\+::\+Species\+Transport\+::\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00116}{116}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a11c5409fa221ff8d27e414ebf137f973}\label{classopenphase_1_1SpeciesTransport_a11c5409fa221ff8d27e414ebf137f973} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!TempBurntGas@{TempBurntGas}}
+\index{TempBurntGas@{TempBurntGas}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{TempBurntGas}{TempBurntGas}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Temp\+Burnt\+Gas}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00109}{109}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61}\label{classopenphase_1_1SpeciesTransport_a3a32d9670b573f0d8189595a4aa0af61} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!W\_Species@{W\_Species}}
+\index{W\_Species@{W\_Species}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{W\_Species}{W\_Species}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$double,1$>$ openphase\+::\+Species\+Transport\+::\+W\+\_\+\+Species}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00121}{121}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a64801383bf5c30e018cbecde1ae572a9}\label{classopenphase_1_1SpeciesTransport_a64801383bf5c30e018cbecde1ae572a9} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!X0BurntZone@{X0BurntZone}}
+\index{X0BurntZone@{X0BurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{X0BurntZone}{X0BurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+X0\+Burnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00100}{100}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a83e3d560c2d5904f7f14beb6a3e5d751}\label{classopenphase_1_1SpeciesTransport_a83e3d560c2d5904f7f14beb6a3e5d751} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!X0FuelZone@{X0FuelZone}}
+\index{X0FuelZone@{X0FuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{X0FuelZone}{X0FuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+X0\+Fuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00104}{104}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_aa63e8806c2783d5a1bbe024cfad98b3c}\label{classopenphase_1_1SpeciesTransport_aa63e8806c2783d5a1bbe024cfad98b3c} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!XNBurntZone@{XNBurntZone}}
+\index{XNBurntZone@{XNBurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{XNBurntZone}{XNBurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+XNBurnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00100}{100}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_ad14dd79d10fa246f1e8a9a54cdda14a0}\label{classopenphase_1_1SpeciesTransport_ad14dd79d10fa246f1e8a9a54cdda14a0} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!XNFuelZone@{XNFuelZone}}
+\index{XNFuelZone@{XNFuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{XNFuelZone}{XNFuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+XNFuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00104}{104}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_aa31a7681840fa7b5c286ecd87e038c85}\label{classopenphase_1_1SpeciesTransport_aa31a7681840fa7b5c286ecd87e038c85} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Y0BurntZone@{Y0BurntZone}}
+\index{Y0BurntZone@{Y0BurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Y0BurntZone}{Y0BurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Y0\+Burnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00101}{101}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a9c9865b712ab240be1050e08cc8e87c6}\label{classopenphase_1_1SpeciesTransport_a9c9865b712ab240be1050e08cc8e87c6} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Y0FuelZone@{Y0FuelZone}}
+\index{Y0FuelZone@{Y0FuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Y0FuelZone}{Y0FuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Y0\+Fuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00105}{105}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_afc3c660a88ac28d6140739a3af651f03}\label{classopenphase_1_1SpeciesTransport_afc3c660a88ac28d6140739a3af651f03} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Y0X@{Y0X}}
+\index{Y0X@{Y0X}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Y0X}{Y0X}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$double, 1$>$ openphase\+::\+Species\+Transport\+::\+Y0X}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00127}{127}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a5449363b7312c4bf66360d9bfbf62268}\label{classopenphase_1_1SpeciesTransport_a5449363b7312c4bf66360d9bfbf62268} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!YNBurntZone@{YNBurntZone}}
+\index{YNBurntZone@{YNBurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{YNBurntZone}{YNBurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+YNBurnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00101}{101}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a535495e80d85ac3125d6571686f7fdc5}\label{classopenphase_1_1SpeciesTransport_a535495e80d85ac3125d6571686f7fdc5} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!YNFuelZone@{YNFuelZone}}
+\index{YNFuelZone@{YNFuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{YNFuelZone}{YNFuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+YNFuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00105}{105}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_af065e14d1e9a3b8d2142bff40b21366e}\label{classopenphase_1_1SpeciesTransport_af065e14d1e9a3b8d2142bff40b21366e} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Z0BurntZone@{Z0BurntZone}}
+\index{Z0BurntZone@{Z0BurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Z0BurntZone}{Z0BurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Z0\+Burnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00102}{102}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a36d2b92e24a6767319354d6df8e3e95e}\label{classopenphase_1_1SpeciesTransport_a36d2b92e24a6767319354d6df8e3e95e} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!Z0FuelZone@{Z0FuelZone}}
+\index{Z0FuelZone@{Z0FuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{Z0FuelZone}{Z0FuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+Z0\+Fuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00106}{106}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a8a7359b9036e87dcbad80fce52a9a3d5}\label{classopenphase_1_1SpeciesTransport_a8a7359b9036e87dcbad80fce52a9a3d5} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!ZNBurntZone@{ZNBurntZone}}
+\index{ZNBurntZone@{ZNBurntZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{ZNBurntZone}{ZNBurntZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+ZNBurnt\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00102}{102}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+\Hypertarget{classopenphase_1_1SpeciesTransport_a67ca35afb275c51837f4373e649f92f9}\label{classopenphase_1_1SpeciesTransport_a67ca35afb275c51837f4373e649f92f9} 
+\index{openphase::SpeciesTransport@{openphase::SpeciesTransport}!ZNFuelZone@{ZNFuelZone}}
+\index{ZNFuelZone@{ZNFuelZone}!openphase::SpeciesTransport@{openphase::SpeciesTransport}}
+\doxysubsubsection{\texorpdfstring{ZNFuelZone}{ZNFuelZone}}
+{\footnotesize\ttfamily double openphase\+::\+Species\+Transport\+::\+ZNFuel\+Zone}
+
+
+
+Definition at line \mbox{\hyperlink{SpeciesTransport_8h_source_l00106}{106}} of file \mbox{\hyperlink{SpeciesTransport_8h_source}{Species\+Transport.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SpeciesTransport_8h}{Species\+Transport.\+h}}\item 
+\mbox{\hyperlink{SpeciesTransport_8cpp}{Species\+Transport.\+cpp}}\end{DoxyCompactItemize}

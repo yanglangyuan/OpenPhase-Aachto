@@ -1,0 +1,1111 @@
+\doxysection{Composition.\+cpp}
+\hypertarget{Composition_8cpp_source}{}\label{Composition_8cpp_source}\index{Composition.cpp@{Composition.cpp}}
+\mbox{\hyperlink{Composition_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2012}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Matthias\ Stratmann}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Composition_8h}{Composition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ElasticProperties_8h}{ElasticProperties.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BoundaryConditions_8h}{BoundaryConditions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VTK_8h}{VTK.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Velocities_8h}{Velocities.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AdvectionHR_8h}{AdvectionHR.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PeriodicTable_8h}{Thermodynamics/PeriodicTable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{H5Interface_8h}{H5Interface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00039}00039\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00040}00040\ \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00042}\mbox{\hyperlink{classopenphase_1_1Composition_a49a052989b244d02f4e7a3c5bb67092a}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a49a052989b244d02f4e7a3c5bb67092a}{Composition::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}Composition"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a3c0e7ba75ee8a33a94b7b934cf6bc8e1}{Grid}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\ \ \ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ae630586083de7866e49a029c9ff445b9}{Ncomp}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Element}{Element}}\ tempComp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_acdb36690af2275918070a61387f91e9f}{Index}}\ =\ i;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_aacc3eaee3df1629779d7f496641ee455}{Value}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_aa15849a6f3e2712a5be3d3f6f5e7bfdb}{Min}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_ac8fd3f1ae87149c9d9b75587938a3398}{Max}}\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_a80f4a4b95e7e4588521bab48f972a374}{Name}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a9c1ce0e02a379fe7117b69d56bb50cb1}{ElementNames}}[i];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_adf1c25837bfa62362aa75ef21168f914}{isVacancy}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_a6b87175fede7f31c6fc467ebee6bc9ac}{isStoichiometric}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ tempComp.\mbox{\hyperlink{classopenphase_1_1Element_a7b30877d46df973155e8e2c86350797b}{isReference}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}.push\_back(tempComp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.resize(\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[n].Name\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a139b9cd2a03b7f2740044892325df86a}{PhaseNames}}[n];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[n].Index\ =\ n;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[n].Number\ =\ n;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[n].Ncomp\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[n].State\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a75f9ed9aaa4c6253742547b6f066c3bb}{PhaseAggregateStates}}[n];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Bcells\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aae205a52da44fe4c880a16b0f5a48cfb}{Bcells}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1a5562cbca698012aea483f29e529db5}{NormIn}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a7b22f6ec25f6115eb657db6faa6e4a16}{NormOut}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a66e4a4e271232d349b8bca6cb0ea6631}{MoleFractionsDotIn}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2a1fa81a4395397f6abe35b0f1616ad1}{MoleFractionsDotOut}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2ebc8f068610aaa1db8419ecc47c2754}{NormTotal}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a19b0bc7fa4b8de653375f15acd89c0c1}{MoleFractionsTotalDot}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_af5c8950b1cac3ef6f4b83621d72be136}{MassFractionsTotal}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1bcbefac8fa8fbf3df13a6cdfc3fc0f3}{MassFractionsTotalOld}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ \{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2326d5f3e1c90c829d424c195cb3f747}{MolecularWeight}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_aec14edbe4ed2894df6d98c325240fabf}{Limiting}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af45dd4140586881f9ed201c3b795faff}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}},\ Bcells);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2f272319bed57a556e89986999c3ed76}{Initial}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a8ce1b1209aecdda6c40a6308c840d826}{MoleFractionsAverage}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a61ce38e551a2507f67ff4c5b45e23c93}{MoleFractionsTotalAverage}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a3dc2c402d8559ef3eddb02bf3195d8f7}{MoleFractionsInterfaceAverage}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a64972b30c19efa0913a56621784a1655}{Interface}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_ab328316599b0d70b788f7b6e154fcae7}{TotInitial}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a4b855594546d1f2b7267b84b12b757d1}{Allocate}}(\{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_afe1b31169e351a7a752a4d196f3a3328}{PT}}.\mbox{\hyperlink{classopenphase_1_1PeriodicTable_a57ad66ea01cd30756d986abcc9e4e22a}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a4fc32982030ac40c4c787d7225d42e76}{AtStart}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00109}00109\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a929717ec0037423a42772f4b6f397df2}{AddForAdvection}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00110}00110\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a54543aed357ed7467a51aef6d9bab59d}{AddForRemeshing}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00111}00111\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a5cdb801bbd1c26336994cd574d30b4e3}{AddForReading}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00117}\mbox{\hyperlink{classopenphase_1_1Composition_a7000508878bcf0e255f5963744e73b0a}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a7000508878bcf0e255f5963744e73b0a}{Composition::ReadInput}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00119}00119\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00124}00124\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00126}00126\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00127}00127\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00128}00128\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}+\textcolor{stringliteral}{"{}\ input"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00134}00134\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a7000508878bcf0e255f5963744e73b0a}{ReadInput}}(data);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00136}00136\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00137}00137\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00139}\mbox{\hyperlink{classopenphase_1_1Composition_acef7b4820719c6f997208ea60e074f1e}{00139}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a7000508878bcf0e255f5963744e73b0a}{Composition::ReadInput}}(stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00140}00140\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//Read\ reference\ elements}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00144}00144\ \ \ \ \ std::vector<std::string>\ RefElements;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}.size()\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ converter\ <<\ string(\textcolor{stringliteral}{"{}RefElement\_"{}})\ <<\ n;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1FileInterface_a3470cc1e41f1b06c7458853b9c040297}{FileInterface::FindParameter}}(inp,\ moduleLocation,\ converter.str()))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ converter.str(),\textcolor{keyword}{false},\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[0].Name);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ tmp.erase(remove(tmp.begin(),\ tmp.end(),\ \textcolor{charliteral}{'\ '}),\ tmp.end());}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ RefElements.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{comment}{//\ Read\ initial\ compositions}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00160}00160\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ converter\ <<\ alpha\ <<\ string(\textcolor{stringliteral}{"{}\_"{}})\ <<\ \mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[n].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ counter\ =\ converter.str();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a2f272319bed57a556e89986999c3ed76}{Initial}}(\{alpha,\ n\})\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}C0\_"{}})\ +\ converter.str());}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{comment}{//\ Set\ reference\ element\ flags}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00170}00170\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[i].Index\ =\ i;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[i].Component\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[i].\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[comp].Name\ ==\ RefElements[i])}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[i].Component[comp].isReference\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[i].ReferenceElement\ =\ comp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00182}00182\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{comment}{//\ Set\ fast\ diffusors}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \ comp\ =\ 0;\ \ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ \ \ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00187}00187\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ identifier\ =\ \textcolor{stringliteral}{"{}FastDiffusor\_"{}}\ +\ to\_string(alpha)\ +\ \textcolor{stringliteral}{"{}\_"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].isFastDiffusor\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp,moduleLocation,identifier,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00198}00198\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ converter\ <<\ alpha\ <<\ string(\textcolor{stringliteral}{"{}\_"{}})\ <<\ \mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[n].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ counter\ =\ converter.str();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[n].isStoichiometric\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Stoichiometric\_"{}})\ +\ converter.str(),\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00206}00206\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nStoich\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[n].isStoichiometric)\ nStoich++;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nStoich\ ==\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}-\/1)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[n].isStoichiometric\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{comment}{//\ Read\ composition\ limits}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00224}00224\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ identifier\ =\ \textcolor{stringliteral}{"{}Cmin\_"{}}\ +\ to\_string(alpha)\ +\ \textcolor{stringliteral}{"{}\_"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].Min\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moduleLocation,identifier,\textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[comp].Min);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ identifier\ =\ \textcolor{stringliteral}{"{}Cmax\_"{}}\ +\ to\_string(alpha)\ +\ \textcolor{stringliteral}{"{}\_"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].Component[comp].Max\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ moduleLocation,identifier,\textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}[alpha].\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[comp].Max);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00238}00238\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{comment}{//\ Detect\ stoichiometric\ components}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{comment}{/*for\ (size\_t\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ alpha++)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00242}00242\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00243}00243\ \textcolor{comment}{\ \ \ \ \ \ \ \ Phase[alpha].StoichiometricFlag\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00244}00244\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00245}00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ nStoich\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00246}00246\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (size\_t\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00247}00247\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (fabs(Phase[alpha].Component[comp].Max}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00248}00248\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ -\/\ Phase[alpha].Component[comp].Min)\ <=\ DBL\_EPSILON)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00249}00249\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00250}00250\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Phase[alpha].Component[comp].isStoichiometric\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00251}00251\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Phase[alpha].StoichiometricFlag\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00252}00252\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ nStoich++;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00253}00253\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ tmp\ =\ "{}Component\ "{}\ +\ Component[comp].Name}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00255}00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "{}\ in\ phase\ "{}\ +\ Phase[alpha].Name}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00256}00256\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "{}\ will\ be\ regarded\ as\ a\ stoichiometric\ component!"{};}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00257}00257\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ tmp\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00258}00258\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00259}00259\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00260}00260\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (nStoich\ ==\ Ncomp\ -\/\ 1)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00261}00261\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (size\_t\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00262}00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (!Phase[alpha].Component[comp].isStoichiometric)}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00263}00263\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00264}00264\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Phase[alpha].Component[comp].isStoichiometric\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00265}00265\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00266}00266\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ tmp\ =\ "{}Component\ "{}\ +\ Component[comp].Name}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00267}00267\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "{}\ in\ phase\ "{}\ +\ Phase[alpha].Name}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00268}00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "{}\ has\ no\ composition\ limits\ but\ seems\ to\ be\ a"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00269}00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\ stoichiometric\ component!"{};}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00270}00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ConsoleOutput::WriteWarning(tmp,\ thisclassname,\ "{}Initialize"{});}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00271}00271\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00272}00272\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{comment}{//\ Enable\ 1D\ extensions}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00276}00276\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ X0\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_X0"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(X0\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ X0\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_X0\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_aac695b1abddbd387a492092f196e1751}{ExtensionX0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(X0\_size,X0\_phase,\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{-\/1,\ 0,\ 0\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ XN\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_XN"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(XN\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ XN\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_XN\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a286a892fd203c18d251da3cc9513107d}{ExtensionXN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(XN\_size,XN\_phase,\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{\ 1,\ 0,\ 0\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00292}00292\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00294}00294\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Y0\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_Y0"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Y0\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Y0\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_Y0\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_aac695b1abddbd387a492092f196e1751}{ExtensionX0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(Y0\_size,Y0\_phase,\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{0,\ -\/1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ YN\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_YN"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(YN\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ YN\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_YN\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_ad6cc8b34b65e19897955e55b5bec9a2b}{ExtensionYN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(YN\_size,YN\_phase,\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{0,\ 1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00310}00310\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00311}00311\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00312}00312\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Z0\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_Z0"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Z0\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Z0\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_Z0\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_aac695b1abddbd387a492092f196e1751}{ExtensionX0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(Z0\_size,Z0\_phase,\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{0,\ 0,\ -\/1\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ZN\_size\ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_ZN"{}},\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ZN\_size\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ZN\_phase\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}Extension\_ZN\_Phase"{}},\ \textcolor{keyword}{true},\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a286a892fd203c18d251da3cc9513107d}{ExtensionXN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_ac7aefce93069676da94f5798cc102fef}{Initialize}}(ZN\_size,ZN\_phase,\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},(\mbox{\hyperlink{classopenphase_1_1iVector3}{iVector3}})\{0,\ 0,\ 1\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adfacec1f02138f32b8f92c46bd7a78da}{ExtensionsActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00328}00328\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00330}00330\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a41d5bd40d1344b0d953390acd22e1e68}{SortedElementMatrix}}\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_ae85cc6db6964c1f91741affda7a4a162}{CalculateSortedElementMatrix}}();\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00332}00332\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a42c6a091ead613423a87c6491fb91e3b}{PrintData}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{comment}{//CalculateMolefractionLimits();}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00336}00336\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00337}00337\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00338}00338\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00340}\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{00340}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{Composition::SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition1Dextension}{Composition1Dextension}}\&\ CxExt)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00341}00341\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00342}00342\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ CxExt.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}.\mbox{\hyperlink{classopenphase_1_1Storage1D_a844e6591dcc678b2a3acafc9e659aff7}{total\_size}}();\ x++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00344}00344\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ CxExt.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a33737b02db373673a933b6631e1d44df}{Data}}[x](\{comp\})\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_a2f272319bed57a556e89986999c3ed76}{Initial}}(\{CxExt.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a3bf5bcf4b51a3bd4f5adf4fedc41efd9}{PhaseIndex}},comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00346}00346\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00347}00347\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00348}\mbox{\hyperlink{classopenphase_1_1Composition_a5d40e406f4799c501a41135a8b6fc78d}{00348}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a5d40e406f4799c501a41135a8b6fc78d}{Composition::SetInitialMoleFractions}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00349}00349\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{comment}{/*\ Simple\ composition\ set\ up,\ uniform\ component\ fractions\ per\ phase.\ */}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00352}00352\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}},\ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00353}00353\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k)\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_a2f272319bed57a556e89986999c3ed76}{Initial}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00355}00355\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00356}00356\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00358}00358\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_ad6203466498e957165eef1794046964d}{CalculateTotalMoleFractions}}(\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00359}00359\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_ac9f6eecb9f775d6ed996af3e262f53a0}{CalculateMoleFractionsTotalAverage}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00360}00360\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a63d50154dc1a3f5eb2f4c0aaff6e2500}{CalculateMoleFractionsAverage}}(\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00361}00361\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a63c2b2d7f22a360ac3ed24449679b480}{CalculateTotalMolarVolume}}();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00363}00363\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00365}00365\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_aac695b1abddbd387a492092f196e1751}{ExtensionX0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_aac695b1abddbd387a492092f196e1751}{ExtensionX0}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00367}00367\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ MPI\_SIZE\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00369}00369\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00370}00370\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a286a892fd203c18d251da3cc9513107d}{ExtensionXN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_a286a892fd203c18d251da3cc9513107d}{ExtensionXN}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00372}00372\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a3f43076de1f700313fc2885732459dfb}{ExtensionY0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_a3f43076de1f700313fc2885732459dfb}{ExtensionY0}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_ad6cc8b34b65e19897955e55b5bec9a2b}{ExtensionYN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_ad6cc8b34b65e19897955e55b5bec9a2b}{ExtensionYN}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a58beec064e43dccb970c77e310aab89c}{ExtensionZ0}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_a58beec064e43dccb970c77e310aab89c}{ExtensionZ0}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a3e1a8541cddad781a9afb3f65acbc931}{ExtensionZN}}.\mbox{\hyperlink{classopenphase_1_1Composition1Dextension_a7893c8caf3eef5891cc6371412320f72}{isActive}}())\ \{\mbox{\hyperlink{classopenphase_1_1Composition_abdab3053a55dcf4b55044b3855f1749b}{SetInitiaMoleFractions1Dextension}}(\mbox{\hyperlink{classopenphase_1_1Composition_a3e1a8541cddad781a9afb3f65acbc931}{ExtensionZN}});\}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00377}00377\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}(\textcolor{stringliteral}{"{}Total\ molar\ volume:\ "{}}\ +\ to\_string(\mbox{\hyperlink{classopenphase_1_1Composition_adbc9922a0a8b1460cfb352d291aec2ac}{TotalMolarVolume}}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00378}00378\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00380}\mbox{\hyperlink{classopenphase_1_1Composition_a40bc2c10dab3d1d316feb117358f5541}{00380}}\ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ \mbox{\hyperlink{classopenphase_1_1Composition_a40bc2c10dab3d1d316feb117358f5541}{Composition::WeightFractionsTotal}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ z)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00381}00381\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00385}00385\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ result(\{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{keywordtype}{double}\ div\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00388}00388\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00389}00389\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locWeight\ =\ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}(x,y,z,\{comp\})*\mbox{\hyperlink{classopenphase_1_1Composition_afe1b31169e351a7a752a4d196f3a3328}{PT}}.\mbox{\hyperlink{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}{GetData}}(\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[comp].Name).\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a905590dd24600c67bb080c549faec7ef}{AtomicWeight}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ div\ +=\ locWeight;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ result(\{comp\})\ =\ locWeight;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00393}00393\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00394}00394\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00395}00395\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ result(\{comp\})\ /=\ div;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00397}00397\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00399}00399\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00401}\mbox{\hyperlink{classopenphase_1_1Composition_ad6203466498e957165eef1794046964d}{00401}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_ad6203466498e957165eef1794046964d}{Composition::CalculateTotalMoleFractions}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00402}00402\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00403}00403\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}},\mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}.\mbox{\hyperlink{classopenphase_1_1Storage3D_af665bb9655e7117ac70af33f7c40ef9f}{Bcells}}(),)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00404}00404\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}(i,j,k).set\_to\_zero();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}(i,j,k,\{comp\})\ +=\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}.Fractions(i,j,k,\{alpha\})*}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k,\{alpha,comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00413}00413\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00414}00414\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00415}00415\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00417}\mbox{\hyperlink{classopenphase_1_1Composition_a63c2b2d7f22a360ac3ed24449679b480}{00417}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a63c2b2d7f22a360ac3ed24449679b480}{Composition::CalculateTotalMolarVolume}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00418}00418\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00419}00419\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adbc9922a0a8b1460cfb352d291aec2ac}{TotalMolarVolume}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00421}00421\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00422}00422\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_adbc9922a0a8b1460cfb352d291aec2ac}{TotalMolarVolume}}\ +=\ \mbox{\hyperlink{classopenphase_1_1Composition_afe1b31169e351a7a752a4d196f3a3328}{PT}}.\mbox{\hyperlink{classopenphase_1_1PeriodicTable_ab5b7c9707a4496490b82d12e9e71d163}{GetData}}(\mbox{\hyperlink{classopenphase_1_1Composition_a8d1932b6cd0b45234e1ddde9b12627db}{Component}}[i].Name).\mbox{\hyperlink{structopenphase_1_1PeriodicTable_1_1Element_a62a3eeaa35b58095a6130d62450149ca}{MolarVolume}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classopenphase_1_1Composition_a61ce38e551a2507f67ff4c5b45e23c93}{MoleFractionsTotalAverage}}[i];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00425}00425\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00426}00426\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00428}\mbox{\hyperlink{classopenphase_1_1Composition_ac9f6eecb9f775d6ed996af3e262f53a0}{00428}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_ac9f6eecb9f775d6ed996af3e262f53a0}{Composition::CalculateMoleFractionsTotalAverage}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00429}00429\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00430}00430\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ locMoleFractionsTotalAverage(\{\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00431}00431\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}},0,reduction(TensorD1Sum:\ locMoleFractionsTotalAverage))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00432}00432\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ locMoleFractionsTotalAverage\ +=\ \mbox{\hyperlink{classopenphase_1_1Composition_a3309dd51b525443c8ca0bd0c7e5cacff}{MoleFractionsTotal}}(i,j,k);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00434}00434\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00435}00435\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00437}00437\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a61ce38e551a2507f67ff4c5b45e23c93}{MoleFractionsTotalAverage}}\ =\ locMoleFractionsTotalAverage;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00439}00439\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00440}00440\ \ \ \ \ OP\_MPI\_Allreduce(locMoleFractionsTotalAverage.data(),\ \mbox{\hyperlink{classopenphase_1_1Composition_a61ce38e551a2507f67ff4c5b45e23c93}{MoleFractionsTotalAverage}}.\mbox{\hyperlink{classopenphase_1_1Tensor_a608087d97a23bdd1c61c175989133ee0}{data}}(),\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}},\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00441}00441\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00442}00442\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a61ce38e551a2507f67ff4c5b45e23c93}{MoleFractionsTotalAverage}}\ /=\ double(\mbox{\hyperlink{classopenphase_1_1Composition_aa319fc1a29178036e0b8560ab48682f2}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6e23bc9f72a10111916898b3641a8162}{TotalNumberOfCells}}());}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00443}00443\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00445}\mbox{\hyperlink{classopenphase_1_1Composition_a63d50154dc1a3f5eb2f4c0aaff6e2500}{00445}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1Composition_a63d50154dc1a3f5eb2f4c0aaff6e2500}{Composition::CalculateMoleFractionsAverage}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00446}00446\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00447}00447\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 3>}}\ locMoleFractionsInterfaceAverage(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00448}00448\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 2>}}\ locMoleFractionsAverage(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00450}00450\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 2>}}\ NpointsAB(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}},\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00451}00451\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ NpointsA(\{\mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00453}00453\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}},0,reduction(TensorD2Sum:\ locMoleFractionsAverage)\ reduction(TensorD3Sum:\ locMoleFractionsInterfaceAverage)\ reduction(TensorD1Sum:\ NpointsA)\ reduction(TensorD2Sum:\ NpointsAB))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00454}00454\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fractions(i,j,k,\{alpha\})\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ NpointsA(\{alpha\})\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMoleFractionsAverage(\{alpha,\ comp\})\ +=\ \mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k,\{alpha,\ comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fractions(i,j,k,\{alpha\})\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ beta\ =\ 0;\ beta\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a7cc92f80205a8e66f9b5cae890c4e564}{Nphases}};\ beta++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fractions(i,j,k,\{beta\})\ !=\ 0.0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NpointsAB(\{alpha,\ beta\})\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ \mbox{\hyperlink{classopenphase_1_1Composition_a2eaeed14b53a78bc5ce3fe364b8155c1}{Ncomp}};\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locMoleFractionsInterfaceAverage(\{alpha,\ beta,\ comp\})\ +=}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fractions(i,j,k,\{alpha\})*\mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k,\{alpha,\ comp\})\ +}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition_a1eeb78f7023a3a507b33f9495c4f632a}{Phase}}.Fractions(i,j,k,\{\ beta\})*\mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k,\{\ beta,\ comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00481}00481\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00482}00482\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00484}00484\ \ \ \ \ MoleFractionsAverage\ =\ locMoleFractionsAverage;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00485}00485\ \ \ \ \ MoleFractionsInterfaceAverage\ =\ locMoleFractionsInterfaceAverage;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00487}00487\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00488}00488\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ tmpNpointsA\ =\ NpointsA;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00489}00489\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 2>}}\ tmpNpointsAB\ =\ NpointsAB;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00490}00490\ \ \ \ \ OP\_MPI\_Allreduce(tmpNpointsA.\mbox{\hyperlink{classopenphase_1_1Tensor_a608087d97a23bdd1c61c175989133ee0}{data}}(),\ NpointsA.data(),\ Nphases,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00491}00491\ \ \ \ \ OP\_MPI\_Allreduce(tmpNpointsAB.\mbox{\hyperlink{classopenphase_1_1Tensor_a608087d97a23bdd1c61c175989133ee0}{data}}(),\ NpointsAB.data(),\ Nphases*Nphases,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00493}00493\ \ \ \ \ OP\_MPI\_Allreduce(locMoleFractionsAverage.data(),\ MoleFractionsAverage.data(),\ Nphases*Ncomp,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00494}00494\ \ \ \ \ OP\_MPI\_Allreduce(locMoleFractionsInterfaceAverage.data(),\ MoleFractionsInterfaceAverage.data(),\ Nphases*Nphases*Ncomp,\ OP\_MPI\_DOUBLE,\ OP\_MPI\_SUM,\ OP\_MPI\_COMM\_WORLD);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00495}00495\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00497}00497\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00498}00498\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(NpointsA(\{alpha\})\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MoleFractionsAverage(\{alpha,\ comp\})\ /=\ NpointsA(\{alpha\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MoleFractionsAverage(\{alpha,\ comp\})\ =\ MoleFractionsTotalAverage(\{comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00513}00513\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00515}00515\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00516}00516\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \ beta\ =\ 0;\ \ beta\ <\ Nphases;\ beta++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00517}00517\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(NpointsAB(\{alpha,\ beta\})\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MoleFractionsInterfaceAverage(\{alpha,\ beta,\ comp\})\ /=\ NpointsAB(\{alpha,\ beta\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MoleFractionsInterfaceAverage(\{alpha,\ beta,\ comp\})\ =\ 0.5*(MoleFractionsAverage(\{alpha,\ comp\})\ +\ MoleFractionsAverage(\{beta,\ comp\}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00532}00532\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00533}00533\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00534}00534\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00535}00535\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \ beta\ =\ 0;\ \ beta\ <\ Nphases;\ beta++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00536}00536\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(NpointsAB(\{alpha,\ beta\})\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ Interface(\{alpha,\ beta\})\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ Interface(\{alpha,\ beta\})\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00545}00545\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00546}00546\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00547}00547\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00548}\mbox{\hyperlink{classopenphase_1_1Composition_a50cb9f0303b50d9be87a042338de9b38}{00548}}\ \textcolor{keywordtype}{void}\ Composition::Remesh(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ newNx,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00549}00549\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00550}00550\ \ \ \ \ Grid.SetDimensions(newNx,\ newNy,newNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00551}00551\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00552}00552\ \ \ \ \ MoleFractions.Remesh(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00553}00553\ \ \ \ \ MoleFractionsTotal.Remesh(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00555}00555\ \ \ \ \ MoleFractionsDotIn.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00556}00556\ \ \ \ \ MoleFractionsDotOut.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00557}00557\ \ \ \ \ MoleFractionsTotalDot.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00559}00559\ \ \ \ \ Limiting.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00561}00561\ \ \ \ \ NormIn.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00562}00562\ \ \ \ \ NormOut.Reallocate(Grid.Nx,\ Grid.Ny,\ Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00564}00564\ \ \ \ \ SetBoundaryConditions(BC);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00565}00565\ \ \ \ \ ConsoleOutput::WriteStandard(thisclassname,\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00566}00566\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00568}\mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{00568}}\ \textcolor{keywordtype}{void}\ Composition::MoveFrame(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dx,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dy,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dz,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00570}00570\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00571}00571\ \ \ \ \ \textcolor{keywordtype}{int}\ xBeg\ =\ (dx\ >=\ 0)\ +\ (dx\ <\ 0)*(Grid.Nx)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00572}00572\ \ \ \ \ \textcolor{keywordtype}{int}\ xEnd\ =\ (dx\ >=\ 0)*(Grid.Nx)\ +\ (dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00573}00573\ \ \ \ \ \textcolor{keywordtype}{int}\ xInc\ =\ 1\ -\/\ 2*(dx\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00574}00574\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00575}00575\ \ \ \ \ \textcolor{keywordtype}{int}\ yBeg\ =\ (dy\ >=\ 0)\ +\ (dy\ <\ 0)*(Grid.Ny)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00576}00576\ \ \ \ \ \textcolor{keywordtype}{int}\ yEnd\ =\ (dy\ >=\ 0)*(Grid.Ny)\ +\ (dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00577}00577\ \ \ \ \ \textcolor{keywordtype}{int}\ yInc\ =\ 1\ -\/\ 2*(dy\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00578}00578\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00579}00579\ \ \ \ \ \textcolor{keywordtype}{int}\ zBeg\ =\ (dz\ >=\ 0)\ +\ (dz\ <\ 0)*(Grid.Nz)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00580}00580\ \ \ \ \ \textcolor{keywordtype}{int}\ zEnd\ =\ (dz\ >=\ 0)*(Grid.Nz)\ +\ (dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00581}00581\ \ \ \ \ \textcolor{keywordtype}{int}\ zInc\ =\ 1\ -\/\ 2*(dz\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00582}00582\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00583}00583\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ xBeg;\ ((dx\ >=\ 0)\ and\ (i\ <=\ xEnd))\ or\ ((dx\ <\ 0)\ and\ (i\ >=\ xEnd));\ i\ +=\ xInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00584}00584\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ yBeg;\ ((dy\ >=\ 0)\ and\ (j\ <=\ yEnd))\ or\ ((dy\ <\ 0)\ and\ (j\ >=\ yEnd));\ j\ +=\ yInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00585}00585\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ zBeg;\ ((dz\ >=\ 0)\ and\ (k\ <=\ zEnd))\ or\ ((dz\ <\ 0)\ and\ (k\ >=\ zEnd));\ k\ +=\ zInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00586}00586\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00587}00587\ \ \ \ \ \ \ \ \ MoleFractions(i,j,k)\ =\ MoleFractions(i\ +\ dx*Grid.dNx,\ j\ +\ dy*Grid.dNy,\ k\ +\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00588}00588\ \ \ \ \ \ \ \ \ MoleFractionsTotal(i,j,k)\ =\ MoleFractionsTotal(i\ +\ dx*Grid.dNx,\ j\ +\ dy*Grid.dNy,\ k\ +\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00589}00589\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00590}00590\ \ \ \ \ SetBoundaryConditions(BC);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00591}00591\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00592}00592\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionX0.isActive())\ ExtensionX0.moveFrame(-\/dx*Grid.dNx,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a54dcce2fcfaf513171b20a889070fd36}{BC0X}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00593}00593\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionXN.isActive())\ ExtensionXN.moveFrame(\ dx*Grid.dNx,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a6caa59a07427aa961e64a3d327f18ef7}{BCNX}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00594}00594\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionY0.isActive())\ ExtensionY0.moveFrame(-\/dy*Grid.dNy,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_abbecbe8541e92043aa46463ee1e3d31e}{BC0Y}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00595}00595\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionYN.isActive())\ ExtensionYN.moveFrame(\ dy*Grid.dNy,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a4b80324c0e18145af008a9664298cd20}{BCNY}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00596}00596\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionZ0.isActive())\ ExtensionZ0.moveFrame(-\/dz*Grid.dNz,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a6d7bff55e0c045c403b19587c4fabb46}{BC0Z}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00597}00597\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionZN.isActive())\ ExtensionZN.moveFrame(\ dz*Grid.dNz,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_adf3e679c09cec8e74f09189c4e5383af}{BCNZ}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00598}00598\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00599}00599\ \ \ \ \ ConsoleOutput::WriteStandard(thisclassname,\ \textcolor{stringliteral}{"{}Frame\ moved"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00600}00600\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00602}\mbox{\hyperlink{classopenphase_1_1Composition_a10fbc08457804878ac0a08aa3bf4e868}{00602}}\ \textcolor{keywordtype}{void}\ Composition::ConsumePlane(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dx,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dy,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dz,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ z,}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00605}00605\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00606}00606\ \ \ \ \ \textcolor{keywordtype}{int}\ xBeg\ =\ (dx\ >=\ 0)\ +\ (dx\ <\ 0)*(Grid.Nx)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00607}00607\ \ \ \ \ \textcolor{keywordtype}{int}\ xEnd\ =\ (dx\ >=\ 0)*(Grid.Nx)\ +\ (dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00608}00608\ \ \ \ \ \textcolor{keywordtype}{int}\ xInc\ =\ 1\ -\/\ 2*(dx\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00610}00610\ \ \ \ \ \textcolor{keywordtype}{int}\ yBeg\ =\ (dy\ >=\ 0)\ +\ (dy\ <\ 0)*(Grid.Ny)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00611}00611\ \ \ \ \ \textcolor{keywordtype}{int}\ yEnd\ =\ (dy\ >=\ 0)*(Grid.Ny)\ +\ (dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00612}00612\ \ \ \ \ \textcolor{keywordtype}{int}\ yInc\ =\ 1\ -\/\ 2*(dy\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00614}00614\ \ \ \ \ \textcolor{keywordtype}{int}\ zBeg\ =\ (dz\ >=\ 0)\ +\ (dz\ <\ 0)*(Grid.Nz)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00615}00615\ \ \ \ \ \textcolor{keywordtype}{int}\ zEnd\ =\ (dz\ >=\ 0)*(Grid.Nz)\ +\ (dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00616}00616\ \ \ \ \ \textcolor{keywordtype}{int}\ zInc\ =\ 1\ -\/\ 2*(dz\ <\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00617}00617\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00618}00618\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ xBeg;\ ((dx\ >=\ 0)\ and\ (i\ <=\ xEnd))\ or\ ((dx\ <\ 0)\ and\ (i\ >=\ xEnd));\ i\ +=\ xInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00619}00619\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ yBeg;\ ((dy\ >=\ 0)\ and\ (j\ <=\ yEnd))\ or\ ((dy\ <\ 0)\ and\ (j\ >=\ yEnd));\ j\ +=\ yInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00620}00620\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ zBeg;\ ((dz\ >=\ 0)\ and\ (k\ <=\ zEnd))\ or\ ((dz\ <\ 0)\ and\ (k\ >=\ zEnd));\ k\ +=\ zInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00621}00621\ \ \ \ \ \textcolor{keywordflow}{if}((i-\/x)*dx+(j-\/y)*dy+(k-\/z)*dz\ >=\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00622}00622\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00623}00623\ \ \ \ \ \ \ \ \ MoleFractions(i,j,k)\ =\ MoleFractions(i\ +\ dx*Grid.dNx,\ j\ +\ dy*Grid.dNy,\ k\ +\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ MoleFractionsTotal(i,j,k)\ =\ MoleFractionsTotal(i\ +\ dx*Grid.dNx,\ j\ +\ dy*Grid.dNy,\ k\ +\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00625}00625\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00626}00626\ \ \ \ \ xBeg\ =\ (dx\ >=\ 0)*(Grid.Nx)\ +\ (dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00627}00627\ \ \ \ \ xEnd\ =\ (dx\ >=\ 0)\ +\ (dx\ <\ 0)*(Grid.Nx)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00628}00628\ \ \ \ \ xInc\ =\ 2*(dx\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00629}00629\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00630}00630\ \ \ \ \ yBeg\ =\ (dy\ >=\ 0)*(Grid.Ny)\ +\ (dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00631}00631\ \ \ \ \ yEnd\ =\ (dy\ >=\ 0)\ +\ (dy\ <\ 0)*(Grid.Ny)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00632}00632\ \ \ \ \ yInc\ =\ 2*(dy\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00634}00634\ \ \ \ \ zBeg\ =\ (dz\ >=\ 0)*(Grid.Nz)\ +\ (dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00635}00635\ \ \ \ \ zEnd\ =\ (dz\ >=\ 0)\ +\ (dz\ <\ 0)*(Grid.Nz)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00636}00636\ \ \ \ \ zInc\ =\ 2*(dz\ <\ 0)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00637}00637\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00638}00638\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ xBeg;\ ((dx\ >=\ 0)\ and\ (i\ >=\ xEnd))\ or\ ((dx\ <\ 0)\ and\ (i\ <=\ xEnd));\ i\ +=\ xInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00639}00639\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ yBeg;\ ((dy\ >=\ 0)\ and\ (j\ >=\ yEnd))\ or\ ((dy\ <\ 0)\ and\ (j\ <=\ yEnd));\ j\ +=\ yInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00640}00640\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ zBeg;\ ((dz\ >=\ 0)\ and\ (k\ >=\ zEnd))\ or\ ((dz\ <\ 0)\ and\ (k\ <=\ zEnd));\ k\ +=\ zInc)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00641}00641\ \ \ \ \ \textcolor{keywordflow}{if}((i-\/x)*dx+(j-\/y)*dy+(k-\/z)*dz\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00642}00642\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00643}00643\ \ \ \ \ \ \ \ \ MoleFractions(i,j,k)\ =\ MoleFractions(i\ -\/\ dx*Grid.dNx,\ j\ -\/\ dy*Grid.dNy,\ k\ -\/\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00644}00644\ \ \ \ \ \ \ \ \ MoleFractionsTotal(i,j,k)\ =\ MoleFractionsTotal(i\ -\/\ dx*Grid.dNx,\ j\ -\/\ dy*Grid.dNy,\ k\ -\/\ dz*Grid.dNz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00645}00645\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00646}00646\ \ \ \ \ SetBoundaryConditions(BC);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00647}00647\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00648}00648\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionX0.isActive())\ ExtensionX0.moveFrame(\ dx*Grid.dNx,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a54dcce2fcfaf513171b20a889070fd36}{BC0X}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00649}00649\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionXN.isActive())\ ExtensionXN.moveFrame(\ dx*Grid.dNx,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a6caa59a07427aa961e64a3d327f18ef7}{BCNX}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00650}00650\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionY0.isActive())\ ExtensionY0.moveFrame(\ dy*Grid.dNy,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_abbecbe8541e92043aa46463ee1e3d31e}{BC0Y}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00651}00651\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionYN.isActive())\ ExtensionYN.moveFrame(\ dy*Grid.dNy,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a4b80324c0e18145af008a9664298cd20}{BCNY}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00652}00652\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionZ0.isActive())\ ExtensionZ0.moveFrame(\ dz*Grid.dNz,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a6d7bff55e0c045c403b19587c4fabb46}{BC0Z}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00653}00653\ \ \ \ \ \textcolor{keywordflow}{if}(ExtensionZN.isActive())\ ExtensionZN.moveFrame(\ dz*Grid.dNz,\ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_adf3e679c09cec8e74f09189c4e5383af}{BCNZ}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00655}00655\ \ \ \ \ ConsoleOutput::WriteStandard(thisclassname,\ \textcolor{stringliteral}{"{}Plane\ consumed"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00656}00656\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00658}\mbox{\hyperlink{classopenphase_1_1Composition_a73ba3e2fa9a409f6864f0c2299e50751}{00658}}\ \textcolor{keywordtype}{void}\ Composition::SetBoundaryConditions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00659}00659\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00660}00660\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(MoleFractions);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00661}00661\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(MoleFractions);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00662}00662\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(MoleFractions);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00663}00663\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00664}00664\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(MoleFractionsTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00665}00665\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(MoleFractionsTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00666}00666\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(MoleFractionsTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00667}00667\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00668}00668\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00669}\mbox{\hyperlink{classopenphase_1_1Composition_a91cf87b654d27a8c3afd9d996c7845f4}{00669}}\ \textcolor{keywordtype}{void}\ Composition::SetLimitsBoundaryConditions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00670}00670\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00671}00671\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(NormIn);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00672}00672\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(NormIn);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00673}00673\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(NormIn);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00674}00674\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00675}00675\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(NormOut);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00676}00676\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(NormOut);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00677}00677\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(NormOut);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00678}00678\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00679}00679\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a2cb498fc8b45ddbf52000ed53cc6128c}{SetXFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00680}00680\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_adfbe221032e215106a752aff2c6372b5}{SetYFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00681}00681\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ac0cc09664ae99930e5c188396dd4c02e}{SetZFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00682}00682\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00683}00683\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00684}\mbox{\hyperlink{classopenphase_1_1Composition_aa9f3bd0727fa7827ebc15a7f58eaba15}{00684}}\ \textcolor{keywordtype}{void}\ Composition::SetTotalLimitsBoundaryConditions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00685}00685\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00686}00686\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a840ddec2e73e77eddc2c9a42f3d2d65c}{SetX}}(NormTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00687}00687\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ad9f0d8b0244dcc2fda8426ecf2fe942a}{SetY}}(NormTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00688}00688\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a5071dfcfb0613d28a2e683c393043222}{SetZ}}(NormTotal);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00689}00689\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00690}00690\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_a2cb498fc8b45ddbf52000ed53cc6128c}{SetXFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00691}00691\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_adfbe221032e215106a752aff2c6372b5}{SetYFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00692}00692\ \ \ \ \ BC.\mbox{\hyperlink{classopenphase_1_1BoundaryConditions_ac0cc09664ae99930e5c188396dd4c02e}{SetZFlags}}(Limiting);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00693}00693\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00695}\mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{00695}}\ \textcolor{keywordtype}{bool}\ Composition::Write(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00696}00696\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00697}00697\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00698}00698\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00699}00699\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\ thisclassname\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ std::to\_string(MPI\_RANK)\ +\ \textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00700}00700\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00701}00701\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_ab6213be6079aa82839e0f94372407ad4}{RawDataDir}},\ thisclassname\ +\ \textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00702}00702\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00703}00703\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00704}00704\ \ \ \ \ ofstream\ out(FileName.c\_str(),\ ios::out\ |\ ios::binary);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00706}00706\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00707}00707\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00709}00709\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ FileName\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ created"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ ConsoleOutput::WriteExit(message.str(),\ thisclassname,\ \textcolor{stringliteral}{"{}Write()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00711}00711\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00712}00712\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00714}00714\ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\ =\ Grid.Nx;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00715}00715\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00716}00716\ \ \ \ \ tmp\ =\ Grid.Ny;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00717}00717\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00718}00718\ \ \ \ \ tmp\ =\ Grid.Nz;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00719}00719\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00720}00720\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tmp2\ =\ Nphases;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00721}00721\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp2),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00722}00722\ \ \ \ \ tmp2\ =\ Ncomp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00723}00723\ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&tmp2),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00724}00724\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00725}00725\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,MoleFractions,0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00726}00726\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(MoleFractions(i,j,k).data()),\ MoleFractions(i,j,k).size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00727}00727\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00728}00728\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,MoleFractionsTotal,0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00729}00729\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(MoleFractionsTotal(i,j,k).data()),\ MoleFractionsTotal(i,j,k).size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00730}00730\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00731}00731\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00732}00732\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00733}00733\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00734}\mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{00734}}\ \textcolor{keywordtype}{bool}\ Composition::Read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00735}00735\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00736}00736\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00737}00737\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00738}00738\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}},\ thisclassname\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ std::to\_string(MPI\_RANK)\ +\ \textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00739}00739\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00740}00740\ \ \ \ \ \textcolor{keywordtype}{string}\ FileName\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a502392af8c0a6b94ca316b014d601210}{InputRawDataDir}},\ thisclassname\ +\ \textcolor{stringliteral}{"{}\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.dat"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00741}00741\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00742}00742\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00743}00743\ \ \ \ \ fstream\ inp(FileName.c\_str(),\ ios::in\ |\ ios::binary);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00744}00744\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00745}00745\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00746}00746\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00747}00747\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00748}00748\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ <<\ FileName\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00749}00749\ \ \ \ \ \ \ \ \ ConsoleOutput::WriteWarning(message.str(),\ thisclassname,\ \textcolor{stringliteral}{"{}Read()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00750}00750\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00751}00751\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00752}00752\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00753}00753\ \ \ \ \ \textcolor{keywordtype}{int}\ locNx\ =\ Grid.Nx;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00754}00754\ \ \ \ \ \textcolor{keywordtype}{int}\ locNy\ =\ Grid.Ny;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00755}00755\ \ \ \ \ \textcolor{keywordtype}{int}\ locNz\ =\ Grid.Nz;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00756}00756\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNphases\ =\ Nphases;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00757}00757\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNcomp\ =\ Ncomp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00758}00758\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNx),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00759}00759\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNy),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00760}00760\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNz),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00761}00761\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNphases),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00762}00762\ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&locNcomp),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00763}00763\ \ \ \ \ \textcolor{keywordflow}{if}(locNx\ !=\ Grid.Nx\ or\ locNy\ !=\ Grid.Ny\ or\ locNz\ !=\ Grid.Nz\ or\ locNphases\ !=\ Nphases\ or\ locNcomp\ !=\ Ncomp)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00764}00764\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00766}00766\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Inconsistent\ system\ dimensions!\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ dimensions:\ ("{}}\ <<\ locNx\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ locNy\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ locNz\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00768}00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ Nphases:\ "{}}\ <<\ locNphases\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ Ncomp:\ "{}}\ <<\ locNcomp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00770}00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ dimensions:\ ("{}}\ <<\ Grid.Nx\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ Grid.Ny\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ Grid.Nz\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ Nphases:\ "{}}\ <<\ Nphases\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00772}00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ Ncomp:\ "{}}\ <<\ Ncomp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00773}00773\ \ \ \ \ \ \ \ \ ConsoleOutput::WriteWarning(message.str(),\ thisclassname,\ \textcolor{stringliteral}{"{}Read()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00774}00774\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00775}00775\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00776}00776\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00777}00777\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,MoleFractions,0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00778}00778\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(MoleFractions(i,j,k).data()),\ MoleFractions(i,j,k).size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00779}00779\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00780}00780\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,MoleFractionsTotal,0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00781}00781\ \ \ \ \ \ \ \ \ inp.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(MoleFractionsTotal(i,j,k).data()),\ MoleFractionsTotal(i,j,k).size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00782}00782\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00783}00783\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a71aed4b94e116454c7b11985a91e49ec}{STORAGE\_LOOP\_BEGIN}}(i,j,k,MoleFractionsTotal,0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00784}00784\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Ncomp;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00785}00785\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00786}00786\ \ \ \ \ \ \ \ \ \ \ \ \ TotInitial(\{n\})\ +=\ MoleFractionsTotal(i,\ j,\ k)(\{n\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00787}00787\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00788}00788\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a6ad2c83345f230517a1770304d7b39ad}{STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00789}00789\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Ncomp;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00790}00790\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00791}00791\ \ \ \ \ \ \ \ \ TotInitial(\{n\})\ /=\ \textcolor{keywordtype}{double}(Grid.LocalNumberOfCells());}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00792}00792\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00793}00793\ \ \ \ \ SetBoundaryConditions(BC);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00794}00794\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00795}00795\ \ \ \ \ \textcolor{comment}{//\ Calculation\ of\ MoleFractionsTotalAverage\ is\ needed\ for\ CalculateTotalMolarVolume()}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00796}00796\ \ \ \ \ CalculateMoleFractionsTotalAverage();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00797}00797\ \ \ \ \ CalculateTotalMolarVolume();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00798}00798\ \ \ \ \ ConsoleOutput::WriteStandard(thisclassname,\ \textcolor{stringliteral}{"{}Binary\ input\ loaded"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00799}00799\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00800}00800\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00801}00801\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00802}\mbox{\hyperlink{classopenphase_1_1Composition_ab1a0e8522257924ce83065d24f267e22}{00802}}\ \textcolor{keywordtype}{void}\ Composition::WriteH5(\mbox{\hyperlink{classopenphase_1_1H5Interface}{H5Interface}}\&\ H5,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00803}00803\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00804}00804\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00805}00805\ \ \ \ \ std::vector<double>\ dbuffer;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00806}00806\ \ \ \ \ dbuffer.push\_back(Grid.Nx);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00807}00807\ \ \ \ \ dbuffer.push\_back(Grid.Ny);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00808}00808\ \ \ \ \ dbuffer.push\_back(Grid.Nz);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00809}00809\ \ \ \ \ dbuffer.push\_back(Nphases);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00810}00810\ \ \ \ \ dbuffer.push\_back(Ncomp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00811}00811\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb}{WriteCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}CxDomain"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00812}00812\ \ \ \ \ dbuffer.clear();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00813}00813\ \ \ \ \ dbuffer\ =\ MoleFractions.pack();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00814}00814\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb}{WriteCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}MoleFractions"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00815}00815\ \ \ \ \ dbuffer.clear();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00816}00816\ \ \ \ \ dbuffer\ =\ MoleFractionsTotal.pack();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00817}00817\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a4691d0b3cea80c3463e31b60dd99e3cb}{WriteCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}MoleFractionsTotal"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00818}00818\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00819}00819\ \ \ \ \ ConsoleOutput::WriteExit(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ thisclassname,\ \textcolor{stringliteral}{"{}H5Interface()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00820}00820\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_H5\_ERROR);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00821}00821\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00822}00822\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00823}00823\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00824}\mbox{\hyperlink{classopenphase_1_1Composition_a8c088aa0b041c82432157dd5e47fda3a}{00824}}\ \textcolor{keywordtype}{bool}\ Composition::ReadH5(\mbox{\hyperlink{classopenphase_1_1H5Interface}{H5Interface}}\&\ H5,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00825}00825\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00826}00826\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ H5OP}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00827}00827\ \ \ \ \ std::vector<double>\ dbuffer;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00828}00828\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85}{ReadCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}CxDomain"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00829}00829\ \ \ \ \ \textcolor{keywordtype}{int}\ locNx\ =\ dbuffer[0];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00830}00830\ \ \ \ \ \textcolor{keywordtype}{int}\ locNy\ =\ dbuffer[1];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00831}00831\ \ \ \ \ \textcolor{keywordtype}{int}\ locNz\ =\ dbuffer[2];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00832}00832\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNphases\ =\ dbuffer[3];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00833}00833\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNcomp\ =\ dbuffer[4];}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00834}00834\ \ \ \ \ dbuffer.clear();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00835}00835\ \ \ \ \ \textcolor{keywordflow}{if}(locNx\ !=\ Grid.Nx\ or\ locNy\ !=\ Grid.Ny\ or\ locNz\ !=\ Grid.Nz\ or\ locNphases\ !=\ Nphases\ or\ locNcomp\ !=\ Ncomp)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00836}00836\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00837}00837\ \ \ \ \ \ \ \ \ stringstream\ message;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00838}00838\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Inconsistent\ system\ dimensions!\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00839}00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ dimensions:\ ("{}}\ <<\ locNx\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ locNy\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ locNz\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00840}00840\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ Nphases:\ "{}}\ <<\ locNphases\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00841}00841\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Input\ data\ Ncomp:\ "{}}\ <<\ locNcomp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00842}00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ dimensions:\ ("{}}\ <<\ Grid.Nx\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ Grid.Ny\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ Grid.Nz\ <<\ \textcolor{stringliteral}{"{})\ grid\ points.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00843}00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ Nphases:\ "{}}\ <<\ Nphases\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00844}00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Required\ data\ Ncomp:\ "{}}\ <<\ Ncomp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00845}00845\ \ \ \ \ \ \ \ \ ConsoleOutput::WriteWarning(message.str(),\ thisclassname,\ \textcolor{stringliteral}{"{}Read()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00846}00846\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00847}00847\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00848}00848\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85}{ReadCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}MoleFractions"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00849}00849\ \ \ \ \ MoleFractions.unpack(dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00850}00850\ \ \ \ \ dbuffer.clear();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00851}00851\ \ \ \ \ H5.\mbox{\hyperlink{classopenphase_1_1H5Interface_a631db8d36e783c87b73b9aa1f1c13e85}{ReadCheckPoint}}(tStep,\ \textcolor{stringliteral}{"{}MoleFractionsTotal"{}},\ dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00852}00852\ \ \ \ \ MoleFractionsTotal.unpack(dbuffer);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00853}00853\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00854}00854\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00855}00855\ \ \ \ \ ConsoleOutput::WriteExit(\textcolor{stringliteral}{"{}OpenPhase\ is\ not\ compiled\ with\ HDF5\ support,\ use:\ make\ Settings=\(\backslash\)"{}H5\(\backslash\)"{}"{}},\ thisclassname,\ \textcolor{stringliteral}{"{}ReadH5()"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00856}00856\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_H5\_ERROR);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00857}00857\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00858}00858\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00859}00859\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00860}00860\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00861}\mbox{\hyperlink{classopenphase_1_1Composition_ad377560b6739af7b7da44df2e771d86f}{00861}}\ \textcolor{keywordtype}{void}\ Composition::WriteDistortedVTK(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00862}00862\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00863}00863\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00864}00864\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00865}00865\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00866}00866\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ nameComp1\ =\ \textcolor{stringliteral}{"{}WeightFractionsTotal\_"{}}\ +\ Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00867}00867\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{nameComp1,\ [\textcolor{keyword}{this},\ comp](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ WeightFractionsTotal(i,j,k)(\{comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00868}00868\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ nameComp2\ =\ \textcolor{stringliteral}{"{}MoleFractionsTotal\_"{}}\ +\ Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00869}00869\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{nameComp2,\ [\textcolor{keyword}{this},\ comp](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ MoleFractionsTotal(i,j,k,\{comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00870}00870\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00871}00871\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00872}00872\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ namePhase\ =\ \textcolor{stringliteral}{"{}MoleFractionsPhase\_"{}}\ +\ Component[comp].Name\ +\ \textcolor{stringliteral}{"{}("{}}\ +\ to\_string(alpha)\ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00873}00873\ \ \ \ \ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{namePhase,\ [\textcolor{keyword}{this},\ comp,\ alpha](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ MoleFractions(i,j,k,\{alpha,comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00874}00874\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00875}00875\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00876}00876\ \ \ \ \ std::string\ Filename\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ thisclassname\ +\ \textcolor{stringliteral}{"{}Distorted\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00877}00877\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00878}00878\ \ \ \ \ VTK::WriteDistorted(Filename,\ locSettings,\ EP,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00879}00879\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ WIN32\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00880}00880\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a74a6d835c2d578ec16e52a131d621475}{Meta}}.\mbox{\hyperlink{classopenphase_1_1MetaData_ad71e2ef1aea5f172b7cf34b891be0b6f}{AddPart}}(Filename,\ \textcolor{stringliteral}{"{}File"{}},\ \textcolor{stringliteral}{"{}VTK\ file\ with\ distorted\ composition\ data"{}},\ \textcolor{stringliteral}{"{}application/xml"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00881}00881\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00882}00882\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00883}00883\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00884}\mbox{\hyperlink{classopenphase_1_1Composition_a21c98db9dbd173b7b54213d357a5ac2e}{00884}}\ \textcolor{keywordtype}{void}\ Composition::WriteVTK(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00885}00885\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00886}00886\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00887}00887\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00888}00888\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00889}00889\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ nameComp1\ =\ \textcolor{stringliteral}{"{}WeightFractionsTotal\_"{}}\ +\ Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00890}00890\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{nameComp1,\ [\textcolor{keyword}{this},\ comp](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ WeightFractionsTotal(i,j,k)(\{comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00891}00891\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ nameComp2\ =\ \textcolor{stringliteral}{"{}MoleFractionsTotal\_"{}}\ +\ Component[comp].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00892}00892\ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{nameComp2,\ [\textcolor{keyword}{this},\ comp](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ MoleFractionsTotal(i,j,k,\{comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00893}00893\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ Nphases;\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00894}00894\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00895}00895\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ namePhase\ =\ \textcolor{stringliteral}{"{}MoleFractionsPhase\_"{}}\ +\ Component[comp].Name\ +\ \textcolor{stringliteral}{"{}("{}}\ +\ to\_string(alpha)\ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00896}00896\ \ \ \ \ \ \ \ \ \ \ \ \ ListOfFields.push\_back((\mbox{\hyperlink{structopenphase_1_1VTK_1_1Field__t}{VTK::Field\_t}})\ \{namePhase,\ [\textcolor{keyword}{this},\ comp,\ alpha](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ MoleFractions(i,j,k,\{alpha,comp\});\}\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00897}00897\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00898}00898\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00899}00899\ \ \ \ \ std::string\ Filename\ =\ FileInterface::MakeFileName(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a29d87e7777fdff4bc8a5ea95f53f58ea}{VTKDir}},\ thisclassname\ +\ \textcolor{charliteral}{'\_'},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00900}00900\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00901}00901\ \ \ \ \ VTK::Write(Filename,\ locSettings,\ ListOfFields);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00902}00902\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ WIN32\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00903}00903\ \ \ \ \ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a74a6d835c2d578ec16e52a131d621475}{Meta}}.\mbox{\hyperlink{classopenphase_1_1MetaData_ad71e2ef1aea5f172b7cf34b891be0b6f}{AddPart}}(Filename,\ \textcolor{stringliteral}{"{}File"{}},\ \textcolor{stringliteral}{"{}VTK\ file\ with\ composition\ data"{}},\ \textcolor{stringliteral}{"{}application/xml"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00904}00904\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00905}00905\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00906}00906\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00907}\mbox{\hyperlink{classopenphase_1_1Composition_adbaeda07765352be61407f4d05d5a03a}{00907}}\ \textcolor{keywordtype}{void}\ Composition::PrintPointStatistics(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ z)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00908}00908\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00909}00909\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Components:\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00910}00910\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)\ cout\ <<\ Component[comp].Name\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00911}00911\ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00912}00912\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Total:\(\backslash\)t\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00913}00913\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)\ cout\ <<\ MoleFractionsTotal(x,\ y,\ z,\{comp\})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00914}00914\ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00915}00915\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Phase:\ \ "{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00916}00916\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00917}00917\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Nphases;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00918}00918\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00919}00919\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Phase\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00920}00920\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00921}00921\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00922}00922\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ MoleFractions(x,y,z,\{n,\ comp\})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00923}00923\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00924}00924\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00925}00925\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00926}00926\ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00927}00927\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00928}00928\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00929}\mbox{\hyperlink{classopenphase_1_1Composition_a1900acf24c08ff41324ab221297cc9bc}{00929}}\ \textcolor{keywordtype}{void}\ Composition::WriteStatistics(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keywordtype}{double}\ sim\_time)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00930}00930\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00931}00931\ \ \ \ \ vector<double>\ total(Ncomp,\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00932}00932\ \ \ \ \ vector<double>\ deviation(Ncomp,\ 0);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00933}00933\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00934}00934\ \ \ \ \ CalculateMoleFractionsTotalAverage();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00935}00935\ \ \ \ \ \textcolor{keywordflow}{if}\ (AtStart)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00936}00936\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00937}00937\ \ \ \ \ \ \ \ \ TotInitial\ =\ MoleFractionsTotalAverage;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00938}00938\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00939}00939\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00940}00940\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00941}00941\ \ \ \ \ \ \ \ \ deviation[comp]\ =\ TotInitial(\{comp\})\ -\/\ MoleFractionsTotalAverage(\{comp\});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00942}00942\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00943}00943\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00944}00944\ \ \ \ \ AtStart\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00945}00945\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00946}00946\ \ \ \ \ \textcolor{keywordflow}{if}(MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00947}00947\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00948}00948\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00949}00949\ \ \ \ \ ofstream\ output\_file;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00950}00950\ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00951}00951\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00952}00952\ \ \ \ \ \ \ \ \ output\_file.open(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +\ \textcolor{stringliteral}{"{}CompositionStatistics.opd"{}},\ ios::out);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00953}00953\ \ \ \ \ \ \ \ \ output\_file\ <<\ \textcolor{stringliteral}{"{}sim\_time"{}}\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00954}00954\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00955}00955\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00956}00956\ \ \ \ \ \ \ \ \ \ \ \ \ output\_file\ <<\ \textcolor{stringliteral}{"{}total\_"{}}\ <<\ Component[comp].Name\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00957}00957\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}deviation\_"{}}\ <<\ Component[comp].Name\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00958}00958\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00959}00959\ \ \ \ \ \ \ \ \ output\_file\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00960}00960\ \ \ \ \ \ \ \ \ output\_file.close();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00961}00961\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00962}00962\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00963}00963\ \ \ \ \ output\_file.open(locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a50272c852715eb69d71b865bef9d16cd}{TextDir}}\ +\ \textcolor{stringliteral}{"{}CompositionStatistics.opd"{}},\ ios::app);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00964}00964\ \ \ \ \ output\_file\ <<\ sim\_time\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00965}00965\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ Ncomp;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00966}00966\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00967}00967\ \ \ \ \ \ \ \ \ output\_file\ <<\ MoleFractionsTotalAverage(\{comp\})\ \ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}}\ <<\ deviation[comp]\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00968}00968\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00969}00969\ \ \ \ \ output\_file\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00970}00970\ \ \ \ \ output\_file.close();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00971}00971\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00972}00972\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00973}00973\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00974}00974\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00975}00975\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00976}\mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{00976}}\ \textcolor{keywordtype}{void}\ Composition::Advect(\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{AdvectionHR}}\&\ Adv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}}\&\ Vel,\ \mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ Phi,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tStep)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00977}00977\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00978}00978\ \ \ \ \ Adv.\mbox{\hyperlink{classopenphase_1_1AdvectionHR_a09108897e8a9ec570cfc5001e6d538f5}{AdvectField}}(MoleFractions,\ MoleFractionsDotIn,\ Vel,\ BC,\ dt);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00979}00979\ \ \ \ \ Adv.\mbox{\hyperlink{classopenphase_1_1AdvectionHR_a09108897e8a9ec570cfc5001e6d538f5}{AdvectField}}(MoleFractionsTotal,\ MoleFractionsTotalDot,\ Vel,\ BC,\ dt);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00980}00980\ \ \ \ \ \textcolor{comment}{//CalculateTotalMoleFractions(Phi);}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00981}00981\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00982}00982\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00983}00983\ \textcolor{comment}{//========================\ Moved\ from\ ChemicalProperties\ =======================}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00984}00984\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00985}\mbox{\hyperlink{classopenphase_1_1Composition_a42c6a091ead613423a87c6491fb91e3b}{00985}}\ \textcolor{keywordtype}{void}\ Composition::PrintData(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00986}00986\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00993}00993\ \ \ \ \ ConsoleOutput::WriteLineInsert(\textcolor{stringliteral}{"{}Data\ stored\ in\ "{}}\ +\ thisclassname\ +}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00994}00994\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}.\ Position\ in\ TDB\ in\ brackets"{}});}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00995}00995\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00996}00996\ \ \ \ \ \textcolor{keywordtype}{string}\ ctmp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00997}00997\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00998}00998\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ Ncomp;\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l00999}00999\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01000}01000\ \ \ \ \ \ \ \ \ ctmp\ +=\ \textcolor{stringliteral}{"{}["{}}\ +\ to\_string(Component[i].Index)\ +\ \textcolor{stringliteral}{"{}]\ "{}}\ +\ Component[i].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01001}01001\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ <\ Ncomp-\/1)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01002}01002\ \ \ \ \ \ \ \ \ ctmp\ +=\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01003}01003\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01004}01004\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01005}01005\ \ \ \ \ ConsoleOutput::WriteStandard(\textcolor{stringliteral}{"{}Components\ in\ the\ system"{}},\ ctmp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01006}01006\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01007}01007\ \ \ \ \ \textcolor{keywordtype}{string}\ ptmp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01008}01008\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01009}01009\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ Nphases;\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01010}01010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01011}01011\ \ \ \ \ \ \ \ \ ptmp\ +=\ \textcolor{stringliteral}{"{}["{}}\ +\ to\_string(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[i].Index)\ +\ \textcolor{stringliteral}{"{}]\ "{}}\ +\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[i].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01012}01012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ <\ Nphases-\/1)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01013}01013\ \ \ \ \ \ \ \ \ ptmp\ +=\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01014}01014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01015}01015\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01016}01016\ \ \ \ \ ConsoleOutput::WriteStandard(\textcolor{stringliteral}{"{}Phases\ in\ the\ system"{}},\ ptmp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01017}01017\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01018}01018\ \ \ \ \ ConsoleOutput::WriteLine();}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01019}01019\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01020}01020\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01021}\mbox{\hyperlink{classopenphase_1_1Composition_a24dd786665f8723cbf26f6617b529c0d}{01021}}\ \textcolor{keywordtype}{size\_t}\ Composition::PhaseNumber(\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01022}01022\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01025}01025\ \ \ \ \ transform(name.begin(),\ name.end(),\ name.begin(),\ ::toupper);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01026}01026\ \ \ \ \ \textcolor{keywordtype}{long}\ phasenr\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01027}01027\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ Nphases;\ i++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01028}01028\ \ \ \ \ \textcolor{keywordflow}{if}(name\ ==\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[i].Name)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01029}01029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01030}01030\ \ \ \ \ \ \ \ \ phasenr\ =\ i;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01031}01031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01032}01032\ \ \ \ \ \textcolor{keywordflow}{if}(phasenr\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01033}01033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01034}01034\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error\ in\ Composition::PhaseNumber(),\ no\ phase\ available"{}}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01035}01035\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ with\ the\ name\ of\ "{}}\ <<\ name\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01036}01036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01037}01037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01038}01038\ \ \ \ \ \textcolor{keywordflow}{return}\ size\_t(phasenr);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01039}01039\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01040}01040\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01041}\mbox{\hyperlink{classopenphase_1_1Composition_a3949272764f9b731ad3b5a835f7359f5}{01041}}\ \textcolor{keywordtype}{void}\ Composition::CalculateMolefractionLimits(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01042}01042\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01046}01046\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNphases\ =\ Nphases;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01047}01047\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ locNcomps\ \ =\ Ncomp;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01048}01048\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ alpha\ =\ 0;\ alpha\ <\ locNphases;\ alpha++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01049}01049\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ comp\ =\ 0;\ comp\ <\ locNcomps;\ comp++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01050}01050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01051}01051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Component[comp].Min\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01052}01052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Component[comp].Max\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01053}01053\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01054}01054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Nsubs\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Nsubs;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01055}01055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalSitesMAX\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01056}01056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalSitesMIN\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01057}01057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sitesWithCompMAX\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01058}01058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sitesWithCompMIN\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01059}01059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ sub\ =\ 0;\ sub\ <\ Nsubs;\ sub++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01060}01060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01061}01061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//COUNT\ MINIMUM}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01062}01062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].isElementPresent(Component[comp].Index)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01063}01063\ \ \ \ \ \ \ \ \ \ \ \ \ and(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Ncons\ <\ 2))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01064}01064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01065}01065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sitesWithCompMIN\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Site;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01066}01066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01067}01067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].hasVacancies}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01068}01068\ \ \ \ \ \ \ \ \ \ \ \ \ and(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Ncons\ <\ 2)))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01069}01069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01070}01070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalSitesMIN\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Site;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01071}01071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01072}01072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//COUNT\ MAXIMUM}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01073}01073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].isElementPresent(Component[comp].Index))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01074}01074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01075}01075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sitesWithCompMAX\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Site;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01076}01076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01077}01077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].hasVacancies)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01078}01078\ \ \ \ \ \ \ \ \ \ \ \ \ and!(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].isInterstitial(comp)))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01079}01079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01080}01080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalSitesMAX\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Site;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01081}01081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01082}01082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].isInterstitial(comp))}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01083}01083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01084}01084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalSitesMAX\ +=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Sublattice[sub].Site;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01085}01085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01086}01086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01087}01087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(totalSitesMIN\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01088}01088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Component[comp].Min\ =\ sitesWithCompMIN/totalSitesMIN;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01089}01089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(totalSitesMAX\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01090}01090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}[alpha].Component[comp].Max\ =\ sitesWithCompMAX/totalSitesMAX;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01091}01091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01092}01092\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01093}01093\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01094}\mbox{\hyperlink{classopenphase_1_1Composition_ae85cc6db6964c1f91741affda7a4a162}{01094}}\ vector<size\_t>\ Composition::CalculateSortedElementMatrix(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01095}01095\ \{}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01096}01096\ \ \ \ \ vector<size\_t>\ result(Ncomp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01097}01097\ \ \ \ \ vector<string>\ Names(Ncomp);}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01098}01098\ \ \ \ \ vector<string>\ SortedNames;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01099}01099\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01100}01100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Ncomp;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01101}01101\ \ \ \ \ Names[n]\ =\ Component[n].Name;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01102}01102\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01103}01103\ \ \ \ \ SortedNames\ =\ Names;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01104}01104\ \ \ \ \ sort(SortedNames.begin(),\ SortedNames.end());}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01105}01105\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01106}01106\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Ncomp;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01107}01107\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ m\ =\ 0;\ m\ <\ Ncomp;\ m++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01108}01108\ \ \ \ \ \textcolor{keywordflow}{if}(Names[n]\ ==\ SortedNames[m])}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01109}01109\ \ \ \ \ result[m]\ =\ n;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01110}01110\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01111}01111\ \ \ \ \ ElementsAreSorted\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01112}01112\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ Ncomp;\ n++)}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01113}01113\ \ \ \ \ \textcolor{keywordflow}{if}(Names[n]\ !=\ SortedNames[n])}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01114}01114\ \ \ \ \ ElementsAreSorted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01115}01115\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01116}01116\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01117}01117\ \}}
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01118}01118\ }
+\DoxyCodeLine{\Hypertarget{Composition_8cpp_source_l01119}01119\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

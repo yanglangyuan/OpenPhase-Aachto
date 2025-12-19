@@ -1,0 +1,349 @@
+\doxysection{openphase\+::Laplacian\+Stencil Class Reference}
+\hypertarget{classopenphase_1_1LaplacianStencil}{}\label{classopenphase_1_1LaplacianStencil}\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+
+
+\texorpdfstring{$<$}{<} Diffusion stencil class (uses user specified Laplacian stencil as the basis). Allows replacing the loop over Laplacian elements by the iterator which is beneficial for compact stencils  
+
+
+
+
+{\ttfamily \#include "{}Laplacian\+Stencil.\+h"{}}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}} $>$\+::iterator \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}}
+\begin{DoxyCompactList}\small\item\em Returns the size of stencil. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{citerator}}
+\begin{DoxyCompactList}\small\item\em Constant iterator over stencil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_ae613fc3c336afc8c736ff272951ee5f0}{Set\+No\+Center}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double dx, int d\+Nx=1, int d\+Ny=1, int d\+Nz=1)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_afa2988254615b1aa0e5f30bce2300f9f}{Set\+No\+Center}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&Dimensions)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_ae5572e5f44eea0fed126bdb8d989fca5}{Set}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double dx, int d\+Nx=1, int d\+Ny=1, int d\+Nz=1)
+\item 
+void \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a2126209a89b2be2aed99198da61c33db}{Set}} (const double User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&Dimensions)
+\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_ad8d0eb3d4556b7fd26ab4b92c310d0f4}{size}} () const
+\item 
+\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aa7848d05a5add465c455ebf8e6ba52bd}{begin}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a656abbf0ad1128585d1c91c37e6314ff}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the begin of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{citerator}} \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a343bd494c058f2d2541e4a08631f7619}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Iterator to the end of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{citerator}} \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a9f416dc378b9a7dd043eed7cb4a158a2}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Constant iterator to the begin of stencil. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a392400bfc4f8ff5a83d8ebf7985fb65d}{erase}} (\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em Constant iterator to the end of stencil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_afc02f08ef2aa336e7e8c04a7501b577a}{weight\+\_\+zero}}
+\begin{DoxyCompactList}\small\item\em Extra copy of stencil center element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}} $>$ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{Stencil\+Elements}}
+\begin{DoxyCompactList}\small\item\em Stencil storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Diffusion stencil class (uses user specified Laplacian stencil as the basis). Allows replacing the loop over Laplacian elements by the iterator which is beneficial for compact stencils 
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00158}{158}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}\label{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!citerator@{citerator}}
+\index{citerator@{citerator}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{citerator}{citerator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{openphase\+::\+Laplacian\+Stencil\+::citerator}}}
+
+
+
+Constant iterator over stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00227}{227}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+\Hypertarget{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}\label{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!iterator@{iterator}}
+\index{iterator@{iterator}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}}$>$\+::iterator \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{openphase\+::\+Laplacian\+Stencil\+::iterator}}}
+
+
+
+Returns the size of stencil. 
+
+Iterator over stencil 
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00226}{226}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1LaplacianStencil_aa7848d05a5add465c455ebf8e6ba52bd}\label{classopenphase_1_1LaplacianStencil_aa7848d05a5add465c455ebf8e6ba52bd} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!begin@{begin}}
+\index{begin@{begin}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} openphase\+::\+Laplacian\+Stencil\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00228}{228}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.begin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a343bd494c058f2d2541e4a08631f7619}\label{classopenphase_1_1LaplacianStencil_a343bd494c058f2d2541e4a08631f7619} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{citerator}} openphase\+::\+Laplacian\+Stencil\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the end of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00230}{230}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.cbegin();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a9f416dc378b9a7dd043eed7cb4a158a2}\label{classopenphase_1_1LaplacianStencil_a9f416dc378b9a7dd043eed7cb4a158a2} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!cend@{cend}}
+\index{cend@{cend}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a3ce8b2f2323fd7fe013f33d4ddc043cb}{citerator}} openphase\+::\+Laplacian\+Stencil\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the begin of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00231}{231}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00231\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.cend();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a656abbf0ad1128585d1c91c37e6314ff}\label{classopenphase_1_1LaplacianStencil_a656abbf0ad1128585d1c91c37e6314ff} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!end@{end}}
+\index{end@{end}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} openphase\+::\+Laplacian\+Stencil\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterator to the begin of stencil. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00229}{229}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00229\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.end();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a392400bfc4f8ff5a83d8ebf7985fb65d}\label{classopenphase_1_1LaplacianStencil_a392400bfc4f8ff5a83d8ebf7985fb65d} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!erase@{erase}}
+\index{erase@{erase}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}} openphase\+::\+Laplacian\+Stencil\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1LaplacianStencil_a64ee13ba1b361c7e01596e972fdfa2ea}{iterator}}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constant iterator to the end of stencil. 
+
+Erases entry 
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00232}{232}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+\Hypertarget{classopenphase_1_1LaplacianStencil_ae5572e5f44eea0fed126bdb8d989fca5}\label{classopenphase_1_1LaplacianStencil_ae5572e5f44eea0fed126bdb8d989fca5} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!Set@{Set}}
+\index{Set@{Set}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Laplacian\+Stencil\+::\+Set (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{double}]{dx,  }\item[{int}]{d\+Nx = {\ttfamily 1},  }\item[{int}]{d\+Ny = {\ttfamily 1},  }\item[{int}]{d\+Nz = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Nz} & Sets the diffusion stencil using user specified Laplacian stencil \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00197}{197}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00199\ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.empty())}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.clear();}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ -\/dNx;\ x\ <=\ dNx;\ ++x)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ -\/dNy;\ y\ <=\ dNy;\ ++y)}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ z\ =\ -\/dNz;\ z\ <=\ dNz;\ ++z)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UserStencil[x+1][y+1][z+1]\ !=\ 0.0)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ LaplacianStencilEntry\ locElement;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.di\ =\ x;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dj\ =\ y;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dk\ =\ z;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.weight\ =\ UserStencil[x+1][y+1][z+1]/(dx*dx);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.push\_back(locElement);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_afc02f08ef2aa336e7e8c04a7501b577a}{weight\_zero}}\ =\ UserStencil[1][1][1];}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_a2126209a89b2be2aed99198da61c33db}\label{classopenphase_1_1LaplacianStencil_a2126209a89b2be2aed99198da61c33db} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!Set@{Set}}
+\index{Set@{Set}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Laplacian\+Stencil\+::\+Set (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&}]{Dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00220}{220}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_ae5572e5f44eea0fed126bdb8d989fca5}{Set}}(UserStencil,Dimensions.dx,\ Dimensions.dNx,\ Dimensions.dNy,\ Dimensions.dNz);}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_ae613fc3c336afc8c736ff272951ee5f0}\label{classopenphase_1_1LaplacianStencil_ae613fc3c336afc8c736ff272951ee5f0} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!SetNoCenter@{SetNoCenter}}
+\index{SetNoCenter@{SetNoCenter}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{SetNoCenter()}{SetNoCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Laplacian\+Stencil\+::\+Set\+No\+Center (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{double}]{dx,  }\item[{int}]{d\+Nx = {\ttfamily 1},  }\item[{int}]{d\+Ny = {\ttfamily 1},  }\item[{int}]{d\+Nz = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Nz} & Sets the diffusion stencil without center element using user specified Laplacian stencil \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00169}{169}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(not\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.empty())}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.clear();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ -\/dNx;\ x\ <=\ dNx;\ ++x)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ -\/dNy;\ y\ <=\ dNy;\ ++y)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ z\ =\ -\/dNz;\ z\ <=\ dNz;\ ++z)}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ !=\ 0\ or\ y\ !=\ 0\ or\ z!=\ 0)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UserStencil[x+1][y+1][z+1]\ !=\ 0.0)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ LaplacianStencilEntry\ locElement;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.di\ =\ x;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dj\ =\ y;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.dk\ =\ z;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ locElement.weight\ =\ UserStencil[x+1][y+1][z+1]/(dx*dx);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.push\_back(locElement);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_afc02f08ef2aa336e7e8c04a7501b577a}{weight\_zero}}\ =\ UserStencil[1][1][1];}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_afa2988254615b1aa0e5f30bce2300f9f}\label{classopenphase_1_1LaplacianStencil_afa2988254615b1aa0e5f30bce2300f9f} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!SetNoCenter@{SetNoCenter}}
+\index{SetNoCenter@{SetNoCenter}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{SetNoCenter()}{SetNoCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Laplacian\+Stencil\+::\+Set\+No\+Center (\begin{DoxyParamCaption}\item[{const double}]{User\+Stencil\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \&}]{Dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00193}{193}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_ae613fc3c336afc8c736ff272951ee5f0}{SetNoCenter}}(UserStencil,Dimensions.dx,\ Dimensions.dNx,\ Dimensions.dNy,\ Dimensions.dNz);}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1LaplacianStencil_ad8d0eb3d4556b7fd26ab4b92c310d0f4}\label{classopenphase_1_1LaplacianStencil_ad8d0eb3d4556b7fd26ab4b92c310d0f4} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!size@{size}}
+\index{size@{size}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Laplacian\+Stencil\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00225}{225}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00225\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}{StencilElements}}.size();\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee}\label{classopenphase_1_1LaplacianStencil_aafd46e79d6cc40164fe369830aa9d9ee} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!StencilElements@{StencilElements}}
+\index{StencilElements@{StencilElements}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{StencilElements}{StencilElements}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structopenphase_1_1LaplacianStencil_1_1LaplacianStencilEntry}{Laplacian\+Stencil\+Entry}} $>$ openphase\+::\+Laplacian\+Stencil\+::\+Stencil\+Elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stencil storage. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00237}{237}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+\Hypertarget{classopenphase_1_1LaplacianStencil_afc02f08ef2aa336e7e8c04a7501b577a}\label{classopenphase_1_1LaplacianStencil_afc02f08ef2aa336e7e8c04a7501b577a} 
+\index{openphase::LaplacianStencil@{openphase::LaplacianStencil}!weight\_zero@{weight\_zero}}
+\index{weight\_zero@{weight\_zero}!openphase::LaplacianStencil@{openphase::LaplacianStencil}}
+\doxysubsubsection{\texorpdfstring{weight\_zero}{weight\_zero}}
+{\footnotesize\ttfamily double openphase\+::\+Laplacian\+Stencil\+::weight\+\_\+zero}
+
+
+
+Extra copy of stencil center element. 
+
+
+
+Definition at line \mbox{\hyperlink{LaplacianStencil_8h_source_l00234}{234}} of file \mbox{\hyperlink{LaplacianStencil_8h_source}{Laplacian\+Stencil.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LaplacianStencil_8h}{Laplacian\+Stencil.\+h}}\end{DoxyCompactItemize}

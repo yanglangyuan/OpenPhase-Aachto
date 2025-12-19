@@ -1,0 +1,459 @@
+\doxysection{openphase\+::Grand\+Potential\+Phase\+Density Struct Reference}
+\hypertarget{structopenphase_1_1GrandPotentialPhaseDensity}{}\label{structopenphase_1_1GrandPotentialPhaseDensity}\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+
+
+\texorpdfstring{$<$}{<} Base class of grand potential densities / equations of state  
+
+
+
+
+{\ttfamily \#include "{}Grand\+Potential\+Phase\+Density.\+h"{}}
+
+Inheritance diagram for openphase\+::Grand\+Potential\+Phase\+Density\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.559889cm]{d3/ded/structopenphase_1_1GrandPotentialPhaseDensity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_abb91850045adebf87a5f393f03e49fdb}{Grand\+Potential\+Phase\+Density}} (size\+\_\+t Phase\+Idx\+Inp)
+\item 
+virtual void \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a943c52a6392da83dd692c72ac79dc67e}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings)
+\item 
+virtual void \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a50fbaba5b3d0315a8cb5475304f94cd8}{Read\+Input}} (std\+::stringstream \&Input\+File, int module\+Location)=0
+\begin{DoxyCompactList}\small\item\em Read model parameters. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad055b89ad0cdf09a919a1d487b7cf130}{operator()}} (int i, int j, int k)
+\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{Phase\+Pressure}} (double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \&Chemical\+Potential) const =0
+\begin{DoxyCompactList}\small\item\em Returns grand potential density of phase. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{Phase\+Concentration}} (double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, double Chemical\+Potential, size\+\_\+t comp) const =0
+\begin{DoxyCompactList}\small\item\em First derivative of grand potential density. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{Phase\+Susceptibility}} (double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, double Chemical\+Potential, size\+\_\+t comp) const =0
+\begin{DoxyCompactList}\small\item\em Second derivative of grand potential density. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a9ae0d4e7b074e34bedb44958b086d24e}{Phase\+Pressure}} (double height, double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \&Chemical\+Potential) const
+\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a7160a021d18a72c9ec5986c3775e4282}{Phase\+Concentration}} (double height, double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, double Chemical\+Potential, size\+\_\+t comp) const
+\begin{DoxyCompactList}\small\item\em Negative grand potential density. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a1779f0ed3ef2574514e396fd4299c324}{Phase\+Susceptibility}} (double height, double \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, double Chemical\+Potential, size\+\_\+t comp) const
+\begin{DoxyCompactList}\small\item\em First derivative of grand potential density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a1683e17b1f004cfe120f62aaa59a3e23}{Set}} (const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&Chemical\+Potential)
+\begin{DoxyCompactList}\small\item\em Second derivative of grand potential density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a0b90a2b946939aafe64561fdee28db17}{Set}} (const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&\mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}, const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&Chemical\+Potential, const int \&Gravity\+Direction)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ double(int, int, int)$>$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{Phase\+Potential}}
+\begin{DoxyCompactList}\small\item\em Grand potential density. \end{DoxyCompactList}\item 
+std\+::function$<$ double(int, int, int, size\+\_\+t)$>$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}{d\+Chemical\+Potential}}
+\begin{DoxyCompactList}\small\item\em First derivative of grand potential density with respect to the chemical potential. \end{DoxyCompactList}\item 
+std\+::function$<$ double(int, int, int, size\+\_\+t)$>$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}{d\+Chemical\+Potential2}}
+\begin{DoxyCompactList}\small\item\em Second derivative of grand potential density with respect to the chemical potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a1340350ed349c178ccdca2f141ae9a9a}{thisclassname}} = "{}Grand\+Potential\+Phase\+Density"{}
+\item 
+static constexpr bool \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_adc1fc5482c7205850f99de7055681342}{Gravity\+Implemented}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a10c9f8a7b89cfa151beca237d5548d38}{Ncomp}}
+\begin{DoxyCompactList}\small\item\em Number of chemical components. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_af1152279b195be5bba8ce553c5871786}{Phase\+Idx}}
+\begin{DoxyCompactList}\small\item\em Phase index of grand potential density. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_afa3016932b6b4d035ec245b8eaa2c8e5}{Element\+Names}}
+\begin{DoxyCompactList}\small\item\em Names of corresponding chemical components. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a917db2fa899699e53ef5667590ab3445}{Phase\+Names}}
+\begin{DoxyCompactList}\small\item\em Names of corresponding thermodynamic phases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Base class of grand potential densities / equations of state 
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00036}{36}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_abb91850045adebf87a5f393f03e49fdb}\label{structopenphase_1_1GrandPotentialPhaseDensity_abb91850045adebf87a5f393f03e49fdb} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!GrandPotentialPhaseDensity@{GrandPotentialPhaseDensity}}
+\index{GrandPotentialPhaseDensity@{GrandPotentialPhaseDensity}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{GrandPotentialPhaseDensity()}{GrandPotentialPhaseDensity()}}
+{\footnotesize\ttfamily openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Grand\+Potential\+Phase\+Density (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Phase\+Idx\+Inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00038}{38}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ :\ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_af1152279b195be5bba8ce553c5871786}{PhaseIdx}}(PhaseIdxInp)\{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a943c52a6392da83dd692c72ac79dc67e}\label{structopenphase_1_1GrandPotentialPhaseDensity_a943c52a6392da83dd692c72ac79dc67e} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc\+Settings} & Allocates and initialises memory \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a45be64a846bd94dee51b57a88515d04e}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_a8a6a79a12d830c9e35b9828135fe4663}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic_a4236002877c8b56797f7897df984b430}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Implicit\+Parabolic}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__Parabolic_a0a292a426f04fc7544d8c25bdaa09219}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Parabolic}}.
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00039}{39}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_afa3016932b6b4d035ec245b8eaa2c8e5}{ElementNames}}\ =\ locSettings.ElementNames;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a917db2fa899699e53ef5667590ab3445}{PhaseNames}}\ \ \ =\ locSettings.PhaseNames;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a10c9f8a7b89cfa151beca237d5548d38}{Ncomp}}\ \ \ \ \ \ \ \ =\ locSettings.Ncomp;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}}\ \ \ \ \ \ \ \ \ \ \ =\ locSettings.Grid.dx;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_ad055b89ad0cdf09a919a1d487b7cf130}\label{structopenphase_1_1GrandPotentialPhaseDensity_ad055b89ad0cdf09a919a1d487b7cf130} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!operator()@{operator()}}
+\index{operator()@{operator()}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00052}{52}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{PhasePotential}}(i,j,k);\};\ \ }
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a7160a021d18a72c9ec5986c3775e4282}\label{structopenphase_1_1GrandPotentialPhaseDensity_a7160a021d18a72c9ec5986c3775e4282} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseConcentration@{PhaseConcentration}}
+\index{PhaseConcentration@{PhaseConcentration}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseConcentration()}{PhaseConcentration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Concentration (\begin{DoxyParamCaption}\item[{double}]{height,  }\item[{double}]{Temperature,  }\item[{double}]{Chemical\+Potential,  }\item[{size\+\_\+t}]{comp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Negative grand potential density. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a80dccb82adb4881aa9834811eb093e0a}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_ae1a0f7ae522c976223767b0b77c8d75d}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}.
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00059}{59}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{PhaseConcentration}}\ \ (Temperature,\ ChemicalPotential,\ comp);\};\ }
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}\label{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseConcentration@{PhaseConcentration}}
+\index{PhaseConcentration@{PhaseConcentration}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseConcentration()}{PhaseConcentration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Concentration (\begin{DoxyParamCaption}\item[{double}]{Temperature,  }\item[{double}]{Chemical\+Potential,  }\item[{size\+\_\+t}]{comp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+First derivative of grand potential density. 
+
+
+
+Implemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a1ab9b1d7803935837ce9fe15d3208d09}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_af9d6927aafb29fcfe79801d54e7e2d5c}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic_af1863d1495fa8c0aedc2221d084255a3}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Implicit\+Parabolic}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__Parabolic_a1c5e951d3dc30a2719f80c4e34dce8dc}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Parabolic}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a9ae0d4e7b074e34bedb44958b086d24e}\label{structopenphase_1_1GrandPotentialPhaseDensity_a9ae0d4e7b074e34bedb44958b086d24e} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhasePressure@{PhasePressure}}
+\index{PhasePressure@{PhasePressure}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhasePressure()}{PhasePressure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Pressure (\begin{DoxyParamCaption}\item[{double}]{height,  }\item[{double}]{Temperature,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \&}]{Chemical\+Potential }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_afea25bd6c707760ef2c502ec2daad180}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_a053c63b79dd29494fe78890541e37578}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}.
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00058}{58}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{PhasePressure}}\ \ \ \ \ \ \ (Temperature,\ ChemicalPotential);\};\ }
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}\label{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhasePressure@{PhasePressure}}
+\index{PhasePressure@{PhasePressure}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhasePressure()}{PhasePressure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Pressure (\begin{DoxyParamCaption}\item[{double}]{Temperature,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor}}$<$ double, 1 $>$ \&}]{Chemical\+Potential }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns grand potential density of phase. 
+
+Negative grand potential density 
+
+Implemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a490cdca92246a6957a12b89efd7e8c1d}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_a10844435c3a2a44ed832bf38a2123fc0}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic_a202c00f0de3eb9e2be4f20fe84b3dcc1}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Implicit\+Parabolic}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__Parabolic_a849a978e48a1e82d9ae8a7576026e1cf}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Parabolic}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a1779f0ed3ef2574514e396fd4299c324}\label{structopenphase_1_1GrandPotentialPhaseDensity_a1779f0ed3ef2574514e396fd4299c324} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseSusceptibility@{PhaseSusceptibility}}
+\index{PhaseSusceptibility@{PhaseSusceptibility}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseSusceptibility()}{PhaseSusceptibility()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Susceptibility (\begin{DoxyParamCaption}\item[{double}]{height,  }\item[{double}]{Temperature,  }\item[{double}]{Chemical\+Potential,  }\item[{size\+\_\+t}]{comp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+First derivative of grand potential density. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a85563b9ab8af4f36d004a60e5e91a711}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_a223fc129e3da2238408c50220230a4d0}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}.
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00060}{60}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{PhaseSusceptibility}}\ (Temperature,\ ChemicalPotential,\ comp);\};\ }
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}\label{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseSusceptibility@{PhaseSusceptibility}}
+\index{PhaseSusceptibility@{PhaseSusceptibility}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseSusceptibility()}{PhaseSusceptibility()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual double openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Susceptibility (\begin{DoxyParamCaption}\item[{double}]{Temperature,  }\item[{double}]{Chemical\+Potential,  }\item[{size\+\_\+t}]{comp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Second derivative of grand potential density. 
+
+
+
+Implemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a018addba588d8a7a022ebed9f9055ed9}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_a7435ad9b527a84136e97bc985b8b00ca}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic_a2a33a62891063a1422845fd1c75260a7}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Implicit\+Parabolic}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__Parabolic_a934e2a243093f44b61d49e29d8fd6537}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Parabolic}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a50fbaba5b3d0315a8cb5475304f94cd8}\label{structopenphase_1_1GrandPotentialPhaseDensity_a50fbaba5b3d0315a8cb5475304f94cd8} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{Input\+File,  }\item[{int}]{module\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read model parameters. 
+
+
+
+Implemented in \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__CompressibleFluid_a222a77882c8b79a791e9f6bb8e55cbeb}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Compressible\+Fluid}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__IdealGas_ab3e69a66586a5cc3e293ac30272b5bce}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Ideal\+Gas}}, \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__ImplicitParabolic_a851d1f63f4accd33a71752ef420c7f3b}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Implicit\+Parabolic}}, and \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity__Parabolic_a8308aa145c633378db193301770f72b2}{openphase\+::\+Grand\+Potential\+Phase\+Density\+\_\+\+Parabolic}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a1683e17b1f004cfe120f62aaa59a3e23}\label{structopenphase_1_1GrandPotentialPhaseDensity_a1683e17b1f004cfe120f62aaa59a3e23} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!Set@{Set}}
+\index{Set@{Set}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&}]{Temperature,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&}]{Chemical\+Potential }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Second derivative of grand potential density. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00062}{62}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{PhasePotential}}\ \ \ \ \ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k\ \ \ \ \ \ \ \ \ \ \ \ \ )\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{PhasePressure}}\ \ \ \ \ \ \ (Temperature(i,j,k),\ ChemicalPotential(i,j,k));\};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}{dChemicalPotential}}\ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{PhaseConcentration}}\ \ (Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}{dChemicalPotential2}}\ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{PhaseSusceptibility}}\ (Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a0b90a2b946939aafe64561fdee28db17}\label{structopenphase_1_1GrandPotentialPhaseDensity_a0b90a2b946939aafe64561fdee28db17} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!Set@{Set}}
+\index{Set@{Set}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 0 $>$ \&}]{Temperature,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ double, 1 $>$ \&}]{Chemical\+Potential,  }\item[{const int \&}]{Gravity\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00069}{69}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GravityDirection\ ==\ 0)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{PhasePotential}}\ \ \ \ \ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k\ \ \ \ \ \ \ \ \ \ \ \ \ )\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{PhasePressure}}\ \ \ \ \ \ \ (i*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k));\};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}{dChemicalPotential}}\ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{PhaseConcentration}}\ \ (i*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}{dChemicalPotential2}}\ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{PhaseSusceptibility}}\ (i*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (GravityDirection\ ==\ 1)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{PhasePotential}}\ \ \ \ \ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k\ \ \ \ \ \ \ \ \ \ \ \ \ )\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{PhasePressure}}\ \ \ \ \ \ \ (j*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k));\};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}{dChemicalPotential}}\ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{PhaseConcentration}}\ \ (j*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}{dChemicalPotential2}}\ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{PhaseSusceptibility}}\ (j*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (GravityDirection\ ==\ 2)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}{PhasePotential}}\ \ \ \ \ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k\ \ \ \ \ \ \ \ \ \ \ \ \ )\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ad824392490a6b1f51ede2ab3f2adf5df}{PhasePressure}}\ \ \ \ \ \ \ (k*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k));\};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}{dChemicalPotential}}\ \ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a38fc5b2abc7671899a92f7ce66fab47c}{PhaseConcentration}}\ \ (k*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}{dChemicalPotential2}}\ =\ [\textcolor{keyword}{this},\ \&Temperature,\ \&ChemicalPotential](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{size\_t}\ comp)\ \{\ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a187839b1ac952fda6d4216b1037ae9f8}{PhaseSusceptibility}}\ (k*\mbox{\hyperlink{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}{dx}},\ Temperature(i,j,k),\ ChemicalPotential(i,j,k,\{comp\}),comp);\};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d}\label{structopenphase_1_1GrandPotentialPhaseDensity_a12409acc9d4c2cf4a85f40a0cef0ec5d} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!dChemicalPotential@{dChemicalPotential}}
+\index{dChemicalPotential@{dChemicalPotential}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{dChemicalPotential}{dChemicalPotential}}
+{\footnotesize\ttfamily std\+::function$<$double(int,int,int,size\+\_\+t)$>$ openphase\+::\+Grand\+Potential\+Phase\+Density\+::d\+Chemical\+Potential}
+
+
+
+First derivative of grand potential density with respect to the chemical potential. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00049}{49}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c}\label{structopenphase_1_1GrandPotentialPhaseDensity_ab2393eca364f1f449553a933df78ef0c} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!dChemicalPotential2@{dChemicalPotential2}}
+\index{dChemicalPotential2@{dChemicalPotential2}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{dChemicalPotential2}{dChemicalPotential2}}
+{\footnotesize\ttfamily std\+::function$<$double(int,int,int,size\+\_\+t)$>$ openphase\+::\+Grand\+Potential\+Phase\+Density\+::d\+Chemical\+Potential2}
+
+
+
+Second derivative of grand potential density with respect to the chemical potential. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00050}{50}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7}\label{structopenphase_1_1GrandPotentialPhaseDensity_a3d95d09e58d18e8e1b8c4113346a76d7} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!dx@{dx}}
+\index{dx@{dx}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily double openphase\+::\+Grand\+Potential\+Phase\+Density\+::dx\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00097}{97}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_afa3016932b6b4d035ec245b8eaa2c8e5}\label{structopenphase_1_1GrandPotentialPhaseDensity_afa3016932b6b4d035ec245b8eaa2c8e5} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!ElementNames@{ElementNames}}
+\index{ElementNames@{ElementNames}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{ElementNames}{ElementNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Element\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Names of corresponding chemical components. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00100}{100}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_adc1fc5482c7205850f99de7055681342}\label{structopenphase_1_1GrandPotentialPhaseDensity_adc1fc5482c7205850f99de7055681342} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!GravityImplemented@{GravityImplemented}}
+\index{GravityImplemented@{GravityImplemented}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{GravityImplemented}{GravityImplemented}}
+{\footnotesize\ttfamily constexpr bool openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Gravity\+Implemented = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00093}{93}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a10c9f8a7b89cfa151beca237d5548d38}\label{structopenphase_1_1GrandPotentialPhaseDensity_a10c9f8a7b89cfa151beca237d5548d38} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!Ncomp@{Ncomp}}
+\index{Ncomp@{Ncomp}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{Ncomp}{Ncomp}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Ncomp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of chemical components. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00098}{98}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_af1152279b195be5bba8ce553c5871786}\label{structopenphase_1_1GrandPotentialPhaseDensity_af1152279b195be5bba8ce553c5871786} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseIdx@{PhaseIdx}}
+\index{PhaseIdx@{PhaseIdx}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseIdx}{PhaseIdx}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Idx\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Phase index of grand potential density. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00099}{99}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a917db2fa899699e53ef5667590ab3445}\label{structopenphase_1_1GrandPotentialPhaseDensity_a917db2fa899699e53ef5667590ab3445} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhaseNames@{PhaseNames}}
+\index{PhaseNames@{PhaseNames}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhaseNames}{PhaseNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Names of corresponding thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00101}{101}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34}\label{structopenphase_1_1GrandPotentialPhaseDensity_aac4544b7702f518b0886cb24140ace34} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!PhasePotential@{PhasePotential}}
+\index{PhasePotential@{PhasePotential}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{PhasePotential}{PhasePotential}}
+{\footnotesize\ttfamily std\+::function$<$double(int,int,int)$>$ openphase\+::\+Grand\+Potential\+Phase\+Density\+::\+Phase\+Potential}
+
+
+
+Grand potential density. 
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00048}{48}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+\Hypertarget{structopenphase_1_1GrandPotentialPhaseDensity_a1340350ed349c178ccdca2f141ae9a9a}\label{structopenphase_1_1GrandPotentialPhaseDensity_a1340350ed349c178ccdca2f141ae9a9a} 
+\index{openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::GrandPotentialPhaseDensity@{openphase::GrandPotentialPhaseDensity}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Grand\+Potential\+Phase\+Density\+::thisclassname = "{}Grand\+Potential\+Phase\+Density"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source_l00092}{92}} of file \mbox{\hyperlink{GrandPotentialPhaseDensity_8h_source}{Grand\+Potential\+Phase\+Density.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GrandPotentialPhaseDensity_8h}{Grand\+Potential\+Phase\+Density.\+h}}\end{DoxyCompactItemize}

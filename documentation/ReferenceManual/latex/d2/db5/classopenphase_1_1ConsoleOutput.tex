@@ -1,0 +1,1094 @@
+\doxysection{openphase\+::Console\+Output Class Reference}
+\hypertarget{classopenphase_1_1ConsoleOutput}{}\label{classopenphase_1_1ConsoleOutput}\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+
+
+\texorpdfstring{$<$}{<} A collection of methods to format console output in a standardized way  
+
+
+
+
+{\ttfamily \#include "{}Console\+Output.\+h"{}}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}} (const T value)
+\begin{DoxyCompactList}\small\item\em Return white space for positive values to align positive and negative numbers vertically. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f}{Write}} (const std\+::string message)
+\begin{DoxyCompactList}\small\item\em Writes a Message, Blank Line, or Line of char to screen. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b38f05da0dc1fbad18ef761eb66914e}{Write}} (const std\+::string name, const T value, const int precision=4)
+\begin{DoxyCompactList}\small\item\em Writes name and value to screen. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae67ef7804e5990154125cdce15dbf79f}{Write\+With\+Log}} (std\+::array$<$ std\+::stringstream, 2 $>$ \&line, const int t\+Step, const std\+::string name, const T value, const int precision=4, const char sep=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Writes name and value to screen and to line buffer for later file write. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4b560ecb3891c6438207907f2c3e0061}{Write\+Line\+To\+Logfile}} (std\+::fstream \&log, const std\+::array$<$ std\+::stringstream, 2 $>$ \&line, const int t\+Step, const char sep=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Writes line buffer to log file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Target\+Type $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{Set\+Floationg\+Point\+Output\+Format}} (Target\+Type \&Target, const int precision, floatfield notation)
+\item 
+static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925}{Standard\+LHS}} (std\+::string Left, const size\+\_\+t Column\+Width)
+\begin{DoxyCompactList}\small\item\em Returns string of left column of Column\+Width. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5}{Standard\+Matrix}} (const T value, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}/5)
+\begin{DoxyCompactList}\small\item\em Returns string of matrix in standard output format. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce}{Standard\+Vector}} (const T value, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}/5)
+\begin{DoxyCompactList}\small\item\em Returns string of vector in standard output format. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6}{Standard\+Float}} (const T value, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}})
+\begin{DoxyCompactList}\small\item\em Returns string of floating point number in standard output format. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b}{Standard\+Integral}} (const T value, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}})
+\begin{DoxyCompactList}\small\item\em Returns string of integral number in standard output format. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{Get\+Standard}} (const std\+::string \&Left, const T Right, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}})
+\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad1ef30f0803bd17a032f3c8432288539}{Get\+Standard\+Narrow}} (const std\+::string \&Left, const T Right, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, const floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}})
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{Write\+Standard}} (const std\+::string \&Left, const T Right, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}})
+\begin{DoxyCompactList}\small\item\em Writes Get\+Standard result to std\+::cout if MPI-\/\+Rank 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3e51a698b31b9d3634b8cbedd2a4ffb5}{Write\+Standard\+Narrow}} (const std\+::string \&Left, const T Right, const int precision=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}, floatfield notation=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}})
+\begin{DoxyCompactList}\small\item\em Writes Get\+Standard\+Narrow result to std\+::cout if MPI-\/\+Rank 0. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\+\_\+time}} ()
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{Write\+Line}} (const std\+::string Line\+Type="{}-\/"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{Write\+Line\+Insert}} (const std\+::string Insert, const std\+::string Line\+Type="{}-\/"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{Write\+Blank\+Line}} (void)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{Write\+Time\+Step}} (const \mbox{\hyperlink{classopenphase_1_1RunTimeControl}{Run\+Time\+Control}} \&RTC, const std\+::string Message="{}"{}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_afc2e6fe5838194d2873710ca88f48770}{Write\+Time\+Step}} (const int t\+Step, const int n\+Steps, const std\+::string Message="{}"{}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ac2d32ed88f3587b219fa312e5f7c2113}{Write\+Time\+Step}} (const int t\+Screen\+Write, const int t\+Step, const int n\+Steps, const std\+::string Message="{}"{}, const size\+\_\+t Column\+Width=\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{Write\+Simple}} (const std\+::string Message)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_afaf06400de7db36b71321b4ab27d463a}{Write\+Coordinate}} (const int x, const int y, const int z, const double dx)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054}{Write\+Within\+Method}} (const std\+::string Message, const std\+::string Instance="{}"{}, const std\+::string Method="{}"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}{Write\+Warning}} (const std\+::string Message, const std\+::string Instance="{}"{}, const std\+::string Method="{}"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{Write\+Exit}} (const std\+::string Message, const std\+::string Instance="{}"{}, const std\+::string Method="{}"{})
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}{Write\+Start\+Screen}} (void)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aeff5fd1fe1b015cfbbb9ab57d704a7d7}{Press\+Enter\+To\+Continue}} (void)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_adc741bd713ef03fa4a2e95055effc2f0}{Start\+Progress\+Indicator}} (std\+::string Indicator\+Title)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0d699e41af6f89b4ea022723e8ff6e2e}{Advance\+Progress\+Indicator}} (double start\+\_\+value, double end\+\_\+value, double current\+\_\+value, int \&position)
+\item 
+static void \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1e5e83eb43dc21106d6610e655ac4f7f}{End\+Progress\+Indicator}} (void)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}{to\+\_\+string\+\_\+with\+\_\+precision}} (const T a\+\_\+value, const int n=6)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}} = floatfield\+::\+Default
+\item 
+static constexpr int \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}} = 6
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}} = 40
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{Line\+Length}} = 80
+\item 
+static \mbox{\hyperlink{namespaceopenphase_affb0eb7489e702eaea125105e21826a3}{Verbosity\+Levels}} \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{Output\+Verbosity}} = Verbosity\+Levels\+::\+Normal
+\begin{DoxyCompactList}\small\item\em Sets the level of console output verbosity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} A collection of methods to format console output in a standardized way 
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00058}{58}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a0d699e41af6f89b4ea022723e8ff6e2e}\label{classopenphase_1_1ConsoleOutput_a0d699e41af6f89b4ea022723e8ff6e2e} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!AdvanceProgressIndicator@{AdvanceProgressIndicator}}
+\index{AdvanceProgressIndicator@{AdvanceProgressIndicator}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{AdvanceProgressIndicator()}{AdvanceProgressIndicator()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Advance\+Progress\+Indicator (\begin{DoxyParamCaption}\item[{double}]{start\+\_\+value,  }\item[{double}]{end\+\_\+value,  }\item[{double}]{current\+\_\+value,  }\item[{int \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00259\ \{}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ current\_value\_normalized\ =\ 80.0*fabs((current\_value\ -\/\ start\_value)/(end\_value\ -\/\ start\_value));}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ n\ =\ pos;\ n\ <\ current\_value\_normalized;\ n++)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ pos++;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\#"{}};}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ cout\ <<\ flush;}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a1e5e83eb43dc21106d6610e655ac4f7f}\label{classopenphase_1_1ConsoleOutput_a1e5e83eb43dc21106d6610e655ac4f7f} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!EndProgressIndicator@{EndProgressIndicator}}
+\index{EndProgressIndicator@{EndProgressIndicator}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{EndProgressIndicator()}{EndProgressIndicator()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+End\+Progress\+Indicator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276\ \{}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00281\ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(\textcolor{stringliteral}{"{}Done!"{}});}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}\label{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+Console\+Output\+::get\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ std::time\_t\ now\ =\ std::chrono::system\_clock::to\_time\_t(std::chrono::system\_clock::now());}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ s(30,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \ std::strftime(\&s[0],\ s.size(),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}},\ std::localtime(\&now));}
+\DoxyCodeLine{00042\ \ \ \ \ s.resize(size);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}\label{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!GetStandard@{GetStandard}}
+\index{GetStandard@{GetStandard}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{GetStandard()}{GetStandard()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Get\+Standard (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Left,  }\item[{const T}]{Right,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00250}{250}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ std::string\ out\ =\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925}{StandardLHS}}(Left,ColumnWidth);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (is\_matrix<T>::value)}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5}{StandardMatrix}}(Right,precision,notation,ColumnWidth/5));}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (is\_vector<T>::value)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce}{StandardVector}}(Right,precision,notation,ColumnWidth/5));}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_floating\_point<T>::value)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6}{StandardFloat}}(Right,precision,notation));}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_signed<T>::value)}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b}{StandardIntegral}}(Right,precision,notation));}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Right\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(ss.str());}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ad1ef30f0803bd17a032f3c8432288539}\label{classopenphase_1_1ConsoleOutput_ad1ef30f0803bd17a032f3c8432288539} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!GetStandardNarrow@{GetStandardNarrow}}
+\index{GetStandardNarrow@{GetStandardNarrow}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{GetStandardNarrow()}{GetStandardNarrow()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Get\+Standard\+Narrow (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Left,  }\item[{const T}]{Right,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00282}{282}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00285\ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{GetStandard}}(Left,\ Right,\ precision,\ notation,\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{StandardColumnWidth}}/2);}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_aeff5fd1fe1b015cfbbb9ab57d704a7d7}\label{classopenphase_1_1ConsoleOutput_aeff5fd1fe1b015cfbbb9ab57d704a7d7} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!PressEnterToContinue@{PressEnterToContinue}}
+\index{PressEnterToContinue@{PressEnterToContinue}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{PressEnterToContinue()}{PressEnterToContinue()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Press\+Enter\+To\+Continue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00239}{239}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00240\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Press\ ENTER\ to\ continue...\ "{}}\ <<\ flush;}
+\DoxyCodeLine{00242\ \ \ \ \ cin.ignore(\ numeric\_limits\ <streamsize>\ ::max(),\ \textcolor{charliteral}{'\(\backslash\)n'}\ );}
+\DoxyCodeLine{00243\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}\label{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!SetFloationgPointOutputFormat@{SetFloationgPointOutputFormat}}
+\index{SetFloationgPointOutputFormat@{SetFloationgPointOutputFormat}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{SetFloationgPointOutputFormat()}{SetFloationgPointOutputFormat()}}
+{\footnotesize\ttfamily template$<$typename Target\+Type $>$ \\
+static void openphase\+::\+Console\+Output\+::\+Set\+Floationg\+Point\+Output\+Format (\begin{DoxyParamCaption}\item[{Target\+Type \&}]{Target,  }\item[{const int}]{precision,  }\item[{floatfield}]{notation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00154}{154}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ Target\ <<\ std::setprecision(precision);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(notation)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Default:}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::defaultfloat;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Scientific:}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::scientific;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Fixed:}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::fixed;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}\label{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!sgn@{sgn}}
+\index{sgn@{sgn}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{sgn()}{sgn()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::sgn (\begin{DoxyParamCaption}\item[{const T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return white space for positive values to align positive and negative numbers vertically. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00073}{73}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (value\ >=\ 0)?\textcolor{stringliteral}{"{}\ "{}}:\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6}\label{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardFloat@{StandardFloat}}
+\index{StandardFloat@{StandardFloat}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardFloat()}{StandardFloat()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Standard\+Float (\begin{DoxyParamCaption}\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns string of floating point number in standard output format. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00228}{228}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00231\ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{SetFloationgPointOutputFormat}}(ss,\ precision,\ notation);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}}(value)\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00236\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b}\label{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardIntegral@{StandardIntegral}}
+\index{StandardIntegral@{StandardIntegral}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardIntegral()}{StandardIntegral()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Standard\+Integral (\begin{DoxyParamCaption}\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns string of integral number in standard output format. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00240}{240}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}}(value)\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00247\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925}\label{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardLHS@{StandardLHS}}
+\index{StandardLHS@{StandardLHS}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardLHS()}{StandardLHS()}}
+{\footnotesize\ttfamily static std\+::string openphase\+::\+Console\+Output\+::\+Standard\+LHS (\begin{DoxyParamCaption}\item[{std\+::string}]{Left,  }\item[{const size\+\_\+t}]{Column\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns string of left column of Column\+Width. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00179}{179}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Left.size()\ <\ ColumnWidth)\ Left.resize(ColumnWidth,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ Left.append(\textcolor{stringliteral}{"{}:\ "{}});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Left;}
+\DoxyCodeLine{00184\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5}\label{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardMatrix@{StandardMatrix}}
+\index{StandardMatrix@{StandardMatrix}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardMatrix()}{StandardMatrix()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Standard\+Matrix (\begin{DoxyParamCaption}\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}/5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns string of matrix in standard output format. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00188}{188}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00192\ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{SetFloationgPointOutputFormat}}(ss,\ precision,\ notation);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.sizeX();\ i++)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n||\ "{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ value.sizeY();\ j++)}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}}(value(i,j))\ <<\ std::setw(ColumnWidth)\ <<\ value(i,j)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}||"{}};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00206\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce}\label{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardVector@{StandardVector}}
+\index{StandardVector@{StandardVector}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardVector()}{StandardVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::\+Standard\+Vector (\begin{DoxyParamCaption}\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{const floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}/5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns string of vector in standard output format. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00210}{210}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{SetFloationgPointOutputFormat}}(ss,\ precision,\ notation);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}(\ "{}};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.size();\ i++)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}}(value[i])\ <<\ std::setw(ColumnWidth)\ \ <<\ value[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00224\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_adc741bd713ef03fa4a2e95055effc2f0}\label{classopenphase_1_1ConsoleOutput_adc741bd713ef03fa4a2e95055effc2f0} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StartProgressIndicator@{StartProgressIndicator}}
+\index{StartProgressIndicator@{StartProgressIndicator}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StartProgressIndicator()}{StartProgressIndicator()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Start\+Progress\+Indicator (\begin{DoxyParamCaption}\item[{std\+::string}]{Indicator\+Title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(IndicatorTitle+\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}0-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/25-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/50-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/75-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/100\%"{}}\ <<\ endl;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}0\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_25\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_50\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_75\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_100\%"{}\ <<\ endl;}}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}\label{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!to\_string\_with\_precision@{to\_string\_with\_precision}}
+\index{to\_string\_with\_precision@{to\_string\_with\_precision}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{to\_string\_with\_precision()}{to\_string\_with\_precision()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static std\+::string openphase\+::\+Console\+Output\+::to\+\_\+string\+\_\+with\+\_\+precision (\begin{DoxyParamCaption}\item[{const T}]{a\+\_\+value,  }\item[{const int}]{n = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00352}{352}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00353\ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ std::ostringstream\ out;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ out\ <<\ std::setprecision(n)\ <<\ a\_value;}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f}\label{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!Write@{Write}}
+\index{Write@{Write}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void openphase\+::\+Console\+Output\+::\+Write (\begin{DoxyParamCaption}\item[{const std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes a Message, Blank Line, or Line of char to screen. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00079}{79}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message.size()\ >\ 1)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{WriteSimple}}(message);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (message.size()\ ==\ 1)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(message);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{WriteBlankLine}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a1b38f05da0dc1fbad18ef761eb66914e}\label{classopenphase_1_1ConsoleOutput_a1b38f05da0dc1fbad18ef761eb66914e} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!Write@{Write}}
+\index{Write@{Write}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void openphase\+::\+Console\+Output\+::\+Write (\begin{DoxyParamCaption}\item[{const std\+::string}]{name,  }\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes name and value to screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & of the value printed to screen \\
+\hline
+{\em value} & printed to screen \\
+\hline
+{\em precision} & of value printed to screen \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00101}{101}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(name,\ value,\ precision);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}\label{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteBlankLine@{WriteBlankLine}}
+\index{WriteBlankLine@{WriteBlankLine}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteBlankLine()}{WriteBlankLine()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Blank\+Line (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_afaf06400de7db36b71321b4ab27d463a}\label{classopenphase_1_1ConsoleOutput_afaf06400de7db36b71321b4ab27d463a} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteCoordinate@{WriteCoordinate}}
+\index{WriteCoordinate@{WriteCoordinate}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteCoordinate()}{WriteCoordinate()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Coordinate (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{z,  }\item[{const double}]{dx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(\textcolor{stringliteral}{"{}Point"{}},iVector3\{x,y,x\});}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(\textcolor{stringliteral}{"{}Coordinate"{}},dVector3\{x*dx,y*dx,x*dx\});}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}\label{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteExit@{WriteExit}}
+\index{WriteExit@{WriteExit}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteExit()}{WriteExit()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Exit (\begin{DoxyParamCaption}\item[{const std\+::string}]{Message,  }\item[{const std\+::string}]{Instance = {\ttfamily "{}"{}},  }\item[{const std\+::string}]{Method = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'*'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Calculation\ terminated!"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Instance:"{}}\ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Reason:\ "{}}\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(10)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Time:\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'*'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}\label{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteLine@{WriteLine}}
+\index{WriteLine@{WriteLine}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteLine()}{WriteLine()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Line (\begin{DoxyParamCaption}\item[{const std\+::string}]{Line\+Type = {\ttfamily "{}-\/"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(LineType[0])\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}\label{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteLineInsert@{WriteLineInsert}}
+\index{WriteLineInsert@{WriteLineInsert}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteLineInsert()}{WriteLineInsert()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Line\+Insert (\begin{DoxyParamCaption}\item[{const std\+::string}]{Insert,  }\item[{const std\+::string}]{Line\+Type = {\ttfamily "{}-\/"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ cout\ <<\ LineType[0]\ <<\ LineType[0]\ <<\ \textcolor{stringliteral}{"{}<\ "{}}\ <<\ Insert\ <<\ \textcolor{stringliteral}{"{}\ >"{}}\ <<\ setfill(LineType[0])\ <<}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setw(std::max<int>(0,\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}}-\/Insert.size()-\/6))\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a4b560ecb3891c6438207907f2c3e0061}\label{classopenphase_1_1ConsoleOutput_a4b560ecb3891c6438207907f2c3e0061} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteLineToLogfile@{WriteLineToLogfile}}
+\index{WriteLineToLogfile@{WriteLineToLogfile}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteLineToLogfile()}{WriteLineToLogfile()}}
+{\footnotesize\ttfamily static void openphase\+::\+Console\+Output\+::\+Write\+Line\+To\+Logfile (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{log,  }\item[{const std\+::array$<$ std\+::stringstream, 2 $>$ \&}]{line,  }\item[{const int}]{t\+Step,  }\item[{const char}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes line buffer to log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & is the log file where line will be written to \\
+\hline
+{\em line} & is a buffer which can be written to log file \\
+\hline
+{\em t\+Step} & current time step \\
+\hline
+{\em precision} & of value printed to screen \\
+\hline
+{\em sep} & is separator char used in the log file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00135}{135}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\ <<\ tStep\ <<\ sep\ <<\ line[0].str()\ <<\ std::endl;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ log\ <<\ tStep\ <<\ sep\ <<\ line[1].str()\ <<\ std::endl;}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}\label{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteSimple@{WriteSimple}}
+\index{WriteSimple@{WriteSimple}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteSimple()}{WriteSimple()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Simple (\begin{DoxyParamCaption}\item[{const std\+::string}]{Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00140}{140}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \{}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ cout\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}\label{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteStandard@{WriteStandard}}
+\index{WriteStandard@{WriteStandard}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteStandard()}{WriteStandard()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void openphase\+::\+Console\+Output\+::\+Write\+Standard (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Left,  }\item[{const T}]{Right,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes Get\+Standard result to std\+::cout if MPI-\/\+Rank 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00291}{291}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{GetStandard}}(Left,Right,precision,notation,ColumnWidth);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a3e51a698b31b9d3634b8cbedd2a4ffb5}\label{classopenphase_1_1ConsoleOutput_a3e51a698b31b9d3634b8cbedd2a4ffb5} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteStandardNarrow@{WriteStandardNarrow}}
+\index{WriteStandardNarrow@{WriteStandardNarrow}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteStandardNarrow()}{WriteStandardNarrow()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void openphase\+::\+Console\+Output\+::\+Write\+Standard\+Narrow (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Left,  }\item[{const T}]{Right,  }\item[{const int}]{precision = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{Standard\+Precision}}},  }\item[{floatfield}]{notation = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{Standard\+Notation}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes Get\+Standard\+Narrow result to std\+::cout if MPI-\/\+Rank 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00307}{307}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00310\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{GetStandard}}(Left,Right,precision,notation,\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{StandardColumnWidth}}/2);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e}\label{classopenphase_1_1ConsoleOutput_ad06fba11917f8127dadd59a467103c0e} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteStartScreen@{WriteStartScreen}}
+\index{WriteStartScreen@{WriteStartScreen}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteStartScreen()}{WriteStartScreen()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Start\+Screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}>"{}});}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ \ OpenPhase\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ Copyright\ (c)\ Ruhr-\/Universitaet\ Bochum,\ Universitaetsstrasse\ 150,\ 44801\ Bochum,\ Germany\(\backslash\)n"{}}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ and\ OpenPhase\ Solutions\ GmbH,\ Universitaetsstrasse\ 136,\ 44799\ Bochum,\ Germany.\(\backslash\)n"{}}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ All\ rights\ reserved.\(\backslash\)n"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}<"{}});}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Build\ time:\ "{}}\ <<\ \mbox{\hyperlink{BuildInfo_8h_aa0566a4cbfe1e0d65d5bd7c7eb51b208}{BUILD\_TIME}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Git\ commit\ SHA:\ "{}}\ <<\ \mbox{\hyperlink{BuildInfo_8h_a6c2739dc1239747a4e883d150d85d3e1}{GIT\_COMMIT\_SHA}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ac2d32ed88f3587b219fa312e5f7c2113}\label{classopenphase_1_1ConsoleOutput_ac2d32ed88f3587b219fa312e5f7c2113} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteTimeStep@{WriteTimeStep}}
+\index{WriteTimeStep@{WriteTimeStep}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteTimeStep()}{WriteTimeStep()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Time\+Step (\begin{DoxyParamCaption}\item[{const int}]{t\+Screen\+Write,  }\item[{const int}]{t\+Step,  }\item[{const int}]{n\+Steps,  }\item[{const std\+::string}]{Message = {\ttfamily "{}"{}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(tStep\%tScreenWrite))}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}{WriteTimeStep}}(tStep,\ nSteps,\ Message,\ ColumnWidth);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_afc2e6fe5838194d2873710ca88f48770}\label{classopenphase_1_1ConsoleOutput_afc2e6fe5838194d2873710ca88f48770} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteTimeStep@{WriteTimeStep}}
+\index{WriteTimeStep@{WriteTimeStep}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteTimeStep()}{WriteTimeStep()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Time\+Step (\begin{DoxyParamCaption}\item[{const int}]{t\+Step,  }\item[{const int}]{n\+Steps,  }\item[{const std\+::string}]{Message = {\ttfamily "{}"{}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TimeStep"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ to\_string(tStep)\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ to\_string(nSteps)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Message\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ Message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e}\label{classopenphase_1_1ConsoleOutput_a42fee054a4f8b3d36979bd58a1de650e} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteTimeStep@{WriteTimeStep}}
+\index{WriteTimeStep@{WriteTimeStep}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteTimeStep()}{WriteTimeStep()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Time\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1RunTimeControl}{Run\+Time\+Control}} \&}]{RTC,  }\item[{const std\+::string}]{Message = {\ttfamily "{}"{}},  }\item[{const size\+\_\+t}]{Column\+Width = {\ttfamily \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{Standard\+Column\+Width}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time\ step"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ to\_string(RTC.TimeStep)\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ to\_string(RTC.MaxTimeStep)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Simulation\ time"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ RTC.SimulationTime\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(ColumnWidth)\ \ <<\ left\ <<}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Wall\ clock\ time"{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a7e1912d7fbfe7bc94915764cc613e9dc}{get\_time}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Message\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ Message;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd}\label{classopenphase_1_1ConsoleOutput_a3d39f6f01e37b75d360090aa734bc1bd} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteWarning@{WriteWarning}}
+\index{WriteWarning@{WriteWarning}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteWarning()}{WriteWarning()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string}]{Message,  }\item[{const std\+::string}]{Instance = {\ttfamily "{}"{}},  }\item[{const std\+::string}]{Method = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \{}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Warning)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\string~'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ \ <<\ left\ <<\ \textcolor{stringliteral}{"{}Warning:\ "{}}\ \ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ "{}}\ <<\ Message\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ cerr\ <<\ setfill(\textcolor{charliteral}{'\string~'})\ <<\ setw(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{LineLength}})\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054}\label{classopenphase_1_1ConsoleOutput_acf2532d4a48becd1b097024e1c2af054} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteWithinMethod@{WriteWithinMethod}}
+\index{WriteWithinMethod@{WriteWithinMethod}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteWithinMethod()}{WriteWithinMethod()}}
+{\footnotesize\ttfamily void openphase\+::\+Console\+Output\+::\+Write\+Within\+Method (\begin{DoxyParamCaption}\item[{const std\+::string}]{Message,  }\item[{const std\+::string}]{Instance = {\ttfamily "{}"{}},  }\item[{const std\+::string}]{Method = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{ConsoleOutput_8cpp_source}{Console\+Output.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \{}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{OutputVerbosity}}\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ thisInstance\ =\ Instance;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Method\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ thisInstance\ +=\ \textcolor{stringliteral}{"{}::"{}}\ +\ Method;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ cout\ <<\ setfill(\textcolor{charliteral}{'\ '})\ <<\ setw(10)\ \ <<\ left\ <<\ thisInstance\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ Message\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{WriteLine}}(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ae67ef7804e5990154125cdce15dbf79f}\label{classopenphase_1_1ConsoleOutput_ae67ef7804e5990154125cdce15dbf79f} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!WriteWithLog@{WriteWithLog}}
+\index{WriteWithLog@{WriteWithLog}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{WriteWithLog()}{WriteWithLog()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void openphase\+::\+Console\+Output\+::\+Write\+With\+Log (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::stringstream, 2 $>$ \&}]{line,  }\item[{const int}]{t\+Step,  }\item[{const std\+::string}]{name,  }\item[{const T}]{value,  }\item[{const int}]{precision = {\ttfamily 4},  }\item[{const char}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes name and value to screen and to line buffer for later file write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & is a buffer which can be written to log file \\
+\hline
+{\em t\+Step} & current time step \\
+\hline
+{\em name} & of the value printed to screen \\
+\hline
+{\em value} & printed to screen \\
+\hline
+{\em precision} & of value printed to screen \\
+\hline
+{\em sep} & is separator char used in the log file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00116}{116}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ line[0]\ <<\ name\ <<\ sep;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ line[1]\ <<\ value\ <<\ sep;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(name,\ value,\ precision);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}\label{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!LineLength@{LineLength}}
+\index{LineLength@{LineLength}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{LineLength}{LineLength}}
+{\footnotesize\ttfamily constexpr size\+\_\+t openphase\+::\+Console\+Output\+::\+Line\+Length = 80\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00066}{66}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+\Hypertarget{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}\label{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!OutputVerbosity@{OutputVerbosity}}
+\index{OutputVerbosity@{OutputVerbosity}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{OutputVerbosity}{OutputVerbosity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_affb0eb7489e702eaea125105e21826a3}{Verbosity\+Levels}} openphase\+::\+Console\+Output\+::\+Output\+Verbosity = Verbosity\+Levels\+::\+Normal\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets the level of console output verbosity. 
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00068}{68}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+\Hypertarget{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}\label{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardColumnWidth@{StandardColumnWidth}}
+\index{StandardColumnWidth@{StandardColumnWidth}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardColumnWidth}{StandardColumnWidth}}
+{\footnotesize\ttfamily constexpr size\+\_\+t openphase\+::\+Console\+Output\+::\+Standard\+Column\+Width = 40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00065}{65}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+\Hypertarget{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}\label{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardNotation@{StandardNotation}}
+\index{StandardNotation@{StandardNotation}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardNotation}{StandardNotation}}
+{\footnotesize\ttfamily constexpr auto openphase\+::\+Console\+Output\+::\+Standard\+Notation = floatfield\+::\+Default\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00063}{63}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+\Hypertarget{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}\label{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58} 
+\index{openphase::ConsoleOutput@{openphase::ConsoleOutput}!StandardPrecision@{StandardPrecision}}
+\index{StandardPrecision@{StandardPrecision}!openphase::ConsoleOutput@{openphase::ConsoleOutput}}
+\doxysubsubsection{\texorpdfstring{StandardPrecision}{StandardPrecision}}
+{\footnotesize\ttfamily constexpr int openphase\+::\+Console\+Output\+::\+Standard\+Precision = 6\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{ConsoleOutput_8h_source_l00064}{64}} of file \mbox{\hyperlink{ConsoleOutput_8h_source}{Console\+Output.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ConsoleOutput_8h}{Console\+Output.\+h}}\item 
+\mbox{\hyperlink{ConsoleOutput_8cpp}{Console\+Output.\+cpp}}\end{DoxyCompactItemize}

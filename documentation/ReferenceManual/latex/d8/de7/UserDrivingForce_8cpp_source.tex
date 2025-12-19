@@ -1,0 +1,288 @@
+\doxysection{User\+Driving\+Force.\+cpp}
+\hypertarget{UserDrivingForce_8cpp_source}{}\label{UserDrivingForce_8cpp_source}\index{UserDrivingForce.cpp@{UserDrivingForce.cpp}}
+\mbox{\hyperlink{UserDrivingForce_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2011}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UserDrivingForce_8h}{UserDrivingForce.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Settings_8h}{Settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PhaseField_8h}{PhaseField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DrivingForce_8h}{DrivingForce.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Temperature_8h}{Temperature.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Composition_8h}{Composition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00036}00036\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00038}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_ab054911fe494528ffd7c1e89710563e6}{00038}}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a695aa30a5550d3d69aed938c34bc3415}{UserDrivingForce::UserDrivingForce}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aea31591d26508762639faf5ceb1635f2}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7c635ab97b97bfa55565c8bf1c148e19}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00045}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aea31591d26508762639faf5ceb1635f2}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aea31591d26508762639faf5ceb1635f2}{UserDrivingForce::Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}UserDrivingForce"{}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}}\ =\ locSettings.\mbox{\hyperlink{classopenphase_1_1Settings_a0c522fdad9b82d59bfe3fbc77185be92}{Nphases}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7ae8d67981369b3b47d323ce48d75f96}{Component}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}.\mbox{\hyperlink{classopenphase_1_1Matrix_a610a9f765a94d8c2279202b6d02e3cc1}{Allocate}}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}},\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00063}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7c635ab97b97bfa55565c8bf1c148e19}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7c635ab97b97bfa55565c8bf1c148e19}{UserDrivingForce::ReadInput}}(std::string\ InputFileName)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}UserDrivingForce\ input"{}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00068}00068\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00074}00074\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00076}00076\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00077}00077\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7c635ab97b97bfa55565c8bf1c148e19}{ReadInput}}(data);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00080}00080\ \ \ \ \ inp.close();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00083}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_ab573514bc5bd0b3adc53765c1b0119e9}{00083}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7c635ab97b97bfa55565c8bf1c148e19}{UserDrivingForce::ReadInput}}(std::stringstream\&\ inp)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ Reading\ driving\ force\ modes\ and\ parameters\ for\ each\ phase\ pair}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ n\ =\ 0;\ n\ <\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}};\ n++)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ m\ =\ n;\ m\ <\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_aa47363a771be4d92c7e64f1f8e8793dc}{Nphases}};\ m++)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ stringstream\ idx;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ idx\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\_"{}}\ <<\ m;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n\ ==\ m)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(n,\ m)\ =\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a6adf97f83acf6453d4a6a4b1070f3754}{UserDrivingForceModes::None}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ locMode\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_Mode"{}}\ +\ idx.str(),\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}NONE"{}});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locMode\ ==\ \textcolor{stringliteral}{"{}NONE"{}})\ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(n,\ m)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(m,\ n)\ =\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a6adf97f83acf6453d4a6a4b1070f3754}{UserDrivingForceModes::None}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locMode\ ==\ \textcolor{stringliteral}{"{}VALUE"{}})\ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(n,\ m)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(m,\ n)\ =\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a689202409e48743b914713f96d93947c}{UserDrivingForceModes::Value}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locMode\ ==\ \textcolor{stringliteral}{"{}FORMULA"{}})\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(n,\ m)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(m,\ n)\ =\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a313a6a3d25aa041ee3dc3cbd65d4f22b}{UserDrivingForceModes::Formula}};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(n,\ m))}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a689202409e48743b914713f96d93947c}{UserDrivingForceModes::Value}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_Value"{}}\ +\ idx.str(),\ \textcolor{keyword}{true},\ 0.0);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(m,n)\ =\ -\/\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(n,m);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(m,n)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(n,m)\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(m,n)\ \ \ \ \ \ \ \ =\ 1.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(n,m)\ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(m,n)\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a313a6a3d25aa041ee3dc3cbd65d4f22b}{UserDrivingForceModes::Formula}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(m,n)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_LatentHeat"{}}\ +\ idx.str(),\ \textcolor{keyword}{true},\ 0.0);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(m,n)\ =\ -\/\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(n,m);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_Teq"{}}\ +\ idx.str(),\ \textcolor{keyword}{true},\ 1.0);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(m,n)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(n,m);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_Slope"{}}\ +\ idx.str(),\ \textcolor{keyword}{false},\ 0.0);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(m,n)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(n,m);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7ae8d67981369b3b47d323ce48d75f96}{Component}}(n,m)\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{stringliteral}{"{}UDF\_Component"{}}\ +\ idx.str(),\ \textcolor{keyword}{false},\ 0);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7ae8d67981369b3b47d323ce48d75f96}{Component}}(m,n)\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7ae8d67981369b3b47d323ce48d75f96}{Component}}(n,m);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a6adf97f83acf6453d4a6a4b1070f3754}{UserDrivingForceModes::None}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(n,m)\ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(m,n)\ \ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(n,m)\ \ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(m,n)\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(n,m)\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(m,n)\ \ \ \ \ \ \ \ =\ 1.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00152}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_adb31b5cc1286a6b9321e2c93fface3d2}{00152}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_adb31b5cc1286a6b9321e2c93fface3d2}{UserDrivingForce::SetDrivingForce}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ dGab)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00154}00154\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00156}00156\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend()-\/1;\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ beta\ =\ alpha\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++beta)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pIndexA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pIndexB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[\ beta-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(pIndexA,pIndexB)\ ==\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a689202409e48743b914713f96d93947c}{UserDrivingForceModes::Value}})}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(alpha-\/>index,\ beta-\/>index,\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(pIndexA,pIndexB));}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00177}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_af7021bb29057e63f72f90775ab69e77d}{00177}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_adb31b5cc1286a6b9321e2c93fface3d2}{UserDrivingForce::SetDrivingForce}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ dGab,}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}\&\ Tx)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00180}00180\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend()-\/1;\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ beta\ =\ alpha\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++beta)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[\ beta-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(pIndexA,pIndexB))}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a6adf97f83acf6453d4a6a4b1070f3754}{UserDrivingForceModes::None}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a313a6a3d25aa041ee3dc3cbd65d4f22b}{UserDrivingForceModes::Formula}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dG\_AB\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(pIndexA,pIndexB)*}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Tx(i,j,k)\ -\/\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(pIndexA,pIndexB))/}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(pIndexA,pIndexB);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(alpha-\/>index,\ beta-\/>index,\ dG\_AB);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a689202409e48743b914713f96d93947c}{UserDrivingForceModes::Value}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(alpha-\/>index,\ beta-\/>index,\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(pIndexA,pIndexB));}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00218}00218\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00220}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a22e0c47b07417a3ddeaad1e6249e9d2e}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_adb31b5cc1286a6b9321e2c93fface3d2}{UserDrivingForce::SetDrivingForce}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ dGab,}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}\&\ Tx,}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}}\&\ Cx)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00224}00224\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00225}00225\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00226}00226\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ alpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cbegin();}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend()-\/1;\ ++alpha)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ beta\ =\ alpha\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta\ !=\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).cend();\ ++beta)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexA\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[alpha-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pIndexB\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[\ beta-\/>index].Phase;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a709184fc5378e6e278e60861977182a2}{Mode}}(pIndexA,pIndexB))}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a6adf97f83acf6453d4a6a4b1070f3754}{UserDrivingForceModes::None}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a313a6a3d25aa041ee3dc3cbd65d4f22b}{UserDrivingForceModes::Formula}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locTeq\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a4c48c9372558ea31439c078a2dc81dd2}{Teq}}(pIndexA,pIndexB)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a5cc4fdcc6772fae641f8ef83e37dd703}{Slope}}(pIndexA,pIndexB)*Cx.\mbox{\hyperlink{classopenphase_1_1Composition_a619d45e1a2327e26a8a513a066ffa1d9}{MoleFractions}}(i,j,k,\{pIndexA,\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a7ae8d67981369b3b47d323ce48d75f96}{Component}}(pIndexA,pIndexB)\});}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dG\_AB\ =\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a362be1b22bea885cb7e407b2afcfdee2}{LatentHeat}}(pIndexA,pIndexB)*}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Tx(i,j,k)\ -\/\ locTeq)/locTeq;}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(alpha-\/>index,\ beta-\/>index,\ dG\_AB);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_ac3d0ac9353ba8cdb00ec3e8ae4021dc0a689202409e48743b914713f96d93947c}{UserDrivingForceModes::Value}}:}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(alpha-\/>index,\ beta-\/>index,\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a3faf7823b58a5489bd712aec7d4bbab0}{Value}}(pIndexA,pIndexB));}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00261}00261\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00262}00262\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00265}\mbox{\hyperlink{classopenphase_1_1UserDrivingForce_a076349d3b39139b16fc7badb2df9c9a3}{00265}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1UserDrivingForce_adb31b5cc1286a6b9321e2c93fface3d2}{UserDrivingForce::SetDrivingForce}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ \mbox{\hyperlink{classopenphase_1_1DrivingForce}{DrivingForce}}\&\ dGab,}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexA,\ \textcolor{keywordtype}{int}\ indexB,\ \textcolor{keywordtype}{double}\ dGvalue)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00267}00267\ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00268}00268\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields,0,)}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00269}00269\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).present(indexA)\ and}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).present(indexB))}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dGab.\mbox{\hyperlink{classopenphase_1_1DrivingForce_ae4c1cd5aec9db1f81f6512c8a55ce5ae}{Force}}(i,j,k).add\_raw(indexA,\ indexB,\ dGvalue);}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00279}00279\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00280}00280\ \}}
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{UserDrivingForce_8cpp_source_l00282}00282\ \}\textcolor{comment}{//\ namespace\ openphase}}
+
+\end{DoxyCode}

@@ -1,0 +1,1525 @@
+\doxysection{openphase\+::Interface\+Regularization Class Reference}
+\hypertarget{classopenphase_1_1InterfaceRegularization}{}\label{classopenphase_1_1InterfaceRegularization}\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+
+
+\texorpdfstring{$<$}{<} The interface regularization module. Provides the storage and manipulation methods.  
+
+
+
+
+{\ttfamily \#include "{}Interface\+Regularization.\+h"{}}
+
+Inheritance diagram for openphase\+::Interface\+Regularization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/dca/classopenphase_1_1InterfaceRegularization}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a5daf3f5bea11be42f6bd6ded9f5ec7a2}{Interface\+Regularization}} ()
+\item 
+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_acfdb7103c0b2dbda7d4b6a666fbfc8bf}{Interface\+Regularization}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const std\+::string Input\+File\+Name=\mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}})
+\begin{DoxyCompactList}\small\item\em Initializes the storage and internal variables of the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ae8f5ba4990e07d09bf7f220d571a702f}{Initialize}} (\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, std\+::string Object\+Name\+Suffix="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Initializes the storage and internal variables of the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956}{Read\+Input}} (const std\+::string Input\+File\+Name) override
+\begin{DoxyCompactList}\small\item\em Reads settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a2f30226319467fefa6be9e7824a365ab}{Read\+Input}} (std\+::stringstream \&inp) override
+\begin{DoxyCompactList}\small\item\em Reads settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{Remesh}} (int new\+Nx, int new\+Ny, int new\+Nz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Remeshes the storage while keeping the data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{Set\+Boundary\+Conditions}} (const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC) override
+\begin{DoxyCompactList}\small\item\em Sets the boundary conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3e028ec1eb2aef3c8e43b80a59c7e045}{Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Deletes curvature in the storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abcaedc4891f994c4931097e52aae8a1c}{Average}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\begin{DoxyCompactList}\small\item\em Averages curvature across the interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a17fc273094e5daa0d7800f28c3e40521}{Merge\+Phase\+Field\+Increments}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&IP)
+\begin{DoxyCompactList}\small\item\em Merges the curvature contribution into the phase field increments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_af6a94b91a990822d4f812c1c25ee5f4b}{Print\+Point\+Statistics}} (const int i, const int j, const int k) const
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a67398ca66af83b6a708e2cbfda6bc9b6}{Write\+VTK}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step, const size\+\_\+t indexA, const size\+\_\+t indexB, const int precision=16) const
+\begin{DoxyCompactList}\small\item\em Writes the curvature of the interface between phase-\/fields with indexA and indexB. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a2c8a8793bca272ea4f7d4f5fa435d8e7}{at}} (const double x, const double y, const double z) const
+\begin{DoxyCompactList}\small\item\em Arbitrary point access operator for curvature. Uses tri-\/linear interpolation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization}{Interface\+Regularization}} \& \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a6eb8929482bd73e3595ac139619a5bb3}{operator=}} (const \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization}{Interface\+Regularization}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy operator for Curvature class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}{Move\+Frame}} (const int dx, const int dy, const int dz, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC)
+\item 
+virtual void \mbox{\hyperlink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect}} (\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&Adv, const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&Vel, \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}}, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const double dt, const double t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&BC, const int t\+Step)
+\item 
+virtual bool \mbox{\hyperlink{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}{Write}} (const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&loc\+Settings, const int t\+Step) const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Writes binary output \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}{Find\+Object}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}{Find\+Objects}} (std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ Object\+List, std\+::string Object\+Name, std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}, std\+::string thisfunctionname, bool necessary, bool verbose=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647}{Clearing\+Modes}} \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14}{Clearing\+Mode}}
+\begin{DoxyCompactList}\small\item\em Clearing mode for the curvature storage (facilitates \doxylink{structopenphase_1_1VTK}{VTK} output) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}
+\begin{DoxyCompactList}\small\item\em Simulation grid parameters. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ad7b864b306d12229fa0134dfa85fe0e0}{Nphases}}
+\begin{DoxyCompactList}\small\item\em Number of thermodynamic phases. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}
+\begin{DoxyCompactList}\small\item\em Radius of a sphere around a grid point over which the curvature is averaged. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{Phi\+Threshold}}
+\begin{DoxyCompactList}\small\item\em Outlines the inner part of the interface for curvature averaging. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$ \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}}, 0 $>$ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}
+\begin{DoxyCompactList}\small\item\em Curvature storage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}}
+\begin{DoxyCompactList}\small\item\em Control parameter for averaging the curvature over the interface. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s implementation class name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}
+\begin{DoxyCompactList}\small\item\em Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s Initialize has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}{input\+\_\+read}} = false
+\begin{DoxyCompactList}\small\item\em True if obect\textquotesingle{}s \doxylink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{Read\+Input()} has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}{remeshable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{Remesh()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}{advectable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}{readable}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}{boundary\+\_\+conditions}} = false
+\begin{DoxyCompactList}\small\item\em True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{Set\+Boundary\+Conditions()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ab71667c593d5fae63d7af59febdfa77d}{Set\+Weights\+SR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Sets averaging weights for curvature across the interface in single resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a7fa02d38c56c8a7591eb24cc60e3edf8}{Collect\+Average\+SR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Average curvature across the interface in single resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ab575e2e0facd922c46108882d12e56ca}{Distribute\+Average\+SR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Average curvature across the interface in single resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a570a24d8b8441271221aacf96917a0a5}{Set\+Weights\+DR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Sets averaging weights for curvature across the interface in double resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa99fd0e764ea85c3c7b30491c74a4430}{Collect\+Average\+DR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Average curvature across the interface in double resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a70ac1ba3b45e184a76fec5013326ecb3}{Distribute\+Average\+DR}} (const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}})
+\begin{DoxyCompactList}\small\item\em Average curvature across the interface in double resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ad07a99ce07ba88901cb71199cdb206bb}{Merge\+Phase\+Field\+Increments\+SR}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&IP)
+\begin{DoxyCompactList}\small\item\em Merges the curvature contribution into the phase field increments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a64c700b1da15bd7af90ef9cbdb0e07b9}{Merge\+Phase\+Field\+Increments\+DR}} (\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}, \mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&IP)
+\begin{DoxyCompactList}\small\item\em Merges the curvature contribution into the phase field increments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} The interface regularization module. Provides the storage and manipulation methods. 
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00043}{43}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a5daf3f5bea11be42f6bd6ded9f5ec7a2}\label{classopenphase_1_1InterfaceRegularization_a5daf3f5bea11be42f6bd6ded9f5ec7a2} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!InterfaceRegularization@{InterfaceRegularization}}
+\index{InterfaceRegularization@{InterfaceRegularization}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{InterfaceRegularization()}{InterfaceRegularization()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily openphase\+::\+Interface\+Regularization\+::\+Interface\+Regularization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00046}{46}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ :\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}}(\textcolor{keyword}{false})\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_acfdb7103c0b2dbda7d4b6a666fbfc8bf}\label{classopenphase_1_1InterfaceRegularization_acfdb7103c0b2dbda7d4b6a666fbfc8bf} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!InterfaceRegularization@{InterfaceRegularization}}
+\index{InterfaceRegularization@{InterfaceRegularization}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{InterfaceRegularization()}{InterfaceRegularization()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily openphase\+::\+Interface\+Regularization\+::\+Interface\+Regularization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const std\+::string}]{Input\+File\+Name = {\ttfamily \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{Default\+Input\+File\+Name}}} }\end{DoxyParamCaption})}
+
+
+
+Initializes the storage and internal variables of the class. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ae8f5ba4990e07d09bf7f220d571a702f}{Initialize}}(locSettings);}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}\label{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Advect@{Advect}}
+\index{Advect@{Advect}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Advect()}{Advect()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Advect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1AdvectionHR}{Advection\+HR}} \&}]{Adv,  }\item[{const \mbox{\hyperlink{classopenphase_1_1Velocities}{Velocities}} \&}]{Vel,  }\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phi,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const double}]{dt,  }\item[{const double}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Advects relevant fields \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1Composition_a6ee3785e72c0180118ef05c83e490bbf}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1ElasticProperties_af1d84be6585c0737a194d465054d4a56}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a02f3075805d6c88aac380c8e64edb476}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a06d388daf0eb61ee202ddd036c1711f4}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a9dde57a361a724f5cd7f73a6589bc75b}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aca24a7b03b7fba39de79695ef541937e}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a066369acadd4bf1555850a255a70e211}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ac7b998d9b85443c730de36d54fb1a8cc}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00097}{97}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ (void)\ Adv;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (void)\ Vel;\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{namespaceopenphase_a44913b19d54d780a4b9e00fcab11cbb6}{Phi}};\ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (void)\ dt;\ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a2c8a8793bca272ea4f7d4f5fa435d8e7}\label{classopenphase_1_1InterfaceRegularization_a2c8a8793bca272ea4f7d4f5fa435d8e7} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!at@{at}}
+\index{at@{at}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}} openphase\+::\+Interface\+Regularization\+::at (\begin{DoxyParamCaption}\item[{const double}]{x,  }\item[{const double}]{y,  }\item[{const double}]{z }\end{DoxyParamCaption}) const}
+
+
+
+Arbitrary point access operator for curvature. Uses tri-\/linear interpolation. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00575}{575}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00576\ \{}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{if}(x\ >\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeX()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsX()\ -\/\ 1\ or}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ y\ >\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeY()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsY()\ -\/\ 1\ or}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ z\ >\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeZ()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsZ()\ -\/\ 1\ or}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ x\ <\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsX()\ or}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ y\ <\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsY()\ or}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ z\ <\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsZ())}
+\DoxyCodeLine{00584\ \ \ \ \ \{}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ std::stringstream\ message;}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}ERROR:\ InterfaceCurvature::Curvature\_at()\(\backslash\)n"{}}}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Access\ beyond\ storage\ range\ -\/>\ ("{}}}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ \textcolor{stringliteral}{"{}\ is\ outside\ of\ storage\ bounds\ ["{}}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsX()\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsY()\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ -\/\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsZ()\ <<\ \textcolor{stringliteral}{"{}]\ and\ ("{}}}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeX()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsX()\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeY()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsY()\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.sizeZ()\ +\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.BcellsZ()\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}}}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Terminating!!!\(\backslash\)n"{}};}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(message.str());}
+\DoxyCodeLine{00595\ \ \ \ \ \}}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ x0\ =\ floor(x)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ y0\ =\ floor(y)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ z0\ =\ floor(z)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ fabs(x\ -\/\ x0)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00602\ \ \ \ \ \textcolor{keywordtype}{double}\ dy\ =\ fabs(y\ -\/\ y0)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keywordtype}{double}\ dz\ =\ fabs(z\ -\/\ z0)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ NodeDF\ locCurvature;}
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ 0.0;}
+\DoxyCodeLine{00607\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0,\ z0).size())}
+\DoxyCodeLine{00608\ \ \ \ \ \{}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0,\ z0)*((1.0\ -\/\ dx)*(1.0\ -\/\ dy)*(1.0\ -\/\ dz)));}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ weight\ +=\ ((1.0\ -\/\ dx)*(1.0\ -\/\ dy)*(1.0\ -\/\ dz));}
+\DoxyCodeLine{00611\ \ \ \ \ \}}
+\DoxyCodeLine{00612\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0,\ z0).size())}
+\DoxyCodeLine{00613\ \ \ \ \ \{}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0,\ z0)*(dx*(1.0\ -\/\ dy)*(1.0\ -\/\ dz)));}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ weight\ +=\ (dx*(1.0\ -\/\ dy)*(1.0\ -\/\ dz));}
+\DoxyCodeLine{00616\ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0).size())}
+\DoxyCodeLine{00618\ \ \ \ \ \{}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0)*((1.0\ -\/\ dx)*dy*(1.0\ -\/\ dz)));}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ weight\ +=\ ((1.0\ -\/\ dx)*dy*(1.0\ -\/\ dz));}
+\DoxyCodeLine{00621\ \ \ \ \ \}}
+\DoxyCodeLine{00622\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0,\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}).size())}
+\DoxyCodeLine{00623\ \ \ \ \ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0,\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})*((1.0\ -\/\ dx)*(1.0\ -\/\ dy)*dz));}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ weight\ +=\ ((1.0\ -\/\ dx)*(1.0\ -\/\ dy)*dz);}
+\DoxyCodeLine{00626\ \ \ \ \ \}}
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0).size())}
+\DoxyCodeLine{00628\ \ \ \ \ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0)*(dx*dy*(1.0\ -\/\ dz)));}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ weight\ +=\ (dx*dy*(1.0\ -\/\ dz));}
+\DoxyCodeLine{00631\ \ \ \ \ \}}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0,\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}).size())}
+\DoxyCodeLine{00633\ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0,\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})*(dx*(1.0\ -\/\ dy)*dz));}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ weight\ +=\ (dx*(1.0\ -\/\ dy)*dz);}
+\DoxyCodeLine{00636\ \ \ \ \ \}}
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}).size())}
+\DoxyCodeLine{00638\ \ \ \ \ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0,\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})*((1.0\ -\/\ dx)*dy*dz));}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ weight\ +=\ ((1.0\ -\/\ dx)*dy*dz);}
+\DoxyCodeLine{00641\ \ \ \ \ \}}
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}}).size())}
+\DoxyCodeLine{00643\ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ locCurvature\ +=\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}},\ y0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}},\ z0+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})*(dx*dy*dz));}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ weight\ +=\ (dx*dy*dz);}
+\DoxyCodeLine{00646\ \ \ \ \ \}}
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keywordflow}{if}(weight\ >=\ DBL\_EPSILON)}
+\DoxyCodeLine{00648\ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ locCurvature\ *=\ 1.0/weight;}
+\DoxyCodeLine{00650\ \ \ \ \ \}}
+\DoxyCodeLine{00651\ \ \ \ \ \textcolor{keywordflow}{return}\ locCurvature;}
+\DoxyCodeLine{00652\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_abcaedc4891f994c4931097e52aae8a1c}\label{classopenphase_1_1InterfaceRegularization_abcaedc4891f994c4931097e52aae8a1c} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Average@{Average}}
+\index{Average@{Average}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Average()}{Average()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Average (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+
+
+
+Averages curvature across the interface. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}})}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}})}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ab71667c593d5fae63d7af59febdfa77d}{SetWeightsSR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a7fa02d38c56c8a7591eb24cc60e3edf8}{CollectAverageSR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ab575e2e0facd922c46108882d12e56ca}{DistributeAverageSR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a570a24d8b8441271221aacf96917a0a5}{SetWeightsDR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa99fd0e764ea85c3c7b30491c74a4430}{CollectAverageDR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{SetBoundaryConditions}}(BC);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a70ac1ba3b45e184a76fec5013326ecb3}{DistributeAverageDR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a3e028ec1eb2aef3c8e43b80a59c7e045}\label{classopenphase_1_1InterfaceRegularization_a3e028ec1eb2aef3c8e43b80a59c7e045} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Clear@{Clear}}
+\index{Clear@{Clear}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deletes curvature in the storage. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.Bcells(),)}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).clear();}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_aa99fd0e764ea85c3c7b30491c74a4430}\label{classopenphase_1_1InterfaceRegularization_aa99fd0e764ea85c3c7b30491c74a4430} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!CollectAverageDR@{CollectAverageDR}}
+\index{CollectAverageDR@{CollectAverageDR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{CollectAverageDR()}{CollectAverageDR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Collect\+Average\+DR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Average curvature across the interface in double resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00297}{297}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00298\ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Xrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Yrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Zrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ weight\_threshold\ =\ sqrt(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}*(1.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}));}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00306\ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).interface())}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>weight\ >\ weight\_threshold)}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ 0.0;}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SumWeights\ =\ 0.0;}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/Xrange;\ ii\ <=\ Xrange;\ ii++)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/Yrange;\ jj\ <=\ Yrange;\ jj++)}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/Zrange;\ kk\ <=\ Zrange;\ kk++)}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(ii*ii\ +\ jj*jj\ +\ kk*kk);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist)\ >\ 0.0\ and\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i+ii,j+jj,k+kk).interface())}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_weight(it-\/>indexA,\ it-\/>indexB)*(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SumWeights\ +=\ weight;}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ weight*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_raw(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(SumWeights\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>tmp\ =\ value/SumWeights;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}}\ or}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}})}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>tmp\ =\ it-\/>raw;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00347\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a7fa02d38c56c8a7591eb24cc60e3edf8}\label{classopenphase_1_1InterfaceRegularization_a7fa02d38c56c8a7591eb24cc60e3edf8} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!CollectAverageSR@{CollectAverageSR}}
+\index{CollectAverageSR@{CollectAverageSR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{CollectAverageSR()}{CollectAverageSR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Collect\+Average\+SR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Average curvature across the interface in single resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Xrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Yrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Zrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ weight\_threshold\ =\ sqrt(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}*(1.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}));}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>weight\ >\ weight\_threshold)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ 0.0;}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SumWeights\ =\ 0.0;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/Xrange;\ ii\ <=\ Xrange;\ ii++)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/Yrange;\ jj\ <=\ Yrange;\ jj++)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/Zrange;\ kk\ <=\ Zrange;\ kk++)}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(ii*ii\ +\ jj*jj\ +\ kk*kk);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist)\ >\ 0.0\ and\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i+ii,j+jj,k+kk).interface())}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_weight(it-\/>indexA,\ it-\/>indexB)*(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SumWeights\ +=\ weight;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ weight*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_raw(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(SumWeights\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>tmp\ =\ value/SumWeights;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}}\ or}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}})}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>tmp\ =\ it-\/>raw;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00224\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a70ac1ba3b45e184a76fec5013326ecb3}\label{classopenphase_1_1InterfaceRegularization_a70ac1ba3b45e184a76fec5013326ecb3} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!DistributeAverageDR@{DistributeAverageDR}}
+\index{DistributeAverageDR@{DistributeAverageDR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{DistributeAverageDR()}{DistributeAverageDR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Distribute\+Average\+DR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Average curvature across the interface in double resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00350\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Xrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Yrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Zrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ weight\_threshold\ =\ sqrt(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}*(1.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}));}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).interface())}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>weight\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ 0.0;}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/Xrange;\ ii\ <=\ Xrange;\ ii++)}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/Yrange;\ jj\ <=\ Yrange;\ jj++)}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/Zrange;\ kk\ <=\ Zrange;\ kk++)}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(ii*ii\ +\ jj*jj\ +\ kk*kk);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist)\ >\ 0.0\ and\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i+ii,j+jj,k+kk).interface())}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_weight(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\ >\ weight\_threshold)}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counter\ ++;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_tmp(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(counter\ !=\ 0)}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ value/counter;}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ it-\/>tmp;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}}\ or}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}})}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ it-\/>raw;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00401\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ab575e2e0facd922c46108882d12e56ca}\label{classopenphase_1_1InterfaceRegularization_ab575e2e0facd922c46108882d12e56ca} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!DistributeAverageSR@{DistributeAverageSR}}
+\index{DistributeAverageSR@{DistributeAverageSR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{DistributeAverageSR()}{DistributeAverageSR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Distribute\+Average\+SR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Average curvature across the interface in single resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Xrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a5c1aae2c50ac8d4553575e73bea08105}{Nx}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}};}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Yrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6dc623672d1966056e21a45e859178b7}{Ny}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}};}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Zrange\ =\ min(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a0f169f4652c06b6e4328e31778885e9b}{Nz}}-\/1)*\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ weight\_threshold\ =\ sqrt(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}*(1.0\ -\/\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}));}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>weight\ >\ DBL\_EPSILON)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ counter\ =\ 0;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ 0.0;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ii\ =\ -\/Xrange;\ ii\ <=\ Xrange;\ ii++)}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ jj\ =\ -\/Yrange;\ jj\ <=\ Yrange;\ jj++)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ kk\ =\ -\/Zrange;\ kk\ <=\ Zrange;\ kk++)}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(ii*ii\ +\ jj*jj\ +\ kk*kk);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ -\/\ dist)\ >\ 0.0\ and\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i+ii,j+jj,k+kk).interface())}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_weight(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\ >\ weight\_threshold)}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counter\ ++;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i+ii,\ j+jj,\ k+kk).get\_tmp(it-\/>indexA,\ it-\/>indexB);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(counter\ !=\ 0)}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ value/counter;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ it-\/>tmp;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexA].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}}\ or}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsProperties[it-\/>indexB].Stage\ ==\ \mbox{\hyperlink{namespaceopenphase_af71cd9b36fd77e1eb90f17b95c04e52eadba005190e58b252f9b5375cdf5655d9}{GrainStages::Seed}})}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>average\ =\ it-\/>raw;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00278\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1}\label{classopenphase_1_1OPObject_af6910712da7e1d8d4df869a36cc41fb1} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!FindObject@{FindObject}}
+\index{FindObject@{FindObject}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{FindObject()}{FindObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} openphase\+::\+OPObject\+::\+Find\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00130}{130}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ObjectList[i];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ object\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ thisfunctionname\ <<\ \textcolor{stringliteral}{"{}()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e}\label{classopenphase_1_1OPObject_aa710a4052d686aac0b3f38a9a615682e} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!FindObjects@{FindObjects}}
+\index{FindObjects@{FindObjects}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{FindObjects()}{FindObjects()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$ openphase\+::\+OPObject\+::\+Find\+Objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}} \texorpdfstring{$\ast$}{*} $>$}]{Object\+List,  }\item[{std\+::string}]{Object\+Name,  }\item[{std\+::string}]{thisclassname,  }\item[{std\+::string}]{thisfunctionname,  }\item[{bool}]{necessary,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00166}{166}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<OPObject*>\ result;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ObjectList.size();\ i++)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ObjectList[i]-\/>\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}.size()\ >=\ ObjectName.size())}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ locObjectName\ =\ ObjectList[i]-\/>thisclassname;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locObjectName.resize(ObjectName.size());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(locObjectName\ ==\ ObjectName)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(ObjectList[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result.size()\ ==\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (verbose)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ "{}}\ <<\ ObjectName\ <<\ \textcolor{stringliteral}{"{}\ objects\ found!\ "{}}\ <<\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ thisfunctionname\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(necessary)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(13);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ae8f5ba4990e07d09bf7f220d571a702f}\label{classopenphase_1_1InterfaceRegularization_ae8f5ba4990e07d09bf7f220d571a702f} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{std\+::string}]{Object\+Name\+Suffix = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the storage and internal variables of the class. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_ab7b5d4fd526d189f269fade8896a789c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ \textcolor{stringliteral}{"{}InterfaceRegularization"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}{thisobjectname}}\ =\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ +\ ObjectNameSuffix;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}\ =\ locSettings.Grid;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ad7b864b306d12229fa0134dfa85fe0e0}{Nphases}}\ =\ locSettings.Nphases;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}\ =\ DBL\_EPSILON;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ =\ (\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a6b4e77f0fe736794ab56285960cd7a1e}{iWidth}}\ +\ 1)/2;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}})}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.Allocate(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Resolutions::Dual}}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ GridParameters\ DoubleDimensions\ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_aa24687417304e06716da10e732d708af}{DoubleResolution}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.Allocate(DoubleDimensions,\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ locSettings.AddForRemeshing(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}{initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Initialized"{}});}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a17fc273094e5daa0d7800f28c3e40521}\label{classopenphase_1_1InterfaceRegularization_a17fc273094e5daa0d7800f28c3e40521} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!MergePhaseFieldIncrements@{MergePhaseFieldIncrements}}
+\index{MergePhaseFieldIncrements@{MergePhaseFieldIncrements}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{MergePhaseFieldIncrements()}{MergePhaseFieldIncrements()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Merge\+Phase\+Field\+Increments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&}]{IP }\end{DoxyParamCaption})}
+
+
+
+Merges the curvature contribution into the phase field increments. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00403}{403}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00404\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}})}
+\DoxyCodeLine{00406\ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}}:}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ad07a99ce07ba88901cb71199cdb206bb}{MergePhaseFieldIncrementsSR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ IP);}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Resolutions::Dual}}:}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a64c700b1da15bd7af90ef9cbdb0e07b9}{MergePhaseFieldIncrementsDR}}(\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}},\ IP);}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14}{ClearingMode}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647a086247a9b57fde6eefee2a0c4752242d}{ClearingModes::Automatic}})}
+\DoxyCodeLine{00420\ \ \ \ \ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3e028ec1eb2aef3c8e43b80a59c7e045}{Clear}}();}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a64c700b1da15bd7af90ef9cbdb0e07b9}\label{classopenphase_1_1InterfaceRegularization_a64c700b1da15bd7af90ef9cbdb0e07b9} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!MergePhaseFieldIncrementsDR@{MergePhaseFieldIncrementsDR}}
+\index{MergePhaseFieldIncrementsDR@{MergePhaseFieldIncrementsDR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{MergePhaseFieldIncrementsDR()}{MergePhaseFieldIncrementsDR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Merge\+Phase\+Field\+Increments\+DR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&}]{IP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merges the curvature contribution into the phase field increments. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00458}{458}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00460\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},\ 0,\ )}
+\DoxyCodeLine{00462\ \ \ \ \ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).interface())}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Prefactor\ =\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.Eta;}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locCurvature\ =\ 0.0;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}})}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locCurvature\ =\ it-\/>average;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locCurvature\ =\ it-\/>raw;}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ it-\/>weight;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dPsi\_dt\ =\ locCurvature*IP.PropertiesDR(i,j,k).get\_mobility(it-\/>indexA,it-\/>indexB)*norm*Prefactor;}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDotDR(i,j,k).add\_asym1(it-\/>indexA,it-\/>indexB,dPsi\_dt);}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \}}
+\DoxyCodeLine{00488\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00489\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ad07a99ce07ba88901cb71199cdb206bb}\label{classopenphase_1_1InterfaceRegularization_ad07a99ce07ba88901cb71199cdb206bb} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!MergePhaseFieldIncrementsSR@{MergePhaseFieldIncrementsSR}}
+\index{MergePhaseFieldIncrementsSR@{MergePhaseFieldIncrementsSR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{MergePhaseFieldIncrementsSR()}{MergePhaseFieldIncrementsSR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Merge\+Phase\+Field\+Increments\+SR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase,  }\item[{\mbox{\hyperlink{classopenphase_1_1InterfaceProperties}{Interface\+Properties}} \&}]{IP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merges the curvature contribution into the phase field increments. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00427\ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Prefactor\ =\ \mbox{\hyperlink{namespaceopenphase_a2c26ef9422df111d9487d3d34cf3d613}{Pi}}/\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Grid.Eta;}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,\ j,\ k,\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},\ 0,\ )}
+\DoxyCodeLine{00431\ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ locCurvature\ =\ 0.0;}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}})}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locCurvature\ =\ it-\/>average;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locCurvature\ =\ it-\/>raw;}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ norm\ =\ it-\/>weight;}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dPsi\_dt\ =\ locCurvature*IP.Properties(i,j,k).get\_mobility(it-\/>indexA,it-\/>indexB)*norm*Prefactor;}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDot(i,j,k).add\_asym1(it-\/>indexA,it-\/>indexB,dPsi\_dt);}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00456\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab}\label{classopenphase_1_1OPObject_a2dbefda68bf2a6123a095d4776f67cab} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!MoveFrame@{MoveFrame}}
+\index{MoveFrame@{MoveFrame}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{MoveFrame()}{MoveFrame()}}
+{\footnotesize\ttfamily virtual void openphase\+::\+OPObject\+::\+Move\+Frame (\begin{DoxyParamCaption}\item[{const int}]{dx,  }\item[{const int}]{dy,  }\item[{const int}]{dz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em BC} & Shifts the data in 3D storages by dx, dy and dz (they should be 0, -\/1 or +1) in x, y or z direction, correspondingly. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1Composition_ada44a6da5a526c3eaff543c91b964b1c}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a66356950cae6def1bda83d894bca859d}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aac075854614724322a8b23dfb874ea2f}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_a3ca9a283c031d7f260265252bc5db839}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_ae69458aeb8a6ffe849ee05253a7b77ad}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00079}{79}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dx;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dy;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ dz;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ BC;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a6eb8929482bd73e3595ac139619a5bb3}\label{classopenphase_1_1InterfaceRegularization_a6eb8929482bd73e3595ac139619a5bb3} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!operator=@{operator=}}
+\index{operator=@{operator=}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization}{Interface\+Regularization}} \& openphase\+::\+Interface\+Regularization\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization}{Interface\+Regularization}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Copy operator for Curvature class. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00556}{556}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00557\ \{}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{comment}{//\ protect\ against\ self-\/assignment\ and\ copy\ of\ uninitialized\ object}}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&rhs\ and\ rhs.thisclassname\ ==\ \textcolor{stringliteral}{"{}InterfaceRegularization"{}})}
+\DoxyCodeLine{00560\ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}}\ =\ rhs.thisclassname;}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}\ =\ rhs.Grid;}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ \ \ \ \ \ \ \ =\ rhs.Range;}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}\ =\ rhs.PhiThreshold;}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}}\ \ =\ rhs.Averaging;}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}\ \ =\ rhs.Curvature;}
+\DoxyCodeLine{00571\ \ \ \ \ \}}
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00573\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_af6a94b91a990822d4f812c1c25ee5f4b}\label{classopenphase_1_1InterfaceRegularization_af6a94b91a990822d4f812c1c25ee5f4b} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!PrintPointStatistics@{PrintPointStatistics}}
+\index{PrintPointStatistics@{PrintPointStatistics}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{PrintPointStatistics()}{PrintPointStatistics()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Print\+Point\+Statistics (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00491}{491}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00492\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ std::stringstream\ pointstat;}
+\DoxyCodeLine{00494\ \ \ \ \ pointstat\ <<\ \textcolor{stringliteral}{"{}Curvature\ Indices:\(\backslash\)t"{}};}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ alpha\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x,y,z).cbegin();}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x,y,z).cend();\ ++alpha)}
+\DoxyCodeLine{00498\ \ \ \ \ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ pointstat\ <<\ alpha-\/>indexA\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ alpha-\/>indexB\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t"{}};}
+\DoxyCodeLine{00500\ \ \ \ \ \}}
+\DoxyCodeLine{00501\ \ \ \ \ pointstat\ <<\ endl;}
+\DoxyCodeLine{00502\ \ \ \ \ pointstat\ <<\ \textcolor{stringliteral}{"{}Curvature\ Values:\(\backslash\)t"{}};}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ alpha\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x,y,z).cbegin();}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(x,y,z).cend();\ ++alpha)}
+\DoxyCodeLine{00506\ \ \ \ \ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ pointstat\ <<\ alpha-\/>average\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t"{}};}
+\DoxyCodeLine{00508\ \ \ \ \ \}}
+\DoxyCodeLine{00509\ \ \ \ \ pointstat\ <<\ endl;}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a607154bed184a8633e4a43e37e98a4d9}{ConsoleOutput::WriteSimple}}(pointstat.str());}
+\DoxyCodeLine{00512\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}\label{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Read@{Read}}
+\index{Read@{Read}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Step} & Reads binary input \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a39c3b97727ff24d3841a555815e8323e}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1FractureField_adfb75954aa45993908a8ac3dfc58a965}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a91d91d975d8bd4332187e02232e833c4}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a59a62d952286c1d0ab9596ab4f606dfd}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_aa39e0d1f06c1d1d0d3ef4068827fbbba}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_ab4be52cad9e10d0721311e86f7ddd2f0}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_a7b80f9edb9f782b2647a4f9d05f039be}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_aa2130b8b55885da8bfe082c1ec1021b0}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Velocities_a897280405e088d44748106fa0e496320}{openphase\+::\+Velocities}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa1c8e286282f87a3fabe8a9331046731}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a297a77842a22e3f115c9b9a43979ff05}{openphase\+::\+Flow\+Solver\+LBM}}, and \mbox{\hyperlink{classopenphase_1_1Temperature_aca03bb9cbe27c3e15517975a6e34a75c}{openphase\+::\+Temperature}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00109}{109}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (void)\ BC;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956}\label{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{const std\+::string}]{Input\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9c766ff0ddd3866b7c2f2f83ebebcf31}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3adb3c1b74bf9ac814922b7a8283707e}{ConsoleOutput::WriteLineInsert}}(\textcolor{stringliteral}{"{}InterfaceRegularization\ input"{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\textcolor{stringliteral}{"{}Source"{}},\ InputFileName.c\_str());}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ fstream\ inp(InputFileName.c\_str(),\ ios::in\ |\ ios\_base::binary);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inp)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}File\ \(\backslash\)"{}"{}}\ +\ InputFileName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ could\ not\ be\ opened"{}},\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}ReadInput()"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{00092\ \ \ \ \ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ std::stringstream\ data;}
+\DoxyCodeLine{00095\ \ \ \ \ data\ <<\ inp.rdbuf();}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956}{ReadInput}}(data);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ inp.close();}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a2f30226319467fefa6be9e7824a365ab}\label{classopenphase_1_1InterfaceRegularization_a2f30226319467fefa6be9e7824a365ab} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!ReadInput@{ReadInput}}
+\index{ReadInput@{ReadInput}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{ReadInput()}{ReadInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Read\+Input (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a9a7696bf13bb3e6b88a6965937aafdbb}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ moduleLocation\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_afbaeccd98923fc3babc30e1e7b3eed62}{FileInterface::FindModuleLocation}}(inp,\ \mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}{Averaging}}\ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a1b38acae500f606496f04a55e714731c}{FileInterface::ReadParameterB}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Average"{}}),\ \ \ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a05c3fb3e8b5d3a1d805b450014155f3d}{FileInterface::ReadParameterI}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Range"{}}),\ \ \ \ \ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}{Range}});}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}}\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a8077611f56a17832ac4d22d604df6dcd}{FileInterface::ReadParameterD}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}Threshold"{}}),\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}{PhiThreshold}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ \ \ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a41941afc8143c9cf6a8eddb4f1c94810}{FileInterface::ReadParameterK}}(inp,\ moduleLocation,\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}ClearingMode"{}}),\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}AUTOMATIC"{}});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}(tmp\ ==\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}AUTOMATIC"{}}))\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14}{ClearingMode}}\ =\ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647a086247a9b57fde6eefee2a0c4752242d}{ClearingModes::Automatic}};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{if}(tmp\ ==\ \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}MANUAL"{}}))\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14}{ClearingMode}}\ =\ \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647ae1ba155a9f2e8c3be94020eef32a0301}{ClearingModes::Manual}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad86f674a75177eed4dd6cd8c06fcba47}{ConsoleOutput::WriteLine}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acf973fcf791b7ed17177550d8a7175e9}{ConsoleOutput::WriteBlankLine}}();}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}\label{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Remesh@{Remesh}}
+\index{Remesh@{Remesh}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Remesh()}{Remesh()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Remesh (\begin{DoxyParamCaption}\item[{int}]{new\+Nx,  }\item[{int}]{new\+Ny,  }\item[{int}]{new\+Nz,  }\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Remeshes the storage while keeping the data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_af421c7d819be4718f586fb3f97c34583}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00540}{540}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00541\ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9acf53591af1208ddd535806600273099a}{Resolutions::Dual}})}
+\DoxyCodeLine{00543\ \ \ \ \ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.Reallocate((1+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})*newNx,\ (1+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})*newNy,\ (1+\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})*newNz);}
+\DoxyCodeLine{00545\ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00547\ \ \ \ \ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}.Reallocate(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00549\ \ \ \ \ \}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a9b5bec6fce00e1d8169690ad16c7563d}{SetDimensions}}(newNx,\ newNy,\ newNz);}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{ConsoleOutput::WriteStandard}}(\mbox{\hyperlink{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}{thisclassname}},\ \textcolor{stringliteral}{"{}Remeshed"{}});}
+\DoxyCodeLine{00554\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}\label{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!SetBoundaryConditions@{SetBoundaryConditions}}
+\index{SetBoundaryConditions@{SetBoundaryConditions}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{SetBoundaryConditions()}{SetBoundaryConditions()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Set\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the boundary conditions. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classopenphase_1_1OPObject_a098bf706cf87cf06361ec9bca1c7d32c}{openphase\+::\+OPObject}}.
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_ab1b588e300d68e6b4ae6307136a11b18}{dNx}})\ BC.SetX(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}});}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_afa4d2acbf1237f1a1e3ca3511aed10fc}{dNy}})\ BC.SetY(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}});}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_a439e45fff271a1abab42efa02e9e3f1e}{dNz}})\ BC.SetZ(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}});}
+\DoxyCodeLine{00132\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a570a24d8b8441271221aacf96917a0a5}\label{classopenphase_1_1InterfaceRegularization_a570a24d8b8441271221aacf96917a0a5} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!SetWeightsDR@{SetWeightsDR}}
+\index{SetWeightsDR@{SetWeightsDR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{SetWeightsDR()}{SetWeightsDR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Set\+Weights\+DR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets averaging weights for curvature across the interface in double resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).interface())}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ PhiAlpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).get\_value(it-\/>indexA);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ PhiBeta\ \ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.FieldsDR(i,j,k).get\_value(it-\/>indexB);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>weight\ =\ sqrt(PhiAlpha*PhiBeta);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00295\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ab71667c593d5fae63d7af59febdfa77d}\label{classopenphase_1_1InterfaceRegularization_ab71667c593d5fae63d7af59febdfa77d} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!SetWeightsSR@{SetWeightsSR}}
+\index{SetWeightsSR@{SetWeightsSR}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{SetWeightsSR()}{SetWeightsSR()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Set\+Weights\+SR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1PhaseField}{Phase\+Field}} \&}]{Phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets averaging weights for curvature across the interface in single resolution. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{Macros_8h_a62927f995b0bd1de2eba0c018173118a}{OMP\_PARALLEL\_STORAGE\_LOOP\_BEGIN}}(i,j,k,\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}},0,)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).interface())}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).begin();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).end();\ ++it)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ PhiAlpha\ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(it-\/>indexA);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ PhiBeta\ \ =\ \mbox{\hyperlink{namespaceopenphase_a11d979f2867f3122297a79b5cfa34030a5e35d7fff7b903516cba242ff68fc6d3}{Phase}}.Fields(i,j,k).get\_value(it-\/>indexB);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>weight\ =\ sqrt(PhiAlpha*PhiBeta);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{Macros_8h_aeb62b2001f34442764a83858492dcff3}{OMP\_PARALLEL\_STORAGE\_LOOP\_END}}}
+\DoxyCodeLine{00172\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b}\label{classopenphase_1_1OPObject_a2b2d60f99c90b6fc30f52b516ee0df2b} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Write@{Write}}
+\index{Write@{Write}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual bool openphase\+::\+OPObject\+::\+Write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+\texorpdfstring{$<$}{<} Writes binary output 
+
+
+
+Reimplemented in \mbox{\hyperlink{classopenphase_1_1ElasticProperties_a7aabf341be293f2d314e1500481bad09}{openphase\+::\+Elastic\+Properties}}, \mbox{\hyperlink{classopenphase_1_1Composition_aa59772cf25ef88cbc83d611c8ec844eb}{openphase\+::\+Composition}}, \mbox{\hyperlink{classopenphase_1_1FlowSolverLBM_a7cdecb6b85ec910f609c81c816482972}{openphase\+::\+Flow\+Solver\+LBM}}, \mbox{\hyperlink{classopenphase_1_1FractureField_a53f22bc42b3dfca71c7ff041d277a407}{openphase\+::\+Fracture\+Field}}, \mbox{\hyperlink{classopenphase_1_1GrandPotentialSolver_a3d5346070d07748e29dfa70149728d0d}{openphase\+::\+Grand\+Potential\+Solver}}, \mbox{\hyperlink{classopenphase_1_1HeatSources_a5a5a8fcedae5b862c9bf4e432bc738d2}{openphase\+::\+Heat\+Sources}}, \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{openphase\+::\+Mass\+Density}}, \mbox{\hyperlink{classopenphase_1_1MechanicalLoads_a62e3d5c01f6d2c96c2f3287d9f4ea159}{openphase\+::\+Mechanical\+Loads}}, \mbox{\hyperlink{classopenphase_1_1MovingFrame_a24e792b1862b27024e9144b3db9dd057}{openphase\+::\+Moving\+Frame}}, \mbox{\hyperlink{classopenphase_1_1Nucleation_a15cf07a79ba1a9af6d3e3c229a140cfe}{openphase\+::\+Nucleation}}, \mbox{\hyperlink{classopenphase_1_1Orientations_ae4b0f1a8a79484984092bfdd35ccccc7}{openphase\+::\+Orientations}}, \mbox{\hyperlink{classopenphase_1_1PhaseField_a939d4b51c2e44fc256f73da1f592d60d}{openphase\+::\+Phase\+Field}}, \mbox{\hyperlink{classopenphase_1_1Temperature_acadd91be5e410bfa5ff84680ff1e4b8c}{openphase\+::\+Temperature}}, and \mbox{\hyperlink{classopenphase_1_1Velocities_a4185092dbac2ec8554e41bd6eeeb5c9e}{openphase\+::\+Velocities}}.
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00118}{118}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (void)\ locSettings;\ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (void)\ tStep;\ \ \ \ \ \ \ \textcolor{comment}{//unused}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a67398ca66af83b6a708e2cbfda6bc9b6}\label{classopenphase_1_1InterfaceRegularization_a67398ca66af83b6a708e2cbfda6bc9b6} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!WriteVTK@{WriteVTK}}
+\index{WriteVTK@{WriteVTK}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{WriteVTK()}{WriteVTK()}}
+{\footnotesize\ttfamily void openphase\+::\+Interface\+Regularization\+::\+Write\+VTK (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}} \&}]{loc\+Settings,  }\item[{const int}]{t\+Step,  }\item[{const size\+\_\+t}]{indexA,  }\item[{const size\+\_\+t}]{indexB,  }\item[{const int}]{precision = {\ttfamily 16} }\end{DoxyParamCaption}) const}
+
+
+
+Writes the curvature of the interface between phase-\/fields with indexA and indexB. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8cpp_source_l00514}{514}} of file \mbox{\hyperlink{InterfaceRegularization_8cpp_source}{Interface\+Regularization.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00519\ \{}
+\DoxyCodeLine{00520\ \ \ \ \ stringstream\ converter;}
+\DoxyCodeLine{00521\ \ \ \ \ converter\ <<\ indexA\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ indexB;}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keywordtype}{string}\ phases\ =\ converter.str();}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ std::vector<VTK::Field\_t>\ ListOfFields;}
+\DoxyCodeLine{00525\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Curvature\_avg("{}}\ +\ phases\ +\ \textcolor{stringliteral}{"{})"{}},\ [indexA,indexB,\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).get\_average(indexA,\ indexB);\}\});}
+\DoxyCodeLine{00526\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Curvature\_raw("{}}\ +\ phases\ +\ \textcolor{stringliteral}{"{})"{}},\ [indexA,indexB,\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).get\_raw(indexA,\ indexB);\}\});}
+\DoxyCodeLine{00527\ \ \ \ \ ListOfFields.push\_back((VTK::Field\_t)\ \{\textcolor{stringliteral}{"{}Curvature\_tmp("{}}\ +\ phases\ +\ \textcolor{stringliteral}{"{})"{}},\ [indexA,indexB,\textcolor{keyword}{this}](\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j,\textcolor{keywordtype}{int}\ k)\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}{Curvature}}(i,j,k).get\_tmp(indexA,\ indexB);\}\});}
+\DoxyCodeLine{00528\ \ \ \ \ std::string\ Filename\ =\ \mbox{\hyperlink{classopenphase_1_1FileInterface_a19ed8803c3eb456f4708ccc6c6edd995}{FileInterface::MakeFileName}}(locSettings.VTKDir,\ \textcolor{stringliteral}{"{}InterfaceRegularization\_"{}},\ tStep,\ \textcolor{stringliteral}{"{}.vts"{}});}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}{Grid}}.\mbox{\hyperlink{classopenphase_1_1GridParameters_af0b28822d6a3aba3df4db780b51db71a}{Resolution}}\ ==\ \mbox{\hyperlink{namespaceopenphase_a08a007ebb71a6dda0a7e0b5cd5286aa9a66ba162102bbf6ae31b522aec561735e}{Resolutions::Single}})}
+\DoxyCodeLine{00531\ \ \ \ \ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision);}
+\DoxyCodeLine{00533\ \ \ \ \ \}}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00535\ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1VTK_a7617ede48a3aded40ba2eb72d60447f1}{VTK::Write}}(Filename,\ locSettings,\ ListOfFields,\ precision,\ 2);}
+\DoxyCodeLine{00537\ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac}\label{classopenphase_1_1OPObject_a7f54d22dc59afcace6359f599fabcaac} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!advectable@{advectable}}
+\index{advectable@{advectable}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{advectable}{advectable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::advectable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_afd82ead485f6d9695aa733729100614c}{Advect()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00060}{60}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d}\label{classopenphase_1_1InterfaceRegularization_abdc4fa0e39728dce8f5956689b20d85d} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Averaging@{Averaging}}
+\index{Averaging@{Averaging}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Averaging}{Averaging}}
+{\footnotesize\ttfamily bool openphase\+::\+Interface\+Regularization\+::\+Averaging}
+
+
+
+Control parameter for averaging the curvature over the interface. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00081}{81}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1}\label{classopenphase_1_1OPObject_a49a9d1e352e5dafc93f493012d527ee1} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!boundary\_conditions@{boundary\_conditions}}
+\index{boundary\_conditions@{boundary\_conditions}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{boundary\_conditions}{boundary\_conditions}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::boundary\+\_\+conditions = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1InterfaceRegularization_a3521ac6756876c9f942a0a2eb57ac5aa}{Set\+Boundary\+Conditions()} 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00062}{62}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14}\label{classopenphase_1_1InterfaceRegularization_ade8678b0441fd5ec4321a78324089a14} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!ClearingMode@{ClearingMode}}
+\index{ClearingMode@{ClearingMode}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{ClearingMode}{ClearingMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceopenphase_a162c05a8356b8bc1e939fcc106dc9647}{Clearing\+Modes}} openphase\+::\+Interface\+Regularization\+::\+Clearing\+Mode}
+
+
+
+Clearing mode for the curvature storage (facilitates \doxylink{structopenphase_1_1VTK}{VTK} output) 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00069}{69}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a}\label{classopenphase_1_1InterfaceRegularization_aa121d034db4cf81ff9c78910cd68607a} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Curvature@{Curvature}}
+\index{Curvature@{Curvature}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Curvature}{Curvature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D}}$<$\mbox{\hyperlink{classopenphase_1_1NodeDF}{Node\+DF}}, 0$>$ openphase\+::\+Interface\+Regularization\+::\+Curvature}
+
+
+
+Curvature storage. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00077}{77}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59}\label{classopenphase_1_1InterfaceRegularization_a13266b9d082244706c2184a14065cf59} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Grid@{Grid}}
+\index{Grid@{Grid}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classopenphase_1_1GridParameters}{Grid\+Parameters}} openphase\+::\+Interface\+Regularization\+::\+Grid}
+
+
+
+Simulation grid parameters. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00071}{71}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e}\label{classopenphase_1_1OPObject_aa112048d179026f359161b1f20e5e98e} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!initialized@{initialized}}
+\index{initialized@{initialized}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::initialized = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s Initialize has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00057}{57}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d}\label{classopenphase_1_1OPObject_a65ef7d7ae73be8f9a7fa626762c4937d} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!input\_read@{input\_read}}
+\index{input\_read@{input\_read}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{input\_read}{input\_read}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::input\+\_\+read = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if obect\textquotesingle{}s \doxylink{classopenphase_1_1InterfaceRegularization_a7314439d379a071037b6a257f64fc956}{Read\+Input()} has been executed. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00058}{58}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_ad7b864b306d12229fa0134dfa85fe0e0}\label{classopenphase_1_1InterfaceRegularization_ad7b864b306d12229fa0134dfa85fe0e0} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Nphases@{Nphases}}
+\index{Nphases@{Nphases}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Nphases}{Nphases}}
+{\footnotesize\ttfamily size\+\_\+t openphase\+::\+Interface\+Regularization\+::\+Nphases}
+
+
+
+Number of thermodynamic phases. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00073}{73}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7}\label{classopenphase_1_1InterfaceRegularization_a068b623630865165e8544a58135ba1e7} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!PhiThreshold@{PhiThreshold}}
+\index{PhiThreshold@{PhiThreshold}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{PhiThreshold}{PhiThreshold}}
+{\footnotesize\ttfamily double openphase\+::\+Interface\+Regularization\+::\+Phi\+Threshold}
+
+
+
+Outlines the inner part of the interface for curvature averaging. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00075}{75}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6}\label{classopenphase_1_1InterfaceRegularization_a3133cab40916399f8bad3c82844a75f6} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!Range@{Range}}
+\index{Range@{Range}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{Range}{Range}}
+{\footnotesize\ttfamily int openphase\+::\+Interface\+Regularization\+::\+Range}
+
+
+
+Radius of a sphere around a grid point over which the curvature is averaged. 
+
+
+
+Definition at line \mbox{\hyperlink{InterfaceRegularization_8h_source_l00074}{74}} of file \mbox{\hyperlink{InterfaceRegularization_8h_source}{Interface\+Regularization.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b}\label{classopenphase_1_1OPObject_aa5b7ff7b56e2d266c2fd59b620a1603b} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!readable@{readable}}
+\index{readable@{readable}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{readable}{readable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::readable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1OPObject_adbd36cc2fee5c391f60f52ecd6114d2c}{Read()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00061}{61}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd}\label{classopenphase_1_1OPObject_a44d40bc5a3ef87d7c461b457e01091dd} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!remeshable@{remeshable}}
+\index{remeshable@{remeshable}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{remeshable}{remeshable}}
+{\footnotesize\ttfamily bool openphase\+::\+OPObject\+::remeshable = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+True if the object has non-\/empty \doxylink{classopenphase_1_1InterfaceRegularization_a0e0b8d0248dc43b4965436d77488fdc6}{Remesh()} method. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00059}{59}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2}\label{classopenphase_1_1OPObject_a9006e8f49762d851b52708b363ba14f2} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!thisclassname@{thisclassname}}
+\index{thisclassname@{thisclassname}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{thisclassname}{thisclassname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisclassname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s implementation class name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00054}{54}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+\Hypertarget{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66}\label{classopenphase_1_1OPObject_ac8c040bdc306f76b58d5a79201e5df66} 
+\index{openphase::InterfaceRegularization@{openphase::InterfaceRegularization}!thisobjectname@{thisobjectname}}
+\index{thisobjectname@{thisobjectname}!openphase::InterfaceRegularization@{openphase::InterfaceRegularization}}
+\doxysubsubsection{\texorpdfstring{thisobjectname}{thisobjectname}}
+{\footnotesize\ttfamily std\+::string openphase\+::\+OPObject\+::thisobjectname\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Object\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{OPObject_8h_source_l00055}{55}} of file \mbox{\hyperlink{OPObject_8h_source}{OPObject.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{InterfaceRegularization_8h}{Interface\+Regularization.\+h}}\item 
+\mbox{\hyperlink{InterfaceRegularization_8cpp}{Interface\+Regularization.\+cpp}}\end{DoxyCompactItemize}

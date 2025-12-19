@@ -1,0 +1,384 @@
+\doxysection{String\+Manipulations.\+h File Reference}
+\hypertarget{StringManipulations_8h}{}\label{StringManipulations_8h}\index{StringManipulations.h@{StringManipulations.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}{Remove\+All\+Whitespaces}} (std\+::string \&In\+String)
+\item 
+void \mbox{\hyperlink{StringManipulations_8h_ae6ffb00b0fc936f209b84ee44d79cd8f}{Remove\+Leading\+Trailing\+Whitespaces}} (std\+::string \&In\+String)
+\item 
+void \mbox{\hyperlink{StringManipulations_8h_a2a8d69cdfc917d5ff0bb246fab8157d6}{Replace\+Punctuation\+Marks\+With\+Comma}} (std\+::string \&In\+String)
+\item 
+bool \mbox{\hyperlink{StringManipulations_8h_afe37a110fba4aa57d739b0ba64e0559f}{String\+Is\+Empty}} (std\+::string \&In\+String)
+\item 
+bool \mbox{\hyperlink{StringManipulations_8h_ad3b4bb76b9adb6cc5a106b47e57cfe92}{String\+Is\+Comment}} (std\+::string \&In\+String, std\+::string comment\+\_\+symbol="{}//"{})
+\item 
+bool \mbox{\hyperlink{StringManipulations_8h_a2c1d6967b040e7698def5c9ba0c31dff}{String\+Is\+Input\+Parameter}} (const std\+::string \&In\+String)
+\item 
+bool \mbox{\hyperlink{StringManipulations_8h_ad50b7462047e4703a415c0519b94ca26}{String\+Is\+Section\+Name}} (const std\+::string \&In\+String)
+\item 
+bool \mbox{\hyperlink{StringManipulations_8h_afc2ec56b8bb56c180ecff3dcbf7d4b90}{String\+Is\+In\+Brackets}} (const std\+::string \&In\+String, std\+::string begin\+\_\+bracket, std\+::string end\+\_\+bracket)
+\item 
+void \mbox{\hyperlink{StringManipulations_8h_afe99d3cedd61c8911598c5c1358291a4}{Remove\+Brackets}} (std\+::string \&In\+String, std\+::string begin\+\_\+bracket, std\+::string end\+\_\+bracket)
+\item 
+std\+::string \mbox{\hyperlink{StringManipulations_8h_abb8aa0f2c794b4de1c0cdee5c38a580f}{Extract\+String\+Between\+Brackets}} (const std\+::string \&In\+String, std\+::string begin\+\_\+bracket, std\+::string end\+\_\+bracket)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{StringManipulations_8h_a9808fe56702c20eccbd24d77955c5017}{Extract\+Substrings}} (const std\+::string \&In\+String, std\+::string delimiter="{},"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{StringManipulations_8h_abb8aa0f2c794b4de1c0cdee5c38a580f}\label{StringManipulations_8h_abb8aa0f2c794b4de1c0cdee5c38a580f} 
+\index{StringManipulations.h@{StringManipulations.h}!ExtractStringBetweenBrackets@{ExtractStringBetweenBrackets}}
+\index{ExtractStringBetweenBrackets@{ExtractStringBetweenBrackets}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{ExtractStringBetweenBrackets()}{ExtractStringBetweenBrackets()}}
+{\footnotesize\ttfamily std\+::string Extract\+String\+Between\+Brackets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{In\+String,  }\item[{std\+::string}]{begin\+\_\+bracket,  }\item[{std\+::string}]{end\+\_\+bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+\_\+bracket} & Extracts string within brackets \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00155}{155}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ std::string\ result;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ result\ =\ InString.substr(position\_begin\_bracket\ +\ begin\_bracket.size(),}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ position\_end\_bracket\ -\/\ position\_begin\_bracket\ -\/\ begin\_bracket.size());}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_a9808fe56702c20eccbd24d77955c5017}\label{StringManipulations_8h_a9808fe56702c20eccbd24d77955c5017} 
+\index{StringManipulations.h@{StringManipulations.h}!ExtractSubstrings@{ExtractSubstrings}}
+\index{ExtractSubstrings@{ExtractSubstrings}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{ExtractSubstrings()}{ExtractSubstrings()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Extract\+Substrings (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{In\+String,  }\item[{std\+::string}]{delimiter = {\ttfamily "{},"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em delimiter} & Extracts substrings separated by the delimiter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00173}{173}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{00177\ \ \ \ \ std::string\ tmp\ =\ InString;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_at\_end\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\ =\ 0;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}{RemoveAllWhitespaces}}(tmp);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{while}(not\_at\_end)}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ not\_at\_end\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ next\_delimiter\ =\ tmp.find(delimiter,\ position);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(next\_delimiter\ !=\ std::string::npos)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(tmp.substr(position,\ next\_delimiter\ -\/\ position));}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ next\_delimiter\ +\ 1;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ not\_at\_end\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(tmp.substr(position));}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00201\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac}\label{StringManipulations_8h_a18ac76cc9642e9bb1c1e45f69106efac} 
+\index{StringManipulations.h@{StringManipulations.h}!RemoveAllWhitespaces@{RemoveAllWhitespaces}}
+\index{RemoveAllWhitespaces@{RemoveAllWhitespaces}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{RemoveAllWhitespaces()}{RemoveAllWhitespaces()}}
+{\footnotesize\ttfamily void Remove\+All\+Whitespaces (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Removes all whitespaces (string is modified) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00033}{33}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ InString.erase(std::remove\_if(\ InString.begin(),\ InString.end(),}
+\DoxyCodeLine{00036\ \ \ \ \ \ [](\textcolor{keywordtype}{char}\ c)\{\ return\ (c\ ==\textcolor{stringliteral}{'\(\backslash\)r'}\ ||\ c\ ==\textcolor{stringliteral}{'\(\backslash\)t'}\ ||\ c\ ==\ \textcolor{stringliteral}{'\ '}\ ||\ c\ ==\ \textcolor{stringliteral}{'\(\backslash\)n'});\}),\ InString.end()\ );}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_afe99d3cedd61c8911598c5c1358291a4}\label{StringManipulations_8h_afe99d3cedd61c8911598c5c1358291a4} 
+\index{StringManipulations.h@{StringManipulations.h}!RemoveBrackets@{RemoveBrackets}}
+\index{RemoveBrackets@{RemoveBrackets}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{RemoveBrackets()}{RemoveBrackets()}}
+{\footnotesize\ttfamily void Remove\+Brackets (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String,  }\item[{std\+::string}]{begin\+\_\+bracket,  }\item[{std\+::string}]{end\+\_\+bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+\_\+bracket} & Removes brackets from string (string is modified). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00141}{141}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ \ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ InString.erase(position\_end\_bracket,\ end\_bracket.size());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ InString.erase(position\_begin\_bracket,\ begin\_bracket.size());}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_ae6ffb00b0fc936f209b84ee44d79cd8f}\label{StringManipulations_8h_ae6ffb00b0fc936f209b84ee44d79cd8f} 
+\index{StringManipulations.h@{StringManipulations.h}!RemoveLeadingTrailingWhitespaces@{RemoveLeadingTrailingWhitespaces}}
+\index{RemoveLeadingTrailingWhitespaces@{RemoveLeadingTrailingWhitespaces}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{RemoveLeadingTrailingWhitespaces()}{RemoveLeadingTrailingWhitespaces()}}
+{\footnotesize\ttfamily void Remove\+Leading\+Trailing\+Whitespaces (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Removes leading and trailing whitespaces (string is modified) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00039}{39}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ whitespaces\ (\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ first\ =\ InString.find\_first\_not\_of(whitespaces);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ last\ =\ InString.find\_last\_not\_of(whitespaces);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (first\ ==\ last)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ InString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ InString\ =\ InString.substr(first,\ (last-\/first+1));}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_a2a8d69cdfc917d5ff0bb246fab8157d6}\label{StringManipulations_8h_a2a8d69cdfc917d5ff0bb246fab8157d6} 
+\index{StringManipulations.h@{StringManipulations.h}!ReplacePunctuationMarksWithComma@{ReplacePunctuationMarksWithComma}}
+\index{ReplacePunctuationMarksWithComma@{ReplacePunctuationMarksWithComma}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{ReplacePunctuationMarksWithComma()}{ReplacePunctuationMarksWithComma()}}
+{\footnotesize\ttfamily void Replace\+Punctuation\+Marks\+With\+Comma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Replaces all punctuation marks with comma (string is modified) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00054}{54}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ InString.erase\ (std::remove\ (InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'\ '}),\ InString.end());}
+\DoxyCodeLine{00057\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00058\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00059\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'@'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00060\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{':'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00061\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{';'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00062\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'!'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00063\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'?'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00064\ \ \ \ \ std::replace(InString.begin(),\ InString.end(),\ \textcolor{charliteral}{'|'},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_ad3b4bb76b9adb6cc5a106b47e57cfe92}\label{StringManipulations_8h_ad3b4bb76b9adb6cc5a106b47e57cfe92} 
+\index{StringManipulations.h@{StringManipulations.h}!StringIsComment@{StringIsComment}}
+\index{StringIsComment@{StringIsComment}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{StringIsComment()}{StringIsComment()}}
+{\footnotesize\ttfamily bool String\+Is\+Comment (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String,  }\item[{std\+::string}]{comment\+\_\+symbol = {\ttfamily "{}//"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment\+\_\+symbol} & Returns true if string is a coment starting with a special comment symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00079}{79}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_comment\ =\ InString.find(comment\_symbol);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_text\ \ \ \ =\ InString.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t/"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}(position\_comment\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ position\_comment\ <\ position\_text)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_afe37a110fba4aa57d739b0ba64e0559f}\label{StringManipulations_8h_afe37a110fba4aa57d739b0ba64e0559f} 
+\index{StringManipulations.h@{StringManipulations.h}!StringIsEmpty@{StringIsEmpty}}
+\index{StringIsEmpty@{StringIsEmpty}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{StringIsEmpty()}{StringIsEmpty()}}
+{\footnotesize\ttfamily bool String\+Is\+Empty (\begin{DoxyParamCaption}\item[{std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Returns true if string is empty or contains only whitespaces \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00067}{67}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ whitespaces\ (\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\ =\ InString.find\_first\_not\_of(whitespaces);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}(position\ ==\ std::string::npos)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_afc2ec56b8bb56c180ecff3dcbf7d4b90}\label{StringManipulations_8h_afc2ec56b8bb56c180ecff3dcbf7d4b90} 
+\index{StringManipulations.h@{StringManipulations.h}!StringIsInBrackets@{StringIsInBrackets}}
+\index{StringIsInBrackets@{StringIsInBrackets}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{StringIsInBrackets()}{StringIsInBrackets()}}
+{\footnotesize\ttfamily bool String\+Is\+In\+Brackets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{In\+String,  }\item[{std\+::string}]{begin\+\_\+bracket,  }\item[{std\+::string}]{end\+\_\+bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+\_\+bracket} & Returns true if string is inside of a specified brackets pair \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00126}{126}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_begin\_bracket\ \ =\ InString.find(begin\_bracket);}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_end\_bracket\ \ \ \ =\ InString.find(end\_bracket,\ position\_begin\_bracket\ +\ begin\_bracket.size());}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{if}(position\_begin\_bracket\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ position\_end\_bracket\ \ \ !=\ std::string::npos)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_a2c1d6967b040e7698def5c9ba0c31dff}\label{StringManipulations_8h_a2c1d6967b040e7698def5c9ba0c31dff} 
+\index{StringManipulations.h@{StringManipulations.h}!StringIsInputParameter@{StringIsInputParameter}}
+\index{StringIsInputParameter@{StringIsInputParameter}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{StringIsInputParameter()}{StringIsInputParameter()}}
+{\footnotesize\ttfamily bool String\+Is\+Input\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Returns true if string has a format of input parameter starting with "{}\$\+Key"{} and containing "{}\+:"{} delimiter for parameter reading \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00092}{92}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ std::string\ key\_symbol\ (\textcolor{stringliteral}{"{}\$"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ std::string\ delimiter\ \ (\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_begin\ =\ InString.find(key\_symbol);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_end\ \ \ =\ InString.find\_first\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t:"{}},\ position\_key\_begin);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_delimiter\ =\ InString.find(delimiter,\ position\_key\_begin);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}(position\_key\_begin\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ position\_key\_end\ \ \ >\ \ position\_key\_begin\ +\ 2\ and}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ position\_delimiter\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ position\_delimiter\ >=\ position\_key\_end\ )}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+\Hypertarget{StringManipulations_8h_ad50b7462047e4703a415c0519b94ca26}\label{StringManipulations_8h_ad50b7462047e4703a415c0519b94ca26} 
+\index{StringManipulations.h@{StringManipulations.h}!StringIsSectionName@{StringIsSectionName}}
+\index{StringIsSectionName@{StringIsSectionName}!StringManipulations.h@{StringManipulations.h}}
+\doxysubsubsection{\texorpdfstring{StringIsSectionName()}{StringIsSectionName()}}
+{\footnotesize\ttfamily bool String\+Is\+Section\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{In\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+String} & Returns true if string is a section name with format @\+Name, where Name has to contain at least one character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{StringManipulations_8h_source_l00111}{111}} of file \mbox{\hyperlink{StringManipulations_8h_source}{String\+Manipulations.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ std::string\ key\_symbol\ (\textcolor{stringliteral}{"{}@"{}});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_begin\ =\ InString.find(key\_symbol);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position\_key\_end\ \ \ =\ InString.find\_first\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)n:"{}},\ position\_key\_begin);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{if}(position\_key\_begin\ !=\ std::string::npos\ and}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ position\_key\_end\ \ \ >\ \ position\_key\_begin\ +\ 2)}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}

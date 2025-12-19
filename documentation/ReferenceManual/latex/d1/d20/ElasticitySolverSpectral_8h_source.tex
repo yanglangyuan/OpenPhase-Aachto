@@ -1,0 +1,86 @@
+\doxysection{Elasticity\+Solver\+Spectral.\+h}
+\hypertarget{ElasticitySolverSpectral_8h_source}{}\label{ElasticitySolverSpectral_8h_source}\index{ElasticitySolverSpectral.h@{ElasticitySolverSpectral.h}}
+\mbox{\hyperlink{ElasticitySolverSpectral_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2016}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;\ Efim\ Borukhovich;\ Johannes\ Goerler}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ ELASTICITYSOLVERSPECTRAL\_H}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ ELASTICITYSOLVERSPECTRAL\_H}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00030}00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00031}00031\ \textcolor{comment}{*\ \ This\ module\ is\ based\ on\ the\ iterative\ algorithm\ of\ [S.Y.Hu,\ L.Q.Chen,\ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00032}00032\ \textcolor{comment}{*\ \ Acta.\ Mater.\ 49\ (2001)\ 1879\ -\/\ 1890]\ with\ modifications\ allowing\ to\ use\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00033}00033\ \textcolor{comment}{*\ \ inhomogeneous\ elasticity\ parameters\ not\ limited\ to\ composition\ dependence.\ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00034}00034\ \textcolor{comment}{*\ \ The\ boundary\ condition\ allowing\ free\ volume\ expansion\ is\ also\ introduced\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00035}00035\ \textcolor{comment}{*\ \ following\ the\ approach\ outlined\ in\ [I.Steinbach,\ M.Apel,\ Physica\ D\ 217\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00036}00036\ \textcolor{comment}{*\ \ (2006)\ 153\ -\/\ 160].\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00037}00037\ \textcolor{comment}{*\ \ Finite\ strain\ extension\ considers\ Green-\/Lagrangian\ strain\ within\ the\ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00038}00038\ \textcolor{comment}{*\ \ St.\ Venant-\/Kirchhoff\ hyper-\/elastic\ model.\ The\ resulting\ solver\ algorithm\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00039}00039\ \textcolor{comment}{*\ \ is\ similar\ to\ [P.\ Eisenlohr\ et\ al.,\ International\ Journal\ of\ Plasticity\ 46\ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00040}00040\ \textcolor{comment}{*\ \ (2013)\ 37–53]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00041}00041\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00043}00043\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}mpi\_wrapper.h"{}}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00045}00045\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}fftw3.h"{}}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00050}00050\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00052}00052\ \textcolor{keyword}{class\ }Settings;}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00053}00053\ \textcolor{keyword}{class\ }ElasticProperties;}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00054}00054\ \textcolor{keyword}{class\ }ElasticitySolverSpectralImpl;}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00056}\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral}{00056}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral}{ElasticitySolverSpectral}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00058}00058\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral}{ElasticitySolverSpectral}}();}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral}{ElasticitySolverSpectral}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName\ =\ \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}});}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral}{ElasticitySolverSpectral}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName\ =\ \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}});}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00065}\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a81b8f4499457e7857e400ddade85a35f}{00065}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a81b8f4499457e7857e400ddade85a35f}{\string~ElasticitySolverSpectral}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(\textcolor{keyword}{const}\ std::string\ InputFileName)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadInput(std::stringstream\&\ inp)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ Remesh(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ Reinitialize(\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \ Solve(\mbox{\hyperlink{classopenphase_1_1ElasticProperties}{ElasticProperties}}\&\ EP,\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keywordtype}{double}\ dt,}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{bool}()>\ EndSolve\ =\ []()\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\});\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00076}00076\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00077}\mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{00077}}\ \ \ \ \ std::unique\_ptr<ElasticitySolverSpectralImpl>\ \mbox{\hyperlink{classopenphase_1_1ElasticitySolverSpectral_a4ed6585d7a3ef4093980606ece59033e}{impl\_}};}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00078}00078\ \};}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00079}00079\ \}\ \textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{ElasticitySolverSpectral_8h_source_l00080}00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SpectralElasticitySolver}}
+
+\end{DoxyCode}

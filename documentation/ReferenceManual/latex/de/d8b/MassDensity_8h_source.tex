@@ -1,0 +1,92 @@
+\doxysection{Mass\+Density.\+h}
+\hypertarget{MassDensity_8h_source}{}\label{MassDensity_8h_source}\index{MassDensity.h@{MassDensity.h}}
+\mbox{\hyperlink{MassDensity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2014}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Oleg\ Shchyglo;}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ MASSDENSITY\_H}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ MASSDENSITY\_H}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Includes_8h}{Includes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00034}00034\ \textcolor{keyword}{class\ }PhaseField;}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00035}00035\ \textcolor{keyword}{class\ }BoundaryConditions;}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00036}00036\ \textcolor{keyword}{class\ }Composition;}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00037}00037\ \textcolor{keyword}{class\ }Temperature;}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00038}00038\ \textcolor{keyword}{class\ }Settings;}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00040}\mbox{\hyperlink{classopenphase_1_1MassDensity}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classopenphase_1_1MassDensity}{MassDensity}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classopenphase_1_1OPObject}{OPObject}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00042}00042\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00043}\mbox{\hyperlink{classopenphase_1_1MassDensity_a4e492614a6734528d916b403c503b212}{00043}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a4e492614a6734528d916b403c503b212}{MassDensity}}()\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00044}\mbox{\hyperlink{classopenphase_1_1MassDensity_ac0b66295b6aecb89b34ef6a0e3d488b1}{00044}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_ac0b66295b6aecb89b34ef6a0e3d488b1}{MassDensity}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ InputFileName\ =\ \mbox{\hyperlink{namespaceopenphase_a9e087efe4525895243a5c0d3a7fb07c6}{DefaultInputFileName}})}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b}{Initialize}}(locSettings);}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{ReadInput}}(InputFileName);}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a0aeb220f70fa37233d2b6fe757e80c1b}{Initialize}}(\mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ std::string\ ObjectNameSuffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{ReadInput}}(\textcolor{keyword}{const}\ std::string\ FileName)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8a07ec846689c1fb1f80c6769c1ca372}{ReadInput}}(std::stringstream\&\ inp)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a9688b1a92150b699b3ccdae88374b527}{Set}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}},\ \mbox{\hyperlink{classopenphase_1_1Composition}{Composition}}\&\ Cx,\ \mbox{\hyperlink{classopenphase_1_1Temperature}{Temperature}}\&\ Tx);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a37d780e861e4d2bb824f9c3be312972d}{SetInitial}}(\mbox{\hyperlink{classopenphase_1_1PhaseField}{PhaseField}}\&\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a10081d61c86e1fc9f9ee8bd44560f8bf}{WriteVTK}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ 16);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_aaa9e7a289b944816449df64b3ca7dfad}{Write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)\ \textcolor{keyword}{const\ override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_aba832dfdec9389986c41e8ee060044a8}{Read}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1Settings}{Settings}}\&\ locSettings,}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a8852264055d73f458fc159a2a398c105}{SetBoundaryConditions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a6fdd87ac8552c0050bd83b4c6620c180}{MoveFrame}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ di,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dj,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dk,}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_aef9628bb442caf724deb579d6461bf9b}{Remesh}}(\textcolor{keywordtype}{int}\ newNx,\ \textcolor{keywordtype}{int}\ newNy,\ \textcolor{keywordtype}{int}\ newNz,}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1BoundaryConditions}{BoundaryConditions}}\&\ BC)\ \textcolor{keyword}{override};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a6b6243e4919b13b64e1fed14af7a368a}{PrintPointStatistics}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ z);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1MassDensity}{MassDensity}}\&\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a60278fefb746c31613eb0ffc4ca08bac}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1MassDensity}{MassDensity}}\&\ rhs);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00071}\mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{00071}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a2e8fa6613bc5529a5d4540cb31b23fc3}{Nphases}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00073}\mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{00073}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1GridParameters}{GridParameters}}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a7bb499e776a9c41e86810c819fc8df19}{Grid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00075}\mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{00075}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D<double,\ 1>}}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5905a299858af1ca5782fec7a67f55fb}{Phase}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00076}\mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{00076}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Storage3D}{Storage3D<double,\ 0>}}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_a5bab92b09c57a0cdba30e58fed282246}{Total}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00078}\mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{00078}}\ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1Tensor}{Tensor<double,\ 1>}}\ \mbox{\hyperlink{classopenphase_1_1MassDensity_ab91cda1bf6fc9d934f42a993d247c4f0}{Initial}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00080}00080\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00081}00081\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00082}00082\ \};}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00084}00084\ \}\ \textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{MassDensity_8h_source_l00086}00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DENSITY\_H}}
+
+\end{DoxyCode}

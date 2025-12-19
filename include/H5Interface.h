@@ -96,19 +96,19 @@ public:
         #ifdef H5OP
         H5Easy::File file(H5InputFileName, H5Easy::File::OpenOrCreate);
         if (!file.exist("/CheckPoints")) {
-            Info::WriteExit("/CheckPoints not found.", "H5", "ReadCheckPoint()");
+            ConsoleOutput::WriteExit("/CheckPoints not found.", "H5", "ReadCheckPoint()");
             OP_Exit(EXIT_FAILURE);
         }
         std::stringstream check1;
         check1 << "/CheckPoints/" << name;
         if (!file.exist(check1.str().c_str())) {
-            Info::WriteExit(check1.str()+" not found.", "H5", "ReadCheckPoint()");
+            ConsoleOutput::WriteExit(check1.str()+" not found.", "H5", "ReadCheckPoint()");
             OP_Exit(EXIT_FAILURE);
         }
         std::stringstream check2;
         check2 << "/CheckPoints/" << name << "/" << tStep;
         if (!file.exist(check2.str().c_str())) {
-            Info::WriteExit(check2.str()+" not found.", "H5", "ReadCheckPoint()");
+            ConsoleOutput::WriteExit(check2.str()+" not found.", "H5", "ReadCheckPoint()");
             OP_Exit(EXIT_FAILURE);
         }
         data = H5Easy::load<std::vector<double> >(file, check2.str());
@@ -126,13 +126,14 @@ public:
         #ifdef H5OP
         H5Easy::File file(H5OutputFileName, H5Easy::File::OpenOrCreate);
         std::vector<float> vdata;
-        int it = 0;
         for(int k = 0; k < Nz; ++k)
         for(int j = 0; j < Ny; ++j)
         for(int i = 0; i < Nx; ++i)
         {
-            for (int n = 0; n < Function(i,j,k).size(); ++n)
-            vdata.push_back(Function(i,j,k)[n]);
+            auto result = Function(i,j,k);
+            for (size_t n = 0; n < result.size(); ++n) {
+                vdata.push_back(static_cast<float>(result[n]));
+            }
         }
         if (!file.exist("/Visualization")) {
             // Create the HDF5 group path:
@@ -166,50 +167,84 @@ public:
         #ifdef H5OP
         for (auto Field : ListOfFields)
         {
+            // 所有标量类型统一转为 float 存储，避免 any_cast 类型不匹配
             if (Field.Function(0,0,0).type() == typeid(int))
             {
                 ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field](int i,int j,int k){
-                std::vector<double> data;
-                data.push_back(std::any_cast<double>(Field.Function(i,j,k)));
-                return data; });
+                    std::vector<float> data;
+                    data.push_back(static_cast<float>(std::any_cast<int>(Field.Function(i,j,k))));
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(size_t))
             {
                 ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field](int i,int j,int k){
-                std::vector<double> data;
-                data.push_back(std::any_cast<size_t>(Field.Function(i,j,k)));
-                return data; });
+                    std::vector<float> data;
+                    data.push_back(static_cast<float>(std::any_cast<size_t>(Field.Function(i,j,k))));
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(double))
             {
                 ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field](int i,int j,int k){
-                std::vector<double> data;
-                data.push_back(std::any_cast<double>(Field.Function(i,j,k)));
-                return data; });
+                    std::vector<float> data;
+                    data.push_back(static_cast<float>(std::any_cast<double>(Field.Function(i,j,k))));
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(dVector3))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<dVector3>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<dVector3>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(dVector6))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<dVector6>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<dVector6>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(vStrain))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<vStrain>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<vStrain>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(vStress))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<vStress>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<vStress>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(dMatrix3x3))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<dMatrix3x3>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<dMatrix3x3>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
             else if (Field.Function(0,0,0).type() == typeid(dMatrix6x6))
             {
-                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){return std::any_cast<dMatrix6x6>(Field.Function(i,j,k)).writeBinary();});
+                ForEach(tStep,Field.Name,Nx,Ny,Nz,[&Field, precision](int i,int j,int k){
+                    auto vec = std::any_cast<dMatrix6x6>(Field.Function(i,j,k)).writeBinary();
+                    std::vector<float> data(vec.size());
+                    for (size_t idx = 0; idx < vec.size(); ++idx) data[idx] = static_cast<float>(vec[idx]);
+                    return data;
+                });
             }
         }
         #else

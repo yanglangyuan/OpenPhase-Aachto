@@ -1,0 +1,172 @@
+\doxysection{Sparse\+Matrix.\+h}
+\hypertarget{SparseMatrix_8h_source}{}\label{SparseMatrix_8h_source}\index{SparseMatrix.h@{SparseMatrix.h}}
+\mbox{\hyperlink{SparseMatrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2019}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Marvin\ Tegeler,\ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ SPARSEMATRIX\_H}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ SPARSEMATRIX\_H}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <fenv.h>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00041}00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00044}\mbox{\hyperlink{structopenphase_1_1SparseMatrix}{00044}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00046}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_a8039ef02febe857728b0a2e5010d4e96}{00046}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_a8039ef02febe857728b0a2e5010d4e96}{SparseMatrix}}()\{\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00047}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_a631040f787ae72ab0faaaecd2f1be5fd}{00047}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_a631040f787ae72ab0faaaecd2f1be5fd}{SparseMatrix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n)\{Allocate(n);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00048}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_a94f50983755c1c744247f30c09ecba58}{00048}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_a94f50983755c1c744247f30c09ecba58}{SparseMatrix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m)\{Allocate(n,m);\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ Allocate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ Allocate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}\ \ \mbox{\hyperlink{namespaceopenphase_a9288301171f7051a718dbbae9a4833e6}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ scalar)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}\&\ \mbox{\hyperlink{namespaceopenphase_a9288301171f7051a718dbbae9a4833e6}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ scalar);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ Sort();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00058}00058\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00059}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry}{00059}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry}{entry}}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00061}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry_a4796a0493532069d9f69aaf03ec08274}{00061}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry_a4796a0493532069d9f69aaf03ec08274}{index}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00062}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry_a2b04fcb769bb8d52e422a511a9acdbb3}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_1_1entry_a2b04fcb769bb8d52e422a511a9acdbb3}{value}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00063}00063\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00064}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_ab09f1c556bd8b0558e7c3d3db4a5bd47}{00064}}\ \ \ \ \ std::vector<std::vector<entry>>\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_ab09f1c556bd8b0558e7c3d3db4a5bd47}{storage}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00065}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_ac25076d6214de3107597ce31f934c903}{00065}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_ac25076d6214de3107597ce31f934c903}{size}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00066}\mbox{\hyperlink{structopenphase_1_1SparseMatrix_a9876f83f81dbee1d001519eda317e9a8}{00066}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix_a9876f83f81dbee1d001519eda317e9a8}{reserve}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00067}00067\ \};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00069}00069\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00070}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{00070}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00072}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_ac0b93da275bc40ca6cd5cbc08c33d7c4}{00072}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_ac0b93da275bc40ca6cd5cbc08c33d7c4}{SparseMatrixCSC}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00074}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a5f5ebfc4809f8ae4c4b33869ccac31de}{00074}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a5f5ebfc4809f8ae4c4b33869ccac31de}{SparseMatrixCSR}}()\{\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00075}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_adf10f12096c3dcd0afb6db46cd202595}{00075}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_adf10f12096c3dcd0afb6db46cd202595}{SparseMatrixCSR}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n):\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}(n)\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00076}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_ab3d1dbe19a8813fd509dd052a83c4ec2}{00076}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_ab3d1dbe19a8813fd509dd052a83c4ec2}{SparseMatrixCSR}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m):\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}(n,m)\{\};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{using\ }SparseMatrix::Allocate;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{double}\ \ operator()(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{double}\&\ operator()(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{using\ }SparseMatrix::operator*;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\ \mbox{\hyperlink{namespaceopenphase_a9288301171f7051a718dbbae9a4833e6}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rMatrix)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00085}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a45b97d37375b388f77b9737ef41ae1d6}{00085}}\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Vector>\ Vector\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a45b97d37375b388f77b9737ef41ae1d6}{operator*}}(\textcolor{keyword}{const}\ Vector\&\ vector)\ \textcolor{keyword}{const}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ Vector\ tmp(size,0);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00088}00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ j\ =\ storage[i].cbegin();\ j\ !=\ storage[i].cend();\ ++j)}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp[i]\ +=\ j-\/>value*vector[j-\/>index];}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00099}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a58c64ee6b35dd917478e287c1ae571df}{00099}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a58c64ee6b35dd917478e287c1ae571df}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs);\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_adf5bf45e41acd45425f4c04d10cc82f3}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00101}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_acfe1ecbd81e3d024fd12e86ae1c9b12f}{00101}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_acfe1ecbd81e3d024fd12e86ae1c9b12f}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs)\{\textcolor{keywordflow}{return}\ \ \ rhs\ ==\ lhs;\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00102}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a3f207578a310af44c4ce1fc1218ccd38}{00102}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a3f207578a310af44c4ce1fc1218ccd38}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs)\{\textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00103}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a37eec3f030d3a381102e9fbf6b597627}{00103}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR_a37eec3f030d3a381102e9fbf6b597627}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs)\{\textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\ transposed()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ transpose();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MaxRow(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ NonZeroRow(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{void}\ DivideRowBy(\textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keywordtype}{double}\ scalar);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{void}\ SwapRows(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00111}00111\ \};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00113}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{00113}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00114}00114\ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00115}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ae0ce7bec26c351a48abf7cf2a1e5b946}{00115}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ae0ce7bec26c351a48abf7cf2a1e5b946}{SparseMatrixCSR}};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00117}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ae536178fab74479d93ed08dfc6348fe2}{00117}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ae536178fab74479d93ed08dfc6348fe2}{SparseMatrixCSC}}()\{\};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00118}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ad4b22bfc8df640c2a1cd5a1f5f4ce5c0}{00118}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ad4b22bfc8df640c2a1cd5a1f5f4ce5c0}{SparseMatrixCSC}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n):\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}(n)\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00119}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ab579fb8182599f971cad29cc25eb91b4}{00119}}\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_ab579fb8182599f971cad29cc25eb91b4}{SparseMatrixCSC}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m):\ \mbox{\hyperlink{structopenphase_1_1SparseMatrix}{SparseMatrix}}(n,m)\{\};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00121}00121\ \ \ \ \ \textcolor{keyword}{using\ }SparseMatrix::Allocate;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{double}\ \ operator()(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{double}\&\ operator()(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{using\ }SparseMatrix::operator*;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00127}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a079de37ea1675c29f882055182ad7e66}{00127}}\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Vector>\ Vector\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a079de37ea1675c29f882055182ad7e66}{operator*}}(\textcolor{keyword}{const}\ Vector\&\ vector)\ \textcolor{keyword}{const}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00128}00128\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ Vector\ tmp(size,0);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00130}00130\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ size;\ ++j)}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ =\ storage[j].cbegin();\ i\ !=\ storage[j].cend();\ ++i)}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp[i-\/>index]\ +=\ i-\/>value*vector[j];}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\ \ \mbox{\hyperlink{namespaceopenphase_a9288301171f7051a718dbbae9a4833e6}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs);\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00142}00142\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_adf5bf45e41acd45425f4c04d10cc82f3}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00143}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_acfe1ecbd81e3d024fd12e86ae1c9b12f}{00143}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_acfe1ecbd81e3d024fd12e86ae1c9b12f}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00144}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a3f207578a310af44c4ce1fc1218ccd38}{00144}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a3f207578a310af44c4ce1fc1218ccd38}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00145}\mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a37eec3f030d3a381102e9fbf6b597627}{00145}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC_a37eec3f030d3a381102e9fbf6b597627}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSR}{SparseMatrixCSR}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\ transposed()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1SparseMatrixCSC}{SparseMatrixCSC}}\&\ transpose();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00149}00149\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MaxRow(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ NonZeroRow(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{void}\ DivideRowBy(\textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keywordtype}{double}\ scalar);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{void}\ SwapRows(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ j);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00153}00153\ \};}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00155}00155\ \textcolor{comment}{//\ NOTE\ commented\ class\ because\ it\ does\ not\ work}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00156}00156\ \textcolor{comment}{//class\ BiCGStab}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00157}00157\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00158}00158\ \textcolor{comment}{//public:}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00159}00159\ \textcolor{comment}{//\ \ \ \ typedef\ SparseMatrix\ Matrix;}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00160}00160\ \textcolor{comment}{//\ \ \ \ typedef\ std::vector<double>\ Vector;}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00161}00161\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00162}00162\ \textcolor{comment}{//\ \ \ \ static\ void\ BiCGstab\_Jacobi(const\ Matrix\&\ A,\ const\ Vector\&\ b,\ Vector\&\ x,\ const\ size\_t\ l,\ const\ double\ TOL);}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00163}00163\ \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00165}00165\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{SparseMatrix_8h_source_l00166}00166\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

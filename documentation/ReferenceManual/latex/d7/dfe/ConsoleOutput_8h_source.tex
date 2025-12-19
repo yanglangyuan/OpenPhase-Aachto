@@ -1,0 +1,336 @@
+\doxysection{Console\+Output.\+h}
+\hypertarget{ConsoleOutput_8h_source}{}\label{ConsoleOutput_8h_source}\index{ConsoleOutput.h@{ConsoleOutput.h}}
+\mbox{\hyperlink{ConsoleOutput_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2013}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Philipp\ Engels;\ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifndef\ CONSOLEOUTPUT\_H}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ CONSOLEOUTPUT\_H}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TypeTraits_8h}{Containers/TypeTraits.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00038}00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00041}00041\ \textcolor{keyword}{class\ }RunTimeControl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00043}\mbox{\hyperlink{namespaceopenphase_affb0eb7489e702eaea125105e21826a3}{00043}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{namespaceopenphase_affb0eb7489e702eaea125105e21826a3}{VerbosityLevels}}\ :\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00045}00045\ \ \ \ \ Silent\ \ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00046}\mbox{\hyperlink{namespaceopenphase_a6f97eb9dc630a6f884625998fba27ec2}{00046}}\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a6f97eb9dc630a6f884625998fba27ec2}{Warning}}\ =\ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00047}\mbox{\hyperlink{namespaceopenphase_a256ba6049dec35a02207e5171ae8a5cb}{00047}}\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a256ba6049dec35a02207e5171ae8a5cb}{Normal}}\ \ =\ 2,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00048}\mbox{\hyperlink{namespaceopenphase_a1e0794d3f06d569dd63ee6af76a6fe0f}{00048}}\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a1e0794d3f06d569dd63ee6af76a6fe0f}{Debug}}\ \ \ =\ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00051}00051\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ floatfield\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00053}\mbox{\hyperlink{ConsoleOutput_8h_a926ecaa791ce6344e2d77a9add176b67}{00053}}\ \ \ \ \ \mbox{\hyperlink{ConsoleOutput_8h_a926ecaa791ce6344e2d77a9add176b67}{Default}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00054}\mbox{\hyperlink{ConsoleOutput_8h_ada118a280cb3f1eb1d8b38caf40fa6a9}{00054}}\ \ \ \ \ \mbox{\hyperlink{ConsoleOutput_8h_ada118a280cb3f1eb1d8b38caf40fa6a9}{Scientific}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a69910bb765933ee28721d9784d7b6a5ba4457d440870ad6d42bab9082d9bf9b61}{Fixed}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00056}00056\ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00058}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput}{00058}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{Globals_8h_ae75458c416806ab9737833b201e7de24}{OP\_EXPORTS}}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput}{ConsoleOutput}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00061}00061\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00063}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b6883135c1f91ffb569a9859951106d}{00063}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \ \ StandardNotation\ \ \ \ =\ floatfield::Default;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00064}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a0fc9b529959cd2b722cebe86a994dd58}{00064}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \ \ \ StandardPrecision\ \ \ =\ 6;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00065}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a32773c8e6724ad93ee0ef6b5a62701d7}{00065}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ StandardColumnWidth\ =\ 40;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00066}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae9eb5390f736f5aba8deafa0474b4ab3}{00066}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ LineLength\ \ \ \ \ \ \ \ \ \ =\ 80;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00068}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_acb068c75742b7561c5b17a014dcf3794}{00068}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceopenphase_affb0eb7489e702eaea125105e21826a3}{VerbosityLevels}}\ OutputVerbosity\ =\ VerbosityLevels::Normal;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00073}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{00073}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4220d873e1ab5b056f6a1b257334feb8}{sgn}}(\textcolor{keyword}{const}\ T\ value)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (value\ >=\ 0)?\textcolor{stringliteral}{"{}\ "{}}:\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00079}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f}{00079}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a41683f616ffa4631340cb0de41cad70f}{Write}}(\textcolor{keyword}{const}\ std::string\ message)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message.size()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ WriteSimple(message);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (message.size()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ WriteLine(message);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ WriteBlankLine();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00101}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b38f05da0dc1fbad18ef761eb66914e}{00101}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a1b38f05da0dc1fbad18ef761eb66914e}{Write}}(\textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision=4)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ WriteStandard(name,\ value,\ precision);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00116}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae67ef7804e5990154125cdce15dbf79f}{00116}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae67ef7804e5990154125cdce15dbf79f}{WriteWithLog}}(std::array<std::stringstream,2>\ \&line,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ \ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision=4,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ sep\ =\ \textcolor{charliteral}{','})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00119}00119\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ line[0]\ <<\ name\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ line[1]\ <<\ value\ <<\ sep;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ WriteStandard(name,\ value,\ precision);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00135}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4b560ecb3891c6438207907f2c3e0061}{00135}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4b560ecb3891c6438207907f2c3e0061}{WriteLineToLogfile}}(std::fstream\ \&log,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::array<std::stringstream,2>\ \&line,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ sep\ =\ \textcolor{charliteral}{','})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00139}00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00142}00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tStep\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\ <<\ tStep\ <<\ sep\ <<\ line[0].str()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ log\ <<\ tStep\ <<\ sep\ <<\ line[1].str()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00148}00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00153}00153\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TargetType>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00154}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{00154}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2972ef738098b03bee3eed5f4f95253b}{SetFloationgPointOutputFormat}}(TargetType\&\ Target,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision,\ floatfield\ notation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00156}00156\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ Target\ <<\ std::setprecision(precision);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(notation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Default:}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::defaultfloat;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Scientific:}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::scientific;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ floatfield::Fixed:}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Target\ <<\ std::fixed;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00176}00176\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00179}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925}{00179}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ab522aa5f670002048ad332b80e456925}{StandardLHS}}(std::string\ Left,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00180}00180\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Left.size()\ <\ ColumnWidth)\ Left.resize(ColumnWidth,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ Left.append(\textcolor{stringliteral}{"{}:\ "{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Left;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00184}00184\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00188}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5}{00188}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a951de38c6405bd4b9520be799c7439e5}{StandardMatrix}}(\textcolor{keyword}{const}\ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth/5)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00192}00192\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ SetFloationgPointOutputFormat(ss,\ precision,\ notation);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.sizeX();\ i++)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n||\ "{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ value.sizeY();\ j++)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{sgn}}(value(i,j))\ <<\ std::setw(ColumnWidth)\ <<\ value(i,j)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}||"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00206}00206\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00209}00209\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00210}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce}{00210}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a4aa8a3723056498766b63900939ef8ce}{StandardVector}}(\textcolor{keyword}{const}\ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth/5)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00214}00214\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ SetFloationgPointOutputFormat(ss,\ precision,\ notation);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}(\ "{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{sgn}}(value[i])\ <<\ std::setw(ColumnWidth)\ \ <<\ value[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00224}00224\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00227}00227\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00228}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6}{00228}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a2a8e749144a25000a40f580b73e5cee6}{StandardFloat}}(\textcolor{keyword}{const}\ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00231}00231\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ SetFloationgPointOutputFormat(ss,\ precision,\ notation);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{sgn}}(value)\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00236}00236\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00240}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b}{00240}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae8ca90d337aa7b145f2b7d32bbd4380b}{StandardIntegral}}(\textcolor{keyword}{const}\ T\ value,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00243}00243\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{namespaceopenphase_ae4fc4e8283016bae3f4a5bbe05ca6a3a}{sgn}}(value)\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00247}00247\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00249}00249\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00250}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{00250}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad77312a339a676f52924c6890b7a7097}{GetStandard}}(\textcolor{keyword}{const}\ std::string\&\ Left,\ \textcolor{keyword}{const}\ T\ Right,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00254}00254\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00255}00255\ \ \ \ \ \ \ \ \ std::string\ out\ =\ StandardLHS(Left,ColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{namespaceopenphase_a8a62d27228e3a684314655e9d3f2c87f}{is\_matrix<T>::value}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(StandardMatrix(Right,precision,notation,ColumnWidth/5));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{namespaceopenphase_a084877b581939b03146a685828fb45e5}{is\_vector<T>::value}})}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(StandardVector(Right,precision,notation,ColumnWidth/5));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_floating\_point<T>::value)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(StandardFloat(Right,precision,notation));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_signed<T>::value)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(StandardIntegral(Right,precision,notation));}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ Right\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ out.append(ss.str());}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00279}00279\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00281}00281\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00282}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad1ef30f0803bd17a032f3c8432288539}{00282}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ad1ef30f0803bd17a032f3c8432288539}{GetStandardNarrow}}(\textcolor{keyword}{const}\ std::string\&\ Left,\ \textcolor{keyword}{const}\ T\ Right,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ floatfield\ notation\ =\ StandardNotation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00285}00285\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetStandard(Left,\ Right,\ precision,\ notation,\ StandardColumnWidth/2);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00287}00287\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00290}00290\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00291}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{00291}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_ae2753bb70e817b1bdd5ae2b99adf6e0f}{WriteStandard}}(\textcolor{keyword}{const}\ std::string\&\ Left,\ \textcolor{keyword}{const}\ T\ Right,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ floatfield\ notation\ =\ StandardNotation,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00295}00295\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00296}00296\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00298}00298\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(OutputVerbosity\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ GetStandard(Left,Right,precision,notation,ColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00303}00303\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00306}00306\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00307}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3e51a698b31b9d3634b8cbedd2a4ffb5}{00307}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a3e51a698b31b9d3634b8cbedd2a4ffb5}{WriteStandardNarrow}}(\textcolor{keyword}{const}\ std::string\&\ Left,\ \textcolor{keyword}{const}\ T\ Right,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision\ =\ StandardPrecision,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ floatfield\ notation\ =\ StandardNotation)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00310}00310\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00311}00311\ \textcolor{preprocessor}{\#ifdef\ MPI\_PARALLEL}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MPI\_RANK\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00313}00313\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(OutputVerbosity\ >=\ VerbosityLevels::Normal)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ GetStandard(Left,Right,precision,notation,StandardColumnWidth/2);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00318}00318\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00320}00320\ \ \ \ \ \textcolor{comment}{//\ Static\ console\ output\ methods}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00321}00321\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ get\_time();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00322}00322\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteLine(\textcolor{keyword}{const}\ std::string\ LineType\ =\ \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00323}00323\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteLineInsert(\textcolor{keyword}{const}\ std::string\ Insert,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ LineType\ =\ \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00325}00325\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteBlankLine(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00326}00326\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteTimeStep(\textcolor{keyword}{const}\ \mbox{\hyperlink{classopenphase_1_1RunTimeControl}{RunTimeControl}}\&\ RTC,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Message\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00329}00329\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteTimeStep(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nSteps,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Message\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00332}00332\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteTimeStep(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tScreenWrite,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tStep,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nSteps,\ \textcolor{keyword}{const}\ std::string\ Message\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ColumnWidth\ =\ StandardColumnWidth);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00335}00335\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteSimple(\textcolor{keyword}{const}\ std::string\ Message);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00336}00336\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteCoordinate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ z,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dx);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00338}00338\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteWithinMethod(\textcolor{keyword}{const}\ std::string\ Message,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Instance\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\ Method\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00340}00340\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteWarning(\textcolor{keyword}{const}\ std::string\ Message,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Instance\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\ Method\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00342}00342\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteExit(\textcolor{keyword}{const}\ std::string\ Message,}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ Instance\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\ Method\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00344}00344\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteStartScreen(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00345}00345\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ PressEnterToContinue(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00347}00347\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ StartProgressIndicator(std::string\ IndicatorTitle);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00348}00348\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ AdvanceProgressIndicator(\textcolor{keywordtype}{double}\ start\_value,\ \textcolor{keywordtype}{double}\ end\_value,\ \textcolor{keywordtype}{double}\ current\_value,\ \textcolor{keywordtype}{int}\&\ position);}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00349}00349\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ EndProgressIndicator(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00351}00351\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00352}\mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}{00352}}\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_aa471a76dbdf43e2bca61dcbac05eb41a}{to\_string\_with\_precision}}(\textcolor{keyword}{const}\ T\ a\_value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ 6)}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00353}00353\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ std::ostringstream\ out;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ out\ <<\ std::setprecision(n)\ <<\ a\_value;}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00357}00357\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00358}00358\ \};}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00359}00359\ \}\textcolor{comment}{//\ namespace\ openphase}}
+\DoxyCodeLine{\Hypertarget{ConsoleOutput_8h_source_l00360}00360\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONSOLEOUTPUT\_H}}
+
+\end{DoxyCode}

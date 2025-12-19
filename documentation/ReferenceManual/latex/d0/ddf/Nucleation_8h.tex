@@ -1,0 +1,62 @@
+\doxysection{Nucleation.\+h File Reference}
+\hypertarget{Nucleation_8h}{}\label{Nucleation_8h}\index{Nucleation.h@{Nucleation.h}}
+{\ttfamily \#include "{}Includes.\+h"{}}\newline
+{\ttfamily \#include "{}H5\+Interface.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classopenphase_1_1Nucleus}{openphase\+::\+Nucleus}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} \doxylink{classopenphase_1_1Nucleus}{Nucleus} properties \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structopenphase_1_1NucleationParameters}{openphase\+::\+Nucleation\+Parameters}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Pairwise nucleation settings ("{}phase alpha"{} in "{}phase beta"{}) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classopenphase_1_1Nucleation}{openphase\+::\+Nucleation}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Handles the nucleation of new phases and grains \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceopenphase}{openphase}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a96590167d16b7a6bb1f6d4e53b5f2dac}{openphase\+::\+Nuclei\+Generation\+Modes}} \{ \mbox{\hyperlink{namespaceopenphase_a96590167d16b7a6bb1f6d4e53b5f2daca84a8921b25f505d0d2077aeb5db4bc16}{openphase\+::\+Static}}
+, \mbox{\hyperlink{namespaceopenphase_a96590167d16b7a6bb1f6d4e53b5f2daca971fd8cc345d8bd9f92e9f7d88fdf20c}{openphase\+::\+Dynamic}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a71b36ca2d6f491b4eace404b8a5b3b9b}{openphase\+::\+Nuclei\+Orientation\+Modes}} \{ \mbox{\hyperlink{namespaceopenphase_a71b36ca2d6f491b4eace404b8a5b3b9ba63d5049791d9d79d86e9a108b0a999ca}{openphase\+::\+Reference}}
+, \mbox{\hyperlink{namespaceopenphase_a71b36ca2d6f491b4eace404b8a5b3b9ba30269022e9d8f51beaabb52e5d0de2b7}{openphase\+::\+Parent}}
+, \mbox{\hyperlink{namespaceopenphase_a71b36ca2d6f491b4eace404b8a5b3b9ba64663f4646781c9c0110838b905daa23}{openphase\+::\+Random}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Possible orientation modes for new grains \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83c}{openphase\+::\+Nuclei\+Location\+Modes}} \{ \newline
+\mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca4c3246a186dddf08c2c1165f04c2276d}{openphase\+::\+Bulk}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca6e001c2795b0dabfa418048f9902d146}{openphase\+::\+Bulk\+And\+Grain\+Boundaries}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca1c9c4df57a631c880f27a5c6b17ea82b}{openphase\+::\+Bulk\+And\+Interfaces}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83caceb8eea6e6fe952faf27c94873c95a44}{openphase\+::\+Grain\+Boundaries}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca9d05af2e32a23c2622e7cf9198c84a13}{openphase\+::\+Phase\+Boundaries}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca47df6dde6cfeda4405ec4d3bfd360828}{openphase\+::\+Junctions}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca756640f0aea5f5bea1cbe250a9d08989}{openphase\+::\+Interfaces}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca58df7bfa4c508578ec7910b5ff7620a8}{openphase\+::\+XBottom}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83caecc70ec0afdd1322408d7ff86c64284c}{openphase\+::\+XTop}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca62f6b08ad44bfdd302aa750904b89ac4}{openphase\+::\+YBottom}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca9e9af04ec6c962c9760105042bfd7e0e}{openphase\+::\+YTop}}
+, \mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca733c3009766d39b031ebdba720d82e44}{openphase\+::\+ZBottom}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_afbbba5d2bc047ff98cf6c92b0a7af83ca0397989860333862fd2f71a1075d7eb0}{openphase\+::\+ZTop}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Possible location modes for new grains \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511b}{openphase\+::\+Nuclei\+Size\+Distributions}} \{ \newline
+\mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511ba960b44c579bc2f6818d2daaf9e4c16f0}{openphase\+::\+Normal}}
+, \mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511ba2ee21c55474972b3e65b31a6b0b57dc8}{openphase\+::\+Cauchy}}
+, \mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511baf19516d11f2946f894070e92fcb56b6d}{openphase\+::\+Uniform}}
+, \mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511ba707de39986381834fb30f4e59d732e80}{openphase\+::\+Fixed\+Radius}}
+, \newline
+\mbox{\hyperlink{namespaceopenphase_a3d7b3dc6a5ceb24a7fe89fd38c02511ba6adf97f83acf6453d4a6a4b1070f3754}{openphase\+::\+None}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Available seed size distributions \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespaceopenphase_a438810fa7cf6f2830362ebb6a57bc1fa}{openphase\+::\+Nuclei\+Variants\+Modes}} \{ \mbox{\hyperlink{namespaceopenphase_a438810fa7cf6f2830362ebb6a57bc1faa64663f4646781c9c0110838b905daa23}{openphase\+::\+Random}}
+, \mbox{\hyperlink{namespaceopenphase_a438810fa7cf6f2830362ebb6a57bc1faa4a134baba88cfe79ecebdc3daea0ce21}{openphase\+::\+Lowest\+Energy}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Variants selection modes \end{DoxyCompactList}\end{DoxyCompactItemize}

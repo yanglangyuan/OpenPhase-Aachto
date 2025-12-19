@@ -1,0 +1,266 @@
+\doxysection{Benzi\+Gas.\+cpp}
+\hypertarget{BenziGas_8cpp_source}{}\label{BenziGas_8cpp_source}\index{BenziGas.cpp@{BenziGas.cpp}}
+\mbox{\hyperlink{BenziGas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ This\ file\ is\ part\ of\ the\ OpenPhase\ (R)\ software\ library.}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ \ Copyright\ (c)\ 2009-\/2025\ Ruhr-\/Universitaet\ Bochum,}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 150,\ D-\/44801\ Bochum,\ Germany}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ AND\ 2018-\/2025\ OpenPhase\ Solutions\ GmbH,}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Universitaetsstrasse\ 136,\ D-\/44799\ Bochum,\ Germany.}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00019}00019\ \textcolor{comment}{\ *\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ File\ created\ :\ \ \ 2019}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Main\ contributors\ :\ \ \ Raphael\ Schiedung}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00025}00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BenziGas_8h}{FluidDynamics/BenziGas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConsoleOutput_8h}{ConsoleOutput.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceopenphase}{openphase}}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00034}\mbox{\hyperlink{structopenphase_1_1BenziGas_abb19a21f219dccd485ad14c0b3247a12}{00034}}\ \mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t}{BenziGas::EquilibriumValues\_t}}\ \mbox{\hyperlink{structopenphase_1_1BenziGas_abb19a21f219dccd485ad14c0b3247a12}{BenziGas::EquilibriumValues}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ InputBenziParameter)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<BenziGas::EquilibriumValues\_t>\ \mbox{\hyperlink{structopenphase_1_1BenziGas_abb19a21f219dccd485ad14c0b3247a12}{EquilibriumValues}}\ =}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00042}00042\ \ \ \ \ \{\{-\/4.020E+00,5.77139E-\/01,8.22142E-\/01,1.10682E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00043}00043\ \ \ \ \ \ \{-\/4.030E+00,5.52793E-\/01,8.52968E-\/01,2.02944E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00044}00044\ \ \ \ \ \ \{-\/4.040E+00,5.32776E-\/01,8.79462E-\/01,3.11851E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00045}00045\ \ \ \ \ \ \{-\/4.050E+00,5.15511E-\/01,9.03195E-\/01,4.34988E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00046}00046\ \ \ \ \ \ \{-\/4.060E+00,5.00197E-\/01,9.24972E-\/01,5.70716E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00047}00047\ \ \ \ \ \ \{-\/4.070E+00,4.86361E-\/01,9.45262E-\/01,7.17811E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00048}00048\ \ \ \ \ \ \{-\/4.080E+00,4.73693E-\/01,9.64380E-\/01,8.75331E-\/04\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00049}00049\ \ \ \ \ \ \{-\/4.090E+00,4.61979E-\/01,9.82534E-\/01,1.04250E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00050}00050\ \ \ \ \ \ \{-\/4.100E+00,4.51062E-\/01,9.99887E-\/01,1.21868E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00051}00051\ \ \ \ \ \ \{-\/4.110E+00,4.40824E-\/01,1.01655E+00,1.40332E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00052}00052\ \ \ \ \ \ \{-\/4.120E+00,4.31174E-\/01,1.03263E+00,1.59595E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00053}00053\ \ \ \ \ \ \{-\/4.130E+00,4.22039E-\/01,1.04818E+00,1.79617E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00054}00054\ \ \ \ \ \ \{-\/4.140E+00,4.13359E-\/01,1.06326E+00,2.00359E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00055}00055\ \ \ \ \ \ \{-\/4.150E+00,4.05087E-\/01,1.07794E+00,2.21789E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00056}00056\ \ \ \ \ \ \{-\/4.160E+00,3.97181E-\/01,1.09224E+00,2.43878E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00057}00057\ \ \ \ \ \ \{-\/4.170E+00,3.89607E-\/01,1.10621E+00,2.66598E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00058}00058\ \ \ \ \ \ \{-\/4.180E+00,3.82336E-\/01,1.11986E+00,2.89925E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00059}00059\ \ \ \ \ \ \{-\/4.190E+00,3.75342E-\/01,1.13323E+00,3.13835E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00060}00060\ \ \ \ \ \ \{-\/4.200E+00,3.68604E-\/01,1.14634E+00,3.38309E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00061}00061\ \ \ \ \ \ \{-\/4.210E+00,3.62101E-\/01,1.15921E+00,3.63326E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00062}00062\ \ \ \ \ \ \{-\/4.220E+00,3.55818E-\/01,1.17185E+00,3.88868E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00063}00063\ \ \ \ \ \ \{-\/4.230E+00,3.49739E-\/01,1.18428E+00,4.14918E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00064}00064\ \ \ \ \ \ \{-\/4.240E+00,3.43850E-\/01,1.19652E+00,4.41461E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00065}00065\ \ \ \ \ \ \{-\/4.250E+00,3.38140E-\/01,1.20857E+00,4.68481E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00066}00066\ \ \ \ \ \ \{-\/4.260E+00,3.32597E-\/01,1.22045E+00,4.95964E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00067}00067\ \ \ \ \ \ \{-\/4.270E+00,3.27211E-\/01,1.23216E+00,5.23898E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00068}00068\ \ \ \ \ \ \{-\/4.280E+00,3.21975E-\/01,1.24372E+00,5.52268E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00069}00069\ \ \ \ \ \ \{-\/4.290E+00,3.16879E-\/01,1.25513E+00,5.81064E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00070}00070\ \ \ \ \ \ \{-\/4.300E+00,3.11916E-\/01,1.26641E+00,6.10274E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00071}00071\ \ \ \ \ \ \{-\/4.310E+00,3.07079E-\/01,1.27755E+00,6.39887E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00072}00072\ \ \ \ \ \ \{-\/4.320E+00,3.02363E-\/01,1.28856E+00,6.69893E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00073}00073\ \ \ \ \ \ \{-\/4.330E+00,2.97760E-\/01,1.29946E+00,7.00282E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00074}00074\ \ \ \ \ \ \{-\/4.340E+00,2.93267E-\/01,1.31024E+00,7.31045E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00075}00075\ \ \ \ \ \ \{-\/4.350E+00,2.88877E-\/01,1.32092E+00,7.62172E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00076}00076\ \ \ \ \ \ \{-\/4.360E+00,2.84587E-\/01,1.33148E+00,7.93654E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00077}00077\ \ \ \ \ \ \{-\/4.370E+00,2.80392E-\/01,1.34195E+00,8.25485E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00078}00078\ \ \ \ \ \ \{-\/4.380E+00,2.76288E-\/01,1.35232E+00,8.57655E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00079}00079\ \ \ \ \ \ \{-\/4.390E+00,2.72272E-\/01,1.36260E+00,8.90157E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00080}00080\ \ \ \ \ \ \{-\/4.400E+00,2.68339E-\/01,1.37278E+00,9.22983E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00081}00081\ \ \ \ \ \ \{-\/4.410E+00,2.64487E-\/01,1.38289E+00,9.56127E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00082}00082\ \ \ \ \ \ \{-\/4.420E+00,2.60712E-\/01,1.39291E+00,9.89581E-\/03\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00083}00083\ \ \ \ \ \ \{-\/4.430E+00,2.57012E-\/01,1.40284E+00,1.02334E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00084}00084\ \ \ \ \ \ \{-\/4.440E+00,2.53384E-\/01,1.41271E+00,1.05739E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00085}00085\ \ \ \ \ \ \{-\/4.450E+00,2.49825E-\/01,1.42249E+00,1.09174E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00086}00086\ \ \ \ \ \ \{-\/4.460E+00,2.46333E-\/01,1.43221E+00,1.12637E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00087}00087\ \ \ \ \ \ \{-\/4.470E+00,2.42906E-\/01,1.44186E+00,1.16129E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00088}00088\ \ \ \ \ \ \{-\/4.480E+00,2.39541E-\/01,1.45143E+00,1.19647E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00089}00089\ \ \ \ \ \ \{-\/4.490E+00,2.36236E-\/01,1.46095E+00,1.23192E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00090}00090\ \ \ \ \ \ \{-\/4.500E+00,2.32990E-\/01,1.47040E+00,1.26764E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00091}00091\ \ \ \ \ \ \{-\/4.510E+00,2.29801E-\/01,1.47978E+00,1.30362E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00092}00092\ \ \ \ \ \ \{-\/4.520E+00,2.26666E-\/01,1.48911E+00,1.33984E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00093}00093\ \ \ \ \ \ \{-\/4.530E+00,2.23585E-\/01,1.49838E+00,1.37632E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00094}00094\ \ \ \ \ \ \{-\/4.540E+00,2.20555E-\/01,1.50759E+00,1.41304E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00095}00095\ \ \ \ \ \ \{-\/4.550E+00,2.17575E-\/01,1.51675E+00,1.45000E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00096}00096\ \ \ \ \ \ \{-\/4.560E+00,2.14644E-\/01,1.52586E+00,1.48719E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00097}00097\ \ \ \ \ \ \{-\/4.570E+00,2.11760E-\/01,1.53491E+00,1.52461E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00098}00098\ \ \ \ \ \ \{-\/4.580E+00,2.08921E-\/01,1.54391E+00,1.56226E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00099}00099\ \ \ \ \ \ \{-\/4.590E+00,2.06128E-\/01,1.55286E+00,1.60013E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00100}00100\ \ \ \ \ \ \{-\/4.600E+00,2.03378E-\/01,1.56177E+00,1.63822E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00101}00101\ \ \ \ \ \ \{-\/4.610E+00,2.00670E-\/01,1.57063E+00,1.67652E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00102}00102\ \ \ \ \ \ \{-\/4.620E+00,1.98003E-\/01,1.57944E+00,1.71503E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00103}00103\ \ \ \ \ \ \{-\/4.630E+00,1.95376E-\/01,1.58821E+00,1.75375E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00104}00104\ \ \ \ \ \ \{-\/4.640E+00,1.92788E-\/01,1.59693E+00,1.79267E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00105}00105\ \ \ \ \ \ \{-\/4.650E+00,1.90239E-\/01,1.60561E+00,1.83179E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00106}00106\ \ \ \ \ \ \{-\/4.660E+00,1.87726E-\/01,1.61425E+00,1.87111E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00107}00107\ \ \ \ \ \ \{-\/4.670E+00,1.85250E-\/01,1.62285E+00,1.91061E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00108}00108\ \ \ \ \ \ \{-\/4.680E+00,1.82809E-\/01,1.63141E+00,1.95031E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00109}00109\ \ \ \ \ \ \{-\/4.690E+00,1.80402E-\/01,1.63993E+00,1.99019E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00110}00110\ \ \ \ \ \ \{-\/4.700E+00,1.78029E-\/01,1.64841E+00,2.03026E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00111}00111\ \ \ \ \ \ \{-\/4.710E+00,1.75689E-\/01,1.65685E+00,2.07050E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00112}00112\ \ \ \ \ \ \{-\/4.720E+00,1.73381E-\/01,1.66526E+00,2.11092E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00113}00113\ \ \ \ \ \ \{-\/4.730E+00,1.71104E-\/01,1.67363E+00,2.15151E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00114}00114\ \ \ \ \ \ \{-\/4.740E+00,1.68859E-\/01,1.68197E+00,2.19227E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00115}00115\ \ \ \ \ \ \{-\/4.750E+00,1.66643E-\/01,1.69028E+00,2.23320E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00116}00116\ \ \ \ \ \ \{-\/4.760E+00,1.64456E-\/01,1.69855E+00,2.27430E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00117}00117\ \ \ \ \ \ \{-\/4.770E+00,1.62298E-\/01,1.70678E+00,2.31555E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00118}00118\ \ \ \ \ \ \{-\/4.780E+00,1.60169E-\/01,1.71499E+00,2.35697E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00119}00119\ \ \ \ \ \ \{-\/4.790E+00,1.58066E-\/01,1.72316E+00,2.39854E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00120}00120\ \ \ \ \ \ \{-\/4.800E+00,1.55991E-\/01,1.73130E+00,2.44026E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00121}00121\ \ \ \ \ \ \{-\/4.810E+00,1.53942E-\/01,1.73941E+00,2.48214E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00122}00122\ \ \ \ \ \ \{-\/4.820E+00,1.51919E-\/01,1.74750E+00,2.52416E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00123}00123\ \ \ \ \ \ \{-\/4.830E+00,1.49922E-\/01,1.75555E+00,2.56634E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00124}00124\ \ \ \ \ \ \{-\/4.840E+00,1.47949E-\/01,1.76357E+00,2.60865E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00125}00125\ \ \ \ \ \ \{-\/4.850E+00,1.46000E-\/01,1.77157E+00,2.65111E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00126}00126\ \ \ \ \ \ \{-\/4.860E+00,1.44076E-\/01,1.77953E+00,2.69370E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00127}00127\ \ \ \ \ \ \{-\/4.870E+00,1.42174E-\/01,1.78747E+00,2.73643E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00128}00128\ \ \ \ \ \ \{-\/4.880E+00,1.40296E-\/01,1.79539E+00,2.77930E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00129}00129\ \ \ \ \ \ \{-\/4.890E+00,1.38440E-\/01,1.80327E+00,2.82230E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00130}00130\ \ \ \ \ \ \{-\/4.900E+00,1.36606E-\/01,1.81114E+00,2.86543E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00131}00131\ \ \ \ \ \ \{-\/4.910E+00,1.34794E-\/01,1.81897E+00,2.90868E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00132}00132\ \ \ \ \ \ \{-\/4.920E+00,1.33004E-\/01,1.82678E+00,2.95207E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00133}00133\ \ \ \ \ \ \{-\/4.930E+00,1.31234E-\/01,1.83457E+00,2.99557E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00134}00134\ \ \ \ \ \ \{-\/4.940E+00,1.29484E-\/01,1.84233E+00,3.03920E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00135}00135\ \ \ \ \ \ \{-\/4.950E+00,1.27755E-\/01,1.85007E+00,3.08295E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00136}00136\ \ \ \ \ \ \{-\/4.960E+00,1.26046E-\/01,1.85778E+00,3.12681E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00137}00137\ \ \ \ \ \ \{-\/4.970E+00,1.24356E-\/01,1.86547E+00,3.17079E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00138}00138\ \ \ \ \ \ \{-\/4.980E+00,1.22685E-\/01,1.87314E+00,3.21488E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00139}00139\ \ \ \ \ \ \{-\/4.990E+00,1.21033E-\/01,1.88079E+00,3.25909E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00140}00140\ \ \ \ \ \ \{-\/5.000E+00,1.19399E-\/01,1.88841E+00,3.30340E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00141}00141\ \ \ \ \ \ \{-\/5.010E+00,1.17783E-\/01,1.89601E+00,3.34783E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00142}00142\ \ \ \ \ \ \{-\/5.020E+00,1.16186E-\/01,1.90359E+00,3.39236E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00143}00143\ \ \ \ \ \ \{-\/5.030E+00,1.14606E-\/01,1.91115E+00,3.43699E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00144}00144\ \ \ \ \ \ \{-\/5.040E+00,1.13043E-\/01,1.91869E+00,3.48172E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00145}00145\ \ \ \ \ \ \{-\/5.050E+00,1.11497E-\/01,1.92621E+00,3.52656E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00146}00146\ \ \ \ \ \ \{-\/5.060E+00,1.09968E-\/01,1.93371E+00,3.57150E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00147}00147\ \ \ \ \ \ \{-\/5.070E+00,1.08455E-\/01,1.94119E+00,3.61653E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00148}00148\ \ \ \ \ \ \{-\/5.080E+00,1.06958E-\/01,1.94864E+00,3.66166E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00149}00149\ \ \ \ \ \ \{-\/5.090E+00,1.05477E-\/01,1.95608E+00,3.70688E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00150}00150\ \ \ \ \ \ \{-\/5.100E+00,1.04012E-\/01,1.96350E+00,3.75220E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00151}00151\ \ \ \ \ \ \{-\/5.110E+00,1.02563E-\/01,1.97091E+00,3.79760E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00152}00152\ \ \ \ \ \ \{-\/5.120E+00,1.01128E-\/01,1.97829E+00,3.84310E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00153}00153\ \ \ \ \ \ \{-\/5.130E+00,9.97085E-\/02,1.98565E+00,3.88868E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00154}00154\ \ \ \ \ \ \{-\/5.140E+00,9.83037E-\/02,1.99300E+00,3.93435E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00155}00155\ \ \ \ \ \ \{-\/5.150E+00,9.69133E-\/02,2.00033E+00,3.98010E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00156}00156\ \ \ \ \ \ \{-\/5.160E+00,9.55372E-\/02,2.00764E+00,4.02593E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00157}00157\ \ \ \ \ \ \{-\/5.170E+00,9.41752E-\/02,2.01494E+00,4.07185E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00158}00158\ \ \ \ \ \ \{-\/5.180E+00,9.28270E-\/02,2.02221E+00,4.11785E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00159}00159\ \ \ \ \ \ \{-\/5.190E+00,9.14924E-\/02,2.02947E+00,4.16393E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00160}00160\ \ \ \ \ \ \{-\/5.200E+00,9.01713E-\/02,2.03672E+00,4.21008E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00161}00161\ \ \ \ \ \ \{-\/5.210E+00,8.88635E-\/02,2.04394E+00,4.25631E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00162}00162\ \ \ \ \ \ \{-\/5.220E+00,8.75687E-\/02,2.05116E+00,4.30261E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00163}00163\ \ \ \ \ \ \{-\/5.230E+00,8.62868E-\/02,2.05835E+00,4.34899E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00164}00164\ \ \ \ \ \ \{-\/5.240E+00,8.50176E-\/02,2.06553E+00,4.39543E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00165}00165\ \ \ \ \ \ \{-\/5.250E+00,8.37609E-\/02,2.07269E+00,4.44195E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00166}00166\ \ \ \ \ \ \{-\/5.260E+00,8.25165E-\/02,2.07984E+00,4.48854E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00167}00167\ \ \ \ \ \ \{-\/5.270E+00,8.12844E-\/02,2.08698E+00,4.53519E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00168}00168\ \ \ \ \ \ \{-\/5.280E+00,8.00642E-\/02,2.09409E+00,4.58191E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00169}00169\ \ \ \ \ \ \{-\/5.290E+00,7.88558E-\/02,2.10120E+00,4.62870E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00170}00170\ \ \ \ \ \ \{-\/5.300E+00,7.76591E-\/02,2.10828E+00,4.67554E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00171}00171\ \ \ \ \ \ \{-\/5.310E+00,7.64740E-\/02,2.11536E+00,4.72246E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00172}00172\ \ \ \ \ \ \{-\/5.320E+00,7.53002E-\/02,2.12242E+00,4.76943E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00173}00173\ \ \ \ \ \ \{-\/5.330E+00,7.41376E-\/02,2.12946E+00,4.81646E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00174}00174\ \ \ \ \ \ \{-\/5.340E+00,7.29860E-\/02,2.13650E+00,4.86355E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00175}00175\ \ \ \ \ \ \{-\/5.350E+00,7.18454E-\/02,2.14351E+00,4.91070E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00176}00176\ \ \ \ \ \ \{-\/5.360E+00,7.07156E-\/02,2.15052E+00,4.95790E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00177}00177\ \ \ \ \ \ \{-\/5.370E+00,6.95964E-\/02,2.15751E+00,5.00516E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00178}00178\ \ \ \ \ \ \{-\/5.380E+00,6.84876E-\/02,2.16449E+00,5.05248E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00179}00179\ \ \ \ \ \ \{-\/5.390E+00,6.73893E-\/02,2.17145E+00,5.09984E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00180}00180\ \ \ \ \ \ \{-\/5.400E+00,6.63011E-\/02,2.17840E+00,5.14726E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00181}00181\ \ \ \ \ \ \{-\/5.410E+00,6.52231E-\/02,2.18534E+00,5.19473E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00182}00182\ \ \ \ \ \ \{-\/5.420E+00,6.41550E-\/02,2.19226E+00,5.24225E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00183}00183\ \ \ \ \ \ \{-\/5.430E+00,6.30968E-\/02,2.19918E+00,5.28982E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00184}00184\ \ \ \ \ \ \{-\/5.440E+00,6.20483E-\/02,2.20608E+00,5.33743E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00185}00185\ \ \ \ \ \ \{-\/5.450E+00,6.10094E-\/02,2.21296E+00,5.38509E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00186}00186\ \ \ \ \ \ \{-\/5.460E+00,5.99799E-\/02,2.21984E+00,5.43280E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00187}00187\ \ \ \ \ \ \{-\/5.470E+00,5.89599E-\/02,2.22670E+00,5.48054E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00188}00188\ \ \ \ \ \ \{-\/5.480E+00,5.79491E-\/02,2.23356E+00,5.52834E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00189}00189\ \ \ \ \ \ \{-\/5.490E+00,5.69474E-\/02,2.24040E+00,5.57617E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00190}00190\ \ \ \ \ \ \{-\/5.500E+00,5.59547E-\/02,2.24722E+00,5.62405E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00191}00191\ \ \ \ \ \ \{-\/5.510E+00,5.49710E-\/02,2.25404E+00,5.67196E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00192}00192\ \ \ \ \ \ \{-\/5.520E+00,5.39961E-\/02,2.26085E+00,5.71992E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00193}00193\ \ \ \ \ \ \{-\/5.530E+00,5.30299E-\/02,2.26764E+00,5.76791E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00194}00194\ \ \ \ \ \ \{-\/5.540E+00,5.20723E-\/02,2.27442E+00,5.81594E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00195}00195\ \ \ \ \ \ \{-\/5.550E+00,5.11232E-\/02,2.28119E+00,5.86401E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00196}00196\ \ \ \ \ \ \{-\/5.560E+00,5.01825E-\/02,2.28795E+00,5.91211E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00197}00197\ \ \ \ \ \ \{-\/5.570E+00,4.92501E-\/02,2.29470E+00,5.96024E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00198}00198\ \ \ \ \ \ \{-\/5.580E+00,4.83259E-\/02,2.30144E+00,6.00841E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00199}00199\ \ \ \ \ \ \{-\/5.590E+00,4.74099E-\/02,2.30817E+00,6.05662E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00200}00200\ \ \ \ \ \ \{-\/5.600E+00,4.65019E-\/02,2.31489E+00,6.10485E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00201}00201\ \ \ \ \ \ \{-\/5.610E+00,4.56018E-\/02,2.32160E+00,6.15311E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00202}00202\ \ \ \ \ \ \{-\/5.620E+00,4.47095E-\/02,2.32829E+00,6.20141E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00203}00203\ \ \ \ \ \ \{-\/5.630E+00,4.38250E-\/02,2.33498E+00,6.24973E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00204}00204\ \ \ \ \ \ \{-\/5.640E+00,4.29482E-\/02,2.34166E+00,6.29808E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00205}00205\ \ \ \ \ \ \{-\/5.650E+00,4.20790E-\/02,2.34832E+00,6.34646E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00206}00206\ \ \ \ \ \ \{-\/5.660E+00,4.12173E-\/02,2.35498E+00,6.39486E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00207}00207\ \ \ \ \ \ \{-\/5.670E+00,4.03629E-\/02,2.36163E+00,6.44329E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00208}00208\ \ \ \ \ \ \{-\/5.680E+00,3.95160E-\/02,2.36826E+00,6.49174E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00209}00209\ \ \ \ \ \ \{-\/5.690E+00,3.86762E-\/02,2.37489E+00,6.54022E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00210}00210\ \ \ \ \ \ \{-\/5.700E+00,3.78437E-\/02,2.38151E+00,6.58872E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00211}00211\ \ \ \ \ \ \{-\/5.710E+00,3.70182E-\/02,2.38812E+00,6.63724E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00212}00212\ \ \ \ \ \ \{-\/5.720E+00,3.61998E-\/02,2.39472E+00,6.68579E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00213}00213\ \ \ \ \ \ \{-\/5.730E+00,3.53884E-\/02,2.40131E+00,6.73435E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00214}00214\ \ \ \ \ \ \{-\/5.740E+00,3.45838E-\/02,2.40789E+00,6.78294E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00215}00215\ \ \ \ \ \ \{-\/5.750E+00,3.37860E-\/02,2.41446E+00,6.83154E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00216}00216\ \ \ \ \ \ \{-\/5.760E+00,3.29949E-\/02,2.42102E+00,6.88016E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00217}00217\ \ \ \ \ \ \{-\/5.770E+00,3.22105E-\/02,2.42757E+00,6.92880E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00218}00218\ \ \ \ \ \ \{-\/5.780E+00,3.14327E-\/02,2.43412E+00,6.97746E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00219}00219\ \ \ \ \ \ \{-\/5.790E+00,3.06614E-\/02,2.44066E+00,7.02613E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00220}00220\ \ \ \ \ \ \{-\/5.800E+00,2.98966E-\/02,2.44718E+00,7.07482E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00221}00221\ \ \ \ \ \ \{-\/5.810E+00,2.91382E-\/02,2.45370E+00,7.12352E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00222}00222\ \ \ \ \ \ \{-\/5.820E+00,2.83860E-\/02,2.46021E+00,7.17224E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00223}00223\ \ \ \ \ \ \{-\/5.830E+00,2.76402E-\/02,2.46671E+00,7.22097E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00224}00224\ \ \ \ \ \ \{-\/5.840E+00,2.69005E-\/02,2.47321E+00,7.26971E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00225}00225\ \ \ \ \ \ \{-\/5.850E+00,2.61670E-\/02,2.47969E+00,7.31846E-\/02\},}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00226}00226\ \ \ \ \ \ \{-\/5.860E+00,2.54395E-\/02,2.48617E+00,7.36723E-\/02\}\};}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00228}00228\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t}{EquilibriumValues\_t}}\ PreviousEquilibriumValue\ =\ \mbox{\hyperlink{structopenphase_1_1BenziGas_abb19a21f219dccd485ad14c0b3247a12}{EquilibriumValues}}[0];}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t}{EquilibriumValues\_t}}\ Interpolated\ \ =\ \{0.0,0.0,0.0,0.0\};}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ EquilibriumValue:\ \mbox{\hyperlink{structopenphase_1_1BenziGas_abb19a21f219dccd485ad14c0b3247a12}{EquilibriumValues}})}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00231}00231\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (EquilibriumValue.BenziParameter\ ==\ InputBenziParameter)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EquilibriumValue;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_aa4a15507ffeb1bcdab60c8da9affb278}{BenziParameter}}\ -\/\ InputBenziParameter\ \ \ \ \ \ \ >\ 0.0)\ and}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InputBenziParameter\ -\/\ EquilibriumValue.BenziParameter\ >\ 0.0))}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated\ =\ PreviousEquilibriumValue;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dT\ =\ (EquilibriumValue.BenziParameter\ -\/\ PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_aa4a15507ffeb1bcdab60c8da9affb278}{BenziParameter}});}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ DT\ =\ (InputBenziParameter\ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_aa4a15507ffeb1bcdab60c8da9affb278}{BenziParameter}});}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ A\ \ =\ DT/dT;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_aa4a15507ffeb1bcdab60c8da9affb278}{BenziParameter}}\ \ \ \ =\ InputBenziParameter;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a73807f26cc70d2ec236cdb2b82a6f5b7}{lbVaporDensity}}\ \ \ +=\ (EquilibriumValue.lbVaporDensity\ \ \ -\/\ PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a73807f26cc70d2ec236cdb2b82a6f5b7}{lbVaporDensity}})*A;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a7a24e53227c0a3813146063b13801a6e}{lbLiquidDensity}}\ \ +=\ (EquilibriumValue.lbLiquidDensity\ \ -\/\ PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a7a24e53227c0a3813146063b13801a6e}{lbLiquidDensity}})*A;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_ae95f42256ddcd08b5aeacec63ffd971b}{lbSurfaceTension}}\ +=\ (EquilibriumValue.lbSurfaceTension\ -\/\ PreviousEquilibriumValue.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_ae95f42256ddcd08b5aeacec63ffd971b}{lbSurfaceTension}})*A;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Interpolated;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ PreviousEquilibriumValue\ =\ EquilibriumValue;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{if}\ (Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_aa4a15507ffeb1bcdab60c8da9affb278}{BenziParameter}}\ \ \ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{if}\ (Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a73807f26cc70d2ec236cdb2b82a6f5b7}{lbVaporDensity}}\ \ \ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{if}\ (Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_a7a24e53227c0a3813146063b13801a6e}{lbLiquidDensity}}\ \ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (Interpolated.\mbox{\hyperlink{structopenphase_1_1BenziGas_1_1EquilibriumValues__t_ae95f42256ddcd08b5aeacec63ffd971b}{lbSurfaceTension}}\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00258}00258\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classopenphase_1_1ConsoleOutput_a421faa2fe5d86991328b2b06041a326d}{ConsoleOutput::WriteExit}}(\textcolor{stringliteral}{"{}BenziParameter\ outside\ stable\ interval\ [-\/4.02,-\/5.86]!\ The\ simulation\ will\ crash!"{}},\ \textcolor{stringliteral}{"{}BenziGas"{}},\ \textcolor{stringliteral}{"{}EquilibriumValues"{}});}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceopenphase_a4d6fed4ab71c6edf2a0bd5dabecc6ec6}{OP\_Exit}}(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00261}00261\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{return}\ Interpolated;}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{BenziGas_8cpp_source_l00265}00265\ \}\ \textcolor{comment}{//namespace\ openphase}}
+
+\end{DoxyCode}
