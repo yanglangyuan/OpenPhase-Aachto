@@ -677,20 +677,23 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
     double AveSize = double(Phase.Grid.LocalNumberOfCells())/AllGrains.size();
 /// ++++++++++++++++++++++++++++++++++++++++++++ ///
 
-    ofstream Fl1;
-    ofstream Fl2;
-    ofstream Fl3;
+    ofstream Fl1;  /// 添加晶粒尺寸信息
+    ofstream Fl2;  /// 添加晶粒体积信息
+    ofstream Fl3;  /// 添加晶粒邻接数量信息
+    ofstream Fl4; /// 添加晶粒之间具体的连接信息
     if(tStep)
     {
         Fl1.open( DefaultTextDir + "SizeAveInfo.dat", ios::app);
         Fl2.open( DefaultTextDir + "SizeDetails.dat", ios::app);
         Fl3.open( DefaultTextDir + "NeighboInfo.dat", ios::app);
+        Fl4.open( DefaultTextDir + "GrainConnections.dat", ios::app);
     }
     else
     {
         Fl1.open( DefaultTextDir + "SizeAveInfo.dat", ios::out);
         Fl2.open( DefaultTextDir + "SizeDetails.dat", ios::out);
         Fl3.open( DefaultTextDir + "NeighboInfo.dat", ios::out);
+        Fl4.open( DefaultTextDir + "GrainConnections.dat", ios::out);
     }
     Fl1.precision(10);
     Fl2.precision(10);
@@ -719,6 +722,27 @@ void MicrostructureAnalysis::WriteGrainsStatistics(const PhaseField& Phase, cons
     }
     Fl3 << endl;
     Fl3.close();
+
+    /// ++++++++++++++++++++++++++++++++++++++++++++添加晶粒之间的连接信息
+
+    Fl4 << "# TimeStep: " << tStep << endl;
+    for (size_t i = 0; i < nPFs; ++i)
+    {
+        vector<size_t> neighbors;
+        for (size_t j = 0; j < nPFs; ++j)
+        {
+            if ((i != j) && (pairs.find(i * nPFs + j) != pairs.end()))
+                neighbors.push_back(j);
+        }
+        if (!neighbors.empty())
+        {
+            Fl4 << i << ": ";
+            for (auto n : neighbors)
+                Fl4 << n << " ";
+            Fl4 << endl;
+        }
+    }
+    Fl4.close();
 }
 
 dVector3 MicrostructureAnalysis::FindValuePosition(PhaseField& Phi, size_t index, double value, dVector3 start_position, dVector3 direction, double tolerance)
